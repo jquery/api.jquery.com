@@ -1,0 +1,17 @@
+            <entry type='selector'   name="last" return=""  >
+                <sample>:last</sample>
+                 <signature><added>1.0</added> </signature>
+                <desc>Selects the last matched element.</desc>
+                <longdesc><p>Note that <code>:last</code> selects a single element by filtering  the current jQuery collection and matching the last element within it.</p></longdesc>
+                <example>
+                    <desc>Finds the last table row.</desc>
+                    <code><![CDATA[$("tr:last").css({backgroundColor: 'yellow', fontWeight: 'bolder'});]]></code>
+                    <html><![CDATA[<table>
+
+    <tr><td>First Row</td></tr>
+    <tr><td>Middle Row</td></tr>
+    <tr><td>Last Row</td></tr>
+
+  </table>]]></html>
+                </example>
+            </entry>

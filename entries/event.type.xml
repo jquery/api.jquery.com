@@ -1,0 +1,13 @@
+<entry type='property' name="event.type" return="String">
+    <signature>
+        <added>1.0</added>
+    </signature>
+    <desc> Describes the nature of the event.  </desc>
+    <longdesc>   </longdesc>
+    <example>
+        <desc>On all anchor clicks, alert the event type.</desc>
+        <code><![CDATA[$("a").click(function(event) {
+  alert(event.type); // "click"
+}); ]]></code>
+    </example>
+</entry>

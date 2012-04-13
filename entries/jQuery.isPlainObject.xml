@@ -1,0 +1,19 @@
+            <entry type='method' name="jQuery.isPlainObject" return="Boolean">
+                <signature>
+                  <added>1.4</added>
+                  <argument name="object" type="Object">
+                    <desc>The object that will be checked to see if it's a plain object.</desc>
+                  </argument>
+                </signature>
+                <desc>Check to see if an object is a plain object (created using "{}" or "new Object").</desc>
+                    <longdesc><p><strong>Note:</strong> Host objects (or objects used by browser host environments to complete the execution environment of ECMAScript) have a number of inconsistencies which are difficult to robustly feature detect cross-platform. As a result of this,  <code>$.isPlainObject()</code> may evaluate inconsistently across browsers in certain instances.</p><p>An example of this is a test against <code>document.location</code> using <code>$.isPlainObject()</code> as follows:</p><pre>
+console.log($.isPlainObject(document.location));
+</pre>
+<p>which throws an invalid pointer exception in IE8. With this in mind, it's important to be aware of any of the gotchas involved in using <code>$.isPlainObject()</code> against older browsers. Some basic example of use-cases that do function correctly cross-browser can be found below.</p>
+</longdesc>
+                <example>
+                    <desc>Check an object to see if it's a plain object.</desc>
+                    <code><![CDATA[jQuery.isPlainObject({}) // true
+jQuery.isPlainObject("test") // false]]></code>
+                </example>
+            </entry>

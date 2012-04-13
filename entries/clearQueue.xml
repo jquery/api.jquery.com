@@ -1,0 +1,49 @@
+<entry type='method' name="clearQueue" return="jQuery">
+<signature>
+	<added>1.4</added>
+  <argument name="queueName" optional="true" type="String">
+    <desc>A string containing the name of the queue. Defaults to <code>fx</code>, the standard effects queue.</desc>
+  </argument>
+</signature>
+<desc>Remove from the queue all items that have not yet been run.</desc>
+<longdesc><p>When the <code>.clearQueue()</code> method is called, all functions on the queue that have not been executed are removed from the queue. When used without an argument, <code>.clearQueue()</code> removes the remaining functions from <code>fx</code>, the standard effects queue. In this way it is similar to <code>.stop(true)</code>. However,  while the <code>.stop()</code> method is meant to be used only with animations, <code>.clearQueue()</code> can also be used to remove any function that has been added to a generic jQuery queue with the <code>.queue()</code> method. </p></longdesc>
+<example>
+<desc>Empty the queue.</desc>
+<code><![CDATA[
+$("#start").click(function () {
+    
+  var myDiv = $("div");
+  myDiv.show("slow");
+  myDiv.animate({left:'+=200'},5000);
+  myDiv.queue(function () {
+    var _this = $(this);
+    _this.addClass("newcolor");
+    _this.dequeue();
+  });
+
+  myDiv.animate({left:'-=200'},1500);
+  myDiv.queue(function () {
+    var _this = $(this);
+    _this.removeClass("newcolor");
+    _this.dequeue();
+  });
+  myDiv.slideUp();
+  
+});
+
+$("#stop").click(function () {
+  var myDiv = $("div");
+  myDiv.clearQueue();
+  myDiv.stop();
+});]]></code>
+<css><![CDATA[
+div { margin:3px; width:40px; height:40px;
+    position:absolute; left:0px; top:30px; 
+    background:green; display:none; }
+div.newcolor { background:blue; }
+]]></css>
+<html><![CDATA[<button id="start">Start</button>
+<button id="stop">Stop</button>
+<div></div>]]></html>
+</example>
+</entry>

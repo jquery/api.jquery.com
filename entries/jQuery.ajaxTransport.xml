@@ -1,0 +1,157 @@
+<entry type='method' name="jQuery.ajaxTransport" return="undefined">
+  <desc>Creates an object that handles the actual transmission of Ajax data.</desc>
+  <signature>
+    <added>1.5</added>
+    <argument name="dataType" type="String">
+      <desc>A string identifying the data type to use</desc>
+    </argument>
+    
+    <argument name="handler(options, originalOptions, jqXHR)" type="Function">
+      <desc>A handler to return the new transport object to use with the data type provided in the first argument.</desc>
+    </argument>
+  </signature>
+  <longdesc>
+
+
+<p>A transport is an object that provides two methods, <code>send</code> and <code>abort</code>, that are used internally by <code>$.ajax()</code> to issue requests. A transport is the most advanced way to enhance <code>$.ajax()</code> and should be used only as a last resort when prefilters and converters are insufficient.</p>
+
+<p>Since each request requires its own transport object instance, transports cannot be registered directly. Therefore, you should provide a function that returns a transport instead.</p>
+
+<p>Transports factories are registered using <code>$.ajaxTransport()</code>. A typical registration looks like this:</p>
+
+<pre>
+$.ajaxTransport( function( options, originalOptions, jqXHR ) {
+  if( /* transportCanHandleRequest */ ) {
+    return {
+      send: function( headers, completeCallback ) {
+        /* send code */
+      },
+      abort: function() {
+        /* abort code */
+      }
+    };
+  }
+});
+</pre>
+
+<p>where:</p>
+<ul>
+<li><code>options</code> are the request options</li>
+<li><code>originalOptions</code> are the options as provided to the ajax method, unmodified and, thus, without defaults from ajaxSettings</li>
+<li><code>jqXHR</code> is the jqXHR object of the request</li>
+<li><code>headers</code> is a map of request headers (key/value) that the transport can transmit if it supports it</li>
+<li><code>completeCallback</code> is the callback used to notify ajax of the completion of the request</li>
+</ul>
+
+<p><code>completeCallback</code> has the following signature:</p>
+
+<pre>
+function( status, statusText, responses, headers ) {}
+</pre>
+
+<p>where:</p>
+<ul>
+<li><code>status</code> is the HTTP status code of the response, like  200 for a typical success, or 404 for when the resource is not found.</li>
+<li><code>statusText</code> is the statusText of the response.</li>
+<li><code>responses</code> (Optional) is a map of dataType/value that contains the response in all the formats the transport could provide (for instance, a native XMLHttpRequest object would set reponses to <code>{ xml: XMLData, text: textData }</code> for a response that is an XML document)</li>
+<li><code>headers</code> (Optional) is a string containing all the response headers if the transport has access to them (akin to what <code>XMLHttpRequest.getAllResponseHeaders()</code> would provide).</li>
+</ul>
+
+<p>Just like prefilters, a transport's factory function can be attached to a specific dataType:</p>
+
+<pre>
+$.ajaxTransport( "script", function( options, originalOptions, jqXHR ) {
+    /* Will only be called for script requests */
+});
+</pre>
+
+<p>The following example shows how a minimal image transport could be implemented:</p>
+
+<pre>
+$.ajaxTransport( "image", function( s ) {
+
+  if ( s.type === "GET" &amp;&amp; s.async ) {
+
+    var image;
+
+    return {
+
+      send: function( _ , callback ) {
+
+        image = new Image();
+
+        function done( status ) {
+          if ( image ) {
+            var statusText = ( status == 200 ) ? "success" : "error",
+            tmp = image;
+            image = image.onreadystatechange = image.onerror = image.onload = null;
+            callback( status, statusText, { image: tmp } );
+          }
+        }
+
+        image.onreadystatechange = image.onload = function() {
+          done( 200 );
+        };
+        image.onerror = function() {
+          done( 404 );
+        };
+
+        image.src = s.url;
+      },
+
+      abort: function() {
+        if ( image ) {
+          image = image.onreadystatechange = image.onerror = image.onload = null;
+        }
+      }
+    };
+  }
+});
+</pre>
+
+  <h4 id="handling-custom-data-types">Handling Custom Data Types</h4>
+  
+  <p>The jQuery Ajax implementation comes with a set of standard dataTypes, such as text, json, xml, and html.</p>
+           
+  <p>Use the <code>converters</code> option in <code><a href='/jQuery.ajaxSetup'>$.ajaxSetup()</a></code> to augment or modify the data type conversion strategies used by <code>$.ajax()</code>.</p>
+  
+  <p> The unminified jQuery source itself includes a list of default converters, which effectively illustrates how they can be used: </p>
+          
+ <pre>
+// List of data converters
+// 1) key format is "source_type destination_type" 
+//    (a single space in-between)
+// 2) the catchall symbol "*" can be used for source_type
+converters: {
+
+  // Convert anything to text
+  "* text": window.String,
+
+  // Text to html (true = no transformation)
+  "text html": true,
+
+  // Evaluate text as a json expression
+  "text json": jQuery.parseJSON,
+
+  // Parse text as xml
+  "text xml": jQuery.parseXML
+}
+</pre>
+ 
+  <p>When you specify a <code>converters</code> option globally in <code>$.ajaxSetup()</code> or per call in <code>$.ajax()</code>, the object will map onto the default converters, overwriting those you specify and leaving the others intact.</p>
+
+   <p>For example, the jQuery source uses <code>$.ajaxSetup()</code> to  add a converter for "text script":</p>
+             
+<pre>jQuery.ajaxSetup({
+  accepts: {
+    script: "text/javascript, application/javascript"
+  },
+  contents: {
+    script: /javascript/
+  },
+  converters: {
+    "text script": jQuery.globalEval
+  }
+});</pre>
+</longdesc>
+</entry>

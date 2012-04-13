@@ -1,0 +1,28 @@
+            <entry type='selector' name="animated" return="">
+                <sample>:animated</sample>
+                <signature><added>1.2</added></signature>
+                <desc>Select all elements that are in the progress of an animation at the time the selector is run.</desc>
+                <longdesc></longdesc>
+                <example>
+                    <desc>Change the color of any div that is animated.</desc>
+                    <code><![CDATA[
+
+    $("#run").click(function(){
+      $("div:animated").toggleClass("colored");
+    });
+    function animateIt() {
+      $("#mover").slideToggle("slow", animateIt);
+    }
+    animateIt();
+]]></code>
+                    <html><![CDATA[<button id="run">Run</button>
+
+  <div></div>
+  <div id="mover"></div>
+  <div></div>]]></html>
+                    <css><![CDATA[
+  div { background:yellow; border:1px solid #AAA; width:80px; height:80px; margin:0 5px; float:left; }
+  div.colored { background:green; }
+  ]]></css>
+                </example>
+            </entry>

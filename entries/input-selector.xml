@@ -1,0 +1,44 @@
+            <entry type='selector'  name="input" return="">
+                <sample>:input</sample>
+                 <signature><added>1.0</added> </signature>
+                <desc>Selects all input, textarea, select and button elements.</desc>
+                <longdesc><p>The <code>:input</code> selector basically selects all form controls.</p></longdesc>
+                <example>
+                    <desc>Finds all input elements.</desc>
+                    <code><![CDATA[
+
+    var allInputs = $(":input");
+    var formChildren = $("form > *");
+    $("#messages").text("Found " + allInputs.length + " inputs and the form has " +
+                             formChildren.length + " children.");
+            
+    // so it won't submit
+    $("form").submit(function () { return false; }); 
+
+]]></code>
+                    <css><![CDATA[
+  textarea { height:25px; }
+  ]]></css>
+                    <html><![CDATA[<form>
+    <input type="button" value="Input Button"/>
+    <input type="checkbox" />
+
+    <input type="file" />
+    <input type="hidden" />
+    <input type="image" />
+
+    <input type="password" />
+    <input type="radio" />
+    <input type="reset" />
+
+    <input type="submit" />
+    <input type="text" />
+    <select><option>Option</option></select>
+
+    <textarea></textarea>
+    <button>Button</button>
+  </form>
+  <div id="messages">
+  </div>]]></html>
+                </example>
+            </entry>

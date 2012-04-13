@@ -1,0 +1,134 @@
+            <entry type='method' name="map" return="jQuery">
+              <signature>
+                <added>1.2</added>
+                <argument name="callback(index, domElement)" type="Function">
+                    <desc>A function object that will be invoked for each element in the current set.</desc>
+                </argument>
+              </signature>
+              <desc>Pass each element in the current matched set through a function, producing a new jQuery object containing the return values.</desc>              
+<longdesc><p>As the return value is a jQuery-wrapped array, it's very common to <code>get()</code> the returned object to work with a basic array.</p><p>The <code>.map()</code> method is particularly useful for getting or setting the value of a collection of elements. Consider a form with a set of checkboxes in it:</p>
+<pre>
+&lt;form method="post" action=""&gt;
+  &lt;fieldset&gt;
+    &lt;div&gt;
+      &lt;label for="two"&gt;2&lt;/label&gt;
+      &lt;input type="checkbox" value="2" id="two" name="number[]"&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;label for="four"&gt;4&lt;/label&gt;
+      &lt;input type="checkbox" value="4" id="four" name="number[]"&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;label for="six"&gt;6&lt;/label&gt;
+      &lt;input type="checkbox" value="6" id="six" name="number[]"&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;label for="eight"&gt;8&lt;/label&gt;
+      &lt;input type="checkbox" value="8" id="eight" name="number[]"&gt;
+    &lt;/div&gt;
+  &lt;/fieldset&gt;
+&lt;/form&gt;
+</pre>
+<p>We can get a comma-separated list of checkbox <code>ID</code>s:</p>
+<pre>$(':checkbox').map(function() {
+  return this.id;
+}).get().join(',');</pre>
+<p>The result of this call is the string, <code>"two,four,six,eight"</code>.</p>
+<p>Within the callback function, <code>this</code> refers to the current DOM element for each iteration. The function can return an individual data item or an array of data items to be inserted into the resulting set. If an array is returned, the elements inside the array are inserted into the set. If the function returns <code>null</code> or <code>undefined</code>, no element will be inserted.</p>
+</longdesc>
+                <example>
+                    <desc>Build a list of all the values within a form.</desc>
+                    <code><![CDATA[
+    $("p").append( $("input").map(function(){
+      return $(this).val();
+    }).get().join(", ") );
+
+]]></code>
+                    <css><![CDATA[
+  p { color:red; }
+  ]]></css>
+                    <html><![CDATA[<p><b>Values: </b></p>
+  <form>
+    <input type="text" name="name" value="John"/>
+
+    <input type="text" name="password" value="password"/>
+    <input type="text" name="url" value="http://ejohn.org/"/>
+
+  </form>]]></html>
+                </example>
+                <example>
+                    <desc>A contrived example to show some functionality.</desc>
+                    <code><![CDATA[
+var mappedItems = $("li").map(function (index) {
+  var replacement = $("<li>").text($(this).text()).get(0);
+  if (index == 0) {
+    /* make the first item all caps */
+    $(replacement).text($(replacement).text().toUpperCase());
+  } else if (index == 1 || index == 3) {
+    /* delete the second and fourth items */
+    replacement = null;
+  } else if (index == 2) {
+    /* make two of the third item and add some text */
+    replacement = [replacement,$("<li>").get(0)];
+    $(replacement[0]).append("<b> - A</b>");
+    $(replacement[1]).append("Extra <b> - B</b>");
+  }
+
+  /* replacement will be a dom element, null, 
+     or an array of dom elements */
+  return replacement;
+});
+$("#results").append(mappedItems);
+
+]]></code>
+                    <css><![CDATA[
+  body { font-size:16px; }
+  ul { float:left; margin:0 30px; color:blue; }
+  #results { color:red; }
+  ]]></css>
+                    <html><![CDATA[<ul>
+    <li>First</li>
+    <li>Second</li>
+    <li>Third</li>
+
+    <li>Fourth</li>
+    <li>Fifth</li>
+  </ul>
+  <ul id="results">
+
+  </ul>]]></html>
+                </example>
+
+
+    <example>
+                    <desc>Equalize the heights of the divs.</desc>
+                    <code><![CDATA[
+$.fn.equalizeHeights = function() {
+  var maxHeight = this.map(function(i,e) {
+    return $(e).height();
+  }).get();
+  
+  return this.height( Math.max.apply(this, maxHeight) );
+};
+
+$('input').click(function(){
+  $('div').equalizeHeights();
+});
+
+]]></code>
+                    <css><![CDATA[
+div { width: 40px; float:left; }
+input { clear:left}
+  ]]></css>
+                    <html><![CDATA[
+
+<input type="button" value="equalize div heights">
+
+<div style="background:red; height: 40px; "></div>
+<div style="background:green; height: 70px;"></div>
+<div style="background:blue; height: 50px; "></div>
+
+]]></html>
+                </example>
+               
+            </entry>

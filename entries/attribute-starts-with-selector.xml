@@ -1,0 +1,20 @@
+            <entry type='selector'   name="attributeStartsWith" return=""  >
+                <sample>[attribute^="value"]</sample>
+                 <signature><added>1.0</added>
+                <argument name="attribute" type="String">
+                    <desc>An attribute name.</desc>
+                </argument>
+                <argument name="value" type="String">
+                    <desc>An attribute value. Can be either an unquoted single word or a quoted string.</desc>
+                </argument></signature>
+                <desc>Selects elements that have the specified attribute with a value beginning exactly with a given string.</desc>
+                <longdesc><p>This selector can be useful for identifying elements in pages produced by server-side frameworks that produce HTML with systematic element IDs. However it will be slower than using a class selector so leverage classes, if you can, to group like elements.</p></longdesc>
+                <example>
+                    <desc>Finds all inputs with an attribute name that starts with 'news' and puts text in them.</desc>
+                    <code><![CDATA[$('input[name^="news"]').val('news here!');]]></code>
+                    <html><![CDATA[<input name="newsletter" />
+
+  <input name="milkman" />
+  <input name="newsboy" />]]></html>
+                </example>
+            </entry>

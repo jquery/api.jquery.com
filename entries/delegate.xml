@@ -1,0 +1,116 @@
+<entry type='method' name="delegate" return="jQuery">
+  <desc>Attach a handler to one or more events for all elements that match the selector, now or in the future, based on a specific set of root elements.</desc>
+  <signature>
+    <added>1.4.2</added>
+    <argument name="selector" type="String">
+      <desc>A selector to filter the elements that trigger the event.</desc>
+    </argument>
+    <argument name="eventType" type="String">
+      <desc>A string containing one or more space-separated JavaScript event types, such as "click" or "keydown," or custom event names.</desc>
+    </argument>
+    <argument name="handler(eventObject)" type="Function">
+      <desc>A function to execute at the time the event is triggered.</desc>
+    </argument>
+  </signature>
+  <signature>
+    <added>1.4.2</added>
+    <argument name="selector" type="String">
+      <desc>A selector to filter the elements that trigger the event.</desc>
+    </argument>
+    <argument name="eventType" type="String">
+      <desc>A string containing one or more space-separated JavaScript event types, such as "click" or "keydown," or custom event names.</desc>
+    </argument>
+    <argument name="eventData" type="Object">
+      <desc>A map of data that will be passed to the event handler.</desc>
+    </argument>
+    <argument name="handler(eventObject)" type="Function">
+      <desc>A function to execute at the time the event is triggered.</desc>
+    </argument>
+  </signature>
+  <signature>
+    <added>1.4.3</added>
+    <argument name="selector" type="String">
+      <desc>A selector to filter the elements that trigger the event.</desc>
+    </argument>
+    <argument name="events" type="Map">
+      <desc>A map of one or more event types and functions to execute for them.</desc>
+    </argument>
+  </signature>
+<longdesc>
+  <p>As of jQuery 1.7, <code>.delegate()</code> has been superseded by the <a href="http://api.jquery.com/on">.on()</a> method. For earlier versions, however, it remains the most effective means to use event delegation. More information on event binding and delegation is in the <a href="http://api.jquery.com/on">.on()</a> method. In general, these are the equivalent templates for the two methods:</p>
+ <pre>
+$(elements).delegate(<em>selector</em>, <em>events</em>, <em>data</em>, <em>handler</em>);  // jQuery 1.4.3+
+$(elements).on(<em>events</em>, <em>selector</em>, <em>data</em>, <em>handler</em>);        // jQuery 1.7+
+ </pre>
+ <p>For example, the following <code>.delegate()</code> code:</p>
+
+<pre>$("table").delegate("td", "click", function() {
+  $(this).toggleClass("chosen");
+});</pre>
+
+<p>is equivalent to the following code written using <code>.on()</code>:</p>
+
+<pre>$("table").on("click", "td", function() {
+  $(this).toggleClass("chosen");
+});</pre>
+
+<p>To remove events attached with <code>delegate()</code>, see  the <a href="http://api.jquery.com/undelegate">.undelegate()</a> method.</p>
+<p>Passing and handling event data works the same way as it does for <code>.on()</code>.</p>
+</longdesc>
+  <example>
+    <desc>Click a paragraph to add another. Note that .delegate() attaches a click event handler to all paragraphs - even new ones.</desc>
+    <code><![CDATA[
+    $("body").delegate("p", "click", function(){
+      $(this).after("<p>Another paragraph!</p>");
+    });
+]]></code>
+  <css><![CDATA[
+  p { background:yellow; font-weight:bold; cursor:pointer; 
+      padding:5px; }
+  p.over { background: #ccc; }
+  span { color:red; }
+  ]]></css>
+  <html><![CDATA[<p>Click me!</p>
+
+  <span></span>]]></html>
+  </example>
+  <example>
+    <desc>To display each paragraph's text in an alert box whenever it is clicked:</desc>
+    <code><![CDATA[$("body").delegate("p", "click", function(){
+  alert( $(this).text() );
+});]]></code>
+  </example>
+  <example>
+    <desc>To cancel a default action and prevent it from bubbling up, return false:</desc>
+    <code><![CDATA[$("body").delegate("a", "click", function() { return false; })]]></code>
+  </example>
+  <example>
+    <desc>To cancel only the default action by using the preventDefault method.</desc>
+    <code><![CDATA[$("body").delegate("a", "click", function(event){
+  event.preventDefault();
+});]]></code>
+  </example>
+  <example>
+    <desc>Can bind custom events too.</desc>
+    <code><![CDATA[
+
+    $("body").delegate("p", "myCustomEvent", function(e, myName, myValue){
+      $(this).text("Hi there!");
+      $("span").stop().css("opacity", 1)
+               .text("myName = " + myName)
+               .fadeIn(30).fadeOut(1000);
+    });
+    $("button").click(function () {
+      $("p").trigger("myCustomEvent");
+    });
+
+]]></code>
+  <css><![CDATA[
+  p { color:red; }
+  span { color:blue; }
+  ]]></css>
+  <html><![CDATA[<p>Has an attached custom event.</p>
+  <button>Trigger custom event</button>
+  <span style="display:none;"></span>]]></html>
+  </example>
+</entry>

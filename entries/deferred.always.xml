@@ -1,0 +1,25 @@
+<entry name="deferred.always" type="method" return="Deferred">
+  <signature>
+    <added>1.6</added>
+    <argument name="alwaysCallbacks" type="Function">
+      <desc>
+        A function, or array of functions, that is called when the Deferred is resolved or rejected.
+      </desc>
+    </argument>
+    <argument name="alwaysCallbacks" type="Function" optional="true">
+      <desc>
+        Optional additional functions, or arrays of functions, that are called when the Deferred is resolved or rejected.
+      </desc>
+    </argument>
+  </signature>
+  <desc> Add handlers to be called when the Deferred object is either resolved or rejected. </desc>
+  <longdesc> <p>The argument can be either a single function or an array of functions. When the Deferred is resolved or rejected, the <code>alwaysCallbacks</code> are called. Since <code>deferred.always()</code> returns the Deferred object, other methods of the Deferred object can be chained to this one, including additional <code>.always()</code> methods. When the Deferred is resolved or rejected, callbacks are executed in the order they were added, using the arguments provided to the <a href="/deferred.resolve/"><code>resolve</code></a>, <a href="/deferred.reject/"><code>reject</code></a>, <a href="/deferred.resolveWith/"><code>resolveWith</code></a> or <a href="/deferred.rejectWith/"><code>rejectWith</code></a> method calls. For more information, see the documentation for <a href="/category/deferred-object/">Deferred object</a>.</p>  </longdesc>
+  <example>
+    <desc>Since the <a href="http://api.jquery.com/jQuery.get/"><code>jQuery.get()</code></a> method returns a <code>jqXHR</code> object, which is derived from a Deferred object, we can attach a callback for both success and error using the <code>deferred.always()</code> method.</desc>
+    <code><![CDATA[
+$.get("test.php").always( function() { 
+  alert("$.get completed with success or error callback arguments"); 
+} );
+]]></code>
+    </example>
+  </entry>

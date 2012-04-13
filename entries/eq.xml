@@ -1,0 +1,61 @@
+            <entry type='method' name="eq" return="jQuery">
+              <signature>
+                <added>1.1.2</added>
+                <argument name="index" type="Integer">
+                    <desc>An integer indicating the 0-based position of the element. </desc>
+                </argument>
+              </signature>
+              <signature>
+                <added>1.4</added>
+                <argument name="-index" type="Integer">
+                    <desc>An integer indicating the position of the element, counting backwards  from the last element in the set. </desc>
+                </argument>
+              </signature>
+              <desc>Reduce the set of matched elements to the one at the specified index.</desc>
+              <longdesc><p>Given a jQuery object that represents a set of DOM elements, the <code>.eq()</code> method constructs a new jQuery object from one element within that set. The supplied index identifies the position of this element in the set. </p>
+<p>Consider a page with a simple list on it:</p>
+<pre>
+  &lt;ul&gt;
+    &lt;li&gt;list item 1&lt;/li&gt;
+    &lt;li&gt;list item 2&lt;/li&gt;
+    &lt;li&gt;list item 3&lt;/li&gt;
+    &lt;li&gt;list item 4&lt;/li&gt;
+    &lt;li&gt;list item 5&lt;/li&gt;
+  &lt;/ul>
+</pre>
+<p>We can apply this method to the set of list items:</p>
+<pre>
+  $('li').eq(2).css('background-color', 'red');
+</pre>
+<p>The result of this call is a red background for item 3. Note that the supplied index is zero-based, and refers to the position of the element within the jQuery object, not within the DOM tree.</p>
+<p>Providing a negative number indicates a position starting from the end of the set, rather than the beginning. For example:</p>
+<pre>
+  $('li').eq(-2).css('background-color', 'red');
+</pre>
+<p>This time list item 4 is turned red, since it is two from the end of the set.</p>
+<p>If an element cannot be found at the specified zero-based index, the method constructs a new jQuery object with an empty set and a <code>length</code> property of 0. </p>
+<pre>
+  $('li').eq(5).css('background-color', 'red');
+</pre>
+<p>Here, none of the list items is turned red, since <code>.eq(5)</code> indicates the sixth of five list items.</p>
+</longdesc>
+                <example>
+                    <desc>Turn the div with index 2 blue by adding an appropriate class.</desc>
+                    <code><![CDATA[
+
+    $("body").find("div").eq(2).addClass("blue");
+]]></code>
+                    <css><![CDATA[
+  div { width:60px; height:60px; margin:10px; float:left;
+        border:2px solid blue; }
+  .blue { background:blue; }
+  ]]></css>
+                    <html><![CDATA[<div></div>
+  <div></div>
+  <div></div>
+
+  <div></div>
+  <div></div>
+  <div></div>]]></html>
+                </example>
+            </entry>

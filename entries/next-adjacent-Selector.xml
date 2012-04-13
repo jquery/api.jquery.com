@@ -1,0 +1,30 @@
+            <entry type='selector'  name="next adjacent" return="" >
+                <sample>prev + next</sample>
+                 <signature>
+                   <added>1.0</added>
+                   <argument name="prev" type="Selector">
+                       <desc>Any valid selector.</desc>
+                   </argument>
+                <argument name="next" type="Selector">
+                    <desc>A selector to match the element that is next to the first selector.</desc>
+                </argument>
+                  </signature>
+                <desc>Selects all next elements matching "next" that are immediately preceded by a sibling "prev".</desc>
+                <longdesc>
+<p>One important point to consider with both the next adjacent sibling selector (<code>prev + next</code>) and the general sibling selector (<code>prev ~ siblings</code>) is that the elements on either side of the combinator must share the same parent.</p></longdesc>
+                <example>
+                    <desc>Finds all inputs that are next to a label.</desc>
+                    <code><![CDATA[$("label + input").css("color", "blue").val("Labeled!")]]></code>
+                    <html><![CDATA[<form>
+
+    <label>Name:</label>
+    <input name="name" />
+    <fieldset>
+      <label>Newsletter:</label>
+
+      <input name="newsletter" />
+    </fieldset>
+  </form>
+  <input name="none" />]]></html>
+                </example>
+            </entry>

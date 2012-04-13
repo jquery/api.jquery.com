@@ -1,0 +1,44 @@
+            <entry type='selector'   name="radio" return="">
+                <sample>:radio</sample>
+                 <signature><added>1.0</added> </signature>
+                <desc>Selects all  elements of type radio.</desc>
+                <longdesc><p><code>$(':radio')</code> is equivalent to <code>$('[type=radio]')</code>. As with other pseudo-class selectors (those that begin with a ":") it is recommended to precede it with a tag name or some other selector; otherwise, the universal selector ("*") is implied. In other words, the bare <code>$(':radio')</code> is equivalent to <code>$('*:radio')</code>, so <code>$('input:radio')</code> should be used instead. </p>
+<p>To select a set of associated radio buttons, you might use: <code>$('input[name=gender]:radio')</code></p></longdesc>
+                <example>
+                    <desc>Finds all radio inputs.</desc>
+                    <code><![CDATA[
+
+    var input = $("form input:radio").wrap('<span></span>').parent().css({background:"yellow", border:"3px red solid"});
+    $("div").text("For this type jQuery found " + input.length + ".")
+            .css("color", "red");
+    $("form").submit(function () { return false; }); // so it won't submit
+
+]]></code>
+                    <css><![CDATA[
+  textarea { height:25px; }
+  ]]></css>
+                    <html><![CDATA[<form>
+    <input type="button" value="Input Button"/>
+    <input type="checkbox" />
+
+    <input type="file" />
+    <input type="hidden" />
+    <input type="image" />
+
+    <input type="password" />
+    <input type="radio" name="asdf" />
+    <input type="radio" name="asdf" />
+
+    <input type="reset" />
+    <input type="submit" />
+    <input type="text" />
+
+    <select><option>Option<option/></select>
+    <textarea></textarea>
+    <button>Button</button>
+  </form>
+
+  <div>
+  </div>]]></html>
+                </example>
+            </entry>

@@ -1,0 +1,95 @@
+<entries>
+  <entry type='method' name="width" return="Integer">
+  <signature>
+    <added>1.0</added>
+  </signature>
+   <desc>Get the current computed width for the first element in the set of matched elements.</desc>
+   <longdesc>
+     <p>The difference between <code>.css(width)</code> and <code>.width()</code> is that the latter returns a unit-less pixel value (for example, <code>400</code>) while the former returns a value with units intact (for example, <code>400px</code>). The <code>.width()</code> method is recommended when an element's width needs to be used in a mathematical calculation.</p>
+    <p class="image"><img src="/images/0042_04_04.png"/></p>
+    <p>This method is also able to find the width of the window and document.</p>
+
+<pre>$(window).width();   // returns width of browser viewport
+$(document).width(); // returns width of HTML document</pre>
+
+<p>Note that <code>.width()</code> will always return the content width, regardless of the value of the CSS <code>box-sizing</code> property.</p>
+</longdesc>
+<example>
+  <desc>Show various widths.  Note the values are from the iframe so might be smaller than you expected.  The yellow highlight shows the iframe body.</desc>
+<code><![CDATA[
+function showWidth(ele, w) {
+  $("div").text("The width for the " + ele + 
+                " is " + w + "px.");
+}
+$("#getp").click(function () { 
+  showWidth("paragraph", $("p").width()); 
+});
+$("#getd").click(function () { 
+  showWidth("document", $(document).width()); 
+});
+$("#getw").click(function () { 
+  showWidth("window", $(window).width()); 
+});
+
+]]></code>
+<css><![CDATA[
+  body { background:yellow; }
+  button { font-size:12px; margin:2px; }
+  p { width:150px; border:1px red solid; }
+  div { color:red; font-weight:bold;  }
+  ]]></css>
+<html><![CDATA[<button id="getp">Get Paragraph Width</button>
+  <button id="getd">Get Document Width</button>
+  <button id="getw">Get Window Width</button>
+
+  <div>&nbsp;</div>
+  <p>
+    Sample paragraph to test width
+  </p>]]></html>
+</example>
+</entry>
+<entry type='method' name="width" return="jQuery">
+  <signature>
+    <added>1.0</added>
+    <argument name="value" type="String, Number">
+      <desc>An integer representing the number of pixels, or an integer along with an optional unit of measure appended (as a string).</desc>
+    </argument>
+  </signature>
+  <signature>
+    <added>1.4.1</added>
+      <argument name="function(index, width)" type="Function">
+        <desc>A function returning the width to set. Receives the index position of the element in the set and the old width as arguments. Within the function, <code>this</code> refers to the current element in the set.</desc>
+      </argument>
+    </signature>
+    <desc>Set the CSS width of each element in the set of matched elements.</desc>
+    <longdesc>
+      <p>When calling <code>.width("value")</code>, the value can be either a string (number and unit) or a number. If only a number is provided for the value, jQuery assumes a pixel unit. If a string is provided, however, any valid CSS measurement may be used for the width (such as <code>100px</code>, <code>50%</code>, or <code>auto</code>). Note that in modern browsers, the CSS width property does not include padding, border, or margin, unless the <code>box-sizing</code> CSS property is used.</p>
+    <p>If no explicit unit is specified (like "em" or "%") then "px" is assumed.</p>
+    <p>Note that <code>.width("value")</code> sets the width of the box in accordance with the CSS <code>box-sizing</code> property. Changing this property to <code>border-box</code> will cause this function to change the <code>outerWidth</code> of the box instead of the content width.</p>
+  </longdesc>
+<example>
+<desc>Change the width of each div the first time it is clicked (and change its color).</desc>
+<code><![CDATA[
+(function() {
+  var modWidth = 50;
+  $("div").one('click', function () {
+    $(this).width(modWidth).addClass("mod");
+  modWidth -= 8;
+  });
+})();
+]]></code>
+<css><![CDATA[
+div { width: 70px; height: 50px; float:left; margin: 5px;
+        background: red; cursor: pointer; }
+.mod { background: blue; cursor: default; }
+  ]]></css>
+<html><![CDATA[
+  <div>d</div>
+  <div>d</div>
+  <div>d</div>
+  <div>d</div>
+  <div>d</div>
+]]></html>
+</example>
+</entry>
+</entries>

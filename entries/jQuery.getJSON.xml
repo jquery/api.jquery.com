@@ -1,0 +1,107 @@
+<entry type='method' name="jQuery.getJSON" return="jqXHR">
+  <signature>
+    <added>1.0</added>
+    <argument name="url" type="String">
+      <desc>A string containing the URL to which the request is sent.</desc>
+    </argument>
+    <argument name="data" optional="true" type="Map">
+      <desc>A map or string that is sent to the server with the request.</desc>
+    </argument>
+    <argument name="success(data, textStatus, jqXHR)" optional="true" type="Function">
+      <desc>A callback function that is executed if the request succeeds.</desc>
+    </argument>
+  </signature>
+  <desc>Load JSON-encoded data from the server using a GET HTTP request.</desc>
+  <longdesc>
+    <p>This is a shorthand Ajax function, which is equivalent to:</p>
+        <pre>$.ajax({
+  url: <em>url</em>,
+  dataType: 'json',
+  data: <em>data</em>,
+  success: <em>callback</em>
+});
+</pre>
+    <p>Data that is sent to the server is appended to the URL as a query string. If the value of the <code>data</code> parameter is an object (map), it is converted to a string and url-encoded before it is appended to the URL.</p>
+
+  <p>Most implementations will specify a success handler:</p>
+  <pre>$.getJSON('ajax/test.json', function(data) {
+  var items = [];
+
+  $.each(data, function(key, val) {
+    items.push('&lt;li id="' + key + '"&gt;' + val + '&lt;/li&gt;');
+  });
+
+  $('&lt;ul/&gt;', {
+    'class': 'my-new-list',
+    html: items.join('')
+  }).appendTo('body');
+});
+</pre>
+<p>This example, of course, relies on the structure of the JSON file:</p>
+  <pre>{
+  "one": "Singular sensation",
+  "two": "Beady little eyes",
+  "three": "Little birds pitch by my doorstep"
+}
+</pre>
+<p>Using this structure, the example loops through the requested data, builds an unordered list, and appends it to the body.</p>
+<p>The <code>success</code> callback is passed the returned data, which is typically a JavaScript object or array as defined by the JSON structure and parsed using the <code><a href="/jQuery.parseJSON">$.parseJSON()</a></code> method. It is also passed the text status of the response.</p>
+<p><strong>As of jQuery 1.5</strong>, the <code>success</code> callback function receives a <a href="http://api.jquery.com/jQuery.get/#jqxhr-object">"jqXHR" object</a> (in <strong>jQuery 1.4</strong>, it received the <code>XMLHttpRequest</code> object). However, since JSONP and cross-domain GET requests do not use <abbr title="XMLHTTPRequest">XHR</abbr>, in those cases the <code>jqXHR</code> and <code>textStatus</code> parameters passed to the success callback are undefined.</p>
+  <blockquote>
+    <p><strong>Important:</strong> As of jQuery 1.4, if the JSON file contains a syntax error, the request will usually fail silently. Avoid frequent hand-editing of JSON data for this reason. JSON is a data-interchange format with syntax rules that are stricter than those of JavaScript's object literal notation. For example, all strings represented in JSON, whether they are properties or values, must be enclosed in double-quotes. For details on the JSON format, see <a href="http://json.org/">http://json.org/</a>.</p>
+  </blockquote>
+  <h4 id="jsonp">JSONP</h4>
+  <p>If the URL includes the string "callback=?" (or similar, as defined by the server-side API), the request is treated as JSONP instead. See the discussion of the <code>jsonp</code> data type in <code><a href="http://api.jquery.com/jQuery.ajax/">$.ajax()</a></code> for more details.</p>
+
+
+<h4 id="jqxhr-object">The jqXHR Object</h4>
+<p><strong>As of jQuery 1.5</strong>, all of jQuery's Ajax methods return  a superset of the <code>XMLHTTPRequest</code> object. This jQuery XHR object, or "jqXHR," returned by <code>$.getJSON()</code> implements the Promise interface, giving it all the properties, methods, and behavior of a Promise (see <a href="http://api.jquery.com/category/deferred-object/">Deferred object</a> for more information). For convenience and consistency with the callback names used by <code><a href="http://api.jquery.com/jQuery.ajax/">$.ajax()</a></code>, it provides <code>.error()</code>, <code>.success()</code>, and <code>.complete()</code> methods. These methods take a function argument that is called when the request terminates, and the function receives the same arguments as the correspondingly-named <code>$.ajax()</code> callback.</p>
+
+<p>The Promise interface in jQuery 1.5 also allows jQuery's Ajax methods, including <code>$.getJSON()</code>, to chain multiple <code>.success()</code>, <code>.complete()</code>, and <code>.error()</code> callbacks on a single request, and even to assign these callbacks after the request may have completed. If the request is already complete, the callback is fired immediately.</p>
+<pre>// Assign handlers immediately after making the request,
+// and remember the jqxhr object for this request
+var jqxhr = $.getJSON("example.json", function() {
+  alert("success");
+})
+.success(function() { alert("second success"); })
+.error(function() { alert("error"); })
+.complete(function() { alert("complete"); });
+
+// perform other work here ...
+
+// Set another completion function for the request above
+jqxhr.complete(function(){ alert("second complete"); });</pre>
+  </longdesc>
+  <example>
+    <desc>Loads the four most recent cat pictures from the Flickr JSONP API.</desc>
+<code><![CDATA[
+$.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",
+  {
+    tags: "cat",
+    tagmode: "any",
+    format: "json"
+  },
+  function(data) {
+    $.each(data.items, function(i,item){
+      $("<img/>").attr("src", item.media.m).appendTo("#images");
+      if ( i == 3 ) return false;
+    });
+  });]]></code>
+<html><![CDATA[<div id="images">
+
+</div>]]></html>
+<css><![CDATA[img{ height: 100px; float: left; }]]></css>
+</example>
+<example>
+  <desc>Load the JSON data from test.js and access a name from the returned JSON data.</desc>
+  <code><![CDATA[$.getJSON("test.js", function(json) {
+   alert("JSON Data: " + json.users[3].name);
+ });]]></code>
+</example>
+<example>
+  <desc>Load the JSON data from test.js, passing along additional data, and access a name from the returned JSON data.</desc>
+  <code><![CDATA[$.getJSON("test.js", { name: "John", time: "2pm" }, function(json) {
+    alert("JSON Data: " + json.users[3].name);
+    });]]></code>
+  </example>
+</entry>

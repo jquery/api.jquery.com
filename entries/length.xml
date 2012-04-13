@@ -1,0 +1,25 @@
+   <entry type='property' name="length" return="Number">
+                <signature><added>1.0</added></signature>
+                <desc>The number of elements in the jQuery object.</desc>
+                <longdesc><p>The number of elements currently matched. The .<a href='/size'>size()</a> method will return the same value.</p></longdesc>
+                <example>
+                    <desc>Count the divs.  Click to add more.</desc>
+                    <code><![CDATA[$(document.body).click(function () {
+      $(document.body).append($("<div>"));
+      var n = $("div").length;
+      $("span").text("There are " + n + " divs." +
+                     "Click to add more.");
+    }).trigger('click'); // trigger the click to start]]></code>
+                    <css><![CDATA[
+
+  body { cursor:pointer; }
+  div { width:50px; height:30px; margin:5px; float:left;
+        background:green; }
+  span { color:red; }
+  ]]></css>
+                    <html><![CDATA[<span></span>
+  <div></div>]]></html>
+                </example>
+            </entry>
+            
+            

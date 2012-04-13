@@ -1,0 +1,34 @@
+<entry type='property' name="event.data">
+    <signature>
+        <added>1.1</added>
+    </signature>
+    <desc>An optional data map passed to an event method when the current executing handler is bound.  </desc>
+    <longdesc>   </longdesc>
+<example>
+  <desc>Within a <code>for</code> loop, pass the value of <code>i</code> to the <code>.on()</code> method so that the current iteration's value is preserved. </desc>
+<html><![CDATA[
+<button> 0 </button>
+<button> 1 </button>
+<button> 2 </button>
+<button> 3 </button>
+<button> 4 </button>
+
+<div id="log"></div>
+]]></html>
+<code><![CDATA[
+var logDiv = $("#log");
+
+/* Note: This code is for demonstration purposes only. */
+for (var i = 0; i < 5; i++) {
+  $("button").eq(i).on("click", {value: i}, function(event) {
+    var msgs = [
+      "button = " + $(this).index(),
+      "event.data.value = " + event.data.value,
+      "i = " + i
+    ];
+    logDiv.append( msgs.join(", ") + "<br>" );
+  });
+}
+]]></code>
+</example>
+</entry>

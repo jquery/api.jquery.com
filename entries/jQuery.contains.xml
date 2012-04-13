@@ -1,0 +1,19 @@
+            <entry type='method' name="jQuery.contains" return="Boolean">
+                <signature>
+                  <added>1.4</added>
+                  <argument name="container" type="Element">
+                    <desc>The DOM element that may contain the other element.</desc>
+                  </argument>
+                  <argument name="contained" type="Element">
+                    <desc>The DOM element that may be contained by the other element.</desc>
+                  </argument>
+                </signature>
+                <desc>Check to see if a DOM element is within another DOM element.</desc>
+                <longdesc>
+<blockquote><p><strong>Note:</strong> The first argument <em>must</em> be a DOM element, not a jQuery object or plain JavaScript object.</p></blockquote></longdesc>
+                <example>
+                    <desc>Check if an element is inside another. Text and comment nodes are not supported.</desc>
+                    <code><![CDATA[jQuery.contains(document.documentElement, document.body); // true
+jQuery.contains(document.body, document.documentElement); // false]]></code>
+                </example>
+            </entry>

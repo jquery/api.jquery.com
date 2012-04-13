@@ -1,0 +1,35 @@
+            <entry type='selector'   name="first-child" return="" >
+                <sample>:first-child</sample>
+                 <signature><added>1.1.4</added> </signature>
+                <desc>Selects all elements that are the first child of their parent.</desc>
+                <longdesc><p>While <a href="/first-selector">:first</a> matches only a single element, the <code>:first-child</code> selector can match more than one: one for each parent. This is equivalent to <code>:nth-child(1)</code>.</p></longdesc>
+                <example>
+                    <desc>Finds the first span in each matched div to underline and add a hover state.</desc>
+                    <code><![CDATA[
+    $("div span:first-child")
+        .css("text-decoration", "underline")
+        .hover(function () {
+              $(this).addClass("sogreen");
+            }, function () {
+              $(this).removeClass("sogreen");
+            });
+
+]]></code>
+                    <css><![CDATA[
+  span { color:#008; }
+  span.sogreen { color:green; font-weight: bolder; }
+  ]]></css>
+                    <html><![CDATA[<div>
+    <span>John,</span>
+    <span>Karl,</span>
+    <span>Brandon</span>
+
+  </div>
+  <div>
+    <span>Glen,</span>
+    <span>Tane,</span>
+    <span>Ralph</span>
+
+  </div>]]></html>
+                </example>
+            </entry>

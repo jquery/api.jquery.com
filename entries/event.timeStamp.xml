@@ -1,0 +1,30 @@
+<entry type='property' name="event.timeStamp" return="Number">
+  <signature>
+    <added>1.2.6</added>
+  </signature>
+  <desc>The difference in milliseconds between the time the browser created the event and January 1, 1970.</desc>
+  <longdesc><p>This property can be useful for profiling event performance by getting the <code>event.timeStamp</code> value at two points in the code and noting the difference. To simply determine the current time inside an event handler, use <code>(new Date).getTime()</code> instead.</p> 
+<p>Note: Due to a <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=238041">bug open since 2004</a>, this value is not populated correctly in Firefox and it is not possible to know the time the event was created in that browser.</p>
+</longdesc>
+  <example>
+    <desc>Display the time since the click handler last executed.</desc>
+<css><![CDATA[
+div { height: 100px; width: 300px; margin: 10px; 
+      background-color: #ffd; overflow: auto; }
+]]></css>
+<code><![CDATA[
+var last, diff;
+$('div').click(function(event) {
+  if ( last ) {
+    diff = event.timeStamp - last
+    $('div').append('time since last event: ' + diff + '<br/>');
+  } else {
+    $('div').append('Click again.<br/>');
+  }
+  last = event.timeStamp;
+});  
+]]></code>
+<html><![CDATA[
+<div>Click.</div>]]></html>
+    </example>
+</entry>

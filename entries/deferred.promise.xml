@@ -1,0 +1,82 @@
+<entry name="deferred.promise" type="method" return="Promise">
+    <signature>
+        <added>1.5</added>
+        <argument name="target" type="Object" optional="true">
+            <desc>Object onto which the promise methods have to be attached</desc>
+        </argument>
+    </signature>
+    <desc> Return a Deferred's Promise object. </desc>
+    <longdesc> <p>The <code>deferred.promise()</code> method allows an asynchronous function to prevent other code from interfering with the progress or status of its internal request. The Promise exposes only the Deferred methods needed to attach additional handlers or determine the state (<code>then</code>, <code>done</code>, <code>fail</code>, <code>always</code>, <code>pipe</code>, <code>progress</code>, and <code>state</code>), but not ones that change the state (<code>resolve</code>, <code>reject</code>, <code>notify</code>, <code>resolveWith</code>, <code>rejectWith</code>, and <code>notifyWith</code>).</p>
+
+<p>If <code>target</code> is provided, <code>deferred.promise()</code> will attach the methods onto it and then return this object rather than create a new one. This can be useful to attach the Promise behavior to an object that already exists.</p>
+
+<p>If you are creating a Deferred, keep a reference to the Deferred so that it can be resolved or rejected at some point. Return <em>only</em> the Promise object via <code>deferred.promise()</code> so other code can register callbacks or inspect the current state.</p>
+<p>For more information, see the documentation for <a href="/category/deferred-object/">Deferred object</a>.</p>  
+</longdesc>
+   <example>
+        <desc>Create a Deferred and set two timer-based functions to either resolve or reject the Deferred after a random interval. Whichever one fires first "wins" and will call one of the callbacks. The second timeout has no effect since the Deferred is already complete (in a resolved or rejected state) from the first timeout action. Also set a timer-based progress notification function, and call a progress handler that adds "working..." to the document body.</desc>
+        <code><![CDATA[
+function asyncEvent(){
+    var dfd = new jQuery.Deferred();
+
+    // Resolve after a random interval
+    setTimeout(function(){
+        dfd.resolve("hurray");
+    }, Math.floor(400+Math.random()*2000));
+
+    // Reject after a random interval
+    setTimeout(function(){
+        dfd.reject("sorry");
+    }, Math.floor(400+Math.random()*2000));
+
+    // Show a "working..." message every half-second
+    setTimeout(function working(){
+        if ( dfd.state() === "pending" ) {
+            dfd.notify("working... ");
+            setTimeout(working, 500);
+        }
+    }, 1);
+
+    // Return the Promise so caller can't change the Deferred
+    return dfd.promise();
+}
+
+// Attach a done, fail, and progress handler for the asyncEvent
+$.when( asyncEvent() ).then(
+    function(status){
+        alert( status+', things are going well' );
+    },
+    function(status){
+        alert( status+', you fail this time' );
+    },
+    function(status){
+        $("body").append(status);
+    }
+);
+]]></code>
+    </example>
+<example>
+  <desc>Use the target argument to promote an existing object to a Promise:</desc>
+  <code><![CDATA[
+// Existing object
+var obj = {
+  hello: function( name ) {
+    alert( "Hello " + name );
+  }
+},
+// Create a Deferred
+defer = $.Deferred();
+
+// Set object as a promise
+defer.promise( obj );
+
+// Resolve the deferred
+defer.resolve( "John" );
+
+// Use the object as a Promise
+obj.done(function( name ) {
+  obj.hello( name ); // will alert "Hello John"
+}).hello( "Karl" ); // will alert "Hello Karl"
+]]></code>
+</example>
+</entry>

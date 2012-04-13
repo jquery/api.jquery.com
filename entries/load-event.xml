@@ -1,0 +1,57 @@
+<entries>
+<entry type='method' name="load" return="jQuery">
+  <desc>Bind an event handler to the "load" JavaScript event.</desc>
+  <signature>
+    <added>1.0</added>
+    <argument name="handler(eventObject)" type="Function">
+      <desc>A function to execute when the event is triggered.</desc>
+    </argument>
+  </signature>
+  <signature>
+    <added>1.4.3</added>
+    <argument name="eventData" type="Object" optional="true">
+      <desc>A map of data that will be passed to the event handler.</desc>
+    </argument>
+    <argument name="handler(eventObject)" type="Function">
+      <desc>A function to execute each time the event is triggered.</desc>
+    </argument>
+  </signature>
+<longdesc>
+  <p>This method is a shortcut for <code>.bind('load', handler)</code>.</p>
+  <p>The <code>load</code> event is sent to an element when it and all sub-elements have been completely loaded. This event can be sent to any element associated with a URL: images, scripts, frames, iframes, and the <code>window</code> object.</p>
+<p>For example, consider a page with a simple image:</p>
+<pre>&lt;img src="book.png" alt="Book" id="book" /&gt;</pre>
+<p>The event handler can be bound to the image:</p>
+<pre>$('#book').load(function() {
+  // Handler for .load() called.
+});</pre>
+<p>As soon as the image has been loaded, the handler is called.</p>
+<p>In general, it is not necessary to wait for all images to be fully loaded. If code can be executed earlier, it is usually best to place it in a handler sent to the <code>.ready()</code> method.
+</p>
+<blockquote><p>The Ajax module also has a method named <code><a href="/load">.load()</a></code>. Which one is fired depends on the set of arguments passed.</p></blockquote>
+<blockquote><p>
+<b>Caveats of the <code>load</code> event when used with images</b>
+<p>A common challenge developers attempt to solve using the <code>.load()</code> shortcut is to execute a function when an image (or collection of images) have completely loaded. There are several known caveats with this that should be noted. These are:</p>
+<ul><li>It doesn't work consistently nor reliably cross-browser</li>
+<li>It doesn't fire correctly in WebKit if the image src is set to the same src as before</li>
+<li>It doesn't correctly bubble up the DOM tree</li>
+<li>Can cease to fire for images that already live in the browser's cache</li>
+</ul></p></blockquote>
+<blockquote><p><strong>Note:</strong> The <code>.live()</code> and <code>.delegate()</code> methods cannot be used to detect the <code>load</code> event of an iframe. The load event does not correctly bubble up the parent document and the event.target isn't set by Firefox, IE9 or Chrome, which is required to do event delegation.</p></blockquote>
+</longdesc>
+                <example>
+                    <desc>Run a function when the page is fully loaded including graphics.</desc>
+                    <code><![CDATA[$(window).load(function () {
+  // run code
+});]]></code>
+                </example>
+                <example>
+                    <desc>Add the class bigImg to all images with height greater then 100 upon each image load.</desc>
+                    <code><![CDATA[$('img.userIcon').load(function(){
+  if($(this).height() > 100) {
+    $(this).addClass('bigImg');
+  }
+});]]></code>
+                </example>
+</entry>
+</entries>

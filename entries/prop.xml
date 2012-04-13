@@ -1,0 +1,135 @@
+
+<entries>
+<entry type='method' name="prop" return="String">
+  <signature>
+    <added>1.6</added>
+    <argument name="propertyName" type="String">
+      <desc>The name of the property to get.</desc>
+    </argument>
+  </signature>
+  <desc>Get the value of a property for the first element in the set of matched elements.</desc>
+  <longdesc><p>The <code>.prop()</code> method gets the property value for only the <em>first</em> element in the matched set. It returns <code>undefined</code> for the value of a property that has not been set, or if the matched set has no elements. To get the value for each element individually, use a looping construct such as jQuery's <code>.each()</code> or <code>.map()</code> method.</p>
+    <p>The difference between <em>attributes</em> and <em>properties</em> can be important in specific situations. <strong>Before jQuery 1.6</strong>, the <code><a href="http://api.jquery.com/attr/">.attr()</a></code> method sometimes took property values into account when retrieving some attributes, which could cause inconsistent behavior. <strong>As of jQuery 1.6</strong>, the <code>.prop()</code> method provides a way to explicitly retrieve property values, while <code>.attr()</code> retrieves attributes.</p>
+
+<p>For example, <code>selectedIndex</code>, <code>tagName</code>, <code>nodeName</code>, <code>nodeType</code>, <code>ownerDocument</code>, <code>defaultChecked</code>, and <code>defaultSelected</code> should be retrieved and set with the <code>.prop()</code> method. Prior to jQuery 1.6, these properties were retrievable with the <code>.attr()</code> method, but this was not within the scope of <code>attr</code>. These do not have corresponding attributes and are only properties.</p>
+
+<p>Concerning boolean attributes, consider a DOM element defined by the HTML markup <code>&lt;input type="checkbox" checked="checked" /&gt;</code>, and assume it is in a JavaScript variable named <code>elem</code>:</p>
+<table class="listing">
+ <tr>
+  <th><code>elem.checked</code></th>
+  <td><code>true</code> (Boolean) Will change with checkbox state</td>
+ </tr>
+ <tr>
+  <th><code>$(elem).prop("checked")</code></th>
+  <td><code>true</code> (Boolean) Will change with checkbox state</td>
+ </tr>
+ <tr>
+  <th><code>elem.getAttribute("checked")</code></th>
+  <td><code>"checked"</code> (String) Initial state of the checkbox; does not change</td>
+ </tr>
+ <tr>
+  <th><code>$(elem).attr("checked")</code><em>(1.6)</em></th>
+  <td><code>"checked"</code> (String) Initial state of the checkbox; does not change</td>
+ </tr>
+ <tr>
+  <th><code>$(elem).attr("checked")</code><em>(1.6.1+)</em></th>
+  <td><code>"checked"</code> (String) Will change with checkbox state</td>
+ </tr>
+ <tr>
+  <th><code>$(elem).attr("checked")</code><em>(pre-1.6)</em></th>
+  <td><code>true</code> (Boolean) Changed with checkbox state</td>
+ </tr>
+</table>
+<p>
+According to the <a href="http://www.w3.org/TR/html401/interact/forms.html#h-17.4">W3C forms specification</a>, the <code>checked</code> attribute is a <em><a href="http://www.w3.org/TR/html4/intro/sgmltut.html#h-3.3.4.2">boolean attribute</a></em>, which means the corresponding property is true if the attribute is present at all—even if, for example, the attribute has no value or an empty string value. The preferred cross-browser-compatible way to determine if a checkbox is checked is to check for a "truthy" value on the element's property using one of the following:</p>
+  <ul>
+    <li><code>if ( elem.checked )</code></li>
+    <li><code>if ( $(elem).prop("checked") )</code></li>
+    <li><code>if ( $(elem).is(":checked") )</code></li>
+  </ul>
+<p>If using jQuery 1.6, the code <code>if ( $(elem).attr("checked") )</code> will retrieve the actual content <em>attribute</em>, which does not change as the checkbox is checked and unchecked. It is meant only to store the default or initial value of the checked property. To maintain backwards compatability, the <code>.attr()</code> method in jQuery 1.6.1+ will retrieve and update the property for you so no code for boolean attributes is required to be changed to <code>.prop()</code>.  Nevertheless, the preferred way to retrieve a checked value is with one of the options listed above. To see how this works in the latest jQuery, check/uncheck the checkbox in the example below.</p>
+  </longdesc>
+  <example>
+    <desc>Display the checked property and attribute of a checkbox as it changes.</desc>
+    <code><![CDATA[
+$("input").change(function() {
+  var $input = $(this);
+  $("p").html(".attr('checked'): <b>" + $input.attr('checked') + "</b><br>"
+              + ".prop('checked'): <b>" + $input.prop('checked') + "</b><br>"
+              + ".is(':checked'): <b>" + $input.is(':checked') ) + "</b>";
+}).change();
+]]></code>
+<css><![CDATA[
+  p { margin: 20px 0 0 }
+  b { color: blue; }
+]]></css>
+  <html><![CDATA[
+<input id="check1" type="checkbox" checked="checked">
+<label for="check1">Check me</label>
+<p></p>
+]]></html>
+</example>
+
+</entry>
+<entry type='method' name="prop" return="jQuery">
+  <signature>
+    <added>1.6</added>
+    <argument name="propertyName" type="String">
+      <desc>The name of the property to set.</desc>
+    </argument>
+    <argument name="value" type="String, Number, Boolean">
+      <desc>A value to set for the property.</desc>
+    </argument>
+  </signature>
+  <signature>
+    <added>1.6</added>
+    <argument name="map" type="Map">
+      <desc>A map of property-value pairs to set.</desc>
+    </argument>
+  </signature>
+  <signature>
+    <added>1.6</added>
+    <argument name="propertyName" type="String">
+      <desc>The name of the property to set.</desc>
+    </argument>
+    <argument name="function(index, oldPropertyValue)" type="Function">
+      <desc>A function returning the value to set. Receives the index position of the element in the set and the old property value as arguments. Within the function, the keyword <code>this</code> refers to the current element.</desc>
+    </argument>
+  </signature>
+  <desc>Set one or more properties for the set of matched elements.</desc>
+  <longdesc><p>The <code>.prop()</code> method is a convenient way to set the value of properties—especially when setting multiple properties, using values returned by a function, or setting values on multiple elements at once. It should be used when setting <code>selectedIndex</code>, <code>tagName</code>, <code>nodeName</code>, <code>nodeType</code>, <code>ownerDocument</code>, <code>defaultChecked</code>, or <code>defaultSelected</code>. Since jQuery 1.6, these properties can no longer be set with the <code>.attr()</code> method. They do not have corresponding attributes and are only properties.</p>
+  <p>Properties generally affect the dynamic state of a DOM element without changing the serialized HTML attribute. Examples include the <code>value</code> property of input elements, the <code>disabled</code> property of inputs and buttons, or the <code>checked</code> property of a checkbox. The <code>.prop()</code> method should be used to set disabled and checked instead of the <code><a href="http://api.jquery.com/attr">.attr()</a></code> method. The <code><a href="http://api.jquery.com/val">.val()</a></code> method should be used for getting and setting value.</p>
+<pre>
+$("input").prop("disabled", false);
+$("input").prop("checked", true);
+$("input").val("someValue");
+</pre>
+<p><strong>Important:</strong> the <code><a href="http://api.jquery.com/removeProp">.removeProp()</a></code> method should not be used to set these properties to false. Once a native property is removed, it cannot be added again. See <code><a href="http://api.jquery.com/removeProp">.removeProp()</a></code> for more information.</p>
+
+<h4 id="computed-prop-values">Computed property values</h4>
+<p>By using a function to set properties, you can compute the value based on other properties of the element. For example, to toggle all checkboxes based off their individual values:</p>
+<pre>$("input[type='checkbox']").prop("checked", function( i, val ) {
+  return !val;
+});</pre>
+  <p><strong>Note: </strong>If nothing is returned in the setter function (ie. <code>function(index, prop){})</code>, or if <code>undefined</code> is returned, the current value is not changed. This is useful for selectively setting values only when certain criteria are met.</p>
+</longdesc>
+  <example>
+    <desc>Disable all checkboxes on the page.</desc>
+    <code><![CDATA[
+$("input[type='checkbox']").prop({
+  disabled: true
+});
+]]></code>
+    <css><![CDATA[
+  img { padding:10px; }
+  div { color:red; font-size:24px; }
+]]></css>
+  <html><![CDATA[
+  <input type="checkbox" checked="checked" />
+  <input type="checkbox" />
+  <input type="checkbox" />
+  <input type="checkbox"  checked="checked" />
+]]></html>
+  </example>
+  </entry>
+</entries>

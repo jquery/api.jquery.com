@@ -1,0 +1,133 @@
+<entry type='method' name="fadeOut" return="jQuery">
+  <desc>Hide the matched elements by fading them to transparent.</desc>
+  <signature>
+    <added>1.0</added>
+    <argument name="duration" type="String,Number" optional="true">
+      <desc>A string or number determining how long the animation will run.</desc>
+    </argument>
+    <argument name="callback" type="Callback" optional="true">
+      <desc>A function to call once the animation is complete.</desc>
+    </argument>
+  </signature>
+  <signature>
+    <added>1.4.3</added>
+    <argument name="duration" type="String,Number" optional="true">
+      <desc>A string or number determining how long the animation will run.</desc>
+    </argument>
+    <argument name="easing" type="String" optional="true">
+      <desc>A string indicating which easing function to use for the transition.</desc>
+    </argument>
+    <argument name="callback" type="Callback" optional="true">
+      <desc>A function to call once the animation is complete.</desc>
+    </argument>
+  </signature>
+  <longdesc>
+    <p>The <code>.fadeOut()</code> method animates the opacity of the matched elements. Once the opacity reaches 0, the <code>display</code> style property is set to <code>none</code>, so the element no longer affects the layout of the page.</p>
+    <p>Durations are given in milliseconds; higher values indicate slower animations, not faster ones. The strings <code>'fast'</code> and <code>'slow'</code> can be supplied to indicate durations of <code>200</code> and <code>600</code> milliseconds, respectively. If any other string is supplied, or if the <code>duration</code> parameter is omitted, the default duration of  <code>400</code> milliseconds is used.</p>
+    <p>We can animate any element, such as a simple image:</p>
+<pre>&lt;div id="clickme"&gt;
+  Click here
+&lt;/div&gt;
+&lt;img id="book" src="book.png" alt="" width="100" height="123" /&gt;</pre>
+<p>With the element initially shown, we can hide it slowly:</p>
+<pre>$('#clickme').click(function() {
+  $('#book').fadeOut('slow', function() {
+    // Animation complete.
+  });
+});</pre>
+    <p class="image four-across">
+      <img src="/images/0042_06_37.png" alt="" />
+      <img src="/images/0042_06_38.png" alt="" />
+      <img src="/images/0042_06_39.png" alt="" />
+      <img src="/images/0042_06_40.png" alt="" />
+    </p>
+<blockquote>
+<p><strong>Note: </strong>To avoid unnecessary DOM manipulation, <code>.fadeOut()</code> will not hide an element that is already considered hidden. For information on which elements jQuery considers hidden, see <a href="http://api.jquery.com/hidden-selector"> :hidden Selector</a>.</p>
+</blockquote>
+    <h4 id="easing">Easing</h4>
+    <p><strong>As of jQuery 1.4.3</strong>, an optional string naming an easing function may be used. Easing functions specify the speed at which the animation progresses at different points within the animation. The only easing implementations in the jQuery library are the default, called <code>swing</code>, and one that progresses at a constant pace, called <code>linear</code>. More easing functions are available with the use of plug-ins, most notably the <a href="http://jqueryui.com">jQuery UI suite</a>.</p>
+    <h4 id="callback-function">Callback Function</h4>
+    <p>If supplied, the callback is fired once the animation is complete. This can be useful for stringing different animations together in sequence. The callback is not sent any arguments, but <code>this</code> is set to the DOM element being animated. If multiple elements are animated, it is important to note that the callback is executed once per matched element, not once for the animation as a whole.</p>
+<p><strong>As of jQuery 1.6</strong>, the <code><a href="http://api.jquery.com/promise/">.promise()</a></code> method can be used in conjunction with the <code><a href="http://api.jquery.com/deferred.done/">deferred.done()</a></code> method to execute a single callback for the animation as a whole when <em>all</em> matching elements have completed their animations ( See the <a href="http://api.jquery.com/promise/#example-1">example for .promise()</a> ).  </p>
+  </longdesc>
+      <example>
+          <desc>Animates all paragraphs to fade out, completing the animation within 600 milliseconds.</desc>
+          <code><![CDATA[
+  $("p").click(function () {
+  $("p").fadeOut("slow");
+  });
+  ]]></code>
+          <css><![CDATA[
+  p { font-size:150%; cursor:pointer; }
+  ]]></css>
+          <html><![CDATA[<p>
+  If you click on this paragraph
+  you'll see it just fade away.
+  </p>]]></html>
+      </example>
+      <example>
+          <desc>Fades out spans in one section that you click on.</desc>
+          <code><![CDATA[
+
+  $("span").click(function () {
+  $(this).fadeOut(1000, function () {
+  $("div").text("'" + $(this).text() + "' has faded!");
+  $(this).remove();
+  });
+  });
+  $("span").hover(function () {
+  $(this).addClass("hilite");
+  }, function () {
+  $(this).removeClass("hilite");
+  });
+
+  ]]></code>
+          <css><![CDATA[
+  span { cursor:pointer; }
+  span.hilite { background:yellow; }
+  div { display:inline; color:red; }
+  ]]></css>
+          <html><![CDATA[<h3>Find the modifiers - <div></div></h3>
+  <p>
+  If you <span>really</span> want to go outside
+  <span>in the cold</span> then make sure to wear
+  your <span>warm</span> jacket given to you by
+  your <span>favorite</span> teacher.
+  </p>]]></html>
+      </example>
+<example>
+<desc>Fades out two divs, one with a "linear" easing and one with the default, "swing," easing.</desc>
+<code><![CDATA[
+$("#btn1").click(function() {
+  function complete() {
+    $("<div/>").text(this.id).appendTo("#log");
+  }
+  
+  $("#box1").fadeOut(1600, "linear", complete);
+  $("#box2").fadeOut(1600, complete);
+});
+
+$("#btn2").click(function() {
+  $("div").show();
+  $("#log").empty();
+});
+
+]]></code>
+ <css><![CDATA[
+.box,
+button { float:left; margin:5px 10px 5px 0; }
+.box { height:80px; width:80px; background:#090; }
+#log { clear:left; }
+
+]]></css>
+ <html><![CDATA[
+<button id="btn1">fade out</button>
+<button id="btn2">show</button>
+
+<div id="log"></div>
+
+<div id="box1" class="box">linear</div>
+<div id="box2" class="box">swing</div>
+]]></html>
+</example>
+</entry>

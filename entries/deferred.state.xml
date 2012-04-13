@@ -1,0 +1,15 @@
+<entry name="deferred.state" type="method" return="String">
+  <signature>
+    <added>1.7</added>
+  </signature>
+  <desc>Determine the current state of a Deferred object. </desc>
+  <longdesc>
+    <p>The deferred.state() method returns a string representing the current state of the Deferred object. The Deferred object can be in one of three states:</p>
+    <ul>
+      <li><strong>"pending"</strong>: The Deferred object is not yet in a completed state (neither "rejected" nor "resolved").</li>
+      <li><strong>"resolved"</strong>: The Deferred object is in the resolved state, meaning that either <a href="http://api.jquery.com/deferred.resolve/"><code>deferred.resolve()</code></a> or <a href="http://api.jquery.com/deferred.resolveWith/"><code>deferred.resolveWith()</code></a> has been called for the object and the doneCallbacks have been called (or are in the process of being called). </li>
+      <li><strong>"rejected"</strong>: The Deferred object is in the rejected state, meaning that either <a href="http://api.jquery.com/deferred.reject/"><code>deferred.reject()</code></a> or <a href="http://api.jquery.com/deferred.rejectWith/"><code>deferred.rejectWith()</code></a> has been called for the object and the failCallbacks have been called (or are in the process of being called).</li>
+    </ul>
+    <p>This method is primarily useful for debugging to determine, for example, whether a Deferred has already been resolved even though you are inside code that intended to reject it.</p>
+  </longdesc>
+</entry>

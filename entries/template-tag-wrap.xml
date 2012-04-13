@@ -1,0 +1,369 @@
+<entry type="template-tag" name="{{wrap( [data], [options] ) template}} content {{/wrap}}" plugin="jQuery Templates">
+<download>
+<p>This documentation topic concerns the <em> jQuery Templates</em> plugin (jquery-tmpl), which can be downloaded from: <a href="http://github.com/jquery/jquery-tmpl">http://github.com/jquery/jquery-tmpl</a>.</p>
+</download>
+<signature>
+<added>1.4.3</added>
+<argument name="template" type="String, Element, jQuery">
+<desc>The HTML markup or text to use as a template.</desc>
+</argument>
+<argument name="data" type="Object" optional="true">
+<desc>The data to render. This can be any JavaScript type, including Array or Object.</desc>
+</argument>
+<argument name="options" type="Options" optional="true">
+<desc>An optional map of user-defined key-value pairs. Extends the <code>tmplItem</code> data structure, available to the template during rendering.</desc>
+</argument>
+</signature>
+<desc>Used for composition of templates which incorporate wrapped HTML content. Rendered template items can combine wrapped HTML content with template markup.</desc>
+
+<longdesc>
+<p>Note: For information about how to render templates, see <a href="http://api.jquery.com/tmpl">.tmpl()</a> and <a href="http://api.jquery.com/jquery.tmpl">jQuery.tmpl()</a>.
+</p> 
+
+<h4>Template Tags</h4>
+<p>Template tags such as the <code>{{wrap}}</code> tag can be used within jQuery templates in addition to text and HTML markup, in order to enable a number of scenarios such as composition of templates, iteration over hierarchical data, parameterization of template rendering, etc. 
+</p>
+<p>
+Other available tags include: <a href="http://api.jquery.com/template-tag-equal">${}</a>, <a href="http://api.jquery.com/template-tag-each">{{each}}</a>, <a href="http://api.jquery.com/template-tag-if">{{if}}</a>, <a href="http://api.jquery.com/template-tag-else">{{else}}</a>, <a href="http://api.jquery.com/template-tag-html">{{html}}</a> and <a href="http://api.jquery.com/template-tag-tmpl">{{tmpl}}</a>. User-defined template tags can also be specified, by extending the <code>jQuery.tmpl.tag</code> map.</p> 
+
+<h4>The {{wrap}} and {{tmpl}} Template Tags</h4>
+
+<p>The <code>{{wrap}}</code> template tag is similar to the {{tmpl}} template tag, except that it provides additional support for incorporating wrapped HTML content into the rendered output. The use of the <code>template</code>, <code>data</code> and <code>options</code> parameters is the same for both tags. (See <a href="http://api.jquery.com/template-tag-tmpl">{{tmpl}}</a> for additional information and examples).
+</p>
+<p>When using <code>{{wrap}}</code> the <code>template</code> parameter will usually correspond to template markup which uses the <code>$item.html()</code> feature to incorporate the wrapped markup. The <code>template</code> parameter can be any of the following: </p>
+<ul>
+<li>A string containing markup.</li>
+<li>An HTML element (or jQuery object that wraps an element) whose content is to be used as the template.</li>
+<li>A string corresponding to the name of a named template (see <a href="http://api.jquery.com/jquery.template">jQuery.template()</a> and <a href="http://api.jquery.com/template">.template()</a>).</li>
+<li>A compiled-template function (see <a href="http://api.jquery.com/jquery.template">jQuery.template()</a> and <a href="http://api.jquery.com/template">.template()</a>).</li>
+</ul>
+
+<p>With <code>{{wrap}}</code>, the <code>data</code> parameter will often be unspecified, since the rendered output can be driven by the wrapped HTML rather than by data. If <code>data</code> is specified and is an array, the template is rendered once for each data item in the array. If <code>data</code> is an object, or if the <code>data</code> parameter is missing or null, a single template item is rendered.
+</p>
+
+<h4>Using the {{wrap}} Template Tag</h4>
+
+<p>
+The following example shows how to use <code>{{wrap}}</code> to render a nested template that incorporates the wrapped HTML. In this case the content of the <code>{{wrap}}</code> template tag is a set of <code>div</code> elements. The chosen template, <em>tableWrapper</em>, extracts each <code>div</code> and wraps it in a table cell.
+</p>
+<pre>
+&lt;script id="myTmpl" type="text/x-jquery-tmpl"&gt;
+    The following wraps some HTML content:
+    {{wrap "#tableWrapper"}}
+        &lt;div&gt;
+            First &lt;b&gt;content&lt;/b&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+            And &lt;em&gt;more&lt;/em&gt; &lt;b&gt;content&lt;/b&gt;...
+        &lt;/div&gt;
+    {{/wrap}}
+&lt;/script&gt;
+
+&lt;script id="tableWrapper" type="text/x-jquery-tmpl"&gt;
+    &lt;table&gt;&lt;tbody&gt;
+        &lt;tr&gt;
+            {{each $item.html("div")}}
+                &lt;td&gt;
+                    {{html $value}}
+                &lt;/td&gt;
+            {{/each}}
+        &lt;/tr&gt;
+    &lt;/tbody&gt;&lt;/table&gt;
+&lt;/script&gt;
+</pre>
+
+<h4>The $item.html() Method</h4>
+
+<p>
+Any HTML content between the opening and closing tags of <code>{{wrap}}</code> is made available to the template as a <code>$item.html( filter, textOnly )</code> method on the template item.
+</p>
+<p>
+The return value of <code>$item.html()</code> is a filtered array of markup strings taken from the wrapped content:
+</p>
+<ul>
+  <li>Use <code>$item.html()</code> without parameters to return all the top-level elements of the wrapped HTML content.</li>
+  <li>Pass a selector string as <code>filter</code> parameter to return a filtered subset of the top-level elements. (The default value of <code>filter</code> is <code>"*"</code>).</li>
+  <li>If <code>textOnly</code> is set to true <code>$item.html( filter, textOnly )</code> returns the inner text of the filtered subset of top-level elements.</li>
+</ul>
+<p>
+The following example shows how to incorporate both HTML and text content into the rendered output.
+</p>
+<pre>
+&lt;script id="myTmpl" type="text/x-jquery-tmpl"&gt;
+    The following wraps and reorders some HTML content:
+    {{wrap "#tableWrapper"}}
+        &lt;h3&gt;One&lt;/h3&gt;
+        &lt;div&gt;
+            First &lt;b&gt;content&lt;/b&gt;
+        &lt;/div&gt;
+        &lt;h3&gt;Two&lt;/h3&gt;
+        &lt;div&gt;
+            And &lt;em&gt;more&lt;/em&gt; &lt;b&gt;content&lt;/b&gt;...
+        &lt;/div&gt;
+    {{/wrap}}
+&lt;/script&gt;
+
+&lt;script id="tableWrapper" type="text/x-jquery-tmpl"&gt;
+    &lt;table&gt;&lt;tbody&gt;
+        &lt;tr&gt;
+            {{each $item.html("h3", true)}}
+                &lt;td&gt;
+                    ${$value}
+                &lt;/td&gt;
+            {{/each}}
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            {{each $item.html("div")}}
+                &lt;td&gt;
+                    {{html $value}}
+                &lt;/td&gt;
+            {{/each}}
+        &lt;/tr&gt;
+    &lt;/tbody&gt;&lt;/table&gt;
+&lt;/script&gt;
+</pre>
+
+<h4>Including Template Tags in Wrapped Content</h4>
+
+<p>
+The HTML markup between the opening and closing tags of <code>{{wrap}}</code> can include other template tags. The following example uses nested <code>{{wrap}}</code>tags to created nested tab views:
+</p>
+<pre>
+&lt;script id="myTmpl" type="text/x-jquery-tmpl"&gt;
+    {{wrap "#tabsWrap"}}
+        &lt;h3&gt;One&lt;/h3&gt;
+        &lt;div&gt;
+            First &lt;b&gt;tab&lt;/b&gt;
+        &lt;/div&gt;
+        &lt;h3&gt;Two&lt;/h3&gt;
+        &lt;div&gt;
+            &lt;b&gt;Second&lt;/b&gt; tab
+            {{wrap "#tabsWrap"}}
+                &lt;h3&gt;InnerOne&lt;/h3&gt;
+                &lt;div&gt;
+                    Inner first &lt;b&gt;tab&lt;/b&gt;
+                &lt;/div&gt;
+                &lt;h3&gt;InnerTwo&lt;/h3&gt;
+                &lt;div&gt;
+                    Inner &lt;b&gt;second&lt;/b&gt; tab
+                &lt;/div&gt;
+            {{/wrap}}
+        &lt;/div&gt;
+    {{/wrap}}
+&lt;/script&gt;
+</pre>
+
+</longdesc>
+
+<example>
+<desc>Using <code>{{wrap}}</code> to wrap elements in table cells.</desc>
+<js src="http://code.jquery.com/jquery-latest.min.js" /> 
+<js src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js" /> 
+<code><![CDATA[
+$( "#myTmpl" ).tmpl()
+    .appendTo( "#myWrappedView" );
+]]></code>
+<css><![CDATA[
+table { border-collapse:collapse; width:380px; background-color:#f8f8f8; border:2px solid blue; margin:5px; } table td { border:1px solid blue; padding:3px; } 
+]]></css>
+<html height="200"><![CDATA[
+<tmpl id="myTmpl" type="text/x-jquery-tmpl">
+    The following wraps and reorders some HTML content:
+    {{wrap "#tableWrapper"}}
+        <h3>One</h3>
+        <div>
+            First <b>content</b>
+        </div>
+        <h3>Two</h3>
+        <div>
+            And <em>more</em> <b>content</b>...
+        </div>
+    {{/wrap}}
+
+    And this wraps different HTML content:
+    {{wrap "#tableWrapper"}}
+        <div>
+            First <b>div</b>
+        </div>
+        <div>
+            Second <b>div</b>
+        </div>
+        <div>
+            Third <b>div</b>
+        </div>
+        <h3>first h3</h3>
+        <h3>second h3</h3>
+        <h3>third h3</h3>
+    {{/wrap}}
+</tmpl>
+
+<tmpl id="tableWrapper" type="text/x-jquery-tmpl">
+    <table><tbody>
+        <tr>
+            {{each $item.html("h3", true)}}
+                <td>
+                    ${$value}
+                </td>
+            {{/each}}
+        </tr>
+        <tr>
+            {{each $item.html("div")}}
+                <td>
+                    {{html $value}}
+                </td>
+            {{/each}}
+        </tr>
+    </tbody></table>
+</tmpl>
+
+<div id="myWrappedView"></div>
+]]></html>
+</example>
+
+<example>
+<desc>Using <code>{{wrap}}</code> to create a tabbed view.</desc>
+<js src="http://code.jquery.com/jquery-latest.min.js" /> 
+<js src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js" /> 
+<code><![CDATA[
+/* Track the selected tab index */
+var state = { activeIndex: 1 };
+
+/* Render tabs view */
+$( "#tabsTmpl" ).tmpl( null, { state: state})
+    .appendTo( "#tabsView" );
+
+$( "#tabsView" )
+    .delegate( ".tabsView th", "click", function() {
+        var tmplItem = $.tmplItem( this );
+
+        /* Set the selected tab index to this tab */
+        tmplItem.state.activeIndex = $(this).index();
+
+        /* update the rendering */
+        tmplItem.update();
+    });
+]]></code>
+<css><![CDATA[
+.body {height:80px;background-color:#fff;} .body div {height:32px;vertical-align:middle;text-align:center;} .body h3 {text-align:center;} .tabsView td {border:solid 1px #0000A6;border-top:none;border-right:solid 2px #1E1ED2;}
+.tabsView th {cursor:pointer;padding:2px;font-weight:normal;font-style:italic;color:#888;border:solid 1px #bbb;border-right:none;background-color:#f8f8f8;border-bottom:solid 1px #1E1ED2;} #tabsView > .tabsView {width:265px;} 
+.tabsView {width:250px;border-collapse:collapse;border:none;margin:5px;} .tabsView tr {border-right:solid 1px #bbb;} th.header_true {font-weight:bold;border:solid 1px #0000A6;border-right:solid 2px #1E1ED2;border-bottom:solid 1px #eee;color:#0000A6;background-color:#fff;} 
+]]></css>
+<html><![CDATA[
+<tmpl id="tabsTmpl" type="text/x-jquery-tmpl">
+    {{wrap(null, {state: $item.state}) "#tabsWrap"}}
+        <h3>One</h3>
+        <div>
+            First <b>tab</b>
+        </div>
+        <h3>Two</h3>
+        <div>
+            <b>Second</b> tab
+        </div>
+        <h3>Three</h3>
+        <div>
+            Third <em>tab</em> <br/> and more content...
+        </div>
+    {{/wrap}}
+</tmpl>
+
+<tmpl id="tabsWrap" type="text/x-jquery-tmpl">
+    <table class="tabsView"><tbody>
+        <tr>
+            {{each $item.html("h3", true)}}
+                <th class="header_${$index === $item.state.activeIndex}">
+                    ${$value}
+                </th>
+            {{/each}}
+        </tr>
+        <tr><td colspan='${$item.html("h3").length}'>
+            <div class="body">
+                {{html $item.html("div")[$item.state.activeIndex]}}
+            </div>
+        </td></tr>
+    </tbody></table>
+</tmpl>
+
+<div id="tabsView"></div>
+]]></html>
+</example>
+
+<example>
+<desc>Using <code>{{wrap}}</code> to create nested tabbed views.</desc>
+<js src="http://code.jquery.com/jquery-latest.min.js" /> 
+<js src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js" /> 
+<code><![CDATA[
+/* Track the selected tab index for inner and outer tab views */
+var state = { activeIndex: 1, innerState: { activeIndex: 0 } };
+
+function refresh() {
+    $( "#tabsView" ).empty();
+    $( "#tabsTmpl" ).tmpl( null, { state: state})
+        .appendTo( "#tabsView" );
+}
+
+/* Render tabs view */
+refresh();
+
+$( "#tabsView" )
+    .delegate( ".tabsView th", "click", function() {
+        /* Set the selected tab index to this tab */
+        $.tmplItem( this ).state.activeIndex = $(this).index();
+
+        /* update the rendering */
+        refresh();
+    });
+]]></code>
+<css><![CDATA[
+.body {height:85px;background-color:#fff;} .body div {height:30px;vertical-align:middle;text-align:center;} .body h3 {text-align:center;} .tabsView td {border:solid 1px #0000A6;border-top:none;border-right:solid 2px #1E1ED2;}
+.tabsView th {cursor:pointer;padding:2px;font-weight:normal;font-style:italic;color:#888;border:solid 1px #bbb;border-right:none;background-color:#f8f8f8;border-bottom:solid 1px #1E1ED2;} #tabsView > .tabsView {width:265px;} 
+.tabsView {width:250px;border-collapse:collapse;border:none;margin:5px;} .tabsView tr {border-right:solid 1px #bbb;} th.header_true {font-weight:bold;border:solid 1px #0000A6;border-right:solid 2px #1E1ED2;border-bottom:solid 1px #eee;color:#0000A6;background-color:#fff;} 
+]]></css>
+<html><![CDATA[
+<tmpl id="tabsTmpl" type="text/x-jquery-tmpl">
+    {{wrap(null, {state: $item.state}) "#tabsWrap"}}
+        <h3>One</h3>
+        <div>
+            First <b>tab</b>
+        </div>
+        <h3>Two</h3>
+        <div>
+            <b>Second</b> tab
+            {{wrap(null, {state: $item.state.innerState}) "#tabsWrap"}}
+                <h3>InnerOne</h3>
+                <div>
+                    Inner first <b>tab</b>
+                </div>
+                <h3>InnerTwo</h3>
+                <div>
+                    Inner <b>second</b> tab
+                </div>
+            {{/wrap}}
+        </div>
+        <h3>Three</h3>
+        <div>
+        Third <em>tab</em> <br/> and more content...
+        </div>
+    {{/wrap}}
+</tmpl>
+
+<tmpl id="tabsWrap" type="text/x-jquery-tmpl">
+    <table class="tabsView"><tbody>
+        <tr>
+            {{each $item.html("h3", true)}}
+                <th class="header_${$index === $item.state.activeIndex}">
+                    ${$value}
+                </th>
+            {{/each}}
+        </tr>
+        <tr><td colspan='${$item.html("h3").length}'>
+            <div class="body">
+                {{html $item.html("div")[$item.state.activeIndex]}}
+            </div>
+        </td></tr>
+    </tbody></table>
+</tmpl>
+
+<div id="tabsView">..loading</div>
+]]></html>
+</example>
+</entry>

@@ -1,0 +1,200 @@
+<entry type='method' name="link" return="jQuery" plugin="jQuery Datalink">
+<download>
+<p>This documentation topic concerns the <em> jQuery Datalink</em> plugin (jquery-datalink), which can be downloaded from: <a href="http://github.com/jquery/jquery-datalink">http://github.com/jquery/jquery-datalink</a>.</p>
+</download>
+  <signature>
+    <added>1.4.3</added>
+    <argument name="target" type="Element, Object">
+      <desc>An object to link changes to.</desc>
+    </argument>
+    <argument name="settings" optional="true" type="Object">
+      <desc>A map describing the fields to link.</desc>
+    </argument>
+  </signature>
+  <desc>Link changes to the matched elements to an object.</desc>
+  <longdesc><p>The <code>.link()</code> method links form fields to an object. Any changes to the form field values are automatically represented in the object. For example, when an input element whose name attribute is "firstName" is changed, the firstName property of the target is set to the new value:</p>
+<pre>
+var person = {};
+$("form").link(person);
+$("[name=firstName]").val("NewValue"); // Set firstName to a value.
+person.firstName; // NewValue
+
+// User types a value into the form field.
+person.firstName; // firstName now contains the user-ented value.
+</pre>
+
+<p>By default, links are two-way, meaning changes to the object are also automatically changed in the corresponding form field. For example, if the firstName of the target is changed using the <code>.setField()</code> method, the value of input element named "firstName" is set to the new value.</p>
+<pre>
+// Set the object property.
+$(person).setField("firstName", "NewValue");
+// The change is automatically pushed to the input element.
+$("[name=firstName]").val(); // The value is now "NewValue"
+</pre>
+<h4>Customizing the Mapping Between Elements and Objects</h4>
+<p>
+By default, all change events that occur for (or bubble up to) the selected element or elements are processed, and the changes are made to the property whose name corresponds to the name of the element that changed. By providing a mapping object, you can explicitly choose which elements participate in linking behavior, and what target properties they set.
+</p>
+<pre>
+var person = {};
+$("form").link(person, {
+    firstName: "first-name",
+    lastName: "last-name"
+});
+</pre>
+<p>
+The preceeding example shows how to link only the input element named "first-name" to person.firstName, and the input element named "last-name" to person.lastName. Changes in other input elements and changes to other fields of the person object are ignored (by this link).
+</p>
+<h4>Specifying One-Way Linking</h4>
+<p>
+You can disable two-way linking for individual fields with the <code>twoWay</code> field in the custom mapping. The following example shows how to create a link from the form field named "firstName" to the firstName property of a person object, but not the other way around.
+</p>
+<pre>
+var person = {};
+$("form").link(person, {
+    firstName: {
+      twoWay: false
+    }
+});
+$(person).setField("firstName", "NewValue");
+$("[name=firstName]").val(); // unchanged
+</pre>
+<h4>Converting Values</h4>
+<p>
+By default, any changed value is assigned as-is to the target object. Often times, it is necessary to modify the value, as converting null to "None", formating or parsing a date, or parsing a string into a number. To perform these conversions, you can specify a <code>convert</code> field in the mapping that includes a conversion function, as shown in the following example:
+</p>
+<pre>
+var person = {};
+$("[name=age]")
+  .link(person, {
+      age: {
+          convert: function(value) {
+              return Math.round( parseFloat( value ) );
+          }
+      }
+  })
+  .val("7.5");
+person.age; // 8
+</pre>
+The preceeding example shows how to specify that any value assigned to the age property of the person object (as a result of a change in the value of the input element named "age") first be parsed into a number (specifically, a floating-point number) and then rounded.
+<p>
+You can also define a converter using the <code>$.convertFn</code> object and refer to it by name instead:
+</p>
+<pre>
+var person = {};
+$.convertFn.round = function(value) {
+    return Math.round( parseFloat( value ) );
+}
+$("[name=age]")
+  .link(person, {
+      age: {
+          convert: "round"
+      }
+  })
+  .val("7.5");
+person.age; // 8
+</pre>
+<p>
+You can customize the name in a custom mapping at the same time as a converter by specifying the name. The following example creates a link from the input element named "first-name" to the firstName property of the person object using a converter named "titleCase".
+</p>
+<pre>
+$("form").link(person, {
+    firstName: {
+        name: "first-name",
+        convert: "titleCase"
+    }
+});
+</pre>
+<p>
+For two-way links, you can specify a converter for both directions using <code>convertBack</code> setting:
+</p>
+<pre>
+$("form").link(obj, {
+    field: {
+        // converter1 and converter2 functions are defined elsewhere.
+        convert: converter1,
+        convertBack: converter2
+    }
+});
+</pre>
+<p>
+Converters receive the value and you can optionally also get the source object and the target object as parameters. The source is where the  value comes from, and target is the object to set the value for. If the converter returns a value, it is assigned to the target automatically.</p>
+<h4>Using Converters to Create Custom Linking Behavior</h4>
+<p>If the converter does not return a value or if it returns "undefined", no automatic update occurs. You can use this feature to customize the behavior of a link by updating the source and target objects in your code directly and not returning a value.
+The following example uses a converter that does not return a value, so no automatic update takes place. Instead, the converter code explicitly updates properties of the target object:
+</p>
+<pre>
+var person = {};
+$("[name=age]").link(person, {
+    age: {
+        convert: function(value, source, target) {
+            var age = Math.round( parseFloat( value ) );
+            target.age = age;
+            target.canVote = age >= 18;
+        }
+    }
+});
+$("[name=age]").val("7.5");
+person.age; // 8
+person.canVote; // false
+$("[name=age]").val("18");
+person.canVote; // true
+</pre>
+<p>
+You can also use this technique to establish links between any available DOM elements. This following example links the age property of the <code>person</code> object to the height of the target DOM element.
+</p>
+<pre>
+
+var person = {};
+$("#ageDiv").link(person, {
+  age: {
+    convertBack: function(value, source, target) {
+      $(target).height(parseFloat(value * 2));
+    }
+  }
+});
+$(person).setField("age", 21);
+$("#ageDiv").height(); // 42
+</pre>
+</longdesc>
+<example>
+    <desc>Link all input elements of a form to an object.</desc>
+    <js src="http://code.jquery.com/jquery-latest.min.js"/>
+    <js src="http://github.com/jquery/jquery-datalink/raw/master/jquery.datalink.js"/>
+    <code><![CDATA[
+    var person = { };
+    $("form").link(person);
+
+    // Chain link the person object to these elements to show the results
+    $("#objFirst").link(person, {
+        firstName: {
+            name: "objFirst",
+            convertBack: function(value, source, target) {
+                $(target).text(value);
+            }
+        }
+    });
+    $("#objLast").link(person, {
+        lastName: {
+            name: "objLast",
+            convertBack: function(value, source, target) {
+                $(target).text(value);
+            }
+        }
+    });
+]]></code>
+<html><![CDATA[
+<form>
+    <div>
+        First Name:
+        <input type="text" name="firstName" />
+    </div>
+    <div>
+        Last Name:
+        <input type="text" name="lastName" />
+    </div>
+</form>
+Object.firstName: <span id="objFirst"></span><br/>
+Object.lastName: <span id="objLast"></span>
+]]></html>
+  </example>
+</entry>

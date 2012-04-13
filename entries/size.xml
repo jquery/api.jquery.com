@@ -1,0 +1,45 @@
+            <entry type='method' name="size" return="Number">
+              <signature>
+                <added>1.0</added>
+              </signature>
+              <desc>Return the number of elements in the jQuery object.</desc>
+              <longdesc>
+<p>The <code>.size()</code> method is functionally equivalent to the <code><a href="http://api.jquery.com/length/">.length</a></code> property; however, <strong>the <code>.length</code> property is preferred</strong> because it does not have the overhead of a function call.</p>
+<p>Given a simple unordered list on the page:</p>
+<pre>
+&lt;ul&gt;
+  &lt;li&gt;foo&lt;/li&gt;
+  &lt;li&gt;bar&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+<p>Both <code>.size()</code> and <code>.length</code> identify the number of items:</p>
+<pre>alert( "Size: " + $("li").size() );
+alert( "Size: " + $("li").length );</pre>
+<p>This results in two alerts:</p>
+<p><span class="output">Size: 2</span></p>
+<p><span class="output">Size: 2</span></p>
+</longdesc>
+<example>
+  <desc>Count the divs. Click to add more.</desc>
+  <code><![CDATA[
+$(document.body)
+.click(function() { 
+  $(this).append( $("<div>") );
+  var n = $("div").size();
+  $("span").text("There are " + n + " divs. Click to add more.");
+})
+// trigger the click to start
+.click(); 
+]]></code>
+<css><![CDATA[
+  body { cursor:pointer; min-height: 100px; }
+  div { width:50px; height:30px; margin:5px; 
+        float:left; background:blue; }
+  span { color:red; }
+ ]]></css>
+<html><![CDATA[
+<span></span>
+ <div></div>
+]]></html>
+</example>
+</entry>

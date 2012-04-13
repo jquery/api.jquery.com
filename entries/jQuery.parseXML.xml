@@ -1,0 +1,37 @@
+<entry type='method' name="jQuery.parseXML" return="XMLDocument">
+	<desc>Parses a string into an XML document.</desc>
+    <signature>
+      <added>1.5</added>
+      <argument name="data" type="String">
+        <desc>a well-formed XML string to be parsed</desc>
+      </argument>
+    </signature>
+
+<longdesc>
+<p><code>jQuery.parseXML</code> uses the native parsing function of the browser to create a valid XML Document. This document can then be passed to <code>jQuery</code> to create a typical jQuery object that can be traversed and manipulated.</p>
+</longdesc>
+<example>
+    <desc>Create a jQuery object using an XML string and obtain the value of the title node.</desc>
+<html><![CDATA[
+<p id="someElement"></p>
+<p id="anotherElement"></p>
+]]>
+  
+</html>
+    <code><![CDATA[
+var xml = "<rss version='2.0'><channel><title>RSS Title</title></channel></rss>",
+    xmlDoc = $.parseXML( xml ),
+    $xml = $( xmlDoc ),
+    $title = $xml.find( "title" );
+
+/* append "RSS Title" to #someElement */
+$( "#someElement" ).append( $title.text() );
+
+/* change the title to "XML Title" */
+$title.text( "XML Title" );
+
+/* append "XML Title" to #anotherElement */
+$( "#anotherElement" ).append( $title.text() );
+]]></code>
+</example>
+</entry>

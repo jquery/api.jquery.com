@@ -1,0 +1,40 @@
+<entry type='method' name="jQuery.makeArray" return="Array">
+  <signature>
+    <added>1.2</added>
+    <argument name="obj" type="Object">
+      <desc>Any object to turn into a native Array.</desc>
+    </argument>
+  </signature>
+  <desc>Convert an array-like object into a true JavaScript array.</desc>
+  <longdesc>
+    <p>Many methods, both in jQuery and in JavaScript in general, return objects that are array-like. For example, the jQuery factory function <code>$()</code> returns a jQuery object that has many of the properties of an array (a length, the <code>[]</code> array access operator, etc.), but is not exactly the same as an array and lacks some of an array's built-in methods (such as <code>.pop()</code> and <code>.reverse()</code>).</p>
+
+    <p>Note that after the conversion, any special features the object had (such as the jQuery methods in our example) will no longer be present. The object is now a plain array.</p></longdesc>
+    <example>
+      <desc>Turn a collection of HTMLElements into an Array of them.</desc>
+      <code><![CDATA[
+    var elems = document.getElementsByTagName("div"); // returns a nodeList
+    var arr = jQuery.makeArray(elems);
+    arr.reverse(); // use an Array method on list of dom elements
+    $(arr).appendTo(document.body);
+]]></code>
+    <css><![CDATA[
+  div { color:red; }
+  ]]></css>
+    <html><![CDATA[<div>First</div>
+  <div>Second</div>  
+  <div>Third</div>
+
+  <div>Fourth</div>]]></html>
+    </example>
+    <example>
+      <desc>Turn a jQuery object into an array</desc>
+      <code><![CDATA[
+    var obj = $('li');
+    var arr = $.makeArray(obj);
+]]></code>
+    <results><![CDATA[(typeof obj === 'object' && obj.jquery) === true;
+jQuery.isArray(arr) === true;]]>
+    </results>
+  </example>
+</entry>

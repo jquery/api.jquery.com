@@ -1,0 +1,50 @@
+<entry type='method' name="has" return="jQuery">
+  <signature>
+    <added>1.4</added>
+    <argument name="selector" type="String">
+      <desc>A string containing a selector expression to match elements against.</desc>
+    </argument>
+  </signature>
+  <signature>
+    <added>1.4</added>
+    <argument name="contained" type="Element">
+      <desc>A DOM element to match elements against.</desc>
+    </argument>
+  </signature>
+  <desc>Reduce the set of matched elements to those that have a descendant that matches the selector or DOM element.</desc>
+  <longdesc>
+    <p>Given a jQuery object that represents a set of DOM elements, the <code>.has()</code> method constructs a new jQuery object from a subset of the matching elements. The supplied selector is tested against the descendants of the matching elements; the element will be included in the result if any of its descendant elements matches the selector.</p>
+    <p>Consider a page with a nested list as follows:</p>
+<pre>
+ &lt;ul&gt;
+  &lt;li&gt;list item 1&lt;/li&gt;
+  &lt;li&gt;list item 2
+    &lt;ul&gt;
+      &lt;li&gt;list item 2-a&lt;/li&gt;
+      &lt;li&gt;list item 2-b&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;list item 3&lt;/li&gt;
+  &lt;li&gt;list item 4&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+  <p>We can apply this method to the set of list items as follows:</p>
+  <pre>$('li').has('ul').css('background-color', 'red');</pre>
+  <p>The result of this call is a red background for item 2, as it is the only <code>&lt;li&gt;</code> that has a <code>&lt;ul&gt;</code> among its descendants.</p>
+
+  </longdesc>
+  <example>
+    <desc>Check if an element is inside another.</desc>
+    <code><![CDATA[
+  $("ul").append("<li>" + ($("ul").has("li").length ? "Yes" : "No") + "</li>");
+  $("ul").has("li").addClass("full");
+]]></code>
+    <css><![CDATA[
+  .full { border: 1px solid red; }
+]]></css>
+
+    <html><![CDATA[
+<ul><li>Does the UL contain an LI?</li></ul>
+]]></html>
+  </example>
+</entry>

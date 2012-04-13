@@ -1,0 +1,36 @@
+<entry type='method' name="unload" return="jQuery">
+  <signature>
+    <added>1.0</added>
+    <argument name="handler(eventObject)" type="Function">
+      <desc>A function to execute when the event is triggered.</desc>
+    </argument>
+  </signature>
+  <signature>
+    <added>1.4.3</added>
+    <argument name="eventData" type="Object" optional="true">
+      <desc>A map of data that will be passed to the event handler.</desc>
+    </argument>
+    <argument name="handler(eventObject)" type="Function">
+      <desc>A function to execute each time the event is triggered.</desc>
+    </argument>
+  </signature>
+    <desc>Bind an event handler to the "unload" JavaScript event.</desc>
+<longdesc>
+<p>This method is a shortcut for <code>.bind('unload', handler)</code>.</p>
+<p>The <code>unload</code> event is sent to the <code>window</code> element when the user navigates away from the page. This could mean one of many things. The user could have clicked on a link to leave the page, or typed in a new URL in the address bar. The forward and back buttons will trigger the event. Closing the browser window will cause the event to be triggered. Even a page reload will first create an <code>unload</code> event.</p>
+<blockquote><p>The exact handling of the <code>unload</code> event has varied from version to version of browsers. For example, some versions of Firefox trigger the event when a link is followed, but not when the window is closed. In practical usage, behavior should be tested on all supported browsers, and contrasted with the proprietary <code>beforeunload</code> event.</p></blockquote>
+<p>Any <code>unload</code> event handler should be bound to the <code>window</code> object:</p>
+<pre>$(window).unload(function() {
+  alert('Handler for .unload() called.');
+});
+</pre>
+<p>After this code executes, the alert will be displayed whenever the browser leaves the current page.
+It is not possible to cancel the <code>unload</code> event with <code>.preventDefault()</code>. This event is available so that scripts can perform cleanup when the user leaves the page.
+</p>
+</longdesc>
+<example>
+    <desc>To display an alert when a page is unloaded:</desc>
+    <code><![CDATA[$(window).unload( function () { alert("Bye now!"); } );]]></code>
+</example>
+
+</entry>

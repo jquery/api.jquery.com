@@ -1,0 +1,24 @@
+            <entry type='selector'   name="attributeHas" return="" >
+                <sample>[attribute]</sample>
+                <signature> <added>1.0</added>
+                <argument name="attribute" type="String">
+                    <desc>An attribute name.</desc>
+                </argument></signature>
+                <desc>Selects elements that have the specified attribute, with any value. </desc>
+                <longdesc></longdesc>
+                <example>
+                    <desc>Bind a single click that adds the div id to its text.</desc>
+                    <code><![CDATA[
+
+    $('div[id]').one('click', function(){
+      var idString = $(this).text() + ' = ' + $(this).attr('id');
+      $(this).text(idString);
+    });
+]]></code>
+                    <html><![CDATA[<div>no id</div>
+  <div id="hey">with id</div>
+
+  <div id="there">has an id</div>
+  <div>nope</div>]]></html>
+                </example>
+            </entry>

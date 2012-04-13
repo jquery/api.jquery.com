@@ -1,0 +1,34 @@
+<entry name="callbacks.fireWith" type="method" return="undefined">
+  <signature>
+    <added>1.7</added>
+    <argument name="context" optional="true">
+      <desc>A reference to the context in which the callbacks in the list should be fired.</desc>
+    </argument>
+    <argument name="args" optional="true">
+      <desc>An argument, or array of arguments, to pass to the callbacks in the list.</desc>
+    </argument>
+  </signature>
+  <desc>Call all callbacks in a list with the given context and arguments.</desc>
+  <longdesc>
+<h2 id="example-1">Example</h2>
+<p>Using <code>callbacks.fireWith()</code> to fire a list of callbacks with a specific context and an array of arguments:</p>
+<pre>
+// a sample logging function to be added to a callbacks list
+var log = function( value1, value2 ){
+    console.log( 'Received:' + value1 + ',' + value2 );
+}
+
+var callbacks = $.Callbacks();
+
+// add the log method to the callbacks list
+callbacks.add( log );
+
+// fire the callbacks on the list using the context 'window'
+// and an arguments array
+
+callbacks.fireWith( window, ['foo','bar']);
+
+// outputs: Received: foo, bar
+</pre>
+  </longdesc>
+</entry>

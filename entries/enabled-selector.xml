@@ -1,0 +1,15 @@
+            <entry type='selector'  name="enabled" return="">
+                <sample>:enabled</sample>
+                 <signature><added>1.0</added> </signature>
+                <desc>Selects all elements that are enabled.</desc>
+                <longdesc><p>As with other pseudo-class selectors (those that begin with a ":") it is recommended to precede it with a tag name or some other selector; otherwise, the universal selector ("*") is implied. In other words, the bare <code>$(':enabled')</code> is equivalent to <code>$('*:enabled')</code>, so <code>$('input:enabled')</code> should be used instead. </p></longdesc>
+                <example>
+                    <desc>Finds all input elements that are enabled.</desc>
+                    <code><![CDATA[$("input:enabled").val("this is it");]]></code>
+                    <html><![CDATA[<form>
+
+    <input name="email" disabled="disabled" />
+    <input name="id" />
+  </form>]]></html>
+                </example>
+            </entry>

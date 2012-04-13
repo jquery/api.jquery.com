@@ -1,0 +1,34 @@
+<entry name="callbacks.has" type="method" return="Boolean">
+  <signature>
+    <added>1.7</added>
+    <argument name="callback" type="Function">
+      <desc>The callback to search for.</desc>
+    </argument>
+  </signature>
+  <desc>Determine whether a supplied callback is in a list</desc>
+  <longdesc>
+<h2 id="example-1">Example</h2>
+<p>Using <code>callbacks.has()</code> to check if a callback list contains a specific callback:</p>
+<pre>
+// a sample logging function to be added to a callbacks list
+var foo = function( value1, value2 ){
+    console.log( 'Received:' + value1 + ',' + value2 );
+}
+
+// a second function which will not be added to the list
+var bar = function( value1, value2 ){
+    console.log( 'foobar');
+}
+
+var callbacks = $.Callbacks();
+
+// add the log method to the callbacks list
+callbacks.add( foo );
+
+// determine which callbacks are in the list
+
+console.log( callbacks.has( foo ) ); // true
+console.log( callbacks.has( bar ) ); // false
+</pre>
+  </longdesc>
+</entry>

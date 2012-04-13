@@ -1,0 +1,16 @@
+<entry type='property' name="event.pageY" return="Number">
+    <signature>
+        <added>1.0.4</added>
+    </signature>
+    <desc>The mouse position relative to the top edge of the document. </desc>
+    <longdesc>   </longdesc>
+    <example>
+        <desc>Show the mouse position relative to the left and top edges of the document (within this iframe).</desc>
+        <css>body {background-color: #eef; }
+div { padding: 20px; }</css>
+        <html><![CDATA[<div id="log"></div>]]></html>
+        <code><![CDATA[$(document).bind('mousemove',function(e){ 
+            $("#log").text("e.pageX: " + e.pageX + ", e.pageY: " + e.pageY); 
+}); ]]></code>
+    </example>
+</entry>

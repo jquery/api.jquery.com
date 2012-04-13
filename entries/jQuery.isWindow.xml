@@ -1,0 +1,15 @@
+  <entry type='method' name="jQuery.isWindow" return="boolean">
+                <signature>
+                  <added>1.4.3</added>
+                    <argument name="obj" type="Object">
+                       <desc>Object to test whether or not it is a window.</desc>
+                    </argument>
+                </signature>
+                <desc>Determine whether the argument is a window.</desc>
+                <longdesc><p>This is used in a number of places in jQuery to determine if we're operating against a browser window (such as the current window or an iframe).</p></longdesc>
+                <example>
+                    <desc>Finds out if the parameter is a window.</desc>
+                    <code><![CDATA[$("b").append( "" + $.isWindow(window) );]]></code>
+                    <html><![CDATA[Is 'window' a window? <b></b>]]></html>
+                </example>
+            </entry>

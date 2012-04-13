@@ -1,0 +1,133 @@
+<entry type="template-tag" name="{{each( index, value ) collection}} content {{/each}}" plugin="jQuery Templates">
+<download>
+<p>This documentation topic concerns the <em> jQuery Templates</em> plugin (jquery-tmpl), which can be downloaded from: <a href="http://github.com/jquery/jquery-tmpl">http://github.com/jquery/jquery-tmpl</a>.</p>
+</download>
+<signature>
+<added>1.4.3</added>
+<argument name="collection">
+<desc>The JavaScript array (or object) to iterate over.</desc>
+</argument>
+<argument name="index" type="String" optional="true">
+<desc>String specifying a variable name for the iteration index (or key, in the case of an object). Defaults to "$index".</desc>
+</argument>
+<argument name="value" type="Object" optional="true">
+<desc>String specifying a variable name for the current data item in the array (or property value, in the case of an object) during the iteration. Defaults to "$value".</desc>
+</argument>
+</signature>
+<desc>Used to iterate over a data array, and render the content between the opening and closing template tags once for each data item.</desc>
+
+<longdesc>
+<p>Note: For information about how to render templates, see <a href="http://api.jquery.com/tmpl">.tmpl()</a> and <a href="http://api.jquery.com/jquery.tmpl">jQuery.tmpl()</a>.
+</p> 
+
+<h4>Template Tags</h4>
+<p>Template tags such as the <code>{{each}}</code> tag can be used within jQuery templates in addition to text and HTML markup, in order to enable a number of scenarios such as composition of templates, iteration over hierarchical data, parameterization of template rendering, etc. 
+</p>
+<p>
+Other available tags include: <a href="http://api.jquery.com/template-tag-equal">${}</a>, <a href="http://api.jquery.com/template-tag-if">{{if}}</a>, <a href="http://api.jquery.com/template-tag-else">{{else}}</a>, <a href="http://api.jquery.com/template-tag-html">{{html}}</a>, <a href="http://api.jquery.com/template-tag-tmpl">{{tmpl}}</a> and <a href="http://api.jquery.com/template-tag-wrap">{{wrap}}</a>. User-defined template tags can also be specified, by extending the <code>jQuery.tmpl.tag</code> map.</p> 
+
+<h4>Using the {{each}} Template Tag</h4>
+<p>
+The following example shows how to use <code>{{each}}...{{/each}}</code> to render a section of markup iteratively over hierarchical data.
+</p>
+<h6>Template:</h6>
+<pre>
+&lt;li&gt;
+    Title: ${Name}.
+    {{each Languages}}
+        ${$index + 1}: &lt;em&gt;${$value}. &lt;/em&gt;
+    {{/each}}
+&lt;/li&gt;
+</pre>
+<h6>Data:</h6>
+<pre>
+var movies = [
+    { Name: "Meet Joe Black", Languages: ["French"] },
+    { Name: "The Mighty", Languages: [] },
+    { Name: "City Hunter", Languages: ["Mandarin", "Cantonese"] }
+];
+</pre>
+
+<h4>Evaluating Expressions and Functions, Using Template Variables</h4>
+<p>
+<code>{{each expression}}</code> can be used in a similar way to <code>${expression}</code>, to render content iteratively over an array returned by an expression or a function call, as in the following example:</p>
+<pre>
+...
+{{each $item.getSortedLanguages("a-z")}}
+    ...
+{{/each}}
+...
+</pre>
+<p>
+See <a href="http://api.jquery.com/template-tag-equal">${}</a> for more detailed documentation and examples of using template tags in association with expression evaluation, function calls, template variables, etc. 
+</p>
+
+<h4>The index and value parameters of {{each}}</h4>
+<p>
+The block of template markup between the opening and closing tags <code>{{each}}</code> and <code>{{/each}}</code> is rendered once for each data item in the <code>data</code> array. Within this block the <code>{{each}}</code> template tag exposes the current index and value as additional template variables <code>$index</code> and <code>$value</code>. These default variable names can be changed by passing in <code>index</code> and <code>value</code> parameters to the <code>{{each}}</code> template tag, as in the following example: 
+</p>
+<pre>
+{{each(i, language) Languages}}
+    ${i + 1}: &lt;em&gt;${language}. &lt;/em&gt;
+{{/each}}
+</pre>
+</longdesc>
+
+<example>
+<desc>Using <code>{{each}}...{{/each}}</code> to render a section of markup iteratively over hierarchical data.</desc>
+<js src="http://code.jquery.com/jquery-latest.min.js" /> 
+<js src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js" /> 
+<code><![CDATA[
+var movies = [
+    { Name: "Meet Joe Black", Languages: ["French"] },
+    { Name: "The Mighty", Languages: [] },
+    { Name: "City Hunter", Languages: ["Mandarin", "Cantonese"] }
+];
+
+/* Render the template with the movies data */
+$( "#movieTemplate" ).tmpl( movies )
+    .appendTo( "#movieList" );
+]]></code>
+<html><![CDATA[
+<tmpl id="movieTemplate" type="text/x-jquery-tmpl"> 
+    <li>
+        Title: ${Name}.
+        {{each Languages}}
+            ${$index + 1}: <em>${$value}. </em>
+        {{/each}}
+    </li>
+</tmpl>
+
+<ul id="movieList"></ul>
+]]></html>
+</example>
+
+<example>
+<desc>Specifying the index and value parameters of the <code>{{each}}</code> tag.</desc>
+<js src="http://code.jquery.com/jquery-latest.min.js" /> 
+<js src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js" /> 
+<code><![CDATA[
+var movies = [
+    { Name: "Meet Joe Black", Languages: ["French"] },
+    { Name: "The Mighty", Languages: [] },
+    { Name: "City Hunter", Languages: ["Mandarin", "Cantonese"] }
+];
+
+/* Render the template with the movies data */
+$( "#movieTemplate" ).tmpl( movies )
+    .appendTo( "#movieList" );
+]]></code>
+<html><![CDATA[
+<tmpl id="movieTemplate" type="text/x-jquery-tmpl"> 
+    <li>
+        Title: ${Name}.
+        {{each(i, language) Languages}}
+            ${i + 1}: <em>${language}. </em>
+        {{/each}}
+    </li>
+</tmpl>
+
+<ul id="movieList"></ul>
+]]></html>
+</example>
+</entry>

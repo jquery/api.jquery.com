@@ -1,0 +1,286 @@
+
+<entry name="jQuery.Callbacks" type="method" return="">
+  <signature>
+    <added>1.7</added>
+    <argument name="flags" type="String">
+      <desc>An optional list of space-separated flags that change how the callback list behaves.</desc>
+    </argument>
+  </signature>
+  <desc>A multi-purpose callbacks list object that provides a powerful way to manage callback lists.</desc>
+<longdesc>
+
+<p>The <code>$.Callbacks()</code> function is internally used to provide the base functionality behind the jQuery <code>$.ajax()</code> and <code>$.Deferred()</code> components. It can be used as a similar base to define functionality for new components.</p>
+<p><code>$.Callbacks()</code> support a number of methods including <code><a href="/callbacks.add/">callbacks.add()</a></code>,<code><a href="/callbacks.remove/">callbacks.remove()</a></code>, <code><a href="/callbacks.fire/">callbacks.fire()</a></code> and <code><a href="/callbacks.disable/">callbacks.disable()</a></code>.</p>
+<h3 id="getting-started">Getting started</h3>
+
+<p>The following are two sample methods named <code>fn1</code> and <code>fn2</code>:</p>
+<pre>
+function fn1( value ){
+    console.log( value );
+}
+
+function fn2( value ){
+    fn1("fn2 says:" + value);
+    return false;
+}
+</pre>
+<p>These can be added as callbacks to a <code>$.Callbacks</code> list and invoked follows:</p>
+<pre>
+var callbacks = $.Callbacks();
+callbacks.add( fn1 );
+callbacks.fire( "foo!" ); // outputs: foo!
+
+callbacks.add( fn2 );
+callbacks.fire( "bar!" ); // outputs: bar!, fn2 says: bar!
+</pre>
+
+<p>The result of this is that it becomes simple to construct complex lists of callbacks where input values can be passed through to as many functions as needed with ease.</p>
+<p>Two specific methods were being used above: <code>.add()</code> and <code>.fire()</code> .add() supports adding new callbacks to the callback list, whilst fire() provides a way to pass arguments to be processed by the callbacks in the same list.</p>
+<p>Another method supported by <code>$.Callbacks</code> is remove(), which has the ability to remove a particular callback from the callback list. Here"s a practical example of .remove() being used:</p>
+<pre>
+var callbacks = $.Callbacks();
+callbacks.add( fn1 );
+callbacks.fire( "foo!" ); // outputs: foo!
+
+callbacks.add( fn2 );
+callbacks.fire( "bar!" ); // outputs: bar!, fn2 says: bar!
+
+callbacks.remove(fn2);
+callbacks.fire( "foobar" ); 
+
+// only outputs foobar, as fn2 has been removed.
+</pre>
+
+<h3 id="supported-flags">Supported Flags</h3>
+
+<p>The <code>flags</code> argument is an optional argument to <code>$.Callbacks()</code>, structured as a list of space-separated strings that change how the callback list behaves (eg. <code>$.Callbacks( 'unique stopOnFalse' )</code>).</p>
+
+<h2>Possible flags:</h2>
+<ul>
+    <li><code>once</code>: Ensures the callback list can only be fired once (like a Deferred).</li>
+    <li><code>memory</code>: Keep track of previous values and will call any callback added after the list has been fired right away with the latest "memorized" values (like a Deferred).</li>
+    <li><code>unique</code>: Ensures a callback can only be added once (so there are no duplicates in the list).</li>
+    <li><code>stopOnFalse</code>: Interrupts callings when a callback returns false.</li>
+</ul>
+<p>By default a callback list will act like an event callback list and can be "fired" multiple times.</p>
+
+<p>For examples of how <code>flags</code> should ideally be used, see below:</p>
+
+<h2 id="once"><code>$.Callbacks( 'once' )</code>:</h2>
+<pre>
+var callbacks = $.Callbacks( &quot;once&quot; );
+callbacks.add( fn1 );
+callbacks.fire( "foo" );
+callbacks.add( fn2 );
+callbacks.fire( "bar" );
+callbacks.remove( fn2 );
+callbacks.fire( "foobar" );
+
+/*
+output: 
+foo
+*/
+</pre>
+
+
+<h2 id="memory"><code>$.Callbacks( 'memory' )</code>:</h2>
+<pre>var callbacks = $.Callbacks( "memory" );
+callbacks.add( fn1 );
+callbacks.fire( "foo" );
+callbacks.add( fn2 );
+callbacks.fire( "bar" );
+callbacks.remove( fn2 );
+callbacks.fire( "foobar" );
+
+/*
+output:
+foo
+fn2 says:foo
+bar
+fn2 says:bar
+foobar
+*/
+</pre>
+
+
+<h2 id="unique"><code>$.Callbacks( 'unique' )</code>:</h2>
+<pre>var callbacks = $.Callbacks( "unique" );
+callbacks.add( fn1 );
+callbacks.fire( "foo" );
+callbacks.add( fn1 ); // repeat addition
+callbacks.add( fn2 );
+callbacks.fire( "bar" );
+callbacks.remove( fn2 );
+callbacks.fire( "foobar" );
+
+/*
+output:
+foo
+bar
+fn2 says:bar
+foobar
+*/
+</pre>
+
+
+<h2 id="stopOnFalse"><code>$.Callbacks( 'stopOnFalse' )</code>:</h2>
+<pre>
+function fn1( value ){
+    console.log( value );
+    return false;
+}
+
+function fn2( value ){
+    fn1("fn2 says:" + value);
+    return false;
+}
+
+var callbacks = $.Callbacks( "stopOnFalse");
+callbacks.add( fn1 );
+callbacks.fire( "foo" );
+callbacks.add( fn2 );
+callbacks.fire( "bar" );
+callbacks.remove( fn2 );
+callbacks.fire( "foobar" );
+
+/*
+output:
+foo
+bar
+foobar
+*/
+</pre>
+
+
+<p>Because $.Callbacks() supports a list of flags rather than just one, setting several flags has a cumulative effect similar to "&amp;&amp;". This means it's possible to combine flags to create callback lists that are say, both <i>unique</i> and <i>ensure if list was already fired, adding more callbacks will have it called with the latest fired value</i> (i.e. <code>$.Callbacks(&quot;unique memory&quot;)</code>).</p>
+
+<h2 id="unique-memory"><code>$.Callbacks( 'unique memory' )</code>:</h2>
+
+<pre>
+function fn1( value ){
+    console.log( value );
+    return false;
+}
+
+function fn2( value ){
+    fn1("fn2 says:" + value);
+    return false;
+}
+    
+var callbacks = $.Callbacks( "unique memory" );
+callbacks.add( fn1 );
+callbacks.fire( "foo" );
+callbacks.add( fn1 ); // repeat addition
+callbacks.add( fn2 );
+callbacks.fire( "bar" );
+callbacks.add( fn2 );
+callbacks.fire( "baz" );
+callbacks.remove( fn2 );
+callbacks.fire( "foobar" );
+
+/*
+output:
+foo
+fn2 says:foo
+bar
+fn2 says:bar
+baz
+fn2 says:baz
+foobar
+*/
+</pre>
+
+<p>Flag combinations are internally used with <code>$.Callbacks()</code> in jQuery for the <code>.done()</code> and <code>.fail()</code> buckets on a Deferred - both of which use <code>$.Callbacks('memory once')</code>.</p>
+<p>$.Callbacks methods can also be detached, should there be a need to define short-hand versions for convenience:</p>
+
+<pre>
+var callbacks = $.Callbacks(),
+    add = callbacks.add,
+    remove = callbacks.remove,
+    fire = callbacks.fire;
+
+add( fn1 );
+fire( "hello world");
+remove( fn1 );
+</pre>
+
+
+<h3 id="pubsub">$.Callbacks, $.Deferred and Pub/Sub</h3>
+
+
+<p>The general idea behind pub/sub (the Observer pattern) is the promotion of loose coupling in applications. Rather than single objects calling on the methods of other objects, an object instead subscribes to a specific task or activity of another object and is notified when it occurs. Observers are also called Subscribers and we refer to the object being observed as the Publisher (or the subject). Publishers notify subscribers when events occur</p>
+<p>As a demonstration of the component-creation capabilities of <code>$.Callbacks()</code>, it's possible to implement a Pub/Sub system using only callback lists. Using <code>$.Callbacks</code> as a topics queue, a system for publishing and subscribing to topics can be implemented as follows:</p>
+
+<pre>var topics = {};
+
+jQuery.Topic = function( id ) {
+    var callbacks,
+        method,
+        topic = id &amp;&amp; topics[ id ];
+    if ( !topic ) {
+        callbacks = jQuery.Callbacks();
+        topic = {
+            publish: callbacks.fire,
+            subscribe: callbacks.add,
+            unsubscribe: callbacks.remove
+        };
+        if ( id ) {
+            topics[ id ] = topic;
+        }
+    }
+    return topic;
+};
+</pre>
+
+
+<p>This can then be used by parts of your application to publish and subscribe to events of interest quite easily:</p>
+
+<pre>// Subscribers
+$.Topic( "mailArrived" ).subscribe( fn1 );
+$.Topic( "mailArrived" ).subscribe( fn2 );
+$.Topic( "mailSent" ).subscribe( fn1 );
+
+// Publisher
+$.Topic( "mailArrived" ).publish( "hello world!" );
+$.Topic( "mailSent" ).publish( "woo! mail!" );
+
+// Here, "hello world!" gets pushed to fn1 and fn2
+// when the "mailArrived" notification is published
+// with "woo! mail!" also being pushed to fn1 when
+// the "mailSent" notification is published. 
+
+/*
+output:
+hello world!
+fn2 says: hello world!
+woo! mail!
+*/
+</pre>
+
+
+<p>Whilst this is useful, the implementation can be taken further. Using <code>$.Deferreds</code>,  it's possible to ensure publishers only publish notifications for subscribers once particular tasks have been completed (resolved). See the below code sample for some further comments on how this could be used in practice:</p>
+
+<pre>// subscribe to the mailArrived notification
+$.Topic( "mailArrived" ).subscribe( fn1 );
+
+// create a new instance of Deferreds
+var dfd = $.Deferred();
+
+// define a new topic (without directly publishing)
+var topic = $.Topic( "mailArrived" );
+
+// when the deferred has been resolved, publish a 
+// notification to subscribers
+dfd.done( topic.publish );
+
+// Here the Deferred is being resolved with a message
+// that will be passed back to subscribers. It's possible to
+// easily integrate this into a more complex routine
+// (eg. waiting on an ajax call to complete) so that
+// messages are only published once the task has actually
+// finished.
+dfd.resolve( "its been published!" );
+</pre>
+
+</longdesc>
+</entry>

@@ -1,0 +1,33 @@
+<entry name="callbacks.locked" type="method" return="Boolean">
+  <signature>
+    <added>1.7</added>
+  </signature>
+  <desc>Determine if the callbacks list has been locked.</desc>
+  <longdesc>
+
+<h2 id="example-1">Example</h2>
+<p>Using <code>callbacks.locked()</code> to determine the lock-state of a callback list:</p>
+<pre>
+// a sample logging function to be added to a callbacks list
+var foo = function( value ){
+    console.log( 'foo:' + value);
+}
+
+var callbacks = $.Callbacks();
+
+// add the logging function to the callback list
+callbacks.add( foo );
+
+// fire the items on the list, passing an argument
+callbacks.fire( 'hello' );
+// outputs 'foo: hello'
+
+// lock the callbacks list
+callbacks.lock();
+
+// test the lock-state of the list
+console.log ( callbacks.locked() ); //true
+</pre>
+
+  </longdesc>
+</entry>

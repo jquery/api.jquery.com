@@ -1,0 +1,41 @@
+            <entry type='selector'   name="reset" return="">
+                <sample>:reset</sample>
+                 <signature><added>1.0</added> </signature>
+                <desc>Selects all elements of type reset.</desc>
+                <longdesc><p><code>:reset</code> is equivalent to <code>[type="reset"]</code></p></longdesc>
+                <example>
+                    <desc>Finds all reset inputs.</desc>
+                    <code><![CDATA[
+
+    var input = $("input:reset").css({background:"yellow", border:"3px red solid"});
+    $("div").text("For this type jQuery found " + input.length + ".")
+            .css("color", "red");
+    $("form").submit(function () { return false; }); // so it won't submit
+
+]]></code>
+                    <css><![CDATA[
+  textarea { height:45px; }
+  ]]></css>
+                    <html><![CDATA[<form>
+    <input type="button" value="Input Button"/>
+    <input type="checkbox" />
+
+    <input type="file" />
+    <input type="hidden" />
+    <input type="image" />
+
+    <input type="password" />
+    <input type="radio" />
+    <input type="reset" />
+
+    <input type="submit" />
+    <input type="text" />
+    <select><option>Option<option/></select>
+
+    <textarea></textarea>
+    <button>Button</button>
+  </form>
+  <div>
+  </div>]]></html>
+                </example>
+            </entry>

@@ -1,0 +1,236 @@
+<entry type='method' name="jQuery.tmplItem" return="tmplItem" plugin="jQuery Templates">
+<download>
+<p>This documentation topic concerns the <em>jQuery Templates</em> plugin (jquery-tmpl), which can be downloaded from: <a href="http://github.com/jquery/jquery-tmpl">http://github.com/jquery/jquery-tmpl</a>.</p>
+</download>
+<signature>
+<added>1.4.3</added>
+<argument name="element" type="Element, jQuery">
+<desc>An HTML element (or jQuery object that wraps an element)</desc>
+</argument>
+</signature>
+<desc>Return the <code>tmplItem</code> data structure for the rendered template that the specified element is part of.</desc>
+
+<longdesc>
+<p>Note: For information about how to render templates, see <a href="http://api.jquery.com/tmpl">.tmpl()</a> and <a href="http://api.jquery.com/jquery.tmpl">jQuery.tmpl()</a>.</p>
+<p>
+<code>$.tmplItem( element )</code> provides access to the rendered template item which the element is part of.
+</p>
+<p>See also <a href="http://api.jquery.com/tmplitem">tmplItem()</a>.</p>
+<p>
+Typically the element parameter passed to <code>tmplItem()</code>is the <code>this</code> element within an event handler. 
+The return value of <code>tmplItem()</code> is a <code>tmplItem</code> data structure whose fields provide access to:</p>
+<ul>
+<li>The HTML elements that the template item is made up of (<i>nodes</i> field).</li>
+<li>The associated data item (<i>data</i> field).</li>
+<li>The parent template item, if the template is nested (<i>parent</i> field).</li>
+<li>The template that was used to render the template item (<i>tmpl</i> field).</li>
+<li>User defined parameters or methods, such as any values that were set on the <code>options</code> map, passed to <code>tmpl()</code> when the template was rendered.</li>
+</ul>
+
+<p>
+The following example shows how to use <code>$.tmplItem()</code> to get information about the rendered template:</p>
+<pre>
+function myClickHandler() {
+    var tmplItem = $.tmplItem( this );
+    alert( "Description: " + tmplItem.data.description );
+}
+</pre>
+<h4>Building Interactive Ajax Applications</h4>
+<p>
+<code>.tmplItem()</code> and <code>jQuery.tmplItem()</code> make it easy to use templates in scenarios beyond simple string concatenation and read-only rendering. They let you create fully-fledged interactive client-side Ajax applications in which the code needs to perform actions like the following:</p>
+<ul>
+<li>Accessing the associated data item.</li>
+<li>Modifying the data item.</li>
+<li>Accessing HTML elements that make up the rendered template item.</li>
+<li>Updating (re-rendering) the template item, with modified data, modified user-defined parameters, or using a different template</li>
+</ul>
+<p><strong>Example:</strong> Dynamically switching templates for a template item.:</p>
+<pre>
+// Get the compiled detail template
+var detailTemplate = $( "#detailTemplate" ).template();
+
+// Add an onclick handler for template items currently 
+// using the summary template
+$(".movieSummary").live( "click", function () {
+    // Get the data structure for the template item 
+    // which this clicked element belongs to
+    var tmplItem = $.tmplItem(this);
+
+    // Set the template on this item to the detail template
+    tmplItem.tmpl = detailTemplate;
+
+    // re-render
+    tmplItem.update();
+})
+</pre>
+
+</longdesc>
+
+<example>
+<desc>Access the data, and set selection on the item.</desc>
+<js src="http://code.jquery.com/jquery-latest.min.js" /> 
+<js src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js" /> 
+<code><![CDATA[
+var movies = [
+    { Name: "The Red Violin", ReleaseYear: "1998" },
+    { Name: "Eyes Wide Shut", ReleaseYear: "1999" },
+    { Name: "The Inheritance", ReleaseYear: "1976" }
+];
+var selectedItem =  null;
+
+/* Render the template with the movies data */
+$( "#movieTemplate" ).tmpl( movies )
+    .appendTo( "#movieList" );
+
+/* Add an onclick handler for the movie template items */
+$( ".movieName" ).live( "click", function() {
+
+    if ( selectedItem ) {
+        $( selectedItem.nodes ).css( "backgroundColor", "#f8f8f8" );
+    }
+
+    /* Get the data structure for the template item 
+       which this clicked element belongs to */
+    selectedItem = $.tmplItem( this );
+
+    $( selectedItem.nodes ).css( "backgroundColor", "yellow" );
+
+    alert( "'" + selectedItem.data.Name + "' was released in " 
+        + selectedItem.data.ReleaseYear + "." ); 
+});
+]]></code>
+<css><![CDATA[
+#movieList { cursor:pointer; color:blue; margin:8px; background-color:#f8f8f8; }
+#movieList li:hover { color:red; }
+]]></css>
+<html><![CDATA[
+<tmpl id="movieTemplate" type="text/x-jquery-tmpl"> 
+    <li><b class="movieName">${Name}</b></li>
+</tmpl>
+
+Click for details:
+<ul id="movieList"></ul>
+]]></html>
+</example>
+
+<example>
+<desc>Master detail view.</desc>
+<js src="http://code.jquery.com/jquery-latest.min.js" /> 
+<js src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js" /> 
+<code><![CDATA[
+var people = [
+    { firstName: "Peter", lastName: "Jones" },
+    { firstName: "Eva", lastName: "Smolinski" }
+];
+
+var selectedItem = null;
+
+function renderTemplate( container, template, data ) {
+    $( container ).empty();
+    $( template ).tmpl( data ).appendTo( container );
+}
+
+/* Render the list */
+renderTemplate( "#peopleList", "#listItemTemplate", people );
+
+$("#peopleList")
+    .delegate( "tr", "click", function () {
+
+        if ( selectedItem ) {
+            $( selectedItem.nodes ).removeClass( "selected");
+        }
+
+        /* Set selection on the clicked item */
+        selectedItem = $.tmplItem(this);
+        $( selectedItem.nodes ).addClass( "selected");
+
+        /* Render the detail view for this data item */
+        renderTemplate( "#personDetail", "#detailTemplate", selectedItem.data );
+    });
+]]></code>
+<css><![CDATA[
+table { cursor:pointer; border-collapse:collapse; float: left; clear: both; } table tr { border:1px solid blue; color:blue; height:25px; } table tr:hover { color:red; }
+table, #personDetail > div { border:2px solid blue; width:220px; margin:8px 0 4px 0; background-color:#f8f8f8; } table td, #personDetail div div { padding:3px; margin:3px; }
+.selected { background-color:yellow; } #personDetail input { float:right; width:125px; } #personDetail { float:left; margin-left:10px; }
+]]></css>
+<html><![CDATA[
+<tmpl id="listItemTemplate" type="text/x-jquery-tmpl"> 
+    <tr><td>
+        ${firstName} ${lastName} 
+    </td></tr>
+</tmpl>
+
+<tmpl id="detailTemplate" type="text/x-jquery-tmpl"> 
+    <div>
+        <div>First Name: <em>${firstName}</em></div>
+        <div>Last Name: <em>${lastName}</em></div>
+    </div>
+</tmpl>
+
+<div style="float:left;">Click for details:<div>
+<table><tbody id="peopleList"></tbody></table>
+
+<div id="personDetail"></div>
+]]></html>
+</example>
+
+<example>
+<desc>Dynamic switching of templates.</desc>
+<js src="http://code.jquery.com/jquery-latest.min.js" /> 
+<js src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js" /> 
+<code><![CDATA[
+var movies = [
+    { Name: "The Red Violin", ReleaseYear: "1998", Director: "François Girard" },
+    { Name: "Eyes Wide Shut", ReleaseYear: "1999", Director: "Stanley Kubrick" },
+    { Name: "The Inheritance", ReleaseYear: "1976", Director: "Mauro Bolognini" }
+];
+var selectedItem = null;
+
+/* Render the summaryTemplate with the "movies" data */
+$( "#summaryTemplate" ).tmpl( movies ).appendTo( "#movieList" );
+
+/* Add onclick handlers for movie template items
+   using the summary or details template */
+$("#movieList")
+.delegate( ".movieSummary", "click", function () {
+    if (selectedItem) {
+        // Set the template on the previously selected item
+        // back to the summary template
+        selectedItem.tmpl = $( "#summaryTemplate" ).template();
+        selectedItem.update();
+    }
+    /* Get the data structure for the template item 
+       which this clicked element belongs to, and make
+       it the selected item */
+    selectedItem = $.tmplItem(this);
+
+    /* Set the template on this item to the detail template */
+    selectedItem.tmpl = $( "#detailTemplate" ).template();
+    selectedItem.update();
+})
+.delegate( ".movieDetail", "click", function () {
+    /* Set the template on this item to the summary template */
+    selectedItem.tmpl = $( "#summaryTemplate" ).template();
+    selectedItem.update();
+    selectedItem = null;
+});
+]]></code>
+<css><![CDATA[
+table { cursor:pointer; border-collapse:collapse; border:2px solid blue; width:300px; margin:8px; }
+table tr { border:1px solid blue; color:blue; background-color:#f8f8f8; } table td { padding:3px; } table tr:hover { color:red; }
+.movieDetail { background-color:yellow; } .movieDetail.row1 { border-bottom:none; } .movieDetail.row2 { border-top:none; }
+]]></css>
+<html><![CDATA[
+<tmpl id="summaryTemplate" type="text/x-jquery-tmpl">
+    <tr class='movieSummary'><td colspan='2'>${Name}</td></tr>
+</tmpl>
+
+<tmpl id="detailTemplate" type="text/x-jquery-tmpl">
+    <tr class='movieDetail row1'><td colspan='2'>${Name}</td></tr><tr class='movieDetail row2'><td>${ReleaseYear}</td><td>Director: ${Director}</td></tr>
+</tmpl>
+
+Click for details:
+<table><tbody id="movieList"></tbody></table>
+]]></html>
+</example>
+</entry>

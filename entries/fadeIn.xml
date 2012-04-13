@@ -1,0 +1,101 @@
+<entry type='method' name="fadeIn" return="jQuery">
+  <desc>Display the matched elements by fading them to opaque.</desc>
+  <signature>
+    <added>1.0</added>
+    <argument name="duration" type="String,Number" optional="true">
+      <desc>A string or number determining how long the animation will run.</desc>
+    </argument>
+    <argument name="callback" type="Callback" optional="true">
+      <desc>A function to call once the animation is complete.</desc>
+    </argument>
+  </signature>
+  <signature>
+    <added>1.4.3</added>
+    <argument name="duration" type="String,Number" optional="true">
+      <desc>A string or number determining how long the animation will run.</desc>
+    </argument>
+    <argument name="easing" type="String" optional="true">
+      <desc>A string indicating which easing function to use for the transition.</desc>
+    </argument>
+    <argument name="callback" type="Callback" optional="true">
+      <desc>A function to call once the animation is complete.</desc>
+    </argument>
+  </signature>
+  <longdesc>
+    <p>The <code>.fadeIn()</code> method animates the opacity of the matched elements.</p>
+    <p>Durations are given in milliseconds; higher values indicate slower animations, not faster ones. The strings <code>'fast'</code> and <code>'slow'</code> can be supplied to indicate durations of <code>200</code> and <code>600</code> milliseconds, respectively. If any other string is supplied, or if the <code>duration</code> parameter is omitted, the default duration of  <code>400</code> milliseconds is used.</p>
+    <p>We can animate any element, such as a simple image:</p>
+    <pre>&lt;div id="clickme"&gt;
+      Click here
+    &lt;/div&gt;
+    &lt;img id="book" src="book.png" alt="" width="100" height="123" /&gt;
+    With the element initially hidden, we can show it slowly:
+    $('#clickme').click(function() {
+      $('#book').fadeIn('slow', function() {
+        // Animation complete
+      });
+    });</pre>
+    <p class="image four-across">
+      <img src="/images/0042_06_33.png" alt="" />
+      <img src="/images/0042_06_34.png" alt="" />
+      <img src="/images/0042_06_35.png" alt="" />
+      <img src="/images/0042_06_36.png" alt="" />
+    </p>
+
+    <h4 id="easing">Easing</h4>
+    <p><strong>As of jQuery 1.4.3</strong>, an optional string naming an easing function may be used. Easing functions specify the speed at which the animation progresses at different points within the animation. The only easing implementations in the jQuery library are the default, called <code>swing</code>, and one that progresses at a constant pace, called <code>linear</code>. More easing functions are available with the use of plug-ins, most notably the <a href="http://jqueryui.com">jQuery UI suite</a>.</p>
+    <h4 id="callback-function">Callback Function</h4>
+    <p>If supplied, the callback is fired once the animation is complete. This can be useful for stringing different animations together in sequence. The callback is not sent any arguments, but <code>this</code> is set to the DOM element being animated. If multiple elements are animated, it is important to note that the callback is executed once per matched element, not once for the animation as a whole. </p>
+  <p><strong>As of jQuery 1.6</strong>, the <code><a href="http://api.jquery.com/promise/">.promise()</a></code> method can be used in conjunction with the <code><a href="http://api.jquery.com/deferred.done/">deferred.done()</a></code> method to execute a single callback for the animation as a whole when <em>all</em> matching elements have completed their animations ( See the <a href="http://api.jquery.com/promise/#example-1">example for .promise()</a> ).  </p>
+  </longdesc>
+  <example>
+    <desc>Animates hidden divs to fade in one by one, completing each animation within 600 milliseconds.</desc>
+    <code><![CDATA[
+      $(document.body).click(function () {
+        $("div:hidden:first").fadeIn("slow");
+      });
+    ]]></code>
+    <css><![CDATA[
+    span { color:red; cursor:pointer; }
+    div { margin:3px; width:80px; display:none;
+      height:80px; float:left; }
+      div#one { background:#f00; }
+      div#two { background:#0f0; }
+      div#three { background:#00f; }
+    ]]></css>
+    <html><![CDATA[<span>Click here...</span>
+
+    <div id="one"></div>
+    <div id="two"></div>
+    <div id="three"></div>]]></html>
+    </example>
+    <example>
+      <desc>Fades a red block in over the text. Once the animation is done, it quickly fades in more text on top.</desc>
+      <code><![CDATA[
+        $("a").click(function () {
+          $("div").fadeIn(3000, function () {
+            $("span").fadeIn(100);
+          });
+          return false;
+        }); 
+
+      ]]></code>
+      <css><![CDATA[
+      p { position:relative; width:400px; height:90px; }
+      div { position:absolute; width:400px; height:65px; 
+        font-size:36px; text-align:center; 
+        color:yellow; background:red;
+        padding-top:25px; 
+        top:0; left:0; display:none; }
+        span { display:none; }
+      ]]></css>
+      <html><![CDATA[<p>
+        Let it be known that the party of the first part
+        and the party of the second part are henceforth
+        and hereto directed to assess the allegations
+        for factual correctness... (<a href="#">click!</a>)
+        <div><span>CENSORED!</span></div>
+
+      </p>]]></html>
+      </example>
+</entry>

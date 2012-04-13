@@ -1,0 +1,24 @@
+            <entry type='selector'  name="attributeMultiple" return="">
+                <sample>[attributeFilter1][attributeFilter2][attributeFilterN]</sample>
+                 <signature><added>1.0</added>
+                <argument name="attributeFilter1" type="Selector">
+                    <desc>An attribute filter.</desc>
+                </argument>
+                <argument name="attributeFilter2" type="Selector">
+                    <desc>Another attribute filter, reducing the selection even more</desc>
+                </argument>
+                <argument name="attributeFilterN" optional="true" type="Selector">
+                    <desc>As many more attribute filters as necessary</desc>
+                </argument></signature>
+                <desc>Matches elements that match all of the specified attribute filters.</desc>
+                <longdesc></longdesc>
+                <example>
+                    <desc>Finds all inputs that have an id attribute and whose name attribute ends with man and sets the value.</desc>
+                    <code><![CDATA[$('input[id][name$="man"]').val('only this one');]]></code>
+                    <html><![CDATA[<input id="man-news" name="man-news" />
+
+  <input name="milkman" />
+  <input id="letterman" name="new-letterman" />
+  <input name="newmilk" />]]></html>
+                </example>
+            </entry>

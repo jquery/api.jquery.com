@@ -1,0 +1,65 @@
+<entry type='property' name="jQuery.support" return="Object">
+  <signature><added>1.3</added></signature>
+  <desc>A collection of properties that represent the presence of different browser features or bugs. Primarily intended for jQuery's internal use; specific properties may be removed when they are no longer needed internally to improve page startup performance.</desc>
+  <longdesc>
+    <p>Rather than using <code>$.browser</code> to detect the current user agent and alter the page presentation based on which browser is running, it is a good practice to perform <strong>feature detection</strong>. This means that prior to executing code which relies on a browser feature, we test to ensure that the feature works properly. To make this process simpler, jQuery performs many such tests and makes the results available to us as properties of the <code>jQuery.support</code> object.</p>
+    <p>The values of all the support properties are determined using feature detection (and do not use any form of browser sniffing). </p>
+
+<blockquote>
+    <p>Following are a few resources that explain how feature detection works:</p>
+    <ul>
+      <li><a href="http://peter.michaux.ca/articles/feature-detection-state-of-the-art-browser-scripting">http://peter.michaux.ca/articles/feature-detection-state-of-the-art-browser-scripting</a></li>
+      <li><a href="http://www.jibbering.com/faq/faq_notes/not_browser_detect.html">http://www.jibbering.com/faq/faq_notes/not_browser_detect.html</a></li>
+      <li><a href="http://yura.thinkweb2.com/cft/">http://yura.thinkweb2.com/cft/</a></li>
+    </ul>
+</blockquote>
+    <p>While jQuery includes a number of properties, developers should feel free to add their own as their needs dictate. Many of the <code>jQuery.support</code> properties are rather low-level, so they are most useful for plugin and jQuery core development, rather than general day-to-day development. Since jQuery requires these tests internally, they must be performed on <em>every</em> page load; for that reason this list is kept short and limited to features needed by jQuery itself.</p>
+
+<p>The tests included in <code>jQuery.support</code> are as follows:</p>
+<ul>
+  <li><code>ajax</code> is equal to true if a browser is able to create an <code>XMLHttpRequest</code> object.</li>
+<li><code>boxModel</code> is equal to true if the page is rendering according to the <a href="http://www.w3.org/TR/REC-CSS2/box.html">W3C CSS Box Model</a> (is currently false in IE 6 and 7 when they are in Quirks Mode). This property is null until document ready occurs.</li>
+<li><code>changeBubbles</code> is equal to true if the change event bubbles up the DOM tree, as required by the <a href="http://www.w3.org/TR/DOM-Level-2-Events/events.html#Events-eventgroupings-htmlevents">W3C DOM event model</a>. (It is currently false in IE, and jQuery simulates bubbling).</li>
+<li><code>checkClone</code> is equal to true if a browser correctly clones the checked state of radio buttons or checkboxes in document fragments.</li>
+<li><code>checkOn</code> is equal to true if the value of a checkbox defaults to "on" when no value is specified.</li>
+<li><code>cors</code> is equal to true if a browser can create an <code>XMLHttpRequest</code> object and if that <code>XMLHttpRequest</code> object has a <code>withCredentials</code> property. To enable cross-domain requests in environments that do not support cors yet but do allow cross-domain <abbr title="XMLHttpRequest">XHR</abbr> requests (windows gadget, etc), set <code>$.support.cors = true;</code>.
+<a href="http://www.w3.org/TR/cors/">CORS WD</a></li>
+<li><code>cssFloat</code> is equal to true if the name of the property containing the CSS float value is .cssFloat, as defined in the <a href="http://www.w3.org/TR/DOM-Level-2-Style/css.html#CSS-CSS2Properties-cssFloat">CSS Spec</a>. (It is currently false in IE, it uses styleFloat instead).</li>
+<li><code>hrefNormalized</code> is equal to true if the <code>.getAttribute()</code> method retrieves the <code>href</code> attribute of elements unchanged, rather than normalizing it to a fully-qualified URL. (It is currently false in IE, the URLs are normalized).
+  <div><a href="http://www.w3.org/TR/DOM-Level-3-Core/core.html#ID-666EE0F9">DOM l3 spec</a></div></li>
+<li><code>htmlSerialize</code> is equal to true  if the browser is able to serialize/insert <code>&lt;link&gt;</code> elements using the <code>.innerHTML</code> property of elements. (is currently false in IE). <div><a href="http://www.w3.org/TR/2008/WD-html5-20080610/serializing.html#html-fragment">HTML5 WD</a></div></li>
+<li><code>leadingWhitespace</code> is equal to true if the browser inserts content with .innerHTML exactly as provided—specifically, if leading whitespace characters are preserved. (It is currently false in IE 6-8). <div><a href="http://www.w3.org/TR/2008/WD-html5-20080610/dom.html#innerhtml0">HTML5 WD</a></div></li>
+<li><code>noCloneChecked</code> is equal to true if cloned DOM elements copy over the state of the <code>.checked</code> expando. (It is currently false in IE). (Added in jQuery 1.5.1)</li>
+<li><code>noCloneEvent</code> is equal to true  if cloned DOM elements are created without event handlers (that is, if the event handlers on the source element are not cloned). (It is currently false in IE). <div><a href="http://www.w3.org/TR/DOM-Level-2-Events/events.html#Events-Registration-interfaces-h3">DOM l2 spec</a></div></li>
+<li><code>opacity</code> is equal to true if a browser can properly interpret the opacity style property. (It is currently false in IE, it uses alpha filters instead). <div><a href="http://www.w3.org/TR/css3-color/#transparency">CSS3 spec</a></div></li>
+<li><code>optDisabled</code> is equal to true if option elements within disabled select elements are not automatically marked as disabled. <div><a href="http://dev.w3.org/html5/spec/the-button-element.html#attr-option-disabled">HTML5 WD</a></div></li>
+<li><code>optSelected</code> is equal to true if an <code>&lt;option&gt;</code> element that is selected by default has a working <code>selected</code> property. <div><a href="http://dev.w3.org/html5/spec/the-button-element.html#attr-option-selected">HTML5 WD</a></div></li>
+<li><code>scriptEval()</code> is equal to true if inline scripts are automatically evaluated and executed when inserted into the document using standard DOM manipulation methods such as <code>.appendChild()</code> and <code>.createTextNode()</code>. (It is currently false in IE, it uses <code>.text</code> to insert executable scripts). 
+<div><strong>Note: No longer supported; removed in jQuery 1.6. Prior to jQuery 1.5.1</strong>, the <code>scriptEval()</code> method was the static <code>scriptEval</code> property. The change to a method allowed the test to be deferred until first use to prevent content security policy inline-script violations. </div>
+<div><a href="http://www.w3.org/TR/2008/WD-html5-20080610/tabular.html#script">HTML5 WD</a></div></li>
+<li><code>style</code> is equal to true if inline styles for an element can be accessed through the DOM attribute called style, as required by the DOM Level 2 specification. In this case, <code>.getAttribute('style')</code> can retrieve this value; in Internet Explorer, <code>.cssText</code> is used for this purpose. <div><a href="http://www.w3.org/TR/DOM-Level-2-Style/css.html#CSS-ElementCSSInlineStyle">DOM l2 Style spec</a></div></li>
+<li><code>submitBubbles</code> is equal to true if the submit event bubbles up the DOM tree, as required by the <a href="http://www.w3.org/TR/DOM-Level-2-Events/events.html#Events-eventgroupings-htmlevents">W3C DOM event model</a>. (It is currently false in IE, and jQuery simulates bubbling).</li>
+<li><code>tbody</code> is equal to true if an empty <code>&lt;table&gt;</code> element can exist without a <code>&lt;tbody&gt;</code> element. According to the HTML specification, this sub-element is optional, so the property should be true in a fully-compliant browser. If false, we must account for the possibility of the browser injecting <code>&lt;tbody&gt;</code> tags implicitly. (It is currently false in IE, which automatically inserts <code>tbody</code> if it is not present in a string assigned to <code>innerHTML</code>). <div><a href="http://dev.w3.org/html5/spec/Overview.html#the-table-element">HTML5 spec</a></div></li>
+</ul>
+</longdesc>
+                <example>
+                    <desc>Returns the box model for the iframe.</desc>
+                    <code><![CDATA[
+
+    $("p").html("This frame uses the W3C box model: <span>" +
+                jQuery.support.boxModel + "</span>");
+
+]]></code>
+                    <css><![CDATA[
+  p { color:blue; margin:20px; }
+  span { color:red; }
+  ]]></css>
+                    <html><![CDATA[<p>
+  </p>]]></html>
+                </example>
+                <example>
+                    <desc>Returns false if the page is in QuirksMode in Internet Explorer</desc>
+                    <code><![CDATA[jQuery.support.boxModel]]></code>
+                    <results><![CDATA[false]]></results>
+                </example>
+            </entry>

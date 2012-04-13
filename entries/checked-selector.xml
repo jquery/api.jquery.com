@@ -1,0 +1,61 @@
+<entry type='selector'   name="checked" return="">
+  <sample>:checked</sample>
+   <signature><added>1.0</added> </signature>
+  <desc>Matches all elements that are checked.</desc>
+  <longdesc><p>The <code>:checked</code> selector works for checkboxes and radio buttons. For select elements, use the <code>:selected</code> selector.</p></longdesc>
+  <example>
+    <desc>Finds all input elements that are checked.</desc>
+    <code><![CDATA[
+function countChecked() {
+  var n = $("input:checked").length;
+  $("div").text(n + (n <= 1 ? " is" : " are") + " checked!");
+}
+countChecked();
+$(":checkbox").click(countChecked);
+]]></code>
+                    <css><![CDATA[
+  div { color:red; }
+  ]]></css>
+<html><![CDATA[
+<form>
+  <p>
+    <input type="checkbox" name="newsletter" checked="checked" value="Hourly" />
+
+    <input type="checkbox" name="newsletter" value="Daily" />
+    <input type="checkbox" name="newsletter" value="Weekly" />
+
+    <input type="checkbox" name="newsletter" checked="checked" value="Monthly" />
+    <input type="checkbox" name="newsletter" value="Yearly" />
+  </p>
+</form>
+<div></div>
+]]></html>
+</example>
+<example>
+<code><![CDATA[
+$("input").click(function() {
+  $("#log").html( $(":checked").val() + " is checked!" );
+});
+]]></code>
+<css><![CDATA[
+input, label { line-height: 1.5em; }
+]]></css>
+<html><![CDATA[
+<form>
+  <div>
+    <input type="radio" name="fruit" value="orange" id="orange">
+    <label for="orange">orange</label>
+  </div>
+  <div>
+    <input type="radio" name="fruit" value="apple" id="apple">
+    <label for="apple">apple</label>
+  </div>
+  <div>
+    <input type="radio" name="fruit" value="banana" id="banana">
+    <label for="banana">banana</label>
+  </div>
+  <div id="log"></div>
+</form>
+]]></html>
+ </example>
+</entry>

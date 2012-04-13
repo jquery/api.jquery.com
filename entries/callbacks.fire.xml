@@ -1,0 +1,42 @@
+<entry name="callbacks.fire" type="method" return="undefined">
+  <signature>
+    <added>1.7</added>
+    <argument name="arguments" type="">
+      <desc>The argument or list of arguments to pass back to the callback list.</desc>
+    </argument>
+  </signature>
+  <desc>Call all of the callbacks with the given arguments</desc>
+  <longdesc>
+<h2 id="example-1">Example</h2>
+<p>Using <code>callbacks.fire()</code> to invoke the callbacks in a list with any arguments that have been passed:</p>
+<pre>
+// a sample logging function to be added to a callbacks list
+var foo = function( value ){
+    console.log( 'foo:' + value );
+}
+
+var callbacks = $.Callbacks();
+
+// add the function 'foo' to the list
+callbacks.add( foo );
+
+// fire the items on the list
+callbacks.fire( 'hello' ); // outputs: 'foo: hello'
+callbacks.fire( 'world '); // outputs: 'foo: world'
+
+// add another function to the list
+var bar = function( value ){
+    console.log( 'bar:' + value );
+} 
+
+// add this function to the list
+callbacks.add( bar );
+
+// fire the items on the list again
+callbacks.fire( 'hello again' );
+// outputs:
+// 'foo: hello again'
+// 'bar: hello again'
+</pre>
+  </longdesc>
+</entry>

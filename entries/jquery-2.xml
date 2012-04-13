@@ -1,0 +1,27 @@
+<entry type='property' name="jquery" return="String">
+  <signature><added>1.0</added></signature>
+  <desc>A string containing the jQuery version number.</desc>
+  <longdesc><p>The <code>.jquery</code> property is assigned to the jQuery prototype, commonly referred to by its alias <code>$.fn</code>. It is a string containing the version number of <code>jQuery</code>, such as "1.5.0" or "1.4.4".</p>
+   </longdesc>               
+  <example>
+    <desc>Determine if an object is a jQuery object</desc>
+    <code><![CDATA[
+var a = { what: "A regular JS object" },
+    b = $('body');
+     
+if ( a.jquery ) { // falsy, since it's undefined
+    alert(' a is a jQuery object! ');    
+}
+
+if ( b.jquery ) { // truthy, since it's a string
+    alert(' b is a jQuery object! ');
+}
+]]></code>
+  </example>
+<example>
+    <desc>Get the current version of jQuery running on the page</desc>
+    <code><![CDATA[
+alert( 'You are running jQuery version: ' + $.fn.jquery );
+]]></code>
+  </example>
+</entry>

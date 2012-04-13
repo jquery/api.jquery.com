@@ -1,0 +1,81 @@
+<entry type='method' name="unlink" return="jQuery"  plugin="jQuery Datalink">
+<download>
+<p>This documentation topic concerns the <em> jQuery Datalink</em> plugin (jquery-datalink), which can be downloaded from: <a href="http://github.com/jquery/jquery-datalink">http://github.com/jquery/jquery-datalink</a>. </p>
+</download>
+  <signature>
+    <added>1.4.3</added>
+    <argument name="target" type="Element, Object">
+      <desc>An object to unlink.</desc>
+    </argument>
+  </signature>
+  <desc>Remove a previously created link.</desc>
+  <longdesc><p>Links created with <code>.link()</code> can be removed with <code>.unlink()</code>.</p>
+<pre>
+var person = {};
+$("form").link(person);
+$("[name=firstName]").val("aValue");
+person.firstName; // aValue
+$("form").unlink(person);
+$("[name=firstName]").val("aNewValue");
+person.firstName; // still "aValue"
+</pre>
+<p>If the original link matched multiple elements, <code>.unlink()</code> may also be used to remove the link on a subset of the elements. The following example shows how to link all input elements to an object, and then how to unlink input elements that have a specified CSS class:</p>
+<pre>
+var person = {};
+$("input").link(person);
+$(".nolink").unlink(person);
+</pre>
+<p>
+<code>.unlink()</code> can unlink elements that were part of the original link, but note that <code>.link()</code> also responds to bubbled-up change events from the selected elements' descendants. <code>.unlink()</code> will only unlink elements that were explicitly matched by the original link, not descendants of those elements.
+</p>
+</longdesc>
+<example>
+    <desc>Link all input elements of a form to an object, then remove the link.</desc>
+    <js src="http://code.jquery.com/jquery-latest.min.js"/>
+    <js src="http://github.com/jquery/jquery-datalink/raw/master/jquery.datalink.js"/>
+    <code><![CDATA[
+    var person = { };
+    $("form").link(person);
+
+    // Chain link the person object to these elements to show the results
+    $("#objFirst").link(person, {
+        firstName: {
+            name: "objFirst",
+            convertBack: function(value, source, target) {
+                $(target).text(value);
+            }
+        }
+    });
+    $("#objLast").link(person, {
+        lastName: {
+            name: "objLast",
+            convertBack: function(value, source, target) {
+                $(target).text(value);
+            }
+        }
+    });
+
+    // remove link
+    $("#unlink").click(function() {
+        $("form").unlink(person);
+    });
+]]></code>
+<html><![CDATA[
+<form>
+    <div>
+        First Name:
+        <input type="text" name="firstName" />
+    </div>
+    <div>
+        Last Name:
+        <input type="text" name="lastName" />
+    </div>
+    <div>
+        <input id="unlink" type="button" value="unlink" />
+    </div>
+</form>
+Object.firstName: <span id="objFirst"></span><br/>
+Object.lastName <span id="objLast"></span>
+]]></html>
+  </example>
+</entry>

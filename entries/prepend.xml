@@ -1,0 +1,81 @@
+<entry type='method' name="prepend" return="jQuery">
+  <signature>
+    <added>1.0</added>
+    <argument name="content" type="String, Element, jQuery">
+      <desc>DOM element, array of elements, HTML string, or jQuery object to insert at the beginning of each element in the set of matched elements.</desc>
+    </argument>
+    <argument name="content" type="String, Element, jQuery" optional="true">
+      <desc>One or more additional DOM elements, arrays of elements, HTML strings, or jQuery objects to insert at the beginning of each element in the set of matched elements.</desc>
+    </argument>
+  </signature>
+  <signature>
+    <added>1.4</added>
+    <argument name="function(index, html)" type="Function">
+      <desc>A function that returns an HTML string, DOM element(s), or jQuery object to insert at the beginning of each element in the set of matched elements. Receives the index position of the element in the set and the old HTML value of the element as arguments. Within the function, <code>this</code> refers to the current element in the set.</desc>
+    </argument>
+  </signature>
+  <desc>Insert content, specified by the parameter, to the beginning of each element in the set of matched elements.</desc>
+  <longdesc><p>The <code>.prepend()</code> method inserts the specified content as the first child of each element in the jQuery collection (To insert it as the <em>last</em> child, use <a href="http://api.jquery.com/append/"><code>.append()</code></a>). </p>
+    <p>The <code>.prepend()</code> and <code><a href='/prependTo'>.prependTo()</a></code> methods perform the same task. The major difference is in the syntax—specifically, in the placement of the content and target. With<code> .prepend()</code>, the selector expression preceding the method is the container into which the content is inserted. With <code>.prependTo()</code>, on the other hand, the content precedes the method, either as a selector expression or as markup created on the fly, and it is inserted into the target container.</p>
+    <p>Consider the following HTML:</p>
+    <pre>&lt;h2&gt;Greetings&lt;/h2&gt;
+&lt;div class="container"&gt;
+  &lt;div class="inner"&gt;Hello&lt;/div&gt;
+  &lt;div class="inner"&gt;Goodbye&lt;/div&gt;
+&lt;/div&gt;</pre>
+    <p>You can create content and insert it into several elements at once:</p>
+    <pre>$('.inner').prepend('&lt;p&gt;Test&lt;/p&gt;');</pre>
+    <p>Each <code>&lt;div class="inner"&gt;</code> element gets this new content:</p>
+    <pre>&lt;h2&gt;Greetings&lt;/h2&gt;
+&lt;div class="container"&gt;
+  &lt;div class="inner"&gt;
+    &lt;p&gt;Test&lt;/p&gt;
+    Hello
+  &lt;/div&gt;
+  &lt;div class="inner"&gt;
+    &lt;p&gt;Test&lt;/p&gt;
+    Goodbye
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+  <p>You can also select an element on the page and insert it into another:</p>
+  <pre>$('.container').prepend($('h2'));</pre>
+  <p>If <em>a single element</em> selected this way is inserted elsewhere, it will be moved into the target (<em>not cloned</em>):</p>
+  <pre>&lt;div class="container"&gt;
+    &lt;h2&gt;Greetings&lt;/h2&gt;
+    &lt;div class="inner"&gt;Hello&lt;/div&gt;
+    &lt;div class="inner"&gt;Goodbye&lt;/div&gt;
+&lt;/div&gt;</pre>
+    <p><strong>Important</strong>: If there is more than one target element, however, cloned copies of the inserted element will be created for each target after the first.</p>
+    <h4 id="additional-arguments">Additional Arguments</h4>
+    <p>Similar to other content-adding methods such as <code><a href="http://api.jquery.com/append/">.append()</a></code> and <code><a href="http://api.jquery.com/before/">.before()</a></code>, <code>.prepend()</code> also supports passing in multiple arguments as input. Supported input includes DOM elements, jQuery objects, HTML strings, and arrays of DOM elements.</p> 
+    <p>For example, the following will insert two new <code>&lt;div&gt;</code>s and an existing <code>&lt;div&gt;</code> as the first three child nodes of the body:</p>
+<pre>var $newdiv1 = $('&lt;div id="object1"/&gt;'),
+    newdiv2 = document.createElement('div'),
+    existingdiv1 = document.getElementById('foo');
+
+$('body').prepend($newdiv1, [newdiv2, existingdiv1]);
+</pre>
+<p>Since <code>.prepend()</code> can accept any number of additional arguments, the same result can be achieved by passing in the three <code>&lt;div&gt;</code>s as three separate arguments, like so: <code>$('body').prepend($newdiv1, newdiv2, existingdiv1)</code>. The type and number of arguments will largely depend on how you collect the elements in your code.</p>
+  </longdesc>
+<example>
+    <desc>Prepends some HTML to all paragraphs.</desc>
+    <code><![CDATA[$("p").prepend("<b>Hello </b>");]]></code>
+    <css><![CDATA[p { background:yellow; }]]></css>
+    <html><![CDATA[<p>there, friend!</p>
+
+<p>amigo!</p>]]></html>
+</example>
+<example>
+    <desc>Prepends a DOM Element to all paragraphs.</desc>
+    <code><![CDATA[$("p").prepend(document.createTextNode("Hello "));]]></code>
+    <css><![CDATA[p { background:yellow; }]]></css>
+    <html><![CDATA[<p>is what I'd say</p>
+<p>is what I said</p>]]></html>
+</example>
+<example>
+    <desc>Prepends a jQuery object (similar to an Array of DOM Elements) to all paragraphs.</desc>
+    <code><![CDATA[$("p").prepend( $("b") );]]></code>
+    <css><![CDATA[p { background:yellow; }]]></css>
+    <html><![CDATA[<p> is what was said.</p><b>Hello</b>]]></html>
+</example>
+</entry>

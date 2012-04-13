@@ -1,0 +1,22 @@
+<entry name="event.preventDefault" type="method" return="undefined">
+    <signature>
+        <added>1.0</added>
+    </signature>
+    <desc> If this method is called, the default action of the event will not be triggered. </desc>
+    <longdesc> <p>For example, clicked anchors will not take the browser to a new URL. We can use <code>event.isDefaultPrevented()</code> to determine if this method has been called by an event handler that was triggered by this event.</p>  </longdesc>
+    <example>
+        <desc>Cancel the default action (navigation) of the click.</desc>
+        <code><![CDATA[
+$("a").click(function(event) {
+  event.preventDefault();
+  $('<div/>')
+    .append('default ' + event.type + ' prevented')
+    .appendTo('#log');
+});
+]]></code>
+        <html><![CDATA[
+<a href="http://jquery.com">default click action is prevented</a>
+<div id="log"></div>
+]]></html>
+    </example>
+</entry>

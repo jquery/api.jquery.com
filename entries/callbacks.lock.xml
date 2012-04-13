@@ -1,0 +1,35 @@
+<entry name="callbacks.lock" type="method" return="undefined">
+  <signature>
+    <added>1.7</added>
+  </signature>
+  <desc>Lock a callback list in its current state.</desc>
+  <longdesc>
+<h2 id="example-1">Example</h2>
+<p>Using <code>callbacks.lock()</code> to lock a callback list to avoid further changes being made to the list state:</p>
+<pre>
+// a sample logging function to be added to a callbacks list
+var foo = function( value ){
+    console.log( 'foo:' + value);
+}
+
+var callbacks = $.Callbacks();
+
+// add the logging function to the callback list
+callbacks.add( foo );
+
+// fire the items on the list, passing an argument
+callbacks.fire( 'hello' );
+// outputs 'foo: hello'
+
+// lock the callbacks list
+callbacks.lock();
+
+// try firing the items again
+callbacks.fire( 'world' );
+
+// as the list was locked, no items
+// were called so 'world' isn't logged
+</pre>
+
+  </longdesc>
+</entry>

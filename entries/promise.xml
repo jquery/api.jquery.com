@@ -1,0 +1,94 @@
+<entry name="promise" type="method" return="Promise">
+  <signature>
+    <added>1.6</added>
+    <argument name="type" type="String" optional="true" default="fx">
+      <desc> The type of queue that needs to be observed. </desc>
+    </argument>
+    <argument name="target" type="Object" optional="true">
+      <desc>Object onto which the promise methods have to be attached</desc>
+    </argument>
+  </signature>
+  <desc> Return a Promise object to observe when all actions of a certain type bound to the collection, queued or not, have finished. </desc>
+  <longdesc> <p>The <code>.promise()</code> method returns a dynamically generated Promise that is resolved once all actions of a certain type bound to the collection, queued or not, have ended.</p>
+  <p> By default, <code>type</code> is <code>"fx"</code>, which means the returned Promise is resolved when all animations of the selected elements have completed.</p>
+  <p> Resolve context and sole argument is the collection onto which <code>.promise()</code> has been called. </p>
+  <p> If <code>target</code> is provided, <code>.promise()</code> will attach the methods onto it and then return this object rather than create a new one. This can be useful to attach the Promise behavior to an object that already exists.</p>  
+<blockquote><p><strong>Note: </strong>The returned Promise is linked to a Deferred object stored on the <code>.data()</code> for an element. Since the <code>.remove()</code> method removes the element's data as well as the element itself, it will prevent any of the element's unresolved Promises from resolving. If it is necessary to remove an element from the DOM before its Promise is resolved, use <code>.detach()</code> instead and follow with <code>.removeData()</code> after resolution.</p></blockquote>
+</longdesc>
+<example>
+  <desc>Using <code>.promise()</code> on a collection with no active animation returns a resolved Promise:</desc>
+  <code><![CDATA[
+var div = $( "<div />" );
+
+div.promise().done(function( arg1 ) {
+  // will fire right away and alert "true"
+  alert( this === div && arg1 === div );
+});
+]]></code>
+</example>
+<example>
+  <desc>Resolve the returned Promise when all animations have ended (including those initiated in the animation callback or added later on):</desc>
+  <css><![CDATA[
+div {
+  height: 50px; width: 50px;
+  float: left; margin-right: 10px;
+  display: none; background-color: #090;
+}
+]]></css>
+  <html><![CDATA[
+<button>Go</button>
+<p>Ready...</p>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+
+]]></html>
+  <code><![CDATA[
+$("button").bind( "click", function() {
+  $("p").append( "Started...");
+  
+  $("div").each(function( i ) {
+    $( this ).fadeIn().fadeOut( 1000 * (i+1) );
+  });
+
+  $( "div" ).promise().done(function() {
+    $( "p" ).append( " Finished! " );
+  });
+});
+]]></code>
+</example>
+<example>
+  <desc>Resolve the returned Promise using a <code>$.when()</code> statement (the <code>.promise()</code> method makes it possible to do this with jQuery collections):</desc>
+  <css><![CDATA[
+div {
+  height: 50px; width: 50px;
+  float: left; margin-right: 10px;
+  display: none; background-color: #090;
+}
+]]></css>
+  <html><![CDATA[
+<button>Go</button>
+<p>Ready...</p>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+
+]]></html>
+<code><![CDATA[
+var effect = function() {
+  return $("div").fadeIn(800).delay(1200).fadeOut();
+};
+
+$("button").bind( "click", function() {
+  $("p").append( " Started... ");
+
+  $.when( effect() ).done(function() {
+    $("p").append(" Finished! ");
+  });
+});
+
+]]></code>
+  </example>
+</entry>

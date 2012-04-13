@@ -1,0 +1,52 @@
+<entry type='method' name="blur" return="jQuery">
+  <desc>Bind an event handler to the "blur" JavaScript event, or trigger that event on an element.</desc>
+  <signature>
+    <added>1.0</added>
+    <argument name="handler(eventObject)" type="Function">
+      <desc>A function to execute each time the event is triggered.</desc>
+    </argument>
+  </signature>
+  <signature>
+    <added>1.4.3</added>
+    <argument name="eventData" type="Object" optional="true">
+      <desc>A map of data that will be passed to the event handler.</desc>
+    </argument>
+    <argument name="handler(eventObject)" type="Function">
+      <desc>A function to execute each time the event is triggered.</desc>
+    </argument>
+  </signature>
+   <signature>
+    <added>1.0</added>
+  </signature>
+
+
+<longdesc>
+<p>This method is a shortcut for <code>.bind('blur', handler)</code> in the first two variations, and <code>.trigger('blur')</code> in the third.</p>
+<p>The <code>blur</code> event is sent to an element when it loses focus. Originally, this event was only applicable to form elements, such as <code>&lt;input&gt;</code>. In recent browsers, the domain of the event has been extended to include all element types. An element can lose focus via keyboard commands, such as the Tab key, or by mouse clicks elsewhere on the page.</p>
+<p>For example, consider the HTML:</p>
+<pre>&lt;form&gt;
+  &lt;input id="target" type="text" value="Field 1" /&gt;
+  &lt;input type="text" value="Field 2" /&gt;
+&lt;/form&gt;
+&lt;div id="other"&gt;
+  Trigger the handler
+&lt;/div&gt;
+The event handler can be bound to the first input field:
+$('#target').blur(function() {
+  alert('Handler for .blur() called.');
+});</pre>
+<p>Now if the first field has the focus, clicking elsewhere or tabbing away from it displays the alert:</p>
+<p><span class="output">Handler for .blur() called.</span></p>
+<p>To trigger the event programmatically, apply <code>.blur()</code> without an argument:</p>
+<pre>$('#other').click(function() {
+  $('#target').blur();
+});</pre>
+<p>After this code executes, clicks on <span class="output">Trigger the handler</span> will also alert the message.</p>
+<p>The <code>blur</code> event does not bubble in Internet Explorer. Therefore, scripts that rely on event delegation with the <code>blur</code> event will not work consistently across browsers. As of version 1.4.2, however, jQuery works around this limitation by mapping <code>blur</code> to the <code>focusout</code> event in its event delegation methods, <a href="http://api.jquery.com/live/"><code>.live()</code></a> and <a href="http://api.jquery.com/delegate/"><code>.delegate()</code></a>.</p>
+</longdesc>
+<example>
+    <desc>To trigger the blur event on all paragraphs:</desc>
+    <code><![CDATA[$("p").blur();]]></code>
+</example>
+
+</entry>

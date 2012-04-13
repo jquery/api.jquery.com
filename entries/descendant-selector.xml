@@ -1,0 +1,38 @@
+<entry type='selector'  name="descendant" return=""  >
+    <sample>ancestor descendant</sample>
+    <signature> 
+      <added>1.0</added>
+      <argument name="ancestor" type="Selector">
+          <desc>Any valid selector.</desc>
+      </argument>
+      <argument name="descendant" type="Selector">
+          <desc>A selector to filter the descendant elements.</desc>
+      </argument>
+    </signature>
+    <desc>Selects all elements that are descendants of a given ancestor.</desc>
+    <longdesc><p>A descendant of an element could be a child, grandchild, great-grandchild, and so on, of that element.</p></longdesc>
+    <example>
+        <desc>Finds all input descendants of forms.</desc>
+        <code><![CDATA[$("form input").css("border", "2px dotted blue");]]></code>
+        <css><![CDATA[
+
+  body { font-size:14px; }
+  form { border:2px green solid; padding:2px; margin:0; 
+         background:#efe; }
+  div { color:red; }
+  fieldset { margin:1px; padding:3px; }
+  ]]></css>
+                    <html><![CDATA[<form>
+    <div>Form is surrounded by the green outline</div>
+    <label>Child:</label>
+    <input name="name" />
+
+    <fieldset>
+      <label>Grandchild:</label>
+      <input name="newsletter" />
+    </fieldset>
+
+  </form>
+  Sibling to form: <input name="none" />]]></html>
+    </example>
+</entry>

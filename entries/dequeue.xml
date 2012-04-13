@@ -1,0 +1,32 @@
+<entry type='method' name="dequeue" return="jQuery">
+  <signature>
+    <added>1.2</added>
+    <argument name="queueName" optional="true" type="String">
+      <desc>A string containing the name of the queue. Defaults to <code>fx</code>, the standard effects queue.</desc>
+    </argument>
+  </signature>
+  <desc>Execute the next function on the queue for the matched elements.</desc>
+  <longdesc><p>When <code>.dequeue()</code> is called, the next function on the queue is removed from the queue, and then executed. This function should in turn (directly or indirectly) cause <code>.dequeue()</code> to be called, so that the sequence can continue.</p></longdesc>
+  <example>
+    <desc>Use dequeue to end a custom queue function which allows the queue to keep going.</desc>
+<code><![CDATA[
+$("button").click(function () {
+  $("div").animate({left:'+=200px'}, 2000);
+  $("div").animate({top:'0px'}, 600);
+  $("div").queue(function () {
+    $(this).toggleClass("red");
+    $(this).dequeue();
+  });
+  $("div").animate({left:'10px', top:'30px'}, 700);
+});
+]]></code>
+<css><![CDATA[
+  div { margin:3px; width:50px; position:absolute;
+  height:50px; left:10px; top:30px; 
+  background-color:yellow; }
+  div.red { background-color:red; }  
+]]></css>
+<html><![CDATA[<button>Start</button>  
+<div></div>]]></html>
+    </example>
+  </entry>
