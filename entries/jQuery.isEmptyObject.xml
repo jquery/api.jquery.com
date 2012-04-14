@@ -12,4 +12,6 @@
                     <code><![CDATA[jQuery.isEmptyObject({}) // true
 jQuery.isEmptyObject({ foo: "bar" }) // false]]></code>
                 </example>
-            </entry>
+            <category name="Utilities" slug="utilities"/>
+<category name="Version 1.4" slug="1.4"/>
+</entry>

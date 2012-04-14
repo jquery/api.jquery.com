@@ -12,4 +12,6 @@
                     <code><![CDATA[jQuery.isXMLDoc(document) // false
 jQuery.isXMLDoc(document.body) // false]]></code>
                 </example>
-            </entry>
+            <category name="Utilities" slug="utilities"/>
+<category name="Version 1.1.4" slug="1.1.4"/>
+</entry>

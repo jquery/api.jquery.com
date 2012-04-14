@@ -1,5 +1,5 @@
 <entry type='method' name="jQuery.holdReady" return="undefined">
-	<desc>Holds or releases the execution of jQuery's ready event.</desc>
+  <desc>Holds or releases the execution of jQuery's ready event.</desc>
     <signature>
       <added>1.6</added>
       <argument name="hold" type="Boolean">
@@ -20,4 +20,6 @@ $.getScript("myplugin.js", function() {
 });
 ]]></code>
 </example>
+<category name="Core" slug="core"/>
+<category name="Version 1.6" slug="1.6"/>
 </entry>

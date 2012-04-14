@@ -22,11 +22,15 @@ $("button").click(function () {
 ]]></code>
 <css><![CDATA[
   div { margin:3px; width:50px; position:absolute;
-  height:50px; left:10px; top:30px; 
+  height:50px; left:10px; top:30px;
   background-color:yellow; }
-  div.red { background-color:red; }  
+  div.red { background-color:red; }
 ]]></css>
-<html><![CDATA[<button>Start</button>  
+<html><![CDATA[<button>Start</button>
 <div></div>]]></html>
     </example>
-  </entry>
+  <category name="Custom" slug="custom-effects"/>
+<category name="Data" slug="data"/>
+<category name="Utilities" slug="utilities"/>
+<category name="Version 1.2" slug="1.2"/>
+</entry>

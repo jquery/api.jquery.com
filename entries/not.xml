@@ -91,4 +91,8 @@ $('li').not(document.getElementById('notli'))
                     <desc>Removes all elements that match "div p.selected" from the total set of all paragraphs.</desc>
                     <code><![CDATA[$("p").not($("div p.selected"))]]></code>
                 </example>
-            </entry>
+            <category name="Filtering" slug="filtering"/>
+<category name="Miscellaneous Traversing" slug="miscellaneous-traversal"/>
+<category name="Version 1.0" slug="1.0"/>
+<category name="Version 1.4" slug="1.4"/>
+</entry>

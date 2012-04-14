@@ -21,4 +21,6 @@
   <input id="letterman" name="new-letterman" />
   <input name="newmilk" />]]></html>
                 </example>
-            </entry>
+            <category name="Attribute" slug="attribute-selectors"/>
+<category name="Version 1.0" slug="1.0"/>
+</entry>

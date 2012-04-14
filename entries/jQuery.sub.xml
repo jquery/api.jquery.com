@@ -87,4 +87,7 @@ $(document).ready(function() {
   // Note: Calling just $("#main").open() won't work as open doesn't exist!
 });]]></code>
     </example>
+<category name="Core" slug="core"/>
+<category name="Deprecated" slug="deprecated"/>
+<category name="Version 1.5" slug="1.5"/>
 </entry>

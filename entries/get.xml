@@ -1,72 +1,72 @@
-            <entry type='method' name="get" return="Element, Array">
-              <signature>
-                <added>1.0</added>
-                <argument name="index" type="Number" optional="true">
-                   <desc>A zero-based integer indicating which element to retrieve.</desc>
-                </argument>
-              </signature>
-              <desc>Retrieve the DOM elements matched by the jQuery object.</desc>
-              <longdesc><p>The <code>.get()</code> method grants us access to the DOM nodes underlying each jQuery object. Suppose we had a simple unordered list on the page:</p>
-<pre>
+<entry type='method' name="get" return="Element, Array">
+  <signature>
+    <added>1.0</added>
+    <argument name="index" type="Number" optional="true">
+      <desc>A zero-based integer indicating which element to retrieve.</desc>
+    </argument>
+  </signature>
+  <desc>Retrieve the DOM elements matched by the jQuery object.</desc>
+  <longdesc><p>The <code>.get()</code> method grants us access to the DOM nodes underlying each jQuery object. Suppose we had a simple unordered list on the page:</p>
+    <pre>
 &lt;ul&gt;
   &lt;li id="foo"&gt;foo&lt;/li&gt;
   &lt;li id="bar"&gt;bar&lt;/li&gt;
 &lt;/ul&gt;
-</pre>
-<p>Without a parameter, <code>.get()</code> returns all of the elements:</p>
-<pre>alert($('li').get());</pre>
-<p>All of the matched DOM nodes are returned by this call, contained in a standard array:</p>
-<p><span class="result">[&lt;li id="foo"&gt;, &lt;li id="bar"&gt;]</span></p>
-<p>With an index specified, .get() will retrieve a single element:</p>
-<pre>($('li').get(0));</pre>
-<p>Since the index is zero-based, the first list item is returned:</p>
-<p><span class="output">&lt;li id="foo"&gt;</span></p>
-<p>Each jQuery object also masquerades as an array, so we can use the array dereferencing operator to get at the list item instead:</p>
-<pre>alert($('li')[0]);</pre>
-<p>However, this syntax lacks some of the additional capabilities of .get(), such as specifying a negative index:</p>
-<pre>alert($('li').get(-1));</pre>
-<p>A negative index is counted from the end of the matched set, so this example will return the last item in the list:</p>
-<p><span class="output">&lt;li id="bar"&gt;</span></p></longdesc>
-                <example>
-                    <desc>Selects all divs in the document and returns the DOM Elements as an Array, then uses the built-in reverse-method to reverse that array.</desc>
-                    <code><![CDATA[
-
-    function disp(divs) {
-      var a = [];
-      for (var i = 0; i < divs.length; i++) {
-        a.push(divs[i].innerHTML);
-      }
-      $("span").text(a.join(" "));
-    }
-    
-    disp( $("div").get().reverse() );
+    </pre>
+    <p>Without a parameter, <code>.get()</code> returns all of the elements:</p>
+    <pre>alert($('li').get());</pre>
+    <p>All of the matched DOM nodes are returned by this call, contained in a standard array:</p>
+    <p><span class="result">[&lt;li id="foo"&gt;, &lt;li id="bar"&gt;]</span></p>
+    <p>With an index specified, .get() will retrieve a single element:</p>
+    <pre>($('li').get(0));</pre>
+    <p>Since the index is zero-based, the first list item is returned:</p>
+    <p><span class="output">&lt;li id="foo"&gt;</span></p>
+    <p>Each jQuery object also masquerades as an array, so we can use the array dereferencing operator to get at the list item instead:</p>
+    <pre>alert($('li')[0]);</pre>
+    <p>However, this syntax lacks some of the additional capabilities of .get(), such as specifying a negative index:</p>
+    <pre>alert($('li').get(-1));</pre>
+    <p>A negative index is counted from the end of the matched set, so this example will return the last item in the list:</p>
+    <p><span class="output">&lt;li id="bar"&gt;</span></p>
+  </longdesc>
+<example>
+  <desc>Selects all divs in the document and returns the DOM Elements as an Array, then uses the built-in reverse-method to reverse that array.</desc>
+  <code><![CDATA[
+function disp(divs) {
+  var a = [];
+  for (var i = 0; i < divs.length; i++) {
+    a.push(divs[i].innerHTML);
+  }
+  $("span").text(a.join(" "));
+}
+disp( $("div").get().reverse() );
 ]]></code>
-                    <css><![CDATA[
+  <css><![CDATA[
   span { color:red; }
   ]]></css>
-                    <html><![CDATA[Reversed - <span></span>
+  <html><![CDATA[Reversed - <span></span>
 
   <div>One</div>
   <div>Two</div>
   <div>Three</div>]]></html>
-                </example>
-                <example>
-                    <desc>Gives the tag name of the element clicked on.</desc>
-                    <code><![CDATA[
-
-    $("*", document.body).click(function (e) {
-      e.stopPropagation();
-      var domEl = $(this).get(0);
-      $("span:first").text("Clicked on - " + domEl.tagName);
-    });
+</example>
+<example>
+  <desc>Gives the tag name of the element clicked on.</desc>
+  <code><![CDATA[
+$("*", document.body).click(function (e) {
+  e.stopPropagation();
+  var domEl = $(this).get(0);
+  $("span:first").text("Clicked on - " + domEl.tagName);
+});
 ]]></code>
-                    <css><![CDATA[
+  <css><![CDATA[
   span { color:red; }
   div { background:yellow; }
   ]]></css>
-                    <html><![CDATA[<span>&nbsp;</span>
+  <html><![CDATA[<span>&nbsp;</span>
   <p>In this paragraph is an <span>important</span> section</p>
 
   <div><input type="text" /></div>]]></html>
-                </example>
-            </entry>
+</example>
+<category name="DOM Element Methods" slug="dom-element-methods"/>
+<category name="Version 1.0" slug="1.0"/>
+</entry>

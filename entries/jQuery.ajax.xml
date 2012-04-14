@@ -1,4 +1,3 @@
-
 <entry type='method' name="jQuery.ajax" return="jqXHR">
   <signature>
     <added>1.5</added>
@@ -38,7 +37,7 @@
         <desc>This object will be made the context of all Ajax-related callbacks. By default, the context is an object that represents the ajax settings used in the call (<code>$.ajaxSettings</code> merged with the settings passed to <code>$.ajax</code>). For example,  specifying a DOM element as the context will make that the context for the <code>complete</code> callback of a request, like so: <pre>$.ajax({
   url: "test.html",
   context: document.body
-}).done(function() { 
+}).done(function() {
   $(this).addClass("done");
 });</pre></desc>
       </option>
@@ -257,7 +256,7 @@ jqxhr.always(function() { alert("second complete"); });</pre>
           <p>The <code>$.ajax()</code> function returns the <code>XMLHttpRequest</code> object that it creates. Normally jQuery handles the creation of this object internally, but a custom function for manufacturing one can be specified using the <code>xhr</code> option. The returned object can generally be discarded, but does provide a lower-level interface for observing and manipulating the request. In particular, calling <code>.abort()</code> on the object will halt the request before it completes.</p>
 <p><strong>At present</strong>, due to a bug in Firefox where <code>.getAllResponseHeaders()</code> returns the empty string although <code>.getResponseHeader('Content-Type')</code> returns a non-empty string, automatically decoding JSON CORS responses in Firefox with jQuery is not supported.</p>
 
-<p>A workaround to this is possible by overriding <code>jQuery.ajaxSettings.xhr</code> as follows:</p>
+        <p>A workaround to this is possible by overriding <code>jQuery.ajaxSettings.xhr</code> as follows:</p>
 
 <pre>
 var _super = jQuery.ajaxSettings.xhr;
@@ -286,6 +285,13 @@ jQuery.ajaxSettings.xhr = function () {
  <h4>Extending Ajax</h4>
      <p><strong>As of jQuery 1.5</strong>, jQuery's Ajax implementation includes prefilters, converters, and transports that allow you to extend Ajax with a great deal of flexibility. For more information about these advanced features, see the <a href="http://api.jquery.com/extending-ajax/">Extending Ajax</a> page.</p>
  </longdesc>
+
+  <note id="same-origin-policy" type="additional">
+</note>
+<note id="same-origin-policy-exceptions" type="additional">
+</note>
+
+
 <example>
   <desc>Save some data to the server and notify the user once it's complete.</desc>
   <code><![CDATA[$.ajax({
@@ -347,4 +353,8 @@ request.fail(function(jqXHR, textStatus) {
   dataType: "script"
 });]]></code>
 </example>
+<category name="Low-Level Interface" slug="low-level-interface"/>
+<category name="Version 1.0" slug="1.0"/>
+<category name="Version 1.5" slug="1.5"/>
+<category name="Version 1.5.1" slug="1.5.1"/>
 </entry>

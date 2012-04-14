@@ -33,4 +33,6 @@ $.merge( $.merge([],first), second);
       ]]></code>
     <results><![CDATA[["a","b","c","d","e","f"] ]]></results>
   </example>
+<category name="Utilities" slug="utilities"/>
+<category name="Version 1.0" slug="1.0"/>
 </entry>

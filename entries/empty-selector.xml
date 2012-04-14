@@ -1,24 +1,26 @@
-            <entry type='selector'   name="empty" return=""  >
-                <sample>:empty</sample>
-                 <signature><added>1.0</added> </signature>
-                <desc>Select all elements that have no children (including text nodes).</desc>
-                <longdesc>
-<p>This is the inverse of <code>:parent</code>. </p>
-<p>One important thing to note with :empty (and :parent) is that child elements include text nodes.</p>
-<p>The W3C recommends that the <code>&lt;p&gt;</code> element have at least one child node, even if that child is merely text (see http://www.w3.org/TR/html401/struct/text.html#edef-P). Some other elements, on the other hand, are empty (i.e. have no children) by definition: &lt;input&gt;, &lt;img&gt;, &lt;br&gt;, and &lt;hr&gt;, for example.</p>
-</longdesc>
-                <example>
-                    <desc>Finds all elements that are empty - they don't have child elements or text.</desc>
-                    <code><![CDATA[$("td:empty").text("Was empty!").css('background', 'rgb(255,220,200)');]]></code>
-                    <css><![CDATA[
+<entry type='selector'   name="empty" return=""  >
+  <sample>:empty</sample>
+  <signature><added>1.0</added> </signature>
+  <desc>Select all elements that have no children (including text nodes).</desc>
+  <longdesc>
+    <p>This is the inverse of <code>:parent</code>. </p>
+    <p>One important thing to note with :empty (and :parent) is that child elements include text nodes.</p>
+    <p>The W3C recommends that the <code>&lt;p&gt;</code> element have at least one child node, even if that child is merely text (see http://www.w3.org/TR/html401/struct/text.html#edef-P). Some other elements, on the other hand, are empty (i.e. have no children) by definition: &lt;input&gt;, &lt;img&gt;, &lt;br&gt;, and &lt;hr&gt;, for example.</p>
+  </longdesc>
+  <example>
+    <desc>Finds all elements that are empty - they don't have child elements or text.</desc>
+    <code><![CDATA[$("td:empty").text("Was empty!").css('background', 'rgb(255,220,200)');]]></code>
+    <css><![CDATA[
 
   td { text-align:center; }
   ]]></css>
-                    <html><![CDATA[<table border="1">
+    <html><![CDATA[<table border="1">
     <tr><td>TD #0</td><td></td></tr>
     <tr><td>TD #2</td><td></td></tr>
 
     <tr><td></td><td>TD#5</td></tr>
   </table>]]></html>
-                </example>
-            </entry>
+</example>
+<category name="Content Filter" slug="content-filter-selector"/>
+<category name="Version 1.0" slug="1.0"/>
+</entry>

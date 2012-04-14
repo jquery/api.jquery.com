@@ -44,4 +44,6 @@
   <css><![CDATA[p { color:red; }]]></css>
   <html><![CDATA[<p>Not loaded yet.</p>]]></html>
   </example>
+<category name="Document Loading" slug="document-loading"/>
+<category name="Version 1.0" slug="1.0"/>
 </entry>

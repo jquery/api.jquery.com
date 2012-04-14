@@ -1,5 +1,5 @@
 <entry type='method' name="jQuery.isNumeric" return="Boolean">
-	<desc>Determines whether its argument is a number.</desc>
+  <desc>Determines whether its argument is a number.</desc>
     <signature>
       <added>1.7</added>
       <argument name="value" type="Object">
@@ -30,4 +30,6 @@ $.isNumeric(Infinity); // false
 $.isNumeric(undefined); // false
 ]]></code>
 </example>
+<category name="Utilities" slug="utilities"/>
+<category name="Version 1.7" slug="1.7"/>
 </entry>

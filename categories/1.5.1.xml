@@ -1,1 +1,3 @@
-<category id="94" parent="69" name="Version 1.5.1" slug="1.5.1"><desc>Aspects of the API that were changed in the corresponding version of jQuery. API changes in jQuery 1.5.1 dealt primarily with jQuery.ajax settings and jQuery.support properties.</desc></category>
+<category id="94" parent="69" name="Version 1.5.1" slug="1.5.1">
+  <desc>Aspects of the API that were changed in the corresponding version of jQuery. API changes in jQuery 1.5.1 dealt primarily with jQuery.ajax settings and jQuery.support properties.</desc>
+</category>

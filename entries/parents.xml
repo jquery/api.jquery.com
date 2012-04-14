@@ -95,4 +95,6 @@ $("span").click(function () {
 
   <b>Click Hellos to toggle their parents.</b>]]></html>
     </example>
+<category name="Tree Traversal" slug="tree-traversal"/>
+<category name="Version 1.0" slug="1.0"/>
 </entry>

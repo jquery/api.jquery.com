@@ -58,4 +58,6 @@ input, label { line-height: 1.5em; }
 </form>
 ]]></html>
  </example>
+<category name="Form" slug="form-selectors"/>
+<category name="Version 1.0" slug="1.0"/>
 </entry>

@@ -1,3 +1,5 @@
-<category id="9" parent="0" name="Manipulation" slug="manipulation"><desc>All of the methods in this chapter manipulate the DOM in some manner. A few of them simply change one of the attributes of an element (also listed in the <a href="/category/attributes/">Attributes category</a>), while others set an element's style properties (also listed in the <a href="/category/css/">CSS category</a>).  Still others modify entire elements (or groups of elements) themselves—inserting, copying, removing, and so on. All of these methods are referred to as "setters," as they change the values of properties.
+<category id="9" parent="0" name="Manipulation" slug="manipulation">
+  <desc>All of the methods in this chapter manipulate the DOM in some manner. A few of them simply change one of the attributes of an element (also listed in the <a href="/category/attributes/">Attributes category</a>), while others set an element's style properties (also listed in the <a href="/category/css/">CSS category</a>).  Still others modify entire elements (or groups of elements) themselves—inserting, copying, removing, and so on. All of these methods are referred to as "setters," as they change the values of properties.
 A few of these methods—such as  <code>.attr()</code>, <code>.html()</code>, and <code>.val()</code>—also act as "getters," retrieving information from DOM elements for later use.
-</desc></category>
+</desc>
+</category>

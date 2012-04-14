@@ -1,4 +1,3 @@
-<entries>
 <entry type='method' name="attr" return="String">
   <signature>
     <added>1.0</added>
@@ -8,7 +7,7 @@
   </signature>
   <desc>Get the value of an attribute for the first element in the set of matched elements.</desc>
   <longdesc><p>The <code>.attr()</code> method gets the attribute value for only the <em>first</em> element in the matched set. To get the value for each element individually, use a looping construct such as jQuery's <code>.each()</code> or <code>.map()</code> method.</p>
-  	<p><strong>As of jQuery 1.6</strong>, the <code>.attr()</code> method returns <code>undefined</code> for attributes that have not been set. In addition, <code>.attr()</code> should not be used on plain objects, arrays, the window, or the document. To retrieve and change DOM properties, use the <a href="http://api.jquery.com/prop/">.prop()</a> method.</p>
+    <p><strong>As of jQuery 1.6</strong>, the <code>.attr()</code> method returns <code>undefined</code> for attributes that have not been set. In addition, <code>.attr()</code> should not be used on plain objects, arrays, the window, or the document. To retrieve and change DOM properties, use the <a href="http://api.jquery.com/prop/">.prop()</a> method.</p>
     <p>Using jQuery's <code>.attr()</code> method to get the value of an element's attribute has two main benefits:</p>
     <ol>
       <li><strong>Convenience</strong>: It can be called directly on a jQuery object and chained to other jQuery methods.</li>
@@ -34,7 +33,13 @@ var title = $("em").attr("title");
   The title of the emphasis is:<div></div>
 ]]></html>
 </example>
+<category name="Attributes" slug="attributes"/>
+<category name="General Attributes" slug="general-attributes"/>
+<category name="Version 1.0" slug="1.0"/>
+<category name="Version 1.1" slug="1.1"/>
+<category name="Version 1.6" slug="1.6"/>
 </entry>
+
 <entry type='method' name="attr" return="jQuery">
   <signature>
     <added>1.0</added>
@@ -63,7 +68,7 @@ var title = $("em").attr("title");
   <desc>Set one or more attributes for the set of matched elements.</desc>
   <longdesc><p>The <code>.attr()</code> method is a convenient way to set the value of attributes—especially when setting multiple attributes or using values returned by a function. Consider the following image:</p>
 <pre>&lt;img id="greatphoto" src="brush-seller.jpg" alt="brush seller" /&gt;</pre>
-    
+
     <h4 id="setting-simple-attr">Setting a simple attribute</h4>
     <p>To change the <code>alt</code> attribute, simply pass the name of the attribute and its new value to the <code>.attr()</code> method:</p>
     <pre>$('#greatphoto').attr('alt', 'Beijing Brush Seller');</pre>
@@ -91,7 +96,7 @@ var title = $("em").attr("title");
   <example>
     <desc>Set some attributes for all &lt;img&gt;s in the page.</desc>
     <code><![CDATA[
-$("img").attr({ 
+$("img").attr({
   src: "/images/hat.gif",
   title: "jQuery",
   alt: "jQuery Logo"
@@ -134,13 +139,17 @@ $("div").attr("id", function (arr) {
   <example>
     <desc>Set the src attribute from title attribute on the image.</desc>
     <code><![CDATA[
-$("img").attr("src", function() { 
-    return "/images/" + this.title; 
+$("img").attr("src", function() {
+    return "/images/" + this.title;
 });
 ]]></code>
     <html><![CDATA[
 <img title="hat.gif"/>
 ]]></html>
   </example>
-  </entry>
-</entries>
+  <category name="Attributes" slug="attributes"/>
+<category name="General Attributes" slug="general-attributes"/>
+<category name="Version 1.0" slug="1.0"/>
+<category name="Version 1.1" slug="1.1"/>
+<category name="Version 1.6" slug="1.6"/>
+</entry>

@@ -1,4 +1,5 @@
-<category id="66" parent="11" name="Event Object" slug="event-object"><desc><p>jQuery's event system normalizes the event object according to <a href="http://www.w3.org/TR/2003/WD-DOM-Level-3-Events-20030331/ecma-script-binding.html">W3C standards</a>. The event object is guaranteed to be passed to the event handler. Most properties from the original event are copied over and normalized to the new event object.</p>
+<category id="66" parent="11" name="Event Object" slug="event-object">
+  <desc><p>jQuery's event system normalizes the event object according to <a href="http://www.w3.org/TR/2003/WD-DOM-Level-3-Events-20030331/ecma-script-binding.html">W3C standards</a>. The event object is guaranteed to be passed to the event handler. Most properties from the original event are copied over and normalized to the new event object.</p>
 
 <div class="longdesc">
 <h4>jQuery.Event Constructor</h4>
@@ -10,7 +11,7 @@
   var e = jQuery.Event("click");
 
   // trigger an artificial click event
-  jQuery("body").trigger( e ); 
+  jQuery("body").trigger( e );
   </code></pre>
 
 <p>As of jQuery 1.6, you can also pass an object to <code>jQuery.Event()</code> and its properties will be set on the newly created Event object.</p>
@@ -18,9 +19,9 @@
 <p>Example:</p>
   <pre><code>  // Create a new jQuery.Event object with specified event properties.
   var e = jQuery.Event("keydown", { keyCode: 64 });
-  
+
   // trigger an artificial keydown event with keyCode 64
-  jQuery("body").trigger( e ); 
+  jQuery("body").trigger( e );
   </code></pre>
 
 <h4>Event Properties</h4>
@@ -44,8 +45,9 @@
 
 <p>Example:</p>
 <pre><code>
-// add the dataTransfer property for use with the native `drop` event  
+// add the dataTransfer property for use with the native `drop` event
 // to capture information about files dropped into the browser window
 jQuery.event.props.push("dataTransfer");
 </code></pre>
-</div></desc></category>
+</div></desc>
+</category>

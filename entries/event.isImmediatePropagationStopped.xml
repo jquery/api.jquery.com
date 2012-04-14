@@ -1,9 +1,9 @@
 <entry type='method' name="event.isImmediatePropagationStopped" return="Boolean">
-    <signature>
-        <added>1.3</added>
-    </signature>
-    <desc>  Returns whether event.stopImmediatePropagation() was ever called on this event object. </desc>
-    <longdesc> <p>This property was introduced in <a href="http://www.w3.org/TR/2003/NOTE-DOM-Level-3-Events-20031107/events.html#Events-Event-isImmediatePropagationStopped">DOM level 3</a>.</p>  </longdesc>
+  <signature>
+    <added>1.3</added>
+  </signature>
+  <desc>  Returns whether event.stopImmediatePropagation() was ever called on this event object. </desc>
+  <longdesc> <p>This property was introduced in <a href="http://www.w3.org/TR/2003/NOTE-DOM-Level-3-Events-20031107/events.html#Events-Event-isImmediatePropagationStopped">DOM level 3</a>.</p>  </longdesc>
     <example>
         <desc>Checks whether event.stopImmediatePropagation() was called.</desc>
   <code><![CDATA[
@@ -22,11 +22,13 @@ $("button").click(function(event) {
   immediatePropStopped(event);
   event.stopImmediatePropagation();
   immediatePropStopped(event);
-});  
+});
 ]]></code>
   <html><![CDATA[
   <button>click me</button>
   <div id="stop-log"></div>
   ]]></html>
     </example>
+<category name="Event Object" slug="event-object"/>
+<category name="Version 1.3" slug="1.3"/>
 </entry>

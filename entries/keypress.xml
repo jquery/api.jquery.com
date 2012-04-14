@@ -91,4 +91,7 @@ input { display: block; margin-bottom: .25em; }
 </button>
 <script src="http://api.jquery.com/scripts/events.js"></script>]]></html>
 </example>
+<category name="Keyboard Events" slug="keyboard-events"/>
+<category name="Version 1.0" slug="1.0"/>
+<category name="Version 1.4.3" slug="1.4.3"/>
 </entry>

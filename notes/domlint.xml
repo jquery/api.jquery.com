@@ -1,0 +1,2 @@
+Forms and their child elements should not use input names or ids that conflict with properties of a form, such as <code>submit</code>, <code>length</code>, or <code>method</code>. Name conflicts can cause confusing failures. For a complete list of rules and to check your markup for these problems, see <a href=\"http://kangax.github.com/domlint/\">DOMLint</a>.
+

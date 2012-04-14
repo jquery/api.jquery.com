@@ -39,4 +39,6 @@ $("<span>Focused!</span>").appendTo("body").fadeOut(1000);
 
 <input type="text" value="To Be Focused"/>]]></html>
   </example>
+<category name="Event Handler Attachment" slug="event-handler-attachment"/>
+<category name="Version 1.2" slug="1.2"/>
 </entry>

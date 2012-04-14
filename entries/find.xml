@@ -112,4 +112,7 @@ $('li.item-ii').find( item1 ).css('background-color', 'red');
   </p>]]></html>
 </example>
 
+<category name="Tree Traversal" slug="tree-traversal"/>
+<category name="Version 1.0" slug="1.0"/>
+<category name="Version 1.6" slug="1.6"/>
 </entry>

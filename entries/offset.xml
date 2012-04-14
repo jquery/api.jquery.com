@@ -1,4 +1,4 @@
-<entries>
+
   <entry type='method' name="offset" return="Object">
     <signature>
       <added>1.2</added>
@@ -48,6 +48,11 @@ div.abs { width:50px; height:50px; position:absolute;
 </div>
   ]]></html>
   </example>
+<category name="CSS" slug="css"/>
+<category name="Offset" slug="offset"/>
+<category name="Style Properties" slug="style-properties"/>
+<category name="Version 1.2" slug="1.2"/>
+<category name="Version 1.4" slug="1.4"/>
 </entry>
 <entry type='method' name="offset" return="jQuery">
   <signature>
@@ -70,5 +75,9 @@ div.abs { width:50px; height:50px; position:absolute;
     <css><![CDATA[p { margin-left:10px; } ]]></css>
     <html><![CDATA[<p>Hello</p><p>2nd Paragraph</p>]]></html>
   </example>
+<category name="CSS" slug="css"/>
+<category name="Offset" slug="offset"/>
+<category name="Style Properties" slug="style-properties"/>
+<category name="Version 1.2" slug="1.2"/>
+<category name="Version 1.4" slug="1.4"/>
 </entry>
-</entries>

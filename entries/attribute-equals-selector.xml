@@ -1,20 +1,20 @@
 <entry type="selector" name="attributeEquals" return="" >
-        <sample>[attribute="value"]</sample>
-	<signature>
-		<added>1.0</added>
-		<argument name="attribute" type="String">
-			<desc>An attribute name.</desc>
-		</argument>
-		<argument name="value" type="String">
-			<desc>An attribute value. <strong>Can be either an unquoted single word or a quoted string.</strong></desc>
-		</argument>
-	</signature>
-	<desc>Selects elements that have the specified attribute with a value exactly equal to a certain value.</desc>
-	<longdesc></longdesc>
-	<example>
-		<desc>Finds all inputs with a value of "Hot Fuzz" and changes the text of the next sibling span.</desc>
-		<code><![CDATA[$('input[value="Hot Fuzz"]').next().text(" Hot Fuzz");]]></code>
-			<html><![CDATA[<div>
+  <sample>[attribute="value"]</sample>
+  <signature>
+    <added>1.0</added>
+    <argument name="attribute" type="String">
+      <desc>An attribute name.</desc>
+    </argument>
+    <argument name="value" type="String">
+      <desc>An attribute value. <strong>Can be either an unquoted single word or a quoted string.</strong></desc>
+    </argument>
+  </signature>
+  <desc>Selects elements that have the specified attribute with a value exactly equal to a certain value.</desc>
+  <longdesc></longdesc>
+  <example>
+    <desc>Finds all inputs with a value of "Hot Fuzz" and changes the text of the next sibling span.</desc>
+    <code><![CDATA[$('input[value="Hot Fuzz"]').next().text(" Hot Fuzz");]]></code>
+      <html><![CDATA[<div>
     <label>
       <input type="radio" name="newsletter" value="Hot Fuzz" />
       <span>name?</span>
@@ -32,5 +32,7 @@
       <span>value?</span>
     </label>
   </div>]]></html>
-	</example>
+  </example>
+<category name="Attribute" slug="attribute-selectors"/>
+<category name="Version 1.0" slug="1.0"/>
 </entry>

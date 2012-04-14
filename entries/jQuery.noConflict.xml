@@ -76,4 +76,7 @@ $("content").style.display = 'none';
 // Do something with another version of jQuery
 jQuery("div > p").hide();]]></results>
                 </example>
-            </entry>
+            <category name="Core" slug="core"/>
+<category name="Setup Methods" slug="setup-methods"/>
+<category name="Version 1.0" slug="1.0"/>
+</entry>

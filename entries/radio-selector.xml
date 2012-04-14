@@ -4,6 +4,13 @@
                 <desc>Selects all  elements of type radio.</desc>
                 <longdesc><p><code>$(':radio')</code> is equivalent to <code>$('[type=radio]')</code>. As with other pseudo-class selectors (those that begin with a ":") it is recommended to precede it with a tag name or some other selector; otherwise, the universal selector ("*") is implied. In other words, the bare <code>$(':radio')</code> is equivalent to <code>$('*:radio')</code>, so <code>$('input:radio')</code> should be used instead. </p>
 <p>To select a set of associated radio buttons, you might use: <code>$('input[name=gender]:radio')</code></p></longdesc>
+
+  <note id="jquery-selector-extension-alt" type="additional">
+  <placeholder name="selector">:radio</placeholder>
+  <placeholder name="alt">[type="radio"]</placeholder>
+</note>
+
+
                 <example>
                     <desc>Finds all radio inputs.</desc>
                     <code><![CDATA[
@@ -41,4 +48,7 @@
   <div>
   </div>]]></html>
                 </example>
-            </entry>
+            <category name="Form" slug="form-selectors"/>
+<category name="jQuery Extensions" slug="jquery-selector-extensions"/>
+<category name="Version 1.0" slug="1.0"/>
+</entry>

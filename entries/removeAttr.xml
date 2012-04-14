@@ -36,4 +36,9 @@ console.log("onclick property: ", $element[0].onclick);
 <div id="log"></div>
 ]]></html>
     </example>
-  </entry>
+  <category name="Attributes" slug="attributes"/>
+<category name="General Attributes" slug="general-attributes"/>
+<category name="Version 1.0" slug="1.0"/>
+<category name="Version 1.4" slug="1.4"/>
+<category name="Version 1.7" slug="1.7"/>
+</entry>

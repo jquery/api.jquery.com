@@ -1,18 +1,18 @@
-            <entry type='selector'  name="element" return="" >
-                <sample>element</sample>
-                 <signature>
-                    <added>1.0</added>
-                    <argument name="element" type="String">
-                    <desc>An element to search for. Refers to the tagName of DOM nodes.</desc>
-                </argument>
-                </signature>
-                <desc>Selects all elements with the given tag name.</desc>
-                <longdesc><p>JavaScript's <code>getElementsByTagName()</code> function is called to return the appropriate elements when this expression is used.</p> </longdesc>
-                
-                <example>
-                    <desc>Finds every DIV element.</desc>
-                    <code><![CDATA[$("div").css("border","9px solid red");]]></code>
-                    <html><![CDATA[<div>DIV1</div>
+<entry type='selector'  name="element" return="" >
+  <sample>element</sample>
+  <signature>
+    <added>1.0</added>
+    <argument name="element" type="String">
+      <desc>An element to search for. Refers to the tagName of DOM nodes.</desc>
+    </argument>
+  </signature>
+  <desc>Selects all elements with the given tag name.</desc>
+  <longdesc><p>JavaScript's <code>getElementsByTagName()</code> function is called to return the appropriate elements when this expression is used.</p> </longdesc>
+
+  <example>
+    <desc>Finds every DIV element.</desc>
+    <code><![CDATA[$("div").css("border","9px solid red");]]></code>
+    <html><![CDATA[<div>DIV1</div>
 
   <div>DIV2</div>
   <span>SPAN</span>]]></html>
@@ -26,5 +26,7 @@
     background-color: #EEEEEE;
   }
   ]]></css>
-                </example>
-            </entry>
+</example>
+<category name="Basic" slug="basic-css-selectors"/>
+<category name="Version 1.0" slug="1.0"/>
+</entry>

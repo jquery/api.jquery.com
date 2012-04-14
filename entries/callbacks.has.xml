@@ -6,11 +6,10 @@
     </argument>
   </signature>
   <desc>Determine whether a supplied callback is in a list</desc>
-  <longdesc>
-<h2 id="example-1">Example</h2>
-<p>Using <code>callbacks.has()</code> to check if a callback list contains a specific callback:</p>
-<pre>
-// a sample logging function to be added to a callbacks list
+  <longdesc></longdesc>
+<example>
+  <desc>Using <code>callbacks.has()</code> to check if a callback list contains a specific callback:</desc>
+  <code><![CDATA[// a sample logging function to be added to a callbacks list
 var foo = function( value1, value2 ){
     console.log( 'Received:' + value1 + ',' + value2 );
 }
@@ -29,6 +28,8 @@ callbacks.add( foo );
 
 console.log( callbacks.has( foo ) ); // true
 console.log( callbacks.has( bar ) ); // false
-</pre>
-  </longdesc>
+]]></code>
+</example>
+<category name="Callbacks Object" slug="callbacks-object"/>
+<category name="Version 1.7" slug="1.7"/>
 </entry>

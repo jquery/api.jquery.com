@@ -105,4 +105,7 @@ $.getScript("/scripts/jquery.color.js", function() {
 }]]></css>
 </example>
 
+<category name="Shorthand Methods" slug="shorthand-methods"/>
+<category name="Version 1.0" slug="1.0"/>
+<category name="Version 1.5" slug="1.5"/>
 </entry>

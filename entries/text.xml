@@ -1,4 +1,4 @@
-<entries>
+
   <entry type='method' name="text" return="String">
     <signature>
       <added>1.0</added>
@@ -34,6 +34,9 @@
 
   <p></p>]]></html>
   </example>
+<category name="DOM Insertion, Inside" slug="dom-insertion-inside"/>
+<category name="Version 1.0" slug="1.0"/>
+<category name="Version 1.4" slug="1.4"/>
 </entry>
 <entry type='method' name="text" return="jQuery">
   <signature>
@@ -52,7 +55,7 @@
   <desc>Set the content of each element in the set of matched elements to the specified text.</desc>
   <longdesc><p>Unlike the <code>.html()</code> method, <code>.text()</code> can be used in both XML and HTML documents. </p>
   <p>We need to be aware that this method escapes the string provided as necessary so that it will render correctly in HTML. To do so, it calls the DOM method <code>.createTextNode()</code>, which replaces special characters with their HTML entity equivalents (such as <code>&amp;lt;</code> for <code>&lt;</code>).  Consider the following HTML:</p>
-				<pre>&lt;div class="demo-container"&gt;
+        <pre>&lt;div class="demo-container"&gt;
   &lt;div class="demo-box"&gt;Demonstration Box&lt;/div&gt;
   &lt;ul&gt;
     &lt;li&gt;list item 1&lt;/li&gt;
@@ -60,13 +63,13 @@
   &lt;/ul&gt;
 &lt;/div&gt;
 </pre>
-	<p>The code <code>$('div.demo-container').text('&lt;p&gt;This is a test.&lt;/p&gt;');</code> will produce the following DOM output:</p>
-	<pre>&lt;div class="demo-container"&gt;
+  <p>The code <code>$('div.demo-container').text('&lt;p&gt;This is a test.&lt;/p&gt;');</code> will produce the following DOM output:</p>
+  <pre>&lt;div class="demo-container"&gt;
 &amp;lt;p&amp;gt;This is a test.&amp;lt;/p&amp;gt;
 &lt;/div&gt;</pre>
-	<p>It will appear on a rendered page as though the tags were exposed, like this:</p>
-	<pre>&lt;p&gt;This is a test&lt;/p&gt;</pre>
-	<p>The <code>.text()</code> method cannot be used on input elements.  For input field text, use the <a href="/val">.val()</a> method.</p>
+  <p>It will appear on a rendered page as though the tags were exposed, like this:</p>
+  <pre>&lt;p&gt;This is a test&lt;/p&gt;</pre>
+  <p>The <code>.text()</code> method cannot be used on input elements.  For input field text, use the <a href="/val">.val()</a> method.</p>
   <p>As of jQuery 1.4, the <code>.text()</code> method allows us to set the text content by passing in a function.</p>
 <pre>$('ul li').text(function(index) {
   return 'item number ' + (index + 1);
@@ -88,5 +91,7 @@
   ]]></css>
                     <html><![CDATA[<p>Test Paragraph.</p>]]></html>
                 </example>
-            </entry>
-</entries>
+            <category name="DOM Insertion, Inside" slug="dom-insertion-inside"/>
+<category name="Version 1.0" slug="1.0"/>
+<category name="Version 1.4" slug="1.4"/>
+</entry>

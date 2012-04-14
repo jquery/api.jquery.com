@@ -1,40 +1,48 @@
-            <entry type='selector'   name="image" return="">
-                <sample>:image</sample>
-                 <signature><added>1.0</added> </signature>
-                <desc>Selects all elements of type image.</desc>
-                <longdesc><p><code>:image</code> is equivalent to <code>[type="image"]</code></p></longdesc>
-                <example>
-                    <desc>Finds all image inputs.</desc>
-                    <code><![CDATA[
-    var input = $("input:image").css({background:"yellow", border:"3px red solid"});
-    $("div").text("For this type jQuery found " + input.length + ".")
-            .css("color", "red");
-    $("form").submit(function () { return false; }); // so it won't submit
+<entry type='selector'   name="image" return="">
+  <sample>:image</sample>
+  <signature><added>1.0</added> </signature>
+  <desc>Selects all elements of type image.</desc>
+  <longdesc><p><code>:image</code> is equivalent to <code>[type="image"]</code></p></longdesc>
 
+  <note id="jquery-selector-extension-alt" type="additional">
+    <placeholder name="selector">:image</placeholder>
+    <placeholder name="alt">[type="image"]</placeholder>
+  </note>
+
+  <example>
+    <desc>Finds all image inputs.</desc>
+    <code><![CDATA[
+var input = $("input:image").css({background:"yellow", border:"3px red solid"});
+$("div").text("For this type jQuery found " + input.length + ".")
+        .css("color", "red");
+$("form").submit(function () { return false; }); // so it won't submit
 ]]></code>
-                    <css><![CDATA[
+    <css><![CDATA[
   textarea { height:45px; }
   ]]></css>
-                    <html><![CDATA[<form>
-    <input type="button" value="Input Button"/>
-    <input type="checkbox" />
+    <html><![CDATA[<form>
+  <input type="button" value="Input Button"/>
+  <input type="checkbox" />
 
-    <input type="file" />
-    <input type="hidden" />
-    <input type="image" />
+  <input type="file" />
+  <input type="hidden" />
+  <input type="image" />
 
-    <input type="password" />
-    <input type="radio" />
-    <input type="reset" />
+  <input type="password" />
+  <input type="radio" />
+  <input type="reset" />
 
-    <input type="submit" />
-    <input type="text" />
-    <select><option>Option<option/></select>
+  <input type="submit" />
+  <input type="text" />
+  <select><option>Option<option/></select>
 
-    <textarea></textarea>
-    <button>Button</button>
-  </form>
-  <div>
-  </div>]]></html>
-                </example>
-            </entry>
+  <textarea></textarea>
+  <button>Button</button>
+</form>
+<div>
+</div>]]></html>
+</example>
+<category name="Form" slug="form-selectors"/>
+<category name="jQuery Extensions" slug="jquery-selector-extensions"/>
+<category name="Version 1.0" slug="1.0"/>
+</entry>

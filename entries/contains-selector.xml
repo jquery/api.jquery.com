@@ -8,7 +8,7 @@
   </signature>
   <desc>Select all elements that contain the specified text.</desc>
   <longdesc><p>The matching text can appear directly within the selected element, in any of that element's descendants, or a combination thereof. As with attribute value selectors, text inside the parentheses of <code>:contains()</code> can be written as a bare word or surrounded by quotation marks. The text must have matching case to be selected.</p></longdesc>
-  
+
   <example>
     <desc>Finds all divs containing "John" and underlines them.</desc>
     <code><![CDATA[
@@ -23,4 +23,6 @@ $("div:contains('John')").css("text-decoration", "underline");]]>
       ]]>
     </html>
   </example>
+<category name="Content Filter" slug="content-filter-selector"/>
+<category name="Version 1.1.4" slug="1.1.4"/>
 </entry>

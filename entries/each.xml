@@ -1,33 +1,33 @@
-            <entry type='method' name="each" return="jQuery">
-                <signature>
-                  <added>1.0</added>
-                  <argument name="function(index, Element)" type="Function">
-                    <desc>A function to execute for each matched element.</desc>
-                  </argument>
-                </signature>
-                <desc>Iterate over a jQuery object, executing a function for each matched element. </desc>
-<longdesc>
-  <p>The <code>.each()</code> method is designed to make DOM looping constructs concise and less error-prone. When called it iterates over the DOM elements that are part of the jQuery object. Each time the callback runs, it is passed the current loop iteration, beginning from 0. More importantly, the callback is fired in the context of the current DOM element, so the keyword <code>this</code> refers to the element.</p>
-  <p>Suppose we had a simple unordered list on the page:</p>
-  <pre>&lt;ul&gt;
+<entry type='method' name="each" return="jQuery">
+  <signature>
+    <added>1.0</added>
+    <argument name="function(index, Element)" type="Function">
+      <desc>A function to execute for each matched element.</desc>
+    </argument>
+  </signature>
+  <desc>Iterate over a jQuery object, executing a function for each matched element. </desc>
+  <longdesc>
+    <p>The <code>.each()</code> method is designed to make DOM looping constructs concise and less error-prone. When called it iterates over the DOM elements that are part of the jQuery object. Each time the callback runs, it is passed the current loop iteration, beginning from 0. More importantly, the callback is fired in the context of the current DOM element, so the keyword <code>this</code> refers to the element.</p>
+    <p>Suppose we had a simple unordered list on the page:</p>
+    <pre>&lt;ul&gt;
     &lt;li&gt;foo&lt;/li&gt;
     &lt;li&gt;bar&lt;/li&gt;
 &lt;/ul&gt;
-  </pre>
-  <p>We can select the list items and iterate across them:</p>
-  <pre>$(&#39;li&#39;).each(function(index) {
+    </pre>
+    <p>We can select the list items and iterate across them:</p>
+    <pre>$(&#39;li&#39;).each(function(index) {
     alert(index + &#39;: &#39; + $(this).text());
 });
   </pre>
-  <p>A message is thus alerted for each item in the list:</p>
-  <p><span class="output">0: foo</span><br />
-  <span class="output">1: bar</span></p>
-<p>We can stop the loop from within the callback function by returning <code>false</code>.</p>  
+    <p>A message is thus alerted for each item in the list:</p>
+    <p><span class="output">0: foo</span><br />
+    <span class="output">1: bar</span></p>
+    <p>We can stop the loop from within the callback function by returning <code>false</code>.</p>  
   
-</longdesc>
-                <example>
-                    <desc>Iterates over three divs and sets their color property.</desc>
-                    <code><![CDATA[
+  </longdesc>
+  <example>
+    <desc>Iterates over three divs and sets their color property.</desc>
+    <code><![CDATA[
     $(document.body).click(function () {
       $("div").each(function (i) {
         if (this.style.color != "blue") {
@@ -38,17 +38,17 @@
       });
     });
 ]]></code>
-                    <css><![CDATA[
+    <css><![CDATA[
   div { color:red; text-align:center; cursor:pointer; 
         font-weight:bolder; width:300px; }
   ]]></css>
-                    <html><![CDATA[<div>Click here</div>
+    <html><![CDATA[<div>Click here</div>
   <div>to iterate through</div>
   <div>these divs.</div>]]></html>
-                </example>
-                <example>
-                    <desc>If you want to have the jQuery object instead of the regular DOM element, use the $(this) function, for example:</desc>
-                    <code><![CDATA[
+</example>
+<example>
+  <desc>If you want to have the jQuery object instead of the regular DOM element, use the $(this) function, for example:</desc>
+  <code><![CDATA[
     $("span").click(function () {
       $("li").each(function(){
         $(this).toggleClass("example");
@@ -56,22 +56,22 @@
     });
 
 ]]></code>
-                    <css><![CDATA[
+  <css><![CDATA[
   ul { font-size:18px; margin:0; }
   span { color:blue; text-decoration:underline; cursor:pointer; }
   .example { font-style:italic; }
   ]]></css>
-                    <html><![CDATA[To do list: <span>(click here to change)</span>
+  <html><![CDATA[To do list: <span>(click here to change)</span>
   <ul>
     <li>Eat</li>
     <li>Sleep</li>
 
     <li>Be merry</li>
   </ul>]]></html>
-                </example>
-                <example>
-                    <desc>You can use 'return' to break out of each() loops early.</desc>
-                    <code><![CDATA[
+</example>
+<example>
+  <desc>You can use 'return' to break out of each() loops early.</desc>
+  <code><![CDATA[
     $("button").click(function () {
       $("div").each(function (index, domEle) {
         // domEle == this
@@ -84,12 +84,12 @@
     });
 
 ]]></code>
-                    <css><![CDATA[
+  <css><![CDATA[
   div { width:40px; height:40px; margin:5px; float:left;
         border:2px blue solid; text-align:center; }
   span { color:red; }
   ]]></css>
-                    <html><![CDATA[<button>Change colors</button> 
+  <html><![CDATA[<button>Change colors</button> 
   <span></span>
   <div></div>
   <div></div>
@@ -101,5 +101,8 @@
 
   <div></div>
   <div></div>]]></html>
-                </example>
-            </entry>
+</example>
+<category name="Collection Manipulation" slug="collection-manipulation"/>
+<category name="Traversing" slug="traversing"/>
+<category name="Version 1.0" slug="1.0"/>
+</entry>

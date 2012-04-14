@@ -3,6 +3,12 @@
                  <signature><added>1.0</added> </signature>
                 <desc>Selects the last matched element.</desc>
                 <longdesc><p>Note that <code>:last</code> selects a single element by filtering  the current jQuery collection and matching the last element within it.</p></longdesc>
+
+  <note id="jquery-selector-extension" type="additional">
+  <placeholder name="selector">:last</placeholder>
+</note>
+
+
                 <example>
                     <desc>Finds the last table row.</desc>
                     <code><![CDATA[$("tr:last").css({backgroundColor: 'yellow', fontWeight: 'bolder'});]]></code>
@@ -14,4 +20,7 @@
 
   </table>]]></html>
                 </example>
-            </entry>
+            <category name="Basic Filter" slug="basic-filter-selectors"/>
+<category name="jQuery Extensions" slug="jquery-selector-extensions"/>
+<category name="Version 1.0" slug="1.0"/>
+</entry>

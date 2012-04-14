@@ -44,6 +44,11 @@
 <p>The JavaScript <code>submit</code> event does not bubble in Internet Explorer. However, scripts that rely on event delegation with the <code>submit</code> event will work consistently across browsers as of jQuery 1.4, which has normalized the event's behavior. </p>
 
 </longdesc>
+
+  <note id="domlint" type="additional">
+</note>
+
+
                 <example>
                     <desc>If you'd like to prevent forms from being submitted unless a flag variable is set, try:</desc>
                     <code><![CDATA[
@@ -83,4 +88,8 @@
                     <desc>To trigger the submit event on the first form on the page, try:</desc>
                     <code><![CDATA[$("form:first").submit();]]></code>
                 </example>
+<category name="Form Events" slug="form-events"/>
+<category name="Forms" slug="forms"/>
+<category name="Version 1.0" slug="1.0"/>
+<category name="Version 1.4.3" slug="1.4.3"/>
 </entry>

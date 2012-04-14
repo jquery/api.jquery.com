@@ -3,11 +3,10 @@
     <added>1.7</added>
   </signature>
   <desc>Lock a callback list in its current state.</desc>
-  <longdesc>
-<h2 id="example-1">Example</h2>
-<p>Using <code>callbacks.lock()</code> to lock a callback list to avoid further changes being made to the list state:</p>
-<pre>
-// a sample logging function to be added to a callbacks list
+  <longdesc></longdesc>
+  <example>
+    <desc>Using <code>callbacks.lock()</code> to lock a callback list to avoid further changes being made to the list state:</desc>
+    <code><![CDATA[// a sample logging function to be added to a callbacks list
 var foo = function( value ){
     console.log( 'foo:' + value);
 }
@@ -29,7 +28,10 @@ callbacks.fire( 'world' );
 
 // as the list was locked, no items
 // were called so 'world' isn't logged
-</pre>
+]]></code>
+  </example>
 
-  </longdesc>
+
+<category name="Callbacks Object" slug="callbacks-object"/>
+<category name="Version 1.7" slug="1.7"/>
 </entry>

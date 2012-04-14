@@ -86,4 +86,7 @@ $("#test")
   $("#test").click( jQuery.proxy( obj, "test" ) );
 ]]></code>
   </example>
+<category name="Event Handler Attachment" slug="event-handler-attachment"/>
+<category name="Utilities" slug="utilities"/>
+<category name="Version 1.4" slug="1.4"/>
 </entry>

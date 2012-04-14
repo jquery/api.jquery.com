@@ -36,4 +36,6 @@
   $(this).append("<li>Error requesting page " + settings.url + "</li>");
 });]]></code>
   </example>
+<category name="Global Ajax Event Handlers" slug="global-ajax-event-handlers"/>
+<category name="Version 1.0" slug="1.0"/>
 </entry>

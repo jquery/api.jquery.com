@@ -12,4 +12,6 @@
     </ul>
     <p>This method is primarily useful for debugging to determine, for example, whether a Deferred has already been resolved even though you are inside code that intended to reject it.</p>
   </longdesc>
+<category name="Deferred Object" slug="deferred-object"/>
+<category name="Version 1.7" slug="1.7"/>
 </entry>

@@ -43,7 +43,7 @@
     });
   });
   </pre>
-  <p class="image four-across"> 
+  <p class="image four-across">
     <img src="/images/0042_06_41.png" alt="" />
     <img src="/images/0042_06_42.png" alt="" />
     <img src="/images/0042_06_43.png" alt="" />
@@ -51,74 +51,79 @@
   </p>
   <p>With <code>duration</code> set to <code>0</code>, this method just changes the <code>opacity</code> CSS property, so <code>.fadeTo(0, opacity)</code> is the same as <code>.css('opacity', opacity)</code>.</p>
 </longdesc>
-   <example>
-        <desc>Animates first paragraph to fade to an opacity of 0.33 (33%, about one third visible), completing the animation within 600 milliseconds.</desc>
-        <code><![CDATA[
+
+<note id="jquery.fx.off" type="additional">
+  <placeholder name="title">.fadeTo()</placeholder>
+</note>
+
+<example>
+  <desc>Animates first paragraph to fade to an opacity of 0.33 (33%, about one third visible), completing the animation within 600 milliseconds.</desc>
+  <code><![CDATA[
 $("p:first").click(function () {
 $(this).fadeTo("slow", 0.33);
 });
 ]]></code>
-        <html><![CDATA[<p>
+  <html><![CDATA[<p>
 Click this paragraph to see it fade.
 </p>
 
 <p>
 Compare to this one that won't fade.
 </p>]]></html>
-    </example>
-    <example>
-        <desc>Fade div to a random opacity on each click, completing the animation within 200 milliseconds.</desc>
-        <code><![CDATA[
+</example>
+<example>
+  <desc>Fade div to a random opacity on each click, completing the animation within 200 milliseconds.</desc>
+  <code><![CDATA[
 $("div").click(function () {
 $(this).fadeTo("fast", Math.random());
 });
 ]]></code>
-        <css><![CDATA[
+  <css><![CDATA[
 p { width:80px; margin:0; padding:5px; }
 div { width:40px; height:40px; position:absolute; }
 div#one { top:0; left:0; background:#f00; }
 div#two { top:20px; left:20px; background:#0f0; }
 div#three { top:40px; left:40px; background:#00f; }
 ]]></css>
-        <html><![CDATA[<p>And this is the library that John built...</p>
+  <html><![CDATA[<p>And this is the library that John built...</p>
 
 <div id="one"></div>
 <div id="two"></div>
 <div id="three"></div>]]></html>
-    </example>
-    <example>
-        <desc>Find the right answer!  The fade will take 250 milliseconds and change various styles when it completes.</desc>
-        <code><![CDATA[
+</example>
+<example>
+  <desc>Find the right answer!  The fade will take 250 milliseconds and change various styles when it completes.</desc>
+  <code><![CDATA[
 var getPos = function (n) {
-return (Math.floor(n) * 90) + "px";
+  return (Math.floor(n) * 90) + "px";
 };
 $("p").each(function (n) {
-var r = Math.floor(Math.random() * 3);
-var tmp = $(this).text();
-$(this).text($("p:eq(" + r + ")").text());
-$("p:eq(" + r + ")").text(tmp);
-$(this).css("left", getPos(n));
+  var r = Math.floor(Math.random() * 3);
+  var tmp = $(this).text();
+  $(this).text($("p:eq(" + r + ")").text());
+  $("p:eq(" + r + ")").text(tmp);
+  $(this).css("left", getPos(n));
 });
 $("div").each(function (n) {
-      $(this).css("left", getPos(n));
-    })
+  $(this).css("left", getPos(n));
+})
 .css("cursor", "pointer")
 .click(function () {
-      $(this).fadeTo(250, 0.25, function () {
-            $(this).css("cursor", "")
-                   .prev().css({"font-weight": "bolder",
-                                "font-style": "italic"});
-          });
+    $(this).fadeTo(250, 0.25, function () {
+      $(this).css("cursor", "")
+        .prev().css({"font-weight": "bolder",
+                     "font-style": "italic"});
+        });
     });
 
 ]]></code>
-        <css><![CDATA[
-div, p { width:80px; height:40px; top:0; margin:0; 
+  <css><![CDATA[
+div, p { width:80px; height:40px; top:0; margin:0;
 position:absolute; padding-top:8px; }
 p { background:#fcc; text-align:center; }
 div { background:blue; }
 ]]></css>
-        <html><![CDATA[<p>Wrong</p>
+  <html><![CDATA[<p>Wrong</p>
 <div></div>
 <p>Wrong</p>
 <div></div>
@@ -126,4 +131,7 @@ div { background:blue; }
 <p>Right!</p>
 <div></div>]]></html>
     </example>
+<category name="Fading" slug="fading"/>
+<category name="Version 1.0" slug="1.0"/>
+<category name="Version 1.4.3" slug="1.4.3"/>
 </entry>

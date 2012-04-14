@@ -1,13 +1,13 @@
 <entry type='selector'  name="all" return=""  >
-    <sample>*</sample>
-    <signature>  
-      <added>1.0</added> 
-    </signature>
-    <desc>Selects all elements.</desc>
-    <longdesc><p>Caution: The all, or universal, selector is extremely slow, except when used by itself.</p> </longdesc>
-    <example>
-      <desc>Finds every element (including head, body, etc) in the document.</desc>
-      <code><![CDATA[var elementCount = $("*").css("border","3px solid red").length;
+  <sample>*</sample>
+  <signature>
+    <added>1.0</added>
+  </signature>
+  <desc>Selects all elements.</desc>
+  <longdesc><p>Caution: The all, or universal, selector is extremely slow, except when used by itself.</p> </longdesc>
+  <example>
+    <desc>Finds every element (including head, body, etc) in the document.</desc>
+    <code><![CDATA[var elementCount = $("*").css("border","3px solid red").length;
 $("body").prepend("<h3>" + elementCount + " elements found</h3>");]]></code>
       <html><![CDATA[<div>DIV</div>
 
@@ -24,10 +24,10 @@ $("body").prepend("<h3>" + elementCount + " elements found</h3>");]]></code>
     background-color: #EEEEEE;
   }
   ]]></css>
-    </example>
-    <example>
-        <desc>A common way to select all elements is to find within document.body so elements like head, script, etc are left out.</desc>
-      <code><![CDATA[
+  </example>
+  <example>
+    <desc>A common way to select all elements is to find within document.body so elements like head, script, etc are left out.</desc>
+    <code><![CDATA[
 var elementCount = $("#test").find("*").css("border","3px solid red").length;
 $("body").prepend("<h3>" + elementCount + " elements found</h3>");]]></code>
 <html><![CDATA[<div id="test">
@@ -46,9 +46,11 @@ $("body").prepend("<h3>" + elementCount + " elements found</h3>");]]></code>
     background-color: #EEEEEE;
   }
   #test {
-    width: auto; height: auto; background-color: transparent; 
+    width: auto; height: auto; background-color: transparent;
   }
   ]]></css>
-        
-    </example>
+
+  </example>
+<category name="Basic" slug="basic-css-selectors"/>
+<category name="Version 1.0" slug="1.0"/>
 </entry>

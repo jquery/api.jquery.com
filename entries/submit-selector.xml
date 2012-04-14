@@ -3,6 +3,13 @@
                  <signature><added>1.0</added> </signature>
                 <desc>Selects all elements of type submit.</desc>
                 <longdesc><p>The <code>:submit</code> selector typically applies to button or input elements. Note that some browsers treat <code>&lt;button&gt;</code> element as <code>type="default"</code> implicitly while others (such as Internet Explorer) do not.  </p></longdesc>
+
+  <note id="jquery-selector-extension-alt" type="additional">
+  <placeholder name="selector">:submit</placeholder>
+  <placeholder name="alt">[type="submit"]</placeholder>
+</note>
+
+
                 <example>
                     <desc>Finds all submit elements that are descendants of a td element.</desc>
                     <code><![CDATA[
@@ -130,4 +137,7 @@
 <div id="result"></div>
 ]]></html>
     </example>
+<category name="Form" slug="form-selectors"/>
+<category name="jQuery Extensions" slug="jquery-selector-extensions"/>
+<category name="Version 1.0" slug="1.0"/>
 </entry>

@@ -147,4 +147,7 @@ $("p").live({
   <span></span>
   ]]></html>
 </example>
+<category name="Deprecated" slug="deprecated"/>
+<category name="Event Handler Attachment" slug="event-handler-attachment"/>
+<category name="Version 1.3" slug="1.3"/>
 </entry>

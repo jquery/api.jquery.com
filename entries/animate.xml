@@ -137,6 +137,12 @@
 
 </longdesc>
 
+  <note id="jquery.fx.off" type="additional">
+  <placeholder name="title">.animate()</placeholder>
+</note>
+
+
+
 <example>
     <desc>Click the button to animate the div with a number of different properties.</desc>
     <code><![CDATA[
@@ -317,4 +323,6 @@ div {
 });
 ]]></code>
   </example>
+<category name="Custom" slug="custom-effects"/>
+<category name="Version 1.0" slug="1.0"/>
 </entry>

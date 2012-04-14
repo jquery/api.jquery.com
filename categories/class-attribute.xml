@@ -1,1 +1,3 @@
-<category id="25" parent="9" name="Class Attribute" slug="class-attribute"><desc>These methods inspect and manipulate the CSS classes assigned to elements.</desc></category>
+<category id="25" parent="9" name="Class Attribute" slug="class-attribute">
+  <desc>These methods inspect and manipulate the CSS classes assigned to elements.</desc>
+</category>

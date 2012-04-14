@@ -1,1 +1,3 @@
-<category id="13" parent="0" name="Ajax" slug="ajax"><desc>The jQuery library has a full suite of AJAX capabilities. The functions and methods therein allow us to load data from the server without a browser page refresh. </desc></category>
+<category id="13" parent="0" name="Ajax" slug="ajax">
+  <desc>The jQuery library has a full suite of AJAX capabilities. The functions and methods therein allow us to load data from the server without a browser page refresh. </desc>
+</category>

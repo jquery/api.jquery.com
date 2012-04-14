@@ -1,16 +1,23 @@
-            <entry type='method' name="innerHeight" return="Integer">
-				<signature>
-					<added>1.2.6</added>
-				</signature>
-                <desc>Get the current computed height for the first element in the set of matched elements, including padding but not border.</desc>
-                <longdesc><p>This method returns the height of the element, including top and bottom padding, in pixels.</p>
-<p>This method is not applicable to <code>window</code> and <code>document</code> objects; for these, use <code><a href='/height'>.height()</a></code> instead.</p>
-<p class="image"><img src="/images/0042_04_02.png"/></p></longdesc>
-                <example>
-                    <desc>Get the innerHeight of a paragraph.</desc>
-                    <code><![CDATA[var p = $("p:first");
+<entry type='method' name="innerHeight" return="Integer">
+  <signature>
+    <added>1.2.6</added>
+  </signature>
+  <desc>Get the current computed height for the first element in the set of matched elements, including padding but not border.</desc>
+  <longdesc>
+    <p>This method returns the height of the element, including top and bottom padding, in pixels.</p>
+    <p>This method is not applicable to <code>window</code> and <code>document</code> objects; for these, use <code><a href='/height'>.height()</a></code> instead.</p>
+    <p class="image"><img src="/images/0042_04_02.png"/></p>
+  </longdesc>
+
+<example>
+  <desc>Get the innerHeight of a paragraph.</desc>
+  <code><![CDATA[var p = $("p:first");
 $("p:last").text( "innerHeight:" + p.innerHeight() );]]></code>
-                    <css><![CDATA[p { margin:10px;padding:5px;border:2px solid #666; }]]></css>
-                    <html><![CDATA[<p>Hello</p><p></p>]]></html>
-                </example>
-            </entry>
+  <css><![CDATA[p { margin:10px;padding:5px;border:2px solid #666; }]]></css>
+  <html><![CDATA[<p>Hello</p><p></p>]]></html>
+</example>
+<category name="CSS" slug="css"/>
+<category name="Dimensions" slug="dimensions"/>
+<category name="Style Properties" slug="style-properties"/>
+<category name="Version 1.2.6" slug="1.2.6"/>
+</entry>

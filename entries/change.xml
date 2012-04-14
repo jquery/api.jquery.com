@@ -44,23 +44,22 @@
 <p>After this code executes, clicks on <span class="output">Trigger the handler</span> will also alert the message. The message will display twice, because the handler has been bound to the <code>change</code> event on both of the form elements.</p>
 <p>As of jQuery 1.4, the <code>change</code> event bubbles in Internet Explorer, behaving consistently with the event in other modern browsers.</p>
 </longdesc>
-                <example>
-                    <desc>Attaches a change event to the select that gets the text for each selected option and writes them in the div.  It then triggers the event for the initial text draw.</desc>
-                    <code><![CDATA[
-    $("select").change(function () {
-          var str = "";
-          $("select option:selected").each(function () {
-                str += $(this).text() + " ";
-              });
-          $("div").text(str);
-        })
-        .change();
+<example>
+  <desc>Attaches a change event to the select that gets the text for each selected option and writes them in the div.  It then triggers the event for the initial text draw.</desc>
+  <code><![CDATA[
+$("select").change(function () {
+  var str = "";
+  $("select option:selected").each(function () {
+            str += $(this).text() + " ";
+  });
+  $("div").text(str);
+})
+.change();
 ]]></code>
-                    <css><![CDATA[
-
+<css><![CDATA[
   div { color:red; }
   ]]></css>
-                    <html><![CDATA[<select name="sweets" multiple="multiple">
+  <html><![CDATA[<select name="sweets" multiple="multiple">
     <option>Chocolate</option>
     <option selected="selected">Candy</option>
 
@@ -71,11 +70,15 @@
 
   </select>
   <div></div>]]></html>
-                </example>
-                <example>
-                    <desc>To add a validity test to all text input elements:</desc>
-                    <code><![CDATA[$("input[type='text']").change( function() {
+</example>
+<example>
+  <desc>To add a validity test to all text input elements:</desc>
+  <code><![CDATA[$("input[type='text']").change( function() {
   // check input ($(this).val()) for validity here
 });]]></code>
-                </example>
+</example>
+<category name="Form Events" slug="form-events"/>
+<category name="Forms" slug="forms"/>
+<category name="Version 1.0" slug="1.0"/>
+<category name="Version 1.4.3" slug="1.4.3"/>
 </entry>

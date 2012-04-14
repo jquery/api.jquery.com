@@ -1,21 +1,21 @@
             <entry type='method' name="wrapAll" return="jQuery">
-				<signature>
-                	<added>1.2</added>
-	                <argument name="wrappingElement" type="String, Selector, Element, jQuery">
-	                    <desc>An HTML snippet, selector expression, jQuery object, or DOM element specifying the structure to wrap around the matched elements.</desc>
-	                </argument>
-				</signature>
+        <signature>
+                  <added>1.2</added>
+                  <argument name="wrappingElement" type="String, Selector, Element, jQuery">
+                      <desc>An HTML snippet, selector expression, jQuery object, or DOM element specifying the structure to wrap around the matched elements.</desc>
+                  </argument>
+        </signature>
                 <desc>Wrap an HTML structure around all elements in the set of matched elements.</desc>
                 <longdesc><p>The <code>.wrapAll()</code> function can take any string or object that could be passed to the <code>$()</code> function to specify a DOM structure. This structure may be nested several levels deep, but should contain only one inmost element. The structure will be wrapped around all of the elements in the set of matched elements, as a single group.</p>
-				<p>Consider the following HTML:</p>
-				<pre>&lt;div class="container"&gt;
+        <p>Consider the following HTML:</p>
+        <pre>&lt;div class="container"&gt;
   &lt;div class="inner"&gt;Hello&lt;/div&gt;
   &lt;div class="inner"&gt;Goodbye&lt;/div&gt;
 &lt;/div&gt;</pre>
-				<p>Using <code>.wrapAll()</code>, we can insert an HTML structure around the inner <code>&lt;div&gt;</code> elements like so:</p>
-				<pre>$('.inner').wrapAll('&lt;div class="new" /&gt;');</pre>
-				<p>The new <code>&lt;div&gt;</code> element is created on the fly and added to the DOM. The result is a new <code>&lt;div&gt;</code> wrapped around all matched elements:</p>
-				<pre>&lt;div class="container"&gt;
+        <p>Using <code>.wrapAll()</code>, we can insert an HTML structure around the inner <code>&lt;div&gt;</code> elements like so:</p>
+        <pre>$('.inner').wrapAll('&lt;div class="new" /&gt;');</pre>
+        <p>The new <code>&lt;div&gt;</code> element is created on the fly and added to the DOM. The result is a new <code>&lt;div&gt;</code> wrapped around all matched elements:</p>
+        <pre>&lt;div class="container"&gt;
   &lt;div class="new"&gt;
     &lt;div class="inner"&gt;Hello&lt;/div&gt;
     &lt;div class="inner"&gt;Goodbye&lt;/div&gt;
@@ -72,4 +72,7 @@
   <p>World</p>
   <div class="doublediv"><div></div></div>]]></html>
                 </example>
-            </entry>
+            <category name="DOM Insertion, Around" slug="dom-insertion-around"/>
+<category name="Version 1.2" slug="1.2"/>
+<category name="Version 1.4" slug="1.4"/>
+</entry>

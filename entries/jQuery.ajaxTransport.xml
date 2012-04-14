@@ -5,13 +5,12 @@
     <argument name="dataType" type="String">
       <desc>A string identifying the data type to use</desc>
     </argument>
-    
+
     <argument name="handler(options, originalOptions, jqXHR)" type="Function">
       <desc>A handler to return the new transport object to use with the data type provided in the first argument.</desc>
     </argument>
   </signature>
   <longdesc>
-
 
 <p>A transport is an object that provides two methods, <code>send</code> and <code>abort</code>, that are used internally by <code>$.ajax()</code> to issue requests. A transport is the most advanced way to enhance <code>$.ajax()</code> and should be used only as a last resort when prefilters and converters are insufficient.</p>
 
@@ -110,16 +109,16 @@ $.ajaxTransport( "image", function( s ) {
 </pre>
 
   <h4 id="handling-custom-data-types">Handling Custom Data Types</h4>
-  
+
   <p>The jQuery Ajax implementation comes with a set of standard dataTypes, such as text, json, xml, and html.</p>
-           
+
   <p>Use the <code>converters</code> option in <code><a href='/jQuery.ajaxSetup'>$.ajaxSetup()</a></code> to augment or modify the data type conversion strategies used by <code>$.ajax()</code>.</p>
-  
+
   <p> The unminified jQuery source itself includes a list of default converters, which effectively illustrates how they can be used: </p>
-          
+
  <pre>
 // List of data converters
-// 1) key format is "source_type destination_type" 
+// 1) key format is "source_type destination_type"
 //    (a single space in-between)
 // 2) the catchall symbol "*" can be used for source_type
 converters: {
@@ -137,11 +136,11 @@ converters: {
   "text xml": jQuery.parseXML
 }
 </pre>
- 
+
   <p>When you specify a <code>converters</code> option globally in <code>$.ajaxSetup()</code> or per call in <code>$.ajax()</code>, the object will map onto the default converters, overwriting those you specify and leaving the others intact.</p>
 
    <p>For example, the jQuery source uses <code>$.ajaxSetup()</code> to  add a converter for "text script":</p>
-             
+
 <pre>jQuery.ajaxSetup({
   accepts: {
     script: "text/javascript, application/javascript"

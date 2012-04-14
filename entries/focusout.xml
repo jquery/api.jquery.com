@@ -15,9 +15,9 @@
       <desc>A function to execute each time the event is triggered.</desc>
     </argument>
   </signature>
-<longdesc><p>This method is a shortcut for <code>.bind('focusout', handler)</code>.</p>
-<p>The <code>focusout</code> event is sent to an element when it, or any element inside of it, loses focus. This is distinct from the <a href="/blur">blur</a> event in that it supports detecting the loss of focus from parent elements (in other words, it supports event bubbling).</p>
-<p>This event will likely be used together with the <a href="/focusin">focusin</a> event.</p></longdesc>
+  <longdesc><p>This method is a shortcut for <code>.bind('focusout', handler)</code>.</p>
+    <p>The <code>focusout</code> event is sent to an element when it, or any element inside of it, loses focus. This is distinct from the <a href="/blur">blur</a> event in that it supports detecting the loss of focus from parent elements (in other words, it supports event bubbling).</p>
+    <p>This event will likely be used together with the <a href="/focusin">focusin</a> event.</p></longdesc>
   <example>
   <desc>Watch for a loss of focus to occur inside paragraphs and note the difference between the <code>focusout</code> count and the <code>blur</code> count.</desc>
   <css><![CDATA[
@@ -34,14 +34,14 @@ $("p").focusout(function() {
   b++;
   $("#b")
     .text("blur fired: " + b + "x");
-  
+
 });
 ]]></code>
     <html><![CDATA[
 <div class="inputs">
   <p>
     <input type="text" /><br />
-    <input type="text" /> 
+    <input type="text" />
   </p>
   <p>
     <input type="password" />
@@ -51,4 +51,8 @@ $("p").focusout(function() {
 <div id="b">blur fire</div>
 ]]></html>
   </example>
+<category name="Keyboard Events" slug="keyboard-events"/>
+<category name="Mouse Events" slug="mouse-events"/>
+<category name="Version 1.4" slug="1.4"/>
+<category name="Version 1.4.3" slug="1.4.3"/>
 </entry>

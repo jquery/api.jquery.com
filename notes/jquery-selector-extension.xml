@@ -1,0 +1,4 @@
+<note id="jquery-selector-extension" type="additional">
+	<desc>Because <code>%selector%</code> is a jQuery extension and not part of the CSS specification, queries using <code>%selector%</code> cannot take advantage of the performance boost provided by the native DOM <code>querySelectorAll()</code> method. To achieve the best performance when using <code>%selector%</code> to select elements, first select the elements using a pure CSS selector, then use <a href="http://api.jquery.com/filter/"><code>.filter("%selector%")</code></a>.
+	</desc>
+</note>

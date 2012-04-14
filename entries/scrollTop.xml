@@ -1,4 +1,4 @@
-<entries>
+
 <entry type='method' name="scrollTop" return="Integer">
   <signature>
     <added>1.2.6</added>
@@ -16,6 +16,10 @@ $("p:last").text( "scrollTop:" + p.scrollTop() );
   ]]></css>
       <html><![CDATA[<p>Hello</p><p></p>]]></html>
   </example>
+<category name="CSS" slug="css"/>
+<category name="Offset" slug="offset"/>
+<category name="Style Properties" slug="style-properties"/>
+<category name="Version 1.2.6" slug="1.2.6"/>
 </entry>
 <entry type='method' name="scrollTop" return="jQuery">
   <signature>
@@ -45,5 +49,8 @@ overflow:auto;
   ]]></css>
     <html><![CDATA[<div class="demo"><h1>lalala</h1><p>Hello</p></div>]]></html>
   </example>
+<category name="CSS" slug="css"/>
+<category name="Offset" slug="offset"/>
+<category name="Style Properties" slug="style-properties"/>
+<category name="Version 1.2.6" slug="1.2.6"/>
 </entry>
-</entries>

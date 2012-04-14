@@ -4,9 +4,9 @@
   </signature>
   <desc>Remove all of the callbacks from a list.</desc>
   <longdesc>
-<h2 id="example-1">Example</h2>
-<p>Using <code>callbacks.empty()</code> to empty a list of callbacks:</p>
-<pre>
+    <h2 id="example-1">Example</h2>
+    <p>Using <code>callbacks.empty()</code> to empty a list of callbacks:</p>
+    <pre>
 // a sample logging function to be added to a callbacks list
 var foo = function( value1, value2 ){
     console.log( 'foo:' + value1 + ',' + value2 );
@@ -31,4 +31,6 @@ console.log( callbacks.has( foo ) ); // false
 console.log( callbacks.has( bar ) ); // false
 </pre>
   </longdesc>
+<category name="Callbacks Object" slug="callbacks-object"/>
+<category name="Version 1.7" slug="1.7"/>
 </entry>

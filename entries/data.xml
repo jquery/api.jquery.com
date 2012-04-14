@@ -1,4 +1,3 @@
-<entries>
 <entry type='method' name="data" return="jQuery">
   <signature>
     <added>1.2.3</added>
@@ -29,6 +28,7 @@ $('body').data(); // {foo: 52, bar: { myType: 'test', count: 40 }}
 <p>Prior to jQuery 1.4.3 (starting in jQuery 1.4) the .data() method completely replaced all data, instead of just extending the data object. If you are using third-party plugins it may not be advisable to completely replace the element's data object, since plugins may have also set data.</p>
 <p>Due to the way browsers interact with plugins and external code, the <code>.data()</code> method cannot be used on <code>&lt;object&gt;</code> (unless it's a Flash plugin), <code>&lt;applet&gt;</code> or <code>&lt;embed&gt;</code> elements.</p>
 </longdesc>
+<note id="no-data-on-xml" type="additional"></note>
 <example>
     <desc>Store then retrieve a value from the div element.</desc>
     <code><![CDATA[
@@ -47,6 +47,11 @@ $("span:last").text($("div").data("test").last);
     <span></span>
   </div>]]></html>
   </example>
+<category name="Data" slug="data"/>
+<category name="Data Storage" slug="data-storage"/>
+<category name="Version 1.2.3" slug="1.2.3"/>
+<category name="Version 1.4" slug="1.4"/>
+<category name="Version 1.4.3" slug="1.4.3"/>
 </entry>
 <entry type='method' name="data" return="Object">
   <signature>
@@ -96,6 +101,9 @@ if ( mydata.count &lt; 9 ) {
 }
 </pre>
 </longdesc>
+
+<note id="no-data-on-xml" type="additional"></note>
+
 <example>
       <desc>Get the data named "blah" stored at for an element.</desc>
       <code><![CDATA[
@@ -138,5 +146,9 @@ $("button").click(function(e) {
   <button>Remove "blah" from the div</button>
   <p>The "blah" value of this div is <span>?</span></p>]]></html>
       </example>
-  </entry>
-</entries>
+  <category name="Data" slug="data"/>
+<category name="Data Storage" slug="data-storage"/>
+<category name="Version 1.2.3" slug="1.2.3"/>
+<category name="Version 1.4" slug="1.4"/>
+<category name="Version 1.4.3" slug="1.4.3"/>
+</entry>

@@ -1,19 +1,19 @@
-<entries>
+
 <entry type='method' name="jQuery.queue" return="Array">
-	<signature>
-		<added>1.3</added>
-		<argument name="element" type="Element">
-			<desc>A DOM element to inspect for an attached queue.</desc>
-		</argument>
-		<argument name="queueName" optional="true" type="String">
-			<desc>A string containing the name of the queue. Defaults to <code>fx</code>, the standard effects queue.</desc>
-		</argument>
-	</signature>
-	<desc>Show the queue of functions to be executed on the matched element.</desc>
-	<longdesc><p><strong>Note:</strong> This is a low-level method, you should probably use <code><a href='/queue'>.queue()</a></code> instead.</p></longdesc>
-	<example>
-		<desc>Show the length of the queue.</desc>
-		<code><![CDATA[$("#show").click(function () {
+  <signature>
+    <added>1.3</added>
+    <argument name="element" type="Element">
+      <desc>A DOM element to inspect for an attached queue.</desc>
+    </argument>
+    <argument name="queueName" optional="true" type="String">
+      <desc>A string containing the name of the queue. Defaults to <code>fx</code>, the standard effects queue.</desc>
+    </argument>
+  </signature>
+  <desc>Show the queue of functions to be executed on the matched element.</desc>
+  <longdesc><p><strong>Note:</strong> This is a low-level method, you should probably use <code><a href='/queue'>.queue()</a></code> instead.</p></longdesc>
+  <example>
+    <desc>Show the length of the queue.</desc>
+    <code><![CDATA[$("#show").click(function () {
       var n = jQuery.queue( $("div")[0], "fx" );
       $("span").text("Queue length is: " + n.length);
     });
@@ -37,40 +37,43 @@
   <span></span>
   <div></div>]]></html>
 </example>
+<category name="Data" slug="data"/>
+<category name="Utilities" slug="utilities"/>
+<category name="Version 1.3" slug="1.3"/>
 </entry>
 <entry type='method' name="jQuery.queue" return="jQuery">
-	<signature>
-		<added>1.3</added>
-		<argument name="element" type="Element">
-		  <desc>A DOM element where the array of queued functions is attached.</desc>
-		</argument>
-		<argument name="queueName" type="String">
-			<desc>A string containing the name of the queue. Defaults to <code>fx</code>, the standard effects queue.</desc>
-		</argument>
-		<argument name="newQueue" type="Array">
-			<desc>An array of functions to replace the current queue contents.</desc>
-		</argument>
-	</signature>
-	<signature>
-		<added>1.3</added>
-		<argument name="element" type="Element">
-		  <desc>A DOM element on which to add a queued function.</desc>
-		</argument>
-		<argument name="queueName" type="String">
-			<desc>A string containing the name of the queue. Defaults to <code>fx</code>, the standard effects queue.</desc>
-		</argument>
-		<argument name="callback()" type="Function">
-			<desc>The new function to add to the queue.</desc>
-		</argument>
-	</signature>
-	<desc>Manipulate the queue of functions to be executed on the matched element.</desc>
-	<longdesc><p><strong>Note:</strong> This is a low-level method, you should probably use <code><a href='/queue'>.queue()</a></code> instead.</p>
-	<p>Every element can have one or more queues of functions attached to it by jQuery. In most applications, only one queue (called <code>fx</code>) is used. Queues allow a sequence of actions to be called on an element asynchronously, without halting program execution.</p>
-	<p>The <code>jQuery.queue()</code> method allows us to directly manipulate this queue of functions. Calling <code>jQuery.queue()</code> with a callback is particularly useful; it allows us to place a new function at the end of the queue.</p>
-	<p>Note that when adding a function with <code>jQuery.queue()</code>, we should ensure that <code>jQuery.dequeue()</code> is eventually called so that the next function in line executes.</p></longdesc>
-	<example>
-		<desc>Queue a custom function.</desc>
-		<code><![CDATA[
+  <signature>
+    <added>1.3</added>
+    <argument name="element" type="Element">
+      <desc>A DOM element where the array of queued functions is attached.</desc>
+    </argument>
+    <argument name="queueName" type="String">
+      <desc>A string containing the name of the queue. Defaults to <code>fx</code>, the standard effects queue.</desc>
+    </argument>
+    <argument name="newQueue" type="Array">
+      <desc>An array of functions to replace the current queue contents.</desc>
+    </argument>
+  </signature>
+  <signature>
+    <added>1.3</added>
+    <argument name="element" type="Element">
+      <desc>A DOM element on which to add a queued function.</desc>
+    </argument>
+    <argument name="queueName" type="String">
+      <desc>A string containing the name of the queue. Defaults to <code>fx</code>, the standard effects queue.</desc>
+    </argument>
+    <argument name="callback()" type="Function">
+      <desc>The new function to add to the queue.</desc>
+    </argument>
+  </signature>
+  <desc>Manipulate the queue of functions to be executed on the matched element.</desc>
+  <longdesc><p><strong>Note:</strong> This is a low-level method, you should probably use <code><a href='/queue'>.queue()</a></code> instead.</p>
+  <p>Every element can have one or more queues of functions attached to it by jQuery. In most applications, only one queue (called <code>fx</code>) is used. Queues allow a sequence of actions to be called on an element asynchronously, without halting program execution.</p>
+  <p>The <code>jQuery.queue()</code> method allows us to directly manipulate this queue of functions. Calling <code>jQuery.queue()</code> with a callback is particularly useful; it allows us to place a new function at the end of the queue.</p>
+  <p>Note that when adding a function with <code>jQuery.queue()</code>, we should ensure that <code>jQuery.dequeue()</code> is eventually called so that the next function in line executes.</p></longdesc>
+  <example>
+    <desc>Queue a custom function.</desc>
+    <code><![CDATA[
    $(document.body).click(function () {
       $("div").show("slow");
       $("div").animate({left:'+=200'},2000);
@@ -127,5 +130,7 @@
   <button id="stop">Stop</button>
   <div></div>]]></html>
       </example>
-  </entry>
-</entries>
+  <category name="Data" slug="data"/>
+<category name="Utilities" slug="utilities"/>
+<category name="Version 1.3" slug="1.3"/>
+</entry>

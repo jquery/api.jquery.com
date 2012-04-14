@@ -48,54 +48,61 @@
     <p>If supplied, the callback is fired once the animation is complete. This can be useful for stringing different animations together in sequence. The callback is not sent any arguments, but <code>this</code> is set to the DOM element being animated. If multiple elements are animated, it is important to note that the callback is executed once per matched element, not once for the animation as a whole. </p>
   <p><strong>As of jQuery 1.6</strong>, the <code><a href="http://api.jquery.com/promise/">.promise()</a></code> method can be used in conjunction with the <code><a href="http://api.jquery.com/deferred.done/">deferred.done()</a></code> method to execute a single callback for the animation as a whole when <em>all</em> matching elements have completed their animations ( See the <a href="http://api.jquery.com/promise/#example-1">example for .promise()</a> ).  </p>
   </longdesc>
+
+  <note id="jquery.fx.off" type="additional">
+    <placeholder name="title">.fadeIn()</placeholder>
+  </note>
+
   <example>
     <desc>Animates hidden divs to fade in one by one, completing each animation within 600 milliseconds.</desc>
     <code><![CDATA[
-      $(document.body).click(function () {
-        $("div:hidden:first").fadeIn("slow");
-      });
+$(document.body).click(function () {
+  $("div:hidden:first").fadeIn("slow");
+});
     ]]></code>
     <css><![CDATA[
-    span { color:red; cursor:pointer; }
-    div { margin:3px; width:80px; display:none;
-      height:80px; float:left; }
-      div#one { background:#f00; }
-      div#two { background:#0f0; }
-      div#three { background:#00f; }
-    ]]></css>
+span { color:red; cursor:pointer; }
+div { margin:3px; width:80px; display:none;
+  height:80px; float:left; }
+  div#one { background:#f00; }
+  div#two { background:#0f0; }
+  div#three { background:#00f; }
+]]></css>
     <html><![CDATA[<span>Click here...</span>
 
     <div id="one"></div>
     <div id="two"></div>
     <div id="three"></div>]]></html>
-    </example>
-    <example>
-      <desc>Fades a red block in over the text. Once the animation is done, it quickly fades in more text on top.</desc>
-      <code><![CDATA[
-        $("a").click(function () {
-          $("div").fadeIn(3000, function () {
-            $("span").fadeIn(100);
-          });
-          return false;
-        }); 
+  </example>
+  <example>
+    <desc>Fades a red block in over the text. Once the animation is done, it quickly fades in more text on top.</desc>
+    <code><![CDATA[
+$("a").click(function () {
+  $("div").fadeIn(3000, function () {
+    $("span").fadeIn(100);
+  });
+  return false;
+});
+]]></code>
+    <css><![CDATA[
+    p { position:relative; width:400px; height:90px; }
+    div { position:absolute; width:400px; height:65px;
+      font-size:36px; text-align:center;
+      color:yellow; background:red;
+      padding-top:25px;
+      top:0; left:0; display:none; }
+      span { display:none; }
+    ]]></css>
+    <html><![CDATA[<p>
+      Let it be known that the party of the first part
+      and the party of the second part are henceforth
+      and hereto directed to assess the allegations
+      for factual correctness... (<a href="#">click!</a>)
+      <div><span>CENSORED!</span></div>
 
-      ]]></code>
-      <css><![CDATA[
-      p { position:relative; width:400px; height:90px; }
-      div { position:absolute; width:400px; height:65px; 
-        font-size:36px; text-align:center; 
-        color:yellow; background:red;
-        padding-top:25px; 
-        top:0; left:0; display:none; }
-        span { display:none; }
-      ]]></css>
-      <html><![CDATA[<p>
-        Let it be known that the party of the first part
-        and the party of the second part are henceforth
-        and hereto directed to assess the allegations
-        for factual correctness... (<a href="#">click!</a>)
-        <div><span>CENSORED!</span></div>
-
-      </p>]]></html>
-      </example>
+    </p>]]></html>
+  </example>
+<category name="Fading" slug="fading"/>
+<category name="Version 1.0" slug="1.0"/>
+<category name="Version 1.4.3" slug="1.4.3"/>
 </entry>

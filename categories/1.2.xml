@@ -1,2 +1,4 @@
-<category id="76" parent="69" name="Version 1.2" slug="1.2"><desc>All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.
-<a href="http://docs.jquery.com/Release:jQuery_1.2">jQuery 1.2 Release Notes</a></desc></category>
+<category id="76" parent="69" name="Version 1.2" slug="1.2">
+  <desc>All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.
+<a href="http://docs.jquery.com/Release:jQuery_1.2">jQuery 1.2 Release Notes</a></desc>
+</category>

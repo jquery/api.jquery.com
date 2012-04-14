@@ -1,11 +1,15 @@
-            <entry type='selector' name="animated" return="">
-                <sample>:animated</sample>
-                <signature><added>1.2</added></signature>
-                <desc>Select all elements that are in the progress of an animation at the time the selector is run.</desc>
-                <longdesc></longdesc>
-                <example>
-                    <desc>Change the color of any div that is animated.</desc>
-                    <code><![CDATA[
+<entry type='selector' name="animated" return="">
+  <sample>:animated</sample>
+  <signature><added>1.2</added></signature>
+  <desc>Select all elements that are in the progress of an animation at the time the selector is run.</desc>
+  <longdesc></longdesc>
+
+  <note id="jquery-selector-extension" type="additional">
+    <placeholder name="selector">:animated</placeholder>
+  </note>
+  <example>
+    <desc>Change the color of any div that is animated.</desc>
+    <code><![CDATA[
 
     $("#run").click(function(){
       $("div:animated").toggleClass("colored");
@@ -15,14 +19,17 @@
     }
     animateIt();
 ]]></code>
-                    <html><![CDATA[<button id="run">Run</button>
+    <html><![CDATA[<button id="run">Run</button>
 
   <div></div>
   <div id="mover"></div>
   <div></div>]]></html>
-                    <css><![CDATA[
+    <css><![CDATA[
   div { background:yellow; border:1px solid #AAA; width:80px; height:80px; margin:0 5px; float:left; }
   div.colored { background:green; }
   ]]></css>
-                </example>
-            </entry>
+  </example>
+<category name="Basic Filter" slug="basic-filter-selectors"/>
+<category name="jQuery Extensions" slug="jquery-selector-extensions"/>
+<category name="Version 1.2" slug="1.2"/>
+</entry>

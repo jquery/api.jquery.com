@@ -97,4 +97,6 @@
                     <desc>Selects all paragraphs, then slices the selection to include only the third element.</desc>
                     <code><![CDATA[$("p").slice(-1).wrapInner("<b></b>");]]></code>
                 </example>
-            </entry>
+            <category name="Filtering" slug="filtering"/>
+<category name="Version 1.1.4" slug="1.1.4"/>
+</entry>

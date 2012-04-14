@@ -96,4 +96,6 @@ alert( $(this).text() );
 });]]></code>
 </example>
 
+<category name="Event Handler Attachment" slug="event-handler-attachment"/>
+<category name="Version 1.1" slug="1.1"/>
 </entry>

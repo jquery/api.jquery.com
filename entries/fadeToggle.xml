@@ -22,6 +22,10 @@
   <p><strong>As of jQuery 1.6</strong>, the <code><a href="http://api.jquery.com/promise/">.promise()</a></code> method can be used in conjunction with the <code><a href="http://api.jquery.com/deferred.done/">deferred.done()</a></code> method to execute a single callback for the animation as a whole when <em>all</em> matching elements have completed their animations ( See the <a href="http://api.jquery.com/promise/#example-1">example for .promise()</a> ).  </p>
 
   </longdesc>
+
+  <note id="jquery.fx.off" type="additional">
+    <placeholder name="title">.fadeToggle()</placeholder>
+  </note>
    <example>
         <desc>Fades first paragraph in or out, completing the animation within 600 milliseconds and using a linear easing. Fades last paragraph in or out for 200 milliseconds, inserting a "finished" message upon completion. </desc>
         <code><![CDATA[
@@ -43,5 +47,8 @@ $("button:last").click(function () {
 <div id="log"></div>
 ]]></html>
 </example>
- 
+
+<category name="Effects" slug="effects"/>
+<category name="Fading" slug="fading"/>
+<category name="Version 1.4.4" slug="1.4.4"/>
 </entry>

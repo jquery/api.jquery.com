@@ -8,6 +8,13 @@
 $(&#39;&lt;input&gt;&#39;).is(&#39;:text&#39;); // true
 </pre>
 </longdesc>
+
+  <note id="jquery-selector-extension-alt" type="additional">
+  <placeholder name="selector">:text</placeholder>
+  <placeholder name="alt">[type="text"]</placeholder>
+</note>
+
+
                 <example>
                     <desc>Finds all text inputs.</desc>
                     <code><![CDATA[
@@ -43,4 +50,7 @@ $(&#39;&lt;input&gt;&#39;).is(&#39;:text&#39;); // true
   <div>
   </div>]]></html>
                 </example>
-            </entry>
+            <category name="Form" slug="form-selectors"/>
+<category name="jQuery Extensions" slug="jquery-selector-extensions"/>
+<category name="Version 1.0" slug="1.0"/>
+</entry>

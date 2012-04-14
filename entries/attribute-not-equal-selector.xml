@@ -1,18 +1,24 @@
-            <entry type='selector'   name="attributeNotEqual" return=""  >
-                <sample>[attribute!="value"]</sample>
-                 <signature><added>1.0</added>
-                <argument name="attribute" type="String">
-                    <desc>An attribute name.</desc>
-                </argument>
-                <argument name="value" type="String">
-                    <desc>An attribute value. Can be either an unquoted single word or a quoted string.</desc>
-                </argument></signature>
-                <desc>Select elements that either don't have the specified attribute, or do have the specified attribute but not with a certain value.</desc>
-                <longdesc><p>This selector is equivalent to <code>:not([attr="value"])</code>.</p> </longdesc>
-                <example>
-                    <desc>Finds all inputs that don't have the name 'newsletter' and appends text to the span next to it.</desc>
-                    <code><![CDATA[$('input[name!="newsletter"]').next().append('<b>; not newsletter</b>');]]></code>
-                    <html><![CDATA[<div>
+<entry type='selector'   name="attributeNotEqual" return=""  >
+  <sample>[attribute!="value"]</sample>
+  <signature><added>1.0</added>
+  <argument name="attribute" type="String">
+    <desc>An attribute name.</desc>
+  </argument>
+  <argument name="value" type="String">
+    <desc>An attribute value. Can be either an unquoted single word or a quoted string.</desc>
+  </argument></signature>
+  <desc>Select elements that either don't have the specified attribute, or do have the specified attribute but not with a certain value.</desc>
+  <longdesc><p>This selector is equivalent to <code>:not([attr="value"])</code>.</p> </longdesc>
+
+<note id="jquery-selector-extension-alt" type="additional">
+  <placeholder name="selector">[name!="value"]</placeholder>
+  <placeholder name="alt">$("your-pure-css-selector").not('[name="value"]')</placeholder>
+</note>
+
+<example>
+  <desc>Finds all inputs that don't have the name 'newsletter' and appends text to the span next to it.</desc>
+  <code><![CDATA[$('input[name!="newsletter"]').next().append('<b>; not newsletter</b>');]]></code>
+  <html><![CDATA[<div>
 
     <input type="radio" name="newsletter" value="Hot Fuzz" />
     <span>name is newsletter</span>
@@ -28,5 +34,8 @@
 
     <span>name is accept</span>
   </div>]]></html>
-                </example>
-            </entry>
+</example>
+<category name="Attribute" slug="attribute-selectors"/>
+<category name="jQuery Extensions" slug="jquery-selector-extensions"/>
+<category name="Version 1.0" slug="1.0"/>
+</entry>

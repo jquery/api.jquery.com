@@ -42,4 +42,6 @@ $(document.body)
  <div></div>
 ]]></html>
 </example>
+<category name="DOM Element Methods" slug="dom-element-methods"/>
+<category name="Version 1.0" slug="1.0"/>
 </entry>

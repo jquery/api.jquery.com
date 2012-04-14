@@ -3,6 +3,12 @@
                  <signature><added>1.0</added> </signature>
                 <desc>Selects all elements that are selected.</desc>
                 <longdesc><p>The <code>:selected</code> selector works for <code>&lt;option&gt;</code> elements. It does not work for checkboxes or radio inputs; use <code>:checked</code> for them.</p></longdesc>
+
+  <note id="jquery-selector-extension" type="additional">
+  <placeholder name="selector">:selected</placeholder>
+</note>
+
+
                 <example>
                     <desc>Attaches a change event to the select that gets the text for each selected option and writes them in the div.  It then triggers the event for the initial text draw.</desc>
                     <code><![CDATA[
@@ -31,4 +37,7 @@
   </select>
   <div></div>]]></html>
                 </example>
-            </entry>
+            <category name="Form" slug="form-selectors"/>
+<category name="jQuery Extensions" slug="jquery-selector-extensions"/>
+<category name="Version 1.0" slug="1.0"/>
+</entry>

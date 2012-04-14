@@ -183,4 +183,8 @@ $("li").click(function() {
 </ul>]]></html>
 </example>
 
+<category name="Filtering" slug="filtering"/>
+<category name="Version 1.0" slug="1.0"/>
+<category name="Version 1.6" slug="1.6"/>
+<category name="Version 1.7" slug="1.7"/>
 </entry>

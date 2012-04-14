@@ -49,25 +49,28 @@
 </ul>
 <p>This is usually the desired sequence before taking an action. If this is not required, the <code>mousedown</code> or <code>mouseup</code> event may be more suitable.</p>
 </longdesc>
-                <example>
-                    <desc>Hide paragraphs on a page when they are clicked:</desc>
-                    <code><![CDATA[
+<example>
+  <desc>Hide paragraphs on a page when they are clicked:</desc>
+  <code><![CDATA[
     $("p").click(function () {
       $(this).slideUp();
     });
 ]]></code>
-                    <css><![CDATA[
+  <css><![CDATA[
   p { color:red; margin:5px; cursor:pointer; }
   p:hover { background:yellow; }
   ]]></css>
-                    <html><![CDATA[<p>First Paragraph</p>
+  <html><![CDATA[<p>First Paragraph</p>
 
   <p>Second Paragraph</p>
   <p>Yet one more Paragraph</p>]]></html>
-                </example>
-                <example>
-                    <desc>Trigger the click event on all of the paragraphs on the page:</desc>
-                    <code><![CDATA[$("p").click();]]></code>
-                </example>
+</example>
+<example>
+  <desc>Trigger the click event on all of the paragraphs on the page:</desc>
+  <code><![CDATA[$("p").click();]]></code>
+</example>
 
+<category name="Mouse Events" slug="mouse-events"/>
+<category name="Version 1.0" slug="1.0"/>
+<category name="Version 1.4.3" slug="1.4.3"/>
 </entry>

@@ -50,7 +50,15 @@
 
     // Set another completion function for the request above
     jqxhr.complete(function(){ alert("second complete"); });</pre>
-		</longdesc>
+    </longdesc>
+
+  <note id="same-origin-policy" type="additional">
+</note>
+<note id="use-ajaxerror" type="additional">
+  <placeholder name="title">jQuery.post()</placeholder>
+</note>
+
+
   <example>
       <desc>Request the test.php page, but ignore the return results.</desc>
       <code><![CDATA[$.post("test.php");]]></code>
@@ -128,4 +136,7 @@
   <div id="result"></div>
 ]]></html>
   </example>
-          </entry>
+          <category name="Shorthand Methods" slug="shorthand-methods"/>
+<category name="Version 1.0" slug="1.0"/>
+<category name="Version 1.5" slug="1.5"/>
+</entry>

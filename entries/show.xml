@@ -56,6 +56,12 @@ $('#clickme').click(function() {
 </p>
 
 </longdesc>
+
+  <note id="jquery.fx.off" type="additional">
+  <placeholder name="title">.show()</placeholder>
+</note>
+
+
 <example>
   <desc>Animates all hidden paragraphs to show slowly, completing the animation within 600 milliseconds.</desc>
   <code><![CDATA[
@@ -133,4 +139,7 @@ $("form").submit(function () {
 ]]></html>
 </example>
 
+<category name="Basics" slug="basics"/>
+<category name="Version 1.0" slug="1.0"/>
+<category name="Version 1.4.3" slug="1.4.3"/>
 </entry>

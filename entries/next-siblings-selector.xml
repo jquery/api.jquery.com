@@ -40,4 +40,6 @@
   <span>span sibling (not div)</span>
   <div>div sibling</div>]]></html>
                 </example>
-            </entry>
+            <category name="Hierarchy" slug="hierarchy-selectors"/>
+<category name="Version 1.0" slug="1.0"/>
+</entry>

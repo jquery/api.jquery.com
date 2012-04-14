@@ -72,6 +72,13 @@ var jqxhr = $.getJSON("example.json", function() {
 // Set another completion function for the request above
 jqxhr.complete(function(){ alert("second complete"); });</pre>
   </longdesc>
+
+  <note id="same-origin-policy" type="additional">
+</note>
+<note id="same-origin-policy-exceptions" type="additional">
+</note>
+
+
   <example>
     <desc>Loads the four most recent cat pictures from the Flickr JSONP API.</desc>
 <code><![CDATA[
@@ -104,4 +111,7 @@ $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?
     alert("JSON Data: " + json.users[3].name);
     });]]></code>
   </example>
+<category name="Shorthand Methods" slug="shorthand-methods"/>
+<category name="Version 1.0" slug="1.0"/>
+<category name="Version 1.5" slug="1.5"/>
 </entry>

@@ -137,4 +137,7 @@ array = $.map(array, function(a, index) {
 }); ]]></code>
                     <results><![CDATA[[-45, 0, -44, 1, 7, 2, 52, 3] ]]></results>
                 </example>
-            </entry>
+            <category name="Utilities" slug="utilities"/>
+<category name="Version 1.0" slug="1.0"/>
+<category name="Version 1.6" slug="1.6"/>
+</entry>

@@ -1,1 +1,3 @@
-<category id="95" parent="69" name="Version 1.6" slug="1.6"><desc>All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.</desc></category>
+<category id="95" parent="69" name="Version 1.6" slug="1.6">
+  <desc>All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.</desc>
+</category>

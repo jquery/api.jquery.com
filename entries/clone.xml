@@ -1,20 +1,20 @@
 <entry type='method' name="clone" return="jQuery">
-<signature>
+  <signature>
     <added>1.0</added>
     <argument name="withDataAndEvents" optional="true" type="Boolean" default="false">
-        <desc>A Boolean indicating whether event handlers should be copied along with the elements. As of jQuery 1.4, element data will be copied as well.</desc>
+      <desc>A Boolean indicating whether event handlers should be copied along with the elements. As of jQuery 1.4, element data will be copied as well.</desc>
     </argument>
-</signature>
-<signature>
+  </signature>
+  <signature>
     <added>1.5</added>
     <argument name="withDataAndEvents" optional="true" type="Boolean" default="false">
-        <desc>A Boolean indicating whether event handlers and data should be copied along with the elements. The default value is <code>false</code>. <em>*In jQuery 1.5.0 the default value was incorrectly <code>true</code>; it was changed back to <code>false</code> in 1.5.1 and up.</em></desc>
+      <desc>A Boolean indicating whether event handlers and data should be copied along with the elements. The default value is <code>false</code>. <em>*In jQuery 1.5.0 the default value was incorrectly <code>true</code>; it was changed back to <code>false</code> in 1.5.1 and up.</em></desc>
     </argument>
     <argument name="deepWithDataAndEvents" optional="true" type="Boolean" default="value of withDataAndEvents" >
       <desc>A Boolean indicating whether event handlers and data for all children of the cloned element should be copied. By default its value matches the first argument's value (which defaults to <code>false</code>).</desc>
     </argument>
-    
-</signature>
+
+  </signature>
   <desc>Create a deep copy of the set of matched elements.</desc>
   <longdesc><p>The <code>.clone()</code> method performs a <em>deep</em> copy of the set of matched elements, meaning that it copies the matched elements as well as all of their descendant elements and text nodes. When used in conjunction with one of the insertion methods, <code>.clone()</code> is a convenient way to duplicate elements on a page. Consider the following HTML:</p>
         <pre>&lt;div class="container"&gt;
@@ -68,21 +68,21 @@
   }
 ]]></css>
 <code><![CDATA[
-// sort order is not guaranteed here and may vary with browser  
+// sort order is not guaranteed here and may vary with browser
 $('#copy').append($('#orig .elem')
           .clone()
           .children('a')
           .prepend('foo - ')
           .parent()
-          .clone()); 
- 
+          .clone());
+
 // correct way to approach where order is maintained
 $('#copy-correct')
           .append($('#orig .elem')
           .clone()
           .children('a')
           .prepend('bar - ')
-          .end()); 
+          .end());
 ]]></code>
 <html><![CDATA[
 <div id="orig">
@@ -96,4 +96,7 @@ $('#copy-correct')
 <div id="copy-correct"></div>
 ]]></html>
 </example>
+<category name="Copying" slug="copying"/>
+<category name="Version 1.0" slug="1.0"/>
+<category name="Version 1.5" slug="1.5"/>
 </entry>

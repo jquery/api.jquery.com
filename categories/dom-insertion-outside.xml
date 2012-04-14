@@ -1,1 +1,3 @@
-<category id="48" parent="9" name="DOM Insertion, Outside" slug="dom-insertion-outside"><desc>These methods allow us to insert new content outside an existing element.</desc></category>
+<category id="48" parent="9" name="DOM Insertion, Outside" slug="dom-insertion-outside">
+  <desc>These methods allow us to insert new content outside an existing element.</desc>
+</category>

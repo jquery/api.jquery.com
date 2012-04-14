@@ -54,13 +54,13 @@
 <p>In addition to their ability to handle events on descendant elements not yet created, another advantage of delegated events is their potential for much lower overhead when many elements must be monitored. On a data table with 1,000 rows in its <code>tbody</code>, this example attaches a handler to 1,000 elements:</p>
 <pre>
 $("#dataTable tbody tr").on("click", function(event){
-	alert($(this).text());
+  alert($(this).text());
 });
 </pre>
 <p>A delegated-events approach attaches an event handler to only one element, the tbody, and the event only needs to bubble up one level (from the clicked <code>tr</code> to <code>tbody</code>):</p>
 <pre>
 $("#dataTable tbody").on("click", "tr", function(event){
-	alert($(this).text());
+  alert($(this).text());
 });
 </pre>
 
@@ -222,4 +222,6 @@ span { color:blue; }
   event.preventDefault();
 });]]></code>
 </example>
+<category name="Event Handler Attachment" slug="event-handler-attachment"/>
+<category name="Version 1.7" slug="1.7"/>
 </entry>

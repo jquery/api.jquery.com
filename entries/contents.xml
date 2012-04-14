@@ -1,9 +1,9 @@
-            <entry type='method' name="contents" return="jQuery">
-              <signature>
-                <added>1.2</added>
-              </signature>
-              <desc>Get the children of each element in the set of matched elements, including text and comment nodes.</desc>
-              <longdesc><p>Given a jQuery object that represents a set of DOM elements, the <code>.contents()</code> method allows us to search through the immediate children of these elements in the DOM tree and construct a new jQuery object from the matching elements. The <code>.contents()</code> and <code>.children()</code> methods are similar, except that the former includes text nodes as well as HTML elements in the resulting jQuery object.</p>
+<entry type='method' name="contents" return="jQuery">
+  <signature>
+    <added>1.2</added>
+  </signature>
+  <desc>Get the children of each element in the set of matched elements, including text and comment nodes.</desc>
+  <longdesc><p>Given a jQuery object that represents a set of DOM elements, the <code>.contents()</code> method allows us to search throughthe immediate children of these elements in the DOM tree and construct a new jQuery object from the matching elements. The <code>.contents()</code> and <code>.children()</code> methods are similar, except that the former includes text nodes as well as HTML elements in the resulting jQuery object.</p>
 <p>The <code>.contents()</code> method can also be used to get the content document of an iframe, if the iframe is on the same domain as the main page.</p>
 <p>Consider a simple <code>&lt;div&gt;</code> with a number of text nodes, each of which is separated by two line break elements (<code>&lt;br /&gt;</code>):</p>
 <pre>&lt;div class="container"&gt;
@@ -40,4 +40,6 @@ $('.container').contents().filter(function() {
     <html><![CDATA[<iframe src="http://api.jquery.com/" width="80%" height="600" id='frameDemo'></iframe> ]]></html>
   </example>
 
-  </entry>
+  <category name="Miscellaneous Traversing" slug="miscellaneous-traversal"/>
+<category name="Version 1.2" slug="1.2"/>
+</entry>

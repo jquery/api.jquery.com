@@ -62,4 +62,8 @@
                     <code><![CDATA[jQuery.support.boxModel]]></code>
                     <results><![CDATA[false]]></results>
                 </example>
-            </entry>
+            <category name="Properties of the Global jQuery Object" slug="global-jquery-object-properties"/>
+<category name="Utilities" slug="utilities"/>
+<category name="Version 1.3" slug="1.3"/>
+<category name="Version 1.5.1" slug="1.5.1"/>
+</entry>

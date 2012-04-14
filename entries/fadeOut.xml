@@ -50,9 +50,15 @@
     <p>If supplied, the callback is fired once the animation is complete. This can be useful for stringing different animations together in sequence. The callback is not sent any arguments, but <code>this</code> is set to the DOM element being animated. If multiple elements are animated, it is important to note that the callback is executed once per matched element, not once for the animation as a whole.</p>
 <p><strong>As of jQuery 1.6</strong>, the <code><a href="http://api.jquery.com/promise/">.promise()</a></code> method can be used in conjunction with the <code><a href="http://api.jquery.com/deferred.done/">deferred.done()</a></code> method to execute a single callback for the animation as a whole when <em>all</em> matching elements have completed their animations ( See the <a href="http://api.jquery.com/promise/#example-1">example for .promise()</a> ).  </p>
   </longdesc>
-      <example>
-          <desc>Animates all paragraphs to fade out, completing the animation within 600 milliseconds.</desc>
-          <code><![CDATA[
+
+  <note id="jquery.fx.off" type="additional">
+  <placeholder name="title">.fadeOut()</placeholder>
+</note>
+
+
+<example>
+  <desc>Animates all paragraphs to fade out, completing the animation within 600 milliseconds.</desc>
+  <code><![CDATA[
   $("p").click(function () {
   $("p").fadeOut("slow");
   });
@@ -64,10 +70,10 @@
   If you click on this paragraph
   you'll see it just fade away.
   </p>]]></html>
-      </example>
-      <example>
-          <desc>Fades out spans in one section that you click on.</desc>
-          <code><![CDATA[
+</example>
+<example>
+    <desc>Fades out spans in one section that you click on.</desc>
+    <code><![CDATA[
 
   $("span").click(function () {
   $(this).fadeOut(1000, function () {
@@ -102,7 +108,7 @@ $("#btn1").click(function() {
   function complete() {
     $("<div/>").text(this.id).appendTo("#log");
   }
-  
+
   $("#box1").fadeOut(1600, "linear", complete);
   $("#box2").fadeOut(1600, complete);
 });
@@ -130,4 +136,7 @@ button { float:left; margin:5px 10px 5px 0; }
 <div id="box2" class="box">swing</div>
 ]]></html>
 </example>
+<category name="Fading" slug="fading"/>
+<category name="Version 1.0" slug="1.0"/>
+<category name="Version 1.4.3" slug="1.4.3"/>
 </entry>

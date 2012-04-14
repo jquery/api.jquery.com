@@ -157,4 +157,10 @@ $('a').bind('click', function(event) {
 });
 ]]></code>
 </example>
+<category name="Attributes" slug="attributes"/>
+<category name="Class Attribute" slug="class-attribute"/>
+<category name="CSS" slug="css"/>
+<category name="Version 1.0" slug="1.0"/>
+<category name="Version 1.3" slug="1.3"/>
+<category name="Version 1.4" slug="1.4"/>
 </entry>

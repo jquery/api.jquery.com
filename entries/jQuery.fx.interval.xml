@@ -23,5 +23,8 @@ $("input").click(function(){
     ]]></css>
       <html><![CDATA[<p><input type="button" value="Run"/></p>
 <div></div>]]></html>
-                  </example>
+</example>
+<category name="Custom" slug="custom-effects"/>
+<category name="Properties of the Global jQuery Object" slug="global-jquery-object-properties"/>
+<category name="Version 1.4.3" slug="1.4.3"/>
 </entry>

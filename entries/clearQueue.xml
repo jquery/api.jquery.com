@@ -1,6 +1,6 @@
 <entry type='method' name="clearQueue" return="jQuery">
 <signature>
-	<added>1.4</added>
+  <added>1.4</added>
   <argument name="queueName" optional="true" type="String">
     <desc>A string containing the name of the queue. Defaults to <code>fx</code>, the standard effects queue.</desc>
   </argument>
@@ -11,7 +11,7 @@
 <desc>Empty the queue.</desc>
 <code><![CDATA[
 $("#start").click(function () {
-    
+
   var myDiv = $("div");
   myDiv.show("slow");
   myDiv.animate({left:'+=200'},5000);
@@ -28,7 +28,7 @@ $("#start").click(function () {
     _this.dequeue();
   });
   myDiv.slideUp();
-  
+
 });
 
 $("#stop").click(function () {
@@ -38,7 +38,7 @@ $("#stop").click(function () {
 });]]></code>
 <css><![CDATA[
 div { margin:3px; width:40px; height:40px;
-    position:absolute; left:0px; top:30px; 
+    position:absolute; left:0px; top:30px;
     background:green; display:none; }
 div.newcolor { background:blue; }
 ]]></css>
@@ -46,4 +46,8 @@ div.newcolor { background:blue; }
 <button id="stop">Stop</button>
 <div></div>]]></html>
 </example>
+<category name="Custom" slug="custom-effects"/>
+<category name="Data" slug="data"/>
+<category name="Utilities" slug="utilities"/>
+<category name="Version 1.4" slug="1.4"/>
 </entry>

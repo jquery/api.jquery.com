@@ -16,4 +16,6 @@ console.log($.isPlainObject(document.location));
                     <code><![CDATA[jQuery.isPlainObject({}) // true
 jQuery.isPlainObject("test") // false]]></code>
                 </example>
-            </entry>
+            <category name="Utilities" slug="utilities"/>
+<category name="Version 1.4" slug="1.4"/>
+</entry>

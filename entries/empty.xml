@@ -35,4 +35,6 @@
 
 <button>Call empty() on above paragraph</button>]]></html>
   </example>
+<category name="DOM Removal" slug="dom-removal"/>
+<category name="Version 1.0" slug="1.0"/>
 </entry>

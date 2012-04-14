@@ -1,11 +1,11 @@
-            <entry type='method' name="andSelf" return="jQuery">
-              <signature>
-                <added>1.2</added>
-              </signature>
-              <desc>Add the previous set of elements on the stack to the current set.</desc>
-              <longdesc><p>As described in the discussion for <code><a href="http://api.jquery.com/end/">.end()</a></code>, jQuery objects maintain an internal stack that keeps track of changes to the matched set of elements. When one of the DOM traversal methods is called, the new set of elements is pushed onto the stack. If the previous set of elements is desired as well, <code>.andSelf()</code> can help.</p>
-<p>Consider a page with a simple list on it:</p>
-<pre>
+<entry type='method' name="andSelf" return="jQuery">
+  <signature>
+    <added>1.2</added>
+  </signature>
+  <desc>Add the previous set of elements on the stack to the current set.</desc>
+  <longdesc><p>As described in the discussion for <code><a href="http://api.jquery.com/end/">.end()</a></code>, jQuery objects maintain aninternal stack that keeps track of changes to the matched set of elements. When one of the DOM traversal methods is called, the new set of elements is pushed onto the stack. If the previous set of elements is desired as well, <code>.andSelf()</code> can help.</p>
+    <p>Consider a page with a simple list on it:</p>
+    <pre>
 &lt;ul&gt;
    &lt;li&gt;list item 1&lt;/li&gt;
    &lt;li&gt;list item 2&lt;/li&gt;
@@ -14,26 +14,28 @@
    &lt;li&gt;list item 5&lt;/li&gt;
 &lt;/ul&gt;
 </pre>
-<p>The result of the following code is a red background behind items 3, 4 and 5:</p>
-<pre>$('li.third-item').nextAll().andSelf()
+  <p>The result of the following code is a red background behind items 3, 4 and 5:</p>
+  <pre>$('li.third-item').nextAll().andSelf()
   .css('background-color', 'red');
 </pre>
-<p>First, the initial selector locates item 3, initializing the stack with the set containing just this item. The call to <code>.nextAll()</code> then pushes the set of items 4 and 5 onto the stack. Finally, the <code>.andSelf()</code> invocation merges these two sets together, creating a jQuery object that points to all three items in document order: <code>{[&lt;li.third-item&gt;,&lt;li&gt;,&lt;li&gt; ]}</code>.</p></longdesc>
-                <example>
-                    <desc>Find all <code>div</code>s, and all the paragraphs inside of them, and give them both class names.  Notice the <code>div</code> doesn't have the yellow background color since it didn't use <code>.andSelf()</code>.</desc>
-                    <code><![CDATA[
+    <p>First, the initial selector locates item 3, initializing the stack with the set containing just this item. The call to <code>.nextAll()</code> then pushes the set of items 4 and 5 onto the stack. Finally, the <code>.andSelf()</code> invocation merges these two sets together, creating a jQuery object that points to all three items in document order: <code>{[&lt;li.third-item&gt;,&lt;li&gt;,&lt;li&gt; ]}</code>.</p></longdesc>
+  <example>
+    <desc>Find all <code>div</code>s, and all the paragraphs inside of them, and give them both class names.  Notice the <code>div</code> doesn't have the yellow background color since it didn't use <code>.andSelf()</code>.</desc>
+    <code><![CDATA[
     $("div").find("p").andSelf().addClass("border");
     $("div").find("p").addClass("background");
 
 ]]></code>
-                    <css><![CDATA[
+    <css><![CDATA[
   p, div { margin:5px; padding:5px; }
   .border { border: 2px solid red; }
   .background { background:yellow; }
   ]]></css>
-                    <html><![CDATA[<div>
+    <html><![CDATA[<div>
     <p>First Paragraph</p>
     <p>Second Paragraph</p>
   </div>]]></html>
-                </example>
-            </entry>
+  </example>
+<category name="Miscellaneous Traversing" slug="miscellaneous-traversal"/>
+<category name="Version 1.2" slug="1.2"/>
+</entry>

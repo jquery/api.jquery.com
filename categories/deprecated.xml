@@ -1,1 +1,3 @@
-<category id="97" parent="0" name="Deprecated" slug="deprecated"><desc>These items have been deprecated, though not necessarily removed, from jQuery.</desc></category>
+<category id="97" parent="0" name="Deprecated" slug="deprecated">
+  <desc>These items have been deprecated, though not necessarily removed, from jQuery.</desc>
+</category>

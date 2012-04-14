@@ -47,6 +47,12 @@
 <p>If supplied, the callback is fired once the animation is complete. This can be useful for stringing different animations together in sequence. The callback is not sent any arguments, but <code>this</code> is set to the DOM element being animated. If multiple elements are animated, it is important to note that the callback is executed once per matched element, not once for the animation as a whole.</p>
 <p><strong>As of jQuery 1.6</strong>, the <code><a href="http://api.jquery.com/promise/">.promise()</a></code> method can be used in conjunction with the <code><a href="http://api.jquery.com/deferred.done/">deferred.done()</a></code> method to execute a single callback for the animation as a whole when <em>all</em> matching elements have completed their animations ( See the <a href="http://api.jquery.com/promise/#example-1">example for .promise()</a> ).  </p>
 </longdesc>
+
+  <note id="jquery.fx.off" type="additional">
+  <placeholder name="title">.slideDown()</placeholder>
+</note>
+
+
 <example>
     <desc>Animates all divs to slide down and show themselves over 600 milliseconds.</desc>
     <code><![CDATA[
@@ -96,4 +102,7 @@ margin:10px; }
 
 <input type="text" />]]></html>
 </example>
+<category name="Sliding" slug="sliding"/>
+<category name="Version 1.0" slug="1.0"/>
+<category name="Version 1.4.3" slug="1.4.3"/>
 </entry>

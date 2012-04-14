@@ -91,4 +91,6 @@ $("button").bind( "click", function() {
 
 ]]></code>
   </example>
+<category name="Deferred Object" slug="deferred-object"/>
+<category name="Version 1.6" slug="1.6"/>
 </entry>

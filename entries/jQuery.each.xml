@@ -12,8 +12,8 @@
   <longdesc>
     <p>The <code>$.each()</code> function is not the same as <a href="/each/">$(selector).each()</a>, which is used to iterate, exclusively, over a jQuery object. The <code>$.each()</code> function can be used to iterate over any collection, whether it is a map (JavaScript object) or an array. In the case of an array, the callback is passed an array index and a corresponding array value each time. (The value can also be accessed through the <code>this</code> keyword, but Javascript will always wrap the <code>this</code> value as an <code>Object</code> even if it is a simple string or number value.) The method returns its first argument, the object that was iterated.</p>
 
-<pre>$.each([52, 97], function(index, value) { 
-  alert(index + ': ' + value); 
+<pre>$.each([52, 97], function(index, value) {
+  alert(index + ': ' + value);
 });
 </pre>
 <p>This produces two messages:</p>
@@ -22,19 +22,19 @@
   <span class="output">1: 97</span>
 </p>
     <p>If a map is used as the collection, the callback is passed a key-value pair each time:</p>
-<pre>var map = { 
-  'flammable': 'inflammable', 
-  'duh': 'no duh' 
-}; 
-$.each(map, function(key, value) { 
-  alert(key + ': ' + value); 
+<pre>var map = {
+  'flammable': 'inflammable',
+  'duh': 'no duh'
+};
+$.each(map, function(key, value) {
+  alert(key + ': ' + value);
 });</pre>
     <p>Once again, this produces two messages:</p>
     <p>
       <span class="output">flammable: inflammable</span><br />
       <span class="output">duh: no duh</span>
     </p>
-    
+
     <p>We can break the <code>$.each()</code> loop at a particular iteration by making the callback function return <code>false</code>. Returning <em>non-false</em> is the same as a <code>continue</code> statement in a for loop; it will skip immediately to the next iteration.</p></longdesc>
     <example>
       <desc>Iterates through the array displaying each number as both a word and numeral</desc>
@@ -74,4 +74,6 @@ $.each(map, function(key, value) {
    alert( "Key: " + k + ", Value: " + v );
  });]]></code>
 </example>
+<category name="Utilities" slug="utilities"/>
+<category name="Version 1.0" slug="1.0"/>
 </entry>

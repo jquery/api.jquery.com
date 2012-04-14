@@ -1,19 +1,19 @@
-            <entry type='method' name="eq" return="jQuery">
-              <signature>
-                <added>1.1.2</added>
-                <argument name="index" type="Integer">
-                    <desc>An integer indicating the 0-based position of the element. </desc>
-                </argument>
-              </signature>
-              <signature>
-                <added>1.4</added>
-                <argument name="-index" type="Integer">
-                    <desc>An integer indicating the position of the element, counting backwards  from the last element in the set. </desc>
-                </argument>
-              </signature>
-              <desc>Reduce the set of matched elements to the one at the specified index.</desc>
-              <longdesc><p>Given a jQuery object that represents a set of DOM elements, the <code>.eq()</code> method constructs a new jQuery object from one element within that set. The supplied index identifies the position of this element in the set. </p>
-<p>Consider a page with a simple list on it:</p>
+<entry type='method' name="eq" return="jQuery">
+  <signature>
+    <added>1.1.2</added>
+    <argument name="index" type="Integer">
+      <desc>An integer indicating the 0-based position of the element. </desc>
+    </argument>
+  </signature>
+  <signature>
+    <added>1.4</added>
+    <argument name="-index" type="Integer">
+      <desc>An integer indicating the position of the element, counting backwards  from the last element in the set. </desc>
+    </argument>
+  </signature>
+  <desc>Reduce the set of matched elements to the one at the specified index.</desc>
+  <longdesc><p>Given a jQuery object that represents a set of DOM elements, the <code>.eq()</code> method constructs a new jQuery object from one element within that set. The supplied index identifies the position of this element in the set. </p>
+  <p>Consider a page with a simple list on it:</p>
 <pre>
   &lt;ul&gt;
     &lt;li&gt;list item 1&lt;/li&gt;
@@ -39,23 +39,24 @@
 </pre>
 <p>Here, none of the list items is turned red, since <code>.eq(5)</code> indicates the sixth of five list items.</p>
 </longdesc>
-                <example>
-                    <desc>Turn the div with index 2 blue by adding an appropriate class.</desc>
-                    <code><![CDATA[
-
-    $("body").find("div").eq(2).addClass("blue");
+<example>
+  <desc>Turn the div with index 2 blue by adding an appropriate class.</desc>
+  <code><![CDATA[
+$("body").find("div").eq(2).addClass("blue");
 ]]></code>
-                    <css><![CDATA[
+<css><![CDATA[
   div { width:60px; height:60px; margin:10px; float:left;
         border:2px solid blue; }
   .blue { background:blue; }
   ]]></css>
-                    <html><![CDATA[<div></div>
+<html><![CDATA[<div></div>
   <div></div>
   <div></div>
 
   <div></div>
   <div></div>
   <div></div>]]></html>
-                </example>
-            </entry>
+</example>
+<category name="Filtering" slug="filtering"/>
+<category name="Version 1.1.2" slug="1.1.2"/>
+</entry>

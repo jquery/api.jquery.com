@@ -21,4 +21,7 @@ $("button").toggle(function(){
 <p>cruel</p>
 <p>World</p>]]></html>
                 </example>
-            </entry>
+            <category name="DOM Insertion, Around" slug="dom-insertion-around"/>
+<category name="DOM Removal" slug="dom-removal"/>
+<category name="Version 1.4" slug="1.4"/>
+</entry>

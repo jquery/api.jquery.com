@@ -44,4 +44,6 @@
                     <code><![CDATA[$.isFunction(function(){});]]></code>
                     <results><![CDATA[true]]></results>
                 </example>
-            </entry>
+            <category name="Utilities" slug="utilities"/>
+<category name="Version 1.2" slug="1.2"/>
+</entry>

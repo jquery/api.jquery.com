@@ -12,4 +12,6 @@
                     <code><![CDATA[$("b").append( "" + $.isWindow(window) );]]></code>
                     <html><![CDATA[Is 'window' a window? <b></b>]]></html>
                 </example>
-            </entry>
+            <category name="Utilities" slug="utilities"/>
+<category name="Version 1.4.3" slug="1.4.3"/>
+</entry>

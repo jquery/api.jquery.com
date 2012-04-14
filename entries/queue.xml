@@ -1,13 +1,13 @@
-<entries>
+
     <entry type='method' name="queue" return="Array">
-				<signature>
-                	<added>1.2</added>
-	                <argument name="queueName" optional="true" type="String">
-	                    <desc>A string containing the name of the queue. Defaults to <code>fx</code>, the standard effects queue.</desc>
-	                </argument>
-				</signature>
-				<desc>Show the queue of functions to be executed on the matched elements.</desc>
-				<longdesc></longdesc>
+        <signature>
+                  <added>1.2</added>
+                  <argument name="queueName" optional="true" type="String">
+                      <desc>A string containing the name of the queue. Defaults to <code>fx</code>, the standard effects queue.</desc>
+                  </argument>
+        </signature>
+        <desc>Show the queue of functions to be executed on the matched elements.</desc>
+        <longdesc></longdesc>
                 <example>
                     <desc>Show the length of the queue.</desc>
                     <code><![CDATA[
@@ -42,6 +42,10 @@ showIt();
   <p>The queue length is: <span></span></p>
   <div></div>]]></html>
   </example>
+<category name="Custom" slug="custom-effects"/>
+<category name="Data" slug="data"/>
+<category name="Utilities" slug="utilities"/>
+<category name="Version 1.2" slug="1.2"/>
 </entry>
 <entry type='method' name="queue" return="jQuery">
   <signature>
@@ -64,10 +68,10 @@ showIt();
   </signature>
   <desc>Manipulate the queue of functions to be executed on the matched elements.</desc>
   <longdesc><p>Every element can have one to many queues of functions attached to it by jQuery. In most applications, only one queue (called <code>fx</code>) is used. Queues allow a sequence of actions to be called on an element asynchronously, without halting program execution. The typical example of this is calling multiple animation methods on an element. For example:</p>
-				<pre>$('#foo').slideUp().fadeIn();</pre>
-				<p>When this statement is executed, the element begins its sliding animation immediately, but the fading transition is placed on the <code>fx</code> queue to be called only once the sliding transition is complete.</p>
-				<p>The <code>.queue()</code> method allows us to directly manipulate this queue of functions. Calling <code>.queue()</code> with a callback is particularly useful; it allows us to place a new function at the end of the queue.</p>
-				<p>This feature is similar to providing a callback function with an animation method, but does not require the callback to be given at the time the animation is performed.</p>
+        <pre>$('#foo').slideUp().fadeIn();</pre>
+        <p>When this statement is executed, the element begins its sliding animation immediately, but the fading transition is placed on the <code>fx</code> queue to be called only once the sliding transition is complete.</p>
+        <p>The <code>.queue()</code> method allows us to directly manipulate this queue of functions. Calling <code>.queue()</code> with a callback is particularly useful; it allows us to place a new function at the end of the queue.</p>
+        <p>This feature is similar to providing a callback function with an animation method, but does not require the callback to be given at the time the animation is performed.</p>
 <pre>$('#foo').slideUp();
 $('#foo').queue(function() {
   alert('Animation complete.');
@@ -138,5 +142,8 @@ $('#foo').queue(function() {
   <button id="stop">Stop</button>
   <div></div>]]></html>
                 </example>
-            </entry>
-</entries>
+            <category name="Custom" slug="custom-effects"/>
+<category name="Data" slug="data"/>
+<category name="Utilities" slug="utilities"/>
+<category name="Version 1.2" slug="1.2"/>
+</entry>

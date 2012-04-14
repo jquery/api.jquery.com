@@ -95,4 +95,7 @@ $('body').append($newdiv1, [newdiv2, existingdiv1]);
 ]]></css>
   <html><![CDATA[<strong>Hello world!!!</strong><p>I would like to say: </p>]]></html>
 </example>
+<category name="DOM Insertion, Inside" slug="dom-insertion-inside"/>
+<category name="Version 1.0" slug="1.0"/>
+<category name="Version 1.4" slug="1.4"/>
 </entry>

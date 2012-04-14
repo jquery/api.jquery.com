@@ -1,32 +1,34 @@
 <entry type='method' name="ajaxStart" return="jQuery">
-				<signature>
-                	<added>1.0</added>
-	                <argument name="handler()" type="Function">
-	                    <desc>The function to be invoked.</desc>
-	                </argument>
-				</signature>
-                <desc>Register a handler to be called when the first Ajax request begins. This is an <a href='http://docs.jquery.com/Ajax_Events'>Ajax Event</a>.</desc>
-                <longdesc><p>Whenever an Ajax request is about to be sent, jQuery checks whether there are any other outstanding Ajax requests. If none are in progress, jQuery triggers the <code>ajaxStart</code> event. Any and all handlers that have been registered with the <code>.ajaxStart()</code> method are executed at this time.</p>
-				<p>To observe this method in action, we can set up a basic Ajax load request:</p>
-				<pre>&lt;div class="trigger"&gt;Trigger&lt;/div&gt;
+  <signature>
+    <added>1.0</added>
+    <argument name="handler()" type="Function">
+      <desc>The function to be invoked.</desc>
+    </argument>
+  </signature>
+  <desc>Register a handler to be called when the first Ajax request begins. This is an <a href='http://docs.jquery.com/Ajax_Events'>Ajax Event</a>.</desc>
+  <longdesc><p>Whenever an Ajax request is about to be sent, jQuery checks whether there are any other outstanding Ajax requests. If none are in progress, jQuery triggers the <code>ajaxStart</code> event. Any and all handlers that have been registered with the <code>.ajaxStart()</code> method are executed at this time.</p>
+    <p>To observe this method in action, we can set up a basic Ajax load request:</p>
+    <pre>&lt;div class="trigger"&gt;Trigger&lt;/div&gt;
 &lt;div class="result"&gt;&lt;/div&gt;
 &lt;div class="log"&gt;&lt;/div&gt;</pre>
-				<p>We can attach our event handler to any element:</p>
-				<pre>$('.log').ajaxStart(function() {
+    <p>We can attach our event handler to any element:</p>
+    <pre>$('.log').ajaxStart(function() {
   $(this).text('Triggered ajaxStart handler.');
 });</pre>
-				<p>Now, we can make an Ajax request using any jQuery method:</p>
-				<pre>$('.trigger').click(function() {
+    <p>Now, we can make an Ajax request using any jQuery method:</p>
+    <pre>$('.trigger').click(function() {
   $('.result').load('ajax/test.html');
 });</pre>
-				<p>When the user clicks the element with class <code>trigger</code> and the Ajax request is sent, the log message is displayed.</p>
+    <p>When the user clicks the element with class <code>trigger</code> and the Ajax request is sent, the log message is displayed.</p>
 
-				<p><strong>Note:</strong> Because <code>.ajaxStart()</code> is implemented as a method of jQuery object instances, we can use the <code>this</code> keyword as we do here to refer to the selected elements within the callback function.</p>
-</longdesc>
-                <example>
-                    <desc>Show a loading message whenever an Ajax request starts (and none is already active).</desc>
-                    <code><![CDATA[$("#loading").ajaxStart(function(){
+    <p><strong>Note:</strong> Because <code>.ajaxStart()</code> is implemented as a method of jQuery object instances, we can use the <code>this</code> keyword as we do here to refer to the selected elements within the callback function.</p>
+  </longdesc>
+  <example>
+    <desc>Show a loading message whenever an Ajax request starts (and none is already active).</desc>
+    <code><![CDATA[$("#loading").ajaxStart(function(){
    $(this).show();
  });]]></code>
-                </example>
+  </example>
+  <category name="Global Ajax Event Handlers" slug="global-ajax-event-handlers"/>
+  <category name="Version 1.0" slug="1.0"/>
 </entry>

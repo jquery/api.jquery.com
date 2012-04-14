@@ -42,4 +42,8 @@
 
   <div>value2 after removal: <span></span></div>]]></html>
                 </example>
-            </entry>
+            <category name="Data" slug="data"/>
+<category name="Data Storage" slug="data-storage"/>
+<category name="Version 1.2.3" slug="1.2.3"/>
+<category name="Version 1.7" slug="1.7"/>
+</entry>

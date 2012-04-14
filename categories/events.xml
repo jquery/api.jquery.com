@@ -1,1 +1,3 @@
-<category id="11" parent="0" name="Events" slug="events"><desc>These methods are used to register behaviors to take effect when the user interacts with the browser, and to further manipulate those registered behaviors.</desc></category>
+<category id="11" parent="0" name="Events" slug="events">
+  <desc>These methods are used to register behaviors to take effect when the user interacts with the browser, and to further manipulate those registered behaviors.</desc>
+</category>

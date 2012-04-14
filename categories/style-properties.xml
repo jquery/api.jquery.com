@@ -1,1 +1,3 @@
-<category id="24" parent="9" name="Style Properties" slug="style-properties"><desc>These methods get and set CSS-related properties of elements.</desc></category>
+<category id="24" parent="9" name="Style Properties" slug="style-properties">
+  <desc>These methods get and set CSS-related properties of elements.</desc>
+</category>

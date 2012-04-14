@@ -7,9 +7,9 @@
   </signature>
   <desc>Call all of the callbacks with the given arguments</desc>
   <longdesc>
-<h2 id="example-1">Example</h2>
-<p>Using <code>callbacks.fire()</code> to invoke the callbacks in a list with any arguments that have been passed:</p>
-<pre>
+    <h2 id="example-1">Example</h2>
+    <p>Using <code>callbacks.fire()</code> to invoke the callbacks in a list with any arguments that have been passed:</p>
+    <pre>
 // a sample logging function to be added to a callbacks list
 var foo = function( value ){
     console.log( 'foo:' + value );
@@ -27,7 +27,7 @@ callbacks.fire( 'world '); // outputs: 'foo: world'
 // add another function to the list
 var bar = function( value ){
     console.log( 'bar:' + value );
-} 
+}
 
 // add this function to the list
 callbacks.add( bar );
@@ -39,4 +39,6 @@ callbacks.fire( 'hello again' );
 // 'bar: hello again'
 </pre>
   </longdesc>
+<category name="Callbacks Object" slug="callbacks-object"/>
+<category name="Version 1.7" slug="1.7"/>
 </entry>

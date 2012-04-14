@@ -33,4 +33,6 @@
                     <code><![CDATA[$("b").append( "" + jQuery.type(/test/) );]]></code>
                     <html><![CDATA[Is it a RegExp? <b></b>]]></html>
                 </example>
-            </entry>
+            <category name="Utilities" slug="utilities"/>
+<category name="Version 1.4.3" slug="1.4.3"/>
+</entry>

@@ -25,4 +25,6 @@ callbacks.fire( 'world '); // outputs: 'foo: world'
 console.log( callbacks.fired() );
 </pre>
   </longdesc>
+<category name="Callbacks Object" slug="callbacks-object"/>
+<category name="Version 1.7" slug="1.7"/>
 </entry>

@@ -6,11 +6,11 @@
     </argument>
   </signature>
   <desc>Remove a callback or a collection of callbacks from a callback list.</desc>
-  <longdesc>
-<h2 id="example-1">Example</h2>
-<p>Using <code>callbacks.remove()</code> to remove callbacks from a callback list:</p>
-<pre>
-// a sample logging function to be added to a callbacks list
+  <longdesc></longdesc>
+
+<example>
+  <desc>Using <code>callbacks.remove()</code> to remove callbacks from a callback list:</desc>
+  <code><![CDATA[// a sample logging function to be added to a callbacks list
 var foo = function( value ){
     console.log( 'foo:' + value );
 }
@@ -27,10 +27,11 @@ callbacks.fire( 'hello' ); // outputs: 'foo: hello'
 callbacks.remove( foo );
 
 // fire the items on the list again
-callbacks.fire( 'world' );  
+callbacks.fire( 'world' );
 
 // nothing output as 'foo' is no longer in the list
-</pre>
-
-  </longdesc>
+]]></code>
+</example>
+<category name="Callbacks Object" slug="callbacks-object"/>
+<category name="Version 1.7" slug="1.7"/>
 </entry>

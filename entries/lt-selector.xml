@@ -12,6 +12,13 @@
     <p>Note that since JavaScript arrays use <em>0-based indexing</em>, these selectors reflect that fact. This is why <code>$('.myclass:lt(1)')</code> selects the first element in the document with the class <code>myclass</code>, rather than selecting no elements. In contrast, <code>:nth-child(n)</code> uses <em>1-based indexing</em> to conform to the CSS specification.</p>
     </longdesc>
 
+  <note id="jquery-selector-extension-alt" type="additional">
+  <placeholder name="selector">:lt()</placeholder>
+  <placeholder name="alt">$("your-pure-css-selector").slice(0, index)</placeholder>
+</note>
+
+
+
 <example>
     <desc>Finds TDs less than the one with the 4th index (TD#4).</desc>
     <code><![CDATA[$("td:lt(4)").css("color", "red");]]></code>
@@ -23,4 +30,7 @@
   <tr><td>TD #6</td><td>TD #7</td><td>TD #8</td></tr>
 </table>]]></html>
   </example>
+<category name="Basic Filter" slug="basic-filter-selectors"/>
+<category name="jQuery Extensions" slug="jquery-selector-extensions"/>
+<category name="Version 1.0" slug="1.0"/>
 </entry>

@@ -1,1 +1,3 @@
-<category id="40" parent="13" name="Helper Functions" slug="helper-functions"><desc>These functions assist with common idioms encountered when performing AJAX tasks.</desc></category>
+<category id="40" parent="13" name="Helper Functions" slug="helper-functions">
+  <desc>These functions assist with common idioms encountered when performing AJAX tasks.</desc>
+</category>

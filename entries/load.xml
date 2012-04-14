@@ -43,6 +43,11 @@ $('#b').load('article.html #target');
 </pre>
 
   </longdesc>
+
+  <note id="same-origin-policy" type="additional">
+</note>
+
+
   <example>
     <desc>Load the main page's footer navigation into an ordered list.</desc>
     <code><![CDATA[
@@ -92,4 +97,6 @@ $("#success").load("/not-here.php", function(response, status, xhr) {
 alert("The last 25 entries in the feed have been loaded");
 });]]></code>
   </example>
+<category name="Shorthand Methods" slug="shorthand-methods"/>
+<category name="Version 1.0" slug="1.0"/>
 </entry>

@@ -137,4 +137,6 @@ $("#log").append( "<div><b>settings -- </b>" + printObj(settings) + "</div>" );
 <div id="log"></div>
 ]]></html>
 </example>
+<category name="Utilities" slug="utilities"/>
+<category name="Version 1.0" slug="1.0"/>
 </entry>

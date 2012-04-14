@@ -1,22 +1,26 @@
-    <entry type='property' name="context" return="Element">
-                <signature><added>1.3</added></signature>
-                <desc>The DOM node context originally passed to <code>jQuery()</code>; if none was passed then context will likely be the document.</desc>
-                <longdesc><p>The <code>.live()</code> method for binding event handlers uses this property to determine the root element to use for its event delegation needs.</p><p>
-The value of this property is typically equal to <code>document</code>, as this is the default context for jQuery objects if none is supplied. The context may differ if, for example, the object was created by searching within an <code>&lt;iframe&gt;</code> or XML document.</p>
-<p>Note that the context property may only apply to the elements originally selected by <code>jQuery()</code>, as it is possible for the user to add elements to the collection via methods such as <code>.add()</code> and these may have a different context.</p></longdesc>
-                <example>
-                    <desc>Determine the exact context used.</desc>
-                    <code><![CDATA[$("ul")
+<entry type='property' name="context" return="Element">
+  <signature><added>1.3</added></signature>
+  <desc>The DOM node context originally passed to <code>jQuery()</code>; if none was passed then context will likely be the document.</desc>
+  <longdesc><p>The <code>.live()</code> method for binding event handlers uses this property to determine the root element to use for its event delegation needs.</p>
+  <p>The value of this property is typically equal to <code>document</code>, as this is the default context for jQuery objects if none is supplied. The context may differ if, for example, the object was created by searching within an <code>&lt;iframe&gt;</code> or XML document.</p>
+    <p>Note that the context property may only apply to the elements originally selected by <code>jQuery()</code>, as it is possible for the user to add elements to the collection via methods such as <code>.add()</code> and these may have a different context.</p>
+  </longdesc>
+  <example>
+    <desc>Determine the exact context used.</desc>
+    <code><![CDATA[$("ul")
   .append("<li>" + $("ul").context + "</li>")
   .append("<li>" + $("ul", document.body).context.nodeName + "</li>");
 
 ]]></code>
-                    <css><![CDATA[
+  <css><![CDATA[
   body { cursor:pointer; }
   div { width:50px; height:30px; margin:5px; float:left;
         background:green; }
   span { color:red; }
   ]]></css>
-                    <html><![CDATA[Context:<ul></ul>]]></html>
-                </example>
-            </entry>
+  <html><![CDATA[Context:<ul></ul>]]></html>
+</example>
+<category name="Internals" slug="internals"/>
+<category name="Properties of jQuery Object Instances" slug="jquery-object-instance-properties"/>
+<category name="Version 1.3" slug="1.3"/>
+</entry>

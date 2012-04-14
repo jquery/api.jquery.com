@@ -1,17 +1,17 @@
 <entry type='method' name="hide" return="jQuery">
   <desc>Hide the matched elements.</desc>
-<signature>
-  <added>1.0</added>
-</signature>
-<signature>
-  <added>1.0</added>
-  <argument name="duration" type="String,Number">
-    <desc>A string or number determining how long the animation will run.</desc>
-  </argument>
-  <argument name="callback" type="Callback" optional="true">
-    <desc>A function to call once the animation is complete.</desc>
-  </argument>
-</signature>
+  <signature>
+    <added>1.0</added>
+  </signature>
+  <signature>
+    <added>1.0</added>
+    <argument name="duration" type="String,Number">
+      <desc>A string or number determining how long the animation will run.</desc>
+    </argument>
+    <argument name="callback" type="Callback" optional="true">
+      <desc>A function to call once the animation is complete.</desc>
+    </argument>
+  </signature>
   <signature>
     <added>1.4.3</added>
     <argument name="duration" type="String,Number" optional="true">
@@ -24,18 +24,18 @@
       <desc>A function to call once the animation is complete.</desc>
     </argument>
   </signature>
-<longdesc>
-<p>With no parameters, the <code>.hide()</code> method is the simplest way to hide an element:</p>
-<pre>$('.target').hide();
-</pre>
-<p>The matched elements will be hidden immediately, with no animation. This is roughly equivalent to calling <code>.css('display', 'none')</code>, except that the value of the <code>display</code> property is saved in jQuery's data cache so that <code>display</code> can later be restored to its initial value. If an element has a <code>display</code> value of <code>inline</code>, then is hidden and shown, it will once again be displayed <code>inline</code>.</p>
-<p>When a duration is provided, <code>.hide()</code> becomes an animation method. The <code>.hide()</code> method animates the width, height, and opacity of the matched elements simultaneously. When these properties reach 0, the <code>display</code> style property is set to <code>none</code> to ensure that the element no longer affects the layout of the page.</p>
-<p>Durations are given in milliseconds; higher values indicate slower animations, not faster ones. The strings <code>'fast'</code> and <code>'slow'</code> can be supplied to indicate durations of <code>200</code> and <code>600</code> milliseconds, respectively.</p>
-<p>Note that <code>.hide()</code> is fired immediately and will override the animation queue if no duration or a duration of 0 is specified.</p>
+  <longdesc>
+    <p>With no parameters, the <code>.hide()</code> method is the simplest way to hide an element:</p>
+    <pre>$('.target').hide();
+    </pre>
+    <p>The matched elements will be hidden immediately, with no animation. This is roughly equivalent to calling <code>.css('display', 'none')</code>, except that the value of the <code>display</code> property is saved in jQuery's data cache so that <code>display</code> can later be restored to its initial value. If an element has a <code>display</code> value of <code>inline</code>, then is hidden and shown, it will once again be displayed <code>inline</code>.</p>
+    <p>When a duration is provided, <code>.hide()</code> becomes an animation method. The <code>.hide()</code> method animates the width, height, and opacity of the matched elements simultaneously. When these properties reach 0, the <code>display</code> style property is set to <code>none</code> to ensure that the element no longer affects the layout of the page.</p>
+    <p>Durations are given in milliseconds; higher values indicate slower animations, not faster ones. The strings <code>'fast'</code> and <code>'slow'</code> can be supplied to indicate durations of <code>200</code> and <code>600</code> milliseconds, respectively.</p>
+    <p>Note that <code>.hide()</code> is fired immediately and will override the animation queue if no duration or a duration of 0 is specified.</p>
     <p>As of jQuery <strong>1.4.3</strong>, an optional string naming an easing function may be used. Easing functions specify the speed at which the animation progresses at different points within the animation. The only easing implementations in the jQuery library are the default, called <code>swing</code>, and one that progresses at a constant pace, called <code>linear</code>. More easing functions are available with the use of plug-ins, most notably the <a href="http://jqueryui.com">jQuery UI suite</a>.</p>
-<p>If supplied, the callback is fired once the animation is complete. This can be useful for stringing different animations together in sequence. The callback is not sent any arguments, but <code>this</code> is set to the DOM element being animated. If multiple elements are animated, it is important to note that the callback is executed once per matched element, not once for the animation as a whole.</p>
-<p>We can animate any element, such as a simple image:</p>
-<pre>&lt;div id="clickme"&gt;
+    <p>If supplied, the callback is fired once the animation is complete. This can be useful for stringing different animations together in sequence. The callback is not sent any arguments, but <code>this</code> is set to the DOM element being animated. If multiple elements are animated, it is important to note that the callback is executed once per matched element, not once for the animation as a whole.</p>
+    <p>We can animate any element, such as a simple image:</p>
+    <pre>&lt;div id="clickme"&gt;
   Click here
 &lt;/div&gt;
 &lt;img id="book" src="book.png" alt="" width="100" height="123" /&gt;
@@ -46,85 +46,93 @@ $('#clickme').click(function() {
   });
 });</pre>
 
-<p class="image four-across"> 
-  <img src="/images/0042_06_05.png" alt="" /> 
+<p class="image four-across">
+  <img src="/images/0042_06_05.png" alt="" />
   <img src="/images/0042_06_06.png" alt="" />
   <img src="/images/0042_06_07.png" alt="" />
   <img src="/images/0042_06_08.png" alt="" />
 </p>
 
 </longdesc>
-                <example>
-                    <desc>Hides all paragraphs then the link on click.</desc>
-                    <code><![CDATA[
+
+<note id="jquery.fx.off" type="additional">
+  <placeholder name="title">.hide()</placeholder>
+</note>
+
+
+<example>
+  <desc>Hides all paragraphs then the link on click.</desc>
+  <code><![CDATA[
     $("p").hide();
     $("a").click(function ( event ) {
       event.preventDefault();
       $(this).hide();
     });
 ]]></code>
-                    <html><![CDATA[<p>Hello</p>
+  <html><![CDATA[<p>Hello</p>
   <a href="#">Click to hide me too</a>
   <p>Here is another paragraph</p>]]></html>
-                </example>
-                <example>
-                    <desc>Animates all shown paragraphs to hide slowly, completing the animation within 600 milliseconds.</desc>
-                    <code><![CDATA[
+</example>
+<example>
+  <desc>Animates all shown paragraphs to hide slowly, completing the animation within 600 milliseconds.</desc>
+  <code><![CDATA[
     $("button").click(function () {
       $("p").hide("slow");
-    });    
+    });
 ]]></code>
-                    <css><![CDATA[
+  <css><![CDATA[
   p { background:#dad; font-weight:bold; }
   ]]></css>
-                    <html><![CDATA[<button>Hide 'em</button>
+  <html><![CDATA[<button>Hide 'em</button>
 
   <p>Hiya</p>
   <p>Such interesting text, eh?</p>]]></html>
-                </example>
-                <example>
-                    <desc>Animates all spans (words in this case) to hide fastly, completing each animation within 200 milliseconds. Once each animation is done, it starts the next one.</desc>
-                    <code><![CDATA[
-    $("#hidr").click(function () {
-      $("span:last-child").hide("fast", function () {
-        // use callee so don't have to name the function
-        $(this).prev().hide("fast", arguments.callee); 
-      });
-    });
-    $("#showr").click(function () {
-      $("span").show(2000);
-    });
-
+</example>
+<example>
+  <desc>Animates all spans (words in this case) to hide fastly, completing each animation within 200 milliseconds. Once each animation is done, it starts the next one.</desc>
+  <code><![CDATA[
+$("#hidr").click(function () {
+  $("span:last-child").hide("fast", function () {
+    // use callee so don't have to name the function
+    $(this).prev().hide("fast", arguments.callee);
+  });
+});
+$("#showr").click(function () {
+  $("span").show(2000);
+});
 ]]></code>
-                    <css><![CDATA[
+  <css><![CDATA[
   span { background:#def3ca; padding:3px; float:left; }
   ]]></css>
-                    <html><![CDATA[<button id="hidr">Hide</button>
-  <button id="showr">Show</button>
-  <div>
+  <html><![CDATA[<button id="hidr">Hide</button>
+<button id="showr">Show</button>
+<div>
 
-    <span>Once</span> <span>upon</span> <span>a</span> 
-    <span>time</span> <span>there</span> <span>were</span> 
-    <span>three</span> <span>programmers...</span>
+  <span>Once</span> <span>upon</span> <span>a</span>
+  <span>time</span> <span>there</span> <span>were</span>
+  <span>three</span> <span>programmers...</span>
 
-  </div>]]></html>
-                </example>
-                <example>
-                    <desc>Hides the divs when clicked over 2 seconds, then removes the div element when its hidden.  Try clicking on more than one box at a time.</desc>
-                    <code><![CDATA[
-    for (var i = 0; i < 5; i++) {
-      $("<div>").appendTo(document.body);
-    }
-    $("div").click(function () {
-      $(this).hide(2000, function () {
-        $(this).remove();
-      });
-    });
+</div>]]></html>
+</example>
+<example>
+  <desc>Hides the divs when clicked over 2 seconds, then removes the div element when its hidden.  Try clicking on more than one box at a time.</desc>
+  <code><![CDATA[
+for (var i = 0; i < 5; i++) {
+  $("<div>").appendTo(document.body);
+}
+$("div").click(function () {
+  $(this).hide(2000, function () {
+    $(this).remove();
+  });
+});
 ]]></code>
-                    <css><![CDATA[
-  div { background:#ece023; width:30px; 
+  <css><![CDATA[
+  div { background:#ece023; width:30px;
         height:40px; margin:2px; float:left; }
   ]]></css>
-                    <html><![CDATA[<div></div>]]></html>
-                </example>
+  <html><![CDATA[<div></div>]]></html>
+</example>
+<category name="Basics" slug="basics"/>
+<category name="Version 1.0" slug="1.0"/>
+<category name="Version 1.4.3" slug="1.4.3"/>
 </entry>

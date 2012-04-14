@@ -27,5 +27,6 @@
       <code><![CDATA[$.trim("    hello, how are you?    ");]]></code>
       <results><![CDATA["hello, how are you?"]]></results>
   </example>
+<category name="Utilities" slug="utilities"/>
+<category name="Version 1.0" slug="1.0"/>
 </entry>
-

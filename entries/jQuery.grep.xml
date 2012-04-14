@@ -58,4 +58,6 @@ $("span").text(arr.join(", "));
 },true);]]></code>
   <results><![CDATA[[0] ]]></results>
   </example>
+<category name="Utilities" slug="utilities"/>
+<category name="Version 1.0" slug="1.0"/>
 </entry>

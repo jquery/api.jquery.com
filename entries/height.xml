@@ -1,36 +1,34 @@
-<entries>
-            <entry type='method' name="height" return="Integer">
-				<signature>
-                	<added>1.0</added>
-				</signature>
-                <desc>Get the current computed height for the first element in the set of matched elements.</desc>
-                <longdesc><p>The difference between <code>.css('height')</code> and <code>.height()</code> is that the latter returns a unit-less pixel value (for example, <code>400</code>) while the former returns a value with units intact (for example, <code>400px</code>). The <code>.height()</code> method is recommended when an element's height needs to be used in a mathematical calculation.</p>
-<p class="image"><img src='/images/0042_04_01.png'/></p>
+<entry type='method' name="height" return="Integer">
+  <signature>
+    <added>1.0</added>
+  </signature>
+  <desc>Get the current computed height for the first element in the set of matched elements.</desc>
+  <longdesc><p>The difference between <code>.css('height')</code> and <code>.height()</code> is that the latter returns a unit-less pixel value (for example, <code>400</code>) while the former returns a value with units intact (for example, <code>400px</code>). The <code>.height()</code> method is recommended when an element's height needs to be used in a mathematical calculation.</p>
+    <p class="image"><img src='/images/0042_04_01.png'/></p>
 
-<p>This method is also able to find the height of the window and document.</p>
+    <p>This method is also able to find the height of the window and document.</p>
 
-<pre>$(window).height();   // returns height of browser viewport
+    <pre>$(window).height();   // returns height of browser viewport
 $(document).height(); // returns height of HTML document</pre>
 
-<p>Note that <code>.height()</code> will always return the content height, regardless of the value of the CSS <code>box-sizing</code> property.</p>
-
-<blockquote><p><strong>Note:</strong> Although <code>style</code> and <code>script</code> tags will report a value for <code>.width()</code> or <code>height()</code> when absolutely positioned and given <code>display:block</code>, it is strongly discouraged to call those methods on these tags. In addition to being a bad practice, the results may also prove unreliable.</p></blockquote>
-</longdesc>
-                <example>
-                    <desc>Show various heights.  Note the values are from the iframe so might be smaller than you expected.  The yellow highlight shows the iframe body.</desc>
-                    <code><![CDATA[
+    <p>Note that <code>.height()</code> will always return the content height, regardless of the value of the CSS <code>box-sizing</code> property.</p>
+    <blockquote><p><strong>Note:</strong> Although <code>style</code> and <code>script</code> tags will report a value for <code>.width()</code> or <code>height()</code> when absolutely positioned and given <code>display:block</code>, it is strongly discouraged to call those methods on these tags. In addition to being a bad practice, the results may also prove unreliable.</p></blockquote>
+  </longdesc>
+<example>
+  <desc>Show various heights.  Note the values are from the iframe so might be smaller than you expected.  The yellow highlight shows the iframe body.</desc>
+  <code><![CDATA[
     function showHeight(ele, h) {
-      $("div").text("The height for the " + ele + 
+      $("div").text("The height for the " + ele +
                     " is " + h + "px.");
     }
-    $("#getp").click(function () { 
-      showHeight("paragraph", $("p").height()); 
+    $("#getp").click(function () {
+      showHeight("paragraph", $("p").height());
     });
-    $("#getd").click(function () { 
-      showHeight("document", $(document).height()); 
+    $("#getd").click(function () {
+      showHeight("document", $(document).height());
     });
-    $("#getw").click(function () { 
-      showHeight("window", $(window).height()); 
+    $("#getw").click(function () {
+      showHeight("window", $(window).height());
     });
 
 ]]></code>
@@ -49,14 +47,19 @@ $(document).height(); // returns height of HTML document</pre>
     Sample paragraph to test height
   </p>]]></html>
                 </example>
-            </entry>
+            <category name="CSS" slug="css"/>
+<category name="Dimensions" slug="dimensions"/>
+<category name="Style Properties" slug="style-properties"/>
+<category name="Version 1.0" slug="1.0"/>
+<category name="Version 1.4.1" slug="1.4.1"/>
+</entry>
             <entry type='method' name="height" return="jQuery">
-				<signature>
-                	<added>1.0</added>
-	                <argument name="value" type="String, Number">
-	                    <desc>An integer representing the number of pixels, or an integer with an optional unit of measure appended (as a string).</desc>
-	                </argument>
-				</signature>
+        <signature>
+                  <added>1.0</added>
+                  <argument name="value" type="String, Number">
+                      <desc>An integer representing the number of pixels, or an integer with an optional unit of measure appended (as a string).</desc>
+                  </argument>
+        </signature>
     <signature>
       <added>1.4.1</added>
       <argument name="function(index, height)" type="Function">
@@ -83,5 +86,9 @@ $(document).height(); // returns height of HTML document</pre>
   <div></div>
   <div></div>]]></html>
                 </example>
-            </entry>
-</entries>
+            <category name="CSS" slug="css"/>
+<category name="Dimensions" slug="dimensions"/>
+<category name="Style Properties" slug="style-properties"/>
+<category name="Version 1.0" slug="1.0"/>
+<category name="Version 1.4.1" slug="1.4.1"/>
+</entry>

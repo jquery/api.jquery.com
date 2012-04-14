@@ -93,4 +93,6 @@ $("form").on("keypress.validator", "input[type='text']", validate);
 
 $("form").off(".validator");]]></code>
             </example>            
+<category name="Event Handler Attachment" slug="event-handler-attachment"/>
+<category name="Version 1.7" slug="1.7"/>
 </entry>

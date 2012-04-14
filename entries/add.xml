@@ -1,39 +1,39 @@
-            <entry type='method' name="add" return="jQuery">
-              <signature>
-                <added>1.0</added>
-                <argument name="selector" type="Selector">
-                    <desc>A string representing a selector expression to find additional elements to add to the set of matched elements.</desc>
-                </argument>
-              </signature>
-              <signature>
-                <added>1.0</added>
-                <argument name="elements" type="Elements">
-                    <desc>One or more elements to add to the set of matched elements.</desc>
-                </argument>
-              </signature>
-              <signature>
-                <added>1.0</added>
-                <argument name="html" type="HTML">
-                    <desc>An HTML fragment to add to the set of matched elements.</desc>
-                </argument>
-              </signature>
-              <signature>
-                <added>1.3.2</added>
-                <argument name="jQuery object" type="jQuery object ">
-                    <desc>An existing jQuery object to add to the set of matched elements.</desc>
-                </argument>
-              </signature>
-              <signature>
-                <added>1.4</added>
-                <argument name="selector" type="Selector">
-                    <desc>A string representing a selector expression to find additional elements to add to the set of matched elements.</desc>
-                </argument>
-                <argument name="context" type="Element">
-                    <desc>The point in the document at which the selector should begin matching; similar to the context argument of the <code>$(selector, context)</code> method.</desc>
-                </argument>
-              </signature>
-              <desc>Add elements to the set of matched elements.</desc>
-              <longdesc><p>Given a jQuery object that represents a set of DOM elements, the <code>.add()</code> method constructs a new jQuery object from the union of those elements and the ones passed into the method. The argument to <code>.add()</code> can be pretty much anything that  <code>$()</code> accepts, including a jQuery selector expression, references to DOM elements, or an HTML snippet.</p>
+<entry type='method' name="add" return="jQuery">
+  <signature>
+    <added>1.0</added>
+    <argument name="selector" type="Selector">
+      <desc>A string representing a selector expression to find additional elements to add to the set of matched elements.</desc>
+    </argument>
+  </signature>
+  <signature>
+    <added>1.0</added>
+    <argument name="elements" type="Elements">
+      <desc>One or more elements to add to the set of matched elements.</desc>
+    </argument>
+  </signature>
+  <signature>
+    <added>1.0</added>
+    <argument name="html" type="HTML">
+      <desc>An HTML fragment to add to the set of matched elements.</desc>
+    </argument>
+  </signature>
+  <signature>
+    <added>1.3.2</added>
+    <argument name="jQuery object" type="jQuery object ">
+      <desc>An existing jQuery object to add to the set of matched elements.</desc>
+    </argument>
+  </signature>
+  <signature>
+    <added>1.4</added>
+    <argument name="selector" type="Selector">
+      <desc>A string representing a selector expression to find additional elements to add to the set of matched elements.</desc>
+    </argument>
+    <argument name="context" type="Element">
+      <desc>The point in the document at which the selector should begin matching; similar to the context argument of the <code>$(selector, context)</code> method.</desc>
+    </argument>
+  </signature>
+  <desc>Add elements to the set of matched elements.</desc>
+  <longdesc><p>Given a jQuery object that represents a set of DOM elements, the <code>.add()</code> method constructs a new jQuery object from the union of those elements and the ones passed into the method. The argument to <code>.add()</code> can be pretty much anything that  <code>$()</code> accepts, including a jQuery selector expression, references to DOM elements, or an HTML snippet.</p>
 <p>The updated set of elements can be used in a following (chained) method, or assigned to a variable for later use. For example:</p>
 <pre>
 $("p").add("div").addClass("widget");
@@ -65,16 +65,16 @@ Using an HTML snippet as the <code>.add()</code> method's argument (as in the th
 <p><strong>Note:</strong> To reverse the <code>.add()</code> you can use <a href="http://api.jquery.com/not"><code>.not( elements | selector )</code></a> to remove elements from the jQuery results, or <a href="http://api.jquery.com/end"><code>.end()</code></a> to return to the selection before you added.</p>
 </longdesc>
 <example>
-	<desc>Finds all divs and makes a border.  Then adds all paragraphs to the jQuery object to set their backgrounds yellow.</desc>
-	<code><![CDATA[
+  <desc>Finds all divs and makes a border.  Then adds all paragraphs to the jQuery object to set their backgrounds yellow.</desc>
+  <code><![CDATA[
 
 $("div").css("border", "2px solid red")
         .add("p")
         .css("background", "yellow");
 ]]></code>
-	<css><![CDATA[
+  <css><![CDATA[
  div { width:60px; height:60px; margin:10px; float:left; }
- p { clear:left; font-weight:bold; font-size:16px; 
+ p { clear:left; font-weight:bold; font-size:16px;
      color:blue; margin:0 10px; padding:2px; }
  ]]></css>
 <html><![CDATA[<div></div>
@@ -88,26 +88,29 @@ $("div").css("border", "2px solid red")
   <p>Added this... (notice no border)</p>]]></html>
 </example>
 <example>
-	<desc>Adds more elements, matched by the given expression, to the set of matched elements.</desc>
-	<code><![CDATA[$("p").add("span").css("background", "yellow");]]></code>
-	<html><![CDATA[<p>Hello</p><span>Hello Again</span>]]></html>
+  <desc>Adds more elements, matched by the given expression, to the set of matched elements.</desc>
+  <code><![CDATA[$("p").add("span").css("background", "yellow");]]></code>
+  <html><![CDATA[<p>Hello</p><span>Hello Again</span>]]></html>
 </example>
 <example>
-	<desc>Adds more elements, created on the fly, to the set of matched elements.</desc>
-	<code><![CDATA[$("p").clone().add("<span>Again</span>").appendTo(document.body);]]></code>
-	<html><![CDATA[<p>Hello</p>]]></html>
+  <desc>Adds more elements, created on the fly, to the set of matched elements.</desc>
+  <code><![CDATA[$("p").clone().add("<span>Again</span>").appendTo(document.body);]]></code>
+  <html><![CDATA[<p>Hello</p>]]></html>
 </example>
 <example>
-	<desc>Adds one or more Elements to the set of matched elements.</desc>
-	<code><![CDATA[$("p").add(document.getElementById("a")).css("background", "yellow");]]></code>
-	<html><![CDATA[<p>Hello</p><span id="a">Hello Again</span>]]></html>
+  <desc>Adds one or more Elements to the set of matched elements.</desc>
+  <code><![CDATA[$("p").add(document.getElementById("a")).css("background", "yellow");]]></code>
+  <html><![CDATA[<p>Hello</p><span id="a">Hello Again</span>]]></html>
 </example>
 <example>
-	<desc>Demonstrates how to add (or push) elements to an existing collection</desc>
-	<code><![CDATA[var collection = $("p");
+  <desc>Demonstrates how to add (or push) elements to an existing collection</desc>
+  <code><![CDATA[var collection = $("p");
 // capture the new collection
 collection = collection.add(document.getElementById("a"));
 collection.css("background", "yellow");]]></code>
-	<html><![CDATA[<p>Hello</p><span id="a">Hello Again</span>]]></html>
+  <html><![CDATA[<p>Hello</p><span id="a">Hello Again</span>]]></html>
 </example>
+<category name="Miscellaneous Traversing" slug="miscellaneous-traversal"/>
+<category name="Version 1.0" slug="1.0"/>
+<category name="Version 1.4" slug="1.4"/>
 </entry>

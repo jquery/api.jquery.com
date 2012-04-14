@@ -1,4 +1,4 @@
-<entries>
+
   <entry type='method' name="val" return="String, Number, Array">
     <signature>
       <added>1.0</added>
@@ -73,6 +73,11 @@ $.valHooks.textarea = {
   <html><![CDATA[<input type="text" value="some text"/>
   <p></p>]]></html>
     </example>
+<category name="Attributes" slug="attributes"/>
+<category name="Forms" slug="forms"/>
+<category name="General Attributes" slug="general-attributes"/>
+<category name="Version 1.0" slug="1.0"/>
+<category name="Version 1.4" slug="1.4"/>
 </entry>
 <entry type='method' name="val" return="jQuery">
   <signature>
@@ -158,5 +163,9 @@ $.valHooks.textarea = {
   <input type="radio"  name="r" value="radio1"/> radio1
   <input type="radio"  name="r" value="radio2"/> radio2]]></html>
                 </example>
-            </entry>
-</entries>
+            <category name="Attributes" slug="attributes"/>
+<category name="Forms" slug="forms"/>
+<category name="General Attributes" slug="general-attributes"/>
+<category name="Version 1.0" slug="1.0"/>
+<category name="Version 1.4" slug="1.4"/>
+</entry>

@@ -1,4 +1,3 @@
-
 <entry name="jQuery.Callbacks" type="method" return="">
   <signature>
     <added>1.7</added>
@@ -7,7 +6,7 @@
     </argument>
   </signature>
   <desc>A multi-purpose callbacks list object that provides a powerful way to manage callback lists.</desc>
-<longdesc>
+  <longdesc>
 
 <p>The <code>$.Callbacks()</code> function is internally used to provide the base functionality behind the jQuery <code>$.ajax()</code> and <code>$.Deferred()</code> components. It can be used as a similar base to define functionality for new components.</p>
 <p><code>$.Callbacks()</code> support a number of methods including <code><a href="/callbacks.add/">callbacks.add()</a></code>,<code><a href="/callbacks.remove/">callbacks.remove()</a></code>, <code><a href="/callbacks.fire/">callbacks.fire()</a></code> and <code><a href="/callbacks.disable/">callbacks.disable()</a></code>.</p>
@@ -46,7 +45,7 @@ callbacks.add( fn2 );
 callbacks.fire( "bar!" ); // outputs: bar!, fn2 says: bar!
 
 callbacks.remove(fn2);
-callbacks.fire( "foobar" ); 
+callbacks.fire( "foobar" );
 
 // only outputs foobar, as fn2 has been removed.
 </pre>
@@ -77,7 +76,7 @@ callbacks.remove( fn2 );
 callbacks.fire( "foobar" );
 
 /*
-output: 
+output:
 foo
 */
 </pre>
@@ -166,7 +165,7 @@ function fn2( value ){
     fn1("fn2 says:" + value);
     return false;
 }
-    
+
 var callbacks = $.Callbacks( "unique memory" );
 callbacks.add( fn1 );
 callbacks.fire( "foo" );
@@ -247,7 +246,7 @@ $.Topic( "mailSent" ).publish( "woo! mail!" );
 // Here, "hello world!" gets pushed to fn1 and fn2
 // when the "mailArrived" notification is published
 // with "woo! mail!" also being pushed to fn1 when
-// the "mailSent" notification is published. 
+// the "mailSent" notification is published.
 
 /*
 output:
@@ -269,7 +268,7 @@ var dfd = $.Deferred();
 // define a new topic (without directly publishing)
 var topic = $.Topic( "mailArrived" );
 
-// when the deferred has been resolved, publish a 
+// when the deferred has been resolved, publish a
 // notification to subscribers
 dfd.done( topic.publish );
 
@@ -283,4 +282,6 @@ dfd.resolve( "its been published!" );
 </pre>
 
 </longdesc>
+<category name="Callbacks Object" slug="callbacks-object"/>
+<category name="Version 1.7" slug="1.7"/>
 </entry>

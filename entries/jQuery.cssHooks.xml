@@ -2,9 +2,9 @@
   <signature>
     <added>1.4.3</added>
   </signature>
-    <desc>Hook directly into jQuery to override how particular CSS properties are retrieved or set, normalize CSS property naming, or create custom properties.</desc>
-    <longdesc><p>The <code>$.cssHooks</code> object provides a way to define functions for getting and setting particular CSS values. It can also be used to create new cssHooks for normalizing CSS3 features such as box shadows and gradients. </p>
-<p>For example, some versions of Webkit-based browsers require <code>-webkit-border-radius</code> to set the <code>border-radius</code> on an element, while earlier Firefox versions require <code>-moz-border-radius</code>. A css hook can normalize these vendor-prefixed properties to let <code>.css()</code> accept a single, standard property name (<code>border-radius</code>, or with DOM property syntax, <code>borderRadius</code>).</p>
+  <desc>Hook directly into jQuery to override how particular CSS properties are retrieved or set, normalize CSS property naming, or create custom properties.</desc>
+  <longdesc><p>The <code>$.cssHooks</code> object provides a way to define functions for getting and setting particular CSS values. It can also be used to create new cssHooks for normalizing CSS3 features such as box shadows and gradients. </p>
+    <p>For example, some versions of Webkit-based browsers require <code>-webkit-border-radius</code> to set the <code>border-radius</code> on an element, while earlier Firefox versions require <code>-moz-border-radius</code>. A css hook can normalize these vendor-prefixed properties to let <code>.css()</code> accept a single, standard property name (<code>border-radius</code>, or with DOM property syntax, <code>borderRadius</code>).</p>
 <p>In addition to providing fine-grained control over how specific style properties are handled, <code>$.cssHooks</code> also extends the set of properties available to the <code>.animate()</code> method.</p>
   <p>Defining a new css hook is straight-forward. The skeleton template below can serve as a guide to creating your own. </p>
 <pre class="prettyprint">(function($) {
@@ -54,10 +54,10 @@
 
     // avoid memory leak in IE
     div = null;
-    
+
     // add property to $.support so it can be accessed elsewhere
     $.support[ prop ] = supportedProp;
-    
+
     return supportedProp;
   }
 
@@ -72,7 +72,7 @@
     throw("jQuery 1.4.3+ is needed for this plugin to work");
     return;
   }
-  
+
   function styleSupport( prop ) {
     var vendorProp, supportedProp,
         capProp = prop.charAt(0).toUpperCase() + prop.slice(1),
@@ -141,7 +141,7 @@ $("#another").css("border-radius", "20px");
   } else if ( supportsProprietaryAlternative ) {
     $.cssHooks.someCSSProp = {
       get: function( elem, computed, extra ) {
-        // Handle crazy conversion from the proprietary alternative 
+        // Handle crazy conversion from the proprietary alternative
       },
       set: function( elem, value ) {
         // Handle crazy conversion to the proprietary alternative
@@ -164,4 +164,6 @@ $("#another").css("border-radius", "20px");
 </pre>
 <p>Note that this works best for simple numeric-value animations. More custom code may be required depending on the CSS property, the type of value it returns, and the animation's complexity.</p>
 </longdesc>
+<category name="CSS" slug="css"/>
+<category name="Version 1.4.3" slug="1.4.3"/>
 </entry>

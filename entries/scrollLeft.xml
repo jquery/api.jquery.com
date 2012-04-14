@@ -1,4 +1,4 @@
-<entries>
+
 <entry type='method' name="scrollLeft" return="Integer">
   <signature>
     <added>1.2.6</added>
@@ -11,14 +11,18 @@
   <example>
     <desc>Get the scrollLeft of a paragraph.</desc>
     <code><![CDATA[var p = $("p:first");
-			$("p:last").text( "scrollLeft:" + p.scrollLeft() );
+      $("p:last").text( "scrollLeft:" + p.scrollLeft() );
 
-			]]></code>
+      ]]></code>
       <css><![CDATA[
     p { margin:10px;padding:5px;border:2px solid #666; }
     ]]></css>
     <html><![CDATA[<p>Hello</p><p></p>]]></html>
   </example>
+<category name="CSS" slug="css"/>
+<category name="Offset" slug="offset"/>
+<category name="Style Properties" slug="style-properties"/>
+<category name="Version 1.2.6" slug="1.2.6"/>
 </entry>
 <entry type='method' name="scrollLeft" return="jQuery">
   <signature>
@@ -45,8 +49,11 @@
   overflow:auto;
   }
   p { margin:10px;padding:5px;border:2px solid #666;width:1000px;height:1000px; }
-	]]></css>
+  ]]></css>
   <html><![CDATA[<div class="demo"><h1>lalala</h1><p>Hello</p></div>]]></html>
   </example>
+<category name="CSS" slug="css"/>
+<category name="Offset" slug="offset"/>
+<category name="Style Properties" slug="style-properties"/>
+<category name="Version 1.2.6" slug="1.2.6"/>
 </entry>
-</entries>

@@ -1,28 +1,29 @@
-            <entry type='method' name="hasClass" return="Boolean">
-                <signature>
-                    <added>1.2</added>
-                    <argument name="className" type="String">
-                        <desc>The class name to search for.</desc>
-                    </argument>
-                </signature>
-                <desc>Determine whether any of the matched elements are assigned the given class.</desc>
-                <longdesc><p>Elements may have more than one class assigned to them. In HTML, this is represented by separating the class names with a space:</p>
-		<pre>&lt;div id="mydiv" class="foo bar"&gt;&lt;/div&gt;</pre>
-		<p>The <code>.hasClass()</code> method will return <code>true</code> if the class is assigned to an element, even if other classes also are. For example, given the HTML above, the following will return <code>true</code>:</p>
-		<pre>$('#mydiv').hasClass('foo')</pre>
-		<p>As would:</p>
-		<pre>$('#mydiv').hasClass('bar')</pre>
-		<p>While this would return <code>false</code>:</p>
-		<pre>$('#mydiv').hasClass('quux')</pre></longdesc>
-                <example>
-                    <desc>Looks for the paragraph that contains 'selected' as a class.</desc>
-                    <code><![CDATA[
+<entry type='method' name="hasClass" return="Boolean">
+  <signature>
+    <added>1.2</added>
+    <argument name="className" type="String">
+      <desc>The class name to search for.</desc>
+    </argument>
+  </signature>
+  <desc>Determine whether any of the matched elements are assigned the given class.</desc>
+  <longdesc><p>Elements may have more than one class assigned to them. In HTML, this is represented by separating the class names with a space:</p>
+    <pre>&lt;div id="mydiv" class="foo bar"&gt;&lt;/div&gt;</pre>
+    <p>The <code>.hasClass()</code> method will return <code>true</code> if the class is assigned to an element, even if other classes also are. For example, given the HTML above, the following will return <code>true</code>:</p>
+    <pre>$('#mydiv').hasClass('foo')</pre>
+    <p>As would:</p>
+    <pre>$('#mydiv').hasClass('bar')</pre>
+    <p>While this would return <code>false</code>:</p>
+    <pre>$('#mydiv').hasClass('quux')</pre>
+  </longdesc>
+  <example>
+    <desc>Looks for the paragraph that contains 'selected' as a class.</desc>
+    <code><![CDATA[
 $("div#result1").append($("p:first").hasClass("selected").toString());
 $("div#result2").append($("p:last").hasClass("selected").toString());
 $("div#result3").append($("p").hasClass("selected").toString());
 ]]></code>
 
-                    <css><![CDATA[
+    <css><![CDATA[
   p { margin: 8px; font-size:16px; }
   .selected { color:red; }
   ]]></css>
@@ -34,4 +35,8 @@ $("div#result3").append($("p").hasClass("selected").toString());
   <div id="result2">Second paragraph has selected class: </div>
   <div id="result3">At least one paragraph has selected class: </div>]]></html>
                 </example>
-            </entry>
+            <category name="Attributes" slug="attributes"/>
+<category name="Class Attribute" slug="class-attribute"/>
+<category name="CSS" slug="css"/>
+<category name="Version 1.2" slug="1.2"/>
+</entry>

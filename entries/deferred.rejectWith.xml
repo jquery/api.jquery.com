@@ -1,19 +1,20 @@
 <entry name="deferred.rejectWith" type="method" return="Deferred">
-    <signature>
-        <added>1.5</added>
-         <argument name="context" type="Object">
-           <desc>
-             Context passed to the failCallbacks as the <code>this</code> object.
-           </desc>
-         </argument>
-         <argument name="args" type="Array" optional="true">
-           <desc>
-             An optional array of arguments that are passed to the failCallbacks.
-           </desc>
-         </argument>
-    </signature>
-    <desc> Reject a Deferred object and call any failCallbacks with the given <code>context</code> and <code>args</code>. </desc>
-    <longdesc> <p>Normally, only the creator of a Deferred should call this method; you can prevent other code from changing the Deferred's state by returning a restricted Promise object through <a href="http://api.jquery.com/deferred.promise/"><code>deferred.promise()</code></a>.</p>
-<p>When the Deferred is rejected, any failCallbacks added by <a href="/deferred.then/"><code>deferred.then</code></a> or <a href="/deferred.fail/"><code>deferred.fail</code></a> are called. Callbacks are executed in the order they were added. Each callback is passed the <code>args</code> from the <code>deferred.reject()</code> call. Any failCallbacks added after the Deferred enters the rejected state are executed immediately when they are added, using the arguments that were passed to the <code>.reject()</code> call. For more information, see the documentation for <a href="/category/deferred-object/">Deferred object</a>.</p>  </longdesc>
-
+  <signature>
+    <added>1.5</added>
+    <argument name="context" type="Object">
+      <desc>
+        Context passed to the failCallbacks as the <code>this</code> object.
+      </desc>
+    </argument>
+    <argument name="args" type="Array" optional="true">
+      <desc>
+        An optional array of arguments that are passed to the failCallbacks.
+      </desc>
+    </argument>
+  </signature>
+  <desc> Reject a Deferred object and call any failCallbacks with the given <code>context</code> and <code>args</code>. </desc>
+  <longdesc> <p>Normally, only the creator of a Deferred should call this method; you can prevent other code from changing the Deferred's state by returning a restricted Promise object through <a href="http://api.jquery.com/deferred.promise/"><code>deferred.promise()</code></a>.</p>
+    <p>When the Deferred is rejected, any failCallbacks added by <a href="/deferred.then/"><code>deferred.then</code></a> or <a href="/deferred.fail/"><code>deferred.fail</code></a> are called. Callbacks are executed in the order they were added. Each callback is passed the <code>args</code> from the <code>deferred.reject()</code> call. Any failCallbacks added after the Deferred enters the rejected state are executed immediately when they are added, using the arguments that were passed to the <code>.reject()</code> call. For more information, see the documentation for <a href="/category/deferred-object/">Deferred object</a>.</p>  </longdesc>
+<category name="Deferred Object" slug="deferred-object"/>
+<category name="Version 1.5" slug="1.5"/>
 </entry>

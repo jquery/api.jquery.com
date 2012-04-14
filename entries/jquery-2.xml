@@ -2,15 +2,15 @@
   <signature><added>1.0</added></signature>
   <desc>A string containing the jQuery version number.</desc>
   <longdesc><p>The <code>.jquery</code> property is assigned to the jQuery prototype, commonly referred to by its alias <code>$.fn</code>. It is a string containing the version number of <code>jQuery</code>, such as "1.5.0" or "1.4.4".</p>
-   </longdesc>               
+  </longdesc>
   <example>
     <desc>Determine if an object is a jQuery object</desc>
     <code><![CDATA[
 var a = { what: "A regular JS object" },
     b = $('body');
-     
+
 if ( a.jquery ) { // falsy, since it's undefined
-    alert(' a is a jQuery object! ');    
+    alert(' a is a jQuery object! ');
 }
 
 if ( b.jquery ) { // truthy, since it's a string
@@ -24,4 +24,6 @@ if ( b.jquery ) { // truthy, since it's a string
 alert( 'You are running jQuery version: ' + $.fn.jquery );
 ]]></code>
   </example>
+<category name="Internals" slug="internals"/>
+<category name="Properties of jQuery Object Instances" slug="jquery-object-instance-properties"/>
 </entry>

@@ -52,4 +52,7 @@ $("#term-3").prevUntil(term1, "dd")
   <dd>definition 3-b</dd>
 </dl>]]></html>
 </example>
+<category name="Tree Traversal" slug="tree-traversal"/>
+<category name="Version 1.4" slug="1.4"/>
+<category name="Version 1.6" slug="1.6"/>
 </entry>

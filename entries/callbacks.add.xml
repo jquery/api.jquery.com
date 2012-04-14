@@ -26,14 +26,14 @@ var callbacks = $.Callbacks();
 callbacks.add( foo );
 
 // fire the items on the list
-callbacks.fire( 'hello' );  
+callbacks.fire( 'hello' );
 // outputs: 'foo: hello'
 
 // add the function 'bar' to the list
 callbacks.add( bar );
 
 // fire the items on the list again
-callbacks.fire( 'world' );  
+callbacks.fire( 'world' );
 
 // outputs:
 // 'foo: world'
@@ -41,4 +41,6 @@ callbacks.fire( 'world' );
 </pre>
 
   </longdesc>
+<category name="Callbacks Object" slug="callbacks-object"/>
+<category name="Version 1.7" slug="1.7"/>
 </entry>
