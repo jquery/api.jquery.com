@@ -13,7 +13,9 @@
   </signature>
   <desc>Load data from the server and place the returned HTML into the matched element.</desc>
   <longdesc>
-    <blockquote><p>Note: The event handling suite also has a method named <code><a href='/load-event'>.load()</a></code>. jQuery determines which method to fire based on the set of arguments passed to it.</p></blockquote>
+    <blockquote>
+      <p>Note: The event handling suite also has a method named <code><a href='/load-event'>.load()</a></code>. jQuery determines which method to fire based on the set of arguments passed to it.</p>
+    </blockquote>
     <p>This method is the simplest way to fetch data from the server. It is roughly equivalent to <code>$.get(url, data, success)</code> except that it is a method rather than global function and it has an implicit callback function.  When a successful response is detected (i.e. when <code>textStatus</code> is "success" or "notmodified"), <code>.load()</code> sets the HTML contents of the matched element to the returned data. This means that most uses of the method can be quite simple:</p>
     <pre>$('#result').load('ajax/test.html');</pre>
     <h4 id="callback-function">Callback Function</h4>
@@ -44,9 +46,7 @@ $('#b').load('article.html #target');
 
   </longdesc>
 
-  <note id="same-origin-policy" type="additional">
-</note>
-
+  <note id="same-origin-policy" type="additional"></note>
 
   <example>
     <desc>Load the main page's footer navigation into an ordered list.</desc>
@@ -60,10 +60,10 @@ $('#b').load('article.html #target');
 <b>Footer navigation:</b>
 <ol id="new-nav"></ol>
 ]]></html>
-  </example>
-    <example>
-      <desc>Display a notice if the Ajax request encounters an error.</desc>
-      <code><![CDATA[
+</example>
+<example>
+  <desc>Display a notice if the Ajax request encounters an error.</desc>
+  <code><![CDATA[
 $("#success").load("/not-here.php", function(response, status, xhr) {
   if (status == "error") {
     var msg = "Sorry but there was an error: ";
@@ -71,32 +71,32 @@ $("#success").load("/not-here.php", function(response, status, xhr) {
   }
 });
   ]]></code>
-<css><![CDATA[
+  <css><![CDATA[
   body{ font-size: 12px; font-family: Arial; }
   ]]></css>
-<html><![CDATA[
+  <html><![CDATA[
 <b>Successful Response (should be blank):</b>
 <div id="success"></div>
 <b>Error Response:</b>
 <div id="error"></div>
   ]]></html>
-    </example>
-  
-  <example>
-    <desc>Load the feeds.html file into the div with the ID of feeds.</desc>
-    <code><![CDATA[$("#feeds").load("feeds.html");]]></code>
-    <results><![CDATA[<div id="feeds"><b>45</b> feeds found.</div>]]></results>
-  </example>
-  <example>
-    <desc>pass arrays of data to the server.</desc>
-    <code><![CDATA[$("#objectID").load("test.php", { 'choices[]': ["Jon", "Susan"] } );]]></code>
-  </example>
-  <example>
-    <desc>Same as above, but will POST the additional parameters to the server and a callback that is executed when the server is finished responding.</desc>
-    <code><![CDATA[$("#feeds").load("feeds.php", {limit: 25}, function(){
+</example>
+
+<example>
+  <desc>Load the feeds.html file into the div with the ID of feeds.</desc>
+  <code><![CDATA[$("#feeds").load("feeds.html");]]></code>
+  <results><![CDATA[<div id="feeds"><b>45</b> feeds found.</div>]]></results>
+</example>
+<example>
+  <desc>pass arrays of data to the server.</desc>
+  <code><![CDATA[$("#objectID").load("test.php", { 'choices[]': ["Jon", "Susan"] } );]]></code>
+</example>
+<example>
+  <desc>Same as above, but will POST the additional parameters to the server and a callback that is executed when the server is finished responding.</desc>
+  <code><![CDATA[$("#feeds").load("feeds.php", {limit: 25}, function(){
 alert("The last 25 entries in the feed have been loaded");
 });]]></code>
-  </example>
+</example>
 <category name="Shorthand Methods" slug="shorthand-methods"/>
 <category name="Version 1.0" slug="1.0"/>
 </entry>

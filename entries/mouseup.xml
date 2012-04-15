@@ -8,7 +8,7 @@
   </signature>
   <signature>
     <added>1.4.3</added>
-    <argument name="eventData" type="Object" optional="true">
+    <argument name="eventData" type="PlainObject" optional="true">
       <desc>A map of data that will be passed to the event handler.</desc>
     </argument>
     <argument name="handler(eventObject)" type="Function">
@@ -18,35 +18,35 @@
   <signature>
     <added>1.0</added>
   </signature>
-<longdesc>
-<p>This method is a shortcut for <code>.bind('mouseup', handler)</code> in the first variation, and <code>.trigger('mouseup')</code> in the second.</p>
-<p>The <code>mouseup</code> event is sent to an element when the mouse pointer is over the element, and the mouse button is released. Any HTML element can receive this event.</p>
-<p>For example, consider the HTML:</p>
+  <longdesc>
+    <p>This method is a shortcut for <code>.bind('mouseup', handler)</code> in the first variation, and <code>.trigger('mouseup')</code> in the second.</p>
+    <p>The <code>mouseup</code> event is sent to an element when the mouse pointer is over the element, and the mouse button is released. Any HTML element can receive this event.</p>
+    <p>For example, consider the HTML:</p>
 <pre>&lt;div id="target"&gt;
   Click here
 &lt;/div&gt;
 &lt;div id="other"&gt;
   Trigger the handler
 &lt;/div&gt;
-</pre> 
-<p class="image"><img src="/images/0042_05_02.png" alt="" /></p>
-<p>The event handler can be bound to any <code>&lt;div&gt;</code>:</p>
-<pre>$('#target').mouseup(function() {
+</pre>
+    <p class="image"><img src="/images/0042_05_02.png" alt="" /></p>
+    <p>The event handler can be bound to any <code>&lt;div&gt;</code>:</p>
+    <pre>$('#target').mouseup(function() {
   alert('Handler for .mouseup() called.');
 });
 </pre>
-<p>Now if we click on this element, the alert is displayed:</p>
-<p><span class="output">Handler for .mouseup() called.</span></p>
-<p>We can also trigger the event when a different element is clicked:</p>
-<pre>$('#other').click(function() {
+    <p>Now if we click on this element, the alert is displayed:</p>
+    <p><span class="output">Handler for .mouseup() called.</span></p>
+    <p>We can also trigger the event when a different element is clicked:</p>
+    <pre>$('#other').click(function() {
   $('#target').mouseup();
 });</pre>
-<p>After this code executes, clicks on <span class="output">Trigger the handler</span> will also alert the message.</p>
-<p>If the user clicks outside an element, drags onto it, and releases the button, this is still counted as a <code>mouseup</code> event. This sequence of actions is not treated as a button press in most user interfaces, so it is usually better to use the <code>click</code> event unless we know that the <code>mouseup</code> event is preferable for a particular situation.</p>
-</longdesc>
-                <example>
-                    <desc>Show texts when mouseup and mousedown event triggering.</desc>
-                    <code><![CDATA[
+    <p>After this code executes, clicks on <span class="output">Trigger the handler</span> will also alert the message.</p>
+    <p>If the user clicks outside an element, drags onto it, and releases the button, this is still counted as a <code>mouseup</code> event. This sequence of actions is not treated as a button press in most user interfaces, so it is usually better to use the <code>click</code> event unless we know that the <code>mouseup</code> event is preferable for a particular situation.</p>
+  </longdesc>
+<example>
+  <desc>Show texts when mouseup and mousedown event triggering.</desc>
+  <code><![CDATA[
     $("p").mouseup(function(){
       $(this).append('<span style="color:#F00;">Mouse up.</span>');
     }).mousedown(function(){
@@ -54,9 +54,9 @@
     });
 
 ]]></code>
-                    <html><![CDATA[<p>Press mouse and release here.</p>
+  <html><![CDATA[<p>Press mouse and release here.</p>
 ]]></html>
-                </example>
+</example>
 <category name="Mouse Events" slug="mouse-events"/>
 <category name="Version 1.0" slug="1.0"/>
 <category name="Version 1.4.3" slug="1.4.3"/>

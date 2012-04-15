@@ -1,20 +1,20 @@
 <entry type='selector'   name="next siblings" return=""  >
-    <sample>prev ~ siblings</sample>
-    <signature>
-      <added>1.0</added>
-      <argument name="prev" type="Selector">
-          <desc>Any valid selector.</desc>
-      </argument>
-      <argument name="siblings" type="Selector">
-          <desc>A selector to filter elements that are the following siblings of the first selector.</desc>
-      </argument>
-    </signature>
-    <desc>Selects all sibling elements that follow after the "prev" element, have the same parent, and match the filtering "siblings" selector.</desc>
-    <longdesc><p>The notable difference between (<code>prev + next</code>) and (<code>prev ~ siblings</code>) is their respective reach. While the former reaches only to the immediately following sibling element, the latter extends that reach to all following sibling elements.</p></longdesc>
-    <example>
-        <desc>Finds all divs that are siblings after the element with #prev as its id.  Notice the span isn't selected since it is not a div and the "niece" isn't selected since it is a child of a sibling, not an actual sibling.</desc>
-        <code><![CDATA[$("#prev ~ div").css("border", "3px groove blue");]]></code>
-        <css><![CDATA[
+  <sample>prev ~ siblings</sample>
+  <signature>
+    <added>1.0</added>
+    <argument name="prev" type="Selector">
+      <desc>Any valid selector.</desc>
+    </argument>
+    <argument name="siblings" type="Selector">
+      <desc>A selector to filter elements that are the following siblings of the first selector.</desc>
+    </argument>
+  </signature>
+  <desc>Selects all sibling elements that follow after the "prev" element, have the same parent, and match the filtering "siblings" selector.</desc>
+  <longdesc><p>The notable difference between (<code>prev + next</code>) and (<code>prev ~ siblings</code>) is their respective reach. While the former reaches only to the immediately following sibling element, the latter extends that reach to all following sibling elements.</p></longdesc>
+<example>
+  <desc>Finds all divs that are siblings after the element with #prev as its id.  Notice the span isn't selected since it is not a div and the "niece" isn't selected since it is a child of a sibling, not an actual sibling.</desc>
+  <code><![CDATA[$("#prev ~ div").css("border", "3px groove blue");]]></code>
+  <css><![CDATA[
 
   div,span {
     display:block;
@@ -32,14 +32,14 @@
     background:#fab;
   }
   ]]></css>
-                    <html><![CDATA[<div>div (doesn't match since before #prev)</div>
+  <html><![CDATA[<div>div (doesn't match since before #prev)</div>
   <span id="prev">span#prev</span>
   <div>div sibling</div>
 
   <div>div sibling <div id="small">div niece</div></div>
   <span>span sibling (not div)</span>
   <div>div sibling</div>]]></html>
-                </example>
-            <category name="Hierarchy" slug="hierarchy-selectors"/>
+</example>
+<category name="Hierarchy" slug="hierarchy-selectors"/>
 <category name="Version 1.0" slug="1.0"/>
 </entry>

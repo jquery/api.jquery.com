@@ -1,5 +1,6 @@
 <entry type='method' name="jQuery.inArray" return="Number">
-  <signature><added>1.2</added>
+  <signature>
+    <added>1.2</added>
     <argument name="value" type="Any">
       <desc>The value to search for.</desc>
     </argument>
@@ -10,12 +11,11 @@
       <desc>The index of the array at which to begin the search. The default is 0, which will search the whole array.</desc>
     </argument>
   </signature>
-<desc>Search for a specified value within an array and return its index (or -1 if not found).</desc>
-  <longdesc><p>The <code>$.inArray()</code> method is similar to JavaScript's native <code>.indexOf()</code> method in that it returns -1 when it doesn't find a match. If the first element within the array matches <code>value</code>, <code>$.inArray()</code> returns 0.</p> 
-
+  <desc>Search for a specified value within an array and return its index (or -1 if not found).</desc>
+  <longdesc><p>The <code>$.inArray()</code> method is similar to JavaScript's native <code>.indexOf()</code> method in that it returns -1 when it doesn't find a match. If the first element within the array matches <code>value</code>, <code>$.inArray()</code> returns 0.</p>
     <p>Because JavaScript treats 0 as loosely equal to false (i.e. 0 == false, but 0 !== false), if we're checking for the presence of <code>value</code> within <code>array</code>, we need to check if it's not equal to (or greater than) -1.</p>
   </longdesc>
-                
+
 <example>
   <desc>Report the index of some elements in the array.</desc>
   <code><![CDATA[var arr = [ 4, "Pete", 8, "John" ];

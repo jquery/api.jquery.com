@@ -1,34 +1,30 @@
-            <entry type='selector'  name="odd" return="" >
-                <sample>:odd</sample>
-                 <signature><added>1.0</added> </signature>
-                <desc>Selects odd elements, zero-indexed.  See also <a href="/Selectors/even">even</a>.</desc>
-                <longdesc><p>In particular, note that the <em>0-based indexing</em> means that, counter-intuitively, <code>:odd</code> selects the second element, fourth element, and so on within the matched set.</p></longdesc>
+<entry type='selector'  name="odd" return="" >
+  <sample>:odd</sample>
+  <signature><added>1.0</added> </signature>
+  <desc>Selects odd elements, zero-indexed.  See also <a href="/Selectors/even">even</a>.</desc>
+  <longdesc><p>In particular, note that the <em>0-based indexing</em> means that, counter-intuitively, <code>:odd</code> selects the second element, fourth element, and so on within the matched set.</p></longdesc>
 
   <note id="jquery-selector-extension" type="additional">
-  <placeholder name="selector">:odd</placeholder>
-</note>
-<note id="document-order" type="additional">
-</note>
+    <placeholder name="selector">:odd</placeholder>
+  </note>
+  <note id="document-order" type="additional"></note>
+<example>
+  <desc>Finds odd table rows, matching the second, fourth and so on (index 1, 3, 5 etc.).</desc>
+  <code><![CDATA[$("tr:odd").css("background-color", "#bbbbff");]]></code>
+  <css><![CDATA[
+table {
+  background:#f3f7f5;
+}
+]]></css>
+<html><![CDATA[<table border="1">
+  <tr><td>Row with Index #0</td></tr>
+  <tr><td>Row with Index #1</td></tr>
 
-
-                <example>
-                    <desc>Finds odd table rows, matching the second, fourth and so on (index 1, 3, 5 etc.).</desc>
-                    <code><![CDATA[$("tr:odd").css("background-color", "#bbbbff");]]></code>
-                    <css><![CDATA[
-
-  table {
-    background:#f3f7f5;
-  }
-  ]]></css>
-                    <html><![CDATA[<table border="1">
-    <tr><td>Row with Index #0</td></tr>
-    <tr><td>Row with Index #1</td></tr>
-
-    <tr><td>Row with Index #2</td></tr>
-    <tr><td>Row with Index #3</td></tr>
-  </table>]]></html>
-                </example>
-            <category name="Basic Filter" slug="basic-filter-selectors"/>
+  <tr><td>Row with Index #2</td></tr>
+  <tr><td>Row with Index #3</td></tr>
+</table>]]></html>
+</example>
+<category name="Basic Filter" slug="basic-filter-selectors"/>
 <category name="jQuery Extensions" slug="jquery-selector-extensions"/>
 <category name="Version 1.0" slug="1.0"/>
 </entry>

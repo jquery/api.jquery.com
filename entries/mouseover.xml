@@ -8,23 +8,23 @@
   </signature>
   <signature>
     <added>1.4.3</added>
-    <argument name="eventData" type="Object" optional="true">
+    <argument name="eventData" type="PlainObject" optional="true">
       <desc>A map of data that will be passed to the event handler.</desc>
     </argument>
     <argument name="handler(eventObject)" type="Function">
       <desc>A function to execute each time the event is triggered.</desc>
     </argument>
   </signature>
-   <signature>
+  <signature>
     <added>1.0</added>
   </signature>
 
 
-<longdesc>
-<p>This method is a shortcut for <code>.bind('mouseover', handler)</code> in the first two variations, and <code>.trigger('mouseover')</code> in the third.</p>
-<p>The <code>mouseover</code> event is sent to an element when the mouse pointer enters the element. Any HTML element can receive this event.</p>
-<p>For example, consider the HTML:</p>
-<pre>&lt;div id="outer"&gt;
+  <longdesc>
+    <p>This method is a shortcut for <code>.bind('mouseover', handler)</code> in the first two variations, and <code>.trigger('mouseover')</code> in the third.</p>
+    <p>The <code>mouseover</code> event is sent to an element when the mouse pointer enters the element. Any HTML element can receive this event.</p>
+    <p>For example, consider the HTML:</p>
+    <pre>&lt;div id="outer"&gt;
   Outer
   &lt;div id="inner"&gt;
     Inner
@@ -34,27 +34,27 @@
   Trigger the handler
 &lt;/div&gt;
 &lt;div id="log"&gt;&lt;/div&gt;</pre>
- 
-<p class="image"><img src="/images/0042_05_06.png" alt="" />
-</p>
-<p>The event handler can be bound to any element:</p>
-<pre>$('#outer').mouseover(function() {
+
+    <p class="image"><img src="/images/0042_05_06.png" alt="" />
+    </p>
+    <p>The event handler can be bound to any element:</p>
+    <pre>$('#outer').mouseover(function() {
   $('#log').append('&lt;div&gt;Handler for .mouseover() called.&lt;/div&gt;');
 });</pre>
-<p>Now when the mouse pointer moves over the <span class="output">Outer</span> <code>&lt;div&gt;</code>, the message is appended to <code>&lt;div id="log"&gt;</code>. We can also trigger the event when another element is clicked:</p>
-<pre>$('#other').click(function() {
-  $('#outer').mouseover();
-});</pre>
-<p>After this code executes, clicks on <span class="output">Trigger the handler</span> will also append the message.</p>
-<p>This event type can cause many headaches due to event bubbling. For instance, when the mouse pointer moves over the <span class="output">Inner</span> element in this example, a <code>mouseover</code> event will be sent to that, then trickle up to <span class="output">Outer</span>. This can trigger our bound <code>mouseover</code> handler at inopportune times. See the discussion for <code>.mouseenter()</code> for a useful alternative.</p>
-</longdesc>
-                <example>
-                    <desc>Show the number of times mouseover and mouseenter events are triggered.
+    <p>Now when the mouse pointer moves over the <span class="output">Outer</span> <code>&lt;div&gt;</code>, the message is appended to <code>&lt;div id="log"&gt;</code>. We can also trigger the event when another element is clicked:</p>
+    <pre>$('#other').click(function() {
+      $('#outer').mouseover();
+      });</pre>
+      <p>After this code executes, clicks on <span class="output">Trigger the handler</span> will also append the message.</p>
+      <p>This event type can cause many headaches due to event bubbling. For instance, when the mouse pointer moves over the <span class="output">Inner</span> element in this example, a <code>mouseover</code> event will be sent to that, then trickle up to <span class="output">Outer</span>. This can trigger our bound <code>mouseover</code> handler at inopportune times. See the discussion for <code>.mouseenter()</code> for a useful alternative.</p>
+  </longdesc>
+<example>
+  <desc>Show the number of times mouseover and mouseenter events are triggered.
 <code>mouseover</code> fires when the pointer moves into the child element as well, while <code>mouseenter</code> fires only when the pointer moves into the bound element.</desc>
-                    <css><![CDATA[
+  <css><![CDATA[
 div.out { width:40%; height:120px; margin:0 15px;
           background-color:#D6EDFC; float:left; }
-div.in {  width:60%; height:60%; 
+div.in {  width:60%; height:60%;
           background-color:#FFCC00; margin:10px auto; }
 p { line-height:1em; margin:0; padding:0; }
 ]]></css>

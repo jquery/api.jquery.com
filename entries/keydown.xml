@@ -7,7 +7,7 @@
   </signature>
   <signature>
     <added>1.4.3</added>
-    <argument name="eventData" type="Object" optional="true">
+    <argument name="eventData" type="PlainObject" optional="true">
       <desc>A map of data that will be passed to the event handler.</desc>
     </argument>
     <argument name="handler(eventObject)" type="Function">
@@ -18,30 +18,30 @@
     <added>1.0</added>
   </signature>
   <desc>Bind an event handler to the "keydown" JavaScript event, or trigger that event on an element.</desc>
-<longdesc>
-<p>This method is a shortcut for <code>.bind('keydown', handler)</code> in the first and second variations, and <code>.trigger('keydown')</code> in the third.</p>
-<p>The <code>keydown</code> event is sent to an element when the user first presses a key on the keyboard. It can be attached to any element, but the event is only sent to the element that has the focus. Focusable elements can vary between browsers, but form elements can always get focus so are reasonable candidates for this event type.</p>
-<p>For example, consider the HTML:</p>
-<pre>&lt;form&gt;
+  <longdesc>
+    <p>This method is a shortcut for <code>.bind('keydown', handler)</code> in the first and second variations, and <code>.trigger('keydown')</code> in the third.</p>
+    <p>The <code>keydown</code> event is sent to an element when the user first presses a key on the keyboard. It can be attached to any element, but the event is only sent to the element that has the focus. Focusable elements can vary between browsers, but form elements can always get focus so are reasonable candidates for this event type.</p>
+    <p>For example, consider the HTML:</p>
+    <pre>&lt;form&gt;
   &lt;input id="target" type="text" value="Hello there" /&gt;
 &lt;/form&gt;
 &lt;div id="other"&gt;
   Trigger the handler
 &lt;/div&gt;</pre>
-<p>The event handler can be bound to the input field:</p>
-<pre>$('#target').keydown(function() {
+    <p>The event handler can be bound to the input field:</p>
+    <pre>$('#target').keydown(function() {
   alert('Handler for .keydown() called.');
 });</pre>
-<p>Now when the insertion point is inside the field, pressing a key displays the alert:</p>
-<p><span class="output">Handler for .keydown() called.</span></p>
-<p>To trigger the event manually, apply <code>.keydown()</code> without an argument:</p>
-<pre>$('#other').click(function() {
+    <p>Now when the insertion point is inside the field, pressing a key displays the alert:</p>
+    <p><span class="output">Handler for .keydown() called.</span></p>
+    <p>To trigger the event manually, apply <code>.keydown()</code> without an argument:</p>
+    <pre>$('#other').click(function() {
   $('#target').keydown();
 });</pre>
-<p>After this code executes, clicks on <span class="output">Trigger the handler</span> will also alert the message.</p>
-<p>If key presses anywhere need to be caught (for example, to implement global shortcut keys on a page), it is useful to attach this behavior to the <code>document</code> object. Because of event bubbling, all key presses will make their way up the DOM to the <code>document</code> object unless explicitly stopped.</p>
-<p>To determine which key was pressed, examine the <a href="http://api.jquery.com/category/events/event-object/">event object</a> that is passed to the handler function. While browsers use differing properties to store this information, jQuery normalizes the <code>.which</code> property so you can reliably use it to retrieve the key code. This code corresponds to a key on the keyboard, including codes for special keys such as arrows. For catching actual text entry, <code>.keypress()</code> may be a better choice.</p>
-</longdesc>
+    <p>After this code executes, clicks on <span class="output">Trigger the handler</span> will also alert the message.</p>
+    <p>If key presses anywhere need to be caught (for example, to implement global shortcut keys on a page), it is useful to attach this behavior to the <code>document</code> object. Because of event bubbling, all key presses will make their way up the DOM to the <code>document</code> object unless explicitly stopped.</p>
+    <p>To determine which key was pressed, examine the <a href="http://api.jquery.com/category/events/event-object/">event object</a> that is passed to the handler function. While browsers use differing properties to store this information, jQuery normalizes the <code>.which</code> property so you can reliably use it to retrieve the key code. This code corresponds to a key on the keyboard, including codes for special keys such as arrows. For catching actual text entry, <code>.keypress()</code> may be a better choice.</p>
+  </longdesc>
 <example>
     <desc>Show the event object for the keydown handler when a key is pressed in the input.</desc>
     <code><![CDATA[

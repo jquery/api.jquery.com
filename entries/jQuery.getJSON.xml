@@ -14,7 +14,7 @@
   <desc>Load JSON-encoded data from the server using a GET HTTP request.</desc>
   <longdesc>
     <p>This is a shorthand Ajax function, which is equivalent to:</p>
-        <pre>$.ajax({
+    <pre>$.ajax({
   url: <em>url</em>,
   dataType: 'json',
   data: <em>data</em>,

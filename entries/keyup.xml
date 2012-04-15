@@ -8,7 +8,7 @@
   </signature>
   <signature>
     <added>1.4.3</added>
-    <argument name="eventData" type="Object" optional="true">
+    <argument name="eventData" type="PlainObject" optional="true">
       <desc>A map of data that will be passed to the event handler.</desc>
     </argument>
     <argument name="handler(eventObject)" type="Function">
@@ -19,7 +19,7 @@
     <added>1.0</added>
   </signature>
 
-<longdesc>
+  <longdesc>
 <p>This method is a shortcut for <code>.bind('keyup', handler)</code> in the first two variations, and <code>.trigger('keyup')</code> in the third.</p>
 <p>The <code>keyup</code> event is sent to an element when the user releases a key on the keyboard. It can be attached to any element, but the event is only sent to the element that has the focus. Focusable elements can vary between browsers, but form elements can always get focus so are reasonable candidates for this event type.</p>
 <p>For example, consider the HTML:</p>
@@ -56,7 +56,7 @@ $('#target').keyup(function(event) {
 }).keydown(function(event) {
   if (event.which == 13) {
     event.preventDefault();
-  }  
+  }
 });
 
 $('#other').click(function() {

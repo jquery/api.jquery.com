@@ -1,11 +1,12 @@
-            <entry type='method' name="offsetParent" return="jQuery">
-              <signature>
-                <added>1.2.6</added>
-              </signature>
-              <desc>Get the closest ancestor element that is positioned.</desc>
-              <longdesc><p>Given a jQuery object that represents a set of DOM elements, the <code>.offsetParent()</code> method allows us to search through the ancestors of these elements in the DOM tree and construct a new jQuery object wrapped around the closest positioned ancestor. An element is said to be positioned if it has a CSS position attribute of <code>relative</code>, <code>absolute</code>, or <code>fixed</code>. This information is useful for calculating offsets for performing animations and placing objects on the page.</p>
-<p>Consider a page with a basic nested list on it, with a positioned element:</p>
-<pre>
+<entry type='method' name="offsetParent" return="jQuery">
+  <signature>
+    <added>1.2.6</added>
+  </signature>
+  <desc>Get the closest ancestor element that is positioned.</desc>
+  <longdesc>
+    <p>Given a jQuery object that represents a set of DOM elements, the <code>.offsetParent()</code> method allows us to search through the ancestors of these elements in the DOM tree and construct a new jQuery object wrapped around the closest positioned ancestor. An element is said to be positioned if it has a CSS position attribute of <code>relative</code>, <code>absolute</code>, or <code>fixed</code>. This information is useful for calculating offsets for performing animations and placing objects on the page.</p>
+    <p>Consider a page with a basic nested list on it, with a positioned element:</p>
+    <pre>
 &lt;ul class="level-1"&gt;
   &lt;li class="item-i"&gt;I&lt;/li&gt;
   &lt;li class="item-ii" style="position: relative;"&gt;II
@@ -23,33 +24,33 @@
   &lt;/li&gt;
   &lt;li class="item-iii"&gt;III&lt;/li&gt;
 &lt;/ul&gt;
-</pre>
-<p>If we begin at item A, we can find its positioned ancestor:</p>
-<pre>$('li.item-a').offsetParent().css('background-color', 'red');</pre>
-<p>This will change the color of list item II, which is positioned.</p>
-</longdesc>
+    </pre>
+    <p>If we begin at item A, we can find its positioned ancestor:</p>
+    <pre>$('li.item-a').offsetParent().css('background-color', 'red');</pre>
+    <p>This will change the color of list item II, which is positioned.</p>
+  </longdesc>
 <example>
   <desc>Find the offsetParent of item "A."</desc>
   <height>250</height>
   <code>$('li.item-a').offsetParent().css('background-color', 'red');</code>
   <html><![CDATA[
-    <ul class="level-1">
-      <li class="item-i">I</li>
-      <li class="item-ii" style="position: relative;">II
-        <ul class="level-2">
-          <li class="item-a">A</li>
-          <li class="item-b">B
-            <ul class="level-3">
-              <li class="item-1">1</li>
-              <li class="item-2">2</li>
-              <li class="item-3">3</li>
-            </ul>
-          </li>
-          <li class="item-c">C</li>
+<ul class="level-1">
+  <li class="item-i">I</li>
+  <li class="item-ii" style="position: relative;">II
+    <ul class="level-2">
+      <li class="item-a">A</li>
+      <li class="item-b">B
+        <ul class="level-3">
+          <li class="item-1">1</li>
+          <li class="item-2">2</li>
+          <li class="item-3">3</li>
         </ul>
       </li>
-      <li class="item-iii">III</li>
-    </ul>]]>
+      <li class="item-c">C</li>
+    </ul>
+  </li>
+  <li class="item-iii">III</li>
+</ul>]]>
   </html>
 </example>
 <category name="Offset" slug="offset"/>

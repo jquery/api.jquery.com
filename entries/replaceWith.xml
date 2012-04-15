@@ -12,7 +12,8 @@
     </argument>
   </signature>
   <desc>Replace each element in the set of matched elements with the provided new content.</desc>
-  <longdesc><p>The <code>.replaceWith()</code> method removes content from the DOM and inserts new content in its place with a single call. Consider this DOM structure:</p>
+  <longdesc>
+    <p>The <code>.replaceWith()</code> method removes content from the DOM and inserts new content in its place with a single call. Consider this DOM structure:</p>
     <pre>&lt;div class="container"&gt;
   &lt;div class="inner first"&gt;Hello&lt;/div&gt;
   &lt;div class="inner second"&gt;And&lt;/div&gt;
@@ -110,7 +111,7 @@ $('button').bind("click", function() {
   $("p").append( $container.attr("class") );
 });
 ]]></code>
-<css><![CDATA[ 
+<css><![CDATA[
   .container { background-color: #991; }
   .inner { color: #911; }
   ]]></css>

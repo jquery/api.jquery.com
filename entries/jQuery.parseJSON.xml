@@ -1,23 +1,25 @@
-            <entry type='method' name="jQuery.parseJSON" return="Object">
-                <signature>
-                  <added>1.4.1</added>
-                  <argument name="json" type="String">
-                    <desc>The JSON string to parse.</desc>
-                  </argument>
-                </signature>
-                <desc>Takes a well-formed JSON string and returns the resulting JavaScript object.</desc>
-                <longdesc><p>Passing in a malformed JSON string may result in an exception being thrown. For example, the following are all malformed JSON strings:</p>
-<ul>
-<li><code>{test: 1}</code> (test does not have double quotes around it).</li>
-<li><code>{'test': 1}</code> ('test' is using single quotes instead of double quotes).</li>
-</ul>
-<p>Additionally if you pass in nothing, an empty string, null, or undefined, 'null' will be returned from parseJSON. Where the browser provides a native implementation of <code>JSON.parse</code>, jQuery uses it to parse the string. For details on the JSON format, see <a href="http://json.org/">http://json.org/</a>.
-</p></longdesc>
-                <example>
-                    <desc>Parse a JSON string.</desc>
-                    <code><![CDATA[var obj = jQuery.parseJSON('{"name":"John"}');
+<entry type='method' name="jQuery.parseJSON" return="Object">
+  <signature>
+    <added>1.4.1</added>
+    <argument name="json" type="String">
+      <desc>The JSON string to parse.</desc>
+    </argument>
+  </signature>
+  <desc>Takes a well-formed JSON string and returns the resulting JavaScript object.</desc>
+  <longdesc>
+    <p>Passing in a malformed JSON string may result in an exception being thrown. For example, the following are all malformed JSON strings:</p>
+    <ul>
+      <li><code>{test: 1}</code> (test does not have double quotes around it).</li>
+      <li><code>{'test': 1}</code> ('test' is using single quotes instead of double quotes).</li>
+    </ul>
+  <p>Additionally if you pass in nothing, an empty string, null, or undefined, 'null' will be returned from parseJSON. Where the browser provides a native implementation of <code>JSON.parse</code>, jQuery uses it to parse the string. For details on the JSON format, see <a href="http://json.org/">http://json.org/</a>.
+</p>
+  </longdesc>
+  <example>
+    <desc>Parse a JSON string.</desc>
+    <code><![CDATA[var obj = jQuery.parseJSON('{"name":"John"}');
 alert( obj.name === "John" );]]></code>
-                </example>
-            <category name="Utilities" slug="utilities"/>
+  </example>
+<category name="Utilities" slug="utilities"/>
 <category name="Version 1.4.1" slug="1.4.1"/>
 </entry>

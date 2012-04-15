@@ -8,7 +8,7 @@
   </signature>
   <signature>
     <added>1.4.3</added>
-    <argument name="eventData" type="Object" optional="true">
+    <argument name="eventData" type="PlainObject" optional="true">
       <desc>A map of data that will be passed to the event handler.</desc>
     </argument>
     <argument name="handler(eventObject)" type="Function">
@@ -19,16 +19,16 @@
     <added>1.0</added>
   </signature>
 
-<longdesc>
-<p>This method is a shortcut for <code>.bind('resize', handler)</code> in the first and second variations, and <code>.trigger('resize')</code> in the third.</p>
-<p>The <code>resize</code> event is sent to the <code>window</code> element when the size of the browser window changes:</p>
-<pre>$(window).resize(function() {
+  <longdesc>
+    <p>This method is a shortcut for <code>.bind('resize', handler)</code> in the first and second variations, and <code>.trigger('resize')</code> in the third.</p>
+    <p>The <code>resize</code> event is sent to the <code>window</code> element when the size of the browser window changes:</p>
+    <pre>$(window).resize(function() {
   $('#log').append('&lt;div&gt;Handler for .resize() called.&lt;/div&gt;');
 });
-</pre>
-<p>Now whenever the browser window's size is changed, the message is appended to &lt;div id="log"&gt; one or more times, depending on the browser.</p>
-<p>Code in a <code>resize</code> handler should never rely on the number of times the handler is called. Depending on implementation, <code>resize</code> events can be sent continuously as the resizing is in progress (the typical behavior in Internet Explorer and WebKit-based browsers such as Safari and Chrome), or only once at the end of the resize operation (the typical behavior in some other browsers such as Opera).</p>
-</longdesc>
+    </pre>
+    <p>Now whenever the browser window's size is changed, the message is appended to &lt;div id="log"&gt; one or more times, depending on the browser.</p>
+    <p>Code in a <code>resize</code> handler should never rely on the number of times the handler is called. Depending on implementation, <code>resize</code> events can be sent continuously as the resizing is in progress (the typical behavior in Internet Explorer and WebKit-based browsers such as Safari and Chrome), or only once at the end of the resize operation (the typical behavior in some other browsers such as Opera).</p>
+  </longdesc>
 <example>
   <desc>To see the window width while (or after) it is resized, try:</desc>
   <code><![CDATA[

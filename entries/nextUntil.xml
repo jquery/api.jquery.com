@@ -2,19 +2,19 @@
   <signature>
     <added>1.4</added>
     <argument name="selector" optional="true" type="Selector">
-        <desc>A string containing a selector expression to indicate where to stop matching following sibling elements.</desc>
+      <desc>A string containing a selector expression to indicate where to stop matching following sibling elements.</desc>
     </argument>
     <argument name="filter" optional="true" type="Selector">
-        <desc>A string containing a selector expression to match elements against.</desc>
+      <desc>A string containing a selector expression to match elements against.</desc>
     </argument>
   </signature>
   <signature>
     <added>1.6</added>
     <argument name="element" optional="true" type="Element">
-        <desc>A DOM node or jQuery object indicating where to stop matching following sibling elements.</desc>
+      <desc>A DOM node or jQuery object indicating where to stop matching following sibling elements.</desc>
     </argument>
     <argument name="filter" optional="true" type="Selector">
-        <desc>A string containing a selector expression to match elements against.</desc>
+      <desc>A string containing a selector expression to match elements against.</desc>
     </argument>
   </signature>
   <desc>Get all following siblings of each element up to but not including the element matched by the selector, DOM node, or jQuery object passed.</desc>
@@ -27,7 +27,7 @@
 <example>
 <height>250px</height>
 <desc>Find the siblings that follow &lt;dt id="term-2"&gt; up to the next &lt;dt&gt; and give them a red background color. Also, find &lt;dd&gt; siblings that follow &lt;dt id="term-1"&gt; up to &lt;dt id="term-3"&gt; and give them a green text color. </desc>
-<code><![CDATA[  
+<code><![CDATA[
 $("#term-2").nextUntil("dt")
   .css("background-color", "red");
 

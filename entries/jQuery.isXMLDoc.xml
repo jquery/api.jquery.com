@@ -1,17 +1,17 @@
-            <entry type='method' name="jQuery.isXMLDoc" return="Boolean">
-                <signature>
-                  <added>1.1.4</added>
-                  <argument name="node" type="Element">
-                    <desc>The DOM node that will be checked to see if it's in an XML document.</desc>
-                  </argument>
-                </signature>
-                <desc>Check to see if a DOM node is within an XML document (or is an XML document).</desc>
-                <longdesc></longdesc>
-                <example>
-                    <desc>Check an object to see if it's in an XML document.</desc>
-                    <code><![CDATA[jQuery.isXMLDoc(document) // false
-jQuery.isXMLDoc(document.body) // false]]></code>
-                </example>
-            <category name="Utilities" slug="utilities"/>
+<entry type='method' name="jQuery.isXMLDoc" return="Boolean">
+  <signature>
+    <added>1.1.4</added>
+    <argument name="node" type="Element">
+      <desc>The DOM node that will be checked to see if it's in an XML document.</desc>
+    </argument>
+  </signature>
+  <desc>Check to see if a DOM node is within an XML document (or is an XML document).</desc>
+  <longdesc></longdesc>
+<example>
+  <desc>Check an object to see if it's in an XML document.</desc>
+  <code><![CDATA[jQuery.isXMLDoc(document) // false
+    jQuery.isXMLDoc(document.body) // false]]></code>
+</example>
+<category name="Utilities" slug="utilities"/>
 <category name="Version 1.1.4" slug="1.1.4"/>
 </entry>

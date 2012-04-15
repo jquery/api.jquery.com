@@ -1,31 +1,29 @@
-            <entry type='selector'  name="selected" return="">
-                <sample>:selected</sample>
-                 <signature><added>1.0</added> </signature>
-                <desc>Selects all elements that are selected.</desc>
-                <longdesc><p>The <code>:selected</code> selector works for <code>&lt;option&gt;</code> elements. It does not work for checkboxes or radio inputs; use <code>:checked</code> for them.</p></longdesc>
+<entry type='selector'  name="selected" return="">
+  <sample>:selected</sample>
+  <signature><added>1.0</added> </signature>
+  <desc>Selects all elements that are selected.</desc>
+  <longdesc><p>The <code>:selected</code> selector works for <code>&lt;option&gt;</code> elements. It does not work for checkboxes or radio inputs; use <code>:checked</code> for them.</p></longdesc>
 
   <note id="jquery-selector-extension" type="additional">
-  <placeholder name="selector">:selected</placeholder>
-</note>
+    <placeholder name="selector">:selected</placeholder>
+  </note>
 
-
-                <example>
-                    <desc>Attaches a change event to the select that gets the text for each selected option and writes them in the div.  It then triggers the event for the initial text draw.</desc>
-                    <code><![CDATA[
-
-    $("select").change(function () {
-          var str = "";
-          $("select option:selected").each(function () {
-                str += $(this).text() + " ";
-              });
-          $("div").text(str);
-        })
-        .trigger('change');
+<example>
+  <desc>Attaches a change event to the select that gets the text for each selected option and writes them in the div.  It then triggers the event for the initial text draw.</desc>
+  <code><![CDATA[
+$("select").change(function () {
+  var str = "";
+  $("select option:selected").each(function () {
+        str += $(this).text() + " ";
+      });
+  $("div").text(str);
+})
+.trigger('change');
 ]]></code>
-                    <css><![CDATA[
+<css><![CDATA[
   div { color:red; }
   ]]></css>
-                    <html><![CDATA[<select name="garden" multiple="multiple">
+  <html><![CDATA[<select name="garden" multiple="multiple">
 
     <option>Flowers</option>
     <option selected="selected">Shrubs</option>
@@ -36,8 +34,8 @@
     <option>Dirt</option>
   </select>
   <div></div>]]></html>
-                </example>
-            <category name="Form" slug="form-selectors"/>
+</example>
+<category name="Form" slug="form-selectors"/>
 <category name="jQuery Extensions" slug="jquery-selector-extensions"/>
 <category name="Version 1.0" slug="1.0"/>
 </entry>

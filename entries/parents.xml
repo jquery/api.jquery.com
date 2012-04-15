@@ -2,11 +2,12 @@
   <signature>
     <added>1.0</added>
     <argument name="selector" optional="true" type="Selector">
-        <desc>A string containing a selector expression to match elements against.</desc>
+      <desc>A string containing a selector expression to match elements against.</desc>
     </argument>
   </signature>
   <desc>Get the ancestors of each element in the current set of matched elements, optionally filtered by a selector.</desc>
-  <longdesc><p>Given a jQuery object that represents a set of DOM elements, the <code>.parents()</code> method allows us to search through the ancestors of these elements in the DOM tree and construct a new jQuery object from the matching elements ordered from immediate parent on up; the elements are returned in order from the closest parent to the outer ones. The <code>.parents()</code> and <code><a href="http://api.jquery.com/parent/">.parent()</a></code> methods are similar, except that the latter only travels a single level up the DOM tree.</p>
+  <longdesc>
+    <p>Given a jQuery object that represents a set of DOM elements, the <code>.parents()</code> method allows us to search through the ancestors of these elements in the DOM tree and construct a new jQuery object from the matching elements ordered from immediate parent on up; the elements are returned in order from the closest parent to the outer ones. The <code>.parents()</code> and <code><a href="http://api.jquery.com/parent/">.parent()</a></code> methods are similar, except that the latter only travels a single level up the DOM tree.</p>
 <p>The method optionally accepts a selector expression of the same type that we can pass to the <code>$()</code> function. If the selector is supplied, the elements will be filtered by testing whether they match it.</p>
 <p>Consider a page with a basic nested list on it:</p>
 <pre>
@@ -28,19 +29,19 @@
   &lt;li class="item-iii"&gt;III&lt;/li&gt;
 &lt;/ul&gt;
 </pre>
-<p>If we begin at item A, we can find its ancestors:</p>
-<pre>$('li.item-a').parents().css('background-color', 'red');</pre>
-<p>The result of this call is a red background for the level-2 list, item II, and the level-1 list (and on up the DOM tree all the way to the <code>&lt;html&gt;</code> element). Since we do not supply a selector expression, all of the ancestors are part of the returned jQuery object. If we had supplied one, only the matching items among these would be included.</p></longdesc>
-  <example>
-      <desc>Find all parent elements of each b.</desc>
-      <code><![CDATA[
+    <p>If we begin at item A, we can find its ancestors:</p>
+    <pre>$('li.item-a').parents().css('background-color', 'red');</pre>
+    <p>The result of this call is a red background for the level-2 list, item II, and the level-1 list (and on up the DOM tree all the way to the <code>&lt;html&gt;</code> element). Since we do not supply a selector expression, all of the ancestors are part of the returned jQuery object. If we had supplied one, only the matching items among these would be included.</p>
+  </longdesc>
+<example>
+  <desc>Find all parent elements of each b.</desc>
+  <code><![CDATA[
 var parentEls = $("b").parents()
-            .map(function () { 
-                  return this.tagName; 
+            .map(function () {
+                  return this.tagName;
                 })
             .get().join(", ");
 $("b").append("<strong>" + parentEls + "</strong>");
-
 ]]></code>
   <css><![CDATA[
   b, span, p, html body {
@@ -55,7 +56,6 @@ $("b").append("<strong>" + parentEls + "</strong>");
       <span>
         <b>My parents are: </b>
       </span>
-
     </p>
   </div>]]></html>
 </example>
@@ -94,7 +94,7 @@ $("span").click(function () {
   </p>
 
   <b>Click Hellos to toggle their parents.</b>]]></html>
-    </example>
+</example>
 <category name="Tree Traversal" slug="tree-traversal"/>
 <category name="Version 1.0" slug="1.0"/>
 </entry>

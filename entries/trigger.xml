@@ -1,11 +1,11 @@
 <entry type='method' name="trigger" return="jQuery">
-  <desc>Execute all handlers and behaviors attached to the matched elements for the given event type.</desc>  
+  <desc>Execute all handlers and behaviors attached to the matched elements for the given event type.</desc>
   <signature>
     <added>1.0</added>
     <argument name="eventType" type="String">
       <desc>A string containing a JavaScript event type, such as <code>click</code> or <code>submit</code>.</desc>
     </argument>
-    <argument name="extraParameters" optional="true" type="Object">
+    <argument name="extraParameters" optional="true" type="Array|PlainObject">
       <desc>Additional parameters to pass along to the event handler.</desc>
     </argument>
   </signature>

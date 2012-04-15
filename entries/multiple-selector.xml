@@ -1,23 +1,23 @@
 <entry type='selector' name="multiple" return=""  >
-    <sample>selector1, selector2, selectorN</sample>
-     <signature>
-        <added>1.0</added>
-        <argument name="selector1" type="Selector">
-          <desc>Any valid selector.</desc>
-        </argument>
-        <argument name="selector2" type="Selector">
-          <desc>Another valid selector.</desc>
-        </argument>
-        <argument name="selectorN" optional="true" type="Selector">
-          <desc>As many more valid selectors as you like.</desc>
-        </argument>
-      </signature>
-    <desc>Selects the combined results of all the specified selectors.</desc>
-    <longdesc><p>You can specify any number of selectors to combine into a single result.  This multiple expression combinator is an efficient way to select disparate elements. The order of the DOM elements in the returned jQuery object may not be identical, as they will be in document order. An alternative to this combinator is the .<a href="/add">add()</a> method.</p></longdesc>
-    <example>
-      <desc>Finds the elements that match any of these three selectors.</desc>
-      <code><![CDATA[$("div,span,p.myClass").css("border","3px solid red");]]></code>
-      <html><![CDATA[<div>div</div>
+  <sample>selector1, selector2, selectorN</sample>
+  <signature>
+    <added>1.0</added>
+    <argument name="selector1" type="Selector">
+      <desc>Any valid selector.</desc>
+    </argument>
+    <argument name="selector2" type="Selector">
+      <desc>Another valid selector.</desc>
+    </argument>
+    <argument name="selectorN" optional="true" type="Selector">
+      <desc>As many more valid selectors as you like.</desc>
+    </argument>
+  </signature>
+  <desc>Selects the combined results of all the specified selectors.</desc>
+  <longdesc><p>You can specify any number of selectors to combine into a single result.  This multiple expression combinator is an efficient way to select disparate elements. The order of the DOM elements in the returned jQuery object may not be identical, as they will be in document order. An alternative to this combinator is the .<a href="/add">add()</a> method.</p></longdesc>
+<example>
+  <desc>Finds the elements that match any of these three selectors.</desc>
+  <code><![CDATA[$("div,span,p.myClass").css("border","3px solid red");]]></code>
+  <html><![CDATA[<div>div</div>
 
   <p class="myClass">p class="myClass"</p>
   <p class="notMyClass">p class="notMyClass"</p>
@@ -43,11 +43,11 @@
     }).get().join(", ");
     $("b").append(document.createTextNode(list));
 ]]></code>
-                    <css><![CDATA[
+  <css><![CDATA[
   b { color:red; font-size:16px; display:block; clear:left; }
   div,span,p { width: 40px; height: 40px; float:left;
-               margin: 10px; background-color: blue; 
-               padding:3px; color:white; 
+               margin: 10px; background-color: blue;
+               padding:3px; color:white;
              }
   ]]></css>
   <html><![CDATA[<span>span</span>
@@ -60,7 +60,7 @@
   <p>p</p>
   <div>div</div>
   <b></b>]]></html>
-    </example>
+</example>
 <category name="Basic" slug="basic-css-selectors"/>
 <category name="Version 1.0" slug="1.0"/>
 </entry>

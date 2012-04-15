@@ -1,20 +1,23 @@
-            <entry type='method' name="jQuery.globalEval" return="">
-                <signature>
-                  <added>1.0.4</added>
-                  <argument name="code" type="String">
-                    <desc>The JavaScript code to execute.</desc>
-                  </argument>
-                </signature>
-                <desc>Execute some JavaScript code globally.</desc>
-                <longdesc><p>This method behaves differently from using a normal JavaScript <code>eval()</code> in that it's executed within the global context (which is important for loading external scripts dynamically).</p></longdesc>
-                <example>
-                    <desc>Execute a script in the global context.</desc>
-                    <code><![CDATA[function test(){
+<entry type='method' name="jQuery.globalEval" return="">
+  <signature>
+    <added>1.0.4</added>
+    <argument name="code" type="String">
+      <desc>The JavaScript code to execute.</desc>
+    </argument>
+  </signature>
+  <desc>Execute some JavaScript code globally.</desc>
+  <longdesc>
+    <p>This method behaves differently from using a normal JavaScript <code>eval()</code> in that it's executed within the global context (which is important for loading external scripts dynamically).</p>
+  </longdesc>
+<example>
+  <desc>Execute a script in the global context.</desc>
+  <code><![CDATA[function test(){
     jQuery.globalEval("var newVar = true;")
-}
-test();
-// newVar === true]]></code>
-                </example>
-            <category name="Utilities" slug="utilities"/>
+    }
+    test();
+    // newVar === true
+  ]]></code>
+</example>
+<category name="Utilities" slug="utilities"/>
 <category name="Version 1.0.4" slug="1.0.4"/>
 </entry>

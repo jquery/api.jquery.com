@@ -1,29 +1,26 @@
-            <entry type='selector'   name="reset" return="">
-                <sample>:reset</sample>
-                 <signature><added>1.0</added> </signature>
-                <desc>Selects all elements of type reset.</desc>
-                <longdesc><p><code>:reset</code> is equivalent to <code>[type="reset"]</code></p></longdesc>
+<entry type='selector'   name="reset" return="">
+  <sample>:reset</sample>
+  <signature><added>1.0</added> </signature>
+  <desc>Selects all elements of type reset.</desc>
+  <longdesc><p><code>:reset</code> is equivalent to <code>[type="reset"]</code></p></longdesc>
 
   <note id="jquery-selector-extension-alt" type="additional">
-  <placeholder name="alt">[type="reset"]</placeholder>
-  <placeholder name="selector">:reset</placeholder>
-</note>
+    <placeholder name="alt">[type="reset"]</placeholder>
+    <placeholder name="selector">:reset</placeholder>
+  </note>
 
-
-                <example>
-                    <desc>Finds all reset inputs.</desc>
-                    <code><![CDATA[
-
-    var input = $("input:reset").css({background:"yellow", border:"3px red solid"});
-    $("div").text("For this type jQuery found " + input.length + ".")
-            .css("color", "red");
-    $("form").submit(function () { return false; }); // so it won't submit
-
+<example>
+  <desc>Finds all reset inputs.</desc>
+  <code><![CDATA[
+var input = $("input:reset").css({background:"yellow", border:"3px red solid"});
+$("div").text("For this type jQuery found " + input.length + ".")
+        .css("color", "red");
+$("form").submit(function () { return false; }); // so it won't submit
 ]]></code>
-                    <css><![CDATA[
+  <css><![CDATA[
   textarea { height:45px; }
   ]]></css>
-                    <html><![CDATA[<form>
+  <html><![CDATA[<form>
     <input type="button" value="Input Button"/>
     <input type="checkbox" />
 
@@ -44,8 +41,8 @@
   </form>
   <div>
   </div>]]></html>
-                </example>
-            <category name="Form" slug="form-selectors"/>
+</example>
+<category name="Form" slug="form-selectors"/>
 <category name="jQuery Extensions" slug="jquery-selector-extensions"/>
 <category name="Version 1.0" slug="1.0"/>
 </entry>

@@ -4,29 +4,24 @@
   <desc>Select all elements that are the parent of another element, including text nodes.</desc>
   <longdesc>
     <p>This is the inverse of <code>:empty</code>. </p>
-<p>One important thing to note regarding the use of <code>:parent</code> (and <code>:empty</code>) is that child elements include text nodes.</p>
-<p>The W3C recommends that the <code>&lt;p&gt;</code> element have at least one child node, even if that child is merely text (see <a href="http://www.w3.org/TR/html401/struct/text.html#edef-P">http://www.w3.org/TR/html401/struct/text.html#edef-P</a>). Some other elements, on the other hand, are empty (i.e. have no children) by definition:<code> &lt;input&gt;</code>, <code>&lt;img&gt;</code>, <code>&lt;br&gt;</code>, and <code>&lt;hr&gt;</code>, for example.</p>
-    
+    <p>One important thing to note regarding the use of <code>:parent</code> (and <code>:empty</code>) is that child elements include text nodes.</p>
+    <p>The W3C recommends that the <code>&lt;p&gt;</code> element have at least one child node, even if that child is merely text (see <a href="http://www.w3.org/TR/html401/struct/text.html#edef-P">http://www.w3.org/TR/html401/struct/text.html#edef-P</a>). Some other elements, on the other hand, are empty (i.e. have no children) by definition:<code> &lt;input&gt;</code>, <code>&lt;img&gt;</code>, <code>&lt;br&gt;</code>, and <code>&lt;hr&gt;</code>, for example.</p>
   </longdesc>
 
   <note id="jquery-selector-extension" type="additional">
-  <placeholder name="selector">:parent</placeholder>
-</note>
-
-
-    <example>
-      <desc>Finds all tds with children, including text.</desc>
-      <code><![CDATA[$("td:parent").fadeTo(1500, 0.3);]]></code>
-<css><![CDATA[
+    <placeholder name="selector">:parent</placeholder>
+  </note>
+  <example>
+    <desc>Finds all tds with children, including text.</desc>
+    <code><![CDATA[$("td:parent").fadeTo(1500, 0.3);]]></code>
+    <css><![CDATA[
   td { width:40px; background:green; }
   ]]></css>
-<html><![CDATA[<table border="1">
-
+  <html><![CDATA[<table border="1">
   <tr><td>Value 1</td><td></td></tr>
   <tr><td>Value 2</td><td></td></tr>
-
 </table>]]></html>
-    </example>
+</example>
 <category name="Content Filter" slug="content-filter-selector"/>
 <category name="jQuery Extensions" slug="jquery-selector-extensions"/>
 <category name="Version 1.0" slug="1.0"/>

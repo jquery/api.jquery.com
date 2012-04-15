@@ -1,18 +1,18 @@
-
-  <entry type='method' name="offset" return="Object">
-    <signature>
-      <added>1.2</added>
-    </signature>
-    <desc>Get the current coordinates of the first element in the set of matched elements, relative to the document.</desc>
-    <longdesc><p>The <code>.offset()</code> method allows us to retrieve the current position of an element <em>relative to the document</em>. Contrast this with <code>.position()</code>, which retrieves the current position <em>relative to the offset parent</em>. When positioning a new element on top of an existing one for global manipulation (in particular, for implementing drag-and-drop), <code>.offset()</code> is the more useful.</p>
+<entry type='method' name="offset" return="Object">
+  <signature>
+    <added>1.2</added>
+  </signature>
+  <desc>Get the current coordinates of the first element in the set of matched elements, relative to the document.</desc>
+  <longdesc>
+    <p>The <code>.offset()</code> method allows us to retrieve the current position of an element <em>relative to the document</em>. Contrast this with <code>.position()</code>, which retrieves the current position <em>relative to the offset parent</em>. When positioning a new element on top of an existing one for global manipulation (in particular, for implementing drag-and-drop), <code>.offset()</code> is the more useful.</p>
 
     <p><code>.offset()</code> returns an object containing the properties <code>top</code> and <code>left</code>.</p>
-<blockquote><p><strong>Note:</strong> jQuery does not support getting the offset coordinates of hidden elements or accounting for borders, margins, or padding set on the body element.</p>
-<p>While it is possible to get the coordinates of elements with <code>visibility:hidden</code> set, <code>display:none</code> is excluded from the rendering tree and thus has a position that is undefined.</p></blockquote>    
-    </longdesc>
-    <example>
-      <desc>Access the offset of the second paragraph:</desc>
-      <code><![CDATA[var p = $("p:last");
+    <blockquote><p><strong>Note:</strong> jQuery does not support getting the offset coordinates of hidden elements or accounting for borders, margins, or padding set on the body element.</p>
+    <p>While it is possible to get the coordinates of elements with <code>visibility:hidden</code> set, <code>display:none</code> is excluded from the rendering tree and thus has a position that is undefined.</p></blockquote>
+  </longdesc>
+<example>
+  <desc>Access the offset of the second paragraph:</desc>
+  <code><![CDATA[var p = $("p:last");
 var offset = p.offset();
 p.html( "left: " + offset.left + ", top: " + offset.top );]]></code>
   <css><![CDATA[
@@ -32,11 +32,11 @@ $("*", document.body).click(function (e) {
 
 ]]></code>
   <css><![CDATA[
-p { margin-left:10px; color:blue; width:200px; 
+p { margin-left:10px; color:blue; width:200px;
     cursor:pointer; }
 span { color:red; cursor:pointer; }
 div.abs { width:50px; height:50px; position:absolute;
-          left:220px; top:35px; background-color:green; 
+          left:220px; top:35px; background-color:green;
           cursor:pointer; }
   ]]></css>
   <html><![CDATA[<div id="result">Click an element.</div>
@@ -54,10 +54,11 @@ div.abs { width:50px; height:50px; position:absolute;
 <category name="Version 1.2" slug="1.2"/>
 <category name="Version 1.4" slug="1.4"/>
 </entry>
+
 <entry type='method' name="offset" return="jQuery">
   <signature>
     <added>1.4</added>
-    <argument name="coordinates" type="Object">
+    <argument name="coordinates" type="PlainObject">
       <desc>An object containing the properties <code>top</code> and <code>left</code>, which are integers indicating the new top and left coordinates for the elements.</desc>
     </argument>
   </signature>

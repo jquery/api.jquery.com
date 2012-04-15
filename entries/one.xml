@@ -5,7 +5,7 @@
     <argument name="events" type="String">
       <desc>A string containing one or more JavaScript event types, such as "click" or "submit," or custom event names.</desc>
     </argument>
-    <argument name="data" type="Object" optional="true">
+    <argument name="data" type="PlainObject" optional="true">
       <desc>A map of data that will be passed to the event handler.</desc>
     </argument>
     <argument name="handler(eventObject)" type="Function">
@@ -39,7 +39,7 @@
       <desc>Data to be passed to the handler in <a href="http://api.jquery.com/event.data"><code>event.data</code></a> when an event occurs.</desc>
     </argument>
   </signature>
-<longdesc>
+  <longdesc>
 <p>The first form of this method is identical to <code>.bind()</code>, except that the handler is unbound after its first invocation. The second two forms, introduced in jQuery 1.7, are identical to <code>.on()</code> except that the handler is removed after the first time the event occurs at the delegated element, whether the selector matched anything or not. For example:</p>
 <pre>$("#foo").one("click", function() {
   alert("This will be displayed only once.");
@@ -64,7 +64,7 @@ $("body").one("click", "#foo", function() {
 var n = 0;
 $("div").one("click", function() {
   var index = $("div").index(this);
-  $(this).css({ 
+  $(this).css({
     borderStyle:"inset",
     cursor:"auto"
   });
@@ -75,7 +75,7 @@ $("div").one("click", function() {
 ]]></code>
     <css><![CDATA[
 div { width:60px; height:60px; margin:5px; float:left;
-background:green; border:10px outset; 
+background:green; border:10px outset;
 cursor:pointer; }
 p { color:red; margin:0; clear:left; }
 ]]></css>

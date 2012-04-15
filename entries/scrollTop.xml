@@ -1,26 +1,25 @@
-
 <entry type='method' name="scrollTop" return="Integer">
   <signature>
     <added>1.2.6</added>
   </signature>
-  <desc>Get the current vertical position of the scroll bar for the first element in the set of matched elements.</desc>  
+  <desc>Get the current vertical position of the scroll bar for the first element in the set of matched elements.</desc>
   <longdesc><p>The vertical scroll position is the same as the number of pixels that are hidden from view above the scrollable area. If the scroll bar is at the very top, or if the element is not scrollable, this number will be <code>0</code>.</p></longdesc>
-  <example>
-    <desc>Get the scrollTop of a paragraph.</desc>
-    <code><![CDATA[var p = $("p:first");
+<example>
+  <desc>Get the scrollTop of a paragraph.</desc>
+  <code><![CDATA[var p = $("p:first");
 $("p:last").text( "scrollTop:" + p.scrollTop() );
-
 ]]></code>
     <css><![CDATA[
   p { margin:10px;padding:5px;border:2px solid #666; }
   ]]></css>
-      <html><![CDATA[<p>Hello</p><p></p>]]></html>
-  </example>
+  <html><![CDATA[<p>Hello</p><p></p>]]></html>
+</example>
 <category name="CSS" slug="css"/>
 <category name="Offset" slug="offset"/>
 <category name="Style Properties" slug="style-properties"/>
 <category name="Version 1.2.6" slug="1.2.6"/>
 </entry>
+
 <entry type='method' name="scrollTop" return="jQuery">
   <signature>
     <added>1.2.6</added>
@@ -47,8 +46,8 @@ overflow:auto;
 }
   p { margin:10px;padding:5px;border:2px solid #666;width:1000px;height:1000px; }
   ]]></css>
-    <html><![CDATA[<div class="demo"><h1>lalala</h1><p>Hello</p></div>]]></html>
-  </example>
+  <html><![CDATA[<div class="demo"><h1>lalala</h1><p>Hello</p></div>]]></html>
+</example>
 <category name="CSS" slug="css"/>
 <category name="Offset" slug="offset"/>
 <category name="Style Properties" slug="style-properties"/>

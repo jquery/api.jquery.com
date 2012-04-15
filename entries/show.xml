@@ -24,21 +24,21 @@
       <desc>A function to call once the animation is complete.</desc>
     </argument>
   </signature>
-<longdesc>
-<p>With no parameters, the <code>.show()</code> method is the simplest way to display an element:
-</p>
-<pre>$('.target').show();
-</pre>
-<p>The matched elements will be revealed immediately, with no animation. This is roughly equivalent to calling <code>.css('display', 'block')</code>, except that the <code>display</code> property is restored to whatever it was initially. If an element has a <code>display</code> value of <code>inline</code>, then is hidden and shown, it will once again be displayed <code>inline</code>.</p>
-<p><strong>Note: </strong> If using !important in your styles, such as
-<code>display: none !important</code>,
-it is necessary to override the style using <code>.css('display', 'block !important')</code> should you wish for <code>.show()</code> to function correctly.</p>
-<p>When a duration is provided, <code>.show()</code> becomes an animation method. The <code>.show()</code> method animates the width, height, and opacity of the matched elements simultaneously.</p>
-<p>Durations are given in milliseconds; higher values indicate slower animations, not faster ones. The strings <code>'fast'</code> and <code>'slow'</code> can be supplied to indicate durations of <code>200</code> and <code>600</code> milliseconds, respectively.</p>
+  <longdesc>
+    <p>With no parameters, the <code>.show()</code> method is the simplest way to display an element:
+    </p>
+    <pre>$('.target').show();
+    </pre>
+    <p>The matched elements will be revealed immediately, with no animation. This is roughly equivalent to calling <code>.css('display', 'block')</code>, except that the <code>display</code> property is restored to whatever it was initially. If an element has a <code>display</code> value of <code>inline</code>, then is hidden and shown, it will once again be displayed <code>inline</code>.</p>
+    <p><strong>Note: </strong> If using !important in your styles, such as
+    <code>display: none !important</code>,
+    it is necessary to override the style using <code>.css('display', 'block !important')</code> should you wish for <code>.show()</code> to function correctly.</p>
+    <p>When a duration is provided, <code>.show()</code> becomes an animation method. The <code>.show()</code> method animates the width, height, and opacity of the matched elements simultaneously.</p>
+    <p>Durations are given in milliseconds; higher values indicate slower animations, not faster ones. The strings <code>'fast'</code> and <code>'slow'</code> can be supplied to indicate durations of <code>200</code> and <code>600</code> milliseconds, respectively.</p>
     <p>As of jQuery 1.4.3, an optional string naming an easing function may be used. Easing functions specify the speed at which the animation progresses at different points within the animation. The only easing implementations in the jQuery library are the default, called <code>swing</code>, and one that progresses at a constant pace, called <code>linear</code>. More easing functions are available with the use of plug-ins, most notably the <a href="http://jqueryui.com">jQuery UI suite</a>.</p>
-<p>If supplied, the callback is fired once the animation is complete. This can be useful for stringing different animations together in sequence. The callback is not sent any arguments, but <code>this</code> is set to the DOM element being animated. If multiple elements are animated, it is important to note that the callback is executed once per matched element, not once for the animation as a whole.</p>
-<p>We can animate any element, such as a simple image:</p>
-<pre>&lt;div id="clickme"&gt;
+    <p>If supplied, the callback is fired once the animation is complete. This can be useful for stringing different animations together in sequence. The callback is not sent any arguments, but <code>this</code> is set to the DOM element being animated. If multiple elements are animated, it is important to note that the callback is executed once per matched element, not once for the animation as a whole.</p>
+    <p>We can animate any element, such as a simple image:</p>
+    <pre>&lt;div id="clickme"&gt;
   Click here
 &lt;/div&gt;
 &lt;img id="book" src="book.png" alt="" width="100" height="123" /&gt;
@@ -48,37 +48,35 @@ $('#clickme').click(function() {
     // Animation complete.
   });
 });</pre>
-<p class="image four-across">
-  <img src="/images/0042_06_01.png" alt="" />
-  <img src="/images/0042_06_02.png" alt="" />
-  <img src="/images/0042_06_03.png" alt="" />
-  <img src="/images/0042_06_04.png" alt="" />
-</p>
+    <p class="image four-across">
+      <img src="/images/0042_06_01.png" alt="" />
+      <img src="/images/0042_06_02.png" alt="" />
+      <img src="/images/0042_06_03.png" alt="" />
+      <img src="/images/0042_06_04.png" alt="" />
+    </p>
 
-</longdesc>
+  </longdesc>
 
   <note id="jquery.fx.off" type="additional">
-  <placeholder name="title">.show()</placeholder>
-</note>
-
+    <placeholder name="title">.show()</placeholder>
+  </note>
 
 <example>
   <desc>Animates all hidden paragraphs to show slowly, completing the animation within 600 milliseconds.</desc>
   <code><![CDATA[
-    $("button").click(function () {
-    $("p").show("slow");
-    });
-    ]]></code>
-    <css><![CDATA[
-      p { background:yellow; }
-      ]]></css>
-      <html><![CDATA[<button>Show it</button>
-
+$("button").click(function () {
+  $("p").show("slow");
+});
+]]></code>
+  <css><![CDATA[
+p { background:yellow; }
+]]></css>
+  <html><![CDATA[<button>Show it</button>
       <p style="display: none">Hello  2</p>]]></html>
-    </example>
-    <example>
-      <desc>Show the first div, followed by each next adjacent sibling div in order, with a 200ms animation. Each animation starts when the previous sibling div's animation ends.</desc>
-      <code><![CDATA[
+</example>
+<example>
+  <desc>Show the first div, followed by each next adjacent sibling div in order, with a 200ms animation. Each animation starts when the previous sibling div's animation ends.</desc>
+  <code><![CDATA[
 $("#showr").click(function () {
   $("div").first().show("fast", function showNext() {
     $(this).next("div").show("fast", showNext);

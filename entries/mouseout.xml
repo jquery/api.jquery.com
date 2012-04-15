@@ -8,18 +8,18 @@
   </signature>
   <signature>
     <added>1.4.3</added>
-    <argument name="eventData" type="Object" optional="true">
+    <argument name="eventData" type="PlainObject" optional="true">
       <desc>A map of data that will be passed to the event handler.</desc>
     </argument>
     <argument name="handler(eventObject)" type="Function">
       <desc>A function to execute each time the event is triggered.</desc>
     </argument>
   </signature>
-   <signature>
+  <signature>
     <added>1.0</added>
   </signature>
 
-<longdesc>
+  <longdesc>
 <p>This method is a shortcut for <code>.bind('mouseout', handler)</code> in the first two variation, and <code>.trigger('mouseout')</code> in the third.</p>
 <p>The <code>mouseout</code> event is sent to an element when the mouse pointer leaves the element. Any HTML element can receive this event.</p>
 <p>For example, consider the HTML:</p>
@@ -32,7 +32,7 @@
 &lt;div id="other"&gt;
   Trigger the handler
 &lt;/div&gt;
-&lt;div id="log"&gt;&lt;/div&gt;</pre> 
+&lt;div id="log"&gt;&lt;/div&gt;</pre>
 <p class="image"><img src="/images/0042_05_07.png" alt="" />
 </p>
 <p>The event handler can be bound to any element:</p>
@@ -45,11 +45,11 @@
 });</pre>
 <p>After this code executes, clicks on <span class="output">Trigger the handler</span> will also append the message.</p>
 <p>This event type can cause many headaches due to event bubbling. For instance, when the mouse pointer moves out of the <span class="output">Inner</span> element in this example, a <code>mouseout</code> event will be sent to that, then trickle up to <span class="output">Outer</span>. This can trigger the bound <code>mouseout</code> handler at inopportune times. See the discussion for <code>.<a href="/mouseleave">mouseleave</a>()</code> for a useful alternative.</p>
-</longdesc>
-                <example>
-                    <desc>Show the number of times mouseout and mouseleave events are triggered.
-<code>mouseout</code> fires when the pointer moves out of the child element as well, while <code>mouseleave</code> fires only when the pointer moves out of the bound element.</desc>
-                    <css><![CDATA[
+  </longdesc>
+<example>
+  <desc>Show the number of times mouseout and mouseleave events are triggered.
+  <code>mouseout</code> fires when the pointer moves out of the child element as well, while <code>mouseleave</code> fires only when the pointer moves out of the bound element.</desc>
+  <css><![CDATA[
 div.out {
 width:40%;
 height:120px;
@@ -69,31 +69,31 @@ margin:0;
 padding:0;
 }
 ]]></css>
-                    <code><![CDATA[
-    var i = 0;
-    $("div.overout").mouseout(function(){
-      $("p:first",this).text("mouse out");
-      $("p:last",this).text(++i);
-    }).mouseover(function(){
-      $("p:first",this).text("mouse over");
-    });
+  <code><![CDATA[
+var i = 0;
+$("div.overout").mouseout(function(){
+  $("p:first",this).text("mouse out");
+  $("p:last",this).text(++i);
+}).mouseover(function(){
+  $("p:first",this).text("mouse over");
+});
 
-    var n = 0;
-    $("div.enterleave").bind("mouseenter",function(){
-      $("p:first",this).text("mouse enter");
-    }).bind("mouseleave",function(){
-      $("p:first",this).text("mouse leave");
-      $("p:last",this).text(++n);
-    });
+var n = 0;
+$("div.enterleave").bind("mouseenter",function(){
+  $("p:first",this).text("mouse enter");
+}).bind("mouseleave",function(){
+  $("p:first",this).text("mouse leave");
+  $("p:last",this).text(++n);
+});
 
 ]]></code>
-                    <html><![CDATA[
+  <html><![CDATA[
 <div class="out overout"><p>move your mouse</p><div class="in overout"><p>move your mouse</p><p>0</p></div><p>0</p></div>
 
 <div class="out enterleave"><p>move your mouse</p><div class="in enterleave"><p>move your mouse</p><p>0</p></div><p>0</p></div>
 
 ]]></html>
-                </example>
+</example>
 
 <category name="Mouse Events" slug="mouse-events"/>
 <category name="Version 1.0" slug="1.0"/>

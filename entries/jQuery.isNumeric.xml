@@ -1,18 +1,18 @@
 <entry type='method' name="jQuery.isNumeric" return="Boolean">
   <desc>Determines whether its argument is a number.</desc>
-    <signature>
-      <added>1.7</added>
-      <argument name="value" type="Object">
-        <desc>The value to be tested.</desc>
-      </argument>
-    </signature>
+  <signature>
+    <added>1.7</added>
+    <argument name="value" type="PlainObject">
+      <desc>The value to be tested.</desc>
+    </argument>
+  </signature>
 
-<longdesc>
-<p>The <code>$.isNumeric()</code> method checks whether its argument represents a numeric value. If so, it returns <code>true</code>. Otherwise it returns <code>false</code>. The argument can be of any type.</p>
+  <longdesc>
+    <p>The <code>$.isNumeric()</code> method checks whether its argument represents a numeric value. If so, it returns <code>true</code>. Otherwise it returns <code>false</code>. The argument can be of any type.</p>
 </longdesc>
 <example>
-    <desc>Sample return values of $.isNumeric with various inputs.</desc>
-    <code><![CDATA[
+  <desc>Sample return values of $.isNumeric with various inputs.</desc>
+  <code><![CDATA[
 $.isNumeric("-10");  // true
 $.isNumeric(16);     // true
 $.isNumeric(0xFF);   // true

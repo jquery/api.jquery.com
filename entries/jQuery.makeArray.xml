@@ -1,7 +1,7 @@
 <entry type='method' name="jQuery.makeArray" return="Array">
   <signature>
     <added>1.2</added>
-    <argument name="obj" type="Object">
+    <argument name="obj" type="PlainObject">
       <desc>Any object to turn into a native Array.</desc>
     </argument>
   </signature>
@@ -22,7 +22,7 @@
   div { color:red; }
   ]]></css>
     <html><![CDATA[<div>First</div>
-  <div>Second</div>  
+  <div>Second</div>
   <div>Third</div>
 
   <div>Fourth</div>]]></html>

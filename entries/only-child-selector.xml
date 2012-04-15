@@ -3,12 +3,12 @@
   <signature> <added>1.1.4</added> </signature>
   <desc>Selects all elements that are the only child of their parent.</desc>
   <longdesc><p>If the parent has other child elements, nothing is matched.</p></longdesc>
-  <example>
-    <desc>Change the text and add a border for each button that is the only child of its parent.</desc>
-<code><![CDATA[
+<example>
+  <desc>Change the text and add a border for each button that is the only child of its parent.</desc>
+  <code><![CDATA[
   $("div button:only-child").text("Alone").css("border", "2px blue solid");
 ]]></code>
-<css><![CDATA[
+  <css><![CDATA[
   div { width:100px; height:80px; margin:5px; float:left; background:#b9e }
 ]]></css>
   <html><![CDATA[<div>
@@ -32,7 +32,7 @@
 <div>
   <button>Sibling!</button>
 </div>]]></html>
-  </example>
+</example>
 <category name="Child Filter" slug="child-filter-selectors"/>
 <category name="Version 1.1.4" slug="1.1.4"/>
 </entry>

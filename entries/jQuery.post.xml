@@ -15,7 +15,8 @@
     </argument>
   </signature>
   <desc>Load data from the server using a HTTP POST request.</desc>
-  <longdesc><p>This is a shorthand Ajax function, which is equivalent to:</p>
+  <longdesc>
+    <p>This is a shorthand Ajax function, which is equivalent to:</p>
     <pre>$.ajax({
   type: 'POST',
   url: <em>url</em>,
@@ -49,84 +50,83 @@
     // perform other work here ...
 
     // Set another completion function for the request above
-    jqxhr.complete(function(){ alert("second complete"); });</pre>
-    </longdesc>
+    jqxhr.complete(function(){ alert("second complete"); });
+  </pre>
+  </longdesc>
 
-  <note id="same-origin-policy" type="additional">
-</note>
-<note id="use-ajaxerror" type="additional">
-  <placeholder name="title">jQuery.post()</placeholder>
-</note>
+  <note id="same-origin-policy" type="additional"></note>
+  <note id="use-ajaxerror" type="additional">
+    <placeholder name="title">jQuery.post()</placeholder>
+  </note>
 
-
-  <example>
-      <desc>Request the test.php page, but ignore the return results.</desc>
-      <code><![CDATA[$.post("test.php");]]></code>
-  </example>
-  <example>
-      <desc>Request the test.php page and send some additional data along (while still ignoring the return results).</desc>
-      <code><![CDATA[$.post("test.php", { name: "John", time: "2pm" } );]]></code>
-  </example>
-  <example>
-      <desc>pass arrays of data to the server (while still ignoring the return results).</desc>
-      <code><![CDATA[$.post("test.php", { 'choices[]': ["Jon", "Susan"] });]]></code>
-  </example>
-  <example>
-      <desc>send form data using ajax requests</desc>
-      <code><![CDATA[$.post("test.php", $("#testform").serialize());]]></code>
-  </example>
-  <example>
-      <desc>Alert out the results from requesting test.php (HTML or XML, depending on what was returned).</desc>
-      <code><![CDATA[$.post("test.php", function(data) {
-   alert("Data Loaded: " + data);
- });]]></code>
-  </example>
-  <example>
-      <desc>Alert out the results from requesting test.php with an additional payload of data (HTML or XML, depending on what was returned).</desc>
-                    <code><![CDATA[$.post("test.php", { name: "John", time: "2pm" },
-   function(data) {
-     alert("Data Loaded: " + data);
-   });]]></code>
-  </example>
-  <example>
-      <desc>Gets the test.php page content, store it in a XMLHttpResponse object and applies the process() JavaScript function.</desc>
-      <code><![CDATA[$.post("test.php", { name: "John", time: "2pm" },
- function(data) {
-   process(data);
- }, 
+<example>
+  <desc>Request the test.php page, but ignore the return results.</desc>
+  <code><![CDATA[$.post("test.php");]]></code>
+</example>
+<example>
+  <desc>Request the test.php page and send some additional data along (while still ignoring the return results).</desc>
+  <code><![CDATA[$.post("test.php", { name: "John", time: "2pm" } );]]></code>
+</example>
+<example>
+  <desc>pass arrays of data to the server (while still ignoring the return results).</desc>
+  <code><![CDATA[$.post("test.php", { 'choices[]': ["Jon", "Susan"] });]]></code>
+</example>
+<example>
+  <desc>send form data using ajax requests</desc>
+  <code><![CDATA[$.post("test.php", $("#testform").serialize());]]></code>
+</example>
+<example>
+  <desc>Alert out the results from requesting test.php (HTML or XML, depending on what was returned).</desc>
+  <code><![CDATA[$.post("test.php", function(data) {
+  alert("Data Loaded: " + data);
+});]]></code>
+</example>
+<example>
+  <desc>Alert out the results from requesting test.php with an additional payload of data (HTML or XML, depending on what was returned).</desc>
+  <code><![CDATA[$.post("test.php", { name: "John", time: "2pm" },
+  function(data) {
+    alert("Data Loaded: " + data);
+  });]]></code>
+</example>
+<example>
+  <desc>Gets the test.php page content, store it in a XMLHttpResponse object and applies the process() JavaScript function.</desc>
+  <code><![CDATA[$.post("test.php", { name: "John", time: "2pm" },
+  function(data) {
+    process(data);
+  },
  "xml"
 );]]></code>
-              </example>
-              <example>
-                  <desc>Posts to the test.php page and gets contents which has been returned in json format (&lt;?php echo json_encode(array("name"=>"John","time"=>"2pm")); ?&gt;).</desc>
-                  <code><![CDATA[$.post("test.php", { "func": "getNameAndTime" },
- function(data){
-   console.log(data.name); // John
-   console.log(data.time); //  2pm
- }, "json");]]></code>
-              </example>
+</example>
 <example>
-<desc>Post a form using ajax and put results in a div</desc>
-<code><![CDATA[
-  /* attach a submit handler to the form */
-  $("#searchForm").submit(function(event) {
+  <desc>Posts to the test.php page and gets contents which has been returned in json format (&lt;?php echo json_encode(array("name"=>"John","time"=>"2pm")); ?&gt;).</desc>
+  <code><![CDATA[$.post("test.php", { "func": "getNameAndTime" },
+  function(data){
+    console.log(data.name); // John
+    console.log(data.time); //  2pm
+  }, "json");]]></code>
+</example>
+<example>
+  <desc>Post a form using ajax and put results in a div</desc>
+  <code><![CDATA[
+/* attach a submit handler to the form */
+$("#searchForm").submit(function(event) {
 
-    /* stop form from submitting normally */
-    event.preventDefault(); 
-        
-    /* get some values from elements on the page: */
-    var $form = $( this ),
-        term = $form.find( 'input[name="s"]' ).val(),
-        url = $form.attr( 'action' );
+  /* stop form from submitting normally */
+  event.preventDefault();
 
-    /* Send the data using post and put the results in a div */
-    $.post( url, { s: term },
-      function( data ) {
-          var content = $( data ).find( '#content' );
-          $( "#result" ).empty().append( content );
-      }
-    );
-  });
+  /* get some values from elements on the page: */
+  var $form = $( this ),
+      term = $form.find( 'input[name="s"]' ).val(),
+      url = $form.attr( 'action' );
+
+  /* Send the data using post and put the results in a div */
+  $.post( url, { s: term },
+    function( data ) {
+        var content = $( data ).find( '#content' );
+        $( "#result" ).empty().append( content );
+    }
+  );
+});
 ]]></code>
   <html><![CDATA[<form action="/" id="searchForm">
    <input type="text" name="s" placeholder="Search..." />
@@ -136,7 +136,7 @@
   <div id="result"></div>
 ]]></html>
   </example>
-          <category name="Shorthand Methods" slug="shorthand-methods"/>
+<category name="Shorthand Methods" slug="shorthand-methods"/>
 <category name="Version 1.0" slug="1.0"/>
 <category name="Version 1.5" slug="1.5"/>
 </entry>
