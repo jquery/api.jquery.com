@@ -34,9 +34,9 @@ $('#foo').trigger('custom', ['Custom', 'Event']);
    <p>The <code>.trigger()</code> method can be used on jQuery collections that wrap plain JavaScript objects similar to a pub/sub mechanism; any event handlers bound to the object will be called when the event is triggered. </p>
 <blockquote><strong>Note:</strong> For both plain objects and DOM objects, if a triggered event name matches the name of a property on the object, jQuery will attempt to invoke the property as a method if no event handler calls <code>event.preventDefault()</code>. If this behavior is not desired, use <code>.triggerHandler()</code> instead.</blockquote>
   </longdesc>
-   <example>
-        <desc>Clicks to button #2 also trigger a click for button #1.</desc>
-        <code><![CDATA[
+<example>
+  <desc>Clicks to button #2 also trigger a click for button #1.</desc>
+  <code><![CDATA[
 $("button:first").click(function () {
 update($("span:first"));
 });
@@ -51,54 +51,54 @@ var n = parseInt(j.text(), 10);
 j.text(n + 1);
 }
 ]]></code>
-        <css><![CDATA[
+  <css><![CDATA[
 
 button { margin:10px; }
 div { color:blue; font-weight:bold; }
 span { color:red; }
 ]]></css>
-        <html><![CDATA[<button>Button #1</button>
+  <html><![CDATA[<button>Button #1</button>
 <button>Button #2</button>
 <div><span>0</span> button #1 clicks.</div>
 
 <div><span>0</span> button #2 clicks.</div>]]></html>
-    </example>
-    <example>
-        <desc>To submit the first form without using the submit() function, try:</desc>
-        <code><![CDATA[$("form:first").trigger("submit")]]></code>
-    </example>
-    <example>
-        <desc>To submit the first form without using the submit() function, try:</desc>
-        <code><![CDATA[var event = jQuery.Event("submit");
+</example>
+<example>
+  <desc>To submit the first form without using the submit() function, try:</desc>
+  <code><![CDATA[$("form:first").trigger("submit")]]></code>
+</example>
+<example>
+  <desc>To submit the first form without using the submit() function, try:</desc>
+  <code><![CDATA[var event = jQuery.Event("submit");
 $("form:first").trigger(event);
 if ( event.isDefaultPrevented() ) {
 // Perform an action...
 }]]></code>
-    </example>
-    <example>
-        <desc>To pass arbitrary data to an event:</desc>
-        <code><![CDATA[$("p").click( function (event, a, b) {
+</example>
+<example>
+  <desc>To pass arbitrary data to an event:</desc>
+  <code><![CDATA[$("p").click( function (event, a, b) {
 // when a normal click fires, a and b are undefined
 // for a trigger like below a refers to "foo" and b refers to "bar"
 
 } ).trigger("click", ["foo", "bar"]);]]></code>
-    </example>
-    <example>
-        <desc>To pass arbitrary data through an event object:</desc>
-        <code><![CDATA[var event = jQuery.Event("logged");
+</example>
+<example>
+  <desc>To pass arbitrary data through an event object:</desc>
+  <code><![CDATA[var event = jQuery.Event("logged");
 event.user = "foo";
 event.pass = "bar";
 $("body").trigger(event);]]></code>
-    </example>
-    <example>
-        <desc>Alternative way to pass data through an event object:</desc>
-        <code><![CDATA[$("body").trigger({
+</example>
+<example>
+  <desc>Alternative way to pass data through an event object:</desc>
+  <code><![CDATA[$("body").trigger({
 type:"logged",
 user:"foo",
 pass:"bar"
 
 });]]></code>
-    </example>
+</example>
 <category name="Event Handler Attachment" slug="event-handler-attachment"/>
 <category name="Version 1.0" slug="1.0"/>
 </entry>

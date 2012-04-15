@@ -1,39 +1,38 @@
-
-  <entry type='method' name="text" return="String">
-    <signature>
-      <added>1.0</added>
-    </signature>
-    <desc>Get the combined text contents of each element in the set of matched elements, including their descendants.</desc>
-    <longdesc><p>Unlike the <code>.html()</code> method, <code>.text()</code> can be used in both XML and HTML documents. The result of the <code>.text()</code> method is a string containing the combined text of all matched elements. (Due to variations in the HTML parsers in different browsers, the text returned may vary in newlines and other white space.) Consider the following HTML:</p>
-<pre>&lt;div class="demo-container"&gt;
-  &lt;div class="demo-box"&gt;Demonstration Box&lt;/div&gt;
+<entry type='method' name="text" return="String">
+  <signature>
+    <added>1.0</added>
+  </signature>
+  <desc>Get the combined text contents of each element in the set of matched elements, including their descendants.</desc>
+  <longdesc>
+    <p>Unlike the <code>.html()</code> method, <code>.text()</code> can be used in both XML and HTML documents. The result of the <code>.text()</code> method is a string containing the combined text of all matched elements. (Due to variations in the HTML parsers in different browsers, the text returned may vary in newlines and other white space.) Consider the following HTML:</p>
+    <pre>&lt;div class="demo-container"&gt;
+      &lt;div class="demo-box"&gt;Demonstration Box&lt;/div&gt;
   &lt;ul&gt;
   &lt;li&gt;list item 1&lt;/li&gt;
   &lt;li&gt;list &lt;strong&gt;item&lt;/strong&gt; 2&lt;/li&gt;
   &lt;/ul&gt;
   &lt;/div&gt;
 </pre>
-      <p>The code <code>$('div.demo-container').text()</code> would produce the following result:</p>
-      <p>
-        <code>Demonstration Box list item 1 list item 2</code>
-      </p>
-      <p>The <code>.text()</code> method cannot be used on form inputs or scripts.  To set or get the text value of <code>input</code> or <code>textarea</code> elements, use the <a href="/val"><code>.val()</code></a> method. To get the value of a script element, use the <a href="/html"><code>.html()</code></a> method.</p>
-      <p>As of jQuery 1.4, the <code>.text()</code> method returns the value of text and CDATA nodes as well as element nodes.</p>
-    </longdesc>
-    <example>
-      <desc>Find the text in the first paragraph (stripping out the html), then set the html of the last paragraph to show it is just text (the red bold is gone).</desc>
-      <code><![CDATA[
-    var str = $("p:first").text();
-    $("p:last").html(str);
+    <p>The code <code>$('div.demo-container').text()</code> would produce the following result:</p>
+    <p>
+      <code>Demonstration Box list item 1 list item 2</code>
+    </p>
+    <p>The <code>.text()</code> method cannot be used on form inputs or scripts.  To set or get the text value of <code>input</code> or <code>textarea</code> elements, use the <a href="/val"><code>.val()</code></a> method. To get the value of a script element, use the <a href="/html"><code>.html()</code></a> method.</p>
+    <p>As of jQuery 1.4, the <code>.text()</code> method returns the value of text and CDATA nodes as well as element nodes.</p>
+  </longdesc>
+<example>
+  <desc>Find the text in the first paragraph (stripping out the html), then set the html of the last paragraph to show it is just text (the red bold is gone).</desc>
+  <code><![CDATA[
+var str = $("p:first").text();
+$("p:last").html(str);
 ]]></code>
-<css><![CDATA[
+  <css><![CDATA[
   p { color:blue; margin:8px; }
   b { color:red; }
   ]]></css>
   <html><![CDATA[<p><b>Test</b> Paragraph.</p>
-
   <p></p>]]></html>
-  </example>
+</example>
 <category name="DOM Insertion, Inside" slug="dom-insertion-inside"/>
 <category name="Version 1.0" slug="1.0"/>
 <category name="Version 1.4" slug="1.4"/>
@@ -51,7 +50,7 @@
       <desc>A function returning the text content to set. Receives the index position of the element in the set and the old text value as arguments.</desc>
     </argument>
   </signature>
-  
+
   <desc>Set the content of each element in the set of matched elements to the specified text.</desc>
   <longdesc><p>Unlike the <code>.html()</code> method, <code>.text()</code> can be used in both XML and HTML documents. </p>
   <p>We need to be aware that this method escapes the string provided as necessary so that it will render correctly in HTML. To do so, it calls the DOM method <code>.createTextNode()</code>, which replaces special characters with their HTML entity equivalents (such as <code>&amp;lt;</code> for <code>&lt;</code>).  Consider the following HTML:</p>

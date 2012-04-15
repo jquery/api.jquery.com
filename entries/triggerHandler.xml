@@ -19,9 +19,9 @@
     </ul>
     <p>For more information on this method, see the discussion for <code><a href="/trigger">.trigger()</a></code>.</p>
   </longdesc>
-  <example>
-      <desc>If you called .triggerHandler() on a focus event - the browser's default focus action would not be triggered, only the event handlers bound to the focus event.</desc>
-      <code><![CDATA[
+<example>
+  <desc>If you called .triggerHandler() on a focus event - the browser's default focus action would not be triggered, only the event handlers bound to the focus event.</desc>
+  <code><![CDATA[
 
 $("#old").click(function(){
 $("input").trigger("focus");
@@ -34,11 +34,11 @@ $("<span>Focused!</span>").appendTo("body").fadeOut(1000);
 });
 
 ]]></code>
-      <html><![CDATA[<button id="old">.trigger("focus")</button>
+  <html><![CDATA[<button id="old">.trigger("focus")</button>
 <button id="new">.triggerHandler("focus")</button><br/><br/>
 
 <input type="text" value="To Be Focused"/>]]></html>
-  </example>
+</example>
 <category name="Event Handler Attachment" slug="event-handler-attachment"/>
 <category name="Version 1.2" slug="1.2"/>
 </entry>

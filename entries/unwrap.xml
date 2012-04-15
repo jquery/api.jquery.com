@@ -2,26 +2,26 @@
   <signature>
     <added>1.4</added>
   </signature>
-                <desc>Remove the parents of the set of matched elements from the DOM, leaving the matched elements in their place.</desc>
-                <longdesc><p>The <code>.unwrap()</code> method removes the element's parent. This is effectively the inverse of the <code><a href='/wrap'>.wrap()</a></code> method. The matched elements (and their siblings, if any) replace their parents within the DOM structure.</p></longdesc>
-                <example>
-                    <desc>Wrap/unwrap a div around each of the paragraphs.</desc>
-                    <code><![CDATA[
+  <desc>Remove the parents of the set of matched elements from the DOM, leaving the matched elements in their place.</desc>
+  <longdesc><p>The <code>.unwrap()</code> method removes the element's parent. This is effectively the inverse of the <code><a href='/wrap'>.wrap()</a></code> method. The matched elements (and their siblings, if any) replace their parents within the DOM structure.</p></longdesc>
+<example>
+  <desc>Wrap/unwrap a div around each of the paragraphs.</desc>
+  <code><![CDATA[
 $("button").toggle(function(){
   $("p").wrap("<div></div>");
 }, function(){
   $("p").unwrap();
 });]]></code>
-                    <css><![CDATA[
+  <css><![CDATA[
   div { border: 2px solid blue; }
   p { background:yellow; margin:4px; }
   ]]></css>
-                    <html><![CDATA[<button>wrap/unwrap</button>
+  <html><![CDATA[<button>wrap/unwrap</button>
 <p>Hello</p>
 <p>cruel</p>
 <p>World</p>]]></html>
-                </example>
-            <category name="DOM Insertion, Around" slug="dom-insertion-around"/>
+</example>
+<category name="DOM Insertion, Around" slug="dom-insertion-around"/>
 <category name="DOM Removal" slug="dom-removal"/>
 <category name="Version 1.4" slug="1.4"/>
 </entry>

@@ -1,34 +1,33 @@
-            <entry type='selector'  name="text" return="" >
-                <sample>:text</sample>
-                 <signature><added>1.0</added> </signature>
-                <desc>Selects all elements of type text.</desc>
-                <longdesc><p><code>$(':text')</code> allows us to select all <code>&lt;input type="text"&gt;</code> elements. As with other pseudo-class selectors (those that begin with a ":") it is recommended to precede it with a tag name or some other selector; otherwise, the universal selector ("*") is implied. In other words, the bare <code>$(':text')</code> is equivalent to <code>$('*:text')</code>, so <code>$('input:text')</code> should be used instead. </p>
-<p><strong>Note:</strong> As of jQuery 1.5.2, <code>:text</code> selects <code>input</code> elements that have no specified <code>type</code> attribute (in which case <code>type="text"</code> is implied).  </p>
-<p>This difference in behavior between <code>$(':text')</code> and <code>$('[type=text]')</code>, can be seen below:</p><pre>$(&#39;&lt;input&gt;&#39;).is(&#39;[type=text]&#39;); // false
+<entry type='selector'  name="text" return="" >
+  <sample>:text</sample>
+  <signature><added>1.0</added> </signature>
+  <desc>Selects all elements of type text.</desc>
+  <longdesc>
+    <p><code>$(':text')</code> allows us to select all <code>&lt;input type="text"&gt;</code> elements. As with other pseudo-class selectors (those that begin with a ":") it is recommended to precede it with a tag name or some other selector; otherwise, the universal selector ("*") is implied. In other words, the bare <code>$(':text')</code> is equivalent to <code>$('*:text')</code>, so <code>$('input:text')</code> should be used instead. </p>
+    <p><strong>Note:</strong> As of jQuery 1.5.2, <code>:text</code> selects <code>input</code> elements that have no specified <code>type</code> attribute (in which case <code>type="text"</code> is implied).  </p>
+    <p>This difference in behavior between <code>$(':text')</code> and <code>$('[type=text]')</code>, can be seen below:</p>
+    <pre>$(&#39;&lt;input&gt;&#39;).is(&#39;[type=text]&#39;); // false
 $(&#39;&lt;input&gt;&#39;).is(&#39;:text&#39;); // true
 </pre>
-</longdesc>
+  </longdesc>
 
   <note id="jquery-selector-extension-alt" type="additional">
-  <placeholder name="selector">:text</placeholder>
-  <placeholder name="alt">[type="text"]</placeholder>
-</note>
+    <placeholder name="selector">:text</placeholder>
+    <placeholder name="alt">[type="text"]</placeholder>
+  </note>
 
-
-                <example>
-                    <desc>Finds all text inputs.</desc>
-                    <code><![CDATA[
-
-    var input = $("form input:text").css({background:"yellow", border:"3px red solid"});
-    $("div").text("For this type jQuery found " + input.length + ".")
-            .css("color", "red");
-    $("form").submit(function () { return false; }); // so it won't submit
-
+<example>
+  <desc>Finds all text inputs.</desc>
+  <code><![CDATA[
+var input = $("form input:text").css({background:"yellow", border:"3px red solid"});
+$("div").text("For this type jQuery found " + input.length + ".")
+        .css("color", "red");
+$("form").submit(function () { return false; }); // so it won't submit
 ]]></code>
-                    <css><![CDATA[
+  <css><![CDATA[
   textarea { height:25px; }
   ]]></css>
-                    <html><![CDATA[<form>
+  <html><![CDATA[<form>
     <input type="button" value="Input Button"/>
     <input type="checkbox" />
 
@@ -49,8 +48,8 @@ $(&#39;&lt;input&gt;&#39;).is(&#39;:text&#39;); // true
   </form>
   <div>
   </div>]]></html>
-                </example>
-            <category name="Form" slug="form-selectors"/>
+</example>
+<category name="Form" slug="form-selectors"/>
 <category name="jQuery Extensions" slug="jquery-selector-extensions"/>
 <category name="Version 1.0" slug="1.0"/>
 </entry>

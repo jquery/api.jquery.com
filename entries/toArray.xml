@@ -1,35 +1,36 @@
-            <entry type='method' name="toArray" return="Array">
-              <signature>
-                <added>1.4</added>
-              </signature>
-              <desc>Retrieve all the DOM elements contained in the jQuery set, as an array.</desc>
-              <longdesc><p><code>.toArray()</code> returns all of the elements in the jQuery set:</p>
-<pre>alert($('li').toArray());</pre>
-<p>All of the matched DOM nodes are returned by this call, contained in a standard array:</p>
-<p><span class="result">[&lt;li id="foo"&gt;, &lt;li id="bar"&gt;]</span></p></longdesc>
-                <example>
-                    <desc>Selects all divs in the document and returns the DOM Elements as an Array, then uses the built-in reverse-method to reverse that array.</desc>
-                    <code><![CDATA[
+<entry type='method' name="toArray" return="Array">
+  <signature>
+    <added>1.4</added>
+  </signature>
+  <desc>Retrieve all the DOM elements contained in the jQuery set, as an array.</desc>
+  <longdesc>
+    <p><code>.toArray()</code> returns all of the elements in the jQuery set:</p>
+    <pre>alert($('li').toArray());</pre>
+    <p>All of the matched DOM nodes are returned by this call, contained in a standard array:</p>
+    <p><span class="result">[&lt;li id="foo"&gt;, &lt;li id="bar"&gt;]</span></p>
+  </longdesc>
+<example>
+  <desc>Selects all divs in the document and returns the DOM Elements as an Array, then uses the built-in reverse-method to reverse that array.</desc>
+  <code><![CDATA[
+function disp(divs) {
+  var a = [];
+  for (var i = 0; i < divs.length; i++) {
+    a.push(divs[i].innerHTML);
+  }
+  $("span").text(a.join(" "));
+}
 
-    function disp(divs) {
-      var a = [];
-      for (var i = 0; i < divs.length; i++) {
-        a.push(divs[i].innerHTML);
-      }
-      $("span").text(a.join(" "));
-    }
-    
-    disp( $("div").toArray().reverse() );
+disp( $("div").toArray().reverse() );
 ]]></code>
-                    <css><![CDATA[
+  <css><![CDATA[
   span { color:red; }
   ]]></css>
-                    <html><![CDATA[Reversed - <span></span>
+  <html><![CDATA[Reversed - <span></span>
 
   <div>One</div>
   <div>Two</div>
   <div>Three</div>]]></html>
-                </example>
-            <category name="DOM Element Methods" slug="dom-element-methods"/>
+</example>
+<category name="DOM Element Methods" slug="dom-element-methods"/>
 <category name="Version 1.4" slug="1.4"/>
 </entry>
