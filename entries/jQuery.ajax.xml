@@ -297,7 +297,7 @@ jQuery.ajaxSettings.xhr = function () {
   <code><![CDATA[$.ajax({
   type: "POST",
   url: "some.php",
-  data: "name=John&location=Boston"
+  data: { name: "John", location: "Boston" }
 }).done(function( msg ) {
   alert( "Data Saved: " + msg );
 });]]></code>
