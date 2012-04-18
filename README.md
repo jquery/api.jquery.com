@@ -65,3 +65,8 @@ Code in the API documentation should follow the [jQuery Core Style Guide](http:/
   * Authoritive
   * Tactful
 
+## Referencing Bug Tracker Tickets
+
+Pull requests suggesting changes to documentation that were requested or recommended via the [jQuery Bug Tracker](http://bugs.jquery.com) should include a link back to the relevant bug ticket. Should a `#needsdocs` item be addressed here, the tag should be removed from the bug ticket to ensure the backlog is kept up to date.
+
+
