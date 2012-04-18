@@ -261,26 +261,67 @@ jqxhr.always(function() { alert("second complete"); });</pre>
 <pre>
 var _super = jQuery.ajaxSettings.xhr;
 jQuery.ajaxSettings.xhr = function () {
-    var xhr = _super(),
-        getAllResponseHeaders = xhr.getAllResponseHeaders;
+  var xhr = _super(),
+      getAllResponseHeaders = xhr.getAllResponseHeaders;
 
-    xhr.getAllResponseHeaders = function () {
-        if ( getAllResponseHeaders() ) {
-            return getAllResponseHeaders();
-        }
-        var allHeaders = "";
-        $( ["Cache-Control", "Content-Language", "Content-Type",
-                "Expires", "Last-Modified", "Pragma"] ).each(function (i, header_name) {
+  xhr.getAllResponseHeaders = function () {
+    if ( getAllResponseHeaders() ) {
+      return getAllResponseHeaders();
+    }
+    var allHeaders = "";
 
-            if ( xhr.getResponseHeader( header_name ) ) {
-                allHeaders += header_name + ": " + xhr.getResponseHeader( header_name ) + "\n";
-            }
-            return allHeaders;
-        });
-    };
-    return xhr;
+    $( ["Cache-Control", "Content-Language", "Content-Type",
+        "Expires", "Last-Modified", "Pragma"] )
+    .each(function (i, header_name) {
+      if ( xhr.getResponseHeader( header_name ) ) {
+        allHeaders += header_name + ": " + xhr.getResponseHeader( header_name ) + "\n";
+      }
+      return allHeaders;
+    });
+  };
+
+  return xhr;
 };
 </pre>
+
+<h4>Using Converters</h4>
+
+<p><code>$.ajax()</code> converters support mapping data types to other data types. If, however, you want to map a custom data type to a known type (e.g <code>json</code>), you must added a correspondance between the response Content-Type and the actual data type using the <code>contents</code> option:</p>
+
+<pre>
+$.ajaxSetup({
+  contents: {
+    mycustomtype: /mycustomtype/
+  },
+  converters: {
+    "mycustomtype json": function ( result ) {
+      // do stuff
+      return newresult;
+    }
+  }
+});
+</pre>
+
+<p>This extra map is necessary because the response Content-Types and data types never have a strict one-to-one correspondance (hence the regular expression).</p>
+
+<p>To convert from a supported type (e.g <code>text</code>, <code>json</code>) to a custom data type and back again, use another pass-through converter:</p>
+
+<pre>
+$.ajaxSetup({
+  contents: {
+    mycustomtype: /mycustomtype/
+  },
+  converters: {
+    "text mycustomtype": true,
+    "mycustomtype json": function ( result ) {
+      // do stuff
+      return newresult;
+    }
+  }
+});
+</pre>
+
+<p>The above now allows passing from <code>text</code> to <code>mycustomtype</code> and then <code>mycustomtype</code> to <code>json</code>.</p>
 
  <h4>Extending Ajax</h4>
      <p><strong>As of jQuery 1.5</strong>, jQuery's Ajax implementation includes prefilters, converters, and transports that allow you to extend Ajax with a great deal of flexibility. For more information about these advanced features, see the <a href="http://api.jquery.com/extending-ajax/">Extending Ajax</a> page.</p>
