@@ -21,9 +21,6 @@
 &lt;div id="target"&gt;
   Click here
 &lt;/div&gt;</pre>
-
-<p class="image"><img src="/images/0042_05_05.png" alt="" />
-</p>
 <p>Event handlers can then be bound to the <code>&lt;div&gt;</code>:</p>
 <pre>$('#target').toggle(function() {
   alert('First handler for .toggle() called.');
