@@ -13,19 +13,31 @@ grunt.initConfig({
 });
 
 grunt.registerTask( "xmllint", function() {
-	var taskDone = this.async();
-	grunt.utils.async.forEachSeries( entryFiles, function( file, done ) {
+	var task = this,
+		taskDone = task.async();
+	grunt.utils.async.forEachSeries( entryFiles, function( fileName, fileDone ) {
+		grunt.verbose.write( "Linting " + fileName + "..." );
 		grunt.utils.spawn({
 			cmd: "xmllint",
-			args: [ "--noout", file ]
+			args: [ "--noout", fileName ]
 		}, function( err, result ) {
 			if ( err ) {
+				grunt.verbose.error();
 				grunt.log.error( err );
-				done();
+				fileDone();
 				return;
 			}
-			done();
-		}, taskDone);
+			grunt.verbose.ok();
+			fileDone();
+		});
+	}, function() {
+		if ( task.errorCount ) {
+			grunt.warn( "Task \"xmllint\" failed." );
+			taskDone();
+			return;
+		}
+		grunt.log.writeln( "Lint free." );
+		taskDone();
 	});
 });
 
