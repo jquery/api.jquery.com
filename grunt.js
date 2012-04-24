@@ -1,7 +1,7 @@
 /*jshint node:true */
 module.exports = function( grunt ) {
 
-var	entryFiles = grunt.file.expandFiles( "entries/*.xml" );
+var entryFiles = grunt.file.expandFiles( "entries/*.xml" );
 
 grunt.initConfig({
 	lint: {
