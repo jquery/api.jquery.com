@@ -1,22 +1,35 @@
-# Referencing Bug Tracker Tickets
+## Referencing Bug Tracker Tickets
 
 * Pull requests for changes that were requested or recommended via the [jQuery Bug Tracker](http://bugs.jquery.com) should include a link back to the relevant ticket.
 
-# Style Guidelines
+## Building
 
-## Prose Style & Grammar
+### Requirements
+* <a href="http://www.xmlsoft.org/">libxml2</a>
+* <a href="http://xmlsoft.org/XSLT/">libxslt</a>
 
-###Sentence Structure
+The `xmllint` and `xsltproc` utilities need to be in your path. If you are on Windows, you can get libxml2 and libxslt from <a href="http://sourceforge.net/projects/gnuwin32/files/">GnuWin32</a>.
+
+### Build
+
+1. `npm install`
+2. `grunt`
+
+## Style Guidelines
+
+### Prose Style & Grammar
+
+#### Sentence Structure
 
 * Write in clear, easy-to-understand statements.
 * Keep sentences short and to the point.
 
-###Spelling
+#### Spelling
 * The documentation standardizes on American English spelling. For example:
   * **Yes**: color, while, among, customize
   * **No**: colour, whilst, amongst, customise
 
-### Pronoun Usage
+#### Pronoun Usage
 * Use second-person pronoun ("you") when necessary, but try to avoid it.
 * Favor the definite article ("the") over second-person possesive ("your").
   * **Yes**: Insert the paragraph after the unordered list.
@@ -25,29 +38,29 @@
   * **Yes**: The `.insertAfter()` method here adds an unordered list beneath the paragraph.
   * **No**: And now we have our paragraph beneath the unordered list.
 
-### "Voice"
+#### "Voice"
 * Prefer active voice over passive.
   * **Active**: Calling `.click()` binds a click handler to the elements in the collection
   * **Passive**: Click handlers are bound to elements in the collection when `.click()` is called
 
-## Code Style
+### Code Style
 Code in the API documentation should follow the [jQuery Core Style Guide](http://docs.jquery.com/JQuery_Core_Style_Guidelines) with the following addition and exception:
 
 * **Document ready syntax**: Use `$( document ).ready(function() {` instead of `$(function() {` as it's harder for new users to distinguish the difference between the latter and an IIFE.
 * **Indentation**: Core guidelines say to use tabs. In API documentation, *use 2 spaces instead*. This helps keep the line width manageable and avoid horizontal scrollbars.
 
-### Code within prose content (paragraphs and the like):
+#### Code within prose content (paragraphs and the like):
 * Methods: use a dot, followed by the method name, followed by parentheses: e.g. The `.focus()` method is a shortcut for `.bind('focus', handler)` in the first and second variations, and `.trigger('focus')` in the third.
 * Properties: use a dot, followed by the property name: e.g. `.length`.
 * Functions: use the function name, followed by parentheses: `myFunction()`.
 
-### Examples
+#### Examples
 * Examples should indicate what the expected result will be before presenting the code. This makes code clearer and skimming easier, especially for newer coders who may not understand what is supposed to be happening from reading the code itself.
   * **Yes**: Find all p elements that are children of a div element and apply a border to them.
   * **No**: Find all p elements that are children of a div element.
 * Make your example easy to follow with good comments so that the explanation isn't necessary.
 
-## Rhetorical Context
+### Rhetorical Context
 * Subject
   * The entirety of jQuery's public API
 * Audience
