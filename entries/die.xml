@@ -1,3 +1,4 @@
+<entries>
 <entry type='method' name="die" return="jQuery">
   <deprecated>1.7</deprecated>
   <desc>Remove all event handlers previously attached using <code>.live()</code> from the elements.</desc>
@@ -90,3 +91,4 @@ $("p").die("click", foo); // ... foo will no longer be called.]]></code>
 <category name="Version 1.4.1" slug="1.4.1"/>
 <category name="Version 1.4.3" slug="1.4.3"/>
 </entry>
+</entries>

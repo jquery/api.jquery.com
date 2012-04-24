@@ -1,3 +1,4 @@
+<entries>
 <entry type='method' name="text" return="String">
   <signature>
     <added>1.0</added>
@@ -94,3 +95,4 @@ $("p:last").html(str);
 <category name="Version 1.0" slug="1.0"/>
 <category name="Version 1.4" slug="1.4"/>
 </entry>
+</entries>

@@ -1,3 +1,4 @@
+<entries>
 <entry type='method' name="prop" return="String">
   <signature>
     <added>1.6</added>
@@ -146,3 +147,4 @@ $("input[type='checkbox']").prop({
 <category name="General Attributes" slug="general-attributes"/>
 <category name="Version 1.6" slug="1.6"/>
 </entry>
+</entries>

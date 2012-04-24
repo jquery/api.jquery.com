@@ -1,3 +1,4 @@
+<entries>
 <entry type='method' name="scrollLeft" return="Integer">
   <signature>
     <added>1.2.6</added>
@@ -58,3 +59,4 @@ $("p:last").text( "scrollLeft:" + p.scrollLeft() );
 <category name="Style Properties" slug="style-properties"/>
 <category name="Version 1.2.6" slug="1.2.6"/>
 </entry>
+</entries>

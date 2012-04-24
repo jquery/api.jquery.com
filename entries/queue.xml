@@ -1,3 +1,4 @@
+<entries>
 <entry type='method' name="queue" return="Array">
   <signature>
     <added>1.2</added>
@@ -146,3 +147,4 @@ $('#foo').queue(function() {
 <category name="Utilities" slug="utilities"/>
 <category name="Version 1.2" slug="1.2"/>
 </entry>
+</entries>

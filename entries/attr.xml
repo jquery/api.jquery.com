@@ -1,3 +1,4 @@
+<entries>
 <entry type='method' name="attr" return="String">
   <signature>
     <added>1.0</added>
@@ -153,3 +154,4 @@ $("img").attr("src", function() {
 <category name="Version 1.1" slug="1.1"/>
 <category name="Version 1.6" slug="1.6"/>
 </entry>
+</entries>

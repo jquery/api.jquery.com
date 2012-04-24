@@ -1,3 +1,4 @@
+<entries>
 <entry type='method' name="height" return="Integer">
   <signature>
     <added>1.0</added>
@@ -92,3 +93,4 @@ $(document).height(); // returns height of HTML document</pre>
 <category name="Version 1.0" slug="1.0"/>
 <category name="Version 1.4.1" slug="1.4.1"/>
 </entry>
+</entries>
