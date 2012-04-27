@@ -22,8 +22,7 @@
   ],
   "dependencies": {
     "grunt": "0.3.x",
-    "grunt-wordpress": "0.0.1",
-    "wordpress": "0.0.4"
+    "grunt-wordpress": "0.0.1"
   },
   "devDependencies": {},
   "keywords": []
