@@ -24,7 +24,12 @@
 <xsl:template match="/">
 <script>
 	{
-		"title": "<xsl:value-of select="//entry/@name" />"
+		"title": "<xsl:value-of select="//entry/@name" />",
+		"termNames": {
+			"category": [
+				<xsl:for-each select="//entry/category"><xsl:if test="position() &gt; 1"><xsl:text>,</xsl:text></xsl:if>"<xsl:value-of select="@name"/>"</xsl:for-each>
+			]
+		}
 	}
 </script>
 <xsl:if test="count(//entry) &gt; 1">

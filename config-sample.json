@@ -1,7 +1,5 @@
 {
-        "host": "wordpress.dev",
-        "port": 80,
-        "path": "/xmlrpc.php",
+        "url": "wordpress.dev",
         "username": "admin",
         "password": "admin"
 }
