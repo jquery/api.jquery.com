@@ -203,7 +203,7 @@
               </h4>
               <xsl:if test="argument">
                   <xsl:for-each select="argument">
-                    <p class="arguement"><strong><xsl:value-of select="@name" /> </strong> <xsl:copy-of select="desc/text()|desc/*" /></p>
+                    <p class="argument"><strong><xsl:value-of select="@name" /> </strong> <xsl:copy-of select="desc/text()|desc/*" /></p>
                     <xsl:if test="option">
                       <div class="options">
                         <xsl:apply-templates select="option"/>

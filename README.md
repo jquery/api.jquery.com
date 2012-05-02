@@ -26,8 +26,8 @@ The `xmllint` and `xsltproc` utilities need to be in your path. If you are on Wi
 
 #### Spelling
 * The documentation standardizes on American English spelling. For example:
-  * **Yes**: color, while, among, customize
-  * **No**: colour, whilst, amongst, customise
+  * **Yes**: color, while, among, customize, argument
+  * **No**: colour, whilst, amongst, customise, arguement
 
 #### Pronoun Usage
 * Use second-person pronoun ("you") when necessary, but try to avoid it.
