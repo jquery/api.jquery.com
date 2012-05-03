@@ -3,9 +3,9 @@
 
 <div class="longdesc">
 
-<p>In JavaScript it is common to invoke functions that optionally accept callbacks that are called within that function.
+<p>In JavaScript it is common to invoke functions that optionally accept callbacks that are called within that function.</p>
 
-For example, in versions prior to jQuery 1.5, asynchronous processes such as <code>jQuery.ajax()</code> accept callbacks to be invoked some time in the near-future upon success, error, and completion of the ajax request.
+<p>For example, in versions prior to jQuery 1.5, asynchronous processes such as <code>jQuery.ajax()</code> accept callbacks to be invoked some time in the near-future upon success, error, and completion of the ajax request.</p>
 
 <p><code>jQuery.Deferred()</code> introduces several enhancements to the way callbacks are managed and invoked.  In particular, <code>jQuery.Deferred()</code> provides flexible ways to provide multiple callbacks, and these callbacks can be invoked regardless of whether the original callback dispatch has already occurred. jQuery Deferred is based on the <a href="http://wiki.commonjs.org/wiki/Promises/A">CommonJS Promises/A</a> design.</p>
 
@@ -15,7 +15,7 @@ For example, in versions prior to jQuery 1.5, asynchronous processes such as <co
 
 <h4>jQuery.Deferred Constructor</h4>
 
-<p>The <code>jQuery.Deferred()</code> constructor creates a new Deferred object. The <code>new</code> operator is optional.
+<p>The <code>jQuery.Deferred()</code> constructor creates a new Deferred object. The <code>new</code> operator is optional.</p>
 
 <p><code>jQuery.Deferred</code> can be passed an optional function, which is called just before the constructor returns and is passed the constructed <code>deferred</code> object as both the <code>this</code> object and as the first argument to the function. The called function can attach callbacks using <a href="http://api.jquery.com/deferred.then"><code>deferred.then()</code></a> for example.</p>
 

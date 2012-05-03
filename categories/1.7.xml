@@ -4,7 +4,7 @@ Event APIs: <code>.on()</code> and <code>.off()</code>
 Better Support for HTML5 in IE6/7/8
 <code>jQuery.Callbacks()</code>
 Toggling Animations Work Intuitively
-<p>
+</p>
 
 <p>For more information, see the Release Notes/Changelog at <a href="http://blog.jquery.com/2011/11/03/jquery-1-7-released/">http://blog.jquery.com/2011/11/03/jquery-1-7-released/</a></p>
 <hr /></desc>
