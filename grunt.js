@@ -27,7 +27,7 @@ grunt.initConfig({
 		all: xmlFiles
 	},
 	wordpress: grunt.utils._.extend({
-		dir: "dist"
+		dir: "dist/wordpress"
 	}, grunt.file.readJSON( "config.json" ) )
 });
 
@@ -64,7 +64,7 @@ grunt.registerTask( "build-entries", function() {
 	var task = this,
 		taskDone = task.async(),
 		// TODO make `entry` a custom post type instead of (ab)using `post`?
-		targetDir = "dist/posts/post/";
+		targetDir = grunt.config( "wordpress.dir" ) + "/posts/post/";
 
 	grunt.file.mkdir( targetDir );
 
@@ -102,7 +102,7 @@ grunt.registerTask( "build-categories", function() {
 	var task = this,
 		taskDone = task.async(),
 		categories = {},
-		outFilename = "dist/taxonomies.json";
+		outFilename = grunt.config( "wordpress.dir" ) + "/taxonomies.json";
 
 	grunt.utils.async.forEachSeries( categoryFiles, function( fileName, fileDone ) {
 		var xml = grunt.file.read( fileName ),
