@@ -323,6 +323,6 @@ div {
 });
 ]]></code>
   </example>
-<category name="Custom" slug="custom-effects"/>
-<category name="Version 1.0" slug="1.0"/>
+<category slug="effects/custom-effects"/>
+<category slug="version/1.0"/>
 </entry>

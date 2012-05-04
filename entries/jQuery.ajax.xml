@@ -394,8 +394,8 @@ request.fail(function(jqXHR, textStatus) {
   dataType: "script"
 });]]></code>
 </example>
-<category name="Low-Level Interface" slug="low-level-interface"/>
-<category name="Version 1.0" slug="1.0"/>
-<category name="Version 1.5" slug="1.5"/>
-<category name="Version 1.5.1" slug="1.5.1"/>
+<category slug="ajax/low-level-interface"/>
+<category slug="version/1.0"/>
+<category slug="version/1.5"/>
+<category slug="version/1.5.1"/>
 </entry>

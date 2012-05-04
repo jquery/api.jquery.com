@@ -32,7 +32,7 @@ $para.append("Now the secret luggage code is: ", String($para.prop("luggageCode"
   <p></p>
 ]]></html>
 </example>
-<category name="Attributes" slug="attributes"/>
-<category name="General Attributes" slug="general-attributes"/>
-<category name="Version 1.6" slug="1.6"/>
+<category slug="attributes"/>
+<category slug="manipulation/general-attributes"/>
+<category slug="version/1.6"/>
 </entry>

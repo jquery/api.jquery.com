@@ -10,6 +10,6 @@
   alert(event.relatedTarget.nodeName); // "DIV"
 });  ]]></code>
 </example>
-<category name="Event Object" slug="event-object"/>
-<category name="Version 1.1.4" slug="1.1.4"/>
+<category slug="events/event-object"/>
+<category slug="version/1.1.4"/>
 </entry>

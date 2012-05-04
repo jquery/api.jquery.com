@@ -22,6 +22,6 @@ $.get("test.php").always( function() {
 } );
 ]]></code>
     </example>
-  <category name="Deferred Object" slug="deferred-object"/>
-<category name="Version 1.6" slug="1.6"/>
+  <category slug="deferred-object"/>
+<category slug="version/1.6"/>
 </entry>

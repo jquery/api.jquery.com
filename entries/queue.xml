@@ -42,10 +42,10 @@ showIt();
   <p>The queue length is: <span></span></p>
   <div></div>]]></html>
   </example>
-<category name="Custom" slug="custom-effects"/>
-<category name="Data" slug="data"/>
-<category name="Utilities" slug="utilities"/>
-<category name="Version 1.2" slug="1.2"/>
+<category slug="effects/custom-effects"/>
+<category slug="data"/>
+<category slug="utilities"/>
+<category slug="version/1.2"/>
 </entry>
 <entry type='method' name="queue" return="jQuery">
   <signature>
@@ -142,9 +142,9 @@ $('#foo').queue(function() {
   <button id="stop">Stop</button>
   <div></div>]]></html>
                 </example>
-            <category name="Custom" slug="custom-effects"/>
-<category name="Data" slug="data"/>
-<category name="Utilities" slug="utilities"/>
-<category name="Version 1.2" slug="1.2"/>
+            <category slug="effects/custom-effects"/>
+<category slug="data"/>
+<category slug="utilities"/>
+<category slug="version/1.2"/>
 </entry>
 </entries>

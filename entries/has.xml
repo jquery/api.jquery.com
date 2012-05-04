@@ -47,6 +47,6 @@
 <ul><li>Does the UL contain an LI?</li></ul>
 ]]></html>
   </example>
-<category name="Filtering" slug="filtering"/>
-<category name="Version 1.4" slug="1.4"/>
+<category slug="traversing/filtering"/>
+<category slug="version/1.4"/>
 </entry>

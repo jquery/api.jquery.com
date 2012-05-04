@@ -67,6 +67,6 @@ $("*", document.body).click(function (e) {
 
   <div><input type="text" /></div>]]></html>
 </example>
-<category name="DOM Element Methods" slug="dom-element-methods"/>
-<category name="Version 1.0" slug="1.0"/>
+<category slug="miscellaneous/dom-element-methods"/>
+<category slug="version/1.0"/>
 </entry>

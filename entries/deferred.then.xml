@@ -43,7 +43,7 @@ $.get("test.php").then(
 );
 ]]></code>
     </example>
-<category name="Deferred Object" slug="deferred-object"/>
-<category name="Version 1.5" slug="1.5"/>
-<category name="Version 1.7" slug="1.7"/>
+<category slug="deferred-object"/>
+<category slug="version/1.5"/>
+<category slug="version/1.7"/>
 </entry>

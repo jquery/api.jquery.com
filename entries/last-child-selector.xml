@@ -31,6 +31,6 @@ span.solast { text-decoration:line-through; }
     <span>David</span>
   </div>]]></html>
 </example>
-<category name="Child Filter" slug="child-filter-selectors"/>
-<category name="Version 1.1.4" slug="1.1.4"/>
+<category slug="selectors/child-filter-selectors"/>
+<category slug="version/1.1.4"/>
 </entry>

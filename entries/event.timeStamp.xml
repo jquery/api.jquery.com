@@ -27,6 +27,6 @@ $('div').click(function(event) {
   <html><![CDATA[
 <div>Click.</div>]]></html>
 </example>
-<category name="Event Object" slug="event-object"/>
-<category name="Version 1.2.6" slug="1.2.6"/>
+<category slug="events/event-object"/>
+<category slug="version/1.2.6"/>
 </entry>

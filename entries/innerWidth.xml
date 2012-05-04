@@ -13,8 +13,8 @@ $("p:last").text( "innerWidth:" + p.innerWidth() );]]></code>
     <css><![CDATA[p { margin:10px;padding:5px;border:2px solid #666; } ]]></css>
     <html><![CDATA[<p>Hello</p><p></p>]]></html>
   </example>
-<category name="CSS" slug="css"/>
-<category name="Dimensions" slug="dimensions"/>
-<category name="Style Properties" slug="style-properties"/>
-<category name="Version 1.2.6" slug="1.2.6"/>
+<category slug="css"/>
+<category slug="dimensions"/>
+<category slug="properties/style-properties"/>
+<category slug="version/1.2.6"/>
 </entry>

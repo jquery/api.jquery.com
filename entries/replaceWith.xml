@@ -126,7 +126,7 @@ $('button').bind("click", function() {
 </div>
 ]]></html>
 </example>
-<category name="DOM Replacement" slug="dom-replacement"/>
-<category name="Version 1.2" slug="1.2"/>
-<category name="Version 1.4" slug="1.4"/>
+<category slug="manipulation/dom-replacement"/>
+<category slug="version/1.2"/>
+<category slug="version/1.4"/>
 </entry>

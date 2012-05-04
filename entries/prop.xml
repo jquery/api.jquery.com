@@ -74,9 +74,9 @@ $("input").change(function() {
 ]]></html>
 </example>
 
-<category name="Attributes" slug="attributes"/>
-<category name="General Attributes" slug="general-attributes"/>
-<category name="Version 1.6" slug="1.6"/>
+<category slug="attributes"/>
+<category slug="manipulation/general-attributes"/>
+<category slug="version/1.6"/>
 </entry>
 <entry type='method' name="prop" return="jQuery">
   <signature>
@@ -143,8 +143,8 @@ $("input[type='checkbox']").prop({
   <input type="checkbox"  checked="checked" />
 ]]></html>
   </example>
-  <category name="Attributes" slug="attributes"/>
-<category name="General Attributes" slug="general-attributes"/>
-<category name="Version 1.6" slug="1.6"/>
+  <category slug="attributes"/>
+<category slug="manipulation/general-attributes"/>
+<category slug="version/1.6"/>
 </entry>
 </entries>

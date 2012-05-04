@@ -33,7 +33,7 @@ It is not possible to cancel the <code>unload</code> event with <code>.preventDe
   <code><![CDATA[$(window).unload( function () { alert("Bye now!"); } );]]></code>
 </example>
 
-<category name="Document Loading" slug="document-loading"/>
-<category name="Version 1.0" slug="1.0"/>
-<category name="Version 1.4.3" slug="1.4.3"/>
+<category slug="events/document-loading"/>
+<category slug="version/1.0"/>
+<category slug="version/1.4.3"/>
 </entry>

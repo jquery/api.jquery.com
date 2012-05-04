@@ -33,6 +33,6 @@ $p.append(jQuery.hasData(p)+" "); /* false */
 ]]></code>
   <html><![CDATA[<p>Results: </p>]]></html>
   </example>
-<category name="Data" slug="data"/>
-<category name="Version 1.5" slug="1.5"/>
+<category slug="data"/>
+<category slug="version/1.5"/>
 </entry>

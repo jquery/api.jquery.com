@@ -96,7 +96,7 @@ $('#copy-correct')
 <div id="copy-correct"></div>
 ]]></html>
 </example>
-<category name="Copying" slug="copying"/>
-<category name="Version 1.0" slug="1.0"/>
-<category name="Version 1.5" slug="1.5"/>
+<category slug="manipulation/copying"/>
+<category slug="version/1.0"/>
+<category slug="version/1.5"/>
 </entry>

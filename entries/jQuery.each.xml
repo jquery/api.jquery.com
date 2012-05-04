@@ -74,6 +74,6 @@ $.each(map, function(key, value) {
    alert( "Key: " + k + ", Value: " + v );
  });]]></code>
 </example>
-<category name="Utilities" slug="utilities"/>
-<category name="Version 1.0" slug="1.0"/>
+<category slug="utilities"/>
+<category slug="version/1.0"/>
 </entry>

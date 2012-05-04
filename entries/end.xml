@@ -86,6 +86,6 @@ $("p").showTags(0)
   <css><![CDATA[p { margin:10px; padding:10px; }]]></css>
   <html><![CDATA[<p><span>Hello</span>, how are you?</p>]]></html>
 </example>
-<category name="Miscellaneous Traversing" slug="miscellaneous-traversal"/>
-<category name="Version 1.0" slug="1.0"/>
+<category slug="traversing/miscellaneous-traversal"/>
+<category slug="version/1.0"/>
 </entry>

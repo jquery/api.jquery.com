@@ -12,6 +12,6 @@
     <input name="id" />
   </form>]]></html>
 </example>
-<category name="Form" slug="form-selectors"/>
-<category name="Version 1.0" slug="1.0"/>
+<category slug="selectors/form-selectors"/>
+<category slug="version/1.0"/>
 </entry>

@@ -110,7 +110,7 @@ collection = collection.add(document.getElementById("a"));
 collection.css("background", "yellow");]]></code>
   <html><![CDATA[<p>Hello</p><span id="a">Hello Again</span>]]></html>
 </example>
-<category name="Miscellaneous Traversing" slug="miscellaneous-traversal"/>
-<category name="Version 1.0" slug="1.0"/>
-<category name="Version 1.4" slug="1.4"/>
+<category slug="traversing/miscellaneous-traversal"/>
+<category slug="version/1.0"/>
+<category slug="version/1.4"/>
 </entry>

@@ -53,7 +53,7 @@ $("ul.nav li:nth-child(2)").css( "color", "red" );
 </ul>
 ]]></html>
   </example>
-<category name="Basic Filter" slug="basic-filter-selectors"/>
-<category name="jQuery Extensions" slug="jquery-selector-extensions"/>
-<category name="Version 1.0" slug="1.0"/>
+<category slug="selectors/basic-filter-selectors"/>
+<category slug="selectors/jquery-selector-extensions"/>
+<category slug="version/1.0"/>
 </entry>

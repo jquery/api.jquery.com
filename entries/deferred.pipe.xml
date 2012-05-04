@@ -76,7 +76,7 @@ chained.done(function( data ) {
 
 ]]></code>
   </example>
-<category name="Deferred Object" slug="deferred-object"/>
-<category name="Version 1.6" slug="1.6"/>
-<category name="Version 1.7" slug="1.7"/>
+<category slug="deferred-object"/>
+<category slug="version/1.6"/>
+<category slug="version/1.7"/>
 </entry>

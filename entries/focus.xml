@@ -72,8 +72,8 @@ $("input").focus(function () {
 });]]></code>
 </example>
 
-<category name="Form Events" slug="form-events"/>
-<category name="Forms" slug="forms"/>
-<category name="Version 1.0" slug="1.0"/>
-<category name="Version 1.4.3" slug="1.4.3"/>
+<category slug="events/form-events"/>
+<category slug="forms"/>
+<category slug="version/1.0"/>
+<category slug="version/1.4.3"/>
 </entry>

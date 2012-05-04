@@ -18,6 +18,6 @@
     // newVar === true
   ]]></code>
 </example>
-<category name="Utilities" slug="utilities"/>
-<category name="Version 1.0.4" slug="1.0.4"/>
+<category slug="utilities"/>
+<category slug="version/1.0.4"/>
 </entry>

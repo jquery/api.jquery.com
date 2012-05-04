@@ -102,7 +102,7 @@
   <div></div>
   <div></div>]]></html>
 </example>
-<category name="Collection Manipulation" slug="collection-manipulation"/>
-<category name="Traversing" slug="traversing"/>
-<category name="Version 1.0" slug="1.0"/>
+<category slug="manipulation/collection-manipulation"/>
+<category slug="traversing"/>
+<category slug="version/1.0"/>
 </entry>

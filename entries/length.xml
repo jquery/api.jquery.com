@@ -19,6 +19,6 @@
   <html><![CDATA[<span></span>
   <div></div>]]></html>
 </example>
-<category name="Properties of jQuery Object Instances" slug="jquery-object-instance-properties"/>
-<category name="Version 1.0" slug="1.0"/>
+<category slug="properties/jquery-object-instance-properties"/>
+<category slug="version/1.0"/>
 </entry>

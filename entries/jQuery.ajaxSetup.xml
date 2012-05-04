@@ -30,6 +30,6 @@
  });
  $.ajax({ data: myData });]]></code>
     </example>
-<category name="Low-Level Interface" slug="low-level-interface"/>
-<category name="Version 1.1" slug="1.1"/>
+<category slug="ajax/low-level-interface"/>
+<category slug="version/1.1"/>
 </entry>

@@ -35,6 +35,6 @@ $spans.eq(3).text(jQuery.inArray("Pete", arr, 2));
 <div>"Karl" not found, so <span></span></div>
 <div>"Pete" is in the array, but not at or after index 2, so <span></span></div>]]></html>
   </example>
-<category name="Utilities" slug="utilities"/>
-<category name="Version 1.2" slug="1.2"/>
+<category slug="utilities"/>
+<category slug="version/1.2"/>
 </entry>

@@ -23,7 +23,7 @@
   .test{ border: 3px inset red; }
   ]]></css>
 </example>
-<category name="Content Filter" slug="content-filter-selector"/>
-<category name="jQuery Extensions" slug="jquery-selector-extensions"/>
-<category name="Version 1.1.4" slug="1.1.4"/>
+<category slug="selectors/content-filter-selector"/>
+<category slug="selectors/jquery-selector-extensions"/>
+<category slug="version/1.1.4"/>
 </entry>

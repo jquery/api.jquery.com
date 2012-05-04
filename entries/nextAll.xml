@@ -61,6 +61,6 @@ div, p { width: 60px; height: 60px; background: #abc;
 <p>p</p>
 <div>div</div>]]></html>
 </example>
-<category name="Tree Traversal" slug="tree-traversal"/>
-<category name="Version 1.2" slug="1.2"/>
+<category slug="traversing/tree-traversal"/>
+<category slug="version/1.2"/>
 </entry>

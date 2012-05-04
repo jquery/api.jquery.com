@@ -19,6 +19,6 @@ $.getScript("myplugin.js", function() {
 });
 ]]></code>
 </example>
-<category name="Core" slug="core"/>
-<category name="Version 1.6" slug="1.6"/>
+<category slug="core"/>
+<category slug="version/1.6"/>
 </entry>

@@ -23,6 +23,6 @@ $("div:contains('John')").css("text-decoration", "underline");]]>
       ]]>
     </html>
   </example>
-<category name="Content Filter" slug="content-filter-selector"/>
-<category name="Version 1.1.4" slug="1.1.4"/>
+<category slug="selectors/content-filter-selector"/>
+<category slug="version/1.1.4"/>
 </entry>

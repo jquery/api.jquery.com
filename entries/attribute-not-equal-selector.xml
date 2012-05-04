@@ -35,7 +35,7 @@
     <span>name is accept</span>
   </div>]]></html>
 </example>
-<category name="Attribute" slug="attribute-selectors"/>
-<category name="jQuery Extensions" slug="jquery-selector-extensions"/>
-<category name="Version 1.0" slug="1.0"/>
+<category slug="selectors/attribute-selectors"/>
+<category slug="selectors/jquery-selector-extensions"/>
+<category slug="version/1.0"/>
 </entry>

@@ -17,6 +17,6 @@
   <code><![CDATA[jQuery.contains(document.documentElement, document.body); // true
 jQuery.contains(document.body, document.documentElement); // false]]></code>
 </example>
-<category name="Utilities" slug="utilities"/>
-<category name="Version 1.4" slug="1.4"/>
+<category slug="utilities"/>
+<category slug="version/1.4"/>
 </entry>

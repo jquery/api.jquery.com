@@ -40,6 +40,6 @@ $('.container').contents().filter(function() {
     <html><![CDATA[<iframe src="http://api.jquery.com/" width="80%" height="600" id='frameDemo'></iframe> ]]></html>
   </example>
 
-  <category name="Miscellaneous Traversing" slug="miscellaneous-traversal"/>
-<category name="Version 1.2" slug="1.2"/>
+  <category slug="traversing/miscellaneous-traversal"/>
+<category slug="version/1.2"/>
 </entry>

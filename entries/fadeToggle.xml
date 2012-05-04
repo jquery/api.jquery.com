@@ -48,7 +48,7 @@ $("button:last").click(function () {
 ]]></html>
 </example>
 
-<category name="Effects" slug="effects"/>
-<category name="Fading" slug="fading"/>
-<category name="Version 1.4.4" slug="1.4.4"/>
+<category slug="effects"/>
+<category slug="effects/fading"/>
+<category slug="version/1.4.4"/>
 </entry>

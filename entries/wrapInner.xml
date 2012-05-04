@@ -90,7 +90,7 @@ $(elem).wrapInner(&quot;&lt;div class=\&quot;test\&quot;&gt;&lt;/div&gt;&quot;);
   <p>cruel</p>
   <p>World</p>]]></html>
 </example>
-<category name="DOM Insertion, Around" slug="dom-insertion-around"/>
-<category name="Version 1.2" slug="1.2"/>
-<category name="Version 1.4" slug="1.4"/>
+<category slug="manipulation/dom-insertion-around"/>
+<category slug="version/1.2"/>
+<category slug="version/1.4"/>
 </entry>

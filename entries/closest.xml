@@ -128,10 +128,10 @@ $('li.item-a').closest('#one', listItemII)
   </ul>]]></html>
 </example>
 
-<category name="Tree Traversal" slug="tree-traversal"/>
-<category name="Version 1.3" slug="1.3"/>
-<category name="Version 1.4" slug="1.4"/>
-<category name="Version 1.6" slug="1.6"/>
+<category slug="traversing/tree-traversal"/>
+<category slug="version/1.3"/>
+<category slug="version/1.4"/>
+<category slug="version/1.6"/>
 </entry>
 
 <entry type='method' name="closest" return="Array">
@@ -159,9 +159,9 @@ $('li.item-a').closest('#one', listItemII)
   <html><![CDATA[<ul><li></li><li></li></ul>]]></html>
 </example>
 
-<category name="Tree Traversal" slug="tree-traversal"/>
-<category name="Version 1.3" slug="1.3"/>
-<category name="Version 1.4" slug="1.4"/>
-<category name="Version 1.6" slug="1.6"/>
+<category slug="traversing/tree-traversal"/>
+<category slug="version/1.3"/>
+<category slug="version/1.4"/>
+<category slug="version/1.6"/>
 </entry>
 </entries>

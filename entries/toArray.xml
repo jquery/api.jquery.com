@@ -31,6 +31,6 @@ disp( $("div").toArray().reverse() );
   <div>Two</div>
   <div>Three</div>]]></html>
 </example>
-<category name="DOM Element Methods" slug="dom-element-methods"/>
-<category name="Version 1.4" slug="1.4"/>
+<category slug="miscellaneous/dom-element-methods"/>
+<category slug="version/1.4"/>
 </entry>

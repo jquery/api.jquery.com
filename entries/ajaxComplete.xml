@@ -41,6 +41,6 @@
    $(this).append("<li>Request Complete.</li>");
  });]]></code>
 </example>
-<category name="Global Ajax Event Handlers" slug="global-ajax-event-handlers"/>
-<category name="Version 1.0" slug="1.0"/>
+<category slug="ajax/global-ajax-event-handlers"/>
+<category slug="version/1.0"/>
 </entry>

@@ -19,6 +19,6 @@ $("button").click(function(event) {
 <p></p>
 ]]></html>
 </example>
-<category name="Event Object" slug="event-object"/>
-<category name="Version 1.4.3" slug="1.4.3"/>
+<category slug="events/event-object"/>
+<category slug="version/1.4.3"/>
 </entry>

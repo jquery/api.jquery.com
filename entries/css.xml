@@ -36,10 +36,10 @@ div { width:60px; height:60px; margin:5px; float:left; }
 <div style="background-color:#123456;"></div>
 <div style="background-color:#f11;"></div>]]></html>
     </example>
-  <category name="CSS" slug="css"/>
-<category name="Style Properties" slug="style-properties"/>
-<category name="Version 1.0" slug="1.0"/>
-<category name="Version 1.4" slug="1.4"/>
+  <category slug="css"/>
+<category slug="properties/style-properties"/>
+<category slug="version/1.0"/>
+<category slug="version/1.4"/>
 </entry>
   <entry type='method' name="css" return="jQuery">
     <signature>
@@ -180,9 +180,9 @@ div { width:60px; height:60px; margin:5px; float:left; }
   <div>click</div>
 ]]></html>
   </example>
-<category name="CSS" slug="css"/>
-<category name="Style Properties" slug="style-properties"/>
-<category name="Version 1.0" slug="1.0"/>
-<category name="Version 1.4" slug="1.4"/>
+<category slug="css"/>
+<category slug="properties/style-properties"/>
+<category slug="version/1.0"/>
+<category slug="version/1.4"/>
 </entry>
 </entries>

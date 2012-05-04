@@ -153,4 +153,6 @@ converters: {
   }
 });</pre>
 </longdesc>
+<category slug="ajax/low-level-interface"/>
+<category slug="version/1.5"/>
 </entry>

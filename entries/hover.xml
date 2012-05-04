@@ -62,8 +62,8 @@ $("li.fade").hover(function(){$(this).fadeOut(100);$(this).fadeIn(500);});
     <code><![CDATA[$("td").unbind('mouseenter mouseleave');]]></code>
   </example>
 
-<category name="Mouse Events" slug="mouse-events"/>
-<category name="Version 1.0" slug="1.0"/>
+<category slug="events/mouse-events"/>
+<category slug="version/1.0"/>
 </entry>
 
 <entry type='method' name="hover" return="jQuery">
@@ -111,7 +111,7 @@ $("li")
     <li>Green</li>
   </ul>]]></html>
 </example>
-<category name="Mouse Events" slug="mouse-events"/>
-<category name="Version 1.0" slug="1.0"/>
+<category slug="events/mouse-events"/>
+<category slug="version/1.0"/>
 </entry>
 </entries>

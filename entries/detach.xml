@@ -28,6 +28,6 @@
   <p>you?</p>
   <button>Attach/detach paragraphs</button>]]></html>
 </example>
-<category name="DOM Removal" slug="dom-removal"/>
-<category name="Version 1.4" slug="1.4"/>
+<category slug="manipulation/dom-removal"/>
+<category slug="version/1.4"/>
 </entry>

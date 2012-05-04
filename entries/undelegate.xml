@@ -102,8 +102,8 @@ $("form").delegate("input[type='text']", "keypress.whatever", foo);
 
 $("form").undelegate(".whatever");]]></code>
 </example>
-<category name="Event Handler Attachment" slug="event-handler-attachment"/>
-<category name="Version 1.4.2" slug="1.4.2"/>
-<category name="Version 1.4.3" slug="1.4.3"/>
-<category name="Version 1.6" slug="1.6"/>
+<category slug="events/event-handler-attachment"/>
+<category slug="version/1.4.2"/>
+<category slug="version/1.4.3"/>
+<category slug="version/1.6"/>
 </entry>

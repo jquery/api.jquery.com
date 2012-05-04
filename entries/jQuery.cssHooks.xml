@@ -164,6 +164,6 @@ $("#another").css("border-radius", "20px");
 </pre>
 <p>Note that this works best for simple numeric-value animations. More custom code may be required depending on the CSS property, the type of value it returns, and the animation's complexity.</p>
 </longdesc>
-<category name="CSS" slug="css"/>
-<category name="Version 1.4.3" slug="1.4.3"/>
+<category slug="css"/>
+<category slug="version/1.4.3"/>
 </entry>

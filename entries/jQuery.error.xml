@@ -11,6 +11,6 @@
     <desc>Override jQuery.error for display in Firebug.</desc>
     <code><![CDATA[jQuery.error = console.error;]]></code>
   </example>
-  <category name="Internals" slug="internals"/>
-  <category name="Version 1.4.1" slug="1.4.1"/>
+  <category slug="internals"/>
+  <category slug="version/1.4.1"/>
 </entry>

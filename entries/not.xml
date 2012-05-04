@@ -94,8 +94,8 @@ div { width:50px; height:50px; margin:10px; float:left;
   <desc>Removes all elements that match "div p.selected" from the total set of all paragraphs.</desc>
   <code><![CDATA[$("p").not($("div p.selected"))]]></code>
 </example>
-<category name="Filtering" slug="filtering"/>
-<category name="Miscellaneous Traversing" slug="miscellaneous-traversal"/>
-<category name="Version 1.0" slug="1.0"/>
-<category name="Version 1.4" slug="1.4"/>
+<category slug="traversing/filtering"/>
+<category slug="traversing/miscellaneous-traversal"/>
+<category slug="version/1.0"/>
+<category slug="version/1.4"/>
 </entry>

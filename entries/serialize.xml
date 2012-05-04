@@ -87,7 +87,7 @@
 </form>
 <p><tt id="results"></tt></p>]]></html>
 </example>
-<category name="Forms" slug="forms"/>
-<category name="Helper Functions" slug="helper-functions"/>
-<category name="Version 1.0" slug="1.0"/>
+<category slug="forms"/>
+<category slug="ajax/helper-functions"/>
+<category slug="version/1.0"/>
 </entry>

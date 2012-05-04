@@ -99,6 +99,6 @@ pass:"bar"
 
 });]]></code>
 </example>
-<category name="Event Handler Attachment" slug="event-handler-attachment"/>
-<category name="Version 1.0" slug="1.0"/>
+<category slug="events/event-handler-attachment"/>
+<category slug="version/1.0"/>
 </entry>

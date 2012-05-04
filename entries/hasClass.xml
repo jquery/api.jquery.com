@@ -35,8 +35,8 @@ $("div#result3").append($("p").hasClass("selected").toString());
   <div id="result2">Second paragraph has selected class: </div>
   <div id="result3">At least one paragraph has selected class: </div>]]></html>
                 </example>
-            <category name="Attributes" slug="attributes"/>
-<category name="Class Attribute" slug="class-attribute"/>
-<category name="CSS" slug="css"/>
-<category name="Version 1.2" slug="1.2"/>
+            <category slug="attributes"/>
+<category slug="manipulation/class-attribute"/>
+<category slug="css"/>
+<category slug="version/1.2"/>
 </entry>

@@ -118,6 +118,6 @@
     <p>And One Last Time</p>
   </div>]]></html>
 </example>
-<category name="Tree Traversal" slug="tree-traversal"/>
-<category name="Version 1.0" slug="1.0"/>
+<category slug="traversing/tree-traversal"/>
+<category slug="version/1.0"/>
 </entry>

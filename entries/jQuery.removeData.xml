@@ -32,7 +32,7 @@ $("span:eq(3)").text("" + jQuery.data(div, "test2"));]]></code>
     <div>value1 after removal: <span></span></div>
     <div>value2 after removal: <span></span></div>]]></html>
   </example>
-<category name="Data" slug="data"/>
-<category name="Utilities" slug="utilities"/>
-<category name="Version 1.2.3" slug="1.2.3"/>
+<category slug="data"/>
+<category slug="utilities"/>
+<category slug="version/1.2.3"/>
 </entry>

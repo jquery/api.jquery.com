@@ -32,6 +32,6 @@ callbacks.fire( 'world' );
 // nothing output as 'foo' is no longer in the list
 ]]></code>
 </example>
-<category name="Callbacks Object" slug="callbacks-object"/>
-<category name="Version 1.7" slug="1.7"/>
+<category slug="callbacks-object"/>
+<category slug="version/1.7"/>
 </entry>

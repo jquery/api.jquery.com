@@ -131,6 +131,6 @@ input { clear:left}
 ]]></html>
 </example>
 
-<category name="Filtering" slug="filtering"/>
-<category name="Version 1.2" slug="1.2"/>
+<category slug="traversing/filtering"/>
+<category slug="version/1.2"/>
 </entry>

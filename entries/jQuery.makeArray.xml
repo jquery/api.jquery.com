@@ -37,6 +37,6 @@
 jQuery.isArray(arr) === true;]]>
     </results>
   </example>
-<category name="Utilities" slug="utilities"/>
-<category name="Version 1.2" slug="1.2"/>
+<category slug="utilities"/>
+<category slug="version/1.2"/>
 </entry>

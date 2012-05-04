@@ -103,7 +103,7 @@
     <label for="r2">radio2</label>
   </form>]]></html>
 </example>
-<category name="Forms" slug="forms"/>
-<category name="Helper Functions" slug="helper-functions"/>
-<category name="Version 1.2" slug="1.2"/>
+<category slug="forms"/>
+<category slug="ajax/helper-functions"/>
+<category slug="version/1.2"/>
 </entry>

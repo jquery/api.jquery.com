@@ -73,7 +73,7 @@ $(window).scroll(function () {
   <p>Paragraph - <span>Scroll happened!</span></p>]]></html>
 </example>
 
-<category name="Browser Events" slug="browser-events"/>
-<category name="Version 1.0" slug="1.0"/>
-<category name="Version 1.4.3" slug="1.4.3"/>
+<category slug="events/browser-events"/>
+<category slug="version/1.0"/>
+<category slug="version/1.4.3"/>
 </entry>

@@ -73,6 +73,6 @@ $.ajaxPrefilter(function( options ) {
 
 <p>This would ensure not only that the request is considered "script" but also that all the prefilters specifically attached to the script dataType would be applied to it.</p>
   </longdesc>
-<category name="Low-Level Interface" slug="low-level-interface"/>
-<category name="Version 1.5" slug="1.5"/>
+<category slug="ajax/low-level-interface"/>
+<category slug="version/1.5"/>
 </entry>

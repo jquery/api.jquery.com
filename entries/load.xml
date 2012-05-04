@@ -97,6 +97,6 @@ $("#success").load("/not-here.php", function(response, status, xhr) {
 alert("The last 25 entries in the feed have been loaded");
 });]]></code>
 </example>
-<category name="Shorthand Methods" slug="shorthand-methods"/>
-<category name="Version 1.0" slug="1.0"/>
+<category slug="ajax/shorthand-methods"/>
+<category slug="version/1.0"/>
 </entry>

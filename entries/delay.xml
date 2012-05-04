@@ -36,6 +36,6 @@ div { position: absolute; width: 60px; height: 60px; float: left; }
 <div class="second"></div>]]>
   </html>
   </example>
-<category name="Custom" slug="custom-effects"/>
-<category name="Version 1.4" slug="1.4"/>
+<category slug="effects/custom-effects"/>
+<category slug="version/1.4"/>
 </entry>

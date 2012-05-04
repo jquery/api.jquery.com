@@ -18,6 +18,6 @@
   <input name="letterman2" />
   <input name="newmilk" />]]></html>
 </example>
-<category name="Attribute" slug="attribute-selectors"/>
-<category name="Version 1.0" slug="1.0"/>
+<category slug="selectors/attribute-selectors"/>
+<category slug="version/1.0"/>
 </entry>

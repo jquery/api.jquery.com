@@ -35,7 +35,7 @@
   <div></div>
   <div style="display:none;"></div>]]></html>
 </example>
-<category name="jQuery Extensions" slug="jquery-selector-extensions"/>
-<category name="Version 1.0" slug="1.0"/>
-<category name="Visibility Filter" slug="visibility-filter-selectors"/>
+<category slug="selectors/jquery-selector-extensions"/>
+<category slug="version/1.0"/>
+<category slug="selectors/visibility-filter-selectors"/>
 </entry>

@@ -136,7 +136,7 @@ button { float:left; margin:5px 10px 5px 0; }
 <div id="box2" class="box">swing</div>
 ]]></html>
 </example>
-<category name="Fading" slug="fading"/>
-<category name="Version 1.0" slug="1.0"/>
-<category name="Version 1.4.3" slug="1.4.3"/>
+<category slug="effects/fading"/>
+<category slug="version/1.0"/>
+<category slug="version/1.4.3"/>
 </entry>

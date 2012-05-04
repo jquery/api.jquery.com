@@ -74,7 +74,7 @@ $('p').first().before($newdiv1, [newdiv2, existingdiv1]);
   <css><![CDATA[p { background:yellow; }]]></css>
   <html><![CDATA[<p> is what I said...</p><b>Hello</b>]]></html>
 </example>
-<category name="DOM Insertion, Outside" slug="dom-insertion-outside"/>
-<category name="Version 1.0" slug="1.0"/>
-<category name="Version 1.4" slug="1.4"/>
+<category slug="manipulation/dom-insertion-outside"/>
+<category slug="version/1.0"/>
+<category slug="version/1.4"/>
 </entry>

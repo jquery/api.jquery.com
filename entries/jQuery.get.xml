@@ -93,7 +93,7 @@ alert("Data Loaded: " + data);
               .append( "Time: " + data.time ); //  2pm
    }, "json");]]></code>
     </example>
-<category name="Shorthand Methods" slug="shorthand-methods"/>
-<category name="Version 1.0" slug="1.0"/>
-<category name="Version 1.5" slug="1.5"/>
+<category slug="ajax/shorthand-methods"/>
+<category slug="version/1.0"/>
+<category slug="version/1.5"/>
 </entry>

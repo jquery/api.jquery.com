@@ -132,7 +132,7 @@ $("div").click(function () {
   ]]></css>
   <html><![CDATA[<div></div>]]></html>
 </example>
-<category name="Basics" slug="basics"/>
-<category name="Version 1.0" slug="1.0"/>
-<category name="Version 1.4.3" slug="1.4.3"/>
+<category slug="effects/basics"/>
+<category slug="version/1.0"/>
+<category slug="version/1.4.3"/>
 </entry>

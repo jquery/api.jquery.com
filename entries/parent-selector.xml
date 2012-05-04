@@ -22,7 +22,7 @@
   <tr><td>Value 2</td><td></td></tr>
 </table>]]></html>
 </example>
-<category name="Content Filter" slug="content-filter-selector"/>
-<category name="jQuery Extensions" slug="jquery-selector-extensions"/>
-<category name="Version 1.0" slug="1.0"/>
+<category slug="selectors/content-filter-selector"/>
+<category slug="selectors/jquery-selector-extensions"/>
+<category slug="version/1.0"/>
 </entry>

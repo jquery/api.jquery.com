@@ -31,7 +31,7 @@ $( "#content" ).delegate( "*", "focus blur", function( event ) {
 </div>
 ]]></html>
 </example>
-<category name="Basic Filter" slug="basic-filter-selectors"/>
-<category name="Form" slug="form-selectors"/>
-<category name="Version 1.6" slug="1.6"/>
+<category slug="selectors/basic-filter-selectors"/>
+<category slug="selectors/form-selectors"/>
+<category slug="version/1.6"/>
 </entry>

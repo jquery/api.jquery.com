@@ -34,9 +34,9 @@ $("p:last").html(str);
   <html><![CDATA[<p><b>Test</b> Paragraph.</p>
   <p></p>]]></html>
 </example>
-<category name="DOM Insertion, Inside" slug="dom-insertion-inside"/>
-<category name="Version 1.0" slug="1.0"/>
-<category name="Version 1.4" slug="1.4"/>
+<category slug="manipulation/dom-insertion-inside"/>
+<category slug="version/1.0"/>
+<category slug="version/1.4"/>
 </entry>
 <entry type='method' name="text" return="jQuery">
   <signature>
@@ -91,8 +91,8 @@ $("p:last").html(str);
   ]]></css>
                     <html><![CDATA[<p>Test Paragraph.</p>]]></html>
                 </example>
-            <category name="DOM Insertion, Inside" slug="dom-insertion-inside"/>
-<category name="Version 1.0" slug="1.0"/>
-<category name="Version 1.4" slug="1.4"/>
+            <category slug="manipulation/dom-insertion-inside"/>
+<category slug="version/1.0"/>
+<category slug="version/1.4"/>
 </entry>
 </entries>

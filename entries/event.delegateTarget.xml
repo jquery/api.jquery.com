@@ -12,7 +12,7 @@
   $(event.delegateTarget).css("background-color", "red");
 });  ]]></code>
 </example>
-<category name="Event Object" slug="event-object"/>
-<category name="Events" slug="events"/>
-<category name="Version 1.7" slug="1.7"/>
+<category slug="events/event-object"/>
+<category slug="events"/>
+<category slug="version/1.7"/>
 </entry>

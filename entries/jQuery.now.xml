@@ -6,6 +6,6 @@
   <longdesc>
     <p>The <code>$.now()</code> method is a shorthand for the number returned by the expression <code>(new Date).getTime()</code>.</p>
   </longdesc>
-<category name="Utilities" slug="utilities"/>
-<category name="Version 1.4.3" slug="1.4.3"/>
+<category slug="utilities"/>
+<category slug="version/1.4.3"/>
 </entry>

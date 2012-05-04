@@ -24,6 +24,6 @@ if ( b.jquery ) { // truthy, since it's a string
 alert( 'You are running jQuery version: ' + $.fn.jquery );
 ]]></code>
   </example>
-<category name="Internals" slug="internals"/>
-<category name="Properties of jQuery Object Instances" slug="jquery-object-instance-properties"/>
+<category slug="internals"/>
+<category slug="properties/jquery-object-instance-properties"/>
 </entry>

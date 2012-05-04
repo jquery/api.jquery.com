@@ -27,8 +27,8 @@ $("p:last").text( "left: " + position.left + ", top: " + position.top );
 <p></p>
 ]]></html>
 </example>
-<category name="CSS" slug="css"/>
-<category name="Offset" slug="offset"/>
-<category name="Style Properties" slug="style-properties"/>
-<category name="Version 1.2" slug="1.2"/>
+<category slug="css"/>
+<category slug="offset"/>
+<category slug="properties/style-properties"/>
+<category slug="version/1.2"/>
 </entry>

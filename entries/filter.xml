@@ -121,7 +121,7 @@ $('li').filter(function(index) {
 <code><![CDATA[
 $("div").filter( $("#unique") )]]></code>
 </example>
-<category name="Filtering" slug="filtering"/>
-<category name="Version 1.0" slug="1.0"/>
-<category name="Version 1.4" slug="1.4"/>
+<category slug="traversing/filtering"/>
+<category slug="version/1.0"/>
+<category slug="version/1.4"/>
 </entry>

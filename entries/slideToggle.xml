@@ -111,7 +111,7 @@
 <div></div>
 <p><button id="aa">Toggle</button> There have been <span>0</span> toggled divs.</p>]]></html>
   </example>
-<category name="Sliding" slug="sliding"/>
-<category name="Version 1.0" slug="1.0"/>
-<category name="Version 1.4.3" slug="1.4.3"/>
+<category slug="effects/sliding"/>
+<category slug="version/1.0"/>
+<category slug="version/1.4.3"/>
 </entry>

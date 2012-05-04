@@ -66,6 +66,6 @@ $("b").text(len);
   <p class="selected">Hello Again</p>
   <p>And Again</p>]]></html>
 </example>
-<category name="Tree Traversal" slug="tree-traversal"/>
-<category name="Version 1.0" slug="1.0"/>
+<category slug="traversing/tree-traversal"/>
+<category slug="version/1.0"/>
 </entry>

@@ -39,6 +39,6 @@
   <css><![CDATA[#foo { background:yellow; }]]></css>
   <html><![CDATA[<p> is what I said... </p><div id="foo">FOO!</div>]]></html>
 </example>
-<category name="DOM Insertion, Outside" slug="dom-insertion-outside"/>
-<category name="Version 1.0" slug="1.0"/>
+<category slug="manipulation/dom-insertion-outside"/>
+<category slug="version/1.0"/>
 </entry>

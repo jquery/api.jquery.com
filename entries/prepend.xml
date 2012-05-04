@@ -79,7 +79,7 @@ $('body').prepend($newdiv1, [newdiv2, existingdiv1]);
   <css><![CDATA[p { background:yellow; }]]></css>
   <html><![CDATA[<p> is what was said.</p><b>Hello</b>]]></html>
 </example>
-<category name="DOM Insertion, Inside" slug="dom-insertion-inside"/>
-<category name="Version 1.0" slug="1.0"/>
-<category name="Version 1.4" slug="1.4"/>
+<category slug="manipulation/dom-insertion-inside"/>
+<category slug="version/1.0"/>
+<category slug="version/1.4"/>
 </entry>

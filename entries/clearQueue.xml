@@ -46,8 +46,8 @@ div.newcolor { background:blue; }
 <button id="stop">Stop</button>
 <div></div>]]></html>
 </example>
-<category name="Custom" slug="custom-effects"/>
-<category name="Data" slug="data"/>
-<category name="Utilities" slug="utilities"/>
-<category name="Version 1.4" slug="1.4"/>
+<category slug="effects/custom-effects"/>
+<category slug="data"/>
+<category slug="utilities"/>
+<category slug="version/1.4"/>
 </entry>

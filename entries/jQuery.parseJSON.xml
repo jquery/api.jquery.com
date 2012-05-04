@@ -20,6 +20,6 @@
     <code><![CDATA[var obj = jQuery.parseJSON('{"name":"John"}');
 alert( obj.name === "John" );]]></code>
   </example>
-<category name="Utilities" slug="utilities"/>
-<category name="Version 1.4.1" slug="1.4.1"/>
+<category slug="utilities"/>
+<category slug="version/1.4.1"/>
 </entry>

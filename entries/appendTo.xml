@@ -49,6 +49,6 @@
 
   <div id="foo">FOO! </div>]]></html>
 </example>
-<category name="DOM Insertion, Inside" slug="dom-insertion-inside"/>
-<category name="Version 1.0" slug="1.0"/>
+<category slug="manipulation/dom-insertion-inside"/>
+<category slug="version/1.0"/>
 </entry>

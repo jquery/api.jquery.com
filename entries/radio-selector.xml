@@ -49,7 +49,7 @@ $("form").submit(function () { return false; }); // so it won't submit
 <div>
 </div>]]></html>
 </example>
-<category name="Form" slug="form-selectors"/>
-<category name="jQuery Extensions" slug="jquery-selector-extensions"/>
-<category name="Version 1.0" slug="1.0"/>
+<category slug="selectors/form-selectors"/>
+<category slug="selectors/jquery-selector-extensions"/>
+<category slug="version/1.0"/>
 </entry>

@@ -34,7 +34,7 @@
   .then(myFunc, myFailure);
 ]]></code>
 </example>
-<category name="Core" slug="core"/>
-<category name="Deferred Object" slug="deferred-object"/>
-<category name="Version 1.5" slug="1.5"/>
+<category slug="core"/>
+<category slug="deferred-object"/>
+<category slug="version/1.5"/>
 </entry>

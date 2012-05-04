@@ -34,11 +34,11 @@ var title = $("em").attr("title");
   The title of the emphasis is:<div></div>
 ]]></html>
 </example>
-<category name="Attributes" slug="attributes"/>
-<category name="General Attributes" slug="general-attributes"/>
-<category name="Version 1.0" slug="1.0"/>
-<category name="Version 1.1" slug="1.1"/>
-<category name="Version 1.6" slug="1.6"/>
+<category slug="attributes"/>
+<category slug="manipulation/general-attributes"/>
+<category slug="version/1.0"/>
+<category slug="version/1.1"/>
+<category slug="version/1.6"/>
 </entry>
 
 <entry type='method' name="attr" return="jQuery">
@@ -148,10 +148,10 @@ $("img").attr("src", function() {
 <img title="hat.gif"/>
 ]]></html>
   </example>
-  <category name="Attributes" slug="attributes"/>
-<category name="General Attributes" slug="general-attributes"/>
-<category name="Version 1.0" slug="1.0"/>
-<category name="Version 1.1" slug="1.1"/>
-<category name="Version 1.6" slug="1.6"/>
+  <category slug="attributes"/>
+<category slug="manipulation/general-attributes"/>
+<category slug="version/1.0"/>
+<category slug="version/1.1"/>
+<category slug="version/1.6"/>
 </entry>
 </entries>

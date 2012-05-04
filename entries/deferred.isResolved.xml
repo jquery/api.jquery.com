@@ -10,7 +10,7 @@
     <p>Note that a Deferred object can be in one of three states: pending, resolved, or rejected; use <a href="http://api.jquery.com/deferred.isRejected/"><code>deferred.isRejected()</code></a> to determine whether the Deferred object is in the rejected state. These methods are primarily useful for debugging, for example to determine whether a Deferred has already been resolved even though you are inside code that intended to reject it.</p>
   </longdesc>
 
-<category name="Deferred Object" slug="deferred-object"/>
-<category name="Deprecated" slug="deprecated"/>
-<category name="Version 1.5" slug="1.5"/>
+<category slug="deferred-object"/>
+<category slug="deprecated"/>
+<category slug="version/1.5"/>
 </entry>

@@ -78,6 +78,6 @@
 );]]></code>
                 </example>
 
-<category name="Mouse Events" slug="mouse-events"/>
-<category name="Version 1.0" slug="1.0"/>
+<category slug="events/mouse-events"/>
+<category slug="version/1.0"/>
 </entry>

@@ -47,11 +47,11 @@ $("#getw").click(function () {
     Sample paragraph to test width
   </p>]]></html>
 </example>
-<category name="CSS" slug="css"/>
-<category name="Dimensions" slug="dimensions"/>
-<category name="Style Properties" slug="style-properties"/>
-<category name="Version 1.0" slug="1.0"/>
-<category name="Version 1.4.1" slug="1.4.1"/>
+<category slug="css"/>
+<category slug="dimensions"/>
+<category slug="properties/style-properties"/>
+<category slug="version/1.0"/>
+<category slug="version/1.4.1"/>
 </entry>
 
 <entry type='method' name="width" return="jQuery">
@@ -97,10 +97,10 @@ div { width: 70px; height: 50px; float:left; margin: 5px;
   <div>d</div>
 ]]></html>
 </example>
-<category name="CSS" slug="css"/>
-<category name="Dimensions" slug="dimensions"/>
-<category name="Style Properties" slug="style-properties"/>
-<category name="Version 1.0" slug="1.0"/>
-<category name="Version 1.4.1" slug="1.4.1"/>
+<category slug="css"/>
+<category slug="dimensions"/>
+<category slug="properties/style-properties"/>
+<category slug="version/1.0"/>
+<category slug="version/1.4.1"/>
 </entry>
 </entries>

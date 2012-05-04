@@ -16,6 +16,6 @@ $(document).bind('mousemove',function(e){
 });
     ]]></code>
 </example>
-<category name="Event Object" slug="event-object"/>
-<category name="Version 1.0.4" slug="1.0.4"/>
+<category slug="events/event-object"/>
+<category slug="version/1.0.4"/>
 </entry>

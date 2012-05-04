@@ -22,6 +22,6 @@ $.get("test.php")
   .fail(function(){ alert("$.get failed!"); });
 ]]></code>
     </example>
-<category name="Deferred Object" slug="deferred-object"/>
-<category name="Version 1.5" slug="1.5"/>
+<category slug="deferred-object"/>
+<category slug="version/1.5"/>
 </entry>

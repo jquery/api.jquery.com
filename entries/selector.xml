@@ -30,4 +30,6 @@
   <html><![CDATA[Some selectors:<ul></ul>
 ]]></html>
 </example>
+<category slug="internals"/>
+<category slug="properties/global-jquery-object-properties"/>
 </entry>

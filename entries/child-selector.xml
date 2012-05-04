@@ -30,6 +30,6 @@ body { font-size:14px; }
 </ul>
 ]]></html>
   </example>
-<category name="Hierarchy" slug="hierarchy-selectors"/>
-<category name="Version 1.0" slug="1.0"/>
+<category slug="selectors/hierarchy-selectors"/>
+<category slug="version/1.0"/>
 </entry>

@@ -33,6 +33,6 @@ $title.text( "XML Title" );
 $( "#anotherElement" ).append( $title.text() );
 ]]></code>
 </example>
-<category name="Utilities" slug="utilities"/>
-<category name="Version 1.5" slug="1.5"/>
+<category slug="utilities"/>
+<category slug="version/1.5"/>
 </entry>

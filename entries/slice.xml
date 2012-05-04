@@ -99,6 +99,6 @@ $("button").click(colorEm);
   <desc>Selects all paragraphs, then slices the selection to include only the third element.</desc>
   <code><![CDATA[$("p").slice(-1).wrapInner("<b></b>");]]></code>
 </example>
-<category name="Filtering" slug="filtering"/>
-<category name="Version 1.1.4" slug="1.1.4"/>
+<category slug="traversing/filtering"/>
+<category slug="version/1.1.4"/>
 </entry>

@@ -19,6 +19,6 @@ $("a").click(function(event) {
 <div id="log"></div>
 ]]></html>
 </example>
-<category name="Event Object" slug="event-object"/>
-<category name="Version 1.0" slug="1.0"/>
+<category slug="events/event-object"/>
+<category slug="version/1.0"/>
 </entry>
