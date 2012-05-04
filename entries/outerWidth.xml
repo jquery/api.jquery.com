@@ -24,6 +24,6 @@ $("p:last").text( "outerWidth:" + p.outerWidth()+ " , outerWidth(true):" + p.out
 </example>
 <category slug="css"/>
 <category slug="dimensions"/>
-<category slug="properties/style-properties"/>
+<category slug="manipulation/style-properties"/>
 <category slug="version/1.2.6"/>
 </entry>

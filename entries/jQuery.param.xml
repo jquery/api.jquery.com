@@ -97,7 +97,7 @@ $.param({ a: { b:1,c:2 }, d: [3,4,{ e:5 }] }) // "a[b]=1&a[c]=2&d[]=3&d[]=4&d[2]
                     <css><![CDATA[div { color:red; }]]></css>
                 </example>
                 
-            <category slug="manipulation/collection-manipulation"/>
+            <category slug="miscellaneous/collection-manipulation"/>
 <category slug="forms"/>
 <category slug="ajax/helper-functions"/>
 <category slug="version/1.2"/>

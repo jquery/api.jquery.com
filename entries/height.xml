@@ -50,7 +50,7 @@ $(document).height(); // returns height of HTML document</pre>
                 </example>
             <category slug="css"/>
 <category slug="dimensions"/>
-<category slug="properties/style-properties"/>
+<category slug="manipulation/style-properties"/>
 <category slug="version/1.0"/>
 <category slug="version/1.4.1"/>
 </entry>
@@ -89,7 +89,7 @@ $(document).height(); // returns height of HTML document</pre>
                 </example>
             <category slug="css"/>
 <category slug="dimensions"/>
-<category slug="properties/style-properties"/>
+<category slug="manipulation/style-properties"/>
 <category slug="version/1.0"/>
 <category slug="version/1.4.1"/>
 </entry>

@@ -17,7 +17,7 @@ $("p:last").text( "scrollTop:" + p.scrollTop() );
 </example>
 <category slug="css"/>
 <category slug="offset"/>
-<category slug="properties/style-properties"/>
+<category slug="manipulation/style-properties"/>
 <category slug="version/1.2.6"/>
 </entry>
 
@@ -51,7 +51,7 @@ overflow:auto;
 </example>
 <category slug="css"/>
 <category slug="offset"/>
-<category slug="properties/style-properties"/>
+<category slug="manipulation/style-properties"/>
 <category slug="version/1.2.6"/>
 </entry>
 </entries>

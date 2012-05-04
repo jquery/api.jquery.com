@@ -15,6 +15,6 @@ $("p:last").text( "innerWidth:" + p.innerWidth() );]]></code>
   </example>
 <category slug="css"/>
 <category slug="dimensions"/>
-<category slug="properties/style-properties"/>
+<category slug="manipulation/style-properties"/>
 <category slug="version/1.2.6"/>
 </entry>
