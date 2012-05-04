@@ -26,7 +26,9 @@ grunt.initConfig({
 	xmllint: {
 		all: xmlFiles
 	},
-	wordpress: grunt.file.readJSON( "config.json" )
+	wordpress: grunt.utils._.extend({
+		dir: "dist"
+	}, grunt.file.readJSON( "config.json" ) )
 });
 
 grunt.registerTask( "xmllint", function() {
@@ -62,7 +64,7 @@ grunt.registerTask( "build-entries", function() {
 	var task = this,
 		taskDone = task.async(),
 		// TODO make `entry` a custom post type instead of (ab)using `post`?
-		targetDir = "dist/post/";
+		targetDir = "dist/posts/post/";
 
 	grunt.file.mkdir( targetDir );
 
@@ -83,7 +85,7 @@ grunt.registerTask( "build-entries", function() {
 			targetFileName = targetDir + path.basename( fileName );
 			targetFileName = targetFileName.substr( 0, targetFileName.length - "xml".length ) + "html";
 			grunt.file.write( targetFileName, result );
-			fileDone();				
+			fileDone();
 		});
 	}, function() {
 		if ( task.errorCount ) {
@@ -147,7 +149,7 @@ grunt.registerTask( "build-categories", function() {
 		var id, category, parent,
 			taxonomies = {
 				"category": [
-					{ "name": "Uncategorized" }
+					{ "name": "Uncategorized", "slug": "Uncategorized" }
 				]
 			};
 		

@@ -25,9 +25,9 @@
 <script>
 	{
 		"title": "<xsl:value-of select="//entry/@name" />",
-		"termNames": {
+		"termSlugs": {
 			"category": [
-				<xsl:for-each select="//entry/category"><xsl:if test="position() &gt; 1"><xsl:text>,</xsl:text></xsl:if>"<xsl:value-of select="@name"/>"</xsl:for-each>
+				<xsl:for-each select="//entry/category"><xsl:if test="position() &gt; 1"><xsl:text>,</xsl:text></xsl:if>"<xsl:value-of select="@slug"/>"</xsl:for-each>
 			]
 		}
 	}
