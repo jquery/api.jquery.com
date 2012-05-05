@@ -22,6 +22,7 @@
   ],
   "dependencies": {
     "grunt": "0.3.x",
+    "grunt-clean": "0.1.0",
     "grunt-wordpress": "0.0.4",
     "libxmljs": "~0.5.4"
   },

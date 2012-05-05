@@ -17,9 +17,13 @@ function pathSlug( fileName ) {
 	return path.basename( fileName, path.extname( fileName ) );
 }
 
+grunt.loadNpmTasks( "grunt-clean" );
 grunt.loadNpmTasks( "grunt-wordpress" );
 
 grunt.initConfig({
+	clean: {
+		folder: "dist"
+	},
 	lint: {
 		grunt: "grunt.js"
 	},
@@ -201,7 +205,7 @@ grunt.registerTask( "build-categories", function() {
 });
 
 grunt.registerTask( "default", "build" );
-grunt.registerTask( "build", "lint xmllint build-entries build-categories" );
+grunt.registerTask( "build", "clean lint xmllint build-entries build-categories" );
 grunt.registerTask( "deploy", "wordpress-deploy" );
 
 };
