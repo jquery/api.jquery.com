@@ -2,16 +2,225 @@
   <signature>
     <added>1.3</added>
   </signature>
-  <desc> The current DOM element within the event bubbling phase.  </desc>
-  <longdesc><p>This property will typically be equal to the <code>this</code> of the function.</p>
-  <p><em>If you are using <a href="/jQuery.proxy">jQuery.proxy</a> or another form of scope manipulation, <code>this</code> will be equal to whatever context you have provided, not <code>event.currentTarget</code></em></p>
-</longdesc>
-<example>
-  <desc>Alert that currentTarget matches the `this` keyword.</desc>
-  <code><![CDATA[$("p").click(function(event) {
-  alert( event.currentTarget === this ); // true
-});  ]]></code>
-</example>
-<category slug="events/event-object"/>
-<category slug="version/1.3"/>
+  <desc>A DOM element: <code>event.target</code>, or an ancestor if the event is bubbling.</desc>
+
+  <longdesc>
+
+    <p>This property will typically be equal to the <code>this</code> of the function.</p>
+
+    <p><em>If <a href="/jQuery.proxy">jQuery.proxy</a> or another form of scope manipulation is used, <code>this</code> will be equal to whatever context was provided, not <code>event.currentTarget</code>.</em></p>
+
+
+    <p>
+    The <a href="http://www.w3.org/TR/DOM-Level-2-Events/events.html#Events-interface">W3C DOM Event interface</a> includes a <a href="http://www.w3.org/TR/DOM-Level-2-Events/events.html#Events-Event-currentTarget"><code>.currentTarget</code></a> property ("standard <code>.currentTarget</code>"), that some browsers implement in their native event objects.  jQuery's <code>event.currentTarget</code> may or may not contain the same value as the standard <code>.currentTarget</code>: it depends whether the event listener registration was <a href="/on/#direct-and-delegated-events">direct or delegated</a>.  <a href="/event.delegateTarget"><code>event.delegateTarget</code></a> (available from jQuery 1.7) will contain the value of the standard <code>.currentTarget</code>.
+    </p>
+
+    <p>
+    Consider this markup:
+    </p>
+
+    <pre><code><![CDATA[<p>
+
+<span>click me</span>
+
+</p>]]></code></pre>
+
+    <p>
+    When event registration is direct, <code>$( "p" ).on( 'click', handler )</code>, then <code>event.currentTarget</code> will have the same value as the standard <code>.currentTarget</code>: the current DOM element within the event bubbling phase.  This call to <code>.on()</code> would result in <code>event.currentTarget</code> being set to the <code>p</code>.
+    </p>
+
+    <p>
+    When event registration is delegated, <code>$( "p" ).on( 'click', "span", handler )</code>, then <code>event.currentTarget</code> will be set to the DOM element that matches the selector (in this case, "span").  In this scenario jQuery sets <code>event.currentTarget</code> as if the event were registered directly on the element that matches the selector.  This call to <code>.on()</code> would result in <code>event.currentTarget</code> being set to the <code>span</code>.
+    </p>
+
+    <p>
+    In both of the preceding examples, the event listener is actually registered on the <code>p</code> and the event is handled when bubbling reaches the <code>p</code>.  The standard <code>.currentTarget</code> property would be set to the <code>p</code>.
+    </p>
+
+    <p>
+    If event registration is delegated, in jQuery 1.7+ the value that the standard <code>.currentTarget</code> would have can be accessed as <a href="/event.delegateTarget"><code>event.delegateTarget</code></a>.  In browsers that implement the standard <code>.currentTarget</code> in their native event object, it can be accessed as <code>event.originalEvent.currentTarget</code>.
+    </p>
+
+
+    <table>
+
+    <caption>
+
+    Example values of <code>event</code> target properties for direct and delegated events.
+
+    </caption>
+
+
+    <tbody class="direct-event">
+
+    <tr class="event-reg-type">
+
+    <th scope="rowgroup" colspan="2">
+    Direct event registration
+    </th>
+
+    </tr>
+
+
+    <tr class="event-reg-code">
+
+    <th scope="row">
+    Registration code
+    </th>
+
+    <td>
+    <code>$( "p" ).on( 'click', handler )</code>
+    </td>
+
+    </tr>
+
+
+    <tr class="property-rows-headers">
+
+    <th scope="col" class="property">
+    Property
+    </th>
+
+    <th class="element">
+    Element
+    </th>
+
+    </tr>
+
+
+    <tr class="property jquery-current-target">
+
+    <th scope="row" class="property">
+    <code>event.currentTarget</code>
+    </th>
+
+    <td class="element">
+    <code>p</code>
+    </td>
+
+    </tr>
+
+
+    <tr class="property jquery-delegate-target">
+
+    <th scope="row" class="property">
+    <code>event.delegateTarget</code>
+    </th>
+
+    <td class="element">
+    <code>p</code>
+    </td>
+
+    </tr>
+
+
+    <tr class="property standard-current-target">
+
+    <th scope="row" class="property">
+    <code>event.originalEvent.currentTarget</code>
+    </th>
+
+    <td class="element">
+    <code>p</code>
+    </td>
+
+    </tr>
+
+    </tbody>
+    <!-- .direct-event -->
+
+
+    <tbody class="delegated-event">
+
+    <tr class="event-reg-type">
+
+    <th scope="rowgroup" colspan="2">
+    Delegated event registration
+    </th>
+
+    </tr>
+
+
+    <tr class="event-reg-code">
+
+    <th scope="row">
+    Registration code
+    </th>
+
+    <td>
+    <code>$( "p" ).on( 'click', "span", handler )</code>
+    </td>
+
+    </tr>
+
+
+    <tr class="property-rows-headers">
+
+    <th scope="col" class="property">
+    Property
+    </th>
+
+    <th class="element">
+    Element
+    </th>
+
+    </tr>
+
+
+    <tr class="property jquery-current-target">
+
+    <th scope="row" class="property">
+    <code>event.currentTarget</code>
+    </th>
+
+    <td class="element">
+    <code>span</code>
+    </td>
+
+    </tr>
+
+
+    <tr class="property jquery-delegate-target">
+
+    <th scope="row" class="property">
+    <code>event.delegateTarget</code>
+    </th>
+
+    <td class="element">
+    <code>p</code>
+    </td>
+
+    </tr>
+
+
+    <tr class="property jquery-current-target">
+
+    <th scope="row" class="property">
+    <code>event.originalEvent.currentTarget</code>
+    </th>
+
+    <td class="element">
+    <code>p</code>
+    </td>
+
+    </tr>
+
+    </tbody>
+    <!-- .delegated-event -->
+
+    </table>
+
+  </longdesc>
+
+  <example>
+    <desc>Alert that currentTarget matches the `this` keyword.</desc>
+    <code><![CDATA[$("p").click(function(event) {
+    alert( event.currentTarget === this ); // true
+  });  ]]></code>
+  </example>
+
+  <category slug="events/event-object"/>
+
+  <category slug="version/1.3"/>
+
 </entry>
