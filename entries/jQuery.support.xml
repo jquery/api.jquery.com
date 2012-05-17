@@ -2,8 +2,8 @@
   <signature><added>1.3</added></signature>
   <desc>A collection of properties that represent the presence of different browser features or bugs. Primarily intended for jQuery's internal use; specific properties may be removed when they are no longer needed internally to improve page startup performance.</desc>
   <longdesc>
-    <p>Rather than using <code>$.browser</code> to detect the current user agent and alter the page presentation based on which browser is running, it is a good practice to perform <strong>feature detection</strong>. This means that prior to executing code which relies on a browser feature, we test to ensure that the feature works properly. To make this process simpler, jQuery performs many such tests and makes the results available to us as properties of the <code>jQuery.support</code> object.</p>
-    <p>The values of all the support properties are determined using feature detection (and do not use any form of browser sniffing). </p>
+    <p>Rather than using <code>$.browser</code> to detect the current user agent and alter the page presentation based on which browser is running, it is a good practice to use <strong>feature detection</strong>. To make this process simpler, jQuery performs many such tests and sets properties of the <code>jQuery.support</code> object.</p>
+    <p><strong>Since jQuery requires these tests internally, they must be performed on <em>every</em> page load. Although some of these properties are documented below, they are not subject to a long deprecation/removal cycle and may be removed once internal jQuery code no longer needs them.</strong></p>
 
     <blockquote>
       <p>Following are a few resources that explain how feature detection works:</p>
@@ -13,7 +13,7 @@
         <li><a href="http://yura.thinkweb2.com/cft/">http://yura.thinkweb2.com/cft/</a></li>
       </ul>
     </blockquote>
-    <p>While jQuery includes a number of properties, developers should feel free to add their own as their needs dictate. Many of the <code>jQuery.support</code> properties are rather low-level, so they are most useful for plugin and jQuery core development, rather than general day-to-day development. Since jQuery requires these tests internally, they must be performed on <em>every</em> page load; for that reason this list is kept short and limited to features needed by jQuery itself.</p>
+    <p>For your own project's feature-detection needs, we strongly recommend the use of an external library such as <a href="http://modernizr.com">Modernizr</a> instead of dependency on properties in <code>jQuery.support</code>.</p>
 
     <p>The tests included in <code>jQuery.support</code> are as follows:</p>
     <ul>
