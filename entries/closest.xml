@@ -28,7 +28,8 @@
     </argument>
   </signature>
 
-  <desc>Get the first element that matches the selector, beginning at the current element and progressing up through the DOM tree.</desc>
+  <desc>For each element in the set, get the closest element that matches the selector, by testing the element itself and traversing up through its ancestors.</desc>
+
   <longdesc><p>Given a jQuery object that represents a set of DOM elements, the <code>.closest()</code> method searches through these elements and their ancestors in the DOM tree and constructs a new jQuery object from the matching elements. The <code>.parents()</code> and <code>.closest()</code> methods are similar in that they both traverse up the DOM tree. The differences between the two, though subtle, are significant:</p>
 
   <table>
@@ -47,8 +48,8 @@
         <td>Travels up the DOM tree to the document's root element, adding each ancestor element to a temporary collection; it then filters that collection based on a selector if one is supplied </td>
       </tr>
       <tr>
-        <td>The returned jQuery object contains zero or one element</td>
-        <td>The returned jQuery object contains zero, one, or multiple elements</td>
+        <td>The returned jQuery object contains zero or one element for each element in the original set</td>
+        <td>The returned jQuery object contains zero or more elements for each element in the original set</td>
       </tr>
     </tbody>
   </table>
