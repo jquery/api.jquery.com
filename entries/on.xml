@@ -108,7 +108,7 @@ $("button").on("click", { name: "Addy" }, greet);
 
     <p>There are shorthand methods for some events such as <a href="http://api.jquery.com/click/"><code>.click()</code></a> that can be used to attach or trigger event handlers. For a complete list of shorthand methods, see the <a href="http://api.jquery.com/category/events/">events category</a>.</p>
 
-    <p>Although strongly discouraged for new code, you may see the pseudo-event-name <code>"hover"</code> used as a shorthand for the string <code>"mouseenter mouseleave"</code>. It attaches a <em>single event handler</em> for those two events, and the handler must examine <code>event.type</code> to determine whether the event is <code>mouseenter</code> or <code>mouseleave</code>. Do not confuse the "hover" pseudo-event-name with the <a href="http://api.jquery.com/hover/"><code>.hover()</code></a> method, which accepts <em>one or two</em> functions.</p>
+    <p><em>Deprecated as of jQuery 1.8:</em> The name <code>"hover"</code> used as a shorthand for the string <code>"mouseenter mouseleave"</code>. It attaches a <em>single event handler</em> for those two events, and the handler must examine <code>event.type</code> to determine whether the event is <code>mouseenter</code> or <code>mouseleave</code>. Do not confuse the "hover" pseudo-event-name with the <a href="http://api.jquery.com/hover/"><code>.hover()</code></a> method, which accepts <em>one or two</em> functions.</p>
 
     <p>jQuery's event system requires that a DOM element allow attaching data via a property on the element, so that events can be tracked and delivered. The <code>object</code>, <code>embed</code>, and <code>applet</code> elements cannot attach data, and therefore cannot have jQuery events bound to them.</p>
 
