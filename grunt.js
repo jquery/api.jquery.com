@@ -143,7 +143,7 @@ grunt.registerTask( "build-resources", function() {
 	grunt.file.mkdir( targetDir );
 
 	grunt.utils.async.forEachSeries( resourceFiles, function( fileName, fileDone )  {
-		grunt.file.copy( fileName, targetDir + fileName );
+		grunt.file.copy( fileName, targetDir + path.basename( fileName ) );
 		fileDone();
 	}, function() {
 		if ( task.errorCount ) {
