@@ -6,7 +6,7 @@
   <desc>Get the current computed width for the first element in the set of matched elements.</desc>
   <longdesc>
     <p>The difference between <code>.css(width)</code> and <code>.width()</code> is that the latter returns a unit-less pixel value (for example, <code>400</code>) while the former returns a value with units intact (for example, <code>400px</code>). The <code>.width()</code> method is recommended when an element's width needs to be used in a mathematical calculation.</p>
-    <p class="image"><img src="/images/0042_04_04.png"/></p>
+    <p class="image"><img src="/resources/0042_04_04.png"/></p>
     <p>This method is also able to find the width of the window and document.</p>
 
     <pre>$(window).width();   // returns width of browser viewport

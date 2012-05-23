@@ -35,7 +35,7 @@
 &lt;/div&gt;
 &lt;div id="log"&gt;&lt;/div&gt;</pre>
 
-    <p class="image"><img src="/images/0042_05_06.png" alt="" />
+    <p class="image"><img src="/resources/0042_05_06.png" alt="" />
     </p>
     <p>The event handler can be bound to any element:</p>
     <pre>$('#outer').mouseover(function() {

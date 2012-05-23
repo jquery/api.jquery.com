@@ -9,6 +9,7 @@ var // modules
 	// files
 	entryFiles = grunt.file.expandFiles( "entries/*.xml" ),
 	categoryFiles = grunt.file.expandFiles( "categories/*.xml" ),
+	resourceFiles = grunt.file.expandFiles( "resources/*" ),
 	
 	xmlFiles = [].concat( entryFiles, categoryFiles );
 	
@@ -134,8 +135,29 @@ grunt.registerTask( "build-categories", function() {
 	});
 });
 
+grunt.registerTask( "build-resources", function() {
+	var task = this,
+		taskDone = task.async(),
+		targetDir = grunt.config( "wordpress.dir" ) + "/resources/";
+
+	grunt.file.mkdir( targetDir );
+
+	grunt.utils.async.forEachSeries( resourceFiles, function( fileName, fileDone )  {
+		grunt.file.copy( fileName, targetDir + fileName );
+		fileDone();
+	}, function() {
+		if ( task.errorCount ) {
+			grunt.warn( "Task \"" + task.name + "\" failed." );
+			taskDone();
+			return;
+		}
+		grunt.log.writeln( "Built " + resourceFiles.length + " resources." );
+		taskDone();
+	});
+});
+
 grunt.registerTask( "default", "build-wordpress" );
-grunt.registerTask( "build-wordpress", "clean lint xmllint build-entries build-categories" );
+grunt.registerTask( "build-wordpress", "clean lint xmllint build-entries build-categories build-resources" );
 grunt.registerTask( "deploy", "wordpress-deploy" );
 
 };

@@ -47,10 +47,10 @@ $('#clickme').click(function() {
 });</pre>
 
 <p class="image four-across">
-  <img src="/images/0042_06_05.png" alt="" />
-  <img src="/images/0042_06_06.png" alt="" />
-  <img src="/images/0042_06_07.png" alt="" />
-  <img src="/images/0042_06_08.png" alt="" />
+  <img src="/resources/0042_06_05.png" alt="" />
+  <img src="/resources/0042_06_06.png" alt="" />
+  <img src="/resources/0042_06_07.png" alt="" />
+  <img src="/resources/0042_06_08.png" alt="" />
 </p>
 
 </longdesc>

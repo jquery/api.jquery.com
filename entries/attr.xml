@@ -98,7 +98,7 @@ var title = $("em").attr("title");
     <desc>Set some attributes for all &lt;img&gt;s in the page.</desc>
     <code><![CDATA[
 $("img").attr({
-  src: "/images/hat.gif",
+  src: "/resources/hat.gif",
   title: "jQuery",
   alt: "jQuery Logo"
 });
@@ -141,7 +141,7 @@ $("div").attr("id", function (arr) {
     <desc>Set the src attribute from title attribute on the image.</desc>
     <code><![CDATA[
 $("img").attr("src", function() {
-    return "/images/" + this.title;
+    return "/resources/" + this.title;
 });
 ]]></code>
     <html><![CDATA[

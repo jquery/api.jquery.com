@@ -10,7 +10,7 @@
     <p>Returns the width of the element, along with left and right padding, border, and optionally margin, in pixels.</p>
     <p>If <code>includeMargin</code> is omitted or <code>false</code>, the padding and border are included in the calculation; if <code>true</code>, the margin is also included.</p>
     <p>This method is not applicable to <code>window</code> and <code>document</code> objects; for these, use <code><a href='/width'>.width()</a></code> instead.</p>
-    <p class="image"><img src="/images/0042_04_06.png"/></p>
+    <p class="image"><img src="/resources/0042_04_06.png"/></p>
   </longdesc>
 <example>
   <desc>Get the outerWidth of a paragraph.</desc>

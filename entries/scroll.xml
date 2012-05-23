@@ -39,7 +39,7 @@
 &lt;div id="log"&gt;&lt;/div&gt;</pre>
     <p>The style definition is present to make the target element small enough to be scrollable:</p>
 
-    <p class="image"><img src="/images/0042_05_11.png" alt="" />
+    <p class="image"><img src="/resources/0042_05_11.png" alt="" />
     </p>
     <p>The <code>scroll</code> event handler can be bound to this element:</p>
     <pre>$('#target').scroll(function() {

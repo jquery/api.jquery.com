@@ -29,7 +29,7 @@
   Trigger the handler
 &lt;/div&gt;
 </pre>
-    <p class="image"><img src="/images/0042_05_02.png" alt="" /></p>
+    <p class="image"><img src="/resources/0042_05_02.png" alt="" /></p>
     <p>The event handler can be bound to any <code>&lt;div&gt;</code>:</p>
     <pre>$('#target').mouseup(function() {
   alert('Handler for .mouseup() called.');

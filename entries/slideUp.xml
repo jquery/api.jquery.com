@@ -37,10 +37,10 @@
 });
   </pre>
   <p class="image four-across"> 
-  <img src="/images/0042_06_21.png" alt="" />
-  <img src="/images/0042_06_22.png" alt="" />
-  <img src="/images/0042_06_23.png" alt="" /> 
-  <img src="/images/0042_06_24.png" alt="" />
+  <img src="/resources/0042_06_21.png" alt="" />
+  <img src="/resources/0042_06_22.png" alt="" />
+  <img src="/resources/0042_06_23.png" alt="" /> 
+  <img src="/resources/0042_06_24.png" alt="" />
   </p>
     <h4 id="easing">Easing</h4>
     <p><strong>As of jQuery 1.4.3</strong>, an optional string naming an easing function may be used. Easing functions specify the speed at which the animation progresses at different points within the animation. The only easing implementations in the jQuery library are the default, called <code>swing</code>, and one that progresses at a constant pace, called <code>linear</code>. More easing functions are available with the use of plug-ins, most notably the <a href="http://jqueryui.com">jQuery UI suite</a>.</p>
