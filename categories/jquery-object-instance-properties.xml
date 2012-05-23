@@ -1,3 +1,0 @@
-<category id="59" parent="68" name="Properties of jQuery Object Instances" slug="jquery-object-instance-properties">
-  <desc>Each jQuery object created with the jQuery() function contains a number of properties alongside its methods. These properties allow us to inspect various attributes of the object.</desc>
-</category>

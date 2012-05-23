@@ -1,3 +1,0 @@
-<category id="12" parent="0" name="Effects" slug="effects">
-  <desc>The jQuery library provides several techniques for adding animation to a web page. These include simple, standard animations that are frequently used, and the ability to craft sophisticated custom effects. In this chapter, we'll closely examine each of the effect methods, revealing all of the mechanisms jQuery has for providing visual feedback to the user.</desc>
-</category>

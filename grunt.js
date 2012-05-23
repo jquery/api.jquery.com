@@ -5,7 +5,6 @@ var // modules
 	fs = require( "fs" ),
 	path = require( "path" ),
 	spawn = require( "child_process" ).spawn,
-	libxmljs = require( "libxmljs" ),
 	
 	// files
 	entryFiles = grunt.file.expandFiles( "entries/*.xml" ),
@@ -108,104 +107,35 @@ grunt.registerTask( "build-categories", function() {
 		categories = {},
 		outFilename = grunt.config( "wordpress.dir" ) + "/taxonomies.json";
 
-	grunt.utils.async.forEachSeries( categoryFiles, function( fileName, fileDone ) {
-		var xml = grunt.file.read( fileName ),
-			xmlDoc = libxmljs.parseXmlString( xml ),
-			id = xmlDoc.get( "//category/@id" ).text(),
-			parent = xmlDoc.get( "//category/@parent" ).text(),
-			name = xmlDoc.get( "//category/@name" ).text(),
-			slug = xmlDoc.get( "//category/@slug" ).text(),
-			desc = xmlDoc.get( "//category/desc" ).text(),
-			fileNameSlug = pathSlug( fileName ),
-			errors = [];
-
-		grunt.verbose.write( "Validating " + fileName + "..." );
-		if ( slug !== fileNameSlug ) {
-			errors.push( "slug attribute (" + slug + ") doesn't match filename slug (" + fileNameSlug + ")" );
-		}
-		if ( errors.length ) {
-			grunt.verbose.error();
-			errors.forEach(function( error ) {
-				grunt.log.error( error );
-			});
-			fileDone();
-			return;
-		}
-		grunt.verbose.ok();
-
-		categories[id] = {
-			id: id,
-			name: name,
-			parent: parent,
-			slug: slug,
-			desc: desc,
-			children: []
-		};
-		
-		fileDone();
-	}, function() {
-		if ( task.errorCount ) {
-			grunt.warn( "Task \"" + task.name + "\" failed." );
-			taskDone();
-			return;
-		}
-
-		var id, category, parent,
-			taxonomies = {
-				"category": [
-					{ "name": "Uncategorized", "slug": "Uncategorized" }
-				]
-			};
-		
-		function catTree( id ) {
-			var category = categories[ id ];
-			var cat = {
-				name: category.name
-			};
-			if ( category.slug.length ) {
-				cat.slug = category.slug;
+		grunt.utils.spawn({
+			cmd: "xsltproc",
+			args: [ "--output", "taxonomies.xml", "cat2tax.xsl", "categories.xml" ]
+		}, function( err, result ) {
+			if ( err ) {
+				grunt.verbose.error();
+				grunt.log.error( err );
+				taskDone();
+				return;
 			}
-			if ( category.desc.length ) {
-				cat.description = category.desc;
+			grunt.utils.spawn({
+				cmd: "xsltproc",
+				args: [ "--output", outFilename, "xml2json.xsl", "taxonomies.xml" ]
+			}, function( err, result ) {
+			if ( err ) {
+				grunt.verbose.error();
+				grunt.log.error( err );
+				taskDone();
+				return;
 			}
-			if ( category.children.length ) {
-				cat.children = [];
-				category.children.forEach(function( childId ){
-					cat.children.push( catTree( childId ) );
-				});
-			}
-			return cat;
-		}
-		
-		for ( id in categories ) {
-			category = categories[ id ];
-			parent = categories[ category.parent ];
-			if ( parent ) {
-				grunt.verbose.write( "Making " + category.name + " a child category of " + parent.name + "..." );
-				parent.children.push( id );
-			} else {
-				grunt.verbose.write( "Making " + category.name + " a top-level category..." );
-				category.parent = undefined;
-			}
+			fs.unlinkSync( "taxonomies.xml" );
 			grunt.verbose.ok();
-		}
-		
-		for ( id in categories ) {
-			category = categories[ id ];
-			if ( !category.parent ) {
-				taxonomies.category.push( catTree( id ) );
-			}
-		}
-
-		grunt.file.write( outFilename, JSON.stringify( taxonomies ) );
-		
-		grunt.log.writeln( "Built " + categoryFiles.length + " categories to " + outFilename + "." );
-		taskDone();
+			taskDone();
+		});
 	});
 });
 
-grunt.registerTask( "default", "build" );
-grunt.registerTask( "build", "clean lint xmllint build-entries build-categories" );
+grunt.registerTask( "default", "build-wordpress" );
+grunt.registerTask( "build-wordpress", "clean lint xmllint build-entries build-categories" );
 grunt.registerTask( "deploy", "wordpress-deploy" );
 
 };

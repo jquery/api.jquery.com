@@ -1,3 +1,0 @@
-<category id="96" parent="6" name="jQuery Extensions" slug="jquery-selector-extensions">
-  <desc>jQuery has extended the CSS3 selectors with the following selectors.  Because these selectors are jQuery extension and not part of the CSS specification, queries using them cannot take advantage of the performance boost provided by the native DOM <code>querySelectorAll()</code> method. To achieve the best performance when using these selectors, first select some elements using a pure CSS selector, then use <a href="http://api.jquery.com/filter/"><code>.filter()</code></a>.</desc>
-</category>

@@ -1,4 +1,0 @@
-<category id="77" parent="69" name="Version 1.2.3" slug="1.2.3">
-  <desc>All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.
-Release Notes: <a href="http://docs.jquery.com/Release:jQuery_1.2.1">1.2.1</a>, <a href="http://docs.jquery.com/Release:jQuery_1.2.2">1.2.2</a>, <a href="http://docs.jquery.com/Release:jQuery_1.2.3">1.2.3</a>.</desc>
-</category>

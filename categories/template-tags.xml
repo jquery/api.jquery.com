@@ -1,7 +1,0 @@
-<category id="86" parent="83" name="Template Tags" slug="template-tags">
-  <desc><p>Template tags can used within jQuery templates in addition to text and HTML markup, in order to enable a number of scenarios such as composition of templates, iteration over hierarchical data, parameterization of template rendering, etc.
-</p>
-<p>
-Available tags include: <a href="http://api.jquery.com/template-tag-equal">${}</a>, <a href="http://api.jquery.com/template-tag-each">{{each}}</a>, <a href="http://api.jquery.com/template-tag-if">{{if}}</a>, <a href="http://api.jquery.com/template-tag-else">{{else}}</a>, <a href="http://api.jquery.com/template-tag-html">{{html}}</a>, <a href="http://api.jquery.com/template-tag-tmpl">{tmpl}}</a> and <a href="http://api.jquery.com/template-tag-wrap">{{wrap}}</a>.</p>
-</desc>
-</category>

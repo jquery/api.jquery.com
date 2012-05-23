@@ -1,7 +1,0 @@
-<category id="92" parent="69" name="Version 1.5" slug="1.5">
-  <desc>All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.
-
-jQuery 1.5 also includes a large rewrite of the Ajax module, which has a number of extensibility improvements. You can find out more about those improvements in the <a href="http://api.jquery.com/extending-ajax/">Extending Ajax</a> documentation.
-
-Additionally jQuery 1.5 includes a new Deferred callback management system you can learn more about in in the <a href="http://api.jquery.com/category/deferred-object/">Deferred Object</a> documentation.</desc>
-</category>
