@@ -259,7 +259,7 @@
 			<desc></desc>
 		</category>
 	</category>
-	<category name="Uncategorized" slug="Uncategorized"/>
+	<category name="Uncategorized" slug="uncategorized"/>
 	<category name="Utilities" slug="utilities">
 		<desc></desc>
 	</category>
