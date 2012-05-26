@@ -114,7 +114,7 @@ $("button").on("click", { name: "Addy" }, greet);
 
     <p>The <code>focus</code> and <code>blur</code> events are specified by the W3C to not bubble, but jQuery defines cross-browser <code>focusin</code> and <code>focusout</code> events that do bubble. When <code>focus</code> and <code>blur</code> are used to attach delegated event handlers, jQuery maps the names and delivers them as <code>focusin</code> and <code>focusout</code> respectively. For consistency and clarity, use the bubbling event type names.</p>
 
-    <p>In all browsers, the <code>load</code> event does not bubble. In Internet Explorer 8 and lower, the <code>paste</code> and <code>reset</code> events do not bubble. Such events are not supported for use with delegation, but they <em>can</em> be used when the event handler is directly attached to the element generating the event.</p>
+    <p>In all browsers, the <code>load</code> and <code>error</code> events (e.g., on an <code>&lt;img&gt;</code> element) do not bubble. In Internet Explorer 8 and lower, the <code>paste</code> and <code>reset</code> events do not bubble. Such events are not supported for use with delegation, but they <em>can</em> be used when the event handler is directly attached to the element generating the event.</p>
 
     <p>The <code>error</code> event on the <code>window</code> object uses nonstandard arguments and return value conventions, so it is not supported by jQuery. Instead, assign a handler function directly to the <code>window.onerror</code> property.</p>
   </longdesc>
