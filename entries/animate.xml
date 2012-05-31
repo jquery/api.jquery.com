@@ -2,7 +2,7 @@
   <desc>Perform a custom animation of a set of CSS properties.</desc>
   <signature>
     <added>1.0</added>
-    <argument name="properties" type="Map">
+    <argument name="properties" type="PlainObject">
       <desc>A map of CSS properties that the animation will move toward.</desc>
     </argument>
     <argument name="duration" type="String,Number" optional="true">
@@ -17,10 +17,10 @@
   </signature>
   <signature>
     <added>1.0</added>
-    <argument name="properties" type="Map">
+    <argument name="properties" type="PlainObject">
       <desc>A map of CSS properties that the animation will move toward.</desc>
     </argument>
-    <argument name="options" type="Map">
+    <argument name="options" type="PlainObject">
       <desc>A map of additional options to pass to the method. Supported keys:
         <ul>
         <li><code>duration</code>: A string or number determining how long the animation will run.</li>

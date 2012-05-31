@@ -29,7 +29,7 @@
   </signature>
   <signature>
     <added>1.7</added>
-    <argument name="events-map" type="Map">
+    <argument name="events" type="PlainObject">
       <desc>A map in which the string keys represent one or more space-separated event types and optional namespaces, and the values represent a handler function to be called for the event(s).</desc>
     </argument>
     <argument name="selector" type="String" optional="true">

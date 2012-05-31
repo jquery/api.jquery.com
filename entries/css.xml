@@ -62,7 +62,7 @@ div { width:60px; height:60px; margin:5px; float:left; }
     </signature>
     <signature>
       <added>1.0</added>
-      <argument name="map" type="Map">
+      <argument name="properties" type="PlainObject">
         <desc>A map of property-value pairs to set.</desc>
       </argument>
     </signature>

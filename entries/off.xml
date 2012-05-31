@@ -14,7 +14,7 @@
   </signature>
   <signature>
     <added>1.7</added>
-    <argument name="events-map" type="Map">
+    <argument name="events" type="PlainObject">
       <desc>A map where the string keys represent one or more space-separated event types and optional namespaces, and the values represent handler functions previously attached for the event(s).</desc>
     </argument>
     <argument name="selector" type="String" optional="true">
@@ -30,7 +30,7 @@
 
     <p>A handler can also be removed by specifying the function name in the <code>handler</code> argument. When jQuery attaches an event handler, it assigns a unique id to the handler function. Handlers proxied by <a href="http://api.jquery.com/jQuery.proxy"><code>jQuery.proxy()</code></a> or a similar mechanism will all have the same unique id (the proxy function), so passing proxied handlers to <code>.off</code> may remove more handlers than intended. In those situations it is better to attach and remove event handlers using namespaces.</p>
 
-    <p>As with <code>.on()</code>, you can pass an <code>events-map</code> argument instead of specifying the <code>events</code> and <code>handler</code> as separate arguments. The keys are events and/or namespaces; the values are handler functions or the special value <code>false</code>.</p>
+    <p>As with <code>.on()</code>, you can pass <code>events</code> as an object instead of specifying an <code>events</code> string and <code>handler</code> function as separate arguments. The keys for the <code>events</code> object are events and/or namespaces; the values are handler functions or the special value <code>false</code>.</p>
   </longdesc>
 <example>
   <desc>Add and remove event handlers on the colored button.</desc>

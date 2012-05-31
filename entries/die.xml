@@ -31,7 +31,7 @@
   </signature>
  <signature>
     <added>1.4.3</added>
-    <argument name="eventTypes" type="Map">
+    <argument name="events" type="PlainObject">
       <desc>A map of one or more event types, such as <code>click</code> or <code>keydown</code> and their corresponding functions that are no longer to be executed.</desc>
     </argument>
   </signature>

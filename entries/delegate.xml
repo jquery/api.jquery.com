@@ -32,7 +32,7 @@
     <argument name="selector" type="String">
       <desc>A selector to filter the elements that trigger the event.</desc>
     </argument>
-    <argument name="events" type="Map">
+    <argument name="events" type="PlainObject">
       <desc>A map of one or more event types and functions to execute for them.</desc>
     </argument>
   </signature>

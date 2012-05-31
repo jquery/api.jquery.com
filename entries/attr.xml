@@ -53,7 +53,7 @@ var title = $("em").attr("title");
   </signature>
   <signature>
     <added>1.0</added>
-    <argument name="map" type="Map">
+    <argument name="attributes" type="PlainObject">
       <desc>A map of attribute-value pairs to set.</desc>
     </argument>
   </signature>
@@ -78,7 +78,7 @@ var title = $("em").attr("title");
 .attr('title', 'Photo by Kelly Clark');</pre>
 
     <h4 id="setting-several-attrs">Setting several attributes at once</h4>
-    <p>To change the <code>alt</code> attribute and add the <code>title</code> attribute at the same time, pass both sets of names and values into the method at once using a map (JavaScript object literal). Each key-value pair in the map adds or modifies an attribute:</p>
+    <p>To change the <code>alt</code> attribute and add the <code>title</code> attribute at the same time, pass both sets of names and values into the method at once using a map (plain JavaScript object). Each key-value pair in the map adds or modifies an attribute:</p>
 <pre>$('#greatphoto').attr({
   alt: 'Beijing Brush Seller',
   title: 'photo by Kelly Clark'

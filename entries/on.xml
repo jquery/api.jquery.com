@@ -17,7 +17,7 @@
   </signature>
   <signature>
     <added>1.7</added>
-    <argument name="events-map" type="Map">
+    <argument name="events" type="PlainObject">
       <desc>A map in which the string keys represent one or more space-separated event types and optional namespaces, and the values represent a handler function to be called for the event(s).</desc>
     </argument>
     <argument name="selector" type="String" optional="true">
@@ -37,7 +37,7 @@
 
     <p>An event name can be qualified by <em>event namespaces</em> that simplify removing or triggering the event. For example, <code>"click.myPlugin.simple"</code> defines both the myPlugin and simple namespaces for this particular click event. A click event handler attached via that string could be removed with <code>.off("click.myPlugin")</code> or <code>.off("click.simple")</code> without disturbing other click handlers attached to the elements. Namespaces are similar to CSS classes in that they are not hierarchical; only one name needs to match. Namespaces beginning with an underscore are reserved for jQuery's use.</p>
 
-    <p>In the second form of <code>.on()</code>, the <code>events-map</code> argument is a JavaScript Object, or "map". The keys are strings in the same form as the <code>events</code> argument with space-separated event type names and optional namespaces. The value for each key is a function (or <code>false</code> value) that is used as the <code>handler</code> instead of the final argument to the method. In other respects, the two forms are identical in their behavior as described below.</p>
+    <p>In the second form of <code>.on()</code>, the <code>events</code> argument is a JavaScript Object, or "map". The keys are strings in the same form as the <code>events</code> argument with space-separated event type names and optional namespaces. The value for each key is a function (or <code>false</code> value) that is used as the <code>handler</code> instead of the final argument to the method. In other respects, the two forms are identical in their behavior as described below.</p>
 
     <h2 id="direct-and-delegated-events">Direct and delegated events</h2>
 
@@ -66,7 +66,7 @@ $("#dataTable tbody").on("click", "tr", function(event){
 
 <h2 id="event-handler">The event handler and its environment</h2>
 
-<p>The <code>handler</code> argument is a function (or the value <code>false</code>, see below), and is required unless the <code>events-map</code> form is used. You can provide an anonymous handler function at the point of the <code>.on()</code> call, as the examples have done above, or declare a named function and pass its name:</p>
+<p>The <code>handler</code> argument is a function (or the value <code>false</code>, see below), and is required unless you pass an object for the <code>events</code> argument. You can provide an anonymous handler function at the point of the <code>.on()</code> call, as the examples have done above, or declare a named function and pass its name:</p>
 <pre>
 function notify() { alert("clicked"); }
 $("button").on("click", notify);

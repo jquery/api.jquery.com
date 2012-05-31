@@ -10,9 +10,9 @@
   </signature>
   <signature>
     <added>1.0</added>
-    <argument name="settings" type="Map">
+    <argument name="settings" type="Map" optional="true">
       <desc>A set of key/value pairs that configure the Ajax request. All settings are optional. A default can be set for any option with <a href="/jQuery.ajaxSetup">$.ajaxSetup()</a>.</desc>
-      <option default="depends on DataType" name="accepts" type="Map">
+      <option default="depends on DataType" name="accepts" type="PlainObject">
         <desc>The content type sent in the request header that tells the server what kind of response it will accept in return. If the <code>accepts</code> setting needs modification, it is recommended to do so once in the <code>$.ajaxSetup()</code> method.</desc>
       </option>
       <option default="true" name="async" type="Boolean">
@@ -27,7 +27,7 @@
       <option name="complete(jqXHR, textStatus)" type="Function, Array">
         <desc>A function to be called when the request finishes (after <code>success</code> and <code>error</code> callbacks are executed). The function gets passed two arguments: The jqXHR (in jQuery 1.4.x, XMLHTTPRequest) object and a string categorizing the status of the request (<code>"success"</code>, <code>"notmodified"</code>, <code>"error"</code>, <code>"timeout"</code>, <code>"abort"</code>, or <code>"parsererror"</code>). <strong>As of jQuery 1.5</strong>, the <code>complete</code> setting can accept an array of functions. Each function will be called in turn. This is an <a href='http://docs.jquery.com/Ajax_Events'>Ajax Event</a>.</desc>
       </option>
-      <option name="contents" type="Map" added="1.5">
+      <option name="contents" type="PlainObject" added="1.5">
         <desc>A map of string/regular-expression pairs that determine how jQuery will parse the response, given its content type.</desc>
       </option>
       <option default="'application/x-www-form-urlencoded'" name="contentType" type="String">
@@ -41,7 +41,7 @@
   $(this).addClass("done");
 });</pre></desc>
       </option>
-      <option name="converters" type="Map" default='{"* text": window.String, "text html": true, "text json": jQuery.parseJSON, "text xml": jQuery.parseXML}' added="1.5">
+      <option name="converters" type="PlainObject" default='{"* text": window.String, "text html": true, "text json": jQuery.parseJSON, "text xml": jQuery.parseXML}' added="1.5">
         <desc>A map of dataType-to-dataType converters. Each converter's value is a function that returns the transformed value of the response.</desc>
       </option>
       <option name="crossDomain" type="Boolean" default="false for same-domain requests, true for cross-domain requests" added="1.5">
@@ -72,7 +72,7 @@
         <option default="true" name="global" type="Boolean">
           <desc>Whether to trigger global Ajax event handlers for this request. The default is <code>true</code>. Set to <code>false</code> to prevent the global handlers like <code>ajaxStart</code> or <code>ajaxStop</code> from being triggered. This can be used to control various <a href='http://docs.jquery.com/Ajax_Events'>Ajax Events</a>.</desc>
         </option>
-        <option name="headers" type="Map" default="{}" added="1.5">
+        <option name="headers" type="PlainObject" default="{}" added="1.5">
           <desc>A map of additional header key/value pairs to send along with the request. This setting is set before the <code>beforeSend</code> function is called; therefore, any values in the headers setting can be overwritten from within the <code>beforeSend</code> function.</desc>
         </option>
         <option default="false" name="ifModified" type="Boolean">
@@ -99,7 +99,7 @@
         <option name="scriptCharset" type="String">
           <desc>Only for requests with "jsonp" or "script" dataType and "GET" type. Forces the request to be interpreted as a certain charset. Only needed for charset differences between the remote and local content.</desc>
         </option>
-        <option name="statusCode" type="Map" default="{}" added="1.5">
+        <option name="statusCode" type="PlainObject" default="{}" added="1.5">
           <desc>
             <p>A map of numeric HTTP codes and functions to be called when the response has the corresponding code. For example, the following will alert when the response status is a 404:</p>
 <pre>$.ajax({
@@ -133,7 +133,7 @@
         <option name="xhr" type="Function" default="ActiveXObject when available (IE), the XMLHttpRequest otherwise">
           <desc>Callback for creating the XMLHttpRequest object. Defaults to the ActiveXObject when available (IE), the XMLHttpRequest otherwise. Override to provide your own implementation for XMLHttpRequest or enhancements to the factory.</desc>
         </option>
-        <option name="xhrFields" type="Map" added="1.5.1">
+        <option name="xhrFields" type="PlainObject" added="1.5.1">
           <desc><p>A map of fieldName-fieldValue pairs to set on the native <code><abbr title="XMLHttpRequest">XHR</abbr></code> object. For example, you can use it to set <code>withCredentials</code> to <code>true</code> for cross-domain requests if needed.
 <pre>$.ajax({
    url: a_cross_domain_url,

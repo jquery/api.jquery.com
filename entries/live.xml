@@ -24,7 +24,7 @@
   </signature>
   <signature>
     <added>1.4.3</added>
-    <argument name="events-map" type="PlainObject">
+    <argument name="events" type="PlainObject">
       <desc>A map of one or more JavaScript event types and functions to execute for them.</desc>
     </argument>
   </signature>
