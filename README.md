@@ -25,6 +25,9 @@ The `xmllint` and `xsltproc` utilities need to be in your path. If you are on Wi
 
 * Write in clear, easy-to-understand statements.
 * Keep sentences short and to the point.
+* Include the Oxford (serial) comma in a list of three or more items.
+  * **Yes**: The `load`, `scroll`, and `error` events (e.g., on an `<img>` element) do not bubble
+  * **No**: The `load`, `scroll` and `error` events (e.g., on an `<img>` element) do not bubble
 
 #### Spelling
 * The documentation standardizes on American English spelling. For example:
