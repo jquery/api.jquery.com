@@ -21,7 +21,7 @@
   <longdesc>
   <p>The <code>$.map()</code> method applies a function to each item in an array or object and maps the results into a new array. <strong>Prior to jQuery 1.6</strong>, <code>$.map()</code> supports traversing <em>arrays only</em>. <strong>As of jQuery 1.6</strong> it also traverses objects.</p>
    <p>Array-like objects &#8212; those with a <code>.length</code> property <em>and</em> a value on the <code>.length - 1</code> index &#8212; must be converted to actual arrays before being passed to <code>$.map()</code>. The jQuery library provides <a href="http://api.jquery.com/jQuery.makeArray/">$.makeArray()</a> for such conversions.</p>
-<pre class="prettyprint">
+<pre><code>
 // The following object masquerades as an array.
 var fakeArray = {"length": 1, 0: "Addy", 1: "Subtracty"};
 
@@ -32,7 +32,7 @@ var realArray = $.makeArray( fakeArray )
 $.map( realArray, function(val, i) {
   // do something
 });
-</pre>
+</code></pre>
     <p>The translation function that is provided to this method is called for each top-level element in the array or object and is passed two arguments: The element's value and its index or key within the array or object.</p>
     <p>The function can return:</p>
     <ul>

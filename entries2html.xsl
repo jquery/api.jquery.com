@@ -254,8 +254,8 @@
             <xsl:value-of select="position() - 1"/>
           </xsl:attribute>
           <h4><xsl:if test="$number-examples &gt; 1">Example: </xsl:if><span class="desc"><xsl:value-of select="desc" /></span></h4>
-  <pre class="prettyprint"><code><xsl:choose>
-            <xsl:when test="html"><xsl:attribute name="class">example demo-code</xsl:attribute>&lt;!DOCTYPE html&gt;
+  <pre><code><xsl:choose>
+            <xsl:when test="html">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;<xsl:if test="css/text()">
   &lt;style&gt;<xsl:copy-of select="css/text()" />&lt;/style&gt;</xsl:if>

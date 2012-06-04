@@ -23,7 +23,8 @@
   "dependencies": {
     "grunt": "0.3.x",
     "grunt-clean": "0.1.0",
-    "grunt-wordpress": "0.1.0"
+    "grunt-wordpress": "0.1.0",
+    "pygmentize": "0.2.0"
   },
   "devDependencies": {},
   "keywords": []

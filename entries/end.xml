@@ -20,7 +20,7 @@
     <p>The <code>end()</code> method is useful primarily when exploiting jQuery's chaining properties. When not using chaining, we can usually just call up a previous object by variable name, so we don't need to manipulate the stack. With <code>end()</code>, though, we can string all the method calls together:</p>
     <pre>
 $('ul.first').find('.foo').css('background-color', 'red')
-  <code>.end()</code>.find('.bar').css('background-color', 'green');
+  .end().find('.bar').css('background-color', 'green');
 </pre>
     <p>This chain searches for items with the class <code>foo</code> within the first list only and turns their backgrounds red. Then <code>end()</code> returns the object to its state before the call to <code>find()</code>, so the second <code>find()</code> looks for '.bar' inside <code>&lt;ul class="first"&gt;</code>, not just inside that list's <code>&lt;li class="foo"&gt;</code>, and turns the matching elements' backgrounds green. The net result is that items 1 and 3 of the first list have a colored background, and none of the items from the second list do.</p>
     <p>A long jQuery chain can be visualized as a structured code block, with filtering methods providing the openings of nested blocks and <code>end()</code> methods closing them:</p>
