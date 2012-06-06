@@ -1,4 +1,5 @@
 <entry type='method' name="jQuery.post" return="jqXHR">
+  <title>jQuery.post()</title>
   <signature>
     <added>1.0</added>
     <argument name="url" type="String">

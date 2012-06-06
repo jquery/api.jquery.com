@@ -1,4 +1,5 @@
 <entry name="deferred.fail" type="method" return="Deferred">
+  <title>deferred.fail()</title>
   <signature>
     <added>1.5</added>
     <argument name="failCallbacks" type="Function">

@@ -1,4 +1,5 @@
 <entry type='selector'  name="attributeMultiple" return="">
+  <title>Multiple Attribute Selector [name="value"][name2="value2"]</title>
   <sample>[attributeFilter1][attributeFilter2][attributeFilterN]</sample>
   <signature><added>1.0</added>
   <argument name="attributeFilter1" type="Selector">

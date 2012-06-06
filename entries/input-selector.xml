@@ -1,4 +1,5 @@
 <entry type='selector'  name="input" return="">
+  <title>:input Selector</title>
   <sample>:input</sample>
   <signature><added>1.0</added> </signature>
   <desc>Selects all input, textarea, select and button elements.</desc>

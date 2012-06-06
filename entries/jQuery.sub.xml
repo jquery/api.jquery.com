@@ -1,4 +1,5 @@
 <entry type='method' name="jQuery.sub" return="jQuery">
+  <title>jQuery.sub()</title>
   <signature>
     <added>1.5</added>
     <deprecated>1.7</deprecated>

@@ -1,4 +1,5 @@
 <entry type='selector'   name="reset" return="">
+  <title>:reset Selector</title>
   <sample>:reset</sample>
   <signature><added>1.0</added> </signature>
   <desc>Selects all elements of type reset.</desc>

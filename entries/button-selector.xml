@@ -1,4 +1,5 @@
 <entry type='selector'   name="button" return="">
+  <title>:button Selector</title>
   <sample>:button</sample>
    <signature><added>1.0</added> </signature>
   <desc>Selects all button elements and elements of type button.</desc>

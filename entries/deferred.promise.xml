@@ -1,4 +1,5 @@
 <entry name="deferred.promise" type="method" return="Promise">
+  <title>deferred.promise()</title>
   <signature>
     <added>1.5</added>
     <argument name="target" type="Object" optional="true">

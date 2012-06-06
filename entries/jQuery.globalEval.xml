@@ -1,4 +1,5 @@
 <entry type='method' name="jQuery.globalEval" return="">
+  <title>jQuery.globalEval()</title>
   <signature>
     <added>1.0.4</added>
     <argument name="code" type="String">

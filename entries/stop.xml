@@ -1,4 +1,5 @@
 <entry type='method' name="stop" return="jQuery">
+  <title>.stop()</title>
   <desc>Stop the currently-running animation on the matched elements.</desc>
   <signature>
     <added>1.2</added>

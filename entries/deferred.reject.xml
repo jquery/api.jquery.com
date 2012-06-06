@@ -1,4 +1,5 @@
 <entry name="deferred.reject" type="method" return="Deferred">
+  <title>deferred.reject()</title>
   <signature>
     <added>1.5</added>
     <argument name="args" type="Object">

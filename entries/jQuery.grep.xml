@@ -1,4 +1,5 @@
 <entry type='method' name="jQuery.grep" return="Array">
+  <title>jQuery.grep()</title>
   <desc>Finds the elements of an array which satisfy a filter function. The original array is not affected.</desc>
   <signature>
     <added>1.0</added>

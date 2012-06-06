@@ -1,4 +1,5 @@
 <entry type='method' name="delay" return="jQuery">
+  <title>.delay()</title>
   <signature>
     <added>1.4</added>
     <argument name="duration" type="Integer">

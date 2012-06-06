@@ -1,5 +1,6 @@
 <entries>
 <entry type='method' name="height" return="Integer">
+  <title>.height()</title>
   <signature>
     <added>1.0</added>
   </signature>

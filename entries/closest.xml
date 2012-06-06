@@ -1,5 +1,6 @@
 <entries>
 <entry type='method' name="closest" return="jQuery">
+  <title>.closest()</title>
   <signature>
     <added>1.3</added>
     <argument name="selector" type="Selector">

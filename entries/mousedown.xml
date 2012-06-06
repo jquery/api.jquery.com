@@ -1,4 +1,5 @@
 <entry type='method' name="mousedown" return="jQuery">
+  <title>.mousedown()</title>
   <desc>Bind an event handler to the "mousedown" JavaScript event, or trigger that event on an element.</desc>
   <signature>
     <added>1.0</added>

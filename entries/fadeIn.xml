@@ -1,4 +1,5 @@
 <entry type='method' name="fadeIn" return="jQuery">
+  <title>.fadeIn()</title>
   <desc>Display the matched elements by fading them to opaque.</desc>
   <signature>
     <added>1.0</added>

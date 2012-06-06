@@ -1,5 +1,6 @@
 <entries>
 <entry type='method' name="scrollLeft" return="Integer">
+  <title>.scrollLeft()</title>
   <signature>
     <added>1.2.6</added>
   </signature>

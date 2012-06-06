@@ -1,5 +1,6 @@
 <entries>
 <entry type='method' name="text" return="String">
+  <title>.text()</title>
   <signature>
     <added>1.0</added>
   </signature>

@@ -1,4 +1,5 @@
 <entry type='selector' name="has" return="">
+  <title>:has() Selector</title>
   <sample>:has(selector)</sample>
   <signature><added>1.1.4</added>
   <argument name="selector" type="Selector">

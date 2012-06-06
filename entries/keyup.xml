@@ -1,4 +1,5 @@
 <entry type='method' name="keyup" return="jQuery">
+  <title>.keyup()</title>
   <desc>Bind an event handler to the "keyup" JavaScript event, or trigger that event on an element.</desc>
   <signature>
     <added>1.0</added>

@@ -1,5 +1,6 @@
 <entries>
 <entry type='method' name="jQuery.queue" return="Array">
+  <title>jQuery.queue()</title>
   <signature>
     <added>1.3</added>
     <argument name="element" type="Element">

@@ -1,4 +1,5 @@
 <entry type='method' name="one" return="jQuery">
+  <title>.one()</title>
   <desc>Attach a handler to an event for the elements. The handler is executed at most once per element.</desc>
   <signature>
     <added>1.1</added>

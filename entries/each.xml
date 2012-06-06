@@ -1,4 +1,5 @@
 <entry type='method' name="each" return="jQuery">
+  <title>.each()</title>
   <signature>
     <added>1.0</added>
     <argument name="function(index, Element)" type="Function">

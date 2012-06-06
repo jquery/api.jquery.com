@@ -1,4 +1,5 @@
 <entry type='method' name="jQuery.isArray" return="boolean">
+  <title>jQuery.isArray()</title>
   <signature>
     <added>1.3</added>
     <argument name="obj" type="Object">

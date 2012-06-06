@@ -1,4 +1,5 @@
 <entry type='selector'   name="first-child" return="" >
+  <title>:first-child Selector</title>
   <sample>:first-child</sample>
   <signature><added>1.1.4</added> </signature>
   <desc>Selects all elements that are the first child of their parent.</desc>

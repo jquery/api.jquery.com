@@ -1,4 +1,5 @@
 <entry type='method' name="jQuery.noop" return="Function">
+  <title>jQuery.noop()</title>
   <signature><added>1.4</added></signature>
   <desc>An empty function.</desc>
   <longdesc>

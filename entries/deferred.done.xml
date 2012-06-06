@@ -1,4 +1,5 @@
 <entry name="deferred.done" type="method" return="Deferred">
+  <title>deferred.done()</title>
   <signature>
     <added>1.5</added>
     <argument name="doneCallbacks" type="Function">

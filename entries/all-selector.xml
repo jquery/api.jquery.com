@@ -1,4 +1,5 @@
 <entry type='selector'  name="all" return=""  >
+  <title>All Selector ("*")</title>
   <sample>*</sample>
   <signature>
     <added>1.0</added>

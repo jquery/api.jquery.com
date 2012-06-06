@@ -1,4 +1,5 @@
 <entry type='selector'   name="submit" return="">
+  <title>:submit Selector</title>
   <sample>:submit</sample>
   <signature><added>1.0</added> </signature>
   <desc>Selects all elements of type submit.</desc>

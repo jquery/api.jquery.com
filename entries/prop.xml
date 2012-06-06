@@ -1,5 +1,6 @@
 <entries>
 <entry type='method' name="prop" return="String">
+  <title>.prop()</title>
   <signature>
     <added>1.6</added>
     <argument name="propertyName" type="String">

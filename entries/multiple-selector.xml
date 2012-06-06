@@ -1,4 +1,5 @@
 <entry type='selector' name="multiple" return=""  >
+  <title>Multiple Selector ("selector1, selector2, selectorN")</title>
   <sample>selector1, selector2, selectorN</sample>
   <signature>
     <added>1.0</added>

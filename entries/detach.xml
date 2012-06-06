@@ -1,4 +1,5 @@
 <entry type='method' name="detach" return="jQuery">
+  <title>.detach()</title>
   <signature>
     <added>1.4</added>
     <argument name="selector" optional="true" type="Selector">

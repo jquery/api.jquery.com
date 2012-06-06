@@ -1,4 +1,5 @@
 <entry type='method' name="jQuery.isWindow" return="boolean">
+  <title>jQuery.isWindow()</title>
   <signature>
     <added>1.4.3</added>
     <argument name="obj" type="PlainObject">

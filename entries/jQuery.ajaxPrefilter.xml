@@ -1,4 +1,5 @@
 <entry type='method' name="jQuery.ajaxPrefilter" return="undefined">
+  <title>jQuery.ajaxPrefilter()</title>
   <desc>Handle custom Ajax options or modify existing options before each request is sent and before they are processed by <code>$.ajax()</code>.</desc>
   <signature>
     <added>1.5</added>

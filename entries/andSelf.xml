@@ -1,4 +1,5 @@
 <entry type='method' name="andSelf" return="jQuery">
+  <title>.andSelf()</title>
   <signature>
     <added>1.2</added>
   </signature>

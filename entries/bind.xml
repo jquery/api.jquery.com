@@ -1,4 +1,5 @@
 <entry type='method' name="bind" return="jQuery">
+  <title>.bind()</title>
   <signature>
     <added>1.0</added>
     <argument name="eventType" type="String">

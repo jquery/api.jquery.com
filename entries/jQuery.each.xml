@@ -1,4 +1,5 @@
 <entry type='method' name="jQuery.each" return="Object">
+  <title>jQuery.each()</title>
   <signature>
     <added>1.0</added>
     <argument name="collection" type="Object">

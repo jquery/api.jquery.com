@@ -1,4 +1,5 @@
 <entry type='method' name="toArray" return="Array">
+  <title>.toArray()</title>
   <signature>
     <added>1.4</added>
   </signature>

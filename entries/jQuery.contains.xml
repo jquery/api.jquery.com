@@ -1,4 +1,5 @@
 <entry type='method' name="jQuery.contains" return="Boolean">
+  <title>jQuery.contains()</title>
   <signature>
     <added>1.4</added>
     <argument name="container" type="Element">

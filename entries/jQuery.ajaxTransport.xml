@@ -1,4 +1,5 @@
 <entry type='method' name="jQuery.ajaxTransport" return="undefined">
+  <title>jQuery.ajaxTransport()</title>
   <desc>Creates an object that handles the actual transmission of Ajax data.</desc>
   <signature>
     <added>1.5</added>

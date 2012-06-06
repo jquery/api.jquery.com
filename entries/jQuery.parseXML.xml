@@ -1,4 +1,5 @@
 <entry type='method' name="jQuery.parseXML" return="XMLDocument">
+  <title>jQuery.parseXML()</title>
   <desc>Parses a string into an XML document.</desc>
   <signature>
     <added>1.5</added>

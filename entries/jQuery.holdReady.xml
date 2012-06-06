@@ -1,4 +1,5 @@
 <entry type='method' name="jQuery.holdReady" return="undefined">
+  <title>jQuery.holdReady()</title>
   <desc>Holds or releases the execution of jQuery's ready event.</desc>
   <signature>
     <added>1.6</added>

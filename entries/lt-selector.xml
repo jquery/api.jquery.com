@@ -1,4 +1,5 @@
 <entry type='selector'   name="lt" return="" >
+  <title>:lt() Selector</title>
   <sample>:lt(index)</sample>
   <signature>
     <added>1.0</added>

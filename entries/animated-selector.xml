@@ -1,4 +1,5 @@
 <entry type='selector' name="animated" return="">
+  <title>:animated Selector</title>
   <sample>:animated</sample>
   <signature><added>1.2</added></signature>
   <desc>Select all elements that are in the progress of an animation at the time the selector is run.</desc>

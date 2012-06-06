@@ -1,4 +1,5 @@
 <entry type='selector' name="parent" return="">
+  <title>:parent Selector</title>
   <sample>:parent</sample>
   <signature><added>1.0</added> </signature>
   <desc>Select all elements that are the parent of another element, including text nodes.</desc>

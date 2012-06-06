@@ -1,4 +1,5 @@
 <entry type='method' name="position" return="Object">
+  <title>.position()</title>
   <signature>
     <added>1.2</added>
   </signature>

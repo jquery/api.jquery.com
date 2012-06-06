@@ -1,4 +1,5 @@
 <entry type='selector'  name="child" return="" >
+  <title>Child Selector ("parent > child")</title>
   <sample>parent &gt; child</sample>
   <signature>
     <added>1.0</added>

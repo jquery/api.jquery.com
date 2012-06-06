@@ -1,4 +1,5 @@
 <entry type='selector'  name="last-child" return="" >
+  <title>:last-child Selector</title>
   <sample>:last-child</sample>
   <signature><added>1.1.4</added> </signature>
   <desc>Selects all elements that are the last child of their parent.</desc>

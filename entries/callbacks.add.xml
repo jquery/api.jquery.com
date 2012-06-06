@@ -1,4 +1,5 @@
 <entry name="callbacks.add" type="method" return="undefined">
+  <title>callbacks.add()</title>
   <signature>
     <added>1.7</added>
     <argument name="callbacks" type="Function">

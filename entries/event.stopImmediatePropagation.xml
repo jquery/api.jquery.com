@@ -1,4 +1,5 @@
 <entry type='method' name="event.stopImmediatePropagation" return="">
+  <title>event.stopImmediatePropagation()</title>
   <signature>
     <added>1.3</added>
   </signature>

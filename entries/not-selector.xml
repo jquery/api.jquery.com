@@ -1,4 +1,5 @@
 <entry type='selector'  name="not" return=""  >
+  <title>:not() Selector</title>
   <sample>:not(selector)</sample>
   <signature>
     <added>1.0</added>

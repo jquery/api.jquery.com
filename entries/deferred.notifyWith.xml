@@ -1,4 +1,5 @@
 <entry name="deferred.notifyWith" type="method" return="Deferred">
+  <title>deferred.notifyWith()</title>
   <signature>
     <added>1.7</added>
     <argument name="context" type="Object">

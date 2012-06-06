@@ -1,4 +1,5 @@
 <entry type='method' name="outerWidth" return="Integer">
+  <title>.outerWidth()</title>
   <signature>
     <added>1.2.6</added>
     <argument name="includeMargin" optional="true" type="Boolean">

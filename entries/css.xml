@@ -1,5 +1,6 @@
 <entries>
 <entry type='method' name="css" return="String">
+  <title>.css()</title>
   <signature>
     <added>1.0</added>
     <argument name="propertyName" type="String">

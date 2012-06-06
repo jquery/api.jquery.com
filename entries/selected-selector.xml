@@ -1,4 +1,5 @@
 <entry type='selector'  name="selected" return="">
+  <title>:selected Selector</title>
   <sample>:selected</sample>
   <signature><added>1.0</added> </signature>
   <desc>Selects all elements that are selected.</desc>

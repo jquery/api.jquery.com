@@ -1,4 +1,5 @@
 <entry type='method' name="mouseenter" return="jQuery">
+  <title>.mouseenter()</title>
   <desc>Bind an event handler to be fired when the mouse enters an element, or trigger that handler on an element.</desc>
   <signature>
     <added>1.0</added>

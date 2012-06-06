@@ -1,4 +1,5 @@
 <entry name="jQuery.Callbacks" type="method" return="">
+  <title>jQuery.Callbacks()</title>
   <signature>
     <added>1.7</added>
     <argument name="flags" type="String">

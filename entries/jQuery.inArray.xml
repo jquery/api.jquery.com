@@ -1,4 +1,5 @@
 <entry type='method' name="jQuery.inArray" return="Number">
+  <title>jQuery.inArray()</title>
   <signature>
     <added>1.2</added>
     <argument name="value" type="Any">

@@ -1,4 +1,5 @@
 <entry name="callbacks.lock" type="method" return="undefined">
+  <title>callbacks.lock()</title>
   <signature>
     <added>1.7</added>
   </signature>

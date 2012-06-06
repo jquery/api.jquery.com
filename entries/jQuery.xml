@@ -1,5 +1,7 @@
 <entries>
 <entry type='method' name="jQuery" return="jQuery">
+  <title>.jquery</title>
+  <title>jQuery()</title>
   <signature>
     <added>1.0</added>
     <argument name="selector" type='selector'>

@@ -1,4 +1,5 @@
 <entry name="deferred.pipe" type="method" return="Promise">
+  <title>deferred.pipe()</title>
   <signature>
     <added>1.6</added>
     <argument name="doneFilter" type="Function" optional="true">

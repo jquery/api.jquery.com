@@ -1,4 +1,5 @@
 <entry type='selector'   name="even" return="" >
+  <title>:even Selector</title>
   <sample>:even</sample>
   <signature><added>1.0</added> </signature>
   <desc>Selects even elements, zero-indexed.  See also <a href="/Selectors/odd">odd</a>.</desc>

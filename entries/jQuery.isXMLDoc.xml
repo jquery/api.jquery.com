@@ -1,4 +1,5 @@
 <entry type='method' name="jQuery.isXMLDoc" return="Boolean">
+  <title>jQuery.isXMLDoc()</title>
   <signature>
     <added>1.1.4</added>
     <argument name="node" type="Element">

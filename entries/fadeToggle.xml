@@ -1,4 +1,5 @@
 <entry type='method' name="fadeToggle" return="jQuery">
+  <title>.fadeToggle()</title>
   <desc>Display or hide the matched elements by animating their opacity.</desc>
   <signature>
     <added>1.4.4</added>

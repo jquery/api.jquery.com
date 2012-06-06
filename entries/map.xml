@@ -1,4 +1,5 @@
 <entry type='method' name="map" return="jQuery">
+  <title>.map()</title>
   <signature>
     <added>1.2</added>
     <argument name="callback(index, domElement)" type="Function">

@@ -1,4 +1,5 @@
 <entry type='method' name="slideUp" return="jQuery">
+  <title>.slideUp()</title>
   <desc>Hide the matched elements with a sliding motion.</desc>
   <signature>
     <added>1.0</added>

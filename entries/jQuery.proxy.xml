@@ -1,4 +1,5 @@
 <entry type='method' name="jQuery.proxy" return="Function">
+  <title>jQuery.proxy()</title>
   <signature>
     <added>1.4</added>
     <argument name="function" type="Function">

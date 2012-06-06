@@ -1,4 +1,5 @@
 <entry type='method' name="toggleClass" return="jQuery">
+  <title>.toggleClass()</title>
   <signature>
     <added>1.0</added>
     <argument name="className" type="String">

@@ -1,4 +1,5 @@
 <entry type='selector'  name="class" return=""  >
+  <title>Class Selector (".class")</title>
   <sample>.class</sample>
   <signature> <added>1.0</added>
   <argument name="class" type="String">

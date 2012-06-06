@@ -1,4 +1,5 @@
 <entry type='selector'   name="nth-child" return="">
+  <title>:nth-child() Selector</title>
   <sample>:nth-child(index/even/odd/equation)</sample>
   <signature>
     <added>1.1.4</added>

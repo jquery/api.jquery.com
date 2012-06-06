@@ -1,4 +1,5 @@
 <entry name="deferred.rejectWith" type="method" return="Deferred">
+  <title>deferred.rejectWith()</title>
   <signature>
     <added>1.5</added>
     <argument name="context" type="Object">

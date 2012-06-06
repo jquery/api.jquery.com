@@ -1,5 +1,6 @@
 <entries>
 <entry type='method' name="queue" return="Array">
+  <title>.queue()</title>
   <signature>
     <added>1.2</added>
     <argument name="queueName" optional="true" type="String">

@@ -1,4 +1,5 @@
 <entry type='selector' name="eq" return="">
+  <title>:eq() Selector</title>
   <sample>:eq(index)</sample>
   <signature>
     <added>1.0</added>

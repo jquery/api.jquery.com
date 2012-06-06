@@ -1,4 +1,5 @@
 <entry type='method' name="unload" return="jQuery">
+  <title>.unload()</title>
   <signature>
     <added>1.0</added>
     <argument name="handler(eventObject)" type="Function">

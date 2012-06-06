@@ -1,4 +1,5 @@
 <entry name="callbacks.empty" type="method" return="undefined">
+  <title>callbacks.empty()</title>
   <signature>
     <added>1.7</added>
   </signature>

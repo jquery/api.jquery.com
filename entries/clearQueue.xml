@@ -1,4 +1,5 @@
 <entry type='method' name="clearQueue" return="jQuery">
+  <title>.clearQueue()</title>
 <signature>
   <added>1.4</added>
   <argument name="queueName" optional="true" type="String">

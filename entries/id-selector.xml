@@ -1,4 +1,5 @@
 <entry type='selector'  name="id" return="" >
+  <title>ID Selector ("#id")</title>
   <sample>#id</sample>
   <signature>
     <added>1.0</added>

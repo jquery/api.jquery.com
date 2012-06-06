@@ -1,5 +1,6 @@
 <entries>
 <entry type='method' name="width" return="Integer">
+  <title>.width()</title>
   <signature>
     <added>1.0</added>
   </signature>

@@ -1,4 +1,5 @@
 <entry type='method' name="removeData" return="jQuery">
+  <title>.removeData()</title>
   <signature>
     <added>1.2.3</added>
     <argument name="name" type="String" optional="true">

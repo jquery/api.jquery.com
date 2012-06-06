@@ -1,4 +1,5 @@
 <entry type='method' name="show" return="jQuery">
+  <title>.show()</title>
   <desc>Display the matched elements.</desc>
 <signature>
   <added>1.0</added>

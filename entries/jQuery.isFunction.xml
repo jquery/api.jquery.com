@@ -1,4 +1,5 @@
 <entry type='method' name="jQuery.isFunction" return="boolean">
+  <title>jQuery.isFunction()</title>
   <signature>
     <added>1.2</added>
     <argument name="obj" type="PlainObject">

@@ -1,4 +1,5 @@
 <entry type='selector'  name="only-child" return="" >
+  <title>:only-child Selector</title>
   <sample>:only-child</sample>
   <signature> <added>1.1.4</added> </signature>
   <desc>Selects all elements that are the only child of their parent.</desc>

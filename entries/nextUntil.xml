@@ -1,4 +1,5 @@
 <entry type='method' name="nextUntil" return="jQuery">
+  <title>.nextUntil()</title>
   <signature>
     <added>1.4</added>
     <argument name="selector" optional="true" type="Selector">

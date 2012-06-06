@@ -1,4 +1,5 @@
 <entry type='method' name="jQuery.isNumeric" return="Boolean">
+  <title>jQuery.isNumeric()</title>
   <desc>Determines whether its argument is a number.</desc>
   <signature>
     <added>1.7</added>

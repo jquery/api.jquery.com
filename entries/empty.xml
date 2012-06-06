@@ -1,4 +1,5 @@
 <entry type='method' name="empty" return="jQuery">
+  <title>.empty()</title>
   <signature>
     <added>1.0</added>
   </signature>

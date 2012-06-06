@@ -1,4 +1,5 @@
 <entry type='method' name="eq" return="jQuery">
+  <title>.eq()</title>
   <signature>
     <added>1.1.2</added>
     <argument name="index" type="Integer">

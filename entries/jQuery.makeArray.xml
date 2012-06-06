@@ -1,4 +1,5 @@
 <entry type='method' name="jQuery.makeArray" return="Array">
+  <title>jQuery.makeArray()</title>
   <signature>
     <added>1.2</added>
     <argument name="obj" type="PlainObject">

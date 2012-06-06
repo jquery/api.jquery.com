@@ -1,4 +1,5 @@
 <entry type='method' name="contents" return="jQuery">
+  <title>.contents()</title>
   <signature>
     <added>1.2</added>
   </signature>

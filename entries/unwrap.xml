@@ -1,4 +1,5 @@
 <entry type='method' name="unwrap" return="jQuery">
+  <title>.unwrap()</title>
   <signature>
     <added>1.4</added>
   </signature>

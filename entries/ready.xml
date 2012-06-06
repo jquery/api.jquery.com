@@ -1,4 +1,5 @@
 <entry type='method' name="ready" return="jQuery">
+  <title>.ready()</title>
   <desc>Specify a function to execute when the DOM is fully loaded.</desc>
   <signature>
     <added>1.0</added>

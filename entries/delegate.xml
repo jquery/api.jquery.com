@@ -1,4 +1,5 @@
 <entry type='method' name="delegate" return="jQuery">
+  <title>.delegate()</title>
   <desc>Attach a handler to one or more events for all elements that match the selector, now or in the future, based on a specific set of root elements.</desc>
   <signature>
     <added>1.4.2</added>

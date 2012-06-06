@@ -1,5 +1,6 @@
 <entries>
 <entry type='method' name="jQuery.data" return="Object">
+  <title>jQuery.data()</title>
   <signature>
     <added>1.2.3</added>
     <argument name="element" type="Element">

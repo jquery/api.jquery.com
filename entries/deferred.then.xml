@@ -1,4 +1,5 @@
 <entry name="deferred.then" type="method" return="Deferred">
+  <title>deferred.then()</title>
   <signature>
     <added>1.5</added>
     <argument name="doneCallbacks" type="Function">

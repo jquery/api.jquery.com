@@ -1,4 +1,5 @@
 <entry type='method' name="off" return="jQuery">
+  <title>.off()</title>
   <desc>Remove an event handler.</desc>
   <signature>
     <added>1.7</added>

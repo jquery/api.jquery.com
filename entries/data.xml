@@ -1,5 +1,6 @@
 <entries>
 <entry type='method' name="data" return="jQuery">
+  <title>.data()</title>
   <signature>
     <added>1.2.3</added>
     <argument name="key" type="String">

@@ -1,4 +1,5 @@
 <entry type='method' name="serializeArray" return="Array">
+  <title>.serializeArray()</title>
   <signature>
     <added>1.2</added>
   </signature>

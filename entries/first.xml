@@ -1,4 +1,5 @@
 <entry type='method' name="first" return="jQuery">
+  <title>.first()</title>
   <signature>
     <added>1.4</added>
   </signature>

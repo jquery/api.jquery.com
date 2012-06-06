@@ -1,4 +1,5 @@
 <entry type='selector'   name="hidden" return="" >
+  <title>:hidden Selector</title>
   <sample>:hidden</sample>
   <signature> <added>1.0</added> </signature>
   <desc>Selects all elements that are hidden.</desc>

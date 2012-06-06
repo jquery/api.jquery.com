@@ -1,4 +1,5 @@
 <entry type='method' name="undelegate" return="jQuery">
+  <title>.undelegate()</title>
   <desc>Remove a handler from the event for all elements which match the current selector, based upon a specific set of root elements.</desc>
   <signature>
     <added>1.4.2</added>

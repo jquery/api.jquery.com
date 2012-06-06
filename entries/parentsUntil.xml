@@ -1,4 +1,5 @@
 <entry type='method' name="parentsUntil" return="jQuery">
+  <title>.parentsUntil()</title>
   <signature>
     <added>1.4</added>
     <argument name="selector" optional="true" type="Selector">

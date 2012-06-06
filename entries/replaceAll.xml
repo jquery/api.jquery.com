@@ -1,4 +1,5 @@
 <entry type='method' name="replaceAll" return="jQuery">
+  <title>.replaceAll()</title>
   <signature>
     <added>1.2</added>
     <argument name="target" type="Selector">

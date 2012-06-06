@@ -1,4 +1,5 @@
 <entry name="deferred.progress" type="method" return="Deferred">
+  <title>deferred.progress()</title>
   <signature>
     <added>1.7</added>
     <argument name="progressCallbacks" type="Function">

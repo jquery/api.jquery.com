@@ -1,4 +1,5 @@
 <entry type='method' name="slideDown" return="jQuery">
+  <title>.slideDown()</title>
   <desc>Display the matched elements with a sliding motion.</desc>
   <signature>
     <added>1.0</added>

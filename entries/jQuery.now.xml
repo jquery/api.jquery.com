@@ -1,4 +1,5 @@
 <entry type='method' name="jQuery.now" return="Number">
+  <title>jQuery.now()</title>
   <signature>
     <added>1.4.3</added>
   </signature>

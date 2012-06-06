@@ -1,4 +1,5 @@
 <entry type='method' name="jQuery.isPlainObject" return="Boolean">
+  <title>jQuery.isPlainObject()</title>
   <signature>
     <added>1.4</added>
     <argument name="object" type="PlainObject">

@@ -1,4 +1,5 @@
 <entry type='method' name="mouseover" return="jQuery">
+  <title>.mouseover()</title>
   <desc>Bind an event handler to the "mouseover" JavaScript event, or trigger that event on an element.</desc>
   <signature>
     <added>1.0</added>

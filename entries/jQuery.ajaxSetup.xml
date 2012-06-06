@@ -1,4 +1,5 @@
 <entry type='method' name="jQuery.ajaxSetup" return="">
+  <title>jQuery.ajaxSetup()</title>
   <signature>
     <added>1.1</added>
     <argument name="options" type="Options">

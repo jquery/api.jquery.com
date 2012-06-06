@@ -1,4 +1,5 @@
 <entry type='selector'  name="header" return=""  >
+  <title>:header Selector</title>
   <sample>:header</sample>
   <signature><added>1.2</added> </signature>
   <desc>Selects all elements that are headers, like h1, h2, h3 and so on.</desc>

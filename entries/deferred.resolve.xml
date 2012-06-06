@@ -1,4 +1,5 @@
 <entry name="deferred.resolve" type="method" return="Deferred">
+  <title>deferred.resolve()</title>
   <signature>
     <added>1.5</added>
     <argument name="args" type="Object">

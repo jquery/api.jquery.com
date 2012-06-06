@@ -1,4 +1,5 @@
 <entry name="deferred.state" type="method" return="String">
+  <title>deferred.state()</title>
   <signature>
     <added>1.7</added>
   </signature>

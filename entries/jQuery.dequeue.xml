@@ -1,4 +1,5 @@
 <entry type='method' name="jQuery.dequeue" return="undefined">
+  <title>jQuery.dequeue()</title>
   <signature>
     <added>1.3</added>
     <argument name="element" type="Element">

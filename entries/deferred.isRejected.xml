@@ -1,4 +1,5 @@
 <entry name="deferred.isRejected" type="method" return="Boolean">
+  <title>deferred.isRejected()</title>
   <signature>
     <added>1.5</added>
     <deprecated>1.7</deprecated>

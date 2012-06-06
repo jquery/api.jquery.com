@@ -1,4 +1,5 @@
 <entry type='method' name="siblings" return="jQuery">
+  <title>.siblings()</title>
   <signature>
     <added>1.0</added>
     <argument name="selector" optional="true" type="Selector">

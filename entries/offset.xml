@@ -1,5 +1,6 @@
 <entries>
 <entry type='method' name="offset" return="Object">
+  <title>.offset()</title>
   <signature>
     <added>1.2</added>
   </signature>

@@ -1,4 +1,5 @@
 <entry type='method' name="on" return="jQuery">
+  <title>.on()</title>
   <desc>Attach an event handler function for one or more events to the selected elements.</desc>
   <signature>
     <added>1.7</added>
