@@ -12,239 +12,239 @@ ol ul { margin-left: 1.5em !important; }
 <p>JavaScript provides several built-in datatypes. In addition to those, this page documents virtual types like Selectors, enhanced pseudo-types like Events and all and everything you wanted to know about Functions.
 </p><p>You should be able to try out most of the examples below by just copying them to the <a href="http://www.getfirebug.com/" class="external text" title="http://www.getfirebug.com/">Firebug</a> console (note: Firebug requires <a href="http://www.getfirefox.com" class="external text" title="http://www.getfirefox.com">Firefox</a>).
 </p><p>Whenever an example mentions that a type defaults to a boolean value, the result is good to know when using that type in a boolean context:
-</p> 
+</p>
 <pre><code data-lang="javascript">var x = ""
 if ( x )
   console.log( "x defaulted to true" )
 else
   console.log( "x defaulted to false" )
-</code></pre> 
+</code></pre>
 <p>In this case, <code>"x defaulted to false"</code> is printed.
 </p><p>To keep the examples short, the invert-operator is used to show a boolean context:
-</p> 
+</p>
 <pre><code data-lang="javascript">!x // true
-</code></pre> 
+</code></pre>
 <p>On to the actual types.
-</p> 
-<table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div> 
-<ol> 
-<li class="toclevel-1"><a href="#String"><span class="toctext">String</span></a> 
-<ul> 
-<li class="toclevel-2"><a href="#Quoting"><span class="toctext">Quoting</span></a></li> 
-<li class="toclevel-2"><a href="#Built-in_Methods"><span class="toctext">Built-in Methods</span></a></li> 
-<li class="toclevel-2"><a href="#Length_Property"><span class="toctext">Length Property</span></a></li> 
-<li class="toclevel-2"><a href="#Boolean_Default"><span class="toctext">Boolean Default</span></a></li> 
-</ul> 
-</li> 
-<li class="toclevel-1"><a href="#Number"><span class="toctext">Number</span></a> 
-<ul> 
-<li class="toclevel-2"><a href="#Boolean_Default_2"><span class="toctext">Boolean Default</span></a></li> 
-<li class="toclevel-2"><a href="#Math"><span class="toctext">Math</span></a></li> 
-<li class="toclevel-2"><a href="#Parsing_Numbers"><span class="toctext">Parsing Numbers</span></a></li> 
-<li class="toclevel-2"><a href="#Numbers_to_Strings"><span class="toctext">Numbers to Strings</span></a></li> 
-<li class="toclevel-2"><a href="#NaN_and_Infinity"><span class="toctext">NaN and Infinity</span></a></li> 
-<li class="toclevel-2"><a href="#Integer"><span class="toctext">Integer</span></a></li> 
-<li class="toclevel-2"><a href="#Float"><span class="toctext">Float</span></a></li> 
-</ul> 
-</li> 
-<li class="toclevel-1"><a href="#Boolean"><span class="toctext">Boolean</span></a></li> 
-<li class="toclevel-1"><a href="#Object"><span class="toctext">Object</span></a> 
-<ul> 
-<li class="toclevel-2"><a href="#Dot_Notation"><span class="toctext">Dot Notation</span></a></li> 
-<li class="toclevel-2"><a href="#Array_Notation"><span class="toctext">Array Notation</span></a></li> 
-<li class="toclevel-2"><a href="#Iteration"><span class="toctext">Iteration</span></a></li> 
-<li class="toclevel-2"><a href="#Boolean_default"><span class="toctext">Boolean default</span></a></li> 
-<li class="toclevel-2"><a href="#Prototype"><span class="toctext">Prototype</span></a></li> 
-</ul> 
-</li> 
-<li class="toclevel-1"><a href="#Options"><span class="toctext">Options</span></a></li> 
-<li class="toclevel-1"><a href="#Array"><span class="toctext">Array</span></a> 
-<ul> 
-<li class="toclevel-2"><a href="#Iteration_2"><span class="toctext">Iteration</span></a></li> 
-<li class="toclevel-2"><a href="#Boolean_Default_3"><span class="toctext">Boolean Default</span></a></li> 
-<li class="toclevel-2"><a href="#Array.3CType.3E_Notation"><span class="toctext">Array&lt;Type&gt; Notation</span></a></li> 
-</ul> 
-</li> 
-<li class="toclevel-1"><a href="#Map"><span class="toctext">Map</span></a></li> 
-<li class="toclevel-1"><a href="#Function"><span class="toctext">Function</span></a> 
-<ul> 
-<li class="toclevel-2"><a href="#Arguments"><span class="toctext">Arguments</span></a></li> 
-<li class="toclevel-2"><a href="#Context.2C_Call_and_Apply"><span class="toctext">Context, Call and Apply</span></a></li> 
-<li class="toclevel-2"><a href="#Scope"><span class="toctext">Scope</span></a></li> 
-<li class="toclevel-2"><a href="#Closures"><span class="toctext">Closures</span></a></li> 
-<li class="toclevel-2"><a href="#Proxy_Pattern"><span class="toctext">Proxy Pattern</span></a></li> 
-</ul> 
-</li> 
-<li class="toclevel-1"><a href="#Callback"><span class="toctext">Callback</span></a></li> 
-<li class="toclevel-1"><a href="#Selector"><span class="toctext">Selector</span></a></li> 
-<li class="toclevel-1"><a href="#Event"><span class="toctext">Event</span></a></li> 
-<li class="toclevel-1"><a href="#Element"><span class="toctext">Element</span></a></li> 
-<li class="toclevel-1"><a href="#jQuery"><span class="toctext">jQuery</span></a></li> 
-<li class="toclevel-1"><a href="#XMLHttpRequest"><span class="toctext">XMLHttpRequest</span></a></li> 
-<li class="toclevel-1"><a href="#jqXHR"><span class="toctext">jqXHR</span></a></li> 
-<li class="toclevel-1"><a href="#Deferred"><span class="toctext">Deferred</span></a></li> 
-<li class="toclevel-1"><a href="#Promise"><span class="toctext">Promise</span></a></li> 
+</p>
+<table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ol>
+<li class="toclevel-1"><a href="#String"><span class="toctext">String</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Quoting"><span class="toctext">Quoting</span></a></li>
+<li class="toclevel-2"><a href="#Built-in_Methods"><span class="toctext">Built-in Methods</span></a></li>
+<li class="toclevel-2"><a href="#Length_Property"><span class="toctext">Length Property</span></a></li>
+<li class="toclevel-2"><a href="#Boolean_Default"><span class="toctext">Boolean Default</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Number"><span class="toctext">Number</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Boolean_Default_2"><span class="toctext">Boolean Default</span></a></li>
+<li class="toclevel-2"><a href="#Math"><span class="toctext">Math</span></a></li>
+<li class="toclevel-2"><a href="#Parsing_Numbers"><span class="toctext">Parsing Numbers</span></a></li>
+<li class="toclevel-2"><a href="#Numbers_to_Strings"><span class="toctext">Numbers to Strings</span></a></li>
+<li class="toclevel-2"><a href="#NaN_and_Infinity"><span class="toctext">NaN and Infinity</span></a></li>
+<li class="toclevel-2"><a href="#Integer"><span class="toctext">Integer</span></a></li>
+<li class="toclevel-2"><a href="#Float"><span class="toctext">Float</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Boolean"><span class="toctext">Boolean</span></a></li>
+<li class="toclevel-1"><a href="#Object"><span class="toctext">Object</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Dot_Notation"><span class="toctext">Dot Notation</span></a></li>
+<li class="toclevel-2"><a href="#Array_Notation"><span class="toctext">Array Notation</span></a></li>
+<li class="toclevel-2"><a href="#Iteration"><span class="toctext">Iteration</span></a></li>
+<li class="toclevel-2"><a href="#Boolean_default"><span class="toctext">Boolean default</span></a></li>
+<li class="toclevel-2"><a href="#Prototype"><span class="toctext">Prototype</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Options"><span class="toctext">Options</span></a></li>
+<li class="toclevel-1"><a href="#Array"><span class="toctext">Array</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Iteration_2"><span class="toctext">Iteration</span></a></li>
+<li class="toclevel-2"><a href="#Boolean_Default_3"><span class="toctext">Boolean Default</span></a></li>
+<li class="toclevel-2"><a href="#Array.3CType.3E_Notation"><span class="toctext">Array&lt;Type&gt; Notation</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#PlainObject"><span class="toctext">PlainObject</span></a></li>
+<li class="toclevel-1"><a href="#Function"><span class="toctext">Function</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Arguments"><span class="toctext">Arguments</span></a></li>
+<li class="toclevel-2"><a href="#Context.2C_Call_and_Apply"><span class="toctext">Context, Call and Apply</span></a></li>
+<li class="toclevel-2"><a href="#Scope"><span class="toctext">Scope</span></a></li>
+<li class="toclevel-2"><a href="#Closures"><span class="toctext">Closures</span></a></li>
+<li class="toclevel-2"><a href="#Proxy_Pattern"><span class="toctext">Proxy Pattern</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Callback"><span class="toctext">Callback</span></a></li>
+<li class="toclevel-1"><a href="#Selector"><span class="toctext">Selector</span></a></li>
+<li class="toclevel-1"><a href="#Event"><span class="toctext">Event</span></a></li>
+<li class="toclevel-1"><a href="#Element"><span class="toctext">Element</span></a></li>
+<li class="toclevel-1"><a href="#jQuery"><span class="toctext">jQuery</span></a></li>
+<li class="toclevel-1"><a href="#XMLHttpRequest"><span class="toctext">XMLHttpRequest</span></a></li>
+<li class="toclevel-1"><a href="#jqXHR"><span class="toctext">jqXHR</span></a></li>
+<li class="toclevel-1"><a href="#Deferred"><span class="toctext">Deferred</span></a></li>
+<li class="toclevel-1"><a href="#Promise"><span class="toctext">Promise</span></a></li>
 
-</ol> 
-</td></tr></table><script type="text/javascript"> if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } </script> 
-<a name="String"></a><h2> String </h2> 
+</ol>
+</td></tr></table><script type="text/javascript"> if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } </script>
+<a name="String"></a><h2> String </h2>
 <pre><code data-lang="javascript">"I'm a String in JavaScript!"
 'So am I!'
-</code></pre> 
+</code></pre>
 <p>A string in JavaScript is an immutable object that contains none, one or many characters.
 </p><p>The type of a string is "string".
-</p> 
+</p>
 <pre><code data-lang="javascript">typeof "some string"; // "string"
-</code></pre> 
-<a name="Quoting"></a><h3> Quoting </h3> 
+</code></pre>
+<a name="Quoting"></a><h3> Quoting </h3>
 <p>A string can be defined using single or double quotes. You can nest single quotes inside of double quotes, and the other way round. To mix double quotes with double quotes, the nested ones have to be escaped with a backslash.
-</p> 
+</p>
 <pre><code data-lang="javascript">"You make 'me' sad."
 'Holy "cranking" moses!'
 "&lt;a href=\"home\"&gt;Home&lt;/a&gt;"
-</code></pre> 
-<a name="Built-in_Methods"></a><h3> Built-in Methods </h3> 
+</code></pre>
+<a name="Built-in_Methods"></a><h3> Built-in Methods </h3>
 <p>A string in JavaScript has some built-in methods to manipulate the string, though the result is always a new string - or something else, eg. split returns an <a href="http://docs.jquery.com/Types#Array" title="Types">array</a>.
-</p> 
+</p>
 <pre><code data-lang="javascript">"hello".charAt( 0 ) // "h"
 "hello".toUpperCase() // "HELLO"
 "Hello".toLowerCase() // "hello"
 "hello".replace( /e|o/g, "x" ) // "hxllx"
 "1,2,3".split( "," ) // [ "1", "2", "3" ]
-</code></pre> 
-<a name="Length_Property"></a><h3> Length Property </h3> 
+</code></pre>
+<a name="Length_Property"></a><h3> Length Property </h3>
 <p>All strings have a length property.
-</p> 
+</p>
 <pre><code data-lang="javascript">"Hello".length // 5
 "".length // 0
-</code></pre> 
-<a name="Boolean_Default"></a><h3> Boolean Default </h3> 
+</code></pre>
+<a name="Boolean_Default"></a><h3> Boolean Default </h3>
 <p>An empty string defaults to false:
-</p> 
+</p>
 <pre><code data-lang="javascript">!"" // true
 !"hello" // false
 !"true" // false
 !new Boolean( false ) // false
-</code></pre> 
-<a name="Number"></a><h2> Number </h2> 
+</code></pre>
+<a name="Number"></a><h2> Number </h2>
 <pre><code data-lang="javascript">12
 3.543
-</code></pre> 
+</code></pre>
 <p>Numbers in JavaScript are double-precision 64-bit format IEEE 754 values. They are immutable, just as <a href="#String" title="">strings</a>. All operators common in c-based languages are available to work with numbers (+, -, *, /, %, =, +=, -=, *=, /=, ++, --).
 </p><p>The type of a number is "number".
-</p> 
+</p>
 <pre><code data-lang="javascript">typeof 12 // "number"
 typeof 3.543 // "number"
-</code></pre> 
-<a name="Boolean_Default_2"></a><h3> Boolean Default </h3> 
+</code></pre>
+<a name="Boolean_Default_2"></a><h3> Boolean Default </h3>
 <p>If a number is zero, it defaults to false:
-</p> 
+</p>
 <pre><code data-lang="javascript">!0 // true
 !1 // false
 !-1 // false
-</code></pre> 
+</code></pre>
 <p>Due to the implementation of numbers as double-precision values, the following result is not an error:
-</p> 
+</p>
 <pre><code data-lang="javascript">0.1 + 0.2 // 0.30000000000000004
-</code></pre> 
-<p><br /> 
-</p> 
-<a name="Math"></a><h3> Math </h3> 
+</code></pre>
+<p><br />
+</p>
+<a name="Math"></a><h3> Math </h3>
 <p>JavaScript provides utilities to work with numbers in the Math object:
-</p> 
+</p>
 <pre><code data-lang="javascript">Math.PI // 3.141592653589793
 Math.cos( Math.PI ) // -1
-</code></pre> 
-<a name="Parsing_Numbers"></a><h3> Parsing Numbers </h3> 
+</code></pre>
+<a name="Parsing_Numbers"></a><h3> Parsing Numbers </h3>
 <p>parseInt and parseFloat help parsing strings into numbers. Both do some implicit conversion if the base isn't specified:
-</p> 
+</p>
 <pre><code data-lang="javascript">parseInt( "123" ) = 123 // (implicit decimal)
 parseInt( "010" ) = 8 // (implicit octal)
 parseInt( "0xCAFE" ) = 51966 // (implicit hexadecimal)
 parseInt( "010", 10 ) = 10 // (explicit decimal)
 parseInt( "11", 2 ) = 3 // (explicit binary)
 parseFloat( "10.10" ) = 10.1
-</code></pre> 
-<a name="Numbers_to_Strings"></a><h3> Numbers to Strings </h3> 
+</code></pre>
+<a name="Numbers_to_Strings"></a><h3> Numbers to Strings </h3>
 <p>When appending numbers to string, the result is always a string. The operator is the same, so be careful: If you want to add numbers and then append them to a string, put parentheses around them:
-</p> 
+</p>
 <pre><code data-lang="javascript">"" + 1 + 2; // "12"
 "" + ( 1 + 2 ); // "3"
 "" + 0.0000001; // "1e-7"
 parseInt( 0.0000001 ); // 1 (!)
-</code></pre> 
+</code></pre>
 <p>Or you use the String class provided by javascript, which try to parse a value as string:
-</p> 
+</p>
 <pre><code data-lang="javascript">String( 1 ) + String( 2 ); // "12"
 String( 1 + 2 ); // "3"
-</code></pre> 
-<a name="NaN_and_Infinity"></a><h3> NaN and Infinity </h3> 
+</code></pre>
+<a name="NaN_and_Infinity"></a><h3> NaN and Infinity </h3>
 <p>Parsing something that isn't a number results in NaN. isNaN helps to detect those cases:
-</p> 
+</p>
 <pre><code data-lang="javascript">parseInt( "hello", 10 ) // NaN
 isNaN( parseInt("hello", 10) ) // true
-</code></pre> 
+</code></pre>
 <p>Division by zero results in Infinity:
-</p> 
+</p>
 <pre><code data-lang="javascript">1 / 0 // Infinity
-</code></pre> 
+</code></pre>
 <p>Both NaN and Infinity are of type "number":
-</p> 
+</p>
 <pre><code data-lang="javascript">typeof NaN // "number"
 typeof Infinity // "number"
-</code></pre> 
+</code></pre>
 <p>Note that NaN compares in a strange way:
-</p> 
+</p>
 <pre><code data-lang="javascript">NaN == NaN // false (!)
-</code></pre> 
+</code></pre>
 <p>But:
-</p> 
+</p>
 <pre><code data-lang="javascript">Infinity == Infinity // true
-</code></pre> 
-<a name="Integer"></a><h3> Integer </h3> 
+</code></pre>
+<a name="Integer"></a><h3> Integer </h3>
 <p>An integer is a plain Number type, but whenever explicitly mentioned, indicates that a non-floating-point number is expected.
-</p> 
-<a name="Float"></a><h3> Float </h3> 
+</p>
+<a name="Float"></a><h3> Float </h3>
 <p>A float is a plain Number type, just as Integer, but whenever explicitly mentioned, indicates that a floating-point number is expected.
-</p><p><br /> 
-</p> 
-<a name="Boolean"></a><h2> Boolean </h2> 
+</p><p><br />
+</p>
+<a name="Boolean"></a><h2> Boolean </h2>
 <p>A boolean in JavaScript can be either true or false:
-</p> 
+</p>
 <pre><code data-lang="javascript">if ( true ) console.log( "always!" )
 if ( false ) console.log( "never!" )
-</code></pre> 
+</code></pre>
 <p>When an <a href="#Options" title="">option</a> is specified as a boolean, it often looks like this:
-</p> 
+</p>
 <pre><code data-lang="javascript">$( "..." ).somePlugin({
   hideOnStartup: true,
   onlyOnce: false
 });
-</code></pre> 
-<a name="Object"></a><h2> Object </h2> 
+</code></pre>
+<a name="Object"></a><h2> Object </h2>
 <p>Everything in JavaScript is an object, though some are more objective (haha). The easiest way to create an object is the object literal:
-</p> 
+</p>
 <pre><code data-lang="javascript">var x = {};
 var y = {
   name: "Pete",
   age: 15
 };
-</code></pre> 
+</code></pre>
 <p>The type of an object is "object":
-</p> 
+</p>
 <pre><code data-lang="javascript">typeof {} // "object"
-</code></pre> 
-<a name="Dot_Notation"></a><h3> Dot Notation </h3> 
+</code></pre>
+<a name="Dot_Notation"></a><h3> Dot Notation </h3>
 <p>You can write and read properties of an object using the dot notation:
-</p> 
+</p>
 <pre><code data-lang="javascript">y.name // "Pete"
 y.age // 15
 x.name = y.name + " Pan" // "Pete Pan"
 x.age = y.age + 1 // 16
-</code></pre> 
-<a name="Array_Notation"></a><h3> Array Notation </h3> 
+</code></pre>
+<a name="Array_Notation"></a><h3> Array Notation </h3>
 <p>Or you write and read properties using the array notation, which allows you to dynamically choose the property:
-</p> 
+</p>
 <pre><code data-lang="javascript">var operations = {
   increase: "++",
   decrease: "--"
@@ -252,37 +252,37 @@ x.age = y.age + 1 // 16
 var operation = "increase";
 operations[ operation ] // "++"
 operations[ "multiply" ] = "*"; // "*"
-</code></pre> 
-<a name="Iteration"></a><h3> Iteration </h3> 
+</code></pre>
+<a name="Iteration"></a><h3> Iteration </h3>
 <p>Iterating over objects is easy with the for-in-loop:
-</p><p><br /> 
-</p> 
-<pre><code data-lang="javascript">var obj = {  
+</p><p><br />
+</p>
+<pre><code data-lang="javascript">var obj = {
   name: "Pete",
   age: 15
 };
 for( key in obj ) {
   alert( "key is " + [ key ] + ", value is " + obj[ key ] );
 }
-</code></pre> 
+</code></pre>
 <p>Note that for-in-loop can be spoiled by extending Object.prototype (see <a href="http://erik.eae.net/archives/2005/06/06/22.13.54" class="external text" title="http://erik.eae.net/archives/2005/06/06/22.13.54">Object.prototype is verboten</a>) so take care when using other libraries.
 </p><p>jQuery provides a generic <a href="http://docs.jquery.com/Utilities/jQuery.each" title="Utilities/jQuery.each">each-function</a> to iterate over properties of objects, as well as elements of arrays:
-</p> 
+</p>
 <pre><code data-lang="javascript">jQuery.each( obj, function( key, value ) {
   console.log( "key", key, "value", value );
 });
-</code></pre> 
+</code></pre>
 <p>The drawback is that the callback is called in the context of each value, therefore you lose the context of your own object if applicable. More on this below at Functions.
-</p><p><br /> 
-</p> 
-<a name="Boolean_default"></a><h3> Boolean default </h3> 
+</p><p><br />
+</p>
+<a name="Boolean_default"></a><h3> Boolean default </h3>
 <p>An object, no matter if it has properties or not, never defaults to false:
-</p> 
+</p>
 <pre><code data-lang="javascript">!{} // false
-</code></pre> 
-<a name="Prototype"></a><h3> Prototype </h3> 
+</code></pre>
+<a name="Prototype"></a><h3> Prototype </h3>
 <p>All objects have a prototype property. Whenever the interpreter looks for a property, it also checks the prototype. jQuery uses that extensively to add methods to jQuery instances.
-</p> 
+</p>
 <pre><code data-lang="javascript">var form = $("#myform");
 form.clearForm; // undefined
 form.fn.clearForm = function() {
@@ -291,77 +291,77 @@ form.fn.clearForm = function() {
   }).end();
 };
 form.clearForm() // works for all instances of jQuery objects, because the new method was added to the prototype
-</code></pre> 
-<p><br /> 
+</code></pre>
+<p><br />
 (This example needs clarification: how does it modify the prototype when the word "prototype" doesn't appear anywhere? The implication is that form.fn is simply an alias for form.prototype, but if that's the case then it should be explained.&nbsp;:-?)
 </p><p>In javascript:the definitive guide 5 edition,dont add attibute to Object.prototype
-</p> 
-<a name="Options"></a><h2> Options </h2> 
+</p>
+<a name="Options"></a><h2> Options </h2>
 <p>Options in jQuery are plain JavaScript objects. Whenever Options is mentioned as a type, that object and also all of its properties should be optional. There are exceptions where at least one option is required. jQuery's most prominent use of Options is its <a href="http://docs.jquery.com/Ajax/jQuery.ajax" title="Ajax/jQuery.ajax">AJAX</a>-method. Nearly all jQuery plugins provide an Options-based API: They work without any configuration, but allow users to specify whatever customization they need.
 </p><p>Let's look at an example from the form plugin. It allows you to submit a form via AJAX with this simple line of code:
-</p> 
+</p>
 <pre><code data-lang="javascript">$( "#myform" ).ajaxForm();
-</code></pre> 
+</code></pre>
 <p>In that mode, it uses the form's action-attribute as the AJAX-URL and the form's method-attribute to determine whether to GET or POST the form. You can override both defaults by specifying them as options:
-</p> 
+</p>
 <pre><code data-lang="javascript">$( "#myform" ).ajaxForm({
   url: "mypage.php",
   type: "POST"
 });
-</code></pre> 
-<a name="Array"></a><h2> Array </h2> 
+</code></pre>
+<a name="Array"></a><h2> Array </h2>
 <p>Arrays in JavaScript are mutable lists with a few built-in methods. You can define arrays using the array literal:
-</p> 
+</p>
 <pre><code data-lang="javascript">var x = [];
 var y = [ 1, 2, 3 ];
-</code></pre> 
+</code></pre>
 <p>The type of an array is "object":
-</p> 
+</p>
 <pre><code data-lang="javascript">typeof []; // "object"
 typeof [ 1, 2, 3 ]; // "object"
-</code></pre> 
+</code></pre>
 <p>Reading and writing elements to an array uses the array-notation:
-</p> 
+</p>
 <pre><code data-lang="javascript">x[ 0 ] = 1;
 y[ 2 ] // 3
-</code></pre> 
-<a name="Iteration_2"></a><h3> Iteration </h3> 
+</code></pre>
+<a name="Iteration_2"></a><h3> Iteration </h3>
 <p>An array has a length property that is useful for iteration:
-</p> 
+</p>
 <pre><code data-lang="javascript">for ( var i = 0; i &lt; a.length; i++ ) {
   // Do something with a[i]
 }
-</code></pre> 
+</code></pre>
 <p>When performance is critical, reading the length property only once can help to speed things up. This should be used only when a performance bottleneck was discovered:
-</p> 
+</p>
 <pre><code data-lang="javascript">for ( var i = 0, j = a.length; i &lt; j; i++ ) {
   // Do something with a[i]
 }
-</code></pre> 
+</code></pre>
 <p>Another variation defines a variable that is filled for each iteration, removing the array-notation from the loop-body. It does not work when the array contains 0 or empty strings!
-</p> 
+</p>
 <pre><code data-lang="javascript">for ( var i = 0, item; item = a[i]; i++ ) {
   // Do something with item
 }
-</code></pre> 
+</code></pre>
 <p>jQuery provides a generic <a href="http://docs.jquery.com/Utilities/jQuery.each" title="Utilities/jQuery.each">each-function</a> to iterate over element of arrays, as well as properties of objects:
-</p> 
+</p>
 <pre><code data-lang="javascript">var x = [ 1, 2, 3 ];
 jQuery.each( x, function( index, value ) {
   console.log( "index", index, "value", value );
 });
-</code></pre> 
+</code></pre>
 <p>The drawback is that the callback is called in the context of each value, therefore you lose the context of your own object if applicable. More on this below at Functions.
 </p><p>The length property can also be used to add elements to the end of an array. That is equivalent to using the push-method:
-</p> 
+</p>
 <pre><code data-lang="javascript">var x = [];
 x.push( 1 );
 x[ x.length ] = 2;
 x // [ 1, 2 ]
-</code></pre> 
+</code></pre>
 <p>You'll see both variations a lot when looking through JavaScript library code.
 </p><p>Other built-in methods are reverse, join, shift, unshift, pop, slice, splice and sort:
-</p> 
+</p>
 <pre><code data-lang="javascript">var x = [ 0, 3, 1, 2 ];
 x.reverse()      // [ 2, 1, 3, 0 ]
 x.join(" – ")    // "2 - 1 - 3 - 0"
@@ -372,90 +372,90 @@ x.sort()         // [ 1, 2, 3 ]
 x.splice( 1, 2 ) // [ 2, 3 ]
 </code></pre>
 <p>Note: .unshift() method does not return a length property in Internet Explorer.
-</p> 
-<a name="Boolean_Default_3"></a><h3> Boolean Default </h3> 
+</p>
+<a name="Boolean_Default_3"></a><h3> Boolean Default </h3>
 <p>An array, no matter if it has elements or not, never defaults to false:
-</p> 
+</p>
 <pre><code data-lang="javascript">![] // false
-</code></pre> 
-<a name="Array.3CType.3E_Notation"></a><h3> Array&lt;Type&gt; Notation </h3> 
+</code></pre>
+<a name="Array.3CType.3E_Notation"></a><h3> Array&lt;Type&gt; Notation </h3>
 <p>In the jQuery API you'll often find the notation of Array&lt;Type&gt;:
-</p> 
+</p>
 <pre>dragPrevention    Array&lt;String&gt;
-</pre> 
+</pre>
 <p>This indicates that the method doesn't only expect an array as the argument, but also specifies the expected type. The notation is borrowed from Java 5's generics notation (or C++ templates).
-</p> 
-<a name="Map"></a><h2> Map </h2> 
-<p>The map type is used by the AJAX function to hold the data of a request.  This type could be a string, an array&lt;form elements&gt;, a jQuery object with form elements or an object with key/value pairs. 
+</p>
+<a name="PlainObject"></a><h2> PlainObject </h2>
+<p>The PlainObject type is used by the AJAX function to hold the data of a request.  This type could be a string, an array&lt;form elements&gt;, a jQuery object with form elements or an object with key/value pairs.
 In the last case, it is possible to assign multiple values to one key by assigning an array.
-</p> 
+</p>
 <pre><code data-lang="javascript">{ 'key[]': [ 'valuea', 'valueb' ] }
-</code></pre> 
+</code></pre>
 <p>becomes on the server-side (in PHP):
-</p> 
+</p>
 <pre><code data-lang="php">&lt;?php
 $_REQUEST['key'][0]="valuea";
 $_REQUEST['key'][1]="valueb";
-</code></pre> 
+</code></pre>
 <p>in Rails or Merb:
-</p> 
+</p>
 <pre><code data-lang="ruby">params[:key] = ["valuea", "valueb"]
-</code></pre> 
-<a name="Function"></a><h2> Function </h2> 
+</code></pre>
+<a name="Function"></a><h2> Function </h2>
 <p>A function in JavaScript can be either named or anonymous. Any function can be assigned to a variable or passed to a method, but passing member functions this way can cause them to be called in the context of another object (i.e. with a different "this" object).
-</p> 
+</p>
 <pre><code data-lang="javascript">function named() {}
 var handler = function() {}
-</code></pre> 
+</code></pre>
 <p>You see a lot of anonymous functions in jQuery code:
-</p> 
+</p>
 <pre><code data-lang="javascript">$( document ).ready(function() {});
 $( "a" ).click(function() {});
 $.ajax({
   url: "someurl.php",
   success: function() {}
 });
-</code></pre> 
+</code></pre>
 <p>The type of a function is "function".
-</p> 
-<a name="Arguments"></a><h3> Arguments </h3> 
+</p>
+<a name="Arguments"></a><h3> Arguments </h3>
 <p>Inside a function a special variable "arguments" is always available. It's similar to an array in that it has a length property, but it lacks the built-in methods of an array. The elements of the pseudo-array are the argument of the function call.
-</p> 
+</p>
 <pre><code data-lang="javascript">function log( x ) {
   console.log( typeof x, arguments.length );
 }
 log(); // "undefined", 0
 log( 1 ); // "number", 1
 log( "1", "2", "3" ); // "string", 3
-</code></pre> 
+</code></pre>
 <p>The arguments object also has a callee property, which refers to the function you're inside of. For instance:
-</p> 
+</p>
 <pre><code data-lang="javascript">var awesome = function() { return arguments.callee; }
 awesome() == awesome // true
-</code></pre> 
-<a name="Context.2C_Call_and_Apply"></a><h3> Context, Call and Apply </h3> 
+</code></pre>
+<a name="Context.2C_Call_and_Apply"></a><h3> Context, Call and Apply </h3>
 <p>In JavaScript, the variable "this" always refers to the current context. By default, "this" refers to the window object. Within a function this context can change, depending on how the function is called.
 </p><p>All event handlers in jQuery are called with the handling element as the context.
-</p> 
+</p>
 <pre><code data-lang="javascript">$( document ).ready(function() {
   // this refers to window.document
 });
 $( "a" ).click(function() {
   // this refers to an anchor DOM element
 });
-</code></pre> 
+</code></pre>
 <p>You can specify the context for a function call using the function-built-in methods call and apply. The difference between them is how they pass arguments. Call passes all arguments through as arguments to the function, while apply accepts an array as the arguments.
-</p> 
+</p>
 <pre><code data-lang="javascript">function scope() {
   console.log( this, arguments.length );
 }
 scope() // window, 0
 scope.call( "foobar", [ 1, 2 ] ); // "foobar", 1
 scope.apply( "foobar", [ 1, 2 ] ); // "foobar", 2
-</code></pre> 
-<a name="Scope"></a><h3> Scope </h3> 
+</code></pre>
+<a name="Scope"></a><h3> Scope </h3>
 <p>In JavaScript, all variables defined inside a function are only visible inside that function scope. Consider the following example:
-</p> 
+</p>
 <pre><code data-lang="javascript">// global
 var x = 0;
 (function() {
@@ -464,12 +464,12 @@ var x = 0;
   console.log( x ); // 1
 })();
 console.log( x ); // 0
-</code></pre> 
+</code></pre>
 <p>It defines a variable <i>x</i> in the global scope, then defines an anonymous function and executes it immediately (the additional parentheses are required for immediate execution). Inside the function another variable <i>x</i> is defined with a different value. It is only visible within that function and doesn't overwrite the global variable.
-</p> 
-<a name="Closures"></a><h3> Closures </h3> 
+</p>
+<a name="Closures"></a><h3> Closures </h3>
 <p>Closures are created whenever a variable that is defined outside the current scope is accessed from within some inner scope. In the following example, the variable <i>counter</i> is visible within the create, increment, and print functions, but not outside of them.
-</p> 
+</p>
 <pre><code data-lang="javascript">function create() {
   var counter = 0;
   return {
@@ -484,12 +484,12 @@ console.log( x ); // 0
 var c = create();
 c.increment();
 c.print(); // 1
-</code></pre> 
+</code></pre>
 <p>The pattern allows you to create objects with methods that operate on data that isn't visible to the outside—the very basis of object-oriented programming.
-</p> 
-<a name="Proxy_Pattern"></a><h3> Proxy Pattern </h3> 
+</p>
+<a name="Proxy_Pattern"></a><h3> Proxy Pattern </h3>
 <p>Combining the above knowledge gives you as a JavaScript developer quite a lot of power. One way to combine that is to implement a proxy pattern in JavaScript, enabling the basics of aspect-oriented programming (AOP):
-</p> 
+</p>
 <pre><code data-lang="javascript">(function() {
   // log all calls to setArray
   var proxied = jQuery.fn.setArray;
@@ -498,87 +498,87 @@ c.print(); // 1
     return proxied.apply( this, arguments );
   };
 })();
-</code></pre> 
+</code></pre>
 <p>The above wraps its code in a function to hide the "proxied"-variable. It saves jQuery's setArray-method in a closure and overwrites it. The proxy then logs all calls to the method and delegates the call to the original. Using apply(this, arguments) guarantees that the caller won't be able to notice the difference between the original and the proxied method.
-</p> 
-<a name="Callback"></a><h2> Callback </h2> 
+</p>
+<a name="Callback"></a><h2> Callback </h2>
 <p>A callback is a plain JavaScript function passed to some method as an argument or option. Some callbacks are just events, called to give the user a chance to react when a certain state is triggered. jQuery's event system uses such callbacks everywhere:
-</p> 
+</p>
 <pre><code data-lang="javascript">$( "body" ).click(function( event ) {
   console.log( "clicked: " + event.target );
 });
-</code></pre> 
+</code></pre>
 <p>Most callbacks provide arguments and a context. In the event-handler example, the callback is called with one argument, an Event. The context is set to the handling element, in the above example, document.body.
 </p><p>Some callbacks are required to return something, others make that return value optional. To prevent a form submission, a submit event handler can return false:
-</p> 
+</p>
 <pre><code data-lang="javascript">$( "#myform" ).submit(function() {
   return false;
 });
-</code></pre> 
+</code></pre>
 <p>Instead of always returning false, the callback could check fields of the form for validity, and return false only when the form is invalid.
-</p><p><br /> 
-</p> 
-<a name="Selector"></a><h2> Selector </h2> 
+</p><p><br />
+</p>
+<a name="Selector"></a><h2> Selector </h2>
 <p>A selector is used in jQuery to select DOM elements from a DOM document. That document is, in most cases, the DOM document present in all browsers, but can also be a XML document received via AJAX.
 </p><p>The selectors are a composition of CSS and custom additions. XPath selectors are available as a plugin.
 </p><p>All selectors available in jQuery are documented on the <a href="http://docs.jquery.com/Selectors" title="Selectors">Selectors API page</a>.
 </p><p>There are lot of plugins that leverage jQuery's selectors in other ways. The validation plugin accepts a selector to specify a dependency, whether an input is required or not:
-</p> 
+</p>
 <pre><code data-lang="javascript">emailrules: {
   required: "#email:filled"
 }
-</code></pre> 
+</code></pre>
 <p>This would make a checkbox with name "emailrules" required only if the user entered an email address in the email field, selected via its id, filtered via a custom selector ":filled" that the validation plugin provides.
 </p><p>If Selector is specified as the type of an argument, it accepts everything that the jQuery constructor accepts, eg. Strings, Elements, Lists of Elements.
-</p> 
-<a href="http://docs.jquery.com/Events/jQuery.Event" title="Events/jQuery.Event">Event</a> </h2> 
+</p>
+<a href="http://docs.jquery.com/Events/jQuery.Event" title="Events/jQuery.Event">Event</a> </h2>
 <p>jQuery's event system normalizes the event object according to W3C standards. The event object is guaranteed to be passed to the event handler (no checks for window.event required). It normalizes the target, relatedTarget, which, metaKey and pageX/Y properties and provides both stopPropagation() and preventDefault() methods.
 </p><p>Those properties are all documented, and accompanied by examples, on the <a href="http://docs.jquery.com/Events/jQuery.Event" title="Events/jQuery.Event">Event</a> page.
 </p><p>The standard events in the Document Object Model are: <code>blur, focus, load, resize, scroll, unload, beforeunload, click, dblclick, mousedown, mouseup, mousemove, mouseover, mouseout, mouseenter, mouseleave, change, select, submit, keydown, keypress,</code> and <code>keyup</code>. Since the DOM event names have predefined meanings for some elements, using them for other purposes is not recommended. jQuery's event model can trigger an event by any name on an element, and it is propagated up the DOM tree to which that element belongs, if any.
-</p> 
-<a name="Element"></a><h2> Element </h2> 
+</p>
+<a name="Element"></a><h2> Element </h2>
 <p>An element in the Document Object Model (DOM) has attributes, text and children. It provides methods to traverse the parent and children and to get access to its attributes. Due to a lot of flaws in DOM API specifications and implementations, those methods are no fun to use. jQuery provides a wrapper around those elements to help interacting with the DOM. But often enough you will be working directly with DOM elements, or see methods that (also) accept DOM elements as arguments.
 </p><p>Whenever you use jQuery's each-method, the context of your callback is set to a DOM element. That is also the case for event handlers.
 </p><p>Some properties of DOM elements are quite consistent among browsers. Consider this example of a simple on-blur-validation:
-</p> 
+</p>
 <pre><code data-lang="javascript">$( ":text" ).blur(function() {
   if( !this.value ) {
     alert( "Please enter some text!" );
   }
 });
-</code></pre> 
+</code></pre>
 <p>You could replace this.value with $(this).val() to access the value of the text input via jQuery, but in that case you don't gain anything.
-</p> 
-<a name="jQuery"></a><h2> jQuery </h2> 
-<p>A jQuery object contains a collection of Document Object Model (DOM) elements that have been created from an HTML string or selected from a document. Since jQuery methods often use CSS selectors to match elements from a document, the set of elements in a jQuery object is often called a set of "matched elements" or "selected elements". 
-</p><p>The jQuery object itself behaves much like an array; it has a <code>length</code> property and the elements in the object can be accessed by their numeric indices <code>[0]</code> to <code>[length-1]</code>. Note that a jQuery object is not actually a Javascript Array object, so it does not have all the methods of a true Array object such as <code>join()</code>. 
+</p>
+<a name="jQuery"></a><h2> jQuery </h2>
+<p>A jQuery object contains a collection of Document Object Model (DOM) elements that have been created from an HTML string or selected from a document. Since jQuery methods often use CSS selectors to match elements from a document, the set of elements in a jQuery object is often called a set of "matched elements" or "selected elements".
+</p><p>The jQuery object itself behaves much like an array; it has a <code>length</code> property and the elements in the object can be accessed by their numeric indices <code>[0]</code> to <code>[length-1]</code>. Note that a jQuery object is not actually a Javascript Array object, so it does not have all the methods of a true Array object such as <code>join()</code>.
 </p><p>Most frequently, you will use the jQuery() function to create a jQuery object. <code>jQuery()</code> can also be accessed by its familiar single-character alias of <code>$()</code>, unless you have called <code>jQuery.noConflict()</code> to disable this option. Many jQuery methods return the jQuery object itself, so that method calls can be chained:
-</p> 
+</p>
 <pre><code data-lang="javascript">$( "p" ).css( "color", "red" ).find( ".special" ).css( "color", "green" );
-</code></pre> 
+</code></pre>
 <p>Whenever you use a "destructive" jQuery method that potentially changes the set of elements in the jQuery object, such as <code>.filter()</code> or <code>.find()</code>, that method actually returns a new jQuery object with the resulting elements. To return to the previous jQuery object, you use the <code>.end()</code> method.
 </p><p>A jQuery object may be empty, containing no DOM elements. You can create an empty jQuery object with <code>$()</code> (that is, passing no arguments at all). A jQuery object may also be empty if a selector doesn't select any elements, or if a chained method filters out all the elements. It is not an error; any further methods called on that jQuery object simply have no effect since they have no elements to act upon. So, in this example if there are no bad entries on the page then no elements will be colored red:
-</p> 
+</p>
 <pre><code data-lang="javascript">$( ".badEntry" ).css({ color: "red" });
-</code></pre> 
-<a name="XMLHttpRequest"></a><h2> XMLHttpRequest </h2> 
+</code></pre>
+<a name="XMLHttpRequest"></a><h2> XMLHttpRequest </h2>
 <p>Some of jQuery's AJAX functions return the native XMLHttpRequest (XHR) object, or pass it as an argument to success/error/complete handlers, so that you can do additional processing or monitoring on the request. Note that AJAX functions only return or pass an XHR object when an XHR object is actually used in the request. For example, JSONP requests and cross-domain GET requests use a script element rather than an XHR object.
 </p><p>Although the XHR object is a standard, there are variations in its behavior on different browsers. Refer to the W3C site and browsers' documentation for more information:
-</p> 
-<ul><li> <a href="http://www.w3.org/TR/XMLHttpRequest/" class="external text" title="http://www.w3.org/TR/XMLHttpRequest/">W3C standard</a> 
-</li><li> <a href="http://developer.apple.com/internet/webcontent/xmlhttpreq.html" class="external text" title="http://developer.apple.com/internet/webcontent/xmlhttpreq.html">Apple (Safari)</a> 
-</li><li> <a href="http://developer.mozilla.org/en/xmlhttprequest" class="external text" title="http://developer.mozilla.org/en/xmlhttprequest">Mozilla (Firefox)</a> 
-</li><li> <a href="http://msdn.microsoft.com/en-us/library/ms535874%28VS.85%29.aspx" class="external text" title="http://msdn.microsoft.com/en-us/library/ms535874%28VS.85%29.aspx">Microsoft (Internet Explorer)</a> 
-</li><li> <a href="http://www.opera.com/docs/specs/opera9/xhr/" class="external text" title="http://www.opera.com/docs/specs/opera9/xhr/">Opera</a> 
-</li></ul> 
+</p>
+<ul><li> <a href="http://www.w3.org/TR/XMLHttpRequest/" class="external text" title="http://www.w3.org/TR/XMLHttpRequest/">W3C standard</a>
+</li><li> <a href="http://developer.apple.com/internet/webcontent/xmlhttpreq.html" class="external text" title="http://developer.apple.com/internet/webcontent/xmlhttpreq.html">Apple (Safari)</a>
+</li><li> <a href="http://developer.mozilla.org/en/xmlhttprequest" class="external text" title="http://developer.mozilla.org/en/xmlhttprequest">Mozilla (Firefox)</a>
+</li><li> <a href="http://msdn.microsoft.com/en-us/library/ms535874%28VS.85%29.aspx" class="external text" title="http://msdn.microsoft.com/en-us/library/ms535874%28VS.85%29.aspx">Microsoft (Internet Explorer)</a>
+</li><li> <a href="http://www.opera.com/docs/specs/opera9/xhr/" class="external text" title="http://www.opera.com/docs/specs/opera9/xhr/">Opera</a>
+</li></ul>
 <p>Google does not appear to have an official page for their XHR documentation for Chrome. As of version 5, Chrome does not support the use of the file protocol for XHR requests.
-</p> 
-<a name="jqXHR"></a><h2> jqXHR </h2> 
+</p>
+<a name="jqXHR"></a><h2> jqXHR </h2>
 <p>As of jQuery 1.5, the <a href="http://api.jquery.com/jQuery.ajax/">$.ajax()</a> method returns the jqXHR object, which is a superset of the XMLHTTPRequest object. For more information, see the <a href="http://api.jquery.com/jQuery.ajax/#jqXHR">jqXHR section of the $.ajax entry</a>
 </p>
-<a name="Deferred"></a><h2> Deferred </h2> 
+<a name="Deferred"></a><h2> Deferred </h2>
 <p>As of jQuery 1.5, the <a href="http://api.jquery.com/category/deferred-object">Deferred</a> object provides a way to register multiple callbacks into self-managed callback queues, invoke callback queues as appropriate, and relay the success or failure state of any synchronous or asynchronous function.</a>
 </p>
-<a name="Promise"></a><h2> Promise </h2> 
+<a name="Promise"></a><h2> Promise </h2>
 <p>This object provides a subset of the methods of the <a href="http://api.jquery.com/category/deferred-object">Deferred</a> object (<a href="http://api.jquery.com/deferred.then/"><code>then</code></a>, <a href="http://api.jquery.com/deferred.done/"><code>done</code></a>, <a href="http://api.jquery.com/deferred.fail/"><code>fail</code></a>, <a href="http://api.jquery.com/deferred.always"><code>always</code></a>, <a href="http://api.jquery.com/deferred.pipe/"><code>pipe</code></a>. <a href="http://api.jquery.com/deferred.isResolved/"><code>isResolved</code></a>, and <a href="http://api.jquery.com/deferred.isRejected/"><code>isRejected</code></a>) to prevent users from changing the state of the Deferred.</a>
 </p>
