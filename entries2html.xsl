@@ -96,17 +96,6 @@
       <xsl:call-template name="render-return-types" />
     </xsl:if>
   </xsl:when>
-  <!--
-    If the type is "Array" and it has child type elements
-    we display it as "Array of String" (or whatever the sub-type is)
-  -->
-  <xsl:when test="$typename = 'Array'">
-    <xsl:value-of select="$typename"/>
-    <xsl:if test="type">
-      <text> of </text>
-      <xsl:call-template name="render-types" />
-    </xsl:if>
-  </xsl:when>
   <xsl:otherwise>
     <!-- not function - just display typename -->
     <a href="http://api.jquery.com/Types#{$typename}"><xsl:value-of select="$typename" /></a>
