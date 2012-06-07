@@ -24,7 +24,7 @@
     "grunt": "0.3.x",
     "grunt-clean": "0.1.0",
     "grunt-wordpress": "0.1.1",
-    "pygmentize": "0.5.1"
+    "pygmentize": "0.5.2"
   },
   "devDependencies": {},
   "keywords": []
