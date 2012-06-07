@@ -1,3 +1,5 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entries2html.xsl" ?>
 <entry type='method' name="jQuery.ajax" return="jqXHR">
   <title>jQuery.ajax()</title>
   <signature>
@@ -5,13 +7,13 @@
     <argument name="url" type="String">
       <desc>A string containing the URL to which the request is sent.</desc>
     </argument>
-    <argument name="settings" type="Map" optional="true">
+    <argument name="settings" type="PlainObject" optional="true">
       <desc>A set of key/value pairs that configure the Ajax request. All settings are optional. A default can be set for any option with <a href="/jQuery.ajaxSetup">$.ajaxSetup()</a>. See <a href="#jQuery-ajax-settings">jQuery.ajax( settings )</a> below for a complete list of all settings. </desc>
     </argument>
   </signature>
   <signature>
     <added>1.0</added>
-    <argument name="settings" type="Map" optional="true">
+    <argument name="settings" type="PlainObject" optional="true">
       <desc>A set of key/value pairs that configure the Ajax request. All settings are optional. A default can be set for any option with <a href="/jQuery.ajaxSetup">$.ajaxSetup()</a>.</desc>
       <option default="depends on DataType" name="accepts" type="PlainObject">
         <desc>The content type sent in the request header that tells the server what kind of response it will accept in return. If the <code>accepts</code> setting needs modification, it is recommended to do so once in the <code>$.ajaxSetup()</code> method.</desc>
@@ -19,13 +21,17 @@
       <option default="true" name="async" type="Boolean">
         <desc>By default, all requests are sent asynchronously (i.e. this is set to <code>true</code> by default). If you need synchronous requests, set this option to <code>false</code>. Cross-domain requests and <code>dataType: "jsonp"</code> requests do not support synchronous operation. Note that synchronous requests may temporarily lock the browser, disabling any actions while the request is active. <strong>As of jQuery 1.8, the use of <code> async: false </code> is deprecated.</strong></desc>
       </option>
-      <option name="beforeSend(jqXHR, settings)" type="Function">
+      <option name="beforeSend" type="Function">
+        <argument name="jqXHR" type="jqXHR" />
+        <argument name="settings" type="PlainObject" />
         <desc>A pre-request callback function that can be used to modify the jqXHR (in jQuery 1.4.x, XMLHTTPRequest) object before it is sent. Use this to set custom headers, etc. The jqXHR and settings maps are passed as arguments. This is an <a href='http://docs.jquery.com/Ajax_Events'>Ajax Event</a>. Returning <code>false</code> in the <code>beforeSend</code> function will cancel the request. <strong>As of jQuery 1.5</strong>, the <code>beforeSend</code> option will be called regardless of the type of request.</desc>
       </option>
       <option name="cache" default="true, false for dataType 'script' and 'jsonp'" type="Boolean">
         <desc>If set to <code>false</code>, it will force requested pages not to be cached by the browser. <strong>Note:</strong> Setting <code>cache</code> to false will only work correctly with HEAD and GET requests. It works by appending "_={timestamp}" to the GET parameters. The parameter is not needed for other types of requests, except in IE8 when a POST is made to a URL that has already been requested by a GET.</desc>
       </option>
-      <option name="complete(jqXHR, textStatus)" type="Function, Array">
+      <option name="complete" type="Function">
+        <argument name="jqXHR" type="jqXHR" />
+        <argument name="textStatus" type="String" />
         <desc>A function to be called when the request finishes (after <code>success</code> and <code>error</code> callbacks are executed). The function gets passed two arguments: The jqXHR (in jQuery 1.4.x, XMLHTTPRequest) object and a string categorizing the status of the request (<code>"success"</code>, <code>"notmodified"</code>, <code>"error"</code>, <code>"timeout"</code>, <code>"abort"</code>, or <code>"parsererror"</code>). <strong>As of jQuery 1.5</strong>, the <code>complete</code> setting can accept an array of functions. Each function will be called in turn. This is an <a href='http://docs.jquery.com/Ajax_Events'>Ajax Event</a>.</desc>
       </option>
       <option name="contents" type="PlainObject" added="1.5">
@@ -51,7 +57,10 @@
       <option name="data" type="Object, String">
         <desc>Data to be sent to the server. It is converted to a query string, if not already a string. It's appended to the url for GET-requests. See <code>processData</code> option to prevent this automatic processing. Object must be Key/Value pairs. If value is an Array, jQuery serializes multiple values with same key based on the value of the <code>traditional</code> setting (described below).</desc>
       </option>
-      <option name="dataFilter(data, type)" type="Function">
+      <option name="dataFilter" type="Function">
+        <argument name="data" type="Object" />
+        <argument name="type" type="String" />
+        <return type="Object"/>
         <desc>A function to be used to handle the raw response data of XMLHttpRequest.This is a pre-filtering function to sanitize the response. You should return the sanitized data. The function accepts two arguments: The raw data returned from the server and the 'dataType' parameter.</desc>
       </option>
       <option name="dataType" default="Intelligent Guess (xml, json, script, or html)" type="String">
@@ -67,7 +76,10 @@
             </li>
           </ul></desc>
         </option>
-        <option name="error(jqXHR, textStatus, errorThrown)" type="Function">
+        <option name="error" type="Function">
+          <argument name="jqXHR" type="jqXHR" />
+          <argument name="textStatus" type="String" />
+          <argument name="errorThrown" type="String" />
           <desc>A function to be called if the request fails. The function receives three arguments: The jqXHR (in jQuery 1.4.x, XMLHttpRequest) object, a string describing the type of error that occurred and an optional exception object, if one occurred. Possible values for the second argument (besides <code>null</code>) are <code>"timeout"</code>, <code>"error"</code>, <code>"abort"</code>, and <code>"parsererror"</code>. When an HTTP error occurs, <code>errorThrown</code> receives the textual portion of the HTTP status, such as "Not Found" or "Internal Server Error."  <strong>As of jQuery 1.5</strong>, the <code>error</code> setting can accept an array of functions. Each function will be called in turn.  <strong>Note:</strong> <em>This handler is not called for cross-domain script and JSONP requests.</em> This is an <a href='http://docs.jquery.com/Ajax_Events'>Ajax Event</a>. </desc>
         </option>
         <option default="true" name="global" type="Boolean">
@@ -113,7 +125,10 @@
             <p>If the request is successful, the status code functions take the same parameters as the success callback; if it results in an error, they take the same parameters as the <code>error</code> callback.</p>
           </desc>
         </option>
-        <option name="success(data, textStatus, jqXHR)" type="Function, Array">
+        <option name="success" type="Function">
+          <argument name="data" type="Object" />
+          <argument name="textStatus" type="String" />
+          <argument name="jqXHR" type="jqXHR" />
           <desc>A function to be called if the request succeeds. The function gets passed three arguments: The data returned from the server, formatted according to the <code>dataType</code> parameter; a string describing the status; and the <code>jqXHR</code> (in jQuery 1.4.x, XMLHttpRequest) object. <strong>As of jQuery 1.5</strong>, <em>the success setting can accept an array of functions. Each function will be called in turn.</em> This is an <a href='http://docs.jquery.com/Ajax_Events'>Ajax Event</a>.</desc>
         </option>
         <option name="timeout" type="Number">
