@@ -22,9 +22,15 @@
 
 
 <xsl:template match="/">
+  <xsl:variable name="dquo">"</xsl:variable>
+  <xsl:variable name="squo">'</xsl:variable>
+  <xsl:variable name="desc-raw" select="//entry/desc/text()|//entry/desc/*" />
+  <xsl:variable name="desc-trans" select="translate($desc-raw, $dquo, $squo)" />
+
 <script>
 	{
 		"title": "<xsl:value-of select="//entry/@name" />",
+		"excerpt": "<xsl:copy-of select="$desc-trans" />",
 		"termSlugs": {
 			"category": [
 				<xsl:for-each select="//entry/category"><xsl:if test="position() &gt; 1"><xsl:text>,</xsl:text></xsl:if>"<xsl:value-of select="@slug"/>"</xsl:for-each>
@@ -178,7 +184,7 @@
               <xsl:attribute name="id">
                 <xsl:value-of select="$entry-name-trans" />
                 <xsl:for-each select="argument">
-                  <xsl:variable name="arg-name" select="translate(@name, ',.)(', '--')" />
+                  <xsl:variable name="arg-name" select="translate(@name, ' ,.)(', '--')" />
                   <xsl:text>-</xsl:text><xsl:value-of select="$arg-name"/>
                 </xsl:for-each>
               </xsl:attribute>
