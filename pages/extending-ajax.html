@@ -1,0 +1,275 @@
+<script>
+{
+	"title": "Extending Ajax: Prefilters, Converters, and Transports"
+}
+</script>
+<div class="longdesc">
+
+<p>As of jQuery 1.5, <code>$.ajax()</code> provides three means to extend its functionalities for sending, receiving, and managing ajax requests:</p>
+<div class="options">
+<h5><a href="#Prefilters">Prefilters</a>
+</h5>
+<div class="default-value">
+Generalized beforeSend callbacks to handle custom options or modify existing ones 
+</div>
+<h5><a href="#Converters">Converters</a></h5>
+<div class="default-value">
+Generalized dataFilter callbacks that are called in response to a particular dataType being received that differs from what was expected
+</div>
+<h5><a href="#Transports">Transports</a></h5>
+<div class="default-value">
+New in 1.5, these are used internally to issue requests by <code>$.ajax</code>
+</div>
+</div>
+
+<h4 id="Prefilters"> Prefilters</h4>
+
+<p>A prefilter is a callback function that is called before each request is sent, and prior to any <code>$.ajax()</code> option handling.</p>
+
+<p>Prefilters are registered using  <code>$.ajaxPrefilter()</code>, and a typical registration looks like this:</p>
+
+<pre><code data-lang="javascript">
+$.ajaxPrefilter(function( options, originalOptions, jqXHR ) {
+  // Modify options, control originalOptions, store jqXHR, etc
+});
+</code></pre>
+
+<p>where:</p>
+
+<ul>
+<li><code>options</code> are the request options</li>
+<li><code>originalOptions</code> are the options as provided to the ajax method, unmodified and, thus, without defaults from ajaxSettings</li>
+<li><code>jqXHR</code> is the jqXHR object of the request</li>
+</ul>
+
+<p>Prefilters are a perfect fit when you need to handle custom options.  For instance the following code would make it so <code>$.ajax()</code> automatically aborts a request with the same url if the custom <code>abortOnRetry</code> option is set to <code>true</code>:</p>
+
+<pre><code data-lang="javascript">
+var currentRequests = {};
+
+$.ajaxPrefilter(function( options, originalOptions, jqXHR ) {
+  if ( options.abortOnRetry ) {
+    if ( currentRequests[ options.url ] ) {
+      currentRequests[ options.url ].abort();
+    }
+    currentRequests[ options.url ] = jqXHR;
+  }
+});
+</code></pre>
+
+<p>Prefilters can also be used to modify existing options. For example, the following proxies cross-domain requests through http://mydomain.net/proxy/:</p>
+
+<pre><code data-lang="javascript">
+$.ajaxPrefilter(function( options ) {
+  if ( options.crossDomain ) {
+    options.url = "http://mydomain.net/proxy/" + encodeURIComponent( options.url );
+    options.crossDomain = false;
+  }
+});
+</code></pre>
+
+<p>It is also possible to attach a prefilter to requests with a specific dataType. For example, the following applies the given prefilter to JSON and script requests only:</p>
+
+<pre><code data-lang="javascript">
+$.ajaxPrefilter( "json script", function( options, originalOptions, jqXHR ) {
+  // Modify options, control originalOptions, store jqXHR, etc
+});
+</code></pre>
+
+<p>Finally, it is possible to redirect a request to another dataType by returning the target dataType. For example, the following sets a request as "script" if the URL had some specific properties defined in a custom isActuallyScript() function:</p>
+
+<pre><code data-lang="javascript">
+$.ajaxPrefilter(function( options ) {
+  if ( isActuallyScript( options.url ) ) {
+    return "script";
+  }
+});
+</code></pre>
+
+<p>This would ensure not only that the request is considered "script" but also that all the prefilters specifically attached to the script dataType would be applied to it.</p>
+
+<h4 id="Converters">Converters</h4>
+
+<p>A converter is a callback function that is called when a response of a certain dataType is received while another dataType is expected.</p>
+
+<p>Converters are stored into ajaxSettings and can be added globally as follows:</p>
+
+<pre><code data-lang="javascript">
+$.ajaxSetup({
+  converters: {
+    "text mydatatype": function( textValue ) {
+      if ( valid( textValue ) ) {
+        // Some parsing logic here
+        return mydatatypeValue;
+      } else {
+        // This will notify a parsererror for current request
+        throw exceptionObject;
+      }
+    }
+  }
+});
+</code></pre>
+
+<p>Converters are useful to introduce custom dataTypes. They can also be used to transform data into desired formats. <strong>Note</strong>: all custom dataTypes must be lowercase.</p>
+
+<p>With the example above, it is now possible to request data of type "mydatatype" as follows:</p>
+
+<pre><code data-lang="javascript">$.ajax( url, {
+  dataType: "mydatatype"
+});
+</code></pre>
+
+<p>You can define converters "inline," inside the options of an ajax call. For example, the following code requests an XML document, then extracts relevant text from it, and parses it as "mydatatype":</p>
+
+<pre><code data-lang="javascript">
+$.ajax( url, {
+  dataType: "xml text mydatatype",
+  converters: {
+    "xml text": function( xmlValue ) {
+      // Extract relevant text from the xml document
+      return textValue;
+    }
+  }
+});
+</code></pre>
+
+<h4 id="Transports">Transports</h4>
+
+<p>A transport is an object that provides two methods, <code>send</code> and <code>abort</code>, that are used internally by <code>$.ajax()</code> to issue requests. A transport is the most advanced way to enhance <code>$.ajax()</code> and should be used only as a last resort when prefilters and converters are insufficient.</p>
+
+<p>Since each request requires its own transport object instance, tranports cannot be registered directly. Therefore, you should provide a function that returns a transport instead.</p>
+
+<p>Transports factories are registered using <code>$.ajaxTransport()</code>. A typical registration looks like this:</p>
+
+<pre><code data-lang="javascript">
+$.ajaxTransport( function( options, originalOptions, jqXHR ) {
+  if( /* transportCanHandleRequest */ ) {
+    return {
+      send: function( headers, completeCallback ) {
+        /* send code */
+      },
+      abort: function() {
+        /* abort code */
+      }
+    };
+  }
+});
+</code></pre>
+
+<p>where:</p>
+<ul>
+<li><code>options</code> are the request options</li>
+<li><code>originalOptions</code> are the options as provided to the ajax method, unmodified and, thus, without defaults from ajaxSettings</li>
+<li><code>jqXHR</code> is the jqXHR object of the request</li>
+<li><code>headers</code> is a map of request headers (key/value) that the transport can transmit if it supports it</li>
+<li><code>completeCallback</code> is the callback used to notify ajax of the completion of the request</li>
+</ul>
+
+<p><code>completeCallback</code> has the following signature:</p>
+
+<pre><code data-lang="javascript">function( status, statusText, responses, headers ) {}
+</code></pre>
+
+<p>where:</p>
+<ul>
+<li><code>status</code> is the HTTP status code of the response, like  200 for a typical success, or 404 for when the resource is not found.</li>
+<li><code>statusText</code> is the statusText of the response.</li>
+<li><code>responses</code> (Optional) is a map of dataType/value that contains the response in all the formats the transport could provide (for instance, a native XMLHttpRequest object would set reponses to <code>{ xml: XMLData, text: textData }</code> for a response that is an XML document)</li>
+<li><code>headers</code> (Optional) is a string containing all the response headers if the transport has access to them (akin to what <code>XMLHttpRequest.getAllResponseHeaders()</code> would provide).</li>
+</ul>
+
+<p>Just like prefilters, a transport's factory function can be attached to specific dataType:</p>
+
+<pre><code data-lang="javascript">$.ajaxTransport( "script", function( options, originalOptions, jqXHR ) {
+  /* Will only be called for script requests */
+});
+</code></pre>
+
+<p>The following example shows how a minimal image transport could be implemented:</p>
+
+<pre><code data-lang="javascript">$.ajaxTransport( "image", function( s ) {
+
+  if ( s.type === "GET" &amp;&amp; s.async ) {
+
+    var image;
+
+    return {
+
+      send: function( _ , callback ) {
+
+        image = new Image();
+
+        function done( status ) {
+          if ( image ) {
+            var statusText = ( status == 200 ) ? "success" : "error",
+            tmp = image;
+            image = image.onreadystatechange = image.onerror = image.onload = null;
+            callback( status, statusText, { image: tmp } );
+          }
+        }
+
+        image.onreadystatechange = image.onload = function() {
+          done( 200 );
+        };
+        image.onerror = function() {
+          done( 404 );
+        };
+
+        image.src = s.url;
+      },
+
+      abort: function() {
+        if ( image ) {
+          image = image.onreadystatechange = image.onerror = image.onload = null;
+        }
+      }
+    };
+  }
+});
+</code></pre>
+
+<h4 id="handling-custom-data-types">Handling Custom Data Types</h4>
+
+<p>The jQuery Ajax implementation comes with a set of standard dataTypes, such as text, json, xml, and html.</p>
+   
+<p>Use the <code>converters</code> option in <code><a href='/jQuery.ajaxSetup'>$.ajaxSetup()</a></code> to augment or modify the data type conversion strategies used by <code>$.ajax()</code>.</p>
+
+<p> The unminified jQuery source itself includes a list of default converters, which effectively illustrates how they can be used: </p>
+  
+<pre><code data-lang="javascript">// List of data converters
+// 1) key format is "source_type destination_type" 
+//    (a single space in-between)
+// 2) the catchall symbol "*" can be used for source_type
+converters: {
+
+  // Convert anything to text
+  "* text": window.String,
+
+  // Text to html (true = no transformation)
+  "text html": true,
+
+  // Evaluate text as a json expression
+  "text json": jQuery.parseJSON,
+
+  // Parse text as xml
+  "text xml": jQuery.parseXML
+}
+</code></pre>
+
+<p>When you specify a <code>converters</code> option globally in <code>$.ajaxSetup()</code> or per call in <code>$.ajax()</code>, the object will map onto the default converters, overwriting those you specify and leaving the others intact.</p>
+
+<p>For example, the jQuery source uses <code>$.ajaxSetup()</code> to  add a converter for "text script":</p>
+     
+<pre><code data-lang="javascript">jQuery.ajaxSetup({
+  accepts: {
+    script: "text/javascript, application/javascript"
+  },
+  contents: {
+    script: /javascript/
+  },
+  converters: {
+    "text script": jQuery.globalEval
+  }
+});</code></pre>
+
+</div>

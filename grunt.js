@@ -8,11 +8,12 @@ var // modules
 	spawn = require( "child_process" ).spawn,
 	
 	// files
+	pageFiles = grunt.file.expandFiles( "pages/*.html" ),
 	entryFiles = grunt.file.expandFiles( "entries/*.xml" ),
 	categoryFiles = grunt.file.expandFiles( "categories/*.xml" ),
 	resourceFiles = grunt.file.expandFiles( "resources/*" ),
 	
-	xmlFiles = [].concat( entryFiles, categoryFiles );
+	xmlFiles = [].concat( entryFiles, categoryFiles, "cat2tax.xsl", "categories.xml", "entries2html.xsl", "xml2json.xsl" );
 	
 function pathSlug( fileName ) {
 	return path.basename( fileName, path.extname( fileName ) );
@@ -62,6 +63,41 @@ grunt.registerTask( "xmllint", function() {
 		}
 		grunt.log.writeln( "Lint free files: " + entryFiles.length );
 		taskDone();
+	});
+});
+
+grunt.registerTask( "build-pages", function() {
+	var task = this,
+		taskDone = task.async(),
+		targetDir = grunt.config( "wordpress.dir" ) + "/posts/page/";
+	
+	grunt.file.mkdir( targetDir );
+	
+	grunt.utils.async.forEachSeries( pageFiles, function( fileName, fileDone ) {
+		var targetFileName = targetDir + path.basename( fileName );
+		grunt.verbose.write( "Reading " + fileName + "..." );
+		grunt.verbose.write( "Pygmentizing " + targetFileName + "..." );
+		pygmentize.file( fileName, function( error, data ) {
+			if ( error ) {
+				grunt.verbose.error();
+				grunt.log.error( error );
+				fileDone();
+				return;
+			}
+			grunt.verbose.ok();
+
+			grunt.file.write( targetFileName, data );
+
+			fileDone();				
+		});
+	}, function() {
+		if ( task.errorCount ) {
+			grunt.warn( "Task \"" + task.name + "\" failed." );
+			taskDone();
+			return;
+		}
+		grunt.log.writeln( "Built " + pageFiles.length + " pages." );
+		taskDone();		
 	});
 });
 
@@ -173,7 +209,7 @@ grunt.registerTask( "build-resources", function() {
 });
 
 grunt.registerTask( "default", "build-wordpress" );
-grunt.registerTask( "build-wordpress", "clean lint xmllint build-entries build-categories build-resources" );
+grunt.registerTask( "build-wordpress", "clean lint xmllint build-pages build-entries build-categories build-resources" );
 grunt.registerTask( "deploy", "wordpress-deploy" );
 
 };
