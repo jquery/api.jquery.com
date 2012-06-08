@@ -1,4 +1,5 @@
-<entry type='method' name="jQuery.error" return="">
+<?xml version="1.0"?>
+<entry type="method" name="jQuery.error" return="">
   <title>jQuery.error()</title>
   <signature>
     <added>1.4.1</added>
@@ -7,7 +8,9 @@
     </argument>
   </signature>
   <desc>Takes a string and throws an exception containing it.</desc>
-  <longdesc><p>This method exists primarily for plugin developers who wish to override it and provide a better display (or more information) for the error messages.</p></longdesc>
+  <longdesc>
+    <p>This method exists primarily for plugin developers who wish to override it and provide a better display (or more information) for the error messages.</p>
+  </longdesc>
   <example>
     <desc>Override jQuery.error for display in Firebug.</desc>
     <code><![CDATA[jQuery.error = console.error;]]></code>

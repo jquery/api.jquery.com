@@ -1,4 +1,5 @@
-<entry type='method' name="jQuery.now" return="Number">
+<?xml version="1.0"?>
+<entry type="method" name="jQuery.now" return="Number">
   <title>jQuery.now()</title>
   <signature>
     <added>1.4.3</added>
@@ -7,6 +8,6 @@
   <longdesc>
     <p>The <code>$.now()</code> method is a shorthand for the number returned by the expression <code>(new Date).getTime()</code>.</p>
   </longdesc>
-<category slug="utilities"/>
-<category slug="version/1.4.3"/>
+  <category slug="utilities"/>
+  <category slug="version/1.4.3"/>
 </entry>

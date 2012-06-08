@@ -1,4 +1,5 @@
-<entry type='method' name="replaceAll" return="jQuery">
+<?xml version="1.0"?>
+<entry type="method" name="replaceAll" return="jQuery">
   <title>.replaceAll()</title>
   <signature>
     <added>1.2</added>
@@ -8,7 +9,7 @@
   </signature>
   <desc>Replace each target element with the set of matched elements.</desc>
   <longdesc>
-    <p>The <code>.replaceAll()</code> method is corollary to <code><a href='/replaceWith'>.replaceWith()</a></code>, but with the source and target reversed. Consider this DOM structure:</p>
+    <p>The <code>.replaceAll()</code> method is corollary to <code><a href="/replaceWith">.replaceWith()</a></code>, but with the source and target reversed. Consider this DOM structure:</p>
     <pre>&lt;div class="container"&gt;
   &lt;div class="inner first"&gt;Hello&lt;/div&gt;
   &lt;div class="inner second"&gt;And&lt;/div&gt;
@@ -31,13 +32,13 @@
 &lt;/div&gt;</pre>
     <p>From this example, we can see that the selected element replaces the target by being moved from its old location, not by being cloned.</p>
   </longdesc>
-<example>
-  <desc>Replace all the paragraphs with bold words.</desc>
-  <code><![CDATA[$("<b>Paragraph. </b>").replaceAll("p"); // check replaceWith() examples]]></code>
-  <html><![CDATA[<p>Hello</p>
+  <example>
+    <desc>Replace all the paragraphs with bold words.</desc>
+    <code><![CDATA[$("<b>Paragraph. </b>").replaceAll("p"); // check replaceWith() examples]]></code>
+    <html><![CDATA[<p>Hello</p>
   <p>cruel</p>
   <p>World</p>]]></html>
-                </example>
-            <category slug="manipulation/dom-replacement"/>
-<category slug="version/1.2"/>
+  </example>
+  <category slug="manipulation/dom-replacement"/>
+  <category slug="version/1.2"/>
 </entry>

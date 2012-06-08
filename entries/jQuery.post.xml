@@ -1,4 +1,5 @@
-<entry type='method' name="jQuery.post" return="jqXHR">
+<?xml version="1.0"?>
+<entry type="method" name="jQuery.post" return="jqXHR">
   <title>jQuery.post()</title>
   <signature>
     <added>1.0</added>
@@ -26,10 +27,10 @@
   dataType: <em>dataType</em>
 });
 </pre>
-  <p>The <code>success</code> callback function is passed the returned data, which will be an XML root element or a text string depending on the MIME type of the response. It is also passed the text status of the response.</p>
-  <p><strong>As of jQuery 1.5</strong>, the <code>success</code> callback function is also passed a <a href="http://api.jquery.com/jQuery.get/#jqxhr-object">"jqXHR" object</a> (in <strong>jQuery 1.4</strong>, it was passed the <code>XMLHttpRequest</code> object).</p>
-  <p>Most implementations will specify a success handler:</p>
-  <pre>$.post('ajax/test.html', function(data) {
+    <p>The <code>success</code> callback function is passed the returned data, which will be an XML root element or a text string depending on the MIME type of the response. It is also passed the text status of the response.</p>
+    <p><strong>As of jQuery 1.5</strong>, the <code>success</code> callback function is also passed a <a href="http://api.jquery.com/jQuery.get/#jqxhr-object">"jqXHR" object</a> (in <strong>jQuery 1.4</strong>, it was passed the <code>XMLHttpRequest</code> object).</p>
+    <p>Most implementations will specify a success handler:</p>
+    <pre>$.post('ajax/test.html', function(data) {
   $('.result').html(data);
 });
 </pre>
@@ -37,7 +38,6 @@
     <p>Pages fetched with <code>POST</code> are never cached, so the <code>cache</code> and <code>ifModified</code> options in <code><a href="/jQuery.ajaxSetup">jQuery.ajaxSetup()</a></code> have no effect on these requests.</p>
     <h4 id="jqxhr-object">The jqXHR Object</h4>
     <p><strong>As of jQuery 1.5</strong>, all of jQuery's Ajax methods return  a superset of the <code>XMLHTTPRequest</code> object. This jQuery XHR object, or "jqXHR," returned by <code>$.post()</code> implements the Promise interface, giving it all the properties, methods, and behavior of a Promise (see <a href="http://api.jquery.com/category/deferred-object/">Deferred object</a> for more information). For convenience and consistency with the callback names used by <code><a href="http://api.jquery.com/jQuery.ajax/">$.ajax()</a></code>, it provides <code>.error()</code>, <code>.success()</code>, and <code>.complete()</code> methods. These methods take a function argument that is called when the request terminates, and the function receives the same arguments as the correspondingly-named <code>$.ajax()</code> callback.</p>
-
     <p>The Promise interface in jQuery 1.5 also allows jQuery's Ajax methods, including <code>$.post()</code>, to chain multiple <code>.success()</code>, <code>.complete()</code>, and <code>.error()</code> callbacks on a single request, and even to assign these callbacks after the request may have completed. If the request is already complete, the callback is fired immediately.</p>
     <pre>// Assign handlers immediately after making the request,
     // and remember the jqxhr object for this request
@@ -54,61 +54,59 @@
     jqxhr.complete(function(){ alert("second complete"); });
   </pre>
   </longdesc>
-
-  <note id="same-origin-policy" type="additional"></note>
+  <note id="same-origin-policy" type="additional"/>
   <note id="use-ajaxerror" type="additional">
     <placeholder name="title">jQuery.post()</placeholder>
   </note>
-
-<example>
-  <desc>Request the test.php page, but ignore the return results.</desc>
-  <code><![CDATA[$.post("test.php");]]></code>
-</example>
-<example>
-  <desc>Request the test.php page and send some additional data along (while still ignoring the return results).</desc>
-  <code><![CDATA[$.post("test.php", { name: "John", time: "2pm" } );]]></code>
-</example>
-<example>
-  <desc>pass arrays of data to the server (while still ignoring the return results).</desc>
-  <code><![CDATA[$.post("test.php", { 'choices[]': ["Jon", "Susan"] });]]></code>
-</example>
-<example>
-  <desc>send form data using ajax requests</desc>
-  <code><![CDATA[$.post("test.php", $("#testform").serialize());]]></code>
-</example>
-<example>
-  <desc>Alert out the results from requesting test.php (HTML or XML, depending on what was returned).</desc>
-  <code><![CDATA[$.post("test.php", function(data) {
+  <example>
+    <desc>Request the test.php page, but ignore the return results.</desc>
+    <code><![CDATA[$.post("test.php");]]></code>
+  </example>
+  <example>
+    <desc>Request the test.php page and send some additional data along (while still ignoring the return results).</desc>
+    <code><![CDATA[$.post("test.php", { name: "John", time: "2pm" } );]]></code>
+  </example>
+  <example>
+    <desc>pass arrays of data to the server (while still ignoring the return results).</desc>
+    <code><![CDATA[$.post("test.php", { 'choices[]': ["Jon", "Susan"] });]]></code>
+  </example>
+  <example>
+    <desc>send form data using ajax requests</desc>
+    <code><![CDATA[$.post("test.php", $("#testform").serialize());]]></code>
+  </example>
+  <example>
+    <desc>Alert out the results from requesting test.php (HTML or XML, depending on what was returned).</desc>
+    <code><![CDATA[$.post("test.php", function(data) {
   alert("Data Loaded: " + data);
 });]]></code>
-</example>
-<example>
-  <desc>Alert out the results from requesting test.php with an additional payload of data (HTML or XML, depending on what was returned).</desc>
-  <code><![CDATA[$.post("test.php", { name: "John", time: "2pm" },
+  </example>
+  <example>
+    <desc>Alert out the results from requesting test.php with an additional payload of data (HTML or XML, depending on what was returned).</desc>
+    <code><![CDATA[$.post("test.php", { name: "John", time: "2pm" },
   function(data) {
     alert("Data Loaded: " + data);
   });]]></code>
-</example>
-<example>
-  <desc>Gets the test.php page content, store it in a XMLHttpResponse object and applies the process() JavaScript function.</desc>
-  <code><![CDATA[$.post("test.php", { name: "John", time: "2pm" },
+  </example>
+  <example>
+    <desc>Gets the test.php page content, store it in a XMLHttpResponse object and applies the process() JavaScript function.</desc>
+    <code><![CDATA[$.post("test.php", { name: "John", time: "2pm" },
   function(data) {
     process(data);
   },
  "xml"
 );]]></code>
-</example>
-<example>
-  <desc>Posts to the test.php page and gets contents which has been returned in json format (&lt;?php echo json_encode(array("name"=>"John","time"=>"2pm")); ?&gt;).</desc>
-  <code><![CDATA[$.post("test.php", { "func": "getNameAndTime" },
+  </example>
+  <example>
+    <desc>Posts to the test.php page and gets contents which has been returned in json format (&lt;?php echo json_encode(array("name"=&gt;"John","time"=&gt;"2pm")); ?&gt;).</desc>
+    <code><![CDATA[$.post("test.php", { "func": "getNameAndTime" },
   function(data){
     console.log(data.name); // John
     console.log(data.time); //  2pm
   }, "json");]]></code>
-</example>
-<example>
-  <desc>Post a form using ajax and put results in a div</desc>
-  <code><![CDATA[
+  </example>
+  <example>
+    <desc>Post a form using ajax and put results in a div</desc>
+    <code><![CDATA[
 /* attach a submit handler to the form */
 $("#searchForm").submit(function(event) {
 
@@ -129,7 +127,7 @@ $("#searchForm").submit(function(event) {
   );
 });
 ]]></code>
-  <html><![CDATA[<form action="/" id="searchForm">
+    <html><![CDATA[<form action="/" id="searchForm">
    <input type="text" name="s" placeholder="Search..." />
    <input type="submit" value="Search" />
   </form>
@@ -137,7 +135,7 @@ $("#searchForm").submit(function(event) {
   <div id="result"></div>
 ]]></html>
   </example>
-<category slug="ajax/shorthand-methods"/>
-<category slug="version/1.0"/>
-<category slug="version/1.5"/>
+  <category slug="ajax/shorthand-methods"/>
+  <category slug="version/1.0"/>
+  <category slug="version/1.5"/>
 </entry>

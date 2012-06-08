@@ -1,6 +1,9 @@
-<entry type='property' name="selector" return="String">
+<?xml version="1.0"?>
+<entry type="property" name="selector" return="String">
   <title>.selector</title>
-  <signature><added>1.3</added></signature>
+  <signature>
+    <added>1.3</added>
+  </signature>
   <desc>A selector representing selector originally passed to jQuery().</desc>
   <longdesc>
     <p>Should be used in conjunction with context to determine the exact query used.</p>
@@ -13,24 +16,23 @@
   .append("<li>" + $("ul li").selector + "</li>")
   .append("<li>" + $("div#foo ul:not([class])").selector + "</li>");
 ]]></code>
-  <css><![CDATA[
+    <css><![CDATA[
   body { cursor:pointer; }
   div { width:50px; height:30px; margin:5px; float:left;
         background:green; }
   span { color:red; }
   ]]></css>
-  <html><![CDATA[Some selectors:<ul></ul>]]></html>
-</example>
-
-<example>
-  <desc>Collecting elements differently</desc>
-  <code><![CDATA[
+    <html><![CDATA[Some selectors:<ul></ul>]]></html>
+  </example>
+  <example>
+    <desc>Collecting elements differently</desc>
+    <code><![CDATA[
  $('<div>' + $('ul li.foo').selector + '</div>').appendTo('body');  // "ul li.foo"
  $('<div>' + $('ul').find('li').filter('.foo').selector + '</div>').appendTo('body'); // "ul li.filter(.foo)"
 ]]></code>
-  <html><![CDATA[Some selectors:<ul></ul>
+    <html><![CDATA[Some selectors:<ul></ul>
 ]]></html>
-</example>
-<category slug="internals"/>
-<category slug="properties/global-jquery-object-properties"/>
+  </example>
+  <category slug="internals"/>
+  <category slug="properties/global-jquery-object-properties"/>
 </entry>

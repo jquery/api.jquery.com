@@ -1,4 +1,5 @@
-<entry type='method' name="replaceWith" return="jQuery">
+<?xml version="1.0"?>
+<entry type="method" name="replaceWith" return="jQuery">
   <title>.replaceWith()</title>
   <signature>
     <added>1.2</added>
@@ -45,55 +46,55 @@
 &lt;/div&gt;</pre>
     <p>This example demonstrates that the selected element replaces the target by being moved from its old location, not by being cloned.</p>
     <p>The <code>.replaceWith()</code> method, like most jQuery methods, returns the jQuery object so that other methods can be chained onto it. However, it must be noted that the <em>original</em> jQuery object is returned. This object refers to the element that has been removed from the DOM, not the new element that has replaced it.</p>
-<p>As of jQuery 1.4, <code>.replaceWith()</code> can also work on disconnected DOM nodes. For example, with the following code, <code>.replaceWith()</code> returns a jQuery set containing only a paragraph.:</p>
-<pre>$("&lt;div/&gt;").replaceWith("&lt;p&gt;&lt;/p&gt;");</pre>
-<p>The <code>.replaceWith()</code> method can also take a function as its argument:</p>
-<pre>$('div.container').replaceWith(function() {
+    <p>As of jQuery 1.4, <code>.replaceWith()</code> can also work on disconnected DOM nodes. For example, with the following code, <code>.replaceWith()</code> returns a jQuery set containing only a paragraph.:</p>
+    <pre>$("&lt;div/&gt;").replaceWith("&lt;p&gt;&lt;/p&gt;");</pre>
+    <p>The <code>.replaceWith()</code> method can also take a function as its argument:</p>
+    <pre>$('div.container').replaceWith(function() {
   return $(this).contents();
 });</pre>
-<p>This results in <code>&lt;div class="container"&gt;</code> being replaced by its three child <code>&lt;div&gt;</code>s. The return value of the function may be an HTML string, DOM element, or jQuery object.</p>
-</longdesc>
-<example>
-  <desc>On click, replace the button with a div containing the same word.</desc>
-  <code><![CDATA[
+    <p>This results in <code>&lt;div class="container"&gt;</code> being replaced by its three child <code>&lt;div&gt;</code>s. The return value of the function may be an HTML string, DOM element, or jQuery object.</p>
+  </longdesc>
+  <example>
+    <desc>On click, replace the button with a div containing the same word.</desc>
+    <code><![CDATA[
 $("button").click(function () {
   $(this).replaceWith( "<div>" + $(this).text() + "</div>" );
 });
 ]]></code>
-<css><![CDATA[
+    <css><![CDATA[
   button { display:block; margin:3px; color:red; width:200px; }
   div { color:red; border:2px solid blue; width:200px;
       margin:3px; text-align:center; }
   ]]></css>
-<html><![CDATA[
+    <html><![CDATA[
 <button>First</button>
 <button>Second</button>
 <button>Third</button>
 ]]></html>
-</example>
-<example>
-  <desc>Replace all paragraphs with bold words.</desc>
-  <code><![CDATA[
+  </example>
+  <example>
+    <desc>Replace all paragraphs with bold words.</desc>
+    <code><![CDATA[
 $("p").replaceWith( "<b>Paragraph. </b>" );
 ]]></code>
-  <html><![CDATA[
+    <html><![CDATA[
 <p>Hello</p>
 <p>cruel</p>
 <p>World</p>
 ]]></html>
-</example>
-<example>
-  <desc>On click, replace each paragraph with a div that is already in the DOM and selected with the <code>$()</code> function. Notice it doesn't clone the object but rather moves it to replace the paragraph.</desc>
-  <code><![CDATA[
+  </example>
+  <example>
+    <desc>On click, replace each paragraph with a div that is already in the DOM and selected with the <code>$()</code> function. Notice it doesn't clone the object but rather moves it to replace the paragraph.</desc>
+    <code><![CDATA[
 $("p").click(function () {
   $(this).replaceWith( $("div") );
 });
 ]]></code>
-  <css><![CDATA[
+    <css><![CDATA[
   div { border:2px solid blue; color:red; margin:3px; }
   p { border:2px solid red; color:blue; margin:3px; cursor:pointer; }
   ]]></css>
-  <html><![CDATA[
+    <html><![CDATA[
   <p>Hello</p>
   <p>cruel</p>
   <p>World</p>
@@ -101,9 +102,9 @@ $("p").click(function () {
   <div>Replaced!</div>
 ]]></html>
   </example>
-<example>
-  <desc>On button click, replace the containing div with its child divs and append the class name of the selected element to the paragraph.</desc>
-  <code><![CDATA[
+  <example>
+    <desc>On button click, replace the containing div with its child divs and append the class name of the selected element to the paragraph.</desc>
+    <code><![CDATA[
 $('button').bind("click", function() {
   var $container = $("div.container").replaceWith(function() {
     return $(this).contents();
@@ -112,11 +113,11 @@ $('button').bind("click", function() {
   $("p").append( $container.attr("class") );
 });
 ]]></code>
-<css><![CDATA[
+    <css><![CDATA[
   .container { background-color: #991; }
   .inner { color: #911; }
   ]]></css>
-  <html><![CDATA[
+    <html><![CDATA[
 <p>
   <button>Replace!</button>
 </p>
@@ -126,8 +127,8 @@ $('button').bind("click", function() {
   <div class="inner">Doo</div>
 </div>
 ]]></html>
-</example>
-<category slug="manipulation/dom-replacement"/>
-<category slug="version/1.2"/>
-<category slug="version/1.4"/>
+  </example>
+  <category slug="manipulation/dom-replacement"/>
+  <category slug="version/1.2"/>
+  <category slug="version/1.4"/>
 </entry>

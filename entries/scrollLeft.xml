@@ -1,46 +1,48 @@
+<?xml version="1.0"?>
 <entries>
-<entry type='method' name="scrollLeft" return="Integer">
-  <title>.scrollLeft()</title>
-  <signature>
-    <added>1.2.6</added>
-  </signature>
-  <desc>Get the current horizontal position of the scroll bar for the first element in the set of matched elements.</desc>
-  <longdesc>
-    <p>The horizontal scroll position is the same as the number of pixels that are hidden from view to the left of the scrollable area. If the scroll bar is at the very left, or if the element is not scrollable, this number will be <code>0</code>.</p>
-    <blockquote><p><strong>Note:</strong> <code>.scrollLeft()</code>, when called directly or animated as a property using <code>.animate()</code>, will not work if the element it is being applied to is hidden.</p></blockquote>
-  </longdesc>
-
-<example>
-  <desc>Get the scrollLeft of a paragraph.</desc>
-  <code><![CDATA[var p = $("p:first");
+  <entry type="method" name="scrollLeft" return="Integer">
+    <title>.scrollLeft()</title>
+    <signature>
+      <added>1.2.6</added>
+    </signature>
+    <desc>Get the current horizontal position of the scroll bar for the first element in the set of matched elements.</desc>
+    <longdesc>
+      <p>The horizontal scroll position is the same as the number of pixels that are hidden from view to the left of the scrollable area. If the scroll bar is at the very left, or if the element is not scrollable, this number will be <code>0</code>.</p>
+      <blockquote>
+        <p><strong>Note:</strong><code>.scrollLeft()</code>, when called directly or animated as a property using <code>.animate()</code>, will not work if the element it is being applied to is hidden.</p>
+      </blockquote>
+    </longdesc>
+    <example>
+      <desc>Get the scrollLeft of a paragraph.</desc>
+      <code><![CDATA[var p = $("p:first");
 $("p:last").text( "scrollLeft:" + p.scrollLeft() );
 ]]></code>
-  <css><![CDATA[
+      <css><![CDATA[
     p { margin:10px;padding:5px;border:2px solid #666; }
 ]]></css>
-  <html><![CDATA[<p>Hello</p><p></p>]]></html>
-</example>
-<category slug="css"/>
-<category slug="offset"/>
-<category slug="manipulation/style-properties"/>
-<category slug="version/1.2.6"/>
-</entry>
-
-<entry type='method' name="scrollLeft" return="jQuery">
-  <signature>
-    <added>1.2.6</added>
-    <argument name="value" type="Number">
-      <desc>An integer indicating the new position to set the scroll bar to.</desc>
-    </argument>
-  </signature>
-  <desc>Set the current horizontal position of the scroll bar for each of the set of matched elements.</desc>
-  <longdesc>
-    <p>The horizontal scroll position is the same as the number of pixels that are hidden from view above the scrollable area. Setting the <code>scrollLeft</code> positions the horizontal scroll of each matched element.</p></longdesc>
-<example>
-  <desc>Set the scrollLeft of a div.</desc>
-  <code><![CDATA[$("div.demo").scrollLeft(300);
+      <html><![CDATA[<p>Hello</p><p></p>]]></html>
+    </example>
+    <category slug="css"/>
+    <category slug="offset"/>
+    <category slug="manipulation/style-properties"/>
+    <category slug="version/1.2.6"/>
+  </entry>
+  <entry type="method" name="scrollLeft" return="jQuery">
+    <signature>
+      <added>1.2.6</added>
+      <argument name="value" type="Number">
+        <desc>An integer indicating the new position to set the scroll bar to.</desc>
+      </argument>
+    </signature>
+    <desc>Set the current horizontal position of the scroll bar for each of the set of matched elements.</desc>
+    <longdesc>
+      <p>The horizontal scroll position is the same as the number of pixels that are hidden from view above the scrollable area. Setting the <code>scrollLeft</code> positions the horizontal scroll of each matched element.</p>
+    </longdesc>
+    <example>
+      <desc>Set the scrollLeft of a div.</desc>
+      <code><![CDATA[$("div.demo").scrollLeft(300);
 ]]></code>
-  <css><![CDATA[
+      <css><![CDATA[
   div.demo {
   background:#CCCCCC none repeat scroll 0 0;
   border:3px solid #666666;
@@ -53,11 +55,11 @@ $("p:last").text( "scrollLeft:" + p.scrollLeft() );
   }
   p { margin:10px;padding:5px;border:2px solid #666;width:1000px;height:1000px; }
   ]]></css>
-  <html><![CDATA[<div class="demo"><h1>lalala</h1><p>Hello</p></div>]]></html>
-</example>
-<category slug="css"/>
-<category slug="offset"/>
-<category slug="manipulation/style-properties"/>
-<category slug="version/1.2.6"/>
-</entry>
+      <html><![CDATA[<div class="demo"><h1>lalala</h1><p>Hello</p></div>]]></html>
+    </example>
+    <category slug="css"/>
+    <category slug="offset"/>
+    <category slug="manipulation/style-properties"/>
+    <category slug="version/1.2.6"/>
+  </entry>
 </entries>

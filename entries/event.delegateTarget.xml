@@ -1,19 +1,21 @@
-<entry type='property' name="event.delegateTarget" return="Element">
+<?xml version="1.0"?>
+<entry type="property" name="event.delegateTarget" return="Element">
   <title>event.delegateTarget</title>
   <signature>
     <added>1.7</added>
   </signature>
   <desc>The element where the currently-called jQuery event handler was attached.</desc>
-  <longdesc><p>This property is most often useful in delegated events attached by <a href="/delegate"><code>.delegate()</code></a> or <a href="/on"><code>.on()</code></a>, where the event handler is attached at an ancestor of the element being processed. It can be used, for example, to identify and remove event handlers at the delegation point.</p>
-  <p>For non-delegated event handlers attached directly to an element, <code>event.delegateTarget</code> will always be equal to <code>event.currentTarget</code>.</p>
-</longdesc>
-<example>
-  <desc>When a button in any box class is clicked, change the box's background color to red.</desc>
-  <code><![CDATA[$(".box").on("click", "button", function(event) {
+  <longdesc>
+    <p>This property is most often useful in delegated events attached by <a href="/delegate"><code>.delegate()</code></a> or <a href="/on"><code>.on()</code></a>, where the event handler is attached at an ancestor of the element being processed. It can be used, for example, to identify and remove event handlers at the delegation point.</p>
+    <p>For non-delegated event handlers attached directly to an element, <code>event.delegateTarget</code> will always be equal to <code>event.currentTarget</code>.</p>
+  </longdesc>
+  <example>
+    <desc>When a button in any box class is clicked, change the box's background color to red.</desc>
+    <code><![CDATA[$(".box").on("click", "button", function(event) {
   $(event.delegateTarget).css("background-color", "red");
 });  ]]></code>
-</example>
-<category slug="events/event-object"/>
-<category slug="events"/>
-<category slug="version/1.7"/>
+  </example>
+  <category slug="events/event-object"/>
+  <category slug="events"/>
+  <category slug="version/1.7"/>
 </entry>

@@ -1,4 +1,5 @@
-<entry type='method' name="children" return="jQuery">
+<?xml version="1.0"?>
+<entry type="method" name="children" return="jQuery">
   <title>.children()</title>
   <signature>
     <added>1.0</added>
@@ -7,10 +8,11 @@
     </argument>
   </signature>
   <desc>Get the children of each element in the set of matched elements, optionally filtered by a selector.</desc>
-  <longdesc><p>Given a jQuery object that represents a set of DOM elements, the <code>.children()</code> method allows us to search throughthe children of these elements in the DOM tree and construct a new jQuery object from the matching elements. The <code>.children()</code> method differs from <code><a href="http://api.jquery.com/find/">.find()</a></code> in that <code>.children()</code> only travels a single level down the DOM tree while <code>.find()</code> can traverse down multiple levels to select descendant elements (grandchildren, etc.) as well. Note also that like most jQuery methods, <code>.children()</code> does not return text nodes; to get <em>all</em> children including text and comment nodes, use <code><a href="http://api.jquery.com/contents">.contents()</a></code>.</p>
-<p>The <code>.children()</code> method optionally accepts a selector expression of the same type that we can pass to the <code>$()</code> function. If the selector is supplied, the elements will be filtered by testing whether they match it.</p>
-<p>Consider a page with a basic nested list on it:</p>
-<pre>
+  <longdesc>
+    <p>Given a jQuery object that represents a set of DOM elements, the <code>.children()</code> method allows us to search throughthe children of these elements in the DOM tree and construct a new jQuery object from the matching elements. The <code>.children()</code> method differs from <code><a href="http://api.jquery.com/find/">.find()</a></code> in that <code>.children()</code> only travels a single level down the DOM tree while <code>.find()</code> can traverse down multiple levels to select descendant elements (grandchildren, etc.) as well. Note also that like most jQuery methods, <code>.children()</code> does not return text nodes; to get <em>all</em> children including text and comment nodes, use <code><a href="http://api.jquery.com/contents">.contents()</a></code>.</p>
+    <p>The <code>.children()</code> method optionally accepts a selector expression of the same type that we can pass to the <code>$()</code> function. If the selector is supplied, the elements will be filtered by testing whether they match it.</p>
+    <p>Consider a page with a basic nested list on it:</p>
+    <pre>
 &lt;ul class="level-1"&gt;
   &lt;li class="item-i"&gt;I&lt;/li&gt;
   &lt;li class="item-ii"&gt;II
@@ -29,12 +31,13 @@
   &lt;li class="item-iii"&gt;III&lt;/li&gt;
 &lt;/ul&gt;
 </pre>
-<p>If we begin at the level-2 list, we can find its children:</p>
-<pre>$('ul.level-2').children().css('background-color', 'red');</pre>
-<p>The result of this call is a red background behind items A, B, and C. Since we do not supply a selector expression, all of the children are part of the returned jQuery object. If we had supplied one, only the matching items among these three would be included.</p></longdesc>
-<example>
-  <desc>Find all children of the clicked element.</desc>
-  <code><![CDATA[
+    <p>If we begin at the level-2 list, we can find its children:</p>
+    <pre>$('ul.level-2').children().css('background-color', 'red');</pre>
+    <p>The result of this call is a red background behind items A, B, and C. Since we do not supply a selector expression, all of the children are part of the returned jQuery object. If we had supplied one, only the matching items among these three would be included.</p>
+  </longdesc>
+  <example>
+    <desc>Find all children of the clicked element.</desc>
+    <code><![CDATA[
 
     $("#container").click(function (e) {
       $("*").removeClass("hilite");
@@ -48,7 +51,7 @@
       return false;
     });
 ]]></code>
-  <css><![CDATA[
+    <css><![CDATA[
   body { font-size:16px; font-weight:bolder; }
   div { width:130px; height:82px; margin:10px; float:left;
         border:1px solid blue; padding:4px; }
@@ -64,7 +67,7 @@
   b { border:1px solid transparent; }
   button { border:1px solid transparent; }
   ]]></css>
-  <html><![CDATA[<div id="container">
+    <html><![CDATA[<div id="container">
 
     <div>
       <p>This <span>is the <em>way</em> we</span>
@@ -87,38 +90,38 @@
 
     </p>
   </div>]]></html>
-</example>
-<example>
-  <desc>Find all children of each div.</desc>
-  <code><![CDATA[$("div").children().css("border-bottom", "3px double red");]]></code>
-  <css><![CDATA[
+  </example>
+  <example>
+    <desc>Find all children of each div.</desc>
+    <code><![CDATA[$("div").children().css("border-bottom", "3px double red");]]></code>
+    <css><![CDATA[
   body { font-size:16px; font-weight:bolder; }
   span { color:blue; }
   p { margin:5px 0; }
   ]]></css>
-  <html><![CDATA[<p>Hello (this is a paragraph)</p>
+    <html><![CDATA[<p>Hello (this is a paragraph)</p>
 
   <div><span>Hello Again (this span is a child of the a div)</span></div>
   <p>And <span>Again</span> (in another paragraph)</p>
 
   <div>And One Last <span>Time</span> (most text directly in a div)</div>]]></html>
-</example>
-<example>
-  <desc>Find all children with a class "selected" of each div.</desc>
-  <code><![CDATA[$("div").children(".selected").css("color", "blue");]]></code>
-  <css><![CDATA[
+  </example>
+  <example>
+    <desc>Find all children with a class "selected" of each div.</desc>
+    <code><![CDATA[$("div").children(".selected").css("color", "blue");]]></code>
+    <css><![CDATA[
 
   body { font-size:16px; font-weight:bolder; }
   p { margin:5px 0; }
   ]]></css>
-  <html><![CDATA[<div>
+    <html><![CDATA[<div>
     <span>Hello</span>
     <p class="selected">Hello Again</p>
     <div class="selected">And Again</div>
 
     <p>And One Last Time</p>
   </div>]]></html>
-</example>
-<category slug="traversing/tree-traversal"/>
-<category slug="version/1.0"/>
+  </example>
+  <category slug="traversing/tree-traversal"/>
+  <category slug="version/1.0"/>
 </entry>

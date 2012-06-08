@@ -1,4 +1,5 @@
-<entry type='method' name="keydown" return="jQuery">
+<?xml version="1.0"?>
+<entry type="method" name="keydown" return="jQuery">
   <title>.keydown()</title>
   <signature>
     <added>1.0</added>
@@ -34,7 +35,9 @@
   alert('Handler for .keydown() called.');
 });</pre>
     <p>Now when the insertion point is inside the field, pressing a key displays the alert:</p>
-    <p><span class="output">Handler for .keydown() called.</span></p>
+    <p>
+      <span class="output">Handler for .keydown() called.</span>
+    </p>
     <p>To trigger the event manually, apply <code>.keydown()</code> without an argument:</p>
     <pre>$('#other').click(function() {
   $('#target').keydown();
@@ -43,7 +46,7 @@
     <p>If key presses anywhere need to be caught (for example, to implement global shortcut keys on a page), it is useful to attach this behavior to the <code>document</code> object. Because of event bubbling, all key presses will make their way up the DOM to the <code>document</code> object unless explicitly stopped.</p>
     <p>To determine which key was pressed, examine the <a href="http://api.jquery.com/category/events/event-object/">event object</a> that is passed to the handler function. While browsers use differing properties to store this information, jQuery normalizes the <code>.which</code> property so you can reliably use it to retrieve the key code. This code corresponds to a key on the keyboard, including codes for special keys such as arrows. For catching actual text entry, <code>.keypress()</code> may be a better choice.</p>
   </longdesc>
-<example>
+  <example>
     <desc>Show the event object for the keydown handler when a key is pressed in the input.</desc>
     <code><![CDATA[
 var xTriggered = 0;
@@ -85,8 +88,8 @@ input { display: block; margin-bottom: .25em; }
   Trigger the handler
 </button>
 <script type="text/javascript" src="/scripts/events.js"></script>]]></html>
-</example>
-<category slug="events/keyboard-events"/>
-<category slug="version/1.0"/>
-<category slug="version/1.4.3"/>
+  </example>
+  <category slug="events/keyboard-events"/>
+  <category slug="version/1.0"/>
+  <category slug="version/1.4.3"/>
 </entry>

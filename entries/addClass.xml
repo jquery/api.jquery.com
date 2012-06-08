@@ -1,4 +1,5 @@
-<entry type='method' name="addClass" return="jQuery">
+<?xml version="1.0"?>
+<entry type="method" name="addClass" return="jQuery">
   <title>.addClass()</title>
   <signature>
     <added>1.0</added>
@@ -13,52 +14,52 @@
     </argument>
   </signature>
   <desc>Adds the specified class(es) to each of the set of matched elements.</desc>
-  <longdesc><p>It's important to note that this method does not replace a class. It simply adds the class, appending it to any which may already be assigned to the elements.</p>
-  <p>More than one class may be added at a time, separated by a space, to the set of matched elements, like so:</p>
-  <pre>$("p").addClass("myClass yourClass");</pre>
-  <p>This method is often used with <code>.removeClass()</code> to switch elements' classes from one to another, like so:</p>
-  <pre>$("p").removeClass("myClass noClass").addClass("yourClass");</pre>
-  <p>Here, the <code>myClass</code> and <code>noClass</code> classes are removed from all paragraphs, while <code>yourClass</code> is added.</p>
-<p>As of jQuery 1.4, the <code>.addClass()</code> method's argument can receive a function.</p>
-<pre>$("ul li:last").addClass(function(index) {
+  <longdesc>
+    <p>It's important to note that this method does not replace a class. It simply adds the class, appending it to any which may already be assigned to the elements.</p>
+    <p>More than one class may be added at a time, separated by a space, to the set of matched elements, like so:</p>
+    <pre>$("p").addClass("myClass yourClass");</pre>
+    <p>This method is often used with <code>.removeClass()</code> to switch elements' classes from one to another, like so:</p>
+    <pre>$("p").removeClass("myClass noClass").addClass("yourClass");</pre>
+    <p>Here, the <code>myClass</code> and <code>noClass</code> classes are removed from all paragraphs, while <code>yourClass</code> is added.</p>
+    <p>As of jQuery 1.4, the <code>.addClass()</code> method's argument can receive a function.</p>
+    <pre>$("ul li:last").addClass(function(index) {
   return "item-" + index;
 });</pre>
-<p>Given an unordered list with five <code>&lt;li&gt;</code> elements, this example adds the class "item-4" to the last <code>&lt;li&gt;</code>.</p>
-
-</longdesc>
- <example>
-  <desc>Adds the class "selected" to the matched elements.</desc>
-  <code><![CDATA[
+    <p>Given an unordered list with five <code>&lt;li&gt;</code> elements, this example adds the class "item-4" to the last <code>&lt;li&gt;</code>.</p>
+  </longdesc>
+  <example>
+    <desc>Adds the class "selected" to the matched elements.</desc>
+    <code><![CDATA[
   $("p:last").addClass("selected");
   ]]></code>
-  <css><![CDATA[
+    <css><![CDATA[
   p { margin: 8px; font-size:16px; }
   .selected { color:blue; }
   .highlight { background:yellow; }
   ]]></css>
-  <html><![CDATA[
+    <html><![CDATA[
   <p>Hello</p>
   <p>and</p>
   <p>Goodbye</p>
   ]]></html>
-</example>
-<example>
-  <desc>Adds the classes "selected" and "highlight" to the matched elements.</desc>
-  <code><![CDATA[
+  </example>
+  <example>
+    <desc>Adds the classes "selected" and "highlight" to the matched elements.</desc>
+    <code><![CDATA[
   $("p:last").addClass("selected highlight");
   ]]></code>
-  <css><![CDATA[
+    <css><![CDATA[
   p { margin: 8px; font-size:16px; }
   .selected { color:red; }
   .highlight { background:yellow; }
   ]]></css>
-                    <html><![CDATA[<p>Hello</p>
+    <html><![CDATA[<p>Hello</p>
   <p>and</p>
   <p>Goodbye</p>]]></html>
-                </example>
-                <example>
-                    <desc>Pass in a function to <code>.addClass()</code> to add the "green" class to a div that already has a "red" class.</desc>
-                    <code><![CDATA[
+  </example>
+  <example>
+    <desc>Pass in a function to <code>.addClass()</code> to add the "green" class to a div that already has a "red" class.</desc>
+    <code><![CDATA[
   $("div").addClass(function(index, currentClass) {
     var addedClass;
 
@@ -70,23 +71,22 @@
     return addedClass;
   });
 ]]></code>
-
-  <css><![CDATA[
+    <css><![CDATA[
   div { background: white; }
   .red { background: red; }
   .red.green { background: green; }
   ]]></css>
-  <html><![CDATA[
+    <html><![CDATA[
  <div>This div should be white</div>
  <div class="red">This div will be green because it now has the "green" and "red" classes.
    It would be red if the addClass function failed.</div>
  <div>This div should be white</div>
  <p>There are zero green divs</p>
 ]]></html>
-</example>
-<category slug="attributes"/>
-<category slug="manipulation/class-attribute"/>
-<category slug="css"/>
-<category slug="version/1.0"/>
-<category slug="version/1.4"/>
+  </example>
+  <category slug="attributes"/>
+  <category slug="manipulation/class-attribute"/>
+  <category slug="css"/>
+  <category slug="version/1.0"/>
+  <category slug="version/1.4"/>
 </entry>

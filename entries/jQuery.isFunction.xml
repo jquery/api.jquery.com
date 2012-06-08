@@ -1,4 +1,5 @@
-<entry type='method' name="jQuery.isFunction" return="boolean">
+<?xml version="1.0"?>
+<entry type="method" name="jQuery.isFunction" return="boolean">
   <title>jQuery.isFunction()</title>
   <signature>
     <added>1.2</added>
@@ -7,7 +8,9 @@
     </argument>
   </signature>
   <desc>Determine if the argument passed is a Javascript function object. </desc>
-  <longdesc><p><strong>Note:</strong> As of jQuery 1.3, functions provided by the browser like <code>alert()</code> and DOM element methods like <code>getAttribute()</code> are not guaranteed to be detected as functions in browsers such as Internet Explorer.</p></longdesc>
+  <longdesc>
+    <p><strong>Note:</strong> As of jQuery 1.3, functions provided by the browser like <code>alert()</code> and DOM element methods like <code>getAttribute()</code> are not guaranteed to be detected as functions in browsers such as Internet Explorer.</p>
+  </longdesc>
   <example>
     <desc>Test a few parameter examples.</desc>
     <code><![CDATA[
@@ -26,11 +29,11 @@ jQuery.each(objs, function (i) {
   $("span").eq(i).text(isFunc);
 });
 ]]></code>
-  <css><![CDATA[
+    <css><![CDATA[
   div { color:blue; margin:2px; font-size:14px; }
   span { color:red; }
   ]]></css>
-  <html><![CDATA[
+    <html><![CDATA[
   <div>jQuery.isFunction(objs[0]) = <span></span></div>
 
   <div>jQuery.isFunction(objs[1]) = <span></span></div>
@@ -39,12 +42,12 @@ jQuery.each(objs, function (i) {
 
   <div>jQuery.isFunction(objs[4]) = <span></span></div>
   ]]></html>
-</example>
-<example>
-  <desc>Finds out if the parameter is a function.</desc>
-  <code><![CDATA[$.isFunction(function(){});]]></code>
-  <results><![CDATA[true]]></results>
-</example>
-<category slug="utilities"/>
-<category slug="version/1.2"/>
+  </example>
+  <example>
+    <desc>Finds out if the parameter is a function.</desc>
+    <code><![CDATA[$.isFunction(function(){});]]></code>
+    <results><![CDATA[true]]></results>
+  </example>
+  <category slug="utilities"/>
+  <category slug="version/1.2"/>
 </entry>

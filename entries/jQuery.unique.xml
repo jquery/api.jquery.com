@@ -1,4 +1,5 @@
-<entry type='method' name="jQuery.unique" return="Array">
+<?xml version="1.0"?>
+<entry type="method" name="jQuery.unique" return="Array">
   <title>jQuery.unique()</title>
   <signature>
     <added>1.1.3</added>
@@ -11,9 +12,9 @@
     <p>The <code>$.unique()</code> function searches through an array of objects, sorting the array, and removing any duplicate nodes. This function only works on plain JavaScript arrays of DOM elements, and is chiefly used internally by jQuery.</p>
     <p>As of jQuery 1.4 the results will always be returned in document order.</p>
   </longdesc>
-<example>
-  <desc>Removes any duplicate elements from the array of divs.</desc>
-  <code><![CDATA[
+  <example>
+    <desc>Removes any duplicate elements from the array of divs.</desc>
+    <code><![CDATA[
 
   var divs = $("div").get(); // unique() must take a native array
 
@@ -25,18 +26,17 @@
   $("div:eq(2)").text("Post-unique there are " + divs.length + " elements.")
                 .css("color", "red");
 ]]></code>
-  <css><![CDATA[
+    <css><![CDATA[
   div { color:blue; }
   ]]></css>
-  <html><![CDATA[<div>There are 6 divs in this document.</div>
+    <html><![CDATA[<div>There are 6 divs in this document.</div>
   <div></div>
   <div class="dup"></div>
   <div class="dup"></div>
 
   <div class="dup"></div>
   <div></div>]]></html>
-</example>
-
-<category slug="utilities"/>
-<category slug="version/1.1.3"/>
+  </example>
+  <category slug="utilities"/>
+  <category slug="version/1.1.3"/>
 </entry>

@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <entry name="callbacks.remove" type="method" return="undefined">
   <title>callbacks.remove()</title>
   <signature>
@@ -7,11 +8,10 @@
     </argument>
   </signature>
   <desc>Remove a callback or a collection of callbacks from a callback list.</desc>
-  <longdesc></longdesc>
-
-<example>
-  <desc>Using <code>callbacks.remove()</code> to remove callbacks from a callback list:</desc>
-  <code><![CDATA[// a sample logging function to be added to a callbacks list
+  <longdesc/>
+  <example>
+    <desc>Using <code>callbacks.remove()</code> to remove callbacks from a callback list:</desc>
+    <code><![CDATA[// a sample logging function to be added to a callbacks list
 var foo = function( value ){
     console.log( 'foo:' + value );
 }
@@ -32,7 +32,7 @@ callbacks.fire( 'world' );
 
 // nothing output as 'foo' is no longer in the list
 ]]></code>
-</example>
-<category slug="callbacks-object"/>
-<category slug="version/1.7"/>
+  </example>
+  <category slug="callbacks-object"/>
+  <category slug="version/1.7"/>
 </entry>

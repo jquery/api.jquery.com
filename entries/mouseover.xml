@@ -1,4 +1,5 @@
-<entry type='method' name="mouseover" return="jQuery">
+<?xml version="1.0"?>
+<entry type="method" name="mouseover" return="jQuery">
   <title>.mouseover()</title>
   <desc>Bind an event handler to the "mouseover" JavaScript event, or trigger that event on an element.</desc>
   <signature>
@@ -19,8 +20,6 @@
   <signature>
     <added>1.0</added>
   </signature>
-
-
   <longdesc>
     <p>This method is a shortcut for <code>.bind('mouseover', handler)</code> in the first two variations, and <code>.trigger('mouseover')</code> in the third.</p>
     <p>The <code>mouseover</code> event is sent to an element when the mouse pointer enters the element. Any HTML element can receive this event.</p>
@@ -35,8 +34,8 @@
   Trigger the handler
 &lt;/div&gt;
 &lt;div id="log"&gt;&lt;/div&gt;</pre>
-
-    <p class="image"><img src="/resources/0042_05_06.png" alt="" />
+    <p class="image">
+      <img src="/resources/0042_05_06.png" alt=""/>
     </p>
     <p>The event handler can be bound to any element:</p>
     <pre>$('#outer').mouseover(function() {
@@ -46,20 +45,20 @@
     <pre>$('#other').click(function() {
       $('#outer').mouseover();
       });</pre>
-      <p>After this code executes, clicks on <span class="output">Trigger the handler</span> will also append the message.</p>
-      <p>This event type can cause many headaches due to event bubbling. For instance, when the mouse pointer moves over the <span class="output">Inner</span> element in this example, a <code>mouseover</code> event will be sent to that, then trickle up to <span class="output">Outer</span>. This can trigger our bound <code>mouseover</code> handler at inopportune times. See the discussion for <code>.mouseenter()</code> for a useful alternative.</p>
+    <p>After this code executes, clicks on <span class="output">Trigger the handler</span> will also append the message.</p>
+    <p>This event type can cause many headaches due to event bubbling. For instance, when the mouse pointer moves over the <span class="output">Inner</span> element in this example, a <code>mouseover</code> event will be sent to that, then trickle up to <span class="output">Outer</span>. This can trigger our bound <code>mouseover</code> handler at inopportune times. See the discussion for <code>.mouseenter()</code> for a useful alternative.</p>
   </longdesc>
-<example>
-  <desc>Show the number of times mouseover and mouseenter events are triggered.
+  <example>
+    <desc>Show the number of times mouseover and mouseenter events are triggered.
 <code>mouseover</code> fires when the pointer moves into the child element as well, while <code>mouseenter</code> fires only when the pointer moves into the bound element.</desc>
-  <css><![CDATA[
+    <css><![CDATA[
 div.out { width:40%; height:120px; margin:0 15px;
           background-color:#D6EDFC; float:left; }
 div.in {  width:60%; height:60%;
           background-color:#FFCC00; margin:10px auto; }
 p { line-height:1em; margin:0; padding:0; }
 ]]></css>
-  <code><![CDATA[
+    <code><![CDATA[
   var i = 0;
   $("div.overout").mouseover(function() {
     i += 1;
@@ -77,7 +76,7 @@ p { line-height:1em; margin:0; padding:0; }
   });
 
 ]]></code>
-  <html><![CDATA[
+    <html><![CDATA[
 <div class="out overout">
   <span>move your mouse</span>
   <div class="in">
@@ -90,9 +89,8 @@ p { line-height:1em; margin:0; padding:0; }
   </div>
 </div>
 ]]></html>
-</example>
-
-<category slug="events/mouse-events"/>
-<category slug="version/1.0"/>
-<category slug="version/1.4.3"/>
+  </example>
+  <category slug="events/mouse-events"/>
+  <category slug="version/1.0"/>
+  <category slug="version/1.4.3"/>
 </entry>

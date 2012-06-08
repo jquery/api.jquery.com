@@ -1,29 +1,29 @@
-<entry type='selector'   name="contains" return="" >
+<?xml version="1.0"?>
+<entry type="selector" name="contains" return="">
   <title>:contains() Selector</title>
   <sample>:contains(text)</sample>
   <signature>
-      <added>1.1.4</added>
-      <argument name="text" type="String">
-        <desc>A string of text to look for. It's case sensitive.</desc>
-      </argument>
+    <added>1.1.4</added>
+    <argument name="text" type="String">
+      <desc>A string of text to look for. It's case sensitive.</desc>
+    </argument>
   </signature>
   <desc>Select all elements that contain the specified text.</desc>
-  <longdesc><p>The matching text can appear directly within the selected element, in any of that element's descendants, or a combination thereof. As with attribute value selectors, text inside the parentheses of <code>:contains()</code> can be written as a bare word or surrounded by quotation marks. The text must have matching case to be selected.</p></longdesc>
-
+  <longdesc>
+    <p>The matching text can appear directly within the selected element, in any of that element's descendants, or a combination thereof. As with attribute value selectors, text inside the parentheses of <code>:contains()</code> can be written as a bare word or surrounded by quotation marks. The text must have matching case to be selected.</p>
+  </longdesc>
   <example>
     <desc>Finds all divs containing "John" and underlines them.</desc>
     <code><![CDATA[
-$("div:contains('John')").css("text-decoration", "underline");]]>
-    </code>
+$("div:contains('John')").css("text-decoration", "underline");]]></code>
     <html><![CDATA[
 <div>John Resig</div>
 
 <div>George Martin</div>
 <div>Malcom John Sinclair</div>
 <div>J. Ohn</div>
-      ]]>
-    </html>
+      ]]></html>
   </example>
-<category slug="selectors/content-filter-selector"/>
-<category slug="version/1.1.4"/>
+  <category slug="selectors/content-filter-selector"/>
+  <category slug="version/1.1.4"/>
 </entry>

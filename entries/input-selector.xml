@@ -1,17 +1,20 @@
-<entry type='selector'  name="input" return="">
+<?xml version="1.0"?>
+<entry type="selector" name="input" return="">
   <title>:input Selector</title>
   <sample>:input</sample>
-  <signature><added>1.0</added> </signature>
+  <signature>
+    <added>1.0</added>
+  </signature>
   <desc>Selects all input, textarea, select and button elements.</desc>
-  <longdesc><p>The <code>:input</code> selector basically selects all form controls.</p></longdesc>
-
+  <longdesc>
+    <p>The <code>:input</code> selector basically selects all form controls.</p>
+  </longdesc>
   <note id="jquery-selector-extension" type="additional">
     <placeholder name="selector">:input</placeholder>
   </note>
-
-<example>
-  <desc>Finds all input elements.</desc>
-  <code><![CDATA[
+  <example>
+    <desc>Finds all input elements.</desc>
+    <code><![CDATA[
 var allInputs = $(":input");
 var formChildren = $("form > *");
 $("#messages").text("Found " + allInputs.length + " inputs and the form has " +
@@ -21,10 +24,10 @@ $("#messages").text("Found " + allInputs.length + " inputs and the form has " +
 $("form").submit(function () { return false; });
 
 ]]></code>
-  <css><![CDATA[
+    <css><![CDATA[
   textarea { height:25px; }
   ]]></css>
-  <html><![CDATA[<form>
+    <html><![CDATA[<form>
     <input type="button" value="Input Button"/>
     <input type="checkbox" />
 
@@ -45,8 +48,8 @@ $("form").submit(function () { return false; });
   </form>
   <div id="messages">
   </div>]]></html>
-</example>
-<category slug="selectors/form-selectors"/>
-<category slug="selectors/jquery-selector-extensions"/>
-<category slug="version/1.0"/>
+  </example>
+  <category slug="selectors/form-selectors"/>
+  <category slug="selectors/jquery-selector-extensions"/>
+  <category slug="version/1.0"/>
 </entry>

@@ -1,4 +1,5 @@
-<entry type='method' name="jQuery.proxy" return="Function">
+<?xml version="1.0"?>
+<entry type="method" name="jQuery.proxy" return="Function">
   <title>jQuery.proxy()</title>
   <signature>
     <added>1.4</added>
@@ -24,13 +25,13 @@
     <p>Be aware, however, that jQuery's event binding subsystem assigns a unique id to each event handling function in order to track it when it is used to specify the function to be unbound. The function represented by <code>jQuery.proxy()</code> is seen as a single function by the event subsystem, even when it is used to bind different contexts. To avoid unbinding the wrong handler, use a unique event namespace for binding and unbinding (e.g., <code>"click.myproxy1"</code>) rather than specifying the proxied function during unbinding.
 </p>
   </longdesc>
-<example>
-  <desc>Change the context of functions bound to a click handler using the "function, context" signature. Unbind the first handler after first click.</desc>
-  <html><![CDATA[
+  <example>
+    <desc>Change the context of functions bound to a click handler using the "function, context" signature. Unbind the first handler after first click.</desc>
+    <html><![CDATA[
 <p><button type="button" id="test">Test</button></p>
 <div id="log"></div>
 ]]></html>
-  <code><![CDATA[
+    <code><![CDATA[
 var me = {
   type: "zombie",
   test: function(event) {
@@ -70,14 +71,14 @@ $("#test")
   // this === "<button> element"
   .click( you.test );
 ]]></code>
-</example>
-<example>
-  <desc>Enforce the context of the function using the "context, function name" signature. Unbind the handler after first click.</desc>
-  <html><![CDATA[
+  </example>
+  <example>
+    <desc>Enforce the context of the function using the "context, function name" signature. Unbind the handler after first click.</desc>
+    <html><![CDATA[
   <p><button id="test">Test</button></p>
   <p id="log"></p>
 ]]></html>
-  <code><![CDATA[
+    <code><![CDATA[
   var obj = {
     name: "John",
     test: function() {
@@ -89,7 +90,7 @@ $("#test")
   $("#test").click( jQuery.proxy( obj, "test" ) );
 ]]></code>
   </example>
-<category slug="events/event-handler-attachment"/>
-<category slug="utilities"/>
-<category slug="version/1.4"/>
+  <category slug="events/event-handler-attachment"/>
+  <category slug="utilities"/>
+  <category slug="version/1.4"/>
 </entry>

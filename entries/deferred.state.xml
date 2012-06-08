@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <entry name="deferred.state" type="method" return="String">
   <title>deferred.state()</title>
   <signature>
@@ -13,6 +14,6 @@
     </ul>
     <p>This method is primarily useful for debugging to determine, for example, whether a Deferred has already been resolved even though you are inside code that intended to reject it.</p>
   </longdesc>
-<category slug="deferred-object"/>
-<category slug="version/1.7"/>
+  <category slug="deferred-object"/>
+  <category slug="version/1.7"/>
 </entry>

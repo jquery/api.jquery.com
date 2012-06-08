@@ -1,4 +1,5 @@
-<entry type='method' name="nextUntil" return="jQuery">
+<?xml version="1.0"?>
+<entry type="method" name="nextUntil" return="jQuery">
   <title>.nextUntil()</title>
   <signature>
     <added>1.4</added>
@@ -19,16 +20,16 @@
     </argument>
   </signature>
   <desc>Get all following siblings of each element up to but not including the element matched by the selector, DOM node, or jQuery object passed.</desc>
-  <longdesc><p>Given a selector expression that represents a set of DOM elements, the <code>.nextUntil()</code> method searches through the successors of these elements in the DOM tree, stopping when it reaches an element matched by the method's argument. The new jQuery object that is returned contains all following siblings up to but not including the one matched by the <code>.nextUntil()</code> argument.</p>
-  <p>If the selector is not matched or is not supplied, all following siblings will be selected; in these cases it selects the same elements as the <code>.nextAll()</code> method does when no filter selector is provided.</p>
-  <p><strong>As of jQuery 1.6</strong>, A DOM node or jQuery object, instead of a selector, may be passed to the <code>.nextUntil()</code> method.</p>
-  <p>The method optionally accepts a selector expression for its second argument. If this argument is supplied, the elements will be filtered by testing whether they match it.</p>
-
-</longdesc>
-<example>
-<height>250px</height>
-<desc>Find the siblings that follow &lt;dt id="term-2"&gt; up to the next &lt;dt&gt; and give them a red background color. Also, find &lt;dd&gt; siblings that follow &lt;dt id="term-1"&gt; up to &lt;dt id="term-3"&gt; and give them a green text color. </desc>
-<code><![CDATA[
+  <longdesc>
+    <p>Given a selector expression that represents a set of DOM elements, the <code>.nextUntil()</code> method searches through the successors of these elements in the DOM tree, stopping when it reaches an element matched by the method's argument. The new jQuery object that is returned contains all following siblings up to but not including the one matched by the <code>.nextUntil()</code> argument.</p>
+    <p>If the selector is not matched or is not supplied, all following siblings will be selected; in these cases it selects the same elements as the <code>.nextAll()</code> method does when no filter selector is provided.</p>
+    <p><strong>As of jQuery 1.6</strong>, A DOM node or jQuery object, instead of a selector, may be passed to the <code>.nextUntil()</code> method.</p>
+    <p>The method optionally accepts a selector expression for its second argument. If this argument is supplied, the elements will be filtered by testing whether they match it.</p>
+  </longdesc>
+  <example>
+    <height>250px</height>
+    <desc>Find the siblings that follow &lt;dt id="term-2"&gt; up to the next &lt;dt&gt; and give them a red background color. Also, find &lt;dd&gt; siblings that follow &lt;dt id="term-1"&gt; up to &lt;dt id="term-3"&gt; and give them a green text color. </desc>
+    <code><![CDATA[
 $("#term-2").nextUntil("dt")
   .css("background-color", "red");
 
@@ -37,7 +38,7 @@ $("#term-1").nextUntil(term3, "dd")
   .css("color", "green");
 
 ]]></code>
-<html><![CDATA[<dl>
+    <html><![CDATA[<dl>
   <dt id="term-1">term 1</dt>
   <dd>definition 1-a</dd>
   <dd>definition 1-b</dd>
@@ -53,8 +54,8 @@ $("#term-1").nextUntil(term3, "dd")
   <dd>definition 3-a</dd>
   <dd>definition 3-b</dd>
 </dl>]]></html>
-</example>
-<category slug="traversing/tree-traversal"/>
-<category slug="version/1.4"/>
-<category slug="version/1.6"/>
+  </example>
+  <category slug="traversing/tree-traversal"/>
+  <category slug="version/1.4"/>
+  <category slug="version/1.6"/>
 </entry>

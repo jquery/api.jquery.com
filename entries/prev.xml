@@ -1,4 +1,5 @@
-<entry type='method' name="prev" return="jQuery">
+<?xml version="1.0"?>
+<entry type="method" name="prev" return="jQuery">
   <title>.prev()</title>
   <signature>
     <added>1.0</added>
@@ -38,14 +39,14 @@
     });
 
 ]]></code>
-  <css><![CDATA[
+    <css><![CDATA[
   div { width:40px; height:40px; margin:10px;
         float:left; border:2px blue solid; 
         padding:2px; }
   span { font-size:14px; }
   p { clear:left; margin:10px; }
   ]]></css>
-  <html><![CDATA[<div></div>
+    <html><![CDATA[<div></div>
   <div></div>
   <div><span>has child</span></div>
 
@@ -56,15 +57,15 @@
 
   <div></div>
   <p><button>Go to Prev</button></p>]]></html>
-</example>
-<example>
-  <desc>For each paragraph, find the very previous sibling that has a class "selected".</desc>
-  <code><![CDATA[$("p").prev(".selected").css("background", "yellow");]]></code>
-  <html><![CDATA[<div><span>Hello</span></div>
+  </example>
+  <example>
+    <desc>For each paragraph, find the very previous sibling that has a class "selected".</desc>
+    <code><![CDATA[$("p").prev(".selected").css("background", "yellow");]]></code>
+    <html><![CDATA[<div><span>Hello</span></div>
 
   <p class="selected">Hello Again</p>
   <p>And Again</p>]]></html>
-</example>
-<category slug="traversing/tree-traversal"/>
-<category slug="version/1.0"/>
+  </example>
+  <category slug="traversing/tree-traversal"/>
+  <category slug="version/1.0"/>
 </entry>

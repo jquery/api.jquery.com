@@ -1,9 +1,14 @@
-<entry type='selector'   name="checked" return="">
+<?xml version="1.0"?>
+<entry type="selector" name="checked" return="">
   <title>:checked Selector</title>
   <sample>:checked</sample>
-   <signature><added>1.0</added> </signature>
+  <signature>
+    <added>1.0</added>
+  </signature>
   <desc>Matches all elements that are checked.</desc>
-  <longdesc><p>The <code>:checked</code> selector works for checkboxes and radio buttons. For select elements, use the <code>:selected</code> selector.</p></longdesc>
+  <longdesc>
+    <p>The <code>:checked</code> selector works for checkboxes and radio buttons. For select elements, use the <code>:selected</code> selector.</p>
+  </longdesc>
   <example>
     <desc>Finds all input elements that are checked.</desc>
     <code><![CDATA[
@@ -14,10 +19,10 @@ function countChecked() {
 countChecked();
 $(":checkbox").click(countChecked);
 ]]></code>
-                    <css><![CDATA[
+    <css><![CDATA[
   div { color:red; }
   ]]></css>
-<html><![CDATA[
+    <html><![CDATA[
 <form>
   <p>
     <input type="checkbox" name="newsletter" checked="checked" value="Hourly" />
@@ -31,17 +36,17 @@ $(":checkbox").click(countChecked);
 </form>
 <div></div>
 ]]></html>
-</example>
-<example>
-<code><![CDATA[
+  </example>
+  <example>
+    <code><![CDATA[
 $("input").click(function() {
   $("#log").html( $(":checked").val() + " is checked!" );
 });
 ]]></code>
-<css><![CDATA[
+    <css><![CDATA[
 input, label { line-height: 1.5em; }
 ]]></css>
-<html><![CDATA[
+    <html><![CDATA[
 <form>
   <div>
     <input type="radio" name="fruit" value="orange" id="orange">
@@ -58,7 +63,7 @@ input, label { line-height: 1.5em; }
   <div id="log"></div>
 </form>
 ]]></html>
- </example>
-<category slug="selectors/form-selectors"/>
-<category slug="version/1.0"/>
+  </example>
+  <category slug="selectors/form-selectors"/>
+  <category slug="version/1.0"/>
 </entry>

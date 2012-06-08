@@ -1,4 +1,5 @@
-<entry type='method' name="jQuery.contains" return="Boolean">
+<?xml version="1.0"?>
+<entry type="method" name="jQuery.contains" return="Boolean">
   <title>jQuery.contains()</title>
   <signature>
     <added>1.4</added>
@@ -11,13 +12,15 @@
   </signature>
   <desc>Check to see if a DOM element is within another DOM element.</desc>
   <longdesc>
-    <blockquote><p><strong>Note:</strong> The first argument <em>must</em> be a DOM element, not a jQuery object or plain JavaScript object.</p></blockquote>
+    <blockquote>
+      <p><strong>Note:</strong> The first argument <em>must</em> be a DOM element, not a jQuery object or plain JavaScript object.</p>
+    </blockquote>
   </longdesc>
-<example>
-  <desc>Check if an element is inside another. Text and comment nodes are not supported.</desc>
-  <code><![CDATA[jQuery.contains(document.documentElement, document.body); // true
+  <example>
+    <desc>Check if an element is inside another. Text and comment nodes are not supported.</desc>
+    <code><![CDATA[jQuery.contains(document.documentElement, document.body); // true
 jQuery.contains(document.body, document.documentElement); // false]]></code>
-</example>
-<category slug="utilities"/>
-<category slug="version/1.4"/>
+  </example>
+  <category slug="utilities"/>
+  <category slug="version/1.4"/>
 </entry>

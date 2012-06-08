@@ -1,4 +1,5 @@
-<entry type='method' name="jQuery.parseJSON" return="Object">
+<?xml version="1.0"?>
+<entry type="method" name="jQuery.parseJSON" return="Object">
   <title>jQuery.parseJSON()</title>
   <signature>
     <added>1.4.1</added>
@@ -13,7 +14,7 @@
       <li><code>{test: 1}</code> (test does not have double quotes around it).</li>
       <li><code>{'test': 1}</code> ('test' is using single quotes instead of double quotes).</li>
     </ul>
-  <p>Additionally if you pass in nothing, an empty string, null, or undefined, 'null' will be returned from parseJSON. Where the browser provides a native implementation of <code>JSON.parse</code>, jQuery uses it to parse the string. For details on the JSON format, see <a href="http://json.org/">http://json.org/</a>.
+    <p>Additionally if you pass in nothing, an empty string, null, or undefined, 'null' will be returned from parseJSON. Where the browser provides a native implementation of <code>JSON.parse</code>, jQuery uses it to parse the string. For details on the JSON format, see <a href="http://json.org/">http://json.org/</a>.
 </p>
   </longdesc>
   <example>
@@ -21,6 +22,6 @@
     <code><![CDATA[var obj = jQuery.parseJSON('{"name":"John"}');
 alert( obj.name === "John" );]]></code>
   </example>
-<category slug="utilities"/>
-<category slug="version/1.4.1"/>
+  <category slug="utilities"/>
+  <category slug="version/1.4.1"/>
 </entry>

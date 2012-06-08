@@ -1,4 +1,5 @@
-<entry type='method' name="last" return="jQuery">
+<?xml version="1.0"?>
+<entry type="method" name="last" return="jQuery">
   <title>.last()</title>
   <signature>
     <added>1.4</added>
@@ -20,12 +21,12 @@
     <pre>$('li').last().css('background-color', 'red');</pre>
     <p>The result of this call is a red background for the final item.</p>
   </longdesc>
-<example>
-  <desc>Highlight the last span in a paragraph.</desc>
-  <css><![CDATA[.highlight{background-color: yellow}]]></css>
-  <code><![CDATA[$("p span").last().addClass('highlight');]]></code>
-  <html><![CDATA[<p><span>Look:</span> <span>This is some text in a paragraph.</span> <span>This is a note about it.</span></p>]]></html>
-</example>
-<category slug="traversing/filtering"/>
-<category slug="version/1.4"/>
+  <example>
+    <desc>Highlight the last span in a paragraph.</desc>
+    <css><![CDATA[.highlight{background-color: yellow}]]></css>
+    <code><![CDATA[$("p span").last().addClass('highlight');]]></code>
+    <html><![CDATA[<p><span>Look:</span> <span>This is some text in a paragraph.</span> <span>This is a note about it.</span></p>]]></html>
+  </example>
+  <category slug="traversing/filtering"/>
+  <category slug="version/1.4"/>
 </entry>

@@ -1,4 +1,5 @@
-<entry type='method' name="remove" return="jQuery">
+<?xml version="1.0"?>
+<entry type="method" name="remove" return="jQuery">
   <title>.remove()</title>
   <signature>
     <added>1.0</added>
@@ -8,7 +9,7 @@
   </signature>
   <desc>Remove the set of matched elements from the DOM.</desc>
   <longdesc>
-    <p>Similar to <code><a href='/empty'>.empty()</a></code>, the <code>.remove()</code> method takes elements out of the DOM. Use <code>.remove()</code> when you want to remove the element itself, as well as everything inside it. In addition to the elements themselves, all bound events and jQuery data  associated with the elements are removed. To remove the elements without removing data and events, use <code><a href="http://api.jquery.com/detach/">.detach()</a></code> instead.</p>
+    <p>Similar to <code><a href="/empty">.empty()</a></code>, the <code>.remove()</code> method takes elements out of the DOM. Use <code>.remove()</code> when you want to remove the element itself, as well as everything inside it. In addition to the elements themselves, all bound events and jQuery data  associated with the elements are removed. To remove the elements without removing data and events, use <code><a href="http://api.jquery.com/detach/">.detach()</a></code> instead.</p>
     <p>Consider the following HTML:</p>
     <pre>&lt;div class="container"&gt;
   &lt;div class="hello"&gt;Hello&lt;/div&gt;
@@ -26,34 +27,35 @@
     <p>This would result in the same DOM structure:</p>
     <pre>&lt;div class="container"&gt;
   &lt;div class="goodbye"&gt;Goodbye&lt;/div&gt;
-&lt;/div&gt;</pre></longdesc>
-<example>
-  <desc>Removes all paragraphs from the DOM</desc>
-  <code><![CDATA[
+&lt;/div&gt;</pre>
+  </longdesc>
+  <example>
+    <desc>Removes all paragraphs from the DOM</desc>
+    <code><![CDATA[
 $("button").click(function () {
   $("p").remove();
 });
 ]]></code>
-  <css><![CDATA[p { background:yellow; margin:6px 0; }]]></css>
-  <html><![CDATA[<p>Hello</p>
+    <css><![CDATA[p { background:yellow; margin:6px 0; }]]></css>
+    <html><![CDATA[<p>Hello</p>
   how are
   <p>you?</p>
   <button>Call remove() on paragraphs</button>]]></html>
-</example>
-<example>
-  <desc>Removes all paragraphs that contain "Hello" from the DOM.  Analogous to doing <code>$("p").filter(":contains('Hello')").remove()</code>.</desc>
-  <code><![CDATA[
+  </example>
+  <example>
+    <desc>Removes all paragraphs that contain "Hello" from the DOM.  Analogous to doing <code>$("p").filter(":contains('Hello')").remove()</code>.</desc>
+    <code><![CDATA[
 $("button").click(function () {
   $("p").remove(":contains('Hello')");
 });
 ]]></code>
-  <css><![CDATA[p { background:yellow; margin:6px 0; }]]></css>
-  <html><![CDATA[<p class="hello">Hello</p>
+    <css><![CDATA[p { background:yellow; margin:6px 0; }]]></css>
+    <html><![CDATA[<p class="hello">Hello</p>
   how are
   <p>you?</p>
 
   <button>Call remove(":contains('Hello')") on paragraphs</button>]]></html>
-</example>
-<category slug="manipulation/dom-removal"/>
-<category slug="version/1.0"/>
+  </example>
+  <category slug="manipulation/dom-removal"/>
+  <category slug="version/1.0"/>
 </entry>

@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <entry name="callbacks.fire" type="method" return="undefined">
   <title>callbacks.fire()</title>
   <signature>
@@ -40,6 +41,6 @@ callbacks.fire( 'hello again' );
 // 'bar: hello again'
 </pre>
   </longdesc>
-<category slug="callbacks-object"/>
-<category slug="version/1.7"/>
+  <category slug="callbacks-object"/>
+  <category slug="version/1.7"/>
 </entry>

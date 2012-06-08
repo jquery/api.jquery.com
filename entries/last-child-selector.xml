@@ -1,12 +1,17 @@
-<entry type='selector'  name="last-child" return="" >
+<?xml version="1.0"?>
+<entry type="selector" name="last-child" return="">
   <title>:last-child Selector</title>
   <sample>:last-child</sample>
-  <signature><added>1.1.4</added> </signature>
+  <signature>
+    <added>1.1.4</added>
+  </signature>
   <desc>Selects all elements that are the last child of their parent.</desc>
-  <longdesc><p>While <a href="/last-selector">:last</a> matches only a single element, <code>:last-child</code> can match more than one: one for each parent.</p></longdesc>
-<example>
-  <desc>Finds the last span in each matched div and adds some css plus a hover state.</desc>
-  <code><![CDATA[
+  <longdesc>
+    <p>While <a href="/last-selector">:last</a> matches only a single element, <code>:last-child</code> can match more than one: one for each parent.</p>
+  </longdesc>
+  <example>
+    <desc>Finds the last span in each matched div and adds some css plus a hover state.</desc>
+    <code><![CDATA[
 $("div span:last-child")
     .css({color:"red", fontSize:"80%"})
     .hover(function () {
@@ -15,10 +20,10 @@ $("div span:last-child")
           $(this).removeClass("solast");
         });
 ]]></code>
-  <css><![CDATA[
+    <css><![CDATA[
 span.solast { text-decoration:line-through; }
   ]]></css>
-  <html><![CDATA[<div>
+    <html><![CDATA[<div>
     <span>John,</span>
     <span>Karl,</span>
     <span>Brandon,</span>
@@ -31,7 +36,7 @@ span.solast { text-decoration:line-through; }
     <span>Ralph,</span>
     <span>David</span>
   </div>]]></html>
-</example>
-<category slug="selectors/child-filter-selectors"/>
-<category slug="version/1.1.4"/>
+  </example>
+  <category slug="selectors/child-filter-selectors"/>
+  <category slug="version/1.1.4"/>
 </entry>

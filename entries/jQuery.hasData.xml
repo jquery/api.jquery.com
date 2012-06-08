@@ -1,4 +1,5 @@
-<entry type='method' name="jQuery.hasData" return="Boolean">
+<?xml version="1.0"?>
+<entry type="method" name="jQuery.hasData" return="Boolean">
   <title>jQuery.hasData()</title>
   <signature>
     <added>1.5</added>
@@ -7,7 +8,8 @@
     </argument>
   </signature>
   <desc>Determine whether an element has any jQuery data associated with it.</desc>
-  <longdesc><p>The <code>jQuery.hasData()</code> method provides a way to determine if an element currently has any values that were set using <code><a href='/jQuery.data'>jQuery.data()</a></code>. If no data is associated with an element (there is no data object at all or the data object is empty), the method returns <code>false</code>; otherwise it returns <code>true</code>.</p>
+  <longdesc>
+    <p>The <code>jQuery.hasData()</code> method provides a way to determine if an element currently has any values that were set using <code><a href="/jQuery.data">jQuery.data()</a></code>. If no data is associated with an element (there is no data object at all or the data object is empty), the method returns <code>false</code>; otherwise it returns <code>true</code>.</p>
     <p>The primary advantage of <code>jQuery.hasData(element)</code> is that it does not create and associate a data object with the element if none currently exists. In contrast, <code>jQuery.data(element)</code> always returns a data object to the caller, creating one if no data object previously existed.
 </p>
     <p>Note that jQuery's event system uses the jQuery data API to store event handlers. Therefore, binding an event to an element using <code>.on()</code>, <code>.bind()</code>, <code>.live()</code>, <code>.delegate()</code>, or one of the shorthand event methods also associates a data object with that element.
@@ -32,8 +34,8 @@ $p.off('click');
 $p.append(jQuery.hasData(p)+" "); /* false */
 
 ]]></code>
-  <html><![CDATA[<p>Results: </p>]]></html>
+    <html><![CDATA[<p>Results: </p>]]></html>
   </example>
-<category slug="data"/>
-<category slug="version/1.5"/>
+  <category slug="data"/>
+  <category slug="version/1.5"/>
 </entry>

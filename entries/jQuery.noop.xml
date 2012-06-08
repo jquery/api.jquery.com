@@ -1,11 +1,14 @@
-<entry type='method' name="jQuery.noop" return="Function">
+<?xml version="1.0"?>
+<entry type="method" name="jQuery.noop" return="Function">
   <title>jQuery.noop()</title>
-  <signature><added>1.4</added></signature>
+  <signature>
+    <added>1.4</added>
+  </signature>
   <desc>An empty function.</desc>
   <longdesc>
     <p>You can use this empty function when you wish to pass around a function that will do nothing.</p>
-  <p>This is useful for plugin authors who offer optional callbacks; in the case that no callback is given, something like <code>jQuery.noop</code> could execute.</p>
+    <p>This is useful for plugin authors who offer optional callbacks; in the case that no callback is given, something like <code>jQuery.noop</code> could execute.</p>
   </longdesc>
-<category slug="utilities"/>
-<category slug="version/1.4"/>
+  <category slug="utilities"/>
+  <category slug="version/1.4"/>
 </entry>

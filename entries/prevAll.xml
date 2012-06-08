@@ -1,4 +1,5 @@
-<entry type='method' name="prevAll" return="jQuery">
+<?xml version="1.0"?>
+<entry type="method" name="prevAll" return="jQuery">
   <title>.prevAll()</title>
   <signature>
     <added>1.2</added>
@@ -20,24 +21,24 @@
    &lt;li&gt;list item 5&lt;/li&gt;
 &lt;/ul&gt;
 </pre>
-      <p>If we begin at the third item, we can find the elements which come before it:</p>
-      <pre>$('li.third-item').prevAll().css('background-color', 'red');</pre>
-      <p>The result of this call is a red background behind items 1 and 2. Since we do not supply a selector expression, these preceding elements are unequivocally included as part of the object. If we had supplied one, the elements would be tested for a match before they were included.</p>
+    <p>If we begin at the third item, we can find the elements which come before it:</p>
+    <pre>$('li.third-item').prevAll().css('background-color', 'red');</pre>
+    <p>The result of this call is a red background behind items 1 and 2. Since we do not supply a selector expression, these preceding elements are unequivocally included as part of the object. If we had supplied one, the elements would be tested for a match before they were included.</p>
   </longdesc>
-<example>
-  <desc>Locate all the divs preceding the last div and give them a class.</desc>
-  <code><![CDATA[$("div:last").prevAll().addClass("before");]]></code>
-  <css><![CDATA[
+  <example>
+    <desc>Locate all the divs preceding the last div and give them a class.</desc>
+    <code><![CDATA[$("div:last").prevAll().addClass("before");]]></code>
+    <css><![CDATA[
 
   div { width:70px; height:70px; background:#abc;
         border:2px solid black; margin:10px; float:left; }
   div.before { border-color: red; }
   ]]></css>
-  <html><![CDATA[<div></div>
+    <html><![CDATA[<div></div>
   <div></div>
   <div></div>
   <div></div>]]></html>
-</example>
-<category slug="traversing/tree-traversal"/>
-<category slug="version/1.2"/>
+  </example>
+  <category slug="traversing/tree-traversal"/>
+  <category slug="version/1.2"/>
 </entry>

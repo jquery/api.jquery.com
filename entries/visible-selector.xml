@@ -1,21 +1,22 @@
-<entry type='selector'   name="visible" return="" >
+<?xml version="1.0"?>
+<entry type="selector" name="visible" return="">
   <title>:visible Selector</title>
   <sample>:visible</sample>
-  <signature> <added>1.0</added> </signature>
+  <signature>
+    <added>1.0</added>
+  </signature>
   <desc>Selects all elements that are visible.</desc>
   <longdesc>
     <p>Elements are considered visible if they consume space in the document. Visible elements have a width or height that is greater than zero.</p>
     <p>Elements with <code>visibility: hidden</code> or <code>opacity: 0</code> are considered visible, since they still consume space in the layout. During animations that hide an element, the element is considered to be visible until the end of the animation. During animations to show an element, the element is considered to be visible at the start at the animation.</p>
     <p>How <code>:visible</code> is calculated was changed in jQuery 1.3.2. The <a href="http://docs.jquery.com/Release:jQuery_1.3.2#:visible.2F:hidden_Overhauled">release notes</a> outline the changes in more detail.</p>
   </longdesc>
-
   <note id="jquery-selector-extension" type="additional">
     <placeholder name="selector">:visible</placeholder>
   </note>
-
-<example>
-  <desc>Make all visible divs turn yellow on click.</desc>
-  <code><![CDATA[
+  <example>
+    <desc>Make all visible divs turn yellow on click.</desc>
+    <code><![CDATA[
     $("div:visible").click(function () {
       $(this).css("background", "yellow");
     });
@@ -24,19 +25,19 @@
     });
 
 ]]></code>
-  <css><![CDATA[
+    <css><![CDATA[
   div { width:50px; height:40px; margin:5px; border:3px outset green; float:left; }
   .starthidden { display:none; }
   ]]></css>
-  <html><![CDATA[<button>Show hidden to see they don't change</button>
+    <html><![CDATA[<button>Show hidden to see they don't change</button>
   <div></div>
   <div class="starthidden"></div>
   <div></div>
 
   <div></div>
   <div style="display:none;"></div>]]></html>
-</example>
-<category slug="selectors/jquery-selector-extensions"/>
-<category slug="version/1.0"/>
-<category slug="selectors/visibility-filter-selectors"/>
+  </example>
+  <category slug="selectors/jquery-selector-extensions"/>
+  <category slug="version/1.0"/>
+  <category slug="selectors/visibility-filter-selectors"/>
 </entry>

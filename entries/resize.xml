@@ -1,4 +1,5 @@
-<entry type='method' name="resize" return="jQuery">
+<?xml version="1.0"?>
+<entry type="method" name="resize" return="jQuery">
   <title>.resize()</title>
   <desc>Bind an event handler to the "resize" JavaScript event, or trigger that event on an element.</desc>
   <signature>
@@ -19,7 +20,6 @@
   <signature>
     <added>1.0</added>
   </signature>
-
   <longdesc>
     <p>This method is a shortcut for <code>.bind('resize', handler)</code> in the first and second variations, and <code>.trigger('resize')</code> in the third.</p>
     <p>The <code>resize</code> event is sent to the <code>window</code> element when the size of the browser window changes:</p>
@@ -30,15 +30,14 @@
     <p>Now whenever the browser window's size is changed, the message is appended to &lt;div id="log"&gt; one or more times, depending on the browser.</p>
     <p>Code in a <code>resize</code> handler should never rely on the number of times the handler is called. Depending on implementation, <code>resize</code> events can be sent continuously as the resizing is in progress (the typical behavior in Internet Explorer and WebKit-based browsers such as Safari and Chrome), or only once at the end of the resize operation (the typical behavior in some other browsers such as Opera).</p>
   </longdesc>
-<example>
-  <desc>To see the window width while (or after) it is resized, try:</desc>
-  <code><![CDATA[
+  <example>
+    <desc>To see the window width while (or after) it is resized, try:</desc>
+    <code><![CDATA[
 $(window).resize(function() {
   $('body').prepend('<div>' + $(window).width() + '</div>');
-});]]>
-  </code>
-</example>
-<category slug="events/browser-events"/>
-<category slug="version/1.0"/>
-<category slug="version/1.4.3"/>
+});]]></code>
+  </example>
+  <category slug="events/browser-events"/>
+  <category slug="version/1.0"/>
+  <category slug="version/1.4.3"/>
 </entry>

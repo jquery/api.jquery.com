@@ -1,4 +1,5 @@
-<entry type='method' name="bind" return="jQuery">
+<?xml version="1.0"?>
+<entry type="method" name="bind" return="jQuery">
   <title>.bind()</title>
   <signature>
     <added>1.0</added>
@@ -33,14 +34,10 @@
   <desc>Attach a handler to an event for the elements.</desc>
   <longdesc>
     <p>As of jQuery 1.7, the <a href="http://api.jquery.com/on"><code>.on()</code></a> method is the preferred method for attaching event handlers to a document. For earlier versions, the <code>.bind()</code> method is used for attaching an event handler directly to elements. Handlers are attached to the currently selected elements in the jQuery object, so those elements <em>must exist</em> at the point the call to <code>.bind()</code> occurs. For more flexible event binding, see the discussion of event delegation in <a href="http://api.jquery.com/on"><code>.on()</code></a> or <a href="http://api.jquery.com/delegate"><code>.delegate()</code></a>.</p>
-
     <p>Any string is legal for <code>eventType</code>; if the string is not the name of a native DOM event, then the handler is bound to a custom event. These events are never called by the browser, but may be triggered manually from other JavaScript code using <code>.trigger()</code> or <code>.triggerHandler()</code>.</p>
     <p>If the <code>eventType</code> string contains a period (<code>.</code>) character, then the event is namespaced. The period character separates the event from its namespace. For example, in the call <code>.bind('click.name', handler)</code>, the string <code>click</code> is the event type, and the string <code>name</code> is the namespace. Namespacing allows us to unbind or trigger some events of a type without affecting others. See the discussion of <code>.unbind()</code> for more information.</p>
-
     <p>There are shorthand methods for some standard browser events such as <a href="/click"><code>.click()</code></a> that can be used to attach or trigger event handlers. For a complete list of shorthand methods, see the <a href="http://api.jquery.com/category/events/">events category</a>.</p>
-
     <p>When an event reaches an element, all handlers bound to that event type for the element are fired. If there are multiple handlers registered, they will always execute in the order in which they were bound. After all handlers have executed, the event continues along the normal event propagation path.</p>
-
     <p>A basic usage of <code>.bind()</code> is:</p>
     <pre>
 $('#foo').bind('click', function() {
@@ -76,14 +73,12 @@ $('#foo').bind({
     <p>After this code is executed, when the user clicks inside the element with an ID of <code>foo</code>, its text contents will be shown as an alert.
     </p>
     <p>As of jQuery 1.4.2 duplicate event handlers can be bound to an element instead of being discarded. This is useful when the event data feature is being used, or when other unique data resides in a closure around the event handler function.</p>
-
     <p>In jQuery 1.4.3 you can now pass in <code>false</code> in place of an event handler. This will bind an event handler equivalent to: <code>function(){ return false; }</code>. This function can be removed at a later time by calling: <code>.unbind( eventName, false )</code>.</p>
-
-    <h4 id="event-object"><a href="http://api.jquery.com/category/events/event-object/">The Event object</a></h4>
-
+    <h4 id="event-object">
+      <a href="http://api.jquery.com/category/events/event-object/">The Event object</a>
+    </h4>
     <p>The <code>handler</code> callback function can also take parameters. When the function is called, the event object will be passed to the first parameter.</p>
     <p>The event object is often unnecessary and the parameter omitted, as sufficient context is usually available when the handler is bound to know exactly what needs to be done when the handler is triggered. However, at times it becomes necessary to gather more information about the user's environment at the time the event was initiated. <a href="http://api.jquery.com/category/events/event-object/">View the full Event Object</a>.</p>
-
     <p>Returning <code>false</code> from a handler is equivalent to calling both <code>.preventDefault()</code> and <code>.stopPropagation()</code> on the event object.</p>
     <p>Using the event object in a handler looks like this:</p>
     <pre>$(document).ready(function() {
@@ -94,7 +89,6 @@ $('#foo').bind({
 });
 </pre>
     <p>Note the parameter added to the anonymous function. This code will cause a click on the element with ID <code>foo</code> to report the page coordinates of the mouse cursor at the time of the click.</p>
-
     <h4 id="passing-event-data">Passing Event Data</h4>
     <p>The optional <code>eventData</code> parameter is not commonly used. When provided, this argument allows us to pass additional information to the handler. One handy use of this parameter is to work around issues caused by closures. For example, suppose we have two event handlers that both refer to the same external variable:</p>
     <pre>var message = 'Spoon!';
@@ -123,12 +117,13 @@ $('#bar').bind('click', {msg: message}, function(event) {
       <p>Note that objects are passed to functions <em>by reference</em>, which further complicates this scenario.</p>
     </blockquote>
     <p>If <code>eventData</code> is present, it is the second argument to the <code>.bind()</code> method; if no additional data needs to be sent to the handler, then the callback is passed as the second and final argument.</p>
-    <blockquote><p>See the <code>.trigger()</code> method reference for a way to pass data to a handler at the time the event happens rather than when the handler is bound.</p></blockquote>
-
+    <blockquote>
+      <p>See the <code>.trigger()</code> method reference for a way to pass data to a handler at the time the event happens rather than when the handler is bound.</p>
+    </blockquote>
     <p>As of jQuery 1.4 we can no longer attach data (and thus, events) to object, embed, or applet elements because critical errors occur when attaching data to Java applets.</p>
     <p><strong>Note: </strong>Although demonstrated in the next example, it is inadvisable to bind handlers to both the <code>click</code> and <code>dblclick</code> events for the same element. The sequence of events triggered varies from browser to browser, with some receiving two click events before the <code>dblclick</code> and others only one. Double-click sensitivity (maximum time between clicks that is detected as a double click) can vary by operating system and browser, and is often user-configurable.</p>
   </longdesc>
-<example>
+  <example>
     <desc>Handle click and double-click for the paragraph.  Note: the coordinates are window relative, so in this case relative to the demo iframe.</desc>
     <code><![CDATA[
 $("p").bind("click", function(event){
@@ -151,37 +146,37 @@ span { color:red; }
 ]]></css>
     <html><![CDATA[<p>Click or double click here.</p>
 <span></span>]]></html>
-</example>
-<example>
+  </example>
+  <example>
     <desc>To display each paragraph's text in an alert box whenever it is clicked:</desc>
     <code><![CDATA[$("p").bind("click", function(){
 alert( $(this).text() );
 });]]></code>
-</example>
-<example>
+  </example>
+  <example>
     <desc>You can pass some extra data before the event handler:</desc>
     <code><![CDATA[function handler(event) {
 alert(event.data.foo);
 }
 $("p").bind("click", {foo: "bar"}, handler)]]></code>
-</example>
-<example>
+  </example>
+  <example>
     <desc>Cancel a default action and prevent it from bubbling up by returning <code>false</code>:</desc>
     <code><![CDATA[$("form").bind("submit", function() { return false; })]]></code>
-</example>
-<example>
+  </example>
+  <example>
     <desc>Cancel only the default action by using the .preventDefault() method.</desc>
     <code><![CDATA[$("form").bind("submit", function(event) {
 event.preventDefault();
 });]]></code>
-</example>
-<example>
+  </example>
+  <example>
     <desc>Stop an event from bubbling without preventing the default action by using the .stopPropagation() method.</desc>
     <code><![CDATA[$("form").bind("submit", function(event) {
   event.stopPropagation();
 });]]></code>
-</example>
-<example>
+  </example>
+  <example>
     <desc>Bind custom events.</desc>
     <code><![CDATA[
 
@@ -203,10 +198,10 @@ span { color:blue; }
     <html><![CDATA[<p>Has an attached custom event.</p>
 <button>Trigger custom event</button>
 <span style="display:none;"></span>]]></html>
-</example>
-<example>
-<desc>Bind multiple events simultaneously.</desc>
-<code><![CDATA[$("div.test").bind({
+  </example>
+  <example>
+    <desc>Bind multiple events simultaneously.</desc>
+    <code><![CDATA[$("div.test").bind({
   click: function(){
     $(this).addClass("active");
   },
@@ -217,9 +212,9 @@ span { color:blue; }
     $(this).removeClass("inside");
   }
 });]]></code>
-</example>
-<category slug="events/event-handler-attachment"/>
-<category slug="version/1.0"/>
-<category slug="version/1.4"/>
-<category slug="version/1.4.3"/>
+  </example>
+  <category slug="events/event-handler-attachment"/>
+  <category slug="version/1.0"/>
+  <category slug="version/1.4"/>
+  <category slug="version/1.4.3"/>
 </entry>

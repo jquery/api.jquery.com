@@ -1,4 +1,5 @@
-<entry type='method' name="next" return="jQuery">
+<?xml version="1.0"?>
+<entry type="method" name="next" return="jQuery">
   <title>.next()</title>
   <signature>
     <added>1.0</added>
@@ -24,27 +25,27 @@
     <pre>$('li.third-item').next().css('background-color', 'red');</pre>
     <p>The result of this call is a red background behind item 4. Since we do not supply a selector expression, this following element is unequivocally included as part of the object. If we had supplied one, the element would be tested for a match before it was included.</p>
   </longdesc>
-<example>
-  <desc>Find the very next sibling of each disabled button and change its text "this button is disabled".</desc>
-  <code><![CDATA[$("button[disabled]").next().text("this button is disabled");]]></code>
-  <css><![CDATA[
+  <example>
+    <desc>Find the very next sibling of each disabled button and change its text "this button is disabled".</desc>
+    <code><![CDATA[$("button[disabled]").next().text("this button is disabled");]]></code>
+    <css><![CDATA[
 
   span { color:blue; font-weight:bold; }
   button { width:100px; }
   ]]></css>
-  <html><![CDATA[<div><button disabled="disabled">First</button> - <span></span></div>
+    <html><![CDATA[<div><button disabled="disabled">First</button> - <span></span></div>
   <div><button>Second</button> - <span></span></div>
 
   <div><button disabled="disabled">Third</button> - <span></span></div>]]></html>
-</example>
-<example>
-  <desc>Find the very next sibling of each paragraph. Keep only the ones with a class "selected".</desc>
-  <code><![CDATA[$("p").next(".selected").css("background", "yellow");]]></code>
-  <html><![CDATA[<p>Hello</p>
+  </example>
+  <example>
+    <desc>Find the very next sibling of each paragraph. Keep only the ones with a class "selected".</desc>
+    <code><![CDATA[$("p").next(".selected").css("background", "yellow");]]></code>
+    <html><![CDATA[<p>Hello</p>
 
   <p class="selected">Hello Again</p>
   <div><span>And Again</span></div>]]></html>
-</example>
-<category slug="traversing/tree-traversal"/>
-<category slug="version/1.0"/>
+  </example>
+  <category slug="traversing/tree-traversal"/>
+  <category slug="version/1.0"/>
 </entry>

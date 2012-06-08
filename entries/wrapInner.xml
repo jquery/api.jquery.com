@@ -1,4 +1,5 @@
-<entry type='method' name="wrapInner" return="jQuery">
+<?xml version="1.0"?>
+<entry type="method" name="wrapInner" return="jQuery">
   <title>.wrapInner()</title>
   <signature>
     <added>1.2</added>
@@ -46,52 +47,52 @@
 &lt;/div&gt;</pre>
     <p><strong>Note:</strong> When passing a selector string to the <code>.wrapInner()</code> function, the expected input is well formed HTML with correctly closed tags. Examples of valid input include:</p>
     <pre>
-$(elem).wrapInner(&quot;&lt;div class='test' /&gt;&quot;);
-$(elem).wrapInner(&quot;&lt;div class='test'&gt;&lt;/div&gt;&quot;);
-$(elem).wrapInner(&quot;&lt;div class=\&quot;test\&quot;&gt;&lt;/div&gt;&quot;);
+$(elem).wrapInner("&lt;div class='test' /&gt;");
+$(elem).wrapInner("&lt;div class='test'&gt;&lt;/div&gt;");
+$(elem).wrapInner("&lt;div class=\"test\"&gt;&lt;/div&gt;");
     </pre>
   </longdesc>
-<example>
-  <desc>Selects all paragraphs and wraps a bold tag around each of its contents.</desc>
-  <code><![CDATA[$("p").wrapInner("<b></b>");]]></code>
-  <css><![CDATA[p { background:#bbf; }]]></css>
-  <html><![CDATA[<p>Hello</p>
+  <example>
+    <desc>Selects all paragraphs and wraps a bold tag around each of its contents.</desc>
+    <code><![CDATA[$("p").wrapInner("<b></b>");]]></code>
+    <css><![CDATA[p { background:#bbf; }]]></css>
+    <html><![CDATA[<p>Hello</p>
 
   <p>cruel</p>
   <p>World</p>]]></html>
-</example>
-<example>
-  <desc>Wraps a newly created tree of objects around the inside of the body.</desc>
-  <code><![CDATA[$("body").wrapInner("<div><div><p><em><b></b></em></p></div></div>");]]></code>
-  <css><![CDATA[
+  </example>
+  <example>
+    <desc>Wraps a newly created tree of objects around the inside of the body.</desc>
+    <code><![CDATA[$("body").wrapInner("<div><div><p><em><b></b></em></p></div></div>");]]></code>
+    <css><![CDATA[
 
   div { border:2px green solid; margin:2px; padding:2px; }
   p { background:yellow; margin:2px; padding:2px; }
   ]]></css>
-  <html><![CDATA[Plain old text, or is it?]]></html>
-</example>
-<example>
-  <desc>Selects all paragraphs and wraps a bold tag around each of its contents.</desc>
-  <code><![CDATA[$("p").wrapInner(document.createElement("b"));]]></code>
-  <css><![CDATA[p { background:#9f9; }]]></css>
-  <html><![CDATA[<p>Hello</p>
+    <html><![CDATA[Plain old text, or is it?]]></html>
+  </example>
+  <example>
+    <desc>Selects all paragraphs and wraps a bold tag around each of its contents.</desc>
+    <code><![CDATA[$("p").wrapInner(document.createElement("b"));]]></code>
+    <css><![CDATA[p { background:#9f9; }]]></css>
+    <html><![CDATA[<p>Hello</p>
 
   <p>cruel</p>
   <p>World</p>]]></html>
-</example>
-<example>
-  <desc>Selects all paragraphs and wraps a jQuery object around each of its contents.</desc>
-  <code><![CDATA[$("p").wrapInner($("<span class='red'></span>"));]]></code>
-  <css><![CDATA[
+  </example>
+  <example>
+    <desc>Selects all paragraphs and wraps a jQuery object around each of its contents.</desc>
+    <code><![CDATA[$("p").wrapInner($("<span class='red'></span>"));]]></code>
+    <css><![CDATA[
 
   p { background:#9f9; }
   .red { color:red; }
   ]]></css>
-  <html><![CDATA[<p>Hello</p>
+    <html><![CDATA[<p>Hello</p>
   <p>cruel</p>
   <p>World</p>]]></html>
-</example>
-<category slug="manipulation/dom-insertion-around"/>
-<category slug="version/1.2"/>
-<category slug="version/1.4"/>
+  </example>
+  <category slug="manipulation/dom-insertion-around"/>
+  <category slug="version/1.2"/>
+  <category slug="version/1.4"/>
 </entry>

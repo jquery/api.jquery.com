@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <entry name="deferred.isResolved" type="method" return="Boolean">
   <title>deferred.isResolved()</title>
   <signature>
@@ -10,8 +11,7 @@
     <p>Returns <code>true</code> if the Deferred object is in the resolved state, meaning that either <a href="http://api.jquery.com/deferred.resolve/"><code>deferred.resolve()</code></a> or <a href="http://api.jquery.com/deferred.resolveWith/"><code>deferred.resolveWith()</code></a> has been called for the object and the doneCallbacks have been called (or are in the process of being called).</p>
     <p>Note that a Deferred object can be in one of three states: pending, resolved, or rejected; use <a href="http://api.jquery.com/deferred.isRejected/"><code>deferred.isRejected()</code></a> to determine whether the Deferred object is in the rejected state. These methods are primarily useful for debugging, for example to determine whether a Deferred has already been resolved even though you are inside code that intended to reject it.</p>
   </longdesc>
-
-<category slug="deferred-object"/>
-<category slug="deprecated"/>
-<category slug="version/1.5"/>
+  <category slug="deferred-object"/>
+  <category slug="deprecated"/>
+  <category slug="version/1.5"/>
 </entry>

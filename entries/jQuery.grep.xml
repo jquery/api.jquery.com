@@ -1,4 +1,5 @@
-<entry type='method' name="jQuery.grep" return="Array">
+<?xml version="1.0"?>
+<entry type="method" name="jQuery.grep" return="Array">
   <title>jQuery.grep()</title>
   <desc>Finds the elements of an array which satisfy a filter function. The original array is not affected.</desc>
   <signature>
@@ -13,16 +14,13 @@
       <desc>If "invert" is false, or not provided, then the function returns an array consisting of all elements for which "callback" returns true.  If "invert" is true, then the function returns an array consisting of all elements for which "callback" returns false.</desc>
     </argument>
   </signature>
-
-  <longdesc><p>The <code>$.grep()</code> method removes items from an array as necessary so that all remaining items pass a provided test. The test is a function that is passed an array item and the index of the item within the array. Only if the test returns true will the item be in the result array.</p>
-
-  <p> The filter function will be passed two arguments: the current array item and its index. The filter function must return 'true' to include the item in the result array.</p>
-</longdesc>
-
-
-<example>
-  <desc>Filters the original array of numbers leaving that are not 5 and have an index greater than 4.  Then it removes all 9s.</desc>
-  <code><![CDATA[
+  <longdesc>
+    <p>The <code>$.grep()</code> method removes items from an array as necessary so that all remaining items pass a provided test. The test is a function that is passed an array item and the index of the item within the array. Only if the test returns true will the item be in the result array.</p>
+    <p> The filter function will be passed two arguments: the current array item and its index. The filter function must return 'true' to include the item in the result array.</p>
+  </longdesc>
+  <example>
+    <desc>Filters the original array of numbers leaving that are not 5 and have an index greater than 4.  Then it removes all 9s.</desc>
+    <code><![CDATA[
 var arr = [ 1, 9, 3, 8, 6, 1, 5, 9, 4, 7, 3, 8, 6, 9, 1 ];
 $("div").text(arr.join(", "));
 
@@ -35,30 +33,30 @@ arr = jQuery.grep(arr, function (a) { return a != 9; });
 $("span").text(arr.join(", "));
 
 ]]></code>
-  <css><![CDATA[
+    <css><![CDATA[
   div { color:blue; }
   p { color:green; margin:0; }
   span { color:red; }
   ]]></css>
-  <html><![CDATA[<div></div>
+    <html><![CDATA[<div></div>
   <p></p>
   <span></span>
   ]]></html>
-</example>
-<example>
-  <desc>Filter an array of numbers to include only numbers bigger then zero.</desc>
-  <code><![CDATA[$.grep( [0,1,2], function(n,i){
+  </example>
+  <example>
+    <desc>Filter an array of numbers to include only numbers bigger then zero.</desc>
+    <code><![CDATA[$.grep( [0,1,2], function(n,i){
    return n > 0;
  });]]></code>
- <results><![CDATA[[1, 2] ]]></results>
-</example>
-<example>
-  <desc>Filter an array of numbers to include numbers that are not bigger than zero.</desc>
-  <code><![CDATA[$.grep( [0,1,2], function(n,i){
+    <results><![CDATA[[1, 2] ]]></results>
+  </example>
+  <example>
+    <desc>Filter an array of numbers to include numbers that are not bigger than zero.</desc>
+    <code><![CDATA[$.grep( [0,1,2], function(n,i){
     return n > 0;
 },true);]]></code>
-  <results><![CDATA[[0] ]]></results>
+    <results><![CDATA[[0] ]]></results>
   </example>
-<category slug="utilities"/>
-<category slug="version/1.0"/>
+  <category slug="utilities"/>
+  <category slug="version/1.0"/>
 </entry>

@@ -1,39 +1,40 @@
-<entry type='method' name="jQuery.getScript" return="jqXHR">
+<?xml version="1.0"?>
+<entry type="method" name="jQuery.getScript" return="jqXHR">
   <title>jQuery.getScript()</title>
   <signature>
     <added>1.0</added>
-      <argument name="url" type="String">
-        <desc>A string containing the URL to which the request is sent.</desc>
-      </argument>
-      <argument name="success(script, textStatus, jqXHR)" optional="true" type="Function">
-        <desc>A callback function that is executed if the request succeeds.</desc>
-      </argument>
-    </signature>
-    <desc>Load a JavaScript file from the server using a GET HTTP request, then execute it.</desc>
-    <longdesc><p>This is a shorthand Ajax function, which is equivalent to:</p>
-<pre>$.ajax({
+    <argument name="url" type="String">
+      <desc>A string containing the URL to which the request is sent.</desc>
+    </argument>
+    <argument name="success(script, textStatus, jqXHR)" optional="true" type="Function">
+      <desc>A callback function that is executed if the request succeeds.</desc>
+    </argument>
+  </signature>
+  <desc>Load a JavaScript file from the server using a GET HTTP request, then execute it.</desc>
+  <longdesc>
+    <p>This is a shorthand Ajax function, which is equivalent to:</p>
+    <pre>$.ajax({
   url: <em>url</em>,
   dataType: "script",
   success: <em>success</em>
 });
 </pre>
-      <p>The script is executed in the global context, so it can refer to other variables and use jQuery functions. Included scripts can have some impact on the current page.</p>
-      <h4 id="success-callback">
+    <p>The script is executed in the global context, so it can refer to other variables and use jQuery functions. Included scripts can have some impact on the current page.</p>
+    <h4 id="success-callback">
         Success Callback
       </h4>
-      <p>The callback is passed the returned JavaScript file. This is generally not useful as the script will already have run at this point.</p>
-      <pre>$(".result").html("&lt;p&gt;Lorem ipsum dolor sit amet.&lt;/p&gt;");</pre>
-      <p>Scripts are included and run by referencing the file name:</p>
-<pre>$.getScript("ajax/test.js", function(data, textStatus, jqxhr) {
+    <p>The callback is passed the returned JavaScript file. This is generally not useful as the script will already have run at this point.</p>
+    <pre>$(".result").html("&lt;p&gt;Lorem ipsum dolor sit amet.&lt;/p&gt;");</pre>
+    <p>Scripts are included and run by referencing the file name:</p>
+    <pre>$.getScript("ajax/test.js", function(data, textStatus, jqxhr) {
    console.log(data); //data returned
    console.log(textStatus); //success
    console.log(jqxhr.status); //200
    console.log('Load was performed.');
 });</pre>
-
-      <h4 id="handling-errors">Handling Errors</h4>
-      <p>As of jQuery 1.5, you may use <a href="http://api.jquery.com/deferred.fail/"><code>.fail()</code></a> to account for errors:</p>
-<pre>
+    <h4 id="handling-errors">Handling Errors</h4>
+    <p>As of jQuery 1.5, you may use <a href="http://api.jquery.com/deferred.fail/"><code>.fail()</code></a> to account for errors:</p>
+    <pre>
 $.getScript("ajax/test.js")
 .done(function(script, textStatus) {
   console.log( textStatus );
@@ -42,26 +43,26 @@ $.getScript("ajax/test.js")
   $( "div.log" ).text( "Triggered ajaxError handler." );
 });
 </pre>
-        <p>Prior to jQuery 1.5, the global <code>.ajaxError()</code> callback event had to be used in order to handle <code>$.getScript()</code> errors:</p>
-<pre>
+    <p>Prior to jQuery 1.5, the global <code>.ajaxError()</code> callback event had to be used in order to handle <code>$.getScript()</code> errors:</p>
+    <pre>
 $( "div.log" ).ajaxError(function(e, jqxhr, settings, exception) {
   if (settings.dataType=='script') {
     $(this).text( "Triggered ajaxError handler." );
   }
 });
 </pre>
-      <h4 id="caching-requests">Caching Responses</h4>
-      <p>Be default, <code>$.getScript()</code> sets the cache setting to <code>false</code>. This appends a timestamped query parameter to the request URL to ensure that the browser downloads the script each time it is requested. You can override this feature by setting the cache property globally using <a href="http://api.jquery.com/jquery.ajaxsetup/"><code>$.ajaxSetup()</code></a>: </p>
-<pre>
+    <h4 id="caching-requests">Caching Responses</h4>
+    <p>Be default, <code>$.getScript()</code> sets the cache setting to <code>false</code>. This appends a timestamped query parameter to the request URL to ensure that the browser downloads the script each time it is requested. You can override this feature by setting the cache property globally using <a href="http://api.jquery.com/jquery.ajaxsetup/"><code>$.ajaxSetup()</code></a>: </p>
+    <pre>
 $.ajaxSetup({
   cache: true
 });
 </pre>
-      <p>Alternatively, you could define a new method that uses the more flexible <code>$.ajax()</code> method.</p>
-    </longdesc>
-<example>
-  <desc>Define a $.cachedScript() method that allows fetching a cached script:</desc>
-  <code>jQuery.cachedScript = function(url, options) {
+    <p>Alternatively, you could define a new method that uses the more flexible <code>$.ajax()</code> method.</p>
+  </longdesc>
+  <example>
+    <desc>Define a $.cachedScript() method that allows fetching a cached script:</desc>
+    <code>jQuery.cachedScript = function(url, options) {
 
   // allow user to set any option except for dataType, cache, and url
   options = $.extend(options || {}, {
@@ -80,10 +81,10 @@ $.cachedScript("ajax/test.js").done(function(script, textStatus) {
   console.log( textStatus );
 });
 </code>
-</example>
-<example>
-  <desc>Load the <a href="http://github.com/jquery/jquery-color">official jQuery Color Animation plugin</a> dynamically and bind some color animations to occur once the new functionality is loaded.</desc>
-  <code><![CDATA[
+  </example>
+  <example>
+    <desc>Load the <a href="http://github.com/jquery/jquery-color">official jQuery Color Animation plugin</a> dynamically and bind some color animations to occur once the new functionality is loaded.</desc>
+    <code><![CDATA[
 $.getScript("/scripts/jquery.color.js", function() {
   $("#go").click(function(){
     $(".block").animate( { backgroundColor: "pink" }, 1000)
@@ -92,21 +93,20 @@ $.getScript("/scripts/jquery.color.js", function() {
   });
 });
 ]]></code>
-<html><![CDATA[
+    <html><![CDATA[
 <button id="go">&raquo; Run</button>
 
 <div class="block"></div>
 ]]></html>
-<css><![CDATA[
+    <css><![CDATA[
 .block {
    background-color: blue;
    width: 150px;
    height: 70px;
    margin: 10px;
 }]]></css>
-</example>
-
-<category slug="ajax/shorthand-methods"/>
-<category slug="version/1.0"/>
-<category slug="version/1.5"/>
+  </example>
+  <category slug="ajax/shorthand-methods"/>
+  <category slug="version/1.0"/>
+  <category slug="version/1.5"/>
 </entry>

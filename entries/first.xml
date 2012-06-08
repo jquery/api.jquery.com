@@ -1,4 +1,5 @@
-<entry type='method' name="first" return="jQuery">
+<?xml version="1.0"?>
+<entry type="method" name="first" return="jQuery">
   <title>.first()</title>
   <signature>
     <added>1.4</added>
@@ -18,12 +19,12 @@
 <p>We can apply this method to the set of list items:</p>
 <pre>$('li').first().css('background-color', 'red');</pre>
 <p>The result of this call is a red background for the first item.</p></longdesc>
-<example>
-  <desc>Highlight the first span in a paragraph.</desc>
-  <css><![CDATA[.highlight{background-color: yellow}]]></css>
-  <code><![CDATA[$("p span").first().addClass('highlight');]]></code>
-  <html><![CDATA[<p><span>Look:</span> <span>This is some text in a paragraph.</span> <span>This is a note about it.</span></p>]]></html>
-</example>
-<category slug="traversing/filtering"/>
-<category slug="version/1.4"/>
+  <example>
+    <desc>Highlight the first span in a paragraph.</desc>
+    <css><![CDATA[.highlight{background-color: yellow}]]></css>
+    <code><![CDATA[$("p span").first().addClass('highlight');]]></code>
+    <html><![CDATA[<p><span>Look:</span> <span>This is some text in a paragraph.</span> <span>This is a note about it.</span></p>]]></html>
+  </example>
+  <category slug="traversing/filtering"/>
+  <category slug="version/1.4"/>
 </entry>

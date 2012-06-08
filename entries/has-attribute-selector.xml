@@ -1,12 +1,15 @@
-<entry type='selector'   name="attributeHas" return="" >
+<?xml version="1.0"?>
+<entry type="selector" name="attributeHas" return="">
   <title>Has Attribute Selector [name]</title>
   <sample>[attribute]</sample>
-  <signature> <added>1.0</added>
-  <argument name="attribute" type="String">
-    <desc>An attribute name.</desc>
-  </argument></signature>
+  <signature>
+    <added>1.0</added>
+    <argument name="attribute" type="String">
+      <desc>An attribute name.</desc>
+    </argument>
+  </signature>
   <desc>Selects elements that have the specified attribute, with any value. </desc>
-  <longdesc></longdesc>
+  <longdesc/>
   <example>
     <desc>Bind a single click that adds the div id to its text.</desc>
     <code><![CDATA[
@@ -15,12 +18,12 @@ $('div[id]').one('click', function(){
   $(this).text(idString);
 });
 ]]></code>
-<html><![CDATA[<div>no id</div>
+    <html><![CDATA[<div>no id</div>
   <div id="hey">with id</div>
 
   <div id="there">has an id</div>
   <div>nope</div>]]></html>
-</example>
-<category slug="selectors/attribute-selectors"/>
-<category slug="version/1.0"/>
+  </example>
+  <category slug="selectors/attribute-selectors"/>
+  <category slug="version/1.0"/>
 </entry>

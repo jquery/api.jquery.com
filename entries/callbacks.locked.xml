@@ -1,13 +1,14 @@
+<?xml version="1.0"?>
 <entry name="callbacks.locked" type="method" return="Boolean">
   <title>callbacks.locked()</title>
   <signature>
     <added>1.7</added>
   </signature>
   <desc>Determine if the callbacks list has been locked.</desc>
-  <longdesc></longdesc>
-<example>
-  <desc>Using <code>callbacks.locked()</code> to determine the lock-state of a callback list:</desc>
-  <code><![CDATA[// a sample logging function to be added to a callbacks list
+  <longdesc/>
+  <example>
+    <desc>Using <code>callbacks.locked()</code> to determine the lock-state of a callback list:</desc>
+    <code><![CDATA[// a sample logging function to be added to a callbacks list
   var foo = function( value ){
       console.log( 'foo:' + value);
   }
@@ -27,7 +28,7 @@
   // test the lock-state of the list
   console.log ( callbacks.locked() ); //true
   ]]></code>
-</example>
-<category slug="callbacks-object"/>
-<category slug="version/1.7"/>
+  </example>
+  <category slug="callbacks-object"/>
+  <category slug="version/1.7"/>
 </entry>

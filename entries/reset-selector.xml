@@ -1,27 +1,30 @@
-<entry type='selector'   name="reset" return="">
+<?xml version="1.0"?>
+<entry type="selector" name="reset" return="">
   <title>:reset Selector</title>
   <sample>:reset</sample>
-  <signature><added>1.0</added> </signature>
+  <signature>
+    <added>1.0</added>
+  </signature>
   <desc>Selects all elements of type reset.</desc>
-  <longdesc><p><code>:reset</code> is equivalent to <code>[type="reset"]</code></p></longdesc>
-
+  <longdesc>
+    <p><code>:reset</code> is equivalent to <code>[type="reset"]</code></p>
+  </longdesc>
   <note id="jquery-selector-extension-alt" type="additional">
     <placeholder name="alt">[type="reset"]</placeholder>
     <placeholder name="selector">:reset</placeholder>
   </note>
-
-<example>
-  <desc>Finds all reset inputs.</desc>
-  <code><![CDATA[
+  <example>
+    <desc>Finds all reset inputs.</desc>
+    <code><![CDATA[
 var input = $("input:reset").css({background:"yellow", border:"3px red solid"});
 $("div").text("For this type jQuery found " + input.length + ".")
         .css("color", "red");
 $("form").submit(function () { return false; }); // so it won't submit
 ]]></code>
-  <css><![CDATA[
+    <css><![CDATA[
   textarea { height:45px; }
   ]]></css>
-  <html><![CDATA[<form>
+    <html><![CDATA[<form>
     <input type="button" value="Input Button"/>
     <input type="checkbox" />
 
@@ -42,8 +45,8 @@ $("form").submit(function () { return false; }); // so it won't submit
   </form>
   <div>
   </div>]]></html>
-</example>
-<category slug="selectors/form-selectors"/>
-<category slug="selectors/jquery-selector-extensions"/>
-<category slug="version/1.0"/>
+  </example>
+  <category slug="selectors/form-selectors"/>
+  <category slug="selectors/jquery-selector-extensions"/>
+  <category slug="version/1.0"/>
 </entry>

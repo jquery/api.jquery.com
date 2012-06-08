@@ -1,26 +1,29 @@
-<entry type='selector'   name="last" return=""  >
+<?xml version="1.0"?>
+<entry type="selector" name="last" return="">
   <title>:last Selector</title>
   <sample>:last</sample>
-  <signature><added>1.0</added> </signature>
+  <signature>
+    <added>1.0</added>
+  </signature>
   <desc>Selects the last matched element.</desc>
-  <longdesc><p>Note that <code>:last</code> selects a single element by filtering  the current jQuery collection and matching the last element within it.</p></longdesc>
-
+  <longdesc>
+    <p>Note that <code>:last</code> selects a single element by filtering  the current jQuery collection and matching the last element within it.</p>
+  </longdesc>
   <note id="jquery-selector-extension" type="additional">
     <placeholder name="selector">:last</placeholder>
   </note>
-
-<example>
-  <desc>Finds the last table row.</desc>
-  <code><![CDATA[$("tr:last").css({backgroundColor: 'yellow', fontWeight: 'bolder'});]]></code>
-  <html><![CDATA[<table>
+  <example>
+    <desc>Finds the last table row.</desc>
+    <code><![CDATA[$("tr:last").css({backgroundColor: 'yellow', fontWeight: 'bolder'});]]></code>
+    <html><![CDATA[<table>
 
   <tr><td>First Row</td></tr>
   <tr><td>Middle Row</td></tr>
   <tr><td>Last Row</td></tr>
 
 </table>]]></html>
-</example>
-<category slug="selectors/basic-filter-selectors"/>
-<category slug="selectors/jquery-selector-extensions"/>
-<category slug="version/1.0"/>
+  </example>
+  <category slug="selectors/basic-filter-selectors"/>
+  <category slug="selectors/jquery-selector-extensions"/>
+  <category slug="version/1.0"/>
 </entry>

@@ -1,4 +1,5 @@
-<entry type='method' name="delegate" return="jQuery">
+<?xml version="1.0"?>
+<entry type="method" name="delegate" return="jQuery">
   <title>.delegate()</title>
   <desc>Attach a handler to one or more events for all elements that match the selector, now or in the future, based on a specific set of root elements.</desc>
   <signature>
@@ -39,30 +40,23 @@
   </signature>
   <longdesc>
     <p>As of jQuery 1.7, <code>.delegate()</code> has been superseded by the <a href="http://api.jquery.com/on">.on()</a> method. For earlier versions, however, it remains the most effective means to use event delegation. More information on event binding and delegation is in the <a href="http://api.jquery.com/on">.on()</a> method. In general, these are the equivalent templates for the two methods:</p>
- <pre>
+    <pre>
 $(elements).delegate(<em>selector</em>, <em>events</em>, <em>data</em>, <em>handler</em>);  // jQuery 1.4.3+
 $(elements).on(<em>events</em>, <em>selector</em>, <em>data</em>, <em>handler</em>);        // jQuery 1.7+
  </pre>
- <p>For example, the following <code>.delegate()</code> code:</p>
-
-<pre>$("table").delegate("td", "click", function() {
+    <p>For example, the following <code>.delegate()</code> code:</p>
+    <pre>$("table").delegate("td", "click", function() {
   $(this).toggleClass("chosen");
 });</pre>
-
-<p>is equivalent to the following code written using <code>.on()</code>:</p>
-
-<pre>$("table").on("click", "td", function() {
+    <p>is equivalent to the following code written using <code>.on()</code>:</p>
+    <pre>$("table").on("click", "td", function() {
   $(this).toggleClass("chosen");
 });</pre>
-
-<p>To remove events attached with <code>delegate()</code>, see  the <a href="http://api.jquery.com/undelegate">.undelegate()</a> method.</p>
-<p>Passing and handling event data works the same way as it does for <code>.on()</code>.</p>
-</longdesc>
-
+    <p>To remove events attached with <code>delegate()</code>, see  the <a href="http://api.jquery.com/undelegate">.undelegate()</a> method.</p>
+    <p>Passing and handling event data works the same way as it does for <code>.on()</code>.</p>
+  </longdesc>
   <note id="propagation-for-live-or-delegate" type="additional">
 </note>
-
-
   <example>
     <desc>Click a paragraph to add another. Note that .delegate() attaches a click event handler to all paragraphs - even new ones.</desc>
     <code><![CDATA[
@@ -70,13 +64,13 @@ $(elements).on(<em>events</em>, <em>selector</em>, <em>data</em>, <em>handler</e
       $(this).after("<p>Another paragraph!</p>");
     });
 ]]></code>
-  <css><![CDATA[
+    <css><![CDATA[
   p { background:yellow; font-weight:bold; cursor:pointer;
       padding:5px; }
   p.over { background: #ccc; }
   span { color:red; }
   ]]></css>
-  <html><![CDATA[<p>Click me!</p>
+    <html><![CDATA[<p>Click me!</p>
 
   <span></span>]]></html>
   </example>
@@ -111,15 +105,15 @@ $(elements).on(<em>events</em>, <em>selector</em>, <em>data</em>, <em>handler</e
     });
 
 ]]></code>
-  <css><![CDATA[
+    <css><![CDATA[
   p { color:red; }
   span { color:blue; }
   ]]></css>
-  <html><![CDATA[<p>Has an attached custom event.</p>
+    <html><![CDATA[<p>Has an attached custom event.</p>
   <button>Trigger custom event</button>
   <span style="display:none;"></span>]]></html>
   </example>
-<category slug="events/event-handler-attachment"/>
-<category slug="version/1.4.2"/>
-<category slug="version/1.4.3"/>
+  <category slug="events/event-handler-attachment"/>
+  <category slug="version/1.4.2"/>
+  <category slug="version/1.4.3"/>
 </entry>

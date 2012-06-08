@@ -1,20 +1,23 @@
-<entry type='selector'  name="all" return=""  >
+<?xml version="1.0"?>
+<entry type="selector" name="all" return="">
   <title>All Selector ("*")</title>
   <sample>*</sample>
   <signature>
     <added>1.0</added>
   </signature>
   <desc>Selects all elements.</desc>
-  <longdesc><p>Caution: The all, or universal, selector is extremely slow, except when used by itself.</p> </longdesc>
+  <longdesc>
+    <p>Caution: The all, or universal, selector is extremely slow, except when used by itself.</p>
+  </longdesc>
   <example>
     <desc>Finds every element (including head, body, etc) in the document.</desc>
     <code><![CDATA[var elementCount = $("*").css("border","3px solid red").length;
 $("body").prepend("<h3>" + elementCount + " elements found</h3>");]]></code>
-      <html><![CDATA[<div>DIV</div>
+    <html><![CDATA[<div>DIV</div>
 
   <span>SPAN</span>
   <p>P <button>Button</button></p>]]></html>
-                    <css><![CDATA[
+    <css><![CDATA[
   h3 { margin: 0; }
   div,span,p {
     width: 80px;
@@ -31,12 +34,12 @@ $("body").prepend("<h3>" + elementCount + " elements found</h3>");]]></code>
     <code><![CDATA[
 var elementCount = $("#test").find("*").css("border","3px solid red").length;
 $("body").prepend("<h3>" + elementCount + " elements found</h3>");]]></code>
-<html><![CDATA[<div id="test">
+    <html><![CDATA[<div id="test">
   <div>DIV</div>
   <span>SPAN</span>
   <p>P <button>Button</button></p>
 </div>]]></html>
-<css><![CDATA[
+    <css><![CDATA[
   h3 { margin: 0; }
   div,span,p {
     width: 80px;
@@ -50,8 +53,7 @@ $("body").prepend("<h3>" + elementCount + " elements found</h3>");]]></code>
     width: auto; height: auto; background-color: transparent;
   }
   ]]></css>
-
   </example>
-<category slug="selectors/basic-css-selectors"/>
-<category slug="version/1.0"/>
+  <category slug="selectors/basic-css-selectors"/>
+  <category slug="version/1.0"/>
 </entry>

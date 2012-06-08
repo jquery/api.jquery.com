@@ -1,10 +1,12 @@
-<entry type='method' name="end" return="jQuery">
+<?xml version="1.0"?>
+<entry type="method" name="end" return="jQuery">
   <title>.end()</title>
   <signature>
     <added>1.0</added>
   </signature>
   <desc>End the most recent filtering operation in the current chain and return the set of matched elements to its previous state.</desc>
-  <longdesc><p>Most of jQuery's <a href="http://api.jquery.com/category/traversing">DOM traversal</a> methods operate on a jQuery object instance and produce a new one, matching a different set of DOM elements. When this happens, it is as if the new set of elements is pushed onto a stack that is maintained inside the object. Each successive filtering method pushes a new element set onto the stack. If we need an older element set, we can use <code>end()</code> to pop the sets back off of the stack.</p>
+  <longdesc>
+    <p>Most of jQuery's <a href="http://api.jquery.com/category/traversing">DOM traversal</a> methods operate on a jQuery object instance and produce a new one, matching a different set of DOM elements. When this happens, it is as if the new set of elements is pushed onto a stack that is maintained inside the object. Each successive filtering method pushes a new element set onto the stack. If we need an older element set, we can use <code>end()</code> to pop the sets back off of the stack.</p>
     <p>Suppose we have a couple short lists on a page:</p>
     <pre>
 &lt;ul class="first"&gt;
@@ -32,10 +34,11 @@ $('ul.first').find('.foo')
   .css('background-color', 'green')
 .end();
 </pre>
-    <p>The last <code>end()</code> is unnecessary, as we are discarding the jQuery object immediately thereafter. However, when the code is written in this form, the <code>end()</code> provides visual symmetry and a sense of completion —making the program, at least to the eyes of some developers, more readable, at the cost of a slight hit to performance as it is an additional function call.</p></longdesc>
-    <example>
-      <desc>Selects all paragraphs, finds span elements inside these, and reverts the selection back to the paragraphs.</desc>
-      <code><![CDATA[
+    <p>The last <code>end()</code> is unnecessary, as we are discarding the jQuery object immediately thereafter. However, when the code is written in this form, the <code>end()</code> provides visual symmetry and a sense of completion &#x2014;making the program, at least to the eyes of some developers, more readable, at the cost of a slight hit to performance as it is an additional function call.</p>
+  </longdesc>
+  <example>
+    <desc>Selects all paragraphs, finds span elements inside these, and reverts the selection back to the paragraphs.</desc>
+    <code><![CDATA[
 jQuery.fn.showTags = function (n) {
   var tags = this.map(function () {
                           return this.tagName;
@@ -54,13 +57,13 @@ $("p").showTags(0)
       .css("font-style", "italic");
 
 ]]></code>
-  <css><![CDATA[
+    <css><![CDATA[
   p, div { margin:1px; padding:1px; font-weight:bold;
            font-size:16px; }
   div { color:blue; }
   b { color:red; }
   ]]></css>
-  <html><![CDATA[<p>
+    <html><![CDATA[<p>
     Hi there <span>how</span> are you <span>doing</span>?
   </p>
 
@@ -80,13 +83,13 @@ $("p").showTags(0)
   <div>
     Tags in jQuery object after end: <b></b>
   </div>]]></html>
-</example>
-<example>
-  <desc>Selects all paragraphs, finds span elements inside these, and reverts the selection back to the paragraphs.</desc>
-  <code><![CDATA[$("p").find("span").end().css("border", "2px red solid");]]></code>
-  <css><![CDATA[p { margin:10px; padding:10px; }]]></css>
-  <html><![CDATA[<p><span>Hello</span>, how are you?</p>]]></html>
-</example>
-<category slug="traversing/miscellaneous-traversal"/>
-<category slug="version/1.0"/>
+  </example>
+  <example>
+    <desc>Selects all paragraphs, finds span elements inside these, and reverts the selection back to the paragraphs.</desc>
+    <code><![CDATA[$("p").find("span").end().css("border", "2px red solid");]]></code>
+    <css><![CDATA[p { margin:10px; padding:10px; }]]></css>
+    <html><![CDATA[<p><span>Hello</span>, how are you?</p>]]></html>
+  </example>
+  <category slug="traversing/miscellaneous-traversal"/>
+  <category slug="version/1.0"/>
 </entry>

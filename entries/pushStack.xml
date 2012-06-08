@@ -1,4 +1,5 @@
-<entry type='method' name="pushStack" return="jQuery">
+<?xml version="1.0"?>
+<entry type="method" name="pushStack" return="jQuery">
   <title>.pushStack()</title>
   <signature>
     <added>1.0</added>
@@ -19,15 +20,15 @@
     </argument>
   </signature>
   <desc>Add a collection of DOM elements onto the jQuery stack.</desc>
-  <longdesc></longdesc>
-<example>
-  <desc>Add some elements onto the jQuery stack, then pop back off again.</desc>
-  <code><![CDATA[jQuery([])
+  <longdesc/>
+  <example>
+    <desc>Add some elements onto the jQuery stack, then pop back off again.</desc>
+    <code><![CDATA[jQuery([])
     .pushStack( document.getElementsByTagName("div") )
         .remove()
     .end();]]></code>
-</example>
-<category slug="internals"/>
-<category slug="version/1.0"/>
-<category slug="version/1.3"/>
+  </example>
+  <category slug="internals"/>
+  <category slug="version/1.0"/>
+  <category slug="version/1.3"/>
 </entry>

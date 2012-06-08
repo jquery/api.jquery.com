@@ -1,4 +1,5 @@
-<entry type="selector" name="attributeEquals" return="" >
+<?xml version="1.0"?>
+<entry type="selector" name="attributeEquals" return="">
   <title>Attribute Equals Selector [name="value"]</title>
   <sample>[attribute="value"]</sample>
   <signature>
@@ -11,11 +12,11 @@
     </argument>
   </signature>
   <desc>Selects elements that have the specified attribute with a value exactly equal to a certain value.</desc>
-  <longdesc></longdesc>
+  <longdesc/>
   <example>
     <desc>Finds all inputs with a value of "Hot Fuzz" and changes the text of the next sibling span.</desc>
     <code><![CDATA[$('input[value="Hot Fuzz"]').next().text(" Hot Fuzz");]]></code>
-      <html><![CDATA[<div>
+    <html><![CDATA[<div>
     <label>
       <input type="radio" name="newsletter" value="Hot Fuzz" />
       <span>name?</span>
@@ -34,6 +35,6 @@
     </label>
   </div>]]></html>
   </example>
-<category slug="selectors/attribute-selectors"/>
-<category slug="version/1.0"/>
+  <category slug="selectors/attribute-selectors"/>
+  <category slug="version/1.0"/>
 </entry>

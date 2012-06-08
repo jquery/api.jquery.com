@@ -1,4 +1,5 @@
-<entry type='method' name="nextAll" return="jQuery">
+<?xml version="1.0"?>
+<entry type="method" name="nextAll" return="jQuery">
   <title>.nextAll()</title>
   <signature>
     <added>1.2</added>
@@ -22,38 +23,35 @@
 </pre>
     <p>If we begin at the third item, we can find the elements which come after it:</p>
     <pre>$('li.third-item').nextAll().css('background-color', 'red');</pre>
-    <p>The result of this call is a red background behind items 4 and 5. Since we do not supply a selector expression, these following elements are unequivocally included as part of the object. If we had supplied one, the elements would be tested for a match before they were included.</p></longdesc>
-<example>
-  <desc>Locate all the divs after the first and give them a class.</desc>
-  <code><![CDATA[$("div:first").nextAll().addClass("after");]]></code>
-  <css><![CDATA[
+    <p>The result of this call is a red background behind items 4 and 5. Since we do not supply a selector expression, these following elements are unequivocally included as part of the object. If we had supplied one, the elements would be tested for a match before they were included.</p>
+  </longdesc>
+  <example>
+    <desc>Locate all the divs after the first and give them a class.</desc>
+    <code><![CDATA[$("div:first").nextAll().addClass("after");]]></code>
+    <css><![CDATA[
   div { width: 80px; height: 80px; background: #abc;
         border: 2px solid black; margin: 10px; float: left; }
   div.after { border-color: red; }
   ]]></css>
-
-  <height>150</height>
-
-  <html><![CDATA[<div>first</div>
+    <height>150</height>
+    <html><![CDATA[<div>first</div>
   <div>sibling<div>child</div></div>
   <div>sibling</div>
 
   <div>sibling</div>]]></html>
-</example>
-<example>
-  <desc>Locate all the paragraphs after the second child in the body and give them a class.</desc>
-  <code><![CDATA[
+  </example>
+  <example>
+    <desc>Locate all the paragraphs after the second child in the body and give them a class.</desc>
+    <code><![CDATA[
     $(":nth-child(1)").nextAll("p").addClass("after");
 ]]></code>
-  <css><![CDATA[
+    <css><![CDATA[
 div, p { width: 60px; height: 60px; background: #abc;
          border: 2px solid black; margin: 10px; float: left; }
 .after { border-color: red; }
 ]]></css>
-
-  <height>200</height>
-
-  <html><![CDATA[<p>p</p>
+    <height>200</height>
+    <html><![CDATA[<p>p</p>
 <div>div</div>
 <p>p</p>
 <p>p</p>
@@ -61,7 +59,7 @@ div, p { width: 60px; height: 60px; background: #abc;
 
 <p>p</p>
 <div>div</div>]]></html>
-</example>
-<category slug="traversing/tree-traversal"/>
-<category slug="version/1.2"/>
+  </example>
+  <category slug="traversing/tree-traversal"/>
+  <category slug="version/1.2"/>
 </entry>

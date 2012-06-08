@@ -1,4 +1,5 @@
-<entry type='method' name="jQuery.trim" return="String">
+<?xml version="1.0"?>
+<entry type="method" name="jQuery.trim" return="String">
   <title>jQuery.trim()</title>
   <signature>
     <added>1.0</added>
@@ -27,6 +28,6 @@
     <code><![CDATA[$.trim("    hello, how are you?    ");]]></code>
     <results><![CDATA["hello, how are you?"]]></results>
   </example>
-<category slug="utilities"/>
-<category slug="version/1.0"/>
+  <category slug="utilities"/>
+  <category slug="version/1.0"/>
 </entry>

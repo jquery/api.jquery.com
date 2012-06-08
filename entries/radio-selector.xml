@@ -1,19 +1,22 @@
-<entry type='selector'   name="radio" return="">
+<?xml version="1.0"?>
+<entry type="selector" name="radio" return="">
   <title>:radio Selector</title>
   <sample>:radio</sample>
-  <signature><added>1.0</added> </signature>
+  <signature>
+    <added>1.0</added>
+  </signature>
   <desc>Selects all  elements of type radio.</desc>
-  <longdesc><p><code>$(':radio')</code> is equivalent to <code>$('[type=radio]')</code>. As with other pseudo-class selectors (those that begin with a ":") it is recommended to precede it with a tag name or some other selector; otherwise, the universal selector ("*") is implied. In other words, the bare <code>$(':radio')</code> is equivalent to <code>$('*:radio')</code>, so <code>$('input:radio')</code> should be used instead. </p>
-  <p>To select a set of associated radio buttons, you might use: <code>$('input[name=gender]:radio')</code></p></longdesc>
-
+  <longdesc>
+    <p><code>$(':radio')</code> is equivalent to <code>$('[type=radio]')</code>. As with other pseudo-class selectors (those that begin with a ":") it is recommended to precede it with a tag name or some other selector; otherwise, the universal selector ("*") is implied. In other words, the bare <code>$(':radio')</code> is equivalent to <code>$('*:radio')</code>, so <code>$('input:radio')</code> should be used instead. </p>
+    <p>To select a set of associated radio buttons, you might use: <code>$('input[name=gender]:radio')</code></p>
+  </longdesc>
   <note id="jquery-selector-extension-alt" type="additional">
     <placeholder name="selector">:radio</placeholder>
     <placeholder name="alt">[type="radio"]</placeholder>
   </note>
-
-<example>
-  <desc>Finds all radio inputs.</desc>
-  <code><![CDATA[
+  <example>
+    <desc>Finds all radio inputs.</desc>
+    <code><![CDATA[
 var input = $("form input:radio")
             .wrap('<span></span>')
             .parent()
@@ -23,10 +26,10 @@ $("div").text("For this type jQuery found " + input.length + ".")
         .css("color", "red");
 $("form").submit(function () { return false; }); // so it won't submit
 ]]></code>
-  <css><![CDATA[
+    <css><![CDATA[
   textarea { height:25px; }
   ]]></css>
-  <html><![CDATA[<form>
+    <html><![CDATA[<form>
   <input type="button" value="Input Button"/>
   <input type="checkbox" />
 
@@ -49,8 +52,8 @@ $("form").submit(function () { return false; }); // so it won't submit
 
 <div>
 </div>]]></html>
-</example>
-<category slug="selectors/form-selectors"/>
-<category slug="selectors/jquery-selector-extensions"/>
-<category slug="version/1.0"/>
+  </example>
+  <category slug="selectors/form-selectors"/>
+  <category slug="selectors/jquery-selector-extensions"/>
+  <category slug="version/1.0"/>
 </entry>

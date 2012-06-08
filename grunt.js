@@ -208,8 +208,45 @@ grunt.registerTask( "build-resources", function() {
 	});
 });
 
+grunt.registerTask( "xmltidy", function() {
+	var task = this,
+		taskDone = task.async();
+	
+	// Only tidy files that are lint free
+	task.requires( "xmllint" );
+
+	grunt.utils.async.forEachSeries( entryFiles, function( fileName, fileDone )  {
+		grunt.verbose.write( "Tidying " + fileName + "..." );
+		grunt.utils.spawn({
+			cmd: "xmllint",
+			args: [ "--format", fileName ]
+		}, function( err, result ) {
+			if ( err ) {
+				grunt.verbose.error();
+				grunt.log.error( err );
+				fileDone();
+				return;
+			}
+			grunt.verbose.ok();
+
+			grunt.file.write( fileName, result );
+
+			fileDone();				
+		});
+	}, function() {
+		if ( task.errorCount ) {
+			grunt.warn( "Task \"" + task.name + "\" failed." );
+			taskDone();
+			return;
+		}
+		grunt.log.writeln( "Tidied " + entryFiles.length + " files." );
+		taskDone();
+	});
+});
+
 grunt.registerTask( "default", "build-wordpress" );
 grunt.registerTask( "build-wordpress", "clean lint xmllint build-pages build-entries build-categories build-resources" );
+grunt.registerTask( "tidy", "xmllint xmltidy" );
 grunt.registerTask( "deploy", "wordpress-deploy" );
 
 };

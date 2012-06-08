@@ -1,7 +1,10 @@
-<entry type='selector'   name="hidden" return="" >
+<?xml version="1.0"?>
+<entry type="selector" name="hidden" return="">
   <title>:hidden Selector</title>
   <sample>:hidden</sample>
-  <signature> <added>1.0</added> </signature>
+  <signature>
+    <added>1.0</added>
+  </signature>
   <desc>Selects all elements that are hidden.</desc>
   <longdesc>
     <p>Elements can be considered hidden for several reasons:</p>
@@ -14,11 +17,9 @@
     <p>Elements with <code>visibility: hidden</code> or <code>opacity: 0</code> are considered to be visible, since they still consume space in the layout. During animations that hide an element, the element is considered to be visible until the end of the animation. During animations to show an element, the element is considered to be visible at the start of the animation.</p>
     <p>How <code>:hidden</code> is determined was changed in jQuery 1.3.2. An element is assumed to be hidden if it or any of its parents consumes no space in the document. CSS visibility isn't taken into account (therefore <code>$(elem).css('visibility','hidden').is(':hidden') == false</code>). The <a href="http://docs.jquery.com/Release:jQuery_1.3.2#:visible.2F:hidden_Overhauled">release notes</a> outline the changes in more detail.</p>
   </longdesc>
-
   <note id="jquery-selector-extension" type="additional">
     <placeholder name="selector">:hidden</placeholder>
   </note>
-
   <example>
     <desc>Shows all hidden divs and counts hidden inputs.</desc>
     <code><![CDATA[
@@ -29,12 +30,12 @@ $("span:first").text("Found " + hiddenEls.length + " hidden elements total.");
 $("div:hidden").show(3000);
 $("span:last").text("Found " + $("input:hidden").length + " hidden inputs.");
 ]]></code>
-                    <css><![CDATA[
+    <css><![CDATA[
   div { width:70px; height:40px; background:#ee77ff; margin:5px; float:left; }
   span { display:block; clear:left; color:red; }
   .starthidden { display:none; }
   ]]></css>
-                    <html><![CDATA[<span></span>
+    <html><![CDATA[<span></span>
   <div></div>
   <div style="display:none;">Hider!</div>
   <div></div>
@@ -50,8 +51,8 @@ $("span:last").text("Found " + $("input:hidden").length + " hidden inputs.");
   <span>
 
   </span>]]></html>
-</example>
-<category slug="selectors/jquery-selector-extensions"/>
-<category slug="version/1.0"/>
-<category slug="selectors/visibility-filter-selectors"/>
+  </example>
+  <category slug="selectors/jquery-selector-extensions"/>
+  <category slug="version/1.0"/>
+  <category slug="selectors/visibility-filter-selectors"/>
 </entry>

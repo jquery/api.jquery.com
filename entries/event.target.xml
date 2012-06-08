@@ -1,10 +1,13 @@
-<entry type='property' name="event.target" return="Element">
+<?xml version="1.0"?>
+<entry type="property" name="event.target" return="Element">
   <title>event.target</title>
   <signature>
     <added>1.0</added>
   </signature>
   <desc> The DOM element that initiated the event.  </desc>
-  <longdesc> <p>The <code>target</code> property can be the element that registered for the event or a descendant of it.  It is often useful to compare <code>event.target</code> to <code>this</code> in order to determine if the event is being handled due to event bubbling. This property is very useful in event delegation, when events bubble.</p></longdesc>
+  <longdesc>
+    <p>The <code>target</code> property can be the element that registered for the event or a descendant of it.  It is often useful to compare <code>event.target</code> to <code>this</code> in order to determine if the event is being handled due to event bubbling. This property is very useful in event delegation, when events bubble.</p>
+  </longdesc>
   <example>
     <desc>Display the tag's name on click</desc>
     <code><![CDATA[$("body").click(function(event) {
@@ -46,7 +49,7 @@ $("ul").click(handler).find("ul").hide();]]></code>
     </ul>
   </li>
 </ul>]]></html>
-</example>
-<category slug="events/event-object"/>
-<category slug="version/1.0"/>
+  </example>
+  <category slug="events/event-object"/>
+  <category slug="version/1.0"/>
 </entry>

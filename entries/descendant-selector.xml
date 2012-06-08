@@ -1,4 +1,5 @@
-<entry type='selector'  name="descendant" return=""  >
+<?xml version="1.0"?>
+<entry type="selector" name="descendant" return="">
   <title>Descendant Selector ("ancestor descendant")</title>
   <sample>ancestor descendant</sample>
   <signature>
@@ -11,7 +12,9 @@
     </argument>
   </signature>
   <desc>Selects all elements that are descendants of a given ancestor.</desc>
-  <longdesc><p>A descendant of an element could be a child, grandchild, great-grandchild, and so on, of that element.</p></longdesc>
+  <longdesc>
+    <p>A descendant of an element could be a child, grandchild, great-grandchild, and so on, of that element.</p>
+  </longdesc>
   <example>
     <desc>Finds all input descendants of forms.</desc>
     <code><![CDATA[$("form input").css("border", "2px dotted blue");]]></code>
@@ -23,7 +26,7 @@
   div { color:red; }
   fieldset { margin:1px; padding:3px; }
   ]]></css>
-                    <html><![CDATA[<form>
+    <html><![CDATA[<form>
     <div>Form is surrounded by the green outline</div>
     <label>Child:</label>
     <input name="name" />
@@ -35,7 +38,7 @@
 
   </form>
   Sibling to form: <input name="none" />]]></html>
-</example>
-<category slug="selectors/hierarchy-selectors"/>
-<category slug="version/1.0"/>
+  </example>
+  <category slug="selectors/hierarchy-selectors"/>
+  <category slug="version/1.0"/>
 </entry>

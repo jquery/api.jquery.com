@@ -1,4 +1,5 @@
-<entry type='method' name="jQuery.type" return="String">
+<?xml version="1.0"?>
+<entry type="method" name="jQuery.type" return="String">
   <title>jQuery.type()</title>
   <signature>
     <added>1.4.3</added>
@@ -11,23 +12,10 @@
     <p>A number of techniques are used to determine the exact return value for an object. The [[Class]] is determined as follows:</p>
     <ul>
       <li>If the object is undefined or null, then "undefined" or "null" is returned accordingly.
-        <ul>
-          <li>jQuery.type(undefined) === "undefined"</li>
-          <li>jQuery.type() === "undefined"</li>
-          <li>jQuery.type(window.notDefined) === "undefined"</li>
-          <li>jQuery.type(null) === "null"</li>
-        </ul>
+        <ul><li>jQuery.type(undefined) === "undefined"</li><li>jQuery.type() === "undefined"</li><li>jQuery.type(window.notDefined) === "undefined"</li><li>jQuery.type(null) === "null"</li></ul>
       </li>
       <li>If the object has an internal [[Class]] equivalent to one of the browser's built-in objects, the associated name is returned. (<a href="http://perfectionkills.com/instanceof-considered-harmful-or-how-to-write-a-robust-isarray/">More details about this technique.</a>)
-        <ul>
-          <li>jQuery.type(true) === "boolean"</li>
-          <li>jQuery.type(3) === "number"</li>
-          <li>jQuery.type("test") === "string"</li>
-          <li>jQuery.type(function(){}) === "function"</li>
-          <li>jQuery.type([]) === "array"</li>
-          <li>jQuery.type(new Date()) === "date"</li>
-          <li>jQuery.type(/test/) === "regexp"</li>
-        </ul>
+        <ul><li>jQuery.type(true) === "boolean"</li><li>jQuery.type(3) === "number"</li><li>jQuery.type("test") === "string"</li><li>jQuery.type(function(){}) === "function"</li><li>jQuery.type([]) === "array"</li><li>jQuery.type(new Date()) === "date"</li><li>jQuery.type(/test/) === "regexp"</li></ul>
       </li>
       <li>Everything else returns "object" as its type.</li>
     </ul>
@@ -37,6 +25,6 @@
     <code><![CDATA[$("b").append( "" + jQuery.type(/test/) );]]></code>
     <html><![CDATA[Is it a RegExp? <b></b>]]></html>
   </example>
-<category slug="utilities"/>
-<category slug="version/1.4.3"/>
+  <category slug="utilities"/>
+  <category slug="version/1.4.3"/>
 </entry>

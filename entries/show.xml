@@ -1,18 +1,19 @@
-<entry type='method' name="show" return="jQuery">
+<?xml version="1.0"?>
+<entry type="method" name="show" return="jQuery">
   <title>.show()</title>
   <desc>Display the matched elements.</desc>
-<signature>
-  <added>1.0</added>
-</signature>
-<signature>
-  <added>1.0</added>
-  <argument name="duration" type="String,Number">
-    <desc>A string or number determining how long the animation will run.</desc>
-  </argument>
-  <argument name="callback" type="Callback" optional="true">
-    <desc>A function to call once the animation is complete.</desc>
-  </argument>
-</signature>
+  <signature>
+    <added>1.0</added>
+  </signature>
+  <signature>
+    <added>1.0</added>
+    <argument name="duration" type="String,Number">
+      <desc>A string or number determining how long the animation will run.</desc>
+    </argument>
+    <argument name="callback" type="Callback" optional="true">
+      <desc>A function to call once the animation is complete.</desc>
+    </argument>
+  </signature>
   <signature>
     <added>1.4.3</added>
     <argument name="duration" type="String,Number" optional="true">
@@ -50,34 +51,31 @@ $('#clickme').click(function() {
   });
 });</pre>
     <p class="image four-across">
-      <img src="/resources/0042_06_01.png" alt="" />
-      <img src="/resources/0042_06_02.png" alt="" />
-      <img src="/resources/0042_06_03.png" alt="" />
-      <img src="/resources/0042_06_04.png" alt="" />
+      <img src="/resources/0042_06_01.png" alt=""/>
+      <img src="/resources/0042_06_02.png" alt=""/>
+      <img src="/resources/0042_06_03.png" alt=""/>
+      <img src="/resources/0042_06_04.png" alt=""/>
     </p>
-
   </longdesc>
-
   <note id="jquery.fx.off" type="additional">
     <placeholder name="title">.show()</placeholder>
   </note>
-
-<example>
-  <desc>Animates all hidden paragraphs to show slowly, completing the animation within 600 milliseconds.</desc>
-  <code><![CDATA[
+  <example>
+    <desc>Animates all hidden paragraphs to show slowly, completing the animation within 600 milliseconds.</desc>
+    <code><![CDATA[
 $("button").click(function () {
   $("p").show("slow");
 });
 ]]></code>
-  <css><![CDATA[
+    <css><![CDATA[
 p { background:yellow; }
 ]]></css>
-  <html><![CDATA[<button>Show it</button>
+    <html><![CDATA[<button>Show it</button>
       <p style="display: none">Hello  2</p>]]></html>
-</example>
-<example>
-  <desc>Show the first div, followed by each next adjacent sibling div in order, with a 200ms animation. Each animation starts when the previous sibling div's animation ends.</desc>
-  <code><![CDATA[
+  </example>
+  <example>
+    <desc>Show the first div, followed by each next adjacent sibling div in order, with a 200ms animation. Each animation starts when the previous sibling div's animation ends.</desc>
+    <code><![CDATA[
 $("#showr").click(function () {
   $("div").first().show("fast", function showNext() {
     $(this).next("div").show("fast", showNext);
@@ -88,11 +86,11 @@ $("#hidr").click(function () {
   $("div").hide(1000);
 });
 ]]></code>
-<css><![CDATA[
+    <css><![CDATA[
   div { background:#def3ca; margin:3px; width:80px;
   display:none; float:left; text-align:center; }
   ]]></css>
-  <html><![CDATA[
+    <html><![CDATA[
   <button id="showr">Show</button>
   <button id="hidr">Hide</button>
   <div>Hello 3,</div>
@@ -100,10 +98,10 @@ $("#hidr").click(function () {
   <div>how</div>
   <div>are</div>
   <div>you?</div>]]></html>
-</example>
-<example>
-  <desc>Show all span and input elements with an animation. Change the text once the animation is done.</desc>
-  <code><![CDATA[
+  </example>
+  <example>
+    <desc>Show all span and input elements with an animation. Change the text once the animation is done.</desc>
+    <code><![CDATA[
 function doIt() {
   $("span,div").show("slow");
 }
@@ -121,12 +119,12 @@ $("form").submit(function () {
   return false;
 });
 ]]></code>
-<css><![CDATA[
+    <css><![CDATA[
   span { display:none; }
   div { display:none; }
   p { font-weight:bold; background-color:#fcd; }
   ]]></css>
-  <html><![CDATA[
+    <html><![CDATA[
 <button>Do it!</button>
 <span>Are you sure? (type 'yes' if you are) </span>
 <div>
@@ -136,9 +134,8 @@ $("form").submit(function () {
 </div>
 <p style="display:none;">I'm hidden...</p>
 ]]></html>
-</example>
-
-<category slug="effects/basics"/>
-<category slug="version/1.0"/>
-<category slug="version/1.4.3"/>
+  </example>
+  <category slug="effects/basics"/>
+  <category slug="version/1.0"/>
+  <category slug="version/1.4.3"/>
 </entry>

@@ -1,49 +1,50 @@
+<?xml version="1.0"?>
 <entries>
-<entry type='method' name="die" return="jQuery">
-  <title>.die()</title>
-  <deprecated>1.7</deprecated>
-  <desc><![CDATA[Remove all event handlers previously attached using <code>.live()</code> from the elements.]]></desc>
-  <signature>
-    <added>1.4.1</added>
-  </signature>
-  <longdesc>
-    <p>Any handler that has been attached with <code>.live()</code> can be removed with <code>.die()</code>. This method is analogous to calling <code>.unbind()</code> with no arguments, which is used to remove all handlers attached with <code>.bind()</code>.
+  <entry type="method" name="die" return="jQuery">
+    <title>.die()</title>
+    <deprecated>1.7</deprecated>
+    <desc><![CDATA[Remove all event handlers previously attached using <code>.live()</code> from the elements.]]></desc>
+    <signature>
+      <added>1.4.1</added>
+    </signature>
+    <longdesc>
+      <p>Any handler that has been attached with <code>.live()</code> can be removed with <code>.die()</code>. This method is analogous to calling <code>.unbind()</code> with no arguments, which is used to remove all handlers attached with <code>.bind()</code>.
     See the discussions of <code>.live()</code> and <code>.unbind()</code> for further details.</p>
-    <p><strong>As of jQuery 1.7</strong>, use of <code>.die()</code> (and its complementary method, <code>.live()</code>) is not recommended. Instead, use <a href="http://api.jquery.com/off/"><code>.off()</code></a> to remove event handlers bound with <a href="http://api.jquery.com/on/"><code>.on()</code></a></p>
-    <p><strong>Note:</strong> In order for .die() to function correctly, the selector used with it must match exactly the selector initially used with .live().</p>
-  </longdesc>
-<category slug="deprecated"/>
-<category slug="events/event-handler-attachment"/>
-<category slug="version/1.3"/>
-<category slug="version/1.4.1"/>
-<category slug="version/1.4.3"/>
-</entry>
-<entry type='method' name="die" return="jQuery">
-  <deprecated>1.7</deprecated>
-  <desc><![CDATA[Remove an event handler previously attached using <code>.live()</code> from the elements.]]></desc>
-  <signature>
-    <added>1.3</added>
-    <argument name="eventType" type="String">
-      <desc>A string containing a JavaScript event type, such as <code>click</code> or <code>keydown</code>.</desc>
-    </argument>
-    <argument name="handler" optional="true" type="String">
-      <desc>The function that is no longer to be executed.</desc>
-    </argument>
-  </signature>
- <signature>
-    <added>1.4.3</added>
-    <argument name="events" type="PlainObject">
-      <desc>A map of one or more event types, such as <code>click</code> or <code>keydown</code> and their corresponding functions that are no longer to be executed.</desc>
-    </argument>
-  </signature>
-<longdesc>
-<p>Any handler that has been attached with <code>.live()</code> can be removed with <code>.die()</code>. This method is analogous to <code>.unbind()</code>, which is used to remove handlers attached with <code>.bind()</code>.
+      <p><strong>As of jQuery 1.7</strong>, use of <code>.die()</code> (and its complementary method, <code>.live()</code>) is not recommended. Instead, use <a href="http://api.jquery.com/off/"><code>.off()</code></a> to remove event handlers bound with <a href="http://api.jquery.com/on/"><code>.on()</code></a></p>
+      <p><strong>Note:</strong> In order for .die() to function correctly, the selector used with it must match exactly the selector initially used with .live().</p>
+    </longdesc>
+    <category slug="deprecated"/>
+    <category slug="events/event-handler-attachment"/>
+    <category slug="version/1.3"/>
+    <category slug="version/1.4.1"/>
+    <category slug="version/1.4.3"/>
+  </entry>
+  <entry type="method" name="die" return="jQuery">
+    <deprecated>1.7</deprecated>
+    <desc><![CDATA[Remove an event handler previously attached using <code>.live()</code> from the elements.]]></desc>
+    <signature>
+      <added>1.3</added>
+      <argument name="eventType" type="String">
+        <desc>A string containing a JavaScript event type, such as <code>click</code> or <code>keydown</code>.</desc>
+      </argument>
+      <argument name="handler" optional="true" type="String">
+        <desc>The function that is no longer to be executed.</desc>
+      </argument>
+    </signature>
+    <signature>
+      <added>1.4.3</added>
+      <argument name="events" type="PlainObject">
+        <desc>A map of one or more event types, such as <code>click</code> or <code>keydown</code> and their corresponding functions that are no longer to be executed.</desc>
+      </argument>
+    </signature>
+    <longdesc>
+      <p>Any handler that has been attached with <code>.live()</code> can be removed with <code>.die()</code>. This method is analogous to <code>.unbind()</code>, which is used to remove handlers attached with <code>.bind()</code>.
 See the discussions of <code>.live()</code> and <code>.unbind()</code> for further details.</p>
-<p><strong>Note:</strong> In order for <code>.die()</code> to function correctly, the selector used with it must match exactly the selector initially used with <code>.live()</code>.</p>
-</longdesc>
-            <example>
-                <desc>Can bind and unbind events to the colored button.</desc>
-                <code><![CDATA[
+      <p><strong>Note:</strong> In order for <code>.die()</code> to function correctly, the selector used with it must match exactly the selector initially used with <code>.live()</code>.</p>
+    </longdesc>
+    <example>
+      <desc>Can bind and unbind events to the colored button.</desc>
+      <code><![CDATA[
 
 function aClick() {
   $("div").show().fadeOut("slow");
@@ -58,38 +59,38 @@ $("#unbind").click(function () {
 });
 
 ]]></code>
-                <css><![CDATA[
+      <css><![CDATA[
 button { margin:5px; }
 button#theone { color:red; background:yellow; }
 ]]></css>
-                <html><![CDATA[<button id="theone">Does nothing...</button>
+      <html><![CDATA[<button id="theone">Does nothing...</button>
 <button id="bind">Bind Click</button>
 <button id="unbind">Unbind Click</button>
 
 <div style="display:none;">Click!</div>]]></html>
-            </example>
-            <example>
-                <desc>To unbind all live events from all paragraphs, write:</desc>
-                <code><![CDATA[$("p").die()]]></code>
-            </example>
-            <example>
-                <desc>To unbind all live click events from all paragraphs, write:</desc>
-                <code><![CDATA[$("p").die( "click" )]]></code>
-            </example>
-            <example>
-                <desc>To unbind just one previously bound handler, pass the function in as the second argument:</desc>
-                <code><![CDATA[var foo = function () {
+    </example>
+    <example>
+      <desc>To unbind all live events from all paragraphs, write:</desc>
+      <code><![CDATA[$("p").die()]]></code>
+    </example>
+    <example>
+      <desc>To unbind all live click events from all paragraphs, write:</desc>
+      <code><![CDATA[$("p").die( "click" )]]></code>
+    </example>
+    <example>
+      <desc>To unbind just one previously bound handler, pass the function in as the second argument:</desc>
+      <code><![CDATA[var foo = function () {
 // code to handle some kind of event
 };
 
 $("p").live("click", foo); // ... now foo will be called when paragraphs are clicked ...
 
 $("p").die("click", foo); // ... foo will no longer be called.]]></code>
-            </example>
-<category slug="deprecated"/>
-<category slug="events/event-handler-attachment"/>
-<category slug="version/1.3"/>
-<category slug="version/1.4.1"/>
-<category slug="version/1.4.3"/>
-</entry>
+    </example>
+    <category slug="deprecated"/>
+    <category slug="events/event-handler-attachment"/>
+    <category slug="version/1.3"/>
+    <category slug="version/1.4.1"/>
+    <category slug="version/1.4.3"/>
+  </entry>
 </entries>

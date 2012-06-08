@@ -1,4 +1,5 @@
-<entry type='method' name="event.isDefaultPrevented" return="Boolean">
+<?xml version="1.0"?>
+<entry type="method" name="event.isDefaultPrevented" return="Boolean">
   <title>event.isDefaultPrevented()</title>
   <signature>
     <added>1.3</added>
@@ -13,6 +14,6 @@
   alert( event.isDefaultPrevented() ); // true
 });  ]]></code>
   </example>
-<category slug="events/event-object"/>
-<category slug="version/1.3"/>
+  <category slug="events/event-object"/>
+  <category slug="version/1.3"/>
 </entry>

@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <entry name="callbacks.fired" type="method" return="Boolean">
   <title>callbacks.fired()</title>
   <signature>
@@ -5,9 +6,9 @@
   </signature>
   <desc>Determine if the callbacks have already been called at least once.</desc>
   <longdesc>
-<h2 id="example-1">Example</h2>
-<p>Using <code>callbacks.fired()</code> to determine if the callbacks in a list have been called at least once:</p>
-<pre>
+    <h2 id="example-1">Example</h2>
+    <p>Using <code>callbacks.fired()</code> to determine if the callbacks in a list have been called at least once:</p>
+    <pre>
 // a sample logging function to be added to a callbacks list
 var foo = function( value ){
     console.log( 'foo:' + value );
@@ -26,6 +27,6 @@ callbacks.fire( 'world '); // outputs: 'foo: world'
 console.log( callbacks.fired() );
 </pre>
   </longdesc>
-<category slug="callbacks-object"/>
-<category slug="version/1.7"/>
+  <category slug="callbacks-object"/>
+  <category slug="version/1.7"/>
 </entry>

@@ -1,4 +1,5 @@
-<entry type='method' name="ajaxStop" return="jQuery">
+<?xml version="1.0"?>
+<entry type="method" name="ajaxStop" return="jQuery">
   <title>.ajaxStop()</title>
   <desc><![CDATA[Register a handler to be called when all Ajax requests have completed. This is an <a href='http://docs.jquery.com/Ajax_Events'>Ajax Event</a>.]]></desc>
   <signature>
@@ -30,6 +31,6 @@
       $(this).hide();
 });]]></code>
   </example>
-<category slug="ajax/global-ajax-event-handlers"/>
-<category slug="version/1.0"/>
+  <category slug="ajax/global-ajax-event-handlers"/>
+  <category slug="version/1.0"/>
 </entry>

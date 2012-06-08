@@ -1,13 +1,14 @@
-<entry type='property' name="event.data">
+<?xml version="1.0"?>
+<entry type="property" name="event.data">
   <title>event.data</title>
   <signature>
     <added>1.1</added>
   </signature>
   <desc>An optional data map passed to an event method when the current executing handler is bound.  </desc>
-  <longdesc></longdesc>
+  <longdesc/>
   <example>
     <desc>Within a <code>for</code> loop, pass the value of <code>i</code> to the <code>.on()</code> method so that the current iteration's value is preserved. </desc>
-<html><![CDATA[
+    <html><![CDATA[
 <button> 0 </button>
 <button> 1 </button>
 <button> 2 </button>
@@ -16,7 +17,7 @@
 
 <div id="log"></div>
 ]]></html>
-<code><![CDATA[
+    <code><![CDATA[
 var logDiv = $("#log");
 
 /* Note: This code is for demonstration purposes only. */
@@ -31,7 +32,7 @@ for (var i = 0; i < 5; i++) {
   });
 }
 ]]></code>
-</example>
-<category slug="events/event-object"/>
-<category slug="version/1.1"/>
+  </example>
+  <category slug="events/event-object"/>
+  <category slug="version/1.1"/>
 </entry>

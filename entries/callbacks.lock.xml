@@ -1,10 +1,11 @@
+<?xml version="1.0"?>
 <entry name="callbacks.lock" type="method" return="undefined">
   <title>callbacks.lock()</title>
   <signature>
     <added>1.7</added>
   </signature>
   <desc>Lock a callback list in its current state.</desc>
-  <longdesc></longdesc>
+  <longdesc/>
   <example>
     <desc>Using <code>callbacks.lock()</code> to lock a callback list to avoid further changes being made to the list state:</desc>
     <code><![CDATA[// a sample logging function to be added to a callbacks list
@@ -31,8 +32,6 @@ callbacks.fire( 'world' );
 // were called so 'world' isn't logged
 ]]></code>
   </example>
-
-
-<category slug="callbacks-object"/>
-<category slug="version/1.7"/>
+  <category slug="callbacks-object"/>
+  <category slug="version/1.7"/>
 </entry>

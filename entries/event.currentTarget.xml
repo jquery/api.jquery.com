@@ -1,18 +1,22 @@
-<entry type='property' name="event.currentTarget" return="Element">
+<?xml version="1.0"?>
+<entry type="property" name="event.currentTarget" return="Element">
   <title>event.currentTarget</title>
   <signature>
     <added>1.3</added>
   </signature>
   <desc> The current DOM element within the event bubbling phase.  </desc>
-  <longdesc><p>This property will typically be equal to the <code>this</code> of the function.</p>
-  <p><em>If you are using <a href="/jQuery.proxy">jQuery.proxy</a> or another form of scope manipulation, <code>this</code> will be equal to whatever context you have provided, not <code>event.currentTarget</code></em></p>
-</longdesc>
-<example>
-  <desc>Alert that currentTarget matches the `this` keyword.</desc>
-  <code><![CDATA[$("p").click(function(event) {
+  <longdesc>
+    <p>This property will typically be equal to the <code>this</code> of the function.</p>
+    <p>
+      <em>If you are using <a href="/jQuery.proxy">jQuery.proxy</a> or another form of scope manipulation, <code>this</code> will be equal to whatever context you have provided, not <code>event.currentTarget</code></em>
+    </p>
+  </longdesc>
+  <example>
+    <desc>Alert that currentTarget matches the `this` keyword.</desc>
+    <code><![CDATA[$("p").click(function(event) {
   alert( event.currentTarget === this ); // true
 });  ]]></code>
-</example>
-<category slug="events/event-object"/>
-<category slug="version/1.3"/>
+  </example>
+  <category slug="events/event-object"/>
+  <category slug="version/1.3"/>
 </entry>

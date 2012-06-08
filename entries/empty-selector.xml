@@ -1,7 +1,10 @@
-<entry type='selector'   name="empty" return=""  >
+<?xml version="1.0"?>
+<entry type="selector" name="empty" return="">
   <title>:empty Selector</title>
   <sample>:empty</sample>
-  <signature><added>1.0</added> </signature>
+  <signature>
+    <added>1.0</added>
+  </signature>
   <desc>Select all elements that have no children (including text nodes).</desc>
   <longdesc>
     <p>This is the inverse of <code>:parent</code>. </p>
@@ -21,7 +24,7 @@
 
     <tr><td></td><td>TD#5</td></tr>
   </table>]]></html>
-</example>
-<category slug="selectors/content-filter-selector"/>
-<category slug="version/1.0"/>
+  </example>
+  <category slug="selectors/content-filter-selector"/>
+  <category slug="version/1.0"/>
 </entry>

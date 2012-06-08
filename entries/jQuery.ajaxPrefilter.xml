@@ -1,4 +1,5 @@
-<entry type='method' name="jQuery.ajaxPrefilter" return="undefined">
+<?xml version="1.0"?>
+<entry type="method" name="jQuery.ajaxPrefilter" return="undefined">
   <title>jQuery.ajaxPrefilter()</title>
   <desc><![CDATA[Handle custom Ajax options or modify existing options before each request is sent and before they are processed by <code>$.ajax()</code>.]]></desc>
   <signature>
@@ -11,26 +12,20 @@
     </argument>
   </signature>
   <longdesc>
-
-<p>A typical prefilter registration using <code>$.ajaxPrefilter()</code> looks like this:</p>
-
-<pre>
+    <p>A typical prefilter registration using <code>$.ajaxPrefilter()</code> looks like this:</p>
+    <pre>
 $.ajaxPrefilter( function( options, originalOptions, jqXHR ) {
   // Modify options, control originalOptions, store jqXHR, etc
 });
 </pre>
-
-<p>where:</p>
-
-<ul>
-<li><code>options</code> are the request options</li>
-<li><code>originalOptions</code> are the options as provided to the ajax method, unmodified and, thus, without defaults from <code>ajaxSettings</code></li>
-<li><code>jqXHR</code> is the jqXHR object of the request</li>
-</ul>
-
-<p>Prefilters are a perfect fit when custom options need to be handled.  Given the following code, for example, a call to <code>$.ajax()</code> would automatically abort a request to the same URL if the custom <code>abortOnRetry</code> option is set to <code>true</code>:</p>
-
-<pre>
+    <p>where:</p>
+    <ul>
+      <li><code>options</code> are the request options</li>
+      <li><code>originalOptions</code> are the options as provided to the ajax method, unmodified and, thus, without defaults from <code>ajaxSettings</code></li>
+      <li><code>jqXHR</code> is the jqXHR object of the request</li>
+    </ul>
+    <p>Prefilters are a perfect fit when custom options need to be handled.  Given the following code, for example, a call to <code>$.ajax()</code> would automatically abort a request to the same URL if the custom <code>abortOnRetry</code> option is set to <code>true</code>:</p>
+    <pre>
 var currentRequests = {};
 
 $.ajaxPrefilter(function( options, originalOptions, jqXHR ) {
@@ -42,10 +37,8 @@ $.ajaxPrefilter(function( options, originalOptions, jqXHR ) {
   }
 });
 </pre>
-
-<p>Prefilters can also be used to modify existing options. For example, the following proxies cross-domain requests through http://mydomain.net/proxy/:</p>
-
-<pre>
+    <p>Prefilters can also be used to modify existing options. For example, the following proxies cross-domain requests through http://mydomain.net/proxy/:</p>
+    <pre>
 $.ajaxPrefilter( function( options ) {
   if ( options.crossDomain ) {
     options.url = "http://mydomain.net/proxy/" + encodeURIComponent( options.url );
@@ -53,27 +46,22 @@ $.ajaxPrefilter( function( options ) {
   }
 });
 </pre>
-
-<p>If the optional <code>dataTypes</code> argument is supplied, the prefilter will be only be applied to requests with the indicated dataTypes. For example, the following only applies the given prefilter to JSON and script requests:</p>
-
-<pre>
+    <p>If the optional <code>dataTypes</code> argument is supplied, the prefilter will be only be applied to requests with the indicated dataTypes. For example, the following only applies the given prefilter to JSON and script requests:</p>
+    <pre>
 $.ajaxPrefilter( "json script", function( options, originalOptions, jqXHR ) {
   // Modify options, control originalOptions, store jqXHR, etc
 });
 </pre>
-
-<p>The <code>$.ajaxPrefilter()</code> method can also redirect a request to another dataType by returning that dataType. For example, the following sets a request as "script" if the URL has some specific properties defined in a custom <code>isActuallyScript()</code> function:</p>
-
-<pre>
+    <p>The <code>$.ajaxPrefilter()</code> method can also redirect a request to another dataType by returning that dataType. For example, the following sets a request as "script" if the URL has some specific properties defined in a custom <code>isActuallyScript()</code> function:</p>
+    <pre>
 $.ajaxPrefilter(function( options ) {
   if ( isActuallyScript( options.url ) ) {
     return "script";
   }
 });
 </pre>
-
-<p>This would ensure not only that the request is considered "script" but also that all the prefilters specifically attached to the script dataType would be applied to it.</p>
+    <p>This would ensure not only that the request is considered "script" but also that all the prefilters specifically attached to the script dataType would be applied to it.</p>
   </longdesc>
-<category slug="ajax/low-level-interface"/>
-<category slug="version/1.5"/>
+  <category slug="ajax/low-level-interface"/>
+  <category slug="version/1.5"/>
 </entry>

@@ -1,4 +1,5 @@
-<entry type='method' name="jQuery.merge" return="Array">
+<?xml version="1.0"?>
+<entry type="method" name="jQuery.merge" return="Array">
   <title>jQuery.merge()</title>
   <desc>Merge the contents of two arrays together into the first array. </desc>
   <signature>
@@ -17,25 +18,24 @@
     <p>This shortcut creates a new, empty array and merges the contents of oldArray into it, effectively cloning the array.</p>
     <p>Prior to jQuery 1.4, the arguments should be true Javascript Array objects; use <code>$.makeArray</code> if they are not.</p>
   </longdesc>
-
-<example>
-  <desc>Merges two arrays, altering the first argument.</desc>
-  <code><![CDATA[$.merge( [0,1,2], [2,3,4] )]]></code>
-  <results><![CDATA[[0,1,2,2,3,4] ]]></results>
-</example>
-<example>
-  <desc>Merges two arrays, altering the first argument.</desc>
-  <code><![CDATA[$.merge( [3,2,1], [4,3,2] )  ]]></code>
-  <results><![CDATA[[3,2,1,4,3,2] ]]></results>
-</example>
-<example>
-  <desc>Merges two arrays, but uses a copy, so the original isn't altered.</desc>
-  <code><![CDATA[var first = ['a','b','c'];
+  <example>
+    <desc>Merges two arrays, altering the first argument.</desc>
+    <code><![CDATA[$.merge( [0,1,2], [2,3,4] )]]></code>
+    <results><![CDATA[[0,1,2,2,3,4] ]]></results>
+  </example>
+  <example>
+    <desc>Merges two arrays, altering the first argument.</desc>
+    <code><![CDATA[$.merge( [3,2,1], [4,3,2] )  ]]></code>
+    <results><![CDATA[[3,2,1,4,3,2] ]]></results>
+  </example>
+  <example>
+    <desc>Merges two arrays, but uses a copy, so the original isn't altered.</desc>
+    <code><![CDATA[var first = ['a','b','c'];
 var second = ['d','e','f'];
 $.merge( $.merge([],first), second);
 ]]></code>
-  <results><![CDATA[["a","b","c","d","e","f"] ]]></results>
-</example>
-<category slug="utilities"/>
-<category slug="version/1.0"/>
+    <results><![CDATA[["a","b","c","d","e","f"] ]]></results>
+  </example>
+  <category slug="utilities"/>
+  <category slug="version/1.0"/>
 </entry>

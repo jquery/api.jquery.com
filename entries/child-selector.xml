@@ -1,5 +1,6 @@
-<entry type='selector'  name="child" return="" >
-  <title>Child Selector ("parent > child")</title>
+<?xml version="1.0"?>
+<entry type="selector" name="child" return="">
+  <title>Child Selector ("parent &gt; child")</title>
   <sample>parent &gt; child</sample>
   <signature>
     <added>1.0</added>
@@ -11,9 +12,12 @@
     </argument>
   </signature>
   <desc>Selects all direct child elements specified by "child" of elements specified by "parent".</desc>
-  <longdesc><p>As a CSS selector, the child combinator is supported by all modern web browsers including Safari, Firefox, Opera, Chrome, and Internet Explorer 7 and above, but notably not by Internet Explorer versions 6 and below. However, in jQuery, this selector (along with all others) works across all supported browsers, including IE6.</p>
+  <longdesc>
+    <p>As a CSS selector, the child combinator is supported by all modern web browsers including Safari, Firefox, Opera, Chrome, and Internet Explorer 7 and above, but notably not by Internet Explorer versions 6 and below. However, in jQuery, this selector (along with all others) works across all supported browsers, including IE6.</p>
     <p>The child combinator (E <strong>&gt;</strong> F) can be thought of as a more specific form of the descendant combinator (E F) in that it selects only first-level descendants.</p>
-<blockquote><p><strong>Note: </strong>The <code>$("&gt; elem", context)</code> selector will be deprecated in a future release. Its usage is thus discouraged in lieu of using alternative selectors.</p></blockquote>
+    <blockquote>
+      <p><strong>Note: </strong>The <code>$("&gt; elem", context)</code> selector will be deprecated in a future release. Its usage is thus discouraged in lieu of using alternative selectors.</p>
+    </blockquote>
   </longdesc>
   <example>
     <desc>Places a border around all list items that are children of &lt;ul class="topnav"&gt; .</desc>
@@ -31,6 +35,6 @@ body { font-size:14px; }
 </ul>
 ]]></html>
   </example>
-<category slug="selectors/hierarchy-selectors"/>
-<category slug="version/1.0"/>
+  <category slug="selectors/hierarchy-selectors"/>
+  <category slug="version/1.0"/>
 </entry>

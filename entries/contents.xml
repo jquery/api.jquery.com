@@ -1,13 +1,15 @@
-<entry type='method' name="contents" return="jQuery">
+<?xml version="1.0"?>
+<entry type="method" name="contents" return="jQuery">
   <title>.contents()</title>
   <signature>
     <added>1.2</added>
   </signature>
   <desc>Get the children of each element in the set of matched elements, including text and comment nodes.</desc>
-  <longdesc><p>Given a jQuery object that represents a set of DOM elements, the <code>.contents()</code> method allows us to search throughthe immediate children of these elements in the DOM tree and construct a new jQuery object from the matching elements. The <code>.contents()</code> and <code>.children()</code> methods are similar, except that the former includes text nodes as well as HTML elements in the resulting jQuery object.</p>
-<p>The <code>.contents()</code> method can also be used to get the content document of an iframe, if the iframe is on the same domain as the main page.</p>
-<p>Consider a simple <code>&lt;div&gt;</code> with a number of text nodes, each of which is separated by two line break elements (<code>&lt;br /&gt;</code>):</p>
-<pre>&lt;div class="container"&gt;
+  <longdesc>
+    <p>Given a jQuery object that represents a set of DOM elements, the <code>.contents()</code> method allows us to search throughthe immediate children of these elements in the DOM tree and construct a new jQuery object from the matching elements. The <code>.contents()</code> and <code>.children()</code> methods are similar, except that the former includes text nodes as well as HTML elements in the resulting jQuery object.</p>
+    <p>The <code>.contents()</code> method can also be used to get the content document of an iframe, if the iframe is on the same domain as the main page.</p>
+    <p>Consider a simple <code>&lt;div&gt;</code> with a number of text nodes, each of which is separated by two line break elements (<code>&lt;br /&gt;</code>):</p>
+    <pre>&lt;div class="container"&gt;
   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed 
   do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
   &lt;br /&gt;&lt;br /&gt;
@@ -18,8 +20,8 @@
   esse cillum dolore eu fugiat nulla pariatur.
 &lt;/div&gt;
 </pre>
-<p>We can employ the <code>.contents()</code> method to help convert this blob of text into three well-formed paragraphs:</p>
-<pre>
+    <p>We can employ the <code>.contents()</code> method to help convert this blob of text into three well-formed paragraphs:</p>
+    <pre>
 $('.container').contents().filter(function() {
   return this.nodeType == 3;
 })
@@ -28,8 +30,8 @@ $('.container').contents().filter(function() {
 .filter('br')
   .remove();
 </pre>
-<p>This code first retrieves the contents  of <code>&lt;div class="container"&gt;</code> and then filters it for text nodes, which are wrapped in paragraph tags. This is accomplished by testing the <a href="https://developer.mozilla.org/en/nodeType"><code>.nodeType</code> property</a> of the element. This DOM property holds a numeric code indicating the node's type; text nodes use the code 3. The contents are again filtered, this time for <code>&lt;br /&gt;</code> elements, and these elements are removed.</p>
-</longdesc>
+    <p>This code first retrieves the contents  of <code>&lt;div class="container"&gt;</code> and then filters it for text nodes, which are wrapped in paragraph tags. This is accomplished by testing the <a href="https://developer.mozilla.org/en/nodeType"><code>.nodeType</code> property</a> of the element. This DOM property holds a numeric code indicating the node's type; text nodes use the code 3. The contents are again filtered, this time for <code>&lt;br /&gt;</code> elements, and these elements are removed.</p>
+  </longdesc>
   <example>
     <desc>Find all the text nodes inside a paragraph and wrap them with a bold tag.</desc>
     <code><![CDATA[$("p").contents().filter(function(){ return this.nodeType != 1; }).wrap("<b/>");]]></code>
@@ -40,7 +42,6 @@ $('.container').contents().filter(function() {
     <code><![CDATA[$("#frameDemo").contents().find("a").css("background-color","#BADA55");]]></code>
     <html><![CDATA[<iframe src="http://api.jquery.com/" width="80%" height="600" id='frameDemo'></iframe> ]]></html>
   </example>
-
   <category slug="traversing/miscellaneous-traversal"/>
-<category slug="version/1.2"/>
+  <category slug="version/1.2"/>
 </entry>

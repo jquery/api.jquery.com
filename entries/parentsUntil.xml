@@ -1,4 +1,5 @@
-<entry type='method' name="parentsUntil" return="jQuery">
+<?xml version="1.0"?>
+<entry type="method" name="parentsUntil" return="jQuery">
   <title>.parentsUntil()</title>
   <signature>
     <added>1.4</added>
@@ -18,7 +19,6 @@
       <desc>A string containing a selector expression to match elements against.</desc>
     </argument>
   </signature>
-
   <desc>Get the ancestors of each element in the current set of matched elements, up to but not including the element matched by the selector, DOM node, or jQuery object.</desc>
   <longdesc>
     <p>Given a selector expression that represents a set of DOM elements, the <code>.parentsUntil()</code> method traverses through the ancestors of these elements until it reaches an element matched by the selector passed in the method's argument. The resulting jQuery object contains all of the ancestors up to but not including the one matched by the <code>.parentsUntil()</code> selector.</p>
@@ -26,11 +26,10 @@
     <p><strong>As of jQuery 1.6</strong>, A DOM node or jQuery object, instead of a selector, may be used for the first <strong>.parentsUntil()</strong> argument.</p>
     <p>The method optionally accepts a selector expression for its second argument. If this argument is supplied, the elements will be filtered by testing whether they match it.</p>
   </longdesc>
-<example>
-
-  <height>220px</height>
-  <desc>Find the ancestors of &lt;li class="item-a"&gt; up to &lt;ul class="level-1"&gt; and give them a red background color. Also, find ancestors of &lt;li class="item-2"&gt; that have a class of "yes" up to &lt;ul class="level-1"&gt; and give them a green border.</desc>
-  <code><![CDATA[
+  <example>
+    <height>220px</height>
+    <desc>Find the ancestors of &lt;li class="item-a"&gt; up to &lt;ul class="level-1"&gt; and give them a red background color. Also, find ancestors of &lt;li class="item-2"&gt; that have a class of "yes" up to &lt;ul class="level-1"&gt; and give them a green border.</desc>
+    <code><![CDATA[
 $("li.item-a").parentsUntil(".level-1")
   .css("background-color", "red");
 
@@ -38,7 +37,7 @@ $("li.item-2").parentsUntil( $("ul.level-1"), ".yes" )
   .css("border", "3px solid green");
 
 ]]></code>
-  <html><![CDATA[
+    <html><![CDATA[
 <ul class="level-1 yes">
   <li class="item-i">I</li>
   <li class="item-ii">II
@@ -56,8 +55,8 @@ $("li.item-2").parentsUntil( $("ul.level-1"), ".yes" )
   </li>
   <li class="item-iii">III</li>
 </ul>]]></html>
-</example>
-<category slug="traversing/tree-traversal"/>
-<category slug="version/1.4"/>
-<category slug="version/1.6"/>
+  </example>
+  <category slug="traversing/tree-traversal"/>
+  <category slug="version/1.4"/>
+  <category slug="version/1.6"/>
 </entry>

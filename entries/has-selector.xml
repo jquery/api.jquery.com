@@ -1,30 +1,32 @@
-<entry type='selector' name="has" return="">
+<?xml version="1.0"?>
+<entry type="selector" name="has" return="">
   <title>:has() Selector</title>
   <sample>:has(selector)</sample>
-  <signature><added>1.1.4</added>
-  <argument name="selector" type="Selector">
-    <desc>Any selector.</desc>
-  </argument>
-</signature>
-<desc>Selects elements which contain at least one element that matches the specified selector.</desc>
-<longdesc><p>The expression <code>$('div:has(p)')</code> matches a <code>&lt;div&gt;</code> if a <code>&lt;p&gt;</code> exists anywhere among its descendants, not just as a direct child.</p> </longdesc>
-
-<note id="jquery-selector-extension-alt" type="additional">
-  <placeholder name="selector">:has()</placeholder>
-  <placeholder name="alt">$("your-pure-css-selector").has(selector/DOMElement)</placeholder>
-</note>
-
-<example>
-  <desc>Adds the class "test" to all divs that have a paragraph inside of them.</desc>
-  <code><![CDATA[$("div:has(p)").addClass("test");]]></code>
-  <html><![CDATA[<div><p>Hello in a paragraph</p></div>
+  <signature>
+    <added>1.1.4</added>
+    <argument name="selector" type="Selector">
+      <desc>Any selector.</desc>
+    </argument>
+  </signature>
+  <desc>Selects elements which contain at least one element that matches the specified selector.</desc>
+  <longdesc>
+    <p>The expression <code>$('div:has(p)')</code> matches a <code>&lt;div&gt;</code> if a <code>&lt;p&gt;</code> exists anywhere among its descendants, not just as a direct child.</p>
+  </longdesc>
+  <note id="jquery-selector-extension-alt" type="additional">
+    <placeholder name="selector">:has()</placeholder>
+    <placeholder name="alt">$("your-pure-css-selector").has(selector/DOMElement)</placeholder>
+  </note>
+  <example>
+    <desc>Adds the class "test" to all divs that have a paragraph inside of them.</desc>
+    <code><![CDATA[$("div:has(p)").addClass("test");]]></code>
+    <html><![CDATA[<div><p>Hello in a paragraph</p></div>
 
   <div>Hello again! (with no paragraph)</div>]]></html>
-  <css><![CDATA[
+    <css><![CDATA[
   .test{ border: 3px inset red; }
   ]]></css>
-</example>
-<category slug="selectors/content-filter-selector"/>
-<category slug="selectors/jquery-selector-extensions"/>
-<category slug="version/1.1.4"/>
+  </example>
+  <category slug="selectors/content-filter-selector"/>
+  <category slug="selectors/jquery-selector-extensions"/>
+  <category slug="version/1.1.4"/>
 </entry>

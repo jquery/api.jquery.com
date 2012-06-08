@@ -1,4 +1,5 @@
-<entry type='method' name="keypress" return="jQuery">
+<?xml version="1.0"?>
+<entry type="method" name="keypress" return="jQuery">
   <title>.keypress()</title>
   <desc>Bind an event handler to the "keypress" JavaScript event, or trigger that event on an element.</desc>
   <signature>
@@ -19,7 +20,6 @@
   <signature>
     <added>1.0</added>
   </signature>
-
   <longdesc>
     <p><strong>Note:</strong> as the <code>keypress</code> event isn't covered by any official specification, the actual behavior encountered when using it may differ across browsers, browser versions, and platforms.</p>
     <p>This method is a shortcut for <code>.bind("keypress", handler)</code> in the first two variations, and <code>.trigger("keypress")</code> in the third.</p>
@@ -39,7 +39,9 @@
   alert("Handler for .keypress() called.");
 });</pre>
     <p>Now when the insertion point is inside the field, pressing a key displays the alert:</p>
-    <p><span class="output">Handler for .keypress() called.</span></p>
+    <p>
+      <span class="output">Handler for .keypress() called.</span>
+    </p>
     <p>The message repeats if the key is held down. To trigger the event manually, apply <code>.keypress()</code> without an argument::</p>
     <pre>$('#other').click(function() {
   $("#target").keypress();
@@ -49,9 +51,9 @@
     <p>To determine which character was entered, examine the <code>event</code> object that is passed to the handler function. While browsers use differing properties to store this information, jQuery normalizes the <code>.which</code> property so you can reliably use it to retrieve the character code.</p>
     <p>Note that <code>keydown</code> and <code>keyup</code> provide a code indicating which key is pressed, while <code>keypress</code> indicates which character was entered. For example, a lowercase "a" will be reported as 65 by <code>keydown</code> and <code>keyup</code>, but as 97 by <code>keypress</code>. An uppercase "A" is reported as 65 by all events. Because of this distinction, when catching special keystrokes such as arrow keys, <code>.keydown()</code> or <code>.keyup()</code> is a better choice.</p>
   </longdesc>
-<example>
-  <desc>Show the event object when a key is pressed in the input. Note: This demo relies on a simple $.print() plugin (http://api.jquery.com/scripts/events.js) for the event object's output.</desc>
-  <code><![CDATA[
+  <example>
+    <desc>Show the event object when a key is pressed in the input. Note: This demo relies on a simple $.print() plugin (http://api.jquery.com/scripts/events.js) for the event object's output.</desc>
+    <code><![CDATA[
 var xTriggered = 0;
 $("#target").keypress(function(event) {
   if ( event.which == 13 ) {
@@ -66,7 +68,7 @@ $("#target").keypress(function(event) {
 $("#other").click(function() {
   $("#target").keypress();
 });]]></code>
-  <css><![CDATA[
+    <css><![CDATA[
 fieldset { margin-bottom: 1em; }
 input { display: block; margin-bottom: .25em; }
 #print-output {
@@ -80,10 +82,8 @@ input { display: block; margin-bottom: .25em; }
 }
 
 ]]></css>
-
-  <height>460</height>
-
-  <html><![CDATA[<form>
+    <height>460</height>
+    <html><![CDATA[<form>
   <fieldset>
     <label for="target">Type Something:</label>
     <input id="target" type="text" />
@@ -94,8 +94,8 @@ input { display: block; margin-bottom: .25em; }
 </button>
 <script src="http://api.jquery.com/scripts/events.js"></script>
   ]]></html>
-</example>
-<category slug="events/keyboard-events"/>
-<category slug="version/1.0"/>
-<category slug="version/1.4.3"/>
+  </example>
+  <category slug="events/keyboard-events"/>
+  <category slug="version/1.0"/>
+  <category slug="version/1.4.3"/>
 </entry>

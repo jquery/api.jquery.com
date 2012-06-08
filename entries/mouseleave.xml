@@ -1,4 +1,5 @@
-<entry type='method' name="mouseleave" return="jQuery">
+<?xml version="1.0"?>
+<entry type="method" name="mouseleave" return="jQuery">
   <title>.mouseleave()</title>
   <desc>Bind an event handler to be fired when the mouse leaves an element, or trigger that handler on an element.</desc>
   <signature>
@@ -19,7 +20,6 @@
   <signature>
     <added>1.0</added>
   </signature>
-
   <longdesc>
     <p>This method is a shortcut for <code>.bind('mouseleave', handler)</code> in the first two variations, and <code>.trigger('mouseleave')</code> in the third.</p>
     <p>The <code>mouseleave</code> JavaScript event is proprietary to Internet Explorer. Because of the event's general utility, jQuery simulates this event so that it can be used regardless of browser. This event is sent to an element when the mouse pointer leaves the element. Any HTML element can receive this event.</p>
@@ -34,8 +34,9 @@
   Trigger the handler
 &lt;/div&gt;
 &lt;div id="log"&gt;&lt;/div&gt;</pre>
-    <p class="image"><img src="/resources/0042_05_09.png" alt="" />
-</p>
+    <p class="image">
+      <img src="/resources/0042_05_09.png" alt=""/>
+    </p>
     <p>The event handler can be bound to any element:</p>
     <pre>$('#outer').mouseleave(function() {
   $('#log').append('&lt;div&gt;Handler for .mouseleave() called.&lt;/div&gt;');
@@ -47,9 +48,9 @@
     <p>After this code executes, clicks on <span class="output">Trigger the handler</span> will also append the message.</p>
     <p>The <code>mouseleave</code> event differs from <code>mouseout</code> in the way it handles event bubbling. If <code>mouseout</code> were used in this example, then when the mouse pointer moved out of the <span class="output">Inner</span> element, the handler would be triggered. This is usually undesirable behavior. The <code>mouseleave</code> event, on the other hand, only triggers its handler when the mouse leaves the element it is bound to, not a descendant. So in this example, the handler is triggered when the mouse leaves the <span class="output">Outer</span> element, but not the <span class="output">Inner</span> element.</p>
   </longdesc>
-<example>
-  <desc>Show number of times mouseout and mouseleave events are triggered. <code>mouseout</code> fires when the pointer moves out of child element as well, while <code>mouseleave</code> fires only when the pointer moves out of the bound element.</desc>
-  <css><![CDATA[
+  <example>
+    <desc>Show number of times mouseout and mouseleave events are triggered. <code>mouseout</code> fires when the pointer moves out of child element as well, while <code>mouseleave</code> fires only when the pointer moves out of the bound element.</desc>
+    <css><![CDATA[
 div.out {
 width:40%;
 height:120px;
@@ -69,7 +70,7 @@ margin:0;
 padding:0;
 }
 ]]></css>
-  <code><![CDATA[
+    <code><![CDATA[
     var i = 0;
     $("div.overout").mouseover(function(){
       $("p:first",this).text("mouse over");
@@ -87,15 +88,14 @@ padding:0;
     });
 
 ]]></code>
-  <html><![CDATA[
+    <html><![CDATA[
 <div class="out overout"><p>move your mouse</p><div class="in overout"><p>move your mouse</p><p>0</p></div><p>0</p></div>
 
 <div class="out enterleave"><p>move your mouse</p><div class="in enterleave"><p>move your mouse</p><p>0</p></div><p>0</p></div>
 
 ]]></html>
-</example>
-
-<category slug="events/mouse-events"/>
-<category slug="version/1.0"/>
-<category slug="version/1.4.3"/>
+  </example>
+  <category slug="events/mouse-events"/>
+  <category slug="version/1.0"/>
+  <category slug="version/1.4.3"/>
 </entry>

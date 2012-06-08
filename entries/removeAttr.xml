@@ -1,4 +1,5 @@
-<entry type='method' name="removeAttr" return="jQuery">
+<?xml version="1.0"?>
+<entry type="method" name="removeAttr" return="jQuery">
   <title>.removeAttr()</title>
   <signature>
     <added>1.0</added>
@@ -15,9 +16,9 @@ $element.prop("onclick", null);
 console.log("onclick property: ", $element[0].onclick);
     </pre>
   </longdesc>
-<example>
-  <desc>Clicking the button enables the input next to it.</desc>
-  <code><![CDATA[
+  <example>
+    <desc>Clicking the button enables the input next to it.</desc>
+    <code><![CDATA[
 (function() {
   var inputTitle = $("input").attr("title");
   $("button").click(function () {
@@ -33,14 +34,14 @@ console.log("onclick property: ", $element[0].onclick);
   });
 })();
 ]]></code>
-  <html><![CDATA[<button>Enable</button>
+    <html><![CDATA[<button>Enable</button>
 <input type="text" title="hello there" />
 <div id="log"></div>
 ]]></html>
-</example>
-<category slug="attributes"/>
-<category slug="manipulation/general-attributes"/>
-<category slug="version/1.0"/>
-<category slug="version/1.4"/>
-<category slug="version/1.7"/>
+  </example>
+  <category slug="attributes"/>
+  <category slug="manipulation/general-attributes"/>
+  <category slug="version/1.0"/>
+  <category slug="version/1.4"/>
+  <category slug="version/1.7"/>
 </entry>

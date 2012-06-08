@@ -1,4 +1,5 @@
-<entry type='method' name="parent" return="jQuery">
+<?xml version="1.0"?>
+<entry type="method" name="parent" return="jQuery">
   <title>.parent()</title>
   <signature>
     <added>1.0</added>
@@ -35,17 +36,17 @@
     <p>The result of this call is a red background for the level-2 list. Since we do not supply a selector expression, the parent element is unequivocally included as part of the object. If we had supplied one, the element would be tested for a match before it was included.</p>
   </longdesc>
   <example>
-    <desc>Shows the parent of each element as (parent > child).  Check the View Source to see the raw html.</desc>
+    <desc>Shows the parent of each element as (parent &gt; child).  Check the View Source to see the raw html.</desc>
     <code><![CDATA[
 $("*", document.body).each(function () {
   var parentTag = $(this).parent().get(0).tagName;
   $(this).prepend(document.createTextNode(parentTag + " > "));
 });
 ]]></code>
-  <css><![CDATA[
+    <css><![CDATA[
   div,p { margin:10px; }
   ]]></css>
-  <html><![CDATA[<div>div,
+    <html><![CDATA[<div>div,
     <span>span, </span>
     <b>b </b>
 
@@ -66,14 +67,14 @@ $("*", document.body).each(function () {
     </strong>
     <b>b </b>
   </div>]]></html>
-</example>
-<example>
-  <desc>Find the parent element of each paragraph with a class "selected".</desc>
-  <code><![CDATA[$("p").parent(".selected").css("background", "yellow");]]></code>
-  <html><![CDATA[<div><p>Hello</p></div>
+  </example>
+  <example>
+    <desc>Find the parent element of each paragraph with a class "selected".</desc>
+    <code><![CDATA[$("p").parent(".selected").css("background", "yellow");]]></code>
+    <html><![CDATA[<div><p>Hello</p></div>
   <div class="selected"><p>Hello Again</p></div>
 ]]></html>
-</example>
-<category slug="traversing/tree-traversal"/>
-<category slug="version/1.0"/>
+  </example>
+  <category slug="traversing/tree-traversal"/>
+  <category slug="version/1.0"/>
 </entry>

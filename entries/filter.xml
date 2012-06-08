@@ -1,4 +1,5 @@
-<entry type='method' name="filter" return="jQuery">
+<?xml version="1.0"?>
+<entry type="method" name="filter" return="jQuery">
   <title>.filter()</title>
   <signature>
     <added>1.0</added>
@@ -25,8 +26,7 @@
     </argument>
   </signature>
   <desc>Reduce the set of matched elements to those that match the selector or pass the function's test. </desc>
-  <longdesc><p>Given a jQuery object that represents a set of DOM elements, the <code>.filter()</code> method constructs a new jQuery object from a subset of the matching elements. The supplied selector is tested against each element; all elements matching the selector will be included in the result.</p>
-<p>Consider a page with a simple list on it:</p>
+  <longdesc><p>Given a jQuery object that represents a set of DOM elements, the <code>.filter()</code> method constructs a new jQuery object from a subset of the matching elements. The supplied selector is tested against each element; all elements matching the selector will be included in the result.</p><p>Consider a page with a simple list on it:</p>
 &lt;ul&gt;
   &lt;li&gt;list item 1&lt;/li&gt;
   &lt;li&gt;list item 2&lt;/li&gt;
@@ -69,19 +69,19 @@ $('li').filter(function(index) {
 </pre>
 <p>This alteration to the code will cause the third and sixth list items to be highlighted, as it uses the modulus operator (<code>%</code>) to select every item with an <code>index</code> value that, when divided by 3, has a remainder of <code>2</code>.</p>
 </longdesc>
-                <example>
-                    <desc>Change the color of all divs; then add a border to those with a "middle" class.</desc>
-                    <code><![CDATA[
+  <example>
+    <desc>Change the color of all divs; then add a border to those with a "middle" class.</desc>
+    <code><![CDATA[
 
     $("div").css("background", "#c8ebcc")
             .filter(".middle")
             .css("border-color", "red");
 ]]></code>
-                    <css><![CDATA[
+    <css><![CDATA[
   div { width:60px; height:60px; margin:5px; float:left;
         border:2px white solid;}
   ]]></css>
-                    <html><![CDATA[<div></div>
+    <html><![CDATA[<div></div>
 
   <div class="middle"></div>
   <div class="middle"></div>
@@ -89,10 +89,10 @@ $('li').filter(function(index) {
   <div class="middle"></div>
 
   <div></div>]]></html>
-                </example>
-                <example>
-                    <desc>Change the color of all divs; then add a border to the second one (index == 1) and the div with an id of "fourth."</desc>
-                    <code><![CDATA[
+  </example>
+  <example>
+    <desc>Change the color of all divs; then add a border to the second one (index == 1) and the div with an id of "fourth."</desc>
+    <code><![CDATA[
     $("div").css("background", "#b4b0da")
             .filter(function (index) {
                   return index == 1 || $(this).attr("id") == "fourth";
@@ -100,11 +100,11 @@ $('li').filter(function(index) {
             .css("border", "3px double red");
 
 ]]></code>
-                    <css><![CDATA[
+    <css><![CDATA[
   div { width:60px; height:60px; margin:5px; float:left;
         border:3px white solid; }
   ]]></css>
-<html><![CDATA[
+    <html><![CDATA[
   <div id="first"></div>
   <div id="second"></div>
   <div id="third"></div>
@@ -112,17 +112,17 @@ $('li').filter(function(index) {
   <div id="fourth"></div>
   <div id="fifth"></div>
   <div id="sixth"></div>]]></html>
-</example>
-<example>
-  <desc>Select all divs and filter the selection with a DOM element, keeping only the one with an id of "unique".</desc>
-<code><![CDATA[$("div").filter( document.getElementById("unique") )]]></code>
-</example>
-<example>
-  <desc>Select all divs and filter the selection with a jQuery object, keeping only the one with an id of "unique".</desc>
-<code><![CDATA[
+  </example>
+  <example>
+    <desc>Select all divs and filter the selection with a DOM element, keeping only the one with an id of "unique".</desc>
+    <code><![CDATA[$("div").filter( document.getElementById("unique") )]]></code>
+  </example>
+  <example>
+    <desc>Select all divs and filter the selection with a jQuery object, keeping only the one with an id of "unique".</desc>
+    <code><![CDATA[
 $("div").filter( $("#unique") )]]></code>
-</example>
-<category slug="traversing/filtering"/>
-<category slug="version/1.0"/>
-<category slug="version/1.4"/>
+  </example>
+  <category slug="traversing/filtering"/>
+  <category slug="version/1.0"/>
+  <category slug="version/1.4"/>
 </entry>

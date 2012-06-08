@@ -1,17 +1,21 @@
-<entry type='selector'   name="checkbox" return="">
+<?xml version="1.0"?>
+<entry type="selector" name="checkbox" return="">
   <title>:checkbox Selector</title>
   <sample>:checkbox</sample>
-  <signature> <added>1.0</added> </signature>
+  <signature>
+    <added>1.0</added>
+  </signature>
   <desc>Selects all elements of type checkbox.</desc>
-  <longdesc><p><code>$(':checkbox')</code> is equivalent to <code>$('[type=checkbox]')</code>. As with other pseudo-class selectors (those that begin with a ":") it is recommended to precede it with a tag name or some other selector; otherwise, the universal selector ("*") is implied. In other words, the bare <code>$(':checkbox')</code> is equivalent to <code>$('*:checkbox')</code>, so <code>$('input:checkbox')</code> should be used instead. </p>
+  <longdesc>
+    <p><code>$(':checkbox')</code> is equivalent to <code>$('[type=checkbox]')</code>. As with other pseudo-class selectors (those that begin with a ":") it is recommended to precede it with a tag name or some other selector; otherwise, the universal selector ("*") is implied. In other words, the bare <code>$(':checkbox')</code> is equivalent to <code>$('*:checkbox')</code>, so <code>$('input:checkbox')</code> should be used instead. </p>
   </longdesc>
   <note id="jquery-selector-extension-alt" type="additional">
     <placeholder name="selector">:checkbox</placeholder>
     <placeholder name="alt">[type="checkbox"]</placeholder>
   </note>
-<example>
-  <desc>Finds all checkbox inputs.</desc>
-  <code><![CDATA[
+  <example>
+    <desc>Finds all checkbox inputs.</desc>
+    <code><![CDATA[
 
     var input = $("form input:checkbox").wrap('<span></span>').parent().css({background:"yellow", border:"3px red solid"});
     $("div").text("For this type jQuery found " + input.length + ".")
@@ -19,10 +23,10 @@
     $("form").submit(function () { return false; }); // so it won't submit
 
 ]]></code>
-  <css><![CDATA[
+    <css><![CDATA[
   textarea { height:25px; }
   ]]></css>
-  <html><![CDATA[<form>
+    <html><![CDATA[<form>
     <input type="button" value="Input Button"/>
     <input type="checkbox" />
 
@@ -45,8 +49,8 @@
 
   <div>
   </div>]]></html>
-</example>
-<category slug="selectors/form-selectors"/>
-<category slug="selectors/jquery-selector-extensions"/>
-<category slug="version/1.0"/>
+  </example>
+  <category slug="selectors/form-selectors"/>
+  <category slug="selectors/jquery-selector-extensions"/>
+  <category slug="version/1.0"/>
 </entry>

@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <entry name="promise" type="method" return="Promise">
   <title>.promise()</title>
   <signature>
@@ -15,11 +16,13 @@
     <p> By default, <code>type</code> is <code>"fx"</code>, which means the returned Promise is resolved when all animations of the selected elements have completed.</p>
     <p> Resolve context and sole argument is the collection onto which <code>.promise()</code> has been called. </p>
     <p> If <code>target</code> is provided, <code>.promise()</code> will attach the methods onto it and then return this object rather than create a new one. This can be useful to attach the Promise behavior to an object that already exists.</p>
-    <blockquote><p><strong>Note: </strong>The returned Promise is linked to a Deferred object stored on the <code>.data()</code> for an element. Since the<code>.remove()</code> method removes the element's data as well as the element itself, it will prevent any of the element's unresolved Promises from resolving. If it is necessary to remove an element from the DOM before its Promise is resolved, use <code>.detach()</code> instead and follow with <code>.removeData()</code> after resolution.</p></blockquote>
+    <blockquote>
+      <p><strong>Note: </strong>The returned Promise is linked to a Deferred object stored on the <code>.data()</code> for an element. Since the<code>.remove()</code> method removes the element's data as well as the element itself, it will prevent any of the element's unresolved Promises from resolving. If it is necessary to remove an element from the DOM before its Promise is resolved, use <code>.detach()</code> instead and follow with <code>.removeData()</code> after resolution.</p>
+    </blockquote>
   </longdesc>
-<example>
-  <desc>Using <code>.promise()</code> on a collection with no active animation returns a resolved Promise:</desc>
-  <code><![CDATA[
+  <example>
+    <desc>Using <code>.promise()</code> on a collection with no active animation returns a resolved Promise:</desc>
+    <code><![CDATA[
 var div = $( "<div />" );
 
 div.promise().done(function( arg1 ) {
@@ -27,17 +30,17 @@ div.promise().done(function( arg1 ) {
   alert( this === div && arg1 === div );
 });
 ]]></code>
-</example>
-<example>
-  <desc>Resolve the returned Promise when all animations have ended (including those initiated in the animation callback or added later on):</desc>
-  <css><![CDATA[
+  </example>
+  <example>
+    <desc>Resolve the returned Promise when all animations have ended (including those initiated in the animation callback or added later on):</desc>
+    <css><![CDATA[
 div {
   height: 50px; width: 50px;
   float: left; margin-right: 10px;
   display: none; background-color: #090;
 }
 ]]></css>
-  <html><![CDATA[
+    <html><![CDATA[
 <button>Go</button>
 <p>Ready...</p>
 <div></div>
@@ -46,7 +49,7 @@ div {
 <div></div>
 
 ]]></html>
-  <code><![CDATA[
+    <code><![CDATA[
 $("button").bind( "click", function() {
   $("p").append( "Started...");
 
@@ -59,17 +62,17 @@ $("button").bind( "click", function() {
   });
 });
 ]]></code>
-</example>
-<example>
-  <desc>Resolve the returned Promise using a <code>$.when()</code> statement (the <code>.promise()</code> method makes it possible to do this with jQuery collections):</desc>
-  <css><![CDATA[
+  </example>
+  <example>
+    <desc>Resolve the returned Promise using a <code>$.when()</code> statement (the <code>.promise()</code> method makes it possible to do this with jQuery collections):</desc>
+    <css><![CDATA[
 div {
   height: 50px; width: 50px;
   float: left; margin-right: 10px;
   display: none; background-color: #090;
 }
 ]]></css>
-  <html><![CDATA[
+    <html><![CDATA[
 <button>Go</button>
 <p>Ready...</p>
 <div></div>
@@ -78,7 +81,7 @@ div {
 <div></div>
 
 ]]></html>
-<code><![CDATA[
+    <code><![CDATA[
 var effect = function() {
   return $("div").fadeIn(800).delay(1200).fadeOut();
 };
@@ -93,6 +96,6 @@ $("button").bind( "click", function() {
 
 ]]></code>
   </example>
-<category slug="deferred-object"/>
-<category slug="version/1.6"/>
+  <category slug="deferred-object"/>
+  <category slug="version/1.6"/>
 </entry>

@@ -1,40 +1,39 @@
-<entry type='method' name="jQuery.param" return="String">
+<?xml version="1.0"?>
+<entry type="method" name="jQuery.param" return="String">
   <title>jQuery.param()</title>
   <signature>
     <added>1.2</added>
     <argument name="obj" type="Array, Object">
-        <desc>An array or object to serialize.</desc>
+      <desc>An array or object to serialize.</desc>
     </argument>
   </signature>
   <signature>
     <added>1.4</added>
     <argument name="obj" type="Array, Object">
-        <desc>An array or object to serialize.</desc>
+      <desc>An array or object to serialize.</desc>
     </argument>
     <argument name="traditional" type="Boolean">
-        <desc>A Boolean indicating whether to perform a traditional "shallow" serialization.</desc>
+      <desc>A Boolean indicating whether to perform a traditional "shallow" serialization.</desc>
     </argument>
   </signature>
   <desc>Create a serialized representation of an array or object, suitable for use in a URL query string or Ajax request. </desc>
   <longdesc>
     <p>This function is used internally to convert form element values into a serialized string representation (See <a href="/serialize/">.serialize()</a> for more information).</p>
-
     <p>As of jQuery 1.3, the return value of a function is used instead of the function as a String.</p>
-
     <p>As of jQuery 1.4, the <code>$.param()</code> method serializes deep objects recursively to accommodate modern scripting languages and frameworks such as PHP and Ruby on Rails. You can disable this functionality globally by setting <code>jQuery.ajaxSettings.traditional = true;</code>.</p>
-<p>If the object passed is in an Array, it must be an array of objects in the format returned by <a href="/serializeArray/">.serializeArray()</a></p> 
-<pre>[{name:"first",value:"Rick"},
+    <p>If the object passed is in an Array, it must be an array of objects in the format returned by <a href="/serializeArray/">.serializeArray()</a></p>
+    <pre>[{name:"first",value:"Rick"},
 {name:"last",value:"Astley"},
 {name:"job",value:"Rock Star"}]</pre>
-<blockquote>
-    <p><strong>Note:</strong> Because some frameworks have limited ability to parse serialized arrays, developers should exercise caution when passing an <code>obj</code> argument that contains objects or arrays nested within another array.</p>
-</blockquote>
-<blockquote>
-<p><strong>Note:</strong> Because there is no universally agreed-upon specification for param strings, it is not possible to encode complex data structures using this method in a manner that works ideally across all languages supporting such input. Until such time that there is, the <code>$.param</code> method will remain in its current form.</p>
-</blockquote>
-<p>In jQuery 1.4, HTML5 input elements are also serialized.</p>
+    <blockquote>
+      <p><strong>Note:</strong> Because some frameworks have limited ability to parse serialized arrays, developers should exercise caution when passing an <code>obj</code> argument that contains objects or arrays nested within another array.</p>
+    </blockquote>
+    <blockquote>
+      <p><strong>Note:</strong> Because there is no universally agreed-upon specification for param strings, it is not possible to encode complex data structures using this method in a manner that works ideally across all languages supporting such input. Until such time that there is, the <code>$.param</code> method will remain in its current form.</p>
+    </blockquote>
+    <p>In jQuery 1.4, HTML5 input elements are also serialized.</p>
     <p>We can display a query string representation of an object and a URI-decoded version of the same as follows:</p>
-<pre>var myObject = {
+    <pre>var myObject = {
   a: {
     one: 1, 
     two: 2, 
@@ -48,11 +47,14 @@ var recursiveDecoded = decodeURIComponent($.param(myObject));
 alert(recursiveEncoded);
 alert(recursiveDecoded);
 </pre>
-  <p>The values of <code>recursiveEncoded</code> and <code>recursiveDecoded</code> are alerted as follows:</p>
-<p><span class="output">a%5Bone%5D=1&amp;a%5Btwo%5D=2&amp;a%5Bthree%5D=3&amp;b%5B%5D=1&amp;b%5B%5D=2&amp;b%5B%5D=3</span><br />
-<span class="output">a[one]=1&amp;a[two]=2&amp;a[three]=3&amp;b[]=1&amp;b[]=2&amp;b[]=3</span></p>
+    <p>The values of <code>recursiveEncoded</code> and <code>recursiveDecoded</code> are alerted as follows:</p>
+    <p>
+      <span class="output">a%5Bone%5D=1&amp;a%5Btwo%5D=2&amp;a%5Bthree%5D=3&amp;b%5B%5D=1&amp;b%5B%5D=2&amp;b%5B%5D=3</span>
+      <br/>
+      <span class="output">a[one]=1&amp;a[two]=2&amp;a[three]=3&amp;b[]=1&amp;b[]=2&amp;b[]=3</span>
+    </p>
     <p>To emulate the behavior of <code>$.param()</code> prior to jQuery 1.4, we can set the <code>traditional</code> argument to <code>true</code>:</p>
-<pre>var myObject = {
+    <pre>var myObject = {
   a: {
     one: 1, 
     two: 2, 
@@ -66,24 +68,27 @@ var shallowDecoded = decodeURIComponent(shallowEncoded);
 alert(shallowEncoded);
 alert(shallowDecoded);
 </pre>
-<p>The values of <code>shallowEncoded</code> and <code>shallowDecoded</code> are alerted as follows:</p>
-<p><span class="output">a=%5Bobject+Object%5D&amp;b=1&amp;b=2&amp;b=3</span><br />
-<span class="output">a=[object+Object]&amp;b=1&amp;b=2&amp;b=3</span></p>
+    <p>The values of <code>shallowEncoded</code> and <code>shallowDecoded</code> are alerted as follows:</p>
+    <p>
+      <span class="output">a=%5Bobject+Object%5D&amp;b=1&amp;b=2&amp;b=3</span>
+      <br/>
+      <span class="output">a=[object+Object]&amp;b=1&amp;b=2&amp;b=3</span>
+    </p>
   </longdesc>
-                <example>
-                    <desc>Serialize a key/value object.</desc>
-                    <code><![CDATA[
+  <example>
+    <desc>Serialize a key/value object.</desc>
+    <code><![CDATA[
 
     var params = { width:1680, height:1050 };
     var str = jQuery.param(params);
     $("#results").text(str);
 ]]></code>
-                    <css><![CDATA[div { color:red; }]]></css>
-                    <html><![CDATA[<div id="results"></div>]]></html>
-                </example>
-                   <example>
-                    <desc>Serialize a few complex objects</desc>
-                    <code><![CDATA[
+    <css><![CDATA[div { color:red; }]]></css>
+    <html><![CDATA[<div id="results"></div>]]></html>
+  </example>
+  <example>
+    <desc>Serialize a few complex objects</desc>
+    <code><![CDATA[
 // <=1.3.2: 
 $.param({ a: [2,3,4] }) // "a=2&a=3&a=4"
 // >=1.4:
@@ -95,12 +100,11 @@ $.param({ a: { b:1,c:2 }, d: [3,4,{ e:5 }] }) // "a=[object+Object]&d=3&d=4&d=[o
 $.param({ a: { b:1,c:2 }, d: [3,4,{ e:5 }] }) // "a[b]=1&a[c]=2&d[]=3&d[]=4&d[2][e]=5"
 
 ]]></code>
-                    <css><![CDATA[div { color:red; }]]></css>
-                </example>
-                
-            <category slug="miscellaneous/collection-manipulation"/>
-<category slug="forms"/>
-<category slug="ajax/helper-functions"/>
-<category slug="version/1.2"/>
-<category slug="version/1.4"/>
+    <css><![CDATA[div { color:red; }]]></css>
+  </example>
+  <category slug="miscellaneous/collection-manipulation"/>
+  <category slug="forms"/>
+  <category slug="ajax/helper-functions"/>
+  <category slug="version/1.2"/>
+  <category slug="version/1.4"/>
 </entry>

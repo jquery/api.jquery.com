@@ -1,4 +1,5 @@
-<entry type='selector'  name="element" return="" >
+<?xml version="1.0"?>
+<entry type="selector" name="element" return="">
   <title>Element Selector ("element")</title>
   <sample>element</sample>
   <signature>
@@ -8,8 +9,9 @@
     </argument>
   </signature>
   <desc>Selects all elements with the given tag name.</desc>
-  <longdesc><p>JavaScript's <code>getElementsByTagName()</code> function is called to return the appropriate elements when this expression is used.</p> </longdesc>
-
+  <longdesc>
+    <p>JavaScript's <code>getElementsByTagName()</code> function is called to return the appropriate elements when this expression is used.</p>
+  </longdesc>
   <example>
     <desc>Finds every DIV element.</desc>
     <code><![CDATA[$("div").css("border","9px solid red");]]></code>
@@ -17,7 +19,7 @@
 
   <div>DIV2</div>
   <span>SPAN</span>]]></html>
-                    <css><![CDATA[
+    <css><![CDATA[
   div,span {
     width: 60px;
     height: 60px;
@@ -27,7 +29,7 @@
     background-color: #EEEEEE;
   }
   ]]></css>
-</example>
-<category slug="selectors/basic-css-selectors"/>
-<category slug="version/1.0"/>
+  </example>
+  <category slug="selectors/basic-css-selectors"/>
+  <category slug="version/1.0"/>
 </entry>

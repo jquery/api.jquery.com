@@ -1,4 +1,5 @@
-<entry type='method' name="slice" return="jQuery">
+<?xml version="1.0"?>
+<entry type="method" name="slice" return="jQuery">
   <title>.slice()</title>
   <signature>
     <added>1.1.4</added>
@@ -33,9 +34,9 @@
     <pre>$('li').slice(-2, -1).css('background-color', 'red');</pre>
     <p>This time only list item 4 is turned red, since it is the only item in the range between two from the end (<code>-2</code>) and one from the end (<code>-1</code>).</p>
   </longdesc>
-<example>
-  <desc>Turns divs yellow based on a random slice.</desc>
-  <code><![CDATA[
+  <example>
+    <desc>Turns divs yellow based on a random slice.</desc>
+    <code><![CDATA[
 function colorEm() {
   var $div = $("div");
   var start = Math.floor(Math.random() *
@@ -57,16 +58,14 @@ function colorEm() {
 
 $("button").click(colorEm);
 ]]></code>
-  <css><![CDATA[
+    <css><![CDATA[
   div { width:40px; height:40px; margin:10px; float:left;
         border:2px solid blue; }
   span { color:red; font-weight:bold; }
   button { margin:5px; }
   ]]></css>
-
-  <height>240</height>
-
-  <html><![CDATA[<p><button>Turn slice yellow</button>
+    <height>240</height>
+    <html><![CDATA[<p><button>Turn slice yellow</button>
   <span>Click the button!</span></p>
   <div></div>
   <div></div>
@@ -79,27 +78,27 @@ $("button").click(colorEm);
 
   <div></div>
   <div></div>]]></html>
-</example>
-<example>
-  <desc>Selects all paragraphs, then slices the selection to include only the first element.</desc>
-  <code><![CDATA[$("p").slice(0, 1).wrapInner("<b></b>");]]></code>
-</example>
-<example>
-  <desc>Selects all paragraphs, then slices the selection to include only the first and second element.</desc>
-  <code><![CDATA[$("p").slice(0, 2).wrapInner("<b></b>");]]></code>
-</example>
-<example>
-  <desc>Selects all paragraphs, then slices the selection to include only the second element.</desc>
-  <code><![CDATA[$("p").slice(1, 2).wrapInner("<b></b>");]]></code>
-</example>
-<example>
-  <desc>Selects all paragraphs, then slices the selection to include only the second and third element.</desc>
-  <code><![CDATA[$("p").slice(1).wrapInner("<b></b>");]]></code>
-</example>
-<example>
-  <desc>Selects all paragraphs, then slices the selection to include only the third element.</desc>
-  <code><![CDATA[$("p").slice(-1).wrapInner("<b></b>");]]></code>
-</example>
-<category slug="traversing/filtering"/>
-<category slug="version/1.1.4"/>
+  </example>
+  <example>
+    <desc>Selects all paragraphs, then slices the selection to include only the first element.</desc>
+    <code><![CDATA[$("p").slice(0, 1).wrapInner("<b></b>");]]></code>
+  </example>
+  <example>
+    <desc>Selects all paragraphs, then slices the selection to include only the first and second element.</desc>
+    <code><![CDATA[$("p").slice(0, 2).wrapInner("<b></b>");]]></code>
+  </example>
+  <example>
+    <desc>Selects all paragraphs, then slices the selection to include only the second element.</desc>
+    <code><![CDATA[$("p").slice(1, 2).wrapInner("<b></b>");]]></code>
+  </example>
+  <example>
+    <desc>Selects all paragraphs, then slices the selection to include only the second and third element.</desc>
+    <code><![CDATA[$("p").slice(1).wrapInner("<b></b>");]]></code>
+  </example>
+  <example>
+    <desc>Selects all paragraphs, then slices the selection to include only the third element.</desc>
+    <code><![CDATA[$("p").slice(-1).wrapInner("<b></b>");]]></code>
+  </example>
+  <category slug="traversing/filtering"/>
+  <category slug="version/1.1.4"/>
 </entry>

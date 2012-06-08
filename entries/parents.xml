@@ -1,4 +1,5 @@
-<entry type='method' name="parents" return="jQuery">
+<?xml version="1.0"?>
+<entry type="method" name="parents" return="jQuery">
   <title>.parents()</title>
   <signature>
     <added>1.0</added>
@@ -9,9 +10,9 @@
   <desc>Get the ancestors of each element in the current set of matched elements, optionally filtered by a selector.</desc>
   <longdesc>
     <p>Given a jQuery object that represents a set of DOM elements, the <code>.parents()</code> method allows us to search through the ancestors of these elements in the DOM tree and construct a new jQuery object from the matching elements ordered from immediate parent on up; the elements are returned in order from the closest parent to the outer ones. The <code>.parents()</code> and <code><a href="http://api.jquery.com/parent/">.parent()</a></code> methods are similar, except that the latter only travels a single level up the DOM tree.</p>
-<p>The method optionally accepts a selector expression of the same type that we can pass to the <code>$()</code> function. If the selector is supplied, the elements will be filtered by testing whether they match it.</p>
-<p>Consider a page with a basic nested list on it:</p>
-<pre>
+    <p>The method optionally accepts a selector expression of the same type that we can pass to the <code>$()</code> function. If the selector is supplied, the elements will be filtered by testing whether they match it.</p>
+    <p>Consider a page with a basic nested list on it:</p>
+    <pre>
 &lt;ul class="level-1"&gt;
   &lt;li class="item-i"&gt;I&lt;/li&gt;
   &lt;li class="item-ii"&gt;II
@@ -34,9 +35,9 @@
     <pre>$('li.item-a').parents().css('background-color', 'red');</pre>
     <p>The result of this call is a red background for the level-2 list, item II, and the level-1 list (and on up the DOM tree all the way to the <code>&lt;html&gt;</code> element). Since we do not supply a selector expression, all of the ancestors are part of the returned jQuery object. If we had supplied one, only the matching items among these would be included.</p>
   </longdesc>
-<example>
-  <desc>Find all parent elements of each b.</desc>
-  <code><![CDATA[
+  <example>
+    <desc>Find all parent elements of each b.</desc>
+    <code><![CDATA[
 var parentEls = $("b").parents()
             .map(function () {
                   return this.tagName;
@@ -44,7 +45,7 @@ var parentEls = $("b").parents()
             .get().join(", ");
 $("b").append("<strong>" + parentEls + "</strong>");
 ]]></code>
-  <css><![CDATA[
+    <css><![CDATA[
   b, span, p, html body {
     padding: .5em;
     border: 1px solid;
@@ -52,15 +53,15 @@ $("b").append("<strong>" + parentEls + "</strong>");
   b { color:blue; }
   strong { color:red; }
   ]]></css>
-  <html><![CDATA[<div>
+    <html><![CDATA[<div>
     <p>
       <span>
         <b>My parents are: </b>
       </span>
     </p>
   </div>]]></html>
-</example>
-<example>
+  </example>
+  <example>
     <desc>Click to find all unique div parent elements of each span.</desc>
     <code><![CDATA[
 function showParents() {
@@ -75,7 +76,7 @@ $("span").click(function () {
   $(this).toggleClass("selected");
   showParents();
 });]]></code>
-<css><![CDATA[
+    <css><![CDATA[
 
   p, div, span {margin:2px; padding:1px; }
   div { border:2px white solid; }
@@ -83,7 +84,7 @@ $("span").click(function () {
   .selected { color:blue; }
   b { color:red; display:block; font-size:14px; }
   ]]></css>
-  <html><![CDATA[<p>
+    <html><![CDATA[<p>
     <div>
       <div><span>Hello</span></div>
       <span>Hello Again</span>
@@ -95,7 +96,7 @@ $("span").click(function () {
   </p>
 
   <b>Click Hellos to toggle their parents.</b>]]></html>
-</example>
-<category slug="traversing/tree-traversal"/>
-<category slug="version/1.0"/>
+  </example>
+  <category slug="traversing/tree-traversal"/>
+  <category slug="version/1.0"/>
 </entry>

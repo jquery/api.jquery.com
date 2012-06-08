@@ -1,4 +1,5 @@
-<entry type='method' name="jQuery.globalEval" return="">
+<?xml version="1.0"?>
+<entry type="method" name="jQuery.globalEval" return="">
   <title>jQuery.globalEval()</title>
   <signature>
     <added>1.0.4</added>
@@ -10,15 +11,15 @@
   <longdesc>
     <p>This method behaves differently from using a normal JavaScript <code>eval()</code> in that it's executed within the global context (which is important for loading external scripts dynamically).</p>
   </longdesc>
-<example>
-  <desc>Execute a script in the global context.</desc>
-  <code><![CDATA[function test(){
+  <example>
+    <desc>Execute a script in the global context.</desc>
+    <code><![CDATA[function test(){
     jQuery.globalEval("var newVar = true;")
     }
     test();
     // newVar === true
   ]]></code>
-</example>
-<category slug="utilities"/>
-<category slug="version/1.0.4"/>
+  </example>
+  <category slug="utilities"/>
+  <category slug="version/1.0.4"/>
 </entry>

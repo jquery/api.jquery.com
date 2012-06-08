@@ -1,4 +1,5 @@
-<entry type='method' name="delay" return="jQuery">
+<?xml version="1.0"?>
+<entry type="method" name="delay" return="jQuery">
   <title>.delay()</title>
   <signature>
     <added>1.4</added>
@@ -16,27 +17,29 @@
     <p>Using the standard effects queue, we can, for example, set an 800-millisecond delay between the <code>.slideUp()</code> and <code>.fadeIn()</code> of <code>&lt;div id="foo"&gt;</code>:</p>
     <pre>$('#foo').slideUp(300).delay(800).fadeIn(400);</pre>
     <p>When this statement is executed, the element slides up for 300 milliseconds and then pauses for 800 milliseconds before fading in for 400 milliseconds.</p>
-    <blockquote><p><strong>The <code>.delay()</code> method is best for delaying between queued jQuery effects. Because it is limited—it doesn't, for example, offer a way to cancel the delay—<code>.delay()</code> is not a replacement for JavaScript's native <a href="https://developer.mozilla.org/en/DOM/window.setTimeout">setTimeout</a> function, which may be more appropriate for certain use cases.</strong></p></blockquote>
-</longdesc>
-<example>
-  <desc>Animate the hiding and showing of two divs, delaying the first before showing it.</desc>
-  <css><![CDATA[
+    <blockquote>
+      <p>
+        <strong>The <code>.delay()</code> method is best for delaying between queued jQuery effects. Because it is limited&#x2014;it doesn't, for example, offer a way to cancel the delay&#x2014;<code>.delay()</code> is not a replacement for JavaScript's native <a href="https://developer.mozilla.org/en/DOM/window.setTimeout">setTimeout</a> function, which may be more appropriate for certain use cases.</strong>
+      </p>
+    </blockquote>
+  </longdesc>
+  <example>
+    <desc>Animate the hiding and showing of two divs, delaying the first before showing it.</desc>
+    <css><![CDATA[
 div { position: absolute; width: 60px; height: 60px; float: left; }
 .first { background-color: #3f3; left: 0;}
 .second { background-color: #33f; left: 80px;}
 ]]></css>
-  <code><![CDATA[
+    <code><![CDATA[
     $("button").click(function() {
       $("div.first").slideUp(300).delay(800).fadeIn(400);
       $("div.second").slideUp(300).fadeIn(400);
-    });]]>
-</code>
-  <html><![CDATA[
+    });]]></code>
+    <html><![CDATA[
 <p><button>Run</button></p>
 <div class="first"></div>
-<div class="second"></div>]]>
-  </html>
+<div class="second"></div>]]></html>
   </example>
-<category slug="effects/custom-effects"/>
-<category slug="version/1.4"/>
+  <category slug="effects/custom-effects"/>
+  <category slug="version/1.4"/>
 </entry>

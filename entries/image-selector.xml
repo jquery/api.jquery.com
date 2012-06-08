@@ -1,15 +1,18 @@
-<entry type='selector'   name="image" return="">
+<?xml version="1.0"?>
+<entry type="selector" name="image" return="">
   <title>:image Selector</title>
   <sample>:image</sample>
-  <signature><added>1.0</added> </signature>
+  <signature>
+    <added>1.0</added>
+  </signature>
   <desc>Selects all elements of type image.</desc>
-  <longdesc><p><code>:image</code> is equivalent to <code>[type="image"]</code></p></longdesc>
-
+  <longdesc>
+    <p><code>:image</code> is equivalent to <code>[type="image"]</code></p>
+  </longdesc>
   <note id="jquery-selector-extension-alt" type="additional">
     <placeholder name="selector">:image</placeholder>
     <placeholder name="alt">[type="image"]</placeholder>
   </note>
-
   <example>
     <desc>Finds all image inputs.</desc>
     <code><![CDATA[
@@ -42,8 +45,8 @@ $("form").submit(function () { return false; }); // so it won't submit
 </form>
 <div>
 </div>]]></html>
-</example>
-<category slug="selectors/form-selectors"/>
-<category slug="selectors/jquery-selector-extensions"/>
-<category slug="version/1.0"/>
+  </example>
+  <category slug="selectors/form-selectors"/>
+  <category slug="selectors/jquery-selector-extensions"/>
+  <category slug="version/1.0"/>
 </entry>

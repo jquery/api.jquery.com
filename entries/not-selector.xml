@@ -1,4 +1,5 @@
-<entry type='selector'  name="not" return=""  >
+<?xml version="1.0"?>
+<entry type="selector" name="not" return="">
   <title>:not() Selector</title>
   <sample>:not(selector)</sample>
   <signature>
@@ -8,7 +9,11 @@
     </argument>
   </signature>
   <desc>Selects all elements that do not match the given selector.</desc>
-  <longdesc><p>All selectors are accepted inside <code>:not()</code>,  for example: <code>:not(div a)</code> and <code>:not(div,a)</code>.</p> <h3>Additional Notes</h3><p>The <code><a href="/not/">.not()</a></code> method will end up providing you with more readable selections than pushing complex selectors or variables into a <code>:not()</code> selector filter. In most cases, it is a better choice.</p></longdesc>
+  <longdesc>
+    <p>All selectors are accepted inside <code>:not()</code>,  for example: <code>:not(div a)</code> and <code>:not(div,a)</code>.</p>
+    <h3>Additional Notes</h3>
+    <p>The <code><a href="/not/">.not()</a></code> method will end up providing you with more readable selections than pushing complex selectors or variables into a <code>:not()</code> selector filter. In most cases, it is a better choice.</p>
+  </longdesc>
   <example>
     <desc>Finds all inputs that are not checked and highlights the next sibling span.  Notice there is no change when clicking the checkboxes since no click events have been linked.</desc>
     <code><![CDATA[
@@ -16,7 +21,7 @@
   $("input").attr("disabled", "disabled");
 
 ]]></code>
-  <html><![CDATA[<div>
+    <html><![CDATA[<div>
   <input type="checkbox" name="a" />
   <span>Mary</span>
 </div>
@@ -31,7 +36,7 @@
 
   <span>Peter</span>
 </div>]]></html>
-</example>
-<category slug="selectors/basic-filter-selectors"/>
-<category slug="version/1.0"/>
+  </example>
+  <category slug="selectors/basic-filter-selectors"/>
+  <category slug="version/1.0"/>
 </entry>

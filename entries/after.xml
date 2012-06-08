@@ -1,4 +1,5 @@
-<entry type='method' name="after" return="jQuery">
+<?xml version="1.0"?>
+<entry type="method" name="after" return="jQuery">
   <title>.after()</title>
   <signature>
     <added>1.0</added>
@@ -16,21 +17,17 @@
     </argument>
   </signature>
   <desc>Insert content, specified by the parameter, after each element in the set of matched elements.</desc>
-  <longdesc><p>The <code>.after()</code> and <code><a href='/insertAfter'>.insertAfter()</a></code> methods perform the same task. The major difference is in the syntax&#8212;specifically, in the placement of the content and target. With<code> .after()</code>, the selector expression preceding the method is the container after which the content is inserted. With <code>.insertAfter()</code>, on the other hand, the content precedes the method, either as a selector expression or as markup created on the fly, and it is inserted after the target container.</p>
-
+  <longdesc>
+    <p>The <code>.after()</code> and <code><a href="/insertAfter">.insertAfter()</a></code> methods perform the same task. The major difference is in the syntax&#x2014;specifically, in the placement of the content and target. With<code> .after()</code>, the selector expression preceding the method is the container after which the content is inserted. With <code>.insertAfter()</code>, on the other hand, the content precedes the method, either as a selector expression or as markup created on the fly, and it is inserted after the target container.</p>
     <p>Using the following HTML:</p>
     <pre>&lt;div class="container"&gt;
   &lt;h2&gt;Greetings&lt;/h2&gt;
   &lt;div class="inner"&gt;Hello&lt;/div&gt;
   &lt;div class="inner"&gt;Goodbye&lt;/div&gt;
 &lt;/div&gt;</pre>
-
     <p>Content can be created and then inserted after several elements at once:</p>
-
     <pre>$('.inner').after('&lt;p&gt;Test&lt;/p&gt;');</pre>
-
     <p>Each inner <code>&lt;div&gt;</code> element gets this new content:</p>
-
     <pre>&lt;div class="container"&gt;
   &lt;h2&gt;Greetings&lt;/h2&gt;
   &lt;div class="inner"&gt;Hello&lt;/div&gt;
@@ -38,7 +35,6 @@
   &lt;div class="inner"&gt;Goodbye&lt;/div&gt;
   &lt;p&gt;Test&lt;/p&gt;
 &lt;/div&gt;</pre>
-
     <p>An element in the DOM can also be selected and inserted after another element:</p>
     <pre>$('.container').after($('h2'));</pre>
     <p>If an element selected this way is inserted elsewhere, it will be moved rather than cloned:</p>
@@ -77,26 +73,26 @@
 $('p').first().after($newdiv1, [newdiv2, existingdiv1]);
 </pre>
     <p>Since <code>.after()</code> can accept any number of additional arguments, the same result can be achieved by passing in the three <code>&lt;div&gt;</code>s as three separate arguments, like so: <code>$('p').first().after($newdiv1, newdiv2, existingdiv1)</code>. The type and number of arguments will largely depend on the elements that are collected in the code.</p>
-</longdesc>
+  </longdesc>
   <example>
-      <desc>Inserts some HTML after all paragraphs.</desc>
-      <code><![CDATA[$("p").after("<b>Hello</b>");]]></code>
-      <css><![CDATA[p { background:yellow; }]]></css>
-      <html><![CDATA[<p>I would like to say: </p>]]></html>
+    <desc>Inserts some HTML after all paragraphs.</desc>
+    <code><![CDATA[$("p").after("<b>Hello</b>");]]></code>
+    <css><![CDATA[p { background:yellow; }]]></css>
+    <html><![CDATA[<p>I would like to say: </p>]]></html>
   </example>
   <example>
-      <desc>Inserts a DOM element after all paragraphs.</desc>
-      <code><![CDATA[$("p").after( document.createTextNode("Hello") );]]></code>
-      <css><![CDATA[p { background:yellow; }]]></css>
-      <html><![CDATA[<p>I would like to say: </p>]]></html>
+    <desc>Inserts a DOM element after all paragraphs.</desc>
+    <code><![CDATA[$("p").after( document.createTextNode("Hello") );]]></code>
+    <css><![CDATA[p { background:yellow; }]]></css>
+    <html><![CDATA[<p>I would like to say: </p>]]></html>
   </example>
   <example>
-      <desc>Inserts a jQuery object (similar to an Array of DOM Elements) after all paragraphs.</desc>
-      <code><![CDATA[$("p").after( $("b") );]]></code>
-      <css><![CDATA[p { background:yellow; }]]></css>
-      <html><![CDATA[<b>Hello</b><p>I would like to say: </p>]]></html>
+    <desc>Inserts a jQuery object (similar to an Array of DOM Elements) after all paragraphs.</desc>
+    <code><![CDATA[$("p").after( $("b") );]]></code>
+    <css><![CDATA[p { background:yellow; }]]></css>
+    <html><![CDATA[<b>Hello</b><p>I would like to say: </p>]]></html>
   </example>
-<category slug="manipulation/dom-insertion-outside"/>
-<category slug="version/1.0"/>
-<category slug="version/1.4"/>
+  <category slug="manipulation/dom-insertion-outside"/>
+  <category slug="version/1.0"/>
+  <category slug="version/1.4"/>
 </entry>

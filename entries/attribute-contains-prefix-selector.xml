@@ -1,33 +1,36 @@
-<entry type='selector'  name="attributeContainsPrefix" return="" >
+<?xml version="1.0"?>
+<entry type="selector" name="attributeContainsPrefix" return="">
   <title>Attribute Contains Prefix Selector [name|="value"]</title>
   <sample>[attribute|="value"]</sample>
-   <signature><added>1.0</added>
-  <argument name="attribute" type="String">
+  <signature>
+    <added>1.0</added>
+    <argument name="attribute" type="String">
       <desc>An attribute name.</desc>
-  </argument>
-  <argument name="value" type="String">
+    </argument>
+    <argument name="value" type="String">
       <desc>An attribute value. Can be either an unquoted single word or a quoted string.</desc>
-  </argument> </signature>
+    </argument>
+  </signature>
   <desc>Selects elements that have the specified attribute with a value either equal to a given string or starting with that string followed by a hyphen (-).</desc>
-  <longdesc><p>This selector was introduced into the CSS specification to handle language attributes.</p></longdesc>
-<example>
-  <desc>Finds all links with an hreflang attribute that is english.</desc>
-  <code><![CDATA[
+  <longdesc>
+    <p>This selector was introduced into the CSS specification to handle language attributes.</p>
+  </longdesc>
+  <example>
+    <desc>Finds all links with an hreflang attribute that is english.</desc>
+    <code><![CDATA[
 $('a[hreflang|="en"]').css('border','3px dotted green');
 ]]></code>
-  <html><![CDATA[
+    <html><![CDATA[
   <a href="example.html" hreflang="en">Some text</a> 
 
   <a href="example.html" hreflang="en-UK">Some other text</a>
 
   <a href="example.html" hreflang="english">will not be outlined</a>
   ]]></html>
-
-  <css><![CDATA[
+    <css><![CDATA[
 a { display: inline-block; }
   ]]></css>
-
-</example>
-<category slug="selectors/attribute-selectors"/>
-<category slug="version/1.0"/>
+  </example>
+  <category slug="selectors/attribute-selectors"/>
+  <category slug="version/1.0"/>
 </entry>

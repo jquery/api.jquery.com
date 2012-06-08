@@ -1,4 +1,5 @@
-<entry type='method' name="toArray" return="Array">
+<?xml version="1.0"?>
+<entry type="method" name="toArray" return="Array">
   <title>.toArray()</title>
   <signature>
     <added>1.4</added>
@@ -8,11 +9,13 @@
     <p><code>.toArray()</code> returns all of the elements in the jQuery set:</p>
     <pre>alert($('li').toArray());</pre>
     <p>All of the matched DOM nodes are returned by this call, contained in a standard array:</p>
-    <p><span class="result">[&lt;li id="foo"&gt;, &lt;li id="bar"&gt;]</span></p>
+    <p>
+      <span class="result">[&lt;li id="foo"&gt;, &lt;li id="bar"&gt;]</span>
+    </p>
   </longdesc>
-<example>
-  <desc>Selects all divs in the document and returns the DOM Elements as an Array, then uses the built-in reverse-method to reverse that array.</desc>
-  <code><![CDATA[
+  <example>
+    <desc>Selects all divs in the document and returns the DOM Elements as an Array, then uses the built-in reverse-method to reverse that array.</desc>
+    <code><![CDATA[
 function disp(divs) {
   var a = [];
   for (var i = 0; i < divs.length; i++) {
@@ -23,15 +26,15 @@ function disp(divs) {
 
 disp( $("div").toArray().reverse() );
 ]]></code>
-  <css><![CDATA[
+    <css><![CDATA[
   span { color:red; }
   ]]></css>
-  <html><![CDATA[Reversed - <span></span>
+    <html><![CDATA[Reversed - <span></span>
 
   <div>One</div>
   <div>Two</div>
   <div>Three</div>]]></html>
-</example>
-<category slug="miscellaneous/dom-element-methods"/>
-<category slug="version/1.4"/>
+  </example>
+  <category slug="miscellaneous/dom-element-methods"/>
+  <category slug="version/1.4"/>
 </entry>

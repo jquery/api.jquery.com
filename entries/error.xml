@@ -1,4 +1,5 @@
-<entry type='method' name="error" return="jQuery">
+<?xml version="1.0"?>
+<entry type="method" name="error" return="jQuery">
   <title>.error()</title>
   <desc>Bind an event handler to the "error" JavaScript event.</desc>
   <signature>
@@ -16,7 +17,6 @@
       <desc>A function to execute each time the event is triggered.</desc>
     </argument>
   </signature>
-
   <longdesc>
     <p>This method is a shortcut for <code>.bind('error', handler)</code>.</p>
     <p>The <code>error</code> event is sent to elements, such as images, that are referenced by a document and loaded by the browser. It is called if the element was not loaded correctly.</p>
@@ -30,8 +30,11 @@
   .attr("src", "missing.png");
     </pre>
     <p>If the image cannot be loaded (for example, because it is not present at the supplied URL), the alert  is displayed:</p>
-    <p><span class="output">Handler for .error() called.</span></p>
-    <blockquote><p>The event handler <em>must</em> be attached before the browser fires the error event, which is why the example sets the src attribute after attaching the handler. Also, the error event may not be correctly fired when the page is served locally; <code>error</code> relies on HTTP status codes and will generally not be triggered if the URL uses the <code>file:</code> protocol.</p>
+    <p>
+      <span class="output">Handler for .error() called.</span>
+    </p>
+    <blockquote>
+      <p>The event handler <em>must</em> be attached before the browser fires the error event, which is why the example sets the src attribute after attaching the handler. Also, the error event may not be correctly fired when the page is served locally; <code>error</code> relies on HTTP status codes and will generally not be triggered if the URL uses the <code>file:</code> protocol.</p>
     </blockquote>
     <p>Note: A jQuery error event handler should not be attached to the window object. The browser fires the window's error event when a script error occurs. However, the window error event receives different arguments and has different return value requirements than conventional event handlers. Use <code>window.onerror</code> instead.</p>
   </longdesc>
@@ -43,8 +46,7 @@
   })
   .attr("src", "missing.png");]]></code>
   </example>
-
-<category slug="events/browser-events"/>
-<category slug="version/1.0"/>
-<category slug="version/1.4.3"/>
+  <category slug="events/browser-events"/>
+  <category slug="version/1.0"/>
+  <category slug="version/1.4.3"/>
 </entry>

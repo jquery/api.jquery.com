@@ -1,4 +1,5 @@
-<entry type='method' name="hide" return="jQuery">
+<?xml version="1.0"?>
+<entry type="method" name="hide" return="jQuery">
   <title>.hide()</title>
   <desc>Hide the matched elements.</desc>
   <signature>
@@ -46,52 +47,47 @@ $('#clickme').click(function() {
     alert('Animation complete.');
   });
 });</pre>
-
-<p class="image four-across">
-  <img src="/resources/0042_06_05.png" alt="" />
-  <img src="/resources/0042_06_06.png" alt="" />
-  <img src="/resources/0042_06_07.png" alt="" />
-  <img src="/resources/0042_06_08.png" alt="" />
-</p>
-
-</longdesc>
-
-<note id="jquery.fx.off" type="additional">
-  <placeholder name="title">.hide()</placeholder>
-</note>
-
-
-<example>
-  <desc>Hides all paragraphs then the link on click.</desc>
-  <code><![CDATA[
+    <p class="image four-across">
+      <img src="/resources/0042_06_05.png" alt=""/>
+      <img src="/resources/0042_06_06.png" alt=""/>
+      <img src="/resources/0042_06_07.png" alt=""/>
+      <img src="/resources/0042_06_08.png" alt=""/>
+    </p>
+  </longdesc>
+  <note id="jquery.fx.off" type="additional">
+    <placeholder name="title">.hide()</placeholder>
+  </note>
+  <example>
+    <desc>Hides all paragraphs then the link on click.</desc>
+    <code><![CDATA[
     $("p").hide();
     $("a").click(function ( event ) {
       event.preventDefault();
       $(this).hide();
     });
 ]]></code>
-  <html><![CDATA[<p>Hello</p>
+    <html><![CDATA[<p>Hello</p>
   <a href="#">Click to hide me too</a>
   <p>Here is another paragraph</p>]]></html>
-</example>
-<example>
-  <desc>Animates all shown paragraphs to hide slowly, completing the animation within 600 milliseconds.</desc>
-  <code><![CDATA[
+  </example>
+  <example>
+    <desc>Animates all shown paragraphs to hide slowly, completing the animation within 600 milliseconds.</desc>
+    <code><![CDATA[
     $("button").click(function () {
       $("p").hide("slow");
     });
 ]]></code>
-  <css><![CDATA[
+    <css><![CDATA[
   p { background:#dad; font-weight:bold; }
   ]]></css>
-  <html><![CDATA[<button>Hide 'em</button>
+    <html><![CDATA[<button>Hide 'em</button>
 
   <p>Hiya</p>
   <p>Such interesting text, eh?</p>]]></html>
-</example>
-<example>
-  <desc>Animates all spans (words in this case) to hide fastly, completing each animation within 200 milliseconds. Once each animation is done, it starts the next one.</desc>
-  <code><![CDATA[
+  </example>
+  <example>
+    <desc>Animates all spans (words in this case) to hide fastly, completing each animation within 200 milliseconds. Once each animation is done, it starts the next one.</desc>
+    <code><![CDATA[
 $("#hidr").click(function () {
   $("span:last-child").hide("fast", function () {
     // use callee so don't have to name the function
@@ -102,10 +98,10 @@ $("#showr").click(function () {
   $("span").show(2000);
 });
 ]]></code>
-  <css><![CDATA[
+    <css><![CDATA[
   span { background:#def3ca; padding:3px; float:left; }
   ]]></css>
-  <html><![CDATA[<button id="hidr">Hide</button>
+    <html><![CDATA[<button id="hidr">Hide</button>
 <button id="showr">Show</button>
 <div>
 
@@ -114,10 +110,10 @@ $("#showr").click(function () {
   <span>three</span> <span>programmers...</span>
 
 </div>]]></html>
-</example>
-<example>
-  <desc>Hides the divs when clicked over 2 seconds, then removes the div element when its hidden.  Try clicking on more than one box at a time.</desc>
-  <code><![CDATA[
+  </example>
+  <example>
+    <desc>Hides the divs when clicked over 2 seconds, then removes the div element when its hidden.  Try clicking on more than one box at a time.</desc>
+    <code><![CDATA[
 for (var i = 0; i < 5; i++) {
   $("<div>").appendTo(document.body);
 }
@@ -127,13 +123,13 @@ $("div").click(function () {
   });
 });
 ]]></code>
-  <css><![CDATA[
+    <css><![CDATA[
   div { background:#ece023; width:30px;
         height:40px; margin:2px; float:left; }
   ]]></css>
-  <html><![CDATA[<div></div>]]></html>
-</example>
-<category slug="effects/basics"/>
-<category slug="version/1.0"/>
-<category slug="version/1.4.3"/>
+    <html><![CDATA[<div></div>]]></html>
+  </example>
+  <category slug="effects/basics"/>
+  <category slug="version/1.0"/>
+  <category slug="version/1.4.3"/>
 </entry>

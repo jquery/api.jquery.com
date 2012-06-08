@@ -1,4 +1,5 @@
-<entry type='selector'  name="next adjacent" return="" >
+<?xml version="1.0"?>
+<entry type="selector" name="next adjacent" return="">
   <title>Next Adjacent Selector ("prev + next")</title>
   <sample>prev + next</sample>
   <signature>
@@ -14,7 +15,7 @@
   <longdesc>
     <p>One important point to consider with both the next adjacent sibling selector (<code>prev + next</code>) and the general sibling selector (<code>prev ~ siblings</code>) is that the elements on either side of the combinator must share the same parent.</p>
   </longdesc>
-<example>
+  <example>
     <desc>Finds all inputs that are next to a label.</desc>
     <code><![CDATA[$("label + input").css("color", "blue").val("Labeled!")]]></code>
     <html><![CDATA[<form>
@@ -28,7 +29,7 @@
   </fieldset>
 </form>
 <input name="none" />]]></html>
-</example>
-<category slug="selectors/hierarchy-selectors"/>
-<category slug="version/1.0"/>
+  </example>
+  <category slug="selectors/hierarchy-selectors"/>
+  <category slug="version/1.0"/>
 </entry>

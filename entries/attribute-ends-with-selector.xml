@@ -1,23 +1,26 @@
-<entry type='selector'  name="attributeEndsWith" return="" >
+<?xml version="1.0"?>
+<entry type="selector" name="attributeEndsWith" return="">
   <title>Attribute Ends With Selector [name$="value"]</title>
   <sample>[attribute$="value"]</sample>
-  <signature><added>1.0</added>
-  <argument name="attribute" type="String">
-    <desc>An attribute name.</desc>
-  </argument>
-  <argument name="value" type="String">
-    <desc>An attribute value. Can be either an unquoted single word or a quoted string.</desc>
-  </argument></signature>
+  <signature>
+    <added>1.0</added>
+    <argument name="attribute" type="String">
+      <desc>An attribute name.</desc>
+    </argument>
+    <argument name="value" type="String">
+      <desc>An attribute value. Can be either an unquoted single word or a quoted string.</desc>
+    </argument>
+  </signature>
   <desc>Selects elements that have the specified attribute with a value ending exactly with a given string. The comparison is case sensitive.</desc>
-  <longdesc></longdesc>
-<example>
-  <desc>Finds all inputs with an attribute name that ends with 'letter' and puts text in them.</desc>
-  <code><![CDATA[$('input[name$="letter"]').val('a letter');]]></code>
-  <html><![CDATA[<input name="newsletter" />
+  <longdesc/>
+  <example>
+    <desc>Finds all inputs with an attribute name that ends with 'letter' and puts text in them.</desc>
+    <code><![CDATA[$('input[name$="letter"]').val('a letter');]]></code>
+    <html><![CDATA[<input name="newsletter" />
 
   <input name="milkman" />
   <input name="jobletter" />]]></html>
-</example>
-<category slug="selectors/attribute-selectors"/>
-<category slug="version/1.0"/>
+  </example>
+  <category slug="selectors/attribute-selectors"/>
+  <category slug="version/1.0"/>
 </entry>

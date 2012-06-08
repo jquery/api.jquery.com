@@ -1,4 +1,5 @@
-<entry type='method' name="toggle" return="jQuery">
+<?xml version="1.0"?>
+<entry type="method" name="toggle" return="jQuery">
   <title>.toggle()</title>
   <desc>Display or hide the matched elements.</desc>
   <signature>
@@ -22,16 +23,16 @@
       <desc>A function to call once the animation is complete.</desc>
     </argument>
   </signature>
-
   <signature>
     <added>1.3</added>
     <argument name="showOrHide" type="Boolean">
       <desc>A Boolean indicating whether to show or hide the elements.</desc>
     </argument>
   </signature>
-
   <longdesc>
-    <blockquote><p>Note: The event handling suite also has a method named <a href="http://api.jquery.com/toggle-event/">.toggle()</a>. Which one is fired depends on the set of arguments passed.</p></blockquote>
+    <blockquote>
+      <p>Note: The event handling suite also has a method named <a href="http://api.jquery.com/toggle-event/">.toggle()</a>. Which one is fired depends on the set of arguments passed.</p>
+    </blockquote>
     <p>With no parameters, the <code>.toggle()</code> method simply toggles the visibility of elements:</p>
     <pre>$('.target').toggle();</pre>
     <p>The matched elements will be revealed or hidden immediately, with no animation, by changing the CSS <code>display</code> property. If the element is initially displayed, it will be hidden; if hidden, it will be shown. The <code>display</code> property is saved and restored as needed. If an element has a <code>display</code> value of <code>inline</code>, then is hidden and shown, it will once again be displayed <code>inline</code>.</p>
@@ -55,16 +56,17 @@
     <p>With the element initially shown, we can hide it slowly with the first click:
     </p>
     <p class="image four-across">
-      <img src="/resources/0042_06_09.png" alt="" />
-      <img src="/resources/0042_06_10.png" alt="" />
-      <img src="/resources/0042_06_11.png" alt="" />
-      <img src="/resources/0042_06_12.png" alt="" />
+      <img src="/resources/0042_06_09.png" alt=""/>
+      <img src="/resources/0042_06_10.png" alt=""/>
+      <img src="/resources/0042_06_11.png" alt=""/>
+      <img src="/resources/0042_06_12.png" alt=""/>
     </p>
     <p>A second click will show the element once again:</p>
-    <p class="image four-across"><img src="/resources/0042_06_13.png" alt="" />
-      <img src="/resources/0042_06_14.png" alt="" />
-      <img src="/resources/0042_06_15.png" alt="" />
-      <img src="/resources/0042_06_16.png" alt="" />
+    <p class="image four-across">
+      <img src="/resources/0042_06_13.png" alt=""/>
+      <img src="/resources/0042_06_14.png" alt=""/>
+      <img src="/resources/0042_06_15.png" alt=""/>
+      <img src="/resources/0042_06_16.png" alt=""/>
     </p>
     <p>The second version of the method accepts a Boolean parameter. If this parameter is <code>true</code>, then the matched elements are shown; if <code>false</code>, the elements are hidden. In essence, the statement:
     </p>
@@ -77,57 +79,52 @@
 }
 </pre>
   </longdesc>
-
-<note id="jquery.fx.off" type="additional">
-  <placeholder name="title">.toggle()</placeholder>
-</note>
-
-<example>
-  <desc>Toggles all paragraphs.</desc>
-  <code><![CDATA[
+  <note id="jquery.fx.off" type="additional">
+    <placeholder name="title">.toggle()</placeholder>
+  </note>
+  <example>
+    <desc>Toggles all paragraphs.</desc>
+    <code><![CDATA[
 
 $("button").click(function () {
 $("p").toggle();
 });
 ]]></code>
-  <html><![CDATA[<button>Toggle</button>
+    <html><![CDATA[<button>Toggle</button>
 <p>Hello</p>
 <p style="display: none">Good Bye</p>]]></html>
-</example>
-
-<example>
-  <desc>Animates all paragraphs to be shown if they are hidden and hidden if they are visible, completing the animation within 600 milliseconds.</desc>
-  <code><![CDATA[
+  </example>
+  <example>
+    <desc>Animates all paragraphs to be shown if they are hidden and hidden if they are visible, completing the animation within 600 milliseconds.</desc>
+    <code><![CDATA[
 $("button").click(function () {
 $("p").toggle("slow");
 });
 ]]></code>
-      <css><![CDATA[
+    <css><![CDATA[
 p { background:#dad;
 font-weight:bold;
 font-size:16px; }
 ]]></css>
-  <html><![CDATA[<button>Toggle 'em</button>
+    <html><![CDATA[<button>Toggle 'em</button>
 
 <p>Hiya</p>
 <p>Such interesting text, eh?</p>]]></html>
-</example>
-
-<example>
-  <desc>Shows all paragraphs, then hides them all, back and forth.</desc>
-  <code><![CDATA[
+  </example>
+  <example>
+    <desc>Shows all paragraphs, then hides them all, back and forth.</desc>
+    <code><![CDATA[
 var flip = 0;
 $("button").click(function () {
 $("p").toggle( flip++ % 2 == 0 );
 });
 ]]></code>
-  <html><![CDATA[<button>Toggle</button>
+    <html><![CDATA[<button>Toggle</button>
 <p>Hello</p>
 <p style="display: none">Good Bye</p>]]></html>
-</example>
-
-<category slug="effects/basics"/>
-<category slug="version/1.0"/>
-<category slug="version/1.3"/>
-<category slug="version/1.4.3"/>
+  </example>
+  <category slug="effects/basics"/>
+  <category slug="version/1.0"/>
+  <category slug="version/1.3"/>
+  <category slug="version/1.4.3"/>
 </entry>

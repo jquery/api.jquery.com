@@ -1,18 +1,20 @@
-<entry type='method' name="jQuery.removeData" return="jQuery">
+<?xml version="1.0"?>
+<entry type="method" name="jQuery.removeData" return="jQuery">
   <title>jQuery.removeData()</title>
   <signature>
     <added>1.2.3</added>
     <argument name="element" type="Element">
       <desc>A DOM element from which to remove data.</desc>
     </argument>
-
     <argument name="name" type="String" optional="true">
       <desc>A string naming the piece of data to remove.</desc>
     </argument>
   </signature>
   <desc>Remove a previously-stored piece of data.</desc>
-  <longdesc><p><strong>Note:</strong> This is a low-level method, you should probably use <code><a href='/removeData'>.removeData()</a></code> instead.</p>
-  <p>The <code>jQuery.removeData()</code> method allows us to remove values that were previously set using <code><a href='/jQuery.data'>jQuery.data()</a></code>. When called with the name of a key, <code>jQuery.removeData()</code> deletes that particular value; when called with no arguments, all values are removed.</p></longdesc>
+  <longdesc>
+    <p><strong>Note:</strong> This is a low-level method, you should probably use <code><a href="/removeData">.removeData()</a></code> instead.</p>
+    <p>The <code>jQuery.removeData()</code> method allows us to remove values that were previously set using <code><a href="/jQuery.data">jQuery.data()</a></code>. When called with the name of a key, <code>jQuery.removeData()</code> deletes that particular value; when called with no arguments, all values are removed.</p>
+  </longdesc>
   <example>
     <desc>Set a data store for 2 names then remove one of them.</desc>
     <code><![CDATA[
@@ -24,16 +26,16 @@ $("span:eq(1)").text("" + jQuery.data(div, "test1"));
 jQuery.removeData(div, "test1");
 $("span:eq(2)").text("" + jQuery.data(div, "test1"));
 $("span:eq(3)").text("" + jQuery.data(div, "test2"));]]></code>
-  <css><![CDATA[
+    <css><![CDATA[
     div { margin:2px; color:blue; }
     span { color:red; }
     ]]></css>
-  <html><![CDATA[<div>value1 before creation: <span></span></div>
+    <html><![CDATA[<div>value1 before creation: <span></span></div>
     <div>value1 after creation: <span></span></div>
     <div>value1 after removal: <span></span></div>
     <div>value2 after removal: <span></span></div>]]></html>
   </example>
-<category slug="data"/>
-<category slug="utilities"/>
-<category slug="version/1.2.3"/>
+  <category slug="data"/>
+  <category slug="utilities"/>
+  <category slug="version/1.2.3"/>
 </entry>

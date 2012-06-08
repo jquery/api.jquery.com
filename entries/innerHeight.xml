@@ -1,4 +1,5 @@
-<entry type='method' name="innerHeight" return="Integer">
+<?xml version="1.0"?>
+<entry type="method" name="innerHeight" return="Integer">
   <title>.innerHeight()</title>
   <signature>
     <added>1.2.6</added>
@@ -6,19 +7,20 @@
   <desc>Get the current computed height for the first element in the set of matched elements, including padding but not border.</desc>
   <longdesc>
     <p>This method returns the height of the element, including top and bottom padding, in pixels.</p>
-    <p>This method is not applicable to <code>window</code> and <code>document</code> objects; for these, use <code><a href='/height'>.height()</a></code> instead.</p>
-    <p class="image"><img src="/resources/0042_04_02.png"/></p>
+    <p>This method is not applicable to <code>window</code> and <code>document</code> objects; for these, use <code><a href="/height">.height()</a></code> instead.</p>
+    <p class="image">
+      <img src="/resources/0042_04_02.png"/>
+    </p>
   </longdesc>
-
-<example>
-  <desc>Get the innerHeight of a paragraph.</desc>
-  <code><![CDATA[var p = $("p:first");
+  <example>
+    <desc>Get the innerHeight of a paragraph.</desc>
+    <code><![CDATA[var p = $("p:first");
 $("p:last").text( "innerHeight:" + p.innerHeight() );]]></code>
-  <css><![CDATA[p { margin:10px;padding:5px;border:2px solid #666; }]]></css>
-  <html><![CDATA[<p>Hello</p><p></p>]]></html>
-</example>
-<category slug="css"/>
-<category slug="dimensions"/>
-<category slug="manipulation/style-properties"/>
-<category slug="version/1.2.6"/>
+    <css><![CDATA[p { margin:10px;padding:5px;border:2px solid #666; }]]></css>
+    <html><![CDATA[<p>Hello</p><p></p>]]></html>
+  </example>
+  <category slug="css"/>
+  <category slug="dimensions"/>
+  <category slug="manipulation/style-properties"/>
+  <category slug="version/1.2.6"/>
 </entry>

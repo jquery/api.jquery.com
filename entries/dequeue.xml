@@ -1,4 +1,5 @@
-<entry type='method' name="dequeue" return="jQuery">
+<?xml version="1.0"?>
+<entry type="method" name="dequeue" return="jQuery">
   <title>.dequeue()</title>
   <signature>
     <added>1.2</added>
@@ -7,10 +8,12 @@
     </argument>
   </signature>
   <desc>Execute the next function on the queue for the matched elements.</desc>
-  <longdesc><p>When <code>.dequeue()</code> is called, the next function on the queue is removed from the queue, and then executed. This function should in turn (directly or indirectly) cause <code>.dequeue()</code> to be called, so that the sequence can continue.</p></longdesc>
+  <longdesc>
+    <p>When <code>.dequeue()</code> is called, the next function on the queue is removed from the queue, and then executed. This function should in turn (directly or indirectly) cause <code>.dequeue()</code> to be called, so that the sequence can continue.</p>
+  </longdesc>
   <example>
     <desc>Use dequeue to end a custom queue function which allows the queue to keep going.</desc>
-<code><![CDATA[
+    <code><![CDATA[
 $("button").click(function () {
   $("div").animate({left:'+=200px'}, 2000);
   $("div").animate({top:'0px'}, 600);
@@ -21,17 +24,17 @@ $("button").click(function () {
   $("div").animate({left:'10px', top:'30px'}, 700);
 });
 ]]></code>
-<css><![CDATA[
+    <css><![CDATA[
   div { margin:3px; width:50px; position:absolute;
   height:50px; left:10px; top:30px;
   background-color:yellow; }
   div.red { background-color:red; }
 ]]></css>
-<html><![CDATA[<button>Start</button>
+    <html><![CDATA[<button>Start</button>
 <div></div>]]></html>
-    </example>
+  </example>
   <category slug="effects/custom-effects"/>
-<category slug="data"/>
-<category slug="utilities"/>
-<category slug="version/1.2"/>
+  <category slug="data"/>
+  <category slug="utilities"/>
+  <category slug="version/1.2"/>
 </entry>

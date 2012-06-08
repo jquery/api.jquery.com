@@ -1,4 +1,5 @@
-<entry type='method' name="toggle" return="jQuery">
+<?xml version="1.0"?>
+<entry type="method" name="toggle" return="jQuery">
   <title>.toggle()</title>
   <desc>Bind two or more handlers to the matched elements, to be executed on alternate clicks.</desc>
   <signature>
@@ -13,35 +14,39 @@
       <desc>Additional handlers to cycle through after clicks.</desc>
     </argument>
   </signature>
-
-<longdesc>
-<blockquote><p>Note: jQuery also provides an animation method named <a href="http://api.jquery.com/toggle/">.toggle()</a> that toggles the visibility of elements. Whether the animation or the event method is fired depends on the set of arguments passed.</p></blockquote>
-
-<p>The <code>.toggle()</code> method binds a handler for the <code>click</code> event, so the rules outlined for the triggering of <code>click</code> apply here as well.</p>
-<pre>For example, consider the HTML:
+  <longdesc>
+    <blockquote>
+      <p>Note: jQuery also provides an animation method named <a href="http://api.jquery.com/toggle/">.toggle()</a> that toggles the visibility of elements. Whether the animation or the event method is fired depends on the set of arguments passed.</p>
+    </blockquote>
+    <p>The <code>.toggle()</code> method binds a handler for the <code>click</code> event, so the rules outlined for the triggering of <code>click</code> apply here as well.</p>
+    <pre>For example, consider the HTML:
 &lt;div id="target"&gt;
   Click here
 &lt;/div&gt;</pre>
-<p>Event handlers can then be bound to the <code>&lt;div&gt;</code>:</p>
-<pre>$('#target').toggle(function() {
+    <p>Event handlers can then be bound to the <code>&lt;div&gt;</code>:</p>
+    <pre>$('#target').toggle(function() {
   alert('First handler for .toggle() called.');
 }, function() {
   alert('Second handler for .toggle() called.');
 });</pre>
-<p>As the element is clicked repeatedly, the messages alternate:</p>
-<p>
-  <span class="output">First handler for .toggle() called.</span><br />
-  <span class="output">Second handler for .toggle() called.</span><br />
-  <span class="output">First handler for .toggle() called.</span><br />
-  <span class="output">Second handler for .toggle() called.</span><br />
-  <span class="output">First handler for .toggle() called.</span>
-</p>
-<p>If more than two handlers are provided, <code>.toggle()</code> will cycle among all of them. For example, if there are three handlers, then the first handler will be called on the first click, the fourth click, the seventh click, and so on.</p>
-<p>The <code>.toggle()</code> method is provided for convenience. It is relatively straightforward to implement the same behavior by hand, and this can be necessary if the assumptions built into <code>.toggle()</code> prove limiting. For example, <code>.toggle()</code> is not guaranteed to work correctly if applied twice to the same element. Since <code>.toggle()</code> internally uses a <code>click</code> handler to do its work, we must unbind <code>click</code> to remove a behavior attached with <code>.toggle()</code>, so other <code>click</code> handlers can be caught in the crossfire. The implementation also calls <code>.preventDefault()</code> on the event, so links will not be followed and buttons will not be clicked if <code>.toggle()</code> has been called on the element.</p>
-</longdesc>
-                <example>
-                    <desc>Click to toggle highlight on the list item.</desc>
-                    <code><![CDATA[
+    <p>As the element is clicked repeatedly, the messages alternate:</p>
+    <p>
+      <span class="output">First handler for .toggle() called.</span>
+      <br/>
+      <span class="output">Second handler for .toggle() called.</span>
+      <br/>
+      <span class="output">First handler for .toggle() called.</span>
+      <br/>
+      <span class="output">Second handler for .toggle() called.</span>
+      <br/>
+      <span class="output">First handler for .toggle() called.</span>
+    </p>
+    <p>If more than two handlers are provided, <code>.toggle()</code> will cycle among all of them. For example, if there are three handlers, then the first handler will be called on the first click, the fourth click, the seventh click, and so on.</p>
+    <p>The <code>.toggle()</code> method is provided for convenience. It is relatively straightforward to implement the same behavior by hand, and this can be necessary if the assumptions built into <code>.toggle()</code> prove limiting. For example, <code>.toggle()</code> is not guaranteed to work correctly if applied twice to the same element. Since <code>.toggle()</code> internally uses a <code>click</code> handler to do its work, we must unbind <code>click</code> to remove a behavior attached with <code>.toggle()</code>, so other <code>click</code> handlers can be caught in the crossfire. The implementation also calls <code>.preventDefault()</code> on the event, so links will not be followed and buttons will not be clicked if <code>.toggle()</code> has been called on the element.</p>
+  </longdesc>
+  <example>
+    <desc>Click to toggle highlight on the list item.</desc>
+    <code><![CDATA[
     $("li").toggle(
       function () {
         $(this).css({"list-style-type":"disc", "color":"blue"});
@@ -55,21 +60,21 @@
     );
 
 ]]></code>
-                    <css><![CDATA[
+    <css><![CDATA[
   ul { margin:10px; list-style:inside circle; font-weight:bold; }
   li { cursor:pointer; }
   ]]></css>
-                    <html><![CDATA[<ul>
+    <html><![CDATA[<ul>
     <li>Go to the store</li>
     <li>Pick up dinner</li>
     <li>Debug crash</li>
 
     <li>Take a jog</li>
   </ul>]]></html>
-                </example>
-                <example>
-                    <desc>To toggle a style on table cells:</desc>
-                    <code><![CDATA[$("td").toggle(
+  </example>
+  <example>
+    <desc>To toggle a style on table cells:</desc>
+    <code><![CDATA[$("td").toggle(
   function () {
     $(this).addClass("selected");
   },
@@ -77,8 +82,7 @@
     $(this).removeClass("selected");
   }
 );]]></code>
-                </example>
-
-<category slug="events/mouse-events"/>
-<category slug="version/1.0"/>
+  </example>
+  <category slug="events/mouse-events"/>
+  <category slug="version/1.0"/>
 </entry>

@@ -1,4 +1,5 @@
-<entry type='method' name="ajaxSend" return="jQuery">
+<?xml version="1.0"?>
+<entry type="method" name="ajaxSend" return="jQuery">
   <title>.ajaxSend()</title>
   <signature>
     <added>1.0</added>
@@ -10,11 +11,11 @@
   <longdesc>
     <p>Whenever an Ajax request is about to be sent, jQuery triggers the <code>ajaxSend</code> event. Any and all handlers that have been registered with the <code>.ajaxSend()</code> method are executed at this time.</p>
     <p>To observe this method in action, we can set up a basic Ajax load request:</p>
-<pre>&lt;div class="trigger"&gt;Trigger&lt;/div&gt;
+    <pre>&lt;div class="trigger"&gt;Trigger&lt;/div&gt;
 &lt;div class="result"&gt;&lt;/div&gt;
 &lt;div class="log"&gt;&lt;/div&gt;</pre>
     <p>We can attach our event handler to any element:</p>
-<pre>$('.log').ajaxSend(function() {
+    <pre>$('.log').ajaxSend(function() {
   $(this).text('Triggered ajaxSend handler.');
 });</pre>
     <p>Now, we can make an Ajax request using any jQuery method:</p>
@@ -23,19 +24,19 @@
 });</pre>
     <p>When the user clicks the element with class <code>trigger</code> and the Ajax request is about to begin, the log message is displayed.</p>
     <p><strong>Note:</strong> Because <code>.ajaxSend()</code> is implemented as a method of jQuery instances, we can use the <code>this</code> keyword as we do here to refer to the selected elements within the callback function.</p>
-    <p>All <code>ajaxSend</code> handlers are invoked, regardless of what Ajax request is to be sent. If we must differentiate between the requests, we can use the parameters passed to the handler. Each time an <code>ajaxSend</code> handler is executed, it is passed the event object, the <code>jqXHR</code> object (in version 1.4, <code>XMLHttpRequest</code>object), and the <a href='http://api.jquery.com/jQuery.ajax/'>settings object</a> that was used in the creation of the Ajax request. For example, we can restrict our callback to only handling events dealing with a particular URL:</p>
+    <p>All <code>ajaxSend</code> handlers are invoked, regardless of what Ajax request is to be sent. If we must differentiate between the requests, we can use the parameters passed to the handler. Each time an <code>ajaxSend</code> handler is executed, it is passed the event object, the <code>jqXHR</code> object (in version 1.4, <code>XMLHttpRequest</code>object), and the <a href="http://api.jquery.com/jQuery.ajax/">settings object</a> that was used in the creation of the Ajax request. For example, we can restrict our callback to only handling events dealing with a particular URL:</p>
     <pre>$('.log').ajaxSend(function(e, jqxhr, settings) {
   if (settings.url == 'ajax/test.html') {
     $(this).text('Triggered ajaxSend handler.');
   }
 });</pre>
   </longdesc>
-<example>
-  <desc>Show a message before an Ajax request is sent.</desc>
-  <code><![CDATA[$("#msg").ajaxSend(function(evt, request, settings){
+  <example>
+    <desc>Show a message before an Ajax request is sent.</desc>
+    <code><![CDATA[$("#msg").ajaxSend(function(evt, request, settings){
     $(this).append("<li>Starting request at " + settings.url + "</li>");
 });]]></code>
-</example>
-<category slug="ajax/global-ajax-event-handlers"/>
-<category slug="version/1.0"/>
+  </example>
+  <category slug="ajax/global-ajax-event-handlers"/>
+  <category slug="version/1.0"/>
 </entry>

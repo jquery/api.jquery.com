@@ -1,10 +1,13 @@
-<entry type='property' name="event.namespace" return="String">
+<?xml version="1.0"?>
+<entry type="property" name="event.namespace" return="String">
   <title>event.namespace</title>
   <signature>
     <added>1.4.3</added>
   </signature>
   <desc>The namespace specified when the event was triggered.</desc>
-  <longdesc><p>This will likely be used primarily by plugin authors who wish to handle tasks differently depending on the event namespace used.</p></longdesc>
+  <longdesc>
+    <p>This will likely be used primarily by plugin authors who wish to handle tasks differently depending on the event namespace used.</p>
+  </longdesc>
   <example>
     <desc>Determine the event namespace used.</desc>
     <code><![CDATA[
@@ -15,11 +18,11 @@ $("button").click(function(event) {
   $("p").trigger("test.something");
 });
 ]]></code>
-<html><![CDATA[
+    <html><![CDATA[
 <button>display event.namespace</button>
 <p></p>
 ]]></html>
-</example>
-<category slug="events/event-object"/>
-<category slug="version/1.4.3"/>
+  </example>
+  <category slug="events/event-object"/>
+  <category slug="version/1.4.3"/>
 </entry>

@@ -1,4 +1,5 @@
-<entry type='method' name="focus" return="jQuery">
+<?xml version="1.0"?>
+<entry type="method" name="focus" return="jQuery">
   <title>.focus()</title>
   <desc>Bind an event handler to the "focus" JavaScript event, or trigger that event on an element.</desc>
   <signature>
@@ -19,14 +20,15 @@
   <signature>
     <added>1.0</added>
   </signature>
-
   <longdesc>
     <ul>
       <li>This method is a shortcut for <code>.bind('focus', handler)</code> in the first and second variations, and <code>.trigger('focus')</code> in the third.</li>
       <li>The <code>focus</code> event is sent to an element when it gains focus. This event is implicitly applicable to a limited set of elements, such as  form elements (<code>&lt;input&gt;</code>, <code>&lt;select&gt;</code>, etc.) and links (<code>&lt;a href&gt;</code>). In recent browser versions, the event can be extended to include all element types by explicitly setting the element's <code>tabindex</code> property. An element can gain focus via keyboard commands, such as the Tab key, or by mouse clicks on the element.</li>
       <li>Elements with focus are usually highlighted in some way by the browser, for example with a dotted line surrounding the element. The focus is used to determine which element is the first to receive keyboard-related events.</li>
     </ul>
-    <blockquote><p>Attempting to set focus to a hidden element causes an error in Internet Explorer. Take care to only use <code>.focus()</code> on elements that are visible. To run an element's focus event handlers without setting focus to the element, use <code>.triggerHandler("focus")</code> instead of <code>.focus()</code>.</p></blockquote>
+    <blockquote>
+      <p>Attempting to set focus to a hidden element causes an error in Internet Explorer. Take care to only use <code>.focus()</code> on elements that are visible. To run an element's focus event handlers without setting focus to the element, use <code>.triggerHandler("focus")</code> instead of <code>.focus()</code>.</p>
+    </blockquote>
     <p>For example, consider the HTML:</p>
     <pre>&lt;form&gt;
   &lt;input id="target" type="text" value="Field 1" /&gt;
@@ -36,18 +38,20 @@
   Trigger the handler
 &lt;/div&gt;
 </pre>
-<p>The event handler can be bound to the first input field:</p>
-<pre>$('#target').focus(function() {
+    <p>The event handler can be bound to the first input field:</p>
+    <pre>$('#target').focus(function() {
   alert('Handler for .focus() called.');
 });</pre>
-<p>Now clicking on the first field, or tabbing to it from another field, displays the alert:</p>
-<p><span class="output">Handler for .focus() called.</span></p>
-<p>We can trigger the event when another element is clicked:</p>
-<pre>$('#other').click(function() {
+    <p>Now clicking on the first field, or tabbing to it from another field, displays the alert:</p>
+    <p>
+      <span class="output">Handler for .focus() called.</span>
+    </p>
+    <p>We can trigger the event when another element is clicked:</p>
+    <pre>$('#other').click(function() {
   $('#target').focus();
 });</pre>
-<p>After this code executes, clicks on <span class="output">Trigger the handler</span> will also alert the message.</p>
-<p>The <code>focus</code> event does not bubble in Internet Explorer. Therefore, scripts that rely on event delegation with the <code>focus</code> event will not work consistently across browsers. As of version 1.4.2, however, jQuery works around this limitation by mapping <code>focus</code> to the <code>focusin</code> event in its event delegation methods, <a href="http://api.jquery.com/live/"><code>.live()</code></a> and <a href="http://api.jquery.com/delegate/"><code>.delegate()</code></a>.</p>
+    <p>After this code executes, clicks on <span class="output">Trigger the handler</span> will also alert the message.</p>
+    <p>The <code>focus</code> event does not bubble in Internet Explorer. Therefore, scripts that rely on event delegation with the <code>focus</code> event will not work consistently across browsers. As of version 1.4.2, however, jQuery works around this limitation by mapping <code>focus</code> to the <code>focusin</code> event in its event delegation methods, <a href="http://api.jquery.com/live/"><code>.live()</code></a> and <a href="http://api.jquery.com/delegate/"><code>.delegate()</code></a>.</p>
   </longdesc>
   <example>
     <desc>Fire focus.</desc>
@@ -57,24 +61,23 @@ $("input").focus(function () {
   $(this).next("span").css('display','inline').fadeOut(1000);
 });
 ]]></code>
-  <html><![CDATA[<p><input type="text" /> <span>focus fire</span></p>
+    <html><![CDATA[<p><input type="text" /> <span>focus fire</span></p>
 <p><input type="password" /> <span>focus fire</span></p>]]></html>
-</example>
-<example>
-  <desc>To stop people from writing in text input boxes, try:</desc>
-  <code><![CDATA[$("input[type=text]").focus(function(){
+  </example>
+  <example>
+    <desc>To stop people from writing in text input boxes, try:</desc>
+    <code><![CDATA[$("input[type=text]").focus(function(){
   $(this).blur();
 });]]></code>
-</example>
-<example>
-  <desc>To focus on a login input box with id 'login' on page startup, try:</desc>
-  <code><![CDATA[$(document).ready(function(){
+  </example>
+  <example>
+    <desc>To focus on a login input box with id 'login' on page startup, try:</desc>
+    <code><![CDATA[$(document).ready(function(){
   $("#login").focus();
 });]]></code>
-</example>
-
-<category slug="events/form-events"/>
-<category slug="forms"/>
-<category slug="version/1.0"/>
-<category slug="version/1.4.3"/>
+  </example>
+  <category slug="events/form-events"/>
+  <category slug="forms"/>
+  <category slug="version/1.0"/>
+  <category slug="version/1.4.3"/>
 </entry>

@@ -1,4 +1,5 @@
-<entry type='method' name="removeProp" return="jQuery">
+<?xml version="1.0"?>
+<entry type="method" name="removeProp" return="jQuery">
   <title>.removeProp()</title>
   <signature>
     <added>1.6</added>
@@ -12,12 +13,10 @@
     <p>With some built-in properties of a DOM element or <code>window</code> object, browsers may generate an error if an attempt is made to remove the property. jQuery first assigns the value <code>undefined</code> to the property and ignores any error the browser generates. In general, it is only necessary to remove custom properties that have been set on an object, and not built-in (native) properties.</p>
     <p><strong>Note:</strong> Do not use this method to remove native properties such as checked, disabled, or selected. This will remove the property completely and, once removed, cannot be added again to element. Use <code><a href="http://api.jquery.com/prop">.prop()</a></code> to set these properties to <code>false</code> instead.</p>
   </longdesc>
-
-  <note id="prop-memory-leaks" type="additional"></note>
-
-<example>
-  <desc>Set a numeric property on a paragraph and then remove it. </desc>
-  <code><![CDATA[
+  <note id="prop-memory-leaks" type="additional"/>
+  <example>
+    <desc>Set a numeric property on a paragraph and then remove it. </desc>
+    <code><![CDATA[
 var $para = $("p");
 $para.prop("luggageCode", 1234);
 $para.append("The secret luggage code is: ", String($para.prop("luggageCode")), ". ");
@@ -25,15 +24,15 @@ $para.removeProp("luggageCode");
 $para.append("Now the secret luggage code is: ", String($para.prop("luggageCode")), ". ");
 
 ]]></code>
-  <css><![CDATA[
+    <css><![CDATA[
   img { padding:10px; }
   div { color:red; font-size:24px; }
 ]]></css>
-  <html><![CDATA[
+    <html><![CDATA[
   <p></p>
 ]]></html>
-</example>
-<category slug="attributes"/>
-<category slug="manipulation/general-attributes"/>
-<category slug="version/1.6"/>
+  </example>
+  <category slug="attributes"/>
+  <category slug="manipulation/general-attributes"/>
+  <category slug="version/1.6"/>
 </entry>

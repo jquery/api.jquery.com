@@ -1,4 +1,5 @@
-<entry type='method' name="detach" return="jQuery">
+<?xml version="1.0"?>
+<entry type="method" name="detach" return="jQuery">
   <title>.detach()</title>
   <signature>
     <added>1.4</added>
@@ -7,7 +8,9 @@
     </argument>
   </signature>
   <desc>Remove the set of matched elements from the DOM.</desc>
-  <longdesc><p>The <code>.detach()</code> method is the same as <code><a href='/remove'>.remove()</a></code>, except that <code>.detach()</code> keeps all jQuery data associated with the removed elements. This method is useful when removed elements are to be reinserted into the DOM at a later time.</p></longdesc>
+  <longdesc>
+    <p>The <code>.detach()</code> method is the same as <code><a href="/remove">.remove()</a></code>, except that <code>.detach()</code> keeps all jQuery data associated with the removed elements. This method is useful when removed elements are to be reinserted into the DOM at a later time.</p>
+  </longdesc>
   <example>
     <desc>Detach all paragraphs from the DOM</desc>
     <code><![CDATA[
@@ -28,7 +31,7 @@
   how are
   <p>you?</p>
   <button>Attach/detach paragraphs</button>]]></html>
-</example>
-<category slug="manipulation/dom-removal"/>
-<category slug="version/1.4"/>
+  </example>
+  <category slug="manipulation/dom-removal"/>
+  <category slug="version/1.4"/>
 </entry>

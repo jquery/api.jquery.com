@@ -1,9 +1,14 @@
-<entry type='selector'   name="first-child" return="" >
+<?xml version="1.0"?>
+<entry type="selector" name="first-child" return="">
   <title>:first-child Selector</title>
   <sample>:first-child</sample>
-  <signature><added>1.1.4</added> </signature>
+  <signature>
+    <added>1.1.4</added>
+  </signature>
   <desc>Selects all elements that are the first child of their parent.</desc>
-  <longdesc><p>While <a href="/first-selector">:first</a> matches only a single element, the <code>:first-child</code> selector can match more than one: one for each parent. This is equivalent to <code>:nth-child(1)</code>.</p></longdesc>
+  <longdesc>
+    <p>While <a href="/first-selector">:first</a> matches only a single element, the <code>:first-child</code> selector can match more than one: one for each parent. This is equivalent to <code>:nth-child(1)</code>.</p>
+  </longdesc>
   <example>
     <desc>Finds the first span in each matched div to underline and add a hover state.</desc>
     <code><![CDATA[
@@ -15,11 +20,11 @@ $("div span:first-child")
           $(this).removeClass("sogreen");
         });
 ]]></code>
-  <css><![CDATA[
+    <css><![CDATA[
   span { color:#008; }
   span.sogreen { color:green; font-weight: bolder; }
   ]]></css>
-  <html><![CDATA[<div>
+    <html><![CDATA[<div>
     <span>John,</span>
     <span>Karl,</span>
     <span>Brandon</span>
@@ -31,7 +36,7 @@ $("div span:first-child")
     <span>Ralph</span>
 
   </div>]]></html>
-</example>
-<category slug="selectors/child-filter-selectors"/>
-<category slug="version/1.1.4"/>
+  </example>
+  <category slug="selectors/child-filter-selectors"/>
+  <category slug="version/1.1.4"/>
 </entry>

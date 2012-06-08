@@ -1,4 +1,5 @@
-<entry type='method' name="focusin" return="jQuery">
+<?xml version="1.0"?>
+<entry type="method" name="focusin" return="jQuery">
   <title>.focusin()</title>
   <desc>Bind an event handler to the "focusin" event.</desc>
   <signature>
@@ -16,22 +17,24 @@
       <desc>A function to execute each time the event is triggered.</desc>
     </argument>
   </signature>
-  <longdesc><p>This method is a shortcut for <code>.bind('focusin', handler)</code>.</p>
+  <longdesc>
+    <p>This method is a shortcut for <code>.bind('focusin', handler)</code>.</p>
     <p>The <code>focusin</code> event is sent to an element when it, or any element inside of it, gains focus. This is distinct from the <a href="/focus">focus</a> event in that it supports detecting the focus event on parent elements (in other words, it supports event bubbling).</p>
-    <p>This event will likely be used together with the <a href="/focusout">focusout</a> event.</p></longdesc>
-<example>
-  <desc>Watch for a focus to occur within the paragraphs on the page.</desc>
-  <css><![CDATA[span {display:none;}]]></css>
-  <code><![CDATA[
+    <p>This event will likely be used together with the <a href="/focusout">focusout</a> event.</p>
+  </longdesc>
+  <example>
+    <desc>Watch for a focus to occur within the paragraphs on the page.</desc>
+    <css><![CDATA[span {display:none;}]]></css>
+    <code><![CDATA[
 $("p").focusin(function() {
   $(this).find("span").css('display','inline').fadeOut(1000);
 });
 ]]></code>
-  <html><![CDATA[<p><input type="text" /> <span>focusin fire</span></p>
+    <html><![CDATA[<p><input type="text" /> <span>focusin fire</span></p>
 <p><input type="password" /> <span>focusin fire</span></p>]]></html>
-</example>
-<category slug="events/keyboard-events"/>
-<category slug="events/mouse-events"/>
-<category slug="version/1.4"/>
-<category slug="version/1.4.3"/>
+  </example>
+  <category slug="events/keyboard-events"/>
+  <category slug="events/mouse-events"/>
+  <category slug="version/1.4"/>
+  <category slug="version/1.4.3"/>
 </entry>

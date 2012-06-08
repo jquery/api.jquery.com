@@ -1,24 +1,26 @@
-<entry type='method' name="empty" return="jQuery">
+<?xml version="1.0"?>
+<entry type="method" name="empty" return="jQuery">
   <title>.empty()</title>
   <signature>
     <added>1.0</added>
   </signature>
   <desc>Remove all child nodes of the set of matched elements from the DOM.</desc>
-  <longdesc><p>This method removes not only child (and other descendant) elements, but also any text within the set of matched elements. This is because, according to the DOM specification, any string of text within an element is considered a child node of that element. Consider the following HTML:</p>
-<pre>&lt;div class="container"&gt;
+  <longdesc>
+    <p>This method removes not only child (and other descendant) elements, but also any text within the set of matched elements. This is because, according to the DOM specification, any string of text within an element is considered a child node of that element. Consider the following HTML:</p>
+    <pre>&lt;div class="container"&gt;
   &lt;div class="hello"&gt;Hello&lt;/div&gt;
   &lt;div class="goodbye"&gt;Goodbye&lt;/div&gt;
 &lt;/div&gt;</pre>
-<p>We can target any element for removal:</p>
-<pre>$('.hello').empty();</pre>
-<p>This will result in a DOM structure with the <code>Hello</code> text deleted:</p>
-<pre>&lt;div class="container"&gt;
+    <p>We can target any element for removal:</p>
+    <pre>$('.hello').empty();</pre>
+    <p>This will result in a DOM structure with the <code>Hello</code> text deleted:</p>
+    <pre>&lt;div class="container"&gt;
   &lt;div class="hello"&gt;&lt;/div&gt;
   &lt;div class="goodbye"&gt;Goodbye&lt;/div&gt;
 &lt;/div&gt;</pre>
-<p>If we had any number of nested elements inside <code>&lt;div class="hello"&gt;</code>, they would be removed, too. </p>
-  <p>To avoid memory leaks, jQuery removes other constructs such as data and event handlers from the child elements before removing the elements themselves.</p>
-  <p>If you want to remove elements without destroying their data or event handlers (so they can be re-added later), use <a href="/detach/"><code>.detach()</code></a> instead.</p>
+    <p>If we had any number of nested elements inside <code>&lt;div class="hello"&gt;</code>, they would be removed, too. </p>
+    <p>To avoid memory leaks, jQuery removes other constructs such as data and event handlers from the child elements before removing the elements themselves.</p>
+    <p>If you want to remove elements without destroying their data or event handlers (so they can be re-added later), use <a href="/detach/"><code>.detach()</code></a> instead.</p>
   </longdesc>
   <example>
     <desc>Removes all child nodes (including text nodes) from all paragraphs</desc>
@@ -27,15 +29,15 @@
     $("p").empty();
   });
 ]]></code>
-<css><![CDATA[
+    <css><![CDATA[
   p { background:yellow; }
 ]]></css>
-<html><![CDATA[<p>
+    <html><![CDATA[<p>
   Hello, <span>Person</span> <a href="javascript:;">and person</a>
 </p>
 
 <button>Call empty() on above paragraph</button>]]></html>
   </example>
-<category slug="manipulation/dom-removal"/>
-<category slug="version/1.0"/>
+  <category slug="manipulation/dom-removal"/>
+  <category slug="version/1.0"/>
 </entry>
