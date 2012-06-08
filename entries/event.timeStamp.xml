@@ -1,4 +1,5 @@
 <entry type='property' name="event.timeStamp" return="Number">
+  <title>event.timeStamp</title>
   <signature>
     <added>1.2.6</added>
   </signature>

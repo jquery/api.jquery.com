@@ -25,7 +25,7 @@
     </argument>
   </signature>
 
-  <desc>Check the current matched set of elements against a selector, element, or jQuery object and return <code>true</code> if at least one of these elements matches the given arguments.</desc>
+  <desc><![CDATA[Check the current matched set of elements against a selector, element, or jQuery object and return <code>true</code> if at least one of these elements matches the given arguments.]]></desc>
   <longdesc>
 <p>Unlike other filtering methods, <code>.is()</code> does not create a new jQuery object. Instead, it allows you to test the contents of a jQuery object without modification. This is often useful inside callbacks, such as event handlers.</p>
 <p>Suppose you have a list, with two of its items containing a child element:</p>
@@ -97,12 +97,12 @@ $("li").click(function() {
 
 <css><![CDATA[
   div { width:60px; height:60px; margin:5px; float:left;
-      border:4px outset; background:green; text-align:center; 
+      border:4px outset; background:green; text-align:center;
       font-weight:bolder; cursor:pointer; }
   .blue { background:blue; }
   .red { background:red; }
   span { color:white; font-size:16px; }
-  p { color:red; font-weight:bolder; background:yellow; 
+  p { color:red; font-weight:bolder; background:yellow;
       margin:3px; clear:left; display:none; }
 ]]></css>
 
@@ -152,7 +152,7 @@ $("li").click(function() {
     }
   });
 ]]></code>
-<css><![CDATA[li { cursor:pointer; }]]></css>  
+<css><![CDATA[li { cursor:pointer; }]]></css>
 <html><![CDATA[
 <ul id="browsers">
   <li>Chrome</li>
@@ -174,7 +174,7 @@ $("li").click(function() {
     }
   });
 ]]></code>
-<css><![CDATA[li { cursor:pointer; }]]></css>  
+<css><![CDATA[li { cursor:pointer; }]]></css>
 <html><![CDATA[
 <ul id="browsers">
   <li>Chrome</li>

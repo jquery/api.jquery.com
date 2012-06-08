@@ -1,4 +1,5 @@
 <entry type='property' name="jQuery.fx.off" return="Boolean">
+  <title>jQuery.fx.off</title>
   <desc>Globally disable all animations.</desc>
   <signature>
     <added>1.3</added>

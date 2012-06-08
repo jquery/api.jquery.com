@@ -7,7 +7,7 @@
       <desc>Zero-based index.</desc>
     </argument>
   </signature>
-  <desc>Select all elements at an index greater than <code>index</code> within the matched set.</desc>
+  <desc><![CDATA[Select all elements at an index greater than <code>index</code> within the matched set.]]></desc>
   <longdesc><p><strong>index-related selectors</strong></p>
     <p>The index-related selector expressions (including this "greater than" selector) filter the set of elements that have matched the expressions that precede them. They narrow the set down based on the order of the elements within this matched set. For example, if elements are first selected with a class selector (<code>.myclass</code>) and four elements are returned, these elements are given indices 0 through 3 for the purposes of these selectors.</p>
     <p>Note that since JavaScript arrays use <em>0-based indexing</em>, these selectors reflect that fact. This is why <code>$('.myclass:gt(1)')</code> selects elements after the second element in the document with the class <code>myclass</code>, rather than after the first. In contrast, <code>:nth-child(n)</code> uses <em>1-based indexing</em> to conform to the CSS specification.</p>

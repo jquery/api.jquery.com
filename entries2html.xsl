@@ -1,5 +1,5 @@
 <xsl:stylesheet version='1.0' xmlns:xsl='http://www.w3.org/1999/XSL/Transform'>
-
+<xsl:import href="xml2json.xsl"/>
 <xsl:output method="html" omit-xml-declaration="yes"/>
 
 <xsl:template match="option|property">
@@ -104,15 +104,11 @@
 </xsl:template>
 
 <xsl:template match="/">
-  <xsl:variable name="dquo">"</xsl:variable>
-  <xsl:variable name="squo">'</xsl:variable>
-  <xsl:variable name="desc-raw" select="//entry/desc/text()|//entry/desc/*" />
-  <xsl:variable name="desc-trans" select="translate($desc-raw, $dquo, $squo)" />
 
 <script>
 	{
-		"title": "<xsl:value-of select="//entry/@name" />",
-		"excerpt": "<xsl:copy-of select="$desc-trans" />",
+		"title": <xsl:apply-templates select="//entry/title/text()" />,
+		"excerpt": <xsl:apply-templates select="//entry[1]/desc/text()|//entry[1]/desc/*" />,
 		"termSlugs": {
 			"category": [
 				<xsl:for-each select="//entry/category"><xsl:if test="position() &gt; 1"><xsl:text>,</xsl:text></xsl:if>"<xsl:value-of select="@slug"/>"</xsl:for-each>

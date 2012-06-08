@@ -2,7 +2,7 @@
 <entry type='method' name="die" return="jQuery">
   <title>.die()</title>
   <deprecated>1.7</deprecated>
-  <desc>Remove all event handlers previously attached using <code>.live()</code> from the elements.</desc>
+  <desc><![CDATA[Remove all event handlers previously attached using <code>.live()</code> from the elements.]]></desc>
   <signature>
     <added>1.4.1</added>
   </signature>
@@ -20,7 +20,7 @@
 </entry>
 <entry type='method' name="die" return="jQuery">
   <deprecated>1.7</deprecated>
-  <desc>Remove an event handler previously attached using <code>.live()</code> from the elements.</desc>
+  <desc><![CDATA[Remove an event handler previously attached using <code>.live()</code> from the elements.]]></desc>
   <signature>
     <added>1.3</added>
     <argument name="eventType" type="String">

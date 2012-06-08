@@ -1,4 +1,5 @@
 <entry type='property' name="event.data">
+  <title>event.data</title>
   <signature>
     <added>1.1</added>
   </signature>

@@ -1,4 +1,5 @@
 <entry type='property' name="event.relatedTarget" return="Element">
+  <title>event.relatedTarget</title>
   <signature>
     <added>1.1.4</added>
   </signature>

@@ -1,4 +1,5 @@
 <entry type='property' name="event.delegateTarget" return="Element">
+  <title>event.delegateTarget</title>
   <signature>
     <added>1.7</added>
   </signature>

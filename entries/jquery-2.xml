@@ -1,4 +1,5 @@
 <entry type='property' name="jquery" return="String">
+  <title>.jquery</title>
   <signature><added>1.0</added></signature>
   <desc>A string containing the jQuery version number.</desc>
   <longdesc><p>The <code>.jquery</code> property is assigned to the jQuery prototype, commonly referred to by its alias <code>$.fn</code>. It is a string containing the version number of <code>jQuery</code>, such as "1.5.0" or "1.4.4".</p>

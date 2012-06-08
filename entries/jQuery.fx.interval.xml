@@ -1,4 +1,5 @@
 <entry type='property' name="jQuery.fx.interval" return="Number">
+  <title>jQuery.fx.interval</title>
   <desc>The rate (in milliseconds) at which animations fire.</desc>
   <signature>
     <added>1.4.3</added>

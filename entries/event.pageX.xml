@@ -1,4 +1,5 @@
 <entry type='property' name="event.pageX" return="Number">
+  <title>event.pageX</title>
   <signature>
     <added>1.0.4</added>
   </signature>

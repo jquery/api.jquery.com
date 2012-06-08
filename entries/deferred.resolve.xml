@@ -8,7 +8,7 @@
       </desc>
     </argument>
   </signature>
-  <desc> Resolve a Deferred object and call any doneCallbacks with the given <code>args</code>. </desc>
+  <desc><![CDATA[ Resolve a Deferred object and call any doneCallbacks with the given <code>args</code>. ]]></desc>
   <longdesc> <p>When the Deferred is resolved, any doneCallbacks added by <a href="/deferred.then/"><code>deferred.then</code></a> or <a href="/deferred.done/"><code>deferred.done</code></a> are called. Callbacks are executed in the order they were added. Each callback is passed the <code>args</code> from the <code>.resolve()</code>. Any doneCallbacks added after the Deferred enters the resolved state are executed immediately when they are added, using the arguments that were passed to the <code>.resolve()</code> call. For more information, see the documentation for <a href="/category/deferred-object/">Deferred object</a>.</p>  </longdesc>
 
 <category slug="deferred-object"/>

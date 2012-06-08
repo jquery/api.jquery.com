@@ -1,4 +1,5 @@
-<entry type='selector'   name="focus" return="">
+<entry type='selector' name="focus" return="">
+  <title>:focus Selector</title>
   <sample>:focus</sample>
   <signature><added>1.6</added> </signature>
   <desc>Selects element if it is currently focused.</desc>

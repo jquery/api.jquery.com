@@ -1,4 +1,5 @@
 <entry type='method' name="toggle" return="jQuery">
+  <title>.toggle()</title>
   <desc>Bind two or more handlers to the matched elements, to be executed on alternate clicks.</desc>
   <signature>
     <added>1.0</added>

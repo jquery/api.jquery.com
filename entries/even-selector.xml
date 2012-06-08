@@ -2,7 +2,7 @@
   <title>:even Selector</title>
   <sample>:even</sample>
   <signature><added>1.0</added> </signature>
-  <desc>Selects even elements, zero-indexed.  See also <a href="/Selectors/odd">odd</a>.</desc>
+  <desc><![CDATA[Selects even elements, zero-indexed.  See also <a href="/Selectors/odd">odd</a>.]]></desc>
   <longdesc><p>In particular, note that the <em>0-based indexing</em> means that, counter-intuitively, <code>:even</code> selects the first element, third element, and so on within the matched set.</p></longdesc>
 
   <note id="jquery-selector-extension" type="additional">
