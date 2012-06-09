@@ -9,10 +9,7 @@
   <longdesc>
     <p><code>:image</code> is equivalent to <code>[type="image"]</code></p>
   </longdesc>
-  <note id="jquery-selector-extension-alt" type="additional">
-    <placeholder name="selector">:image</placeholder>
-    <placeholder name="alt">[type="image"]</placeholder>
-  </note>
+  <note id="jquery-selector-extension-alt" type="additional" data-selector=":image" data-alt="[type=&quot;image&quot;]"/>
   <example>
     <desc>Finds all image inputs.</desc>
     <code><![CDATA[

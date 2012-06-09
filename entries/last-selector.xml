@@ -9,9 +9,7 @@
   <longdesc>
     <p>Note that <code>:last</code> selects a single element by filtering  the current jQuery collection and matching the last element within it.</p>
   </longdesc>
-  <note id="jquery-selector-extension" type="additional">
-    <placeholder name="selector">:last</placeholder>
-  </note>
+  <note id="jquery-selector-extension" type="additional" data-selector=":last"/>
   <example>
     <desc>Finds the last table row.</desc>
     <code><![CDATA[$("tr:last").css({backgroundColor: 'yellow', fontWeight: 'bolder'});]]></code>

@@ -57,9 +57,7 @@ $('#clickme').click(function() {
       <img src="/resources/0042_06_04.png" alt=""/>
     </p>
   </longdesc>
-  <note id="jquery.fx.off" type="additional">
-    <placeholder name="title">.show()</placeholder>
-  </note>
+  <note id="jquery.fx.off" type="additional" data-title=".show()"/>
   <example>
     <desc>Animates all hidden paragraphs to show slowly, completing the animation within 600 milliseconds.</desc>
     <code><![CDATA[

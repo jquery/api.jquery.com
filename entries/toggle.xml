@@ -79,9 +79,7 @@
 }
 </pre>
   </longdesc>
-  <note id="jquery.fx.off" type="additional">
-    <placeholder name="title">.toggle()</placeholder>
-  </note>
+  <note id="jquery.fx.off" type="additional" data-title=".toggle()"/>
   <example>
     <desc>Toggles all paragraphs.</desc>
     <code><![CDATA[

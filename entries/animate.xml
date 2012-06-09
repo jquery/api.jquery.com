@@ -127,9 +127,7 @@
 });</pre>
     <p>As previously noted, a plugin is required for the <code>easeOutBounce</code> function.</p>
   </longdesc>
-  <note id="jquery.fx.off" type="additional">
-    <placeholder name="title">.animate()</placeholder>
-  </note>
+  <note id="jquery.fx.off" type="additional" data-title=".animate()"/>
   <example>
     <desc>Click the button to animate the div with a number of different properties.</desc>
     <code><![CDATA[

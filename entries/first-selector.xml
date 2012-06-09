@@ -9,11 +9,8 @@
   <longdesc>
     <p>The <code>:first</code> pseudo-class is equivalent to <code>:eq(0)</code>. It could also be written as <code>:lt(1)</code>. While this matches only a single element, <a href="first-child-selector">:first-child</a> can match more than one: One for each parent.</p>
   </longdesc>
-  <note id="jquery-selector-extension" type="additional">
-    <placeholder name="selector">:first</placeholder>
-  </note>
-  <note id="document-order" type="additional">
-  </note>
+  <note id="jquery-selector-extension" type="additional" data-selector=":first"/>
+  <note id="document-order" type="additional"/>
   <example>
     <desc>Finds the first table row.</desc>
     <code><![CDATA[$("tr:first").css("font-style", "italic");]]></code>

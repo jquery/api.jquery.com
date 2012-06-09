@@ -70,8 +70,7 @@ According to the <a href="http://www.w3.org/TR/html401/interact/forms.html#h-17.
       </ul>
       <p>If using jQuery 1.6, the code <code>if ( $(elem).attr("checked") )</code> will retrieve the actual content <em>attribute</em>, which does not change as the checkbox is checked and unchecked. It is meant only to store the default or initial value of the checked property. To maintain backwards compatability, the <code>.attr()</code> method in jQuery 1.6.1+ will retrieve and update the property for you so no code for boolean attributes is required to be changed to <code>.prop()</code>.  Nevertheless, the preferred way to retrieve a checked value is with one of the options listed above. To see how this works in the latest jQuery, check/uncheck the checkbox in the example below.</p>
     </longdesc>
-    <note id="prop-memory-leaks" type="additional">
-</note>
+    <note id="prop-memory-leaks" type="additional"/>
     <example>
       <desc>Display the checked property and attribute of a checkbox as it changes.</desc>
       <code><![CDATA[
@@ -138,8 +137,7 @@ $("input").val("someValue");
 });</pre>
       <p><strong>Note: </strong>If nothing is returned in the setter function (ie. <code>function(index, prop){})</code>, or if <code>undefined</code> is returned, the current value is not changed. This is useful for selectively setting values only when certain criteria are met.</p>
     </longdesc>
-    <note id="prop-memory-leaks" type="additional">
-</note>
+    <note id="prop-memory-leaks" type="additional"/>
     <example>
       <desc>Disable all checkboxes on the page.</desc>
       <code><![CDATA[

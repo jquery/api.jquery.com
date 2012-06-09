@@ -9,10 +9,7 @@
   <longdesc>
     <p><code>:file</code> is equivalent to <code>[type="file"]</code>. As with other pseudo-class selectors (those that begin with a ":") it is recommended to precede it with a tag name or some other selector; otherwise, the universal selector ("*") is implied. In other words, the bare <code>$(':file')</code> is equivalent to <code>$('*:file')</code>, so <code>$('input:file')</code> should be used instead. </p>
   </longdesc>
-  <note id="jquery-selector-extension-alt" type="additional">
-    <placeholder name="alt">[type="file"]</placeholder>
-    <placeholder name="selector">:file</placeholder>
-  </note>
+  <note id="jquery-selector-extension-alt" type="additional" data-selector=":file" data-alt="[type=&quot;file&quot;]"/>
   <example>
     <desc>Finds all file inputs.</desc>
     <code><![CDATA[

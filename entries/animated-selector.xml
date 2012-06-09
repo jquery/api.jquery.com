@@ -7,9 +7,7 @@
   </signature>
   <desc>Select all elements that are in the progress of an animation at the time the selector is run.</desc>
   <longdesc/>
-  <note id="jquery-selector-extension" type="additional">
-    <placeholder name="selector">:animated</placeholder>
-  </note>
+  <note id="jquery-selector-extension" type="additional" data-selector=":animated"/>
   <example>
     <desc>Change the color of any div that is animated.</desc>
     <code><![CDATA[

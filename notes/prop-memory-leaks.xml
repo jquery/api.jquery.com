@@ -1,1 +1,4 @@
-In Internet Explorer prior to version 9, using <code><a href=\"http://api.jquery.com/prop/\">.prop()</a></code> to set a DOM element property to anything other than a simple primitive value (number, string, or boolean) can cause memory leaks if the property is not removed (using <a href=\"http://api.jquery.com/removeProp/\"><code>.removeProp()</code></a>) before the DOM element is removed from the document. To safely set values on DOM objects without memory leaks, use <a  href=\"http://api.jquery.com/data/\"><code>.data()</code></a>.
+<?xml version="1.0"?>
+<note>
+  In Internet Explorer prior to version 9, using <code><a href="http://api.jquery.com/prop/">.prop()</a></code> to set a DOM element property to anything other than a simple primitive value (number, string, or boolean) can cause memory leaks if the property is not removed (using <a href="http://api.jquery.com/removeProp/"><code>.removeProp()</code></a>) before the DOM element is removed from the document. To safely set values on DOM objects without memory leaks, use <a href="http://api.jquery.com/data/"><code>.data()</code></a>.
+</note>

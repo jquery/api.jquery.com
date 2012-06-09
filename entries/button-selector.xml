@@ -9,9 +9,7 @@
   <longdesc>
     <p>An equivalent selector to <code>$(":button")</code> using valid CSS is <code>$("button, input[type='button']")</code>.</p>
   </longdesc>
-  <note id="jquery-selector-extension" type="additional">
-    <placeholder name="selector">:button</placeholder>
-  </note>
+  <note id="jquery-selector-extension" type="additional" data-selector=":button"/>
   <example>
     <desc>Find all button inputs and mark them.</desc>
     <code><![CDATA[

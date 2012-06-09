@@ -14,10 +14,7 @@
 $('&lt;input&gt;').is(':text'); // true
 </pre>
   </longdesc>
-  <note id="jquery-selector-extension-alt" type="additional">
-    <placeholder name="selector">:text</placeholder>
-    <placeholder name="alt">[type="text"]</placeholder>
-  </note>
+  <note id="jquery-selector-extension-alt" type="additional" data-selector=":text" data-alt="[type=&quot;text&quot;]"/>
   <example>
     <desc>Finds all text inputs.</desc>
     <code><![CDATA[

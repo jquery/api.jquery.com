@@ -55,8 +55,7 @@ $(elements).on(<em>events</em>, <em>selector</em>, <em>data</em>, <em>handler</e
     <p>To remove events attached with <code>delegate()</code>, see  the <a href="http://api.jquery.com/undelegate">.undelegate()</a> method.</p>
     <p>Passing and handling event data works the same way as it does for <code>.on()</code>.</p>
   </longdesc>
-  <note id="propagation-for-live-or-delegate" type="additional">
-</note>
+  <note id="propagation-for-live-or-delegate" type="additional"/>
   <example>
     <desc>Click a paragraph to add another. Note that .delegate() attaches a click event handler to all paragraphs - even new ones.</desc>
     <code><![CDATA[

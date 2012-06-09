@@ -9,11 +9,8 @@
   <longdesc>
     <p>In particular, note that the <em>0-based indexing</em> means that, counter-intuitively, <code>:even</code> selects the first element, third element, and so on within the matched set.</p>
   </longdesc>
-  <note id="jquery-selector-extension" type="additional">
-    <placeholder name="selector">:even</placeholder>
-  </note>
-  <note id="document-order" type="additional">
-  </note>
+  <note id="jquery-selector-extension" type="additional" data-selector=":even"/>
+  <note id="document-order" type="additional"/>
   <example>
     <desc>Finds even table rows, matching the first, third and so on (index 0, 2, 4 etc.).</desc>
     <code><![CDATA[$("tr:even").css("background-color", "#bbbbff");]]></code>

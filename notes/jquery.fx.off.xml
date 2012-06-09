@@ -1,1 +1,4 @@
-All jQuery effects, including <code>%title%</code>, can be turned off globally by setting  <code>jQuery.fx.off = true</code>, which effectively sets the duration to 0. For more information, see <a href=\"http://api.jquery.com/jquery.fx.off\">jQuery.fx.off</a>.
+<?xml version="1.0"?>
+<note>
+  All jQuery effects, including <code><placeholder name="title"/></code>, can be turned off globally by setting  <code>jQuery.fx.off = true</code>, which effectively sets the duration to 0. For more information, see <a href="http://api.jquery.com/jquery.fx.off">jQuery.fx.off</a>.
+</note>

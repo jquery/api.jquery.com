@@ -9,9 +9,7 @@
   <longdesc>
     <p>The <code>:selected</code> selector works for <code>&lt;option&gt;</code> elements. It does not work for checkboxes or radio inputs; use <code>:checked</code> for them.</p>
   </longdesc>
-  <note id="jquery-selector-extension" type="additional">
-    <placeholder name="selector">:selected</placeholder>
-  </note>
+  <note id="jquery-selector-extension" type="additional" data-selector=":selected"/>
   <example>
     <desc>Attaches a change event to the select that gets the text for each selected option and writes them in the div.  It then triggers the event for the initial text draw.</desc>
     <code><![CDATA[

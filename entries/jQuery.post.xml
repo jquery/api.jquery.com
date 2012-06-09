@@ -55,9 +55,7 @@
   </pre>
   </longdesc>
   <note id="same-origin-policy" type="additional"/>
-  <note id="use-ajaxerror" type="additional">
-    <placeholder name="title">jQuery.post()</placeholder>
-  </note>
+  <note id="use-ajaxerror" type="additional" data-title="jQuery.post()"/>
   <example>
     <desc>Request the test.php page, but ignore the return results.</desc>
     <code><![CDATA[$.post("test.php");]]></code>

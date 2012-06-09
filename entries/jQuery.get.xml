@@ -52,13 +52,9 @@
   // Set another completion function for the request above
   jqxhr.complete(function(){ alert("second complete"); });</pre>
   </longdesc>
-  <note id="same-origin-policy" type="additional">
-</note>
-  <note id="use-ajaxerror" type="additional">
-    <placeholder name="title">jQuery.get()</placeholder>
-  </note>
-  <note id="same-origin-policy-exceptions" type="additional">
-</note>
+  <note id="same-origin-policy" type="additional"/>
+  <note id="use-ajaxerror" type="additional" data-title="jQuery.get()"/>
+  <note id="same-origin-policy-exceptions" type="additional"/>
   <example>
     <desc>Request the test.php page, but ignore the return results.</desc>
     <code><![CDATA[$.get("test.php");]]></code>

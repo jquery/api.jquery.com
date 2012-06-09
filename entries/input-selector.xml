@@ -9,9 +9,7 @@
   <longdesc>
     <p>The <code>:input</code> selector basically selects all form controls.</p>
   </longdesc>
-  <note id="jquery-selector-extension" type="additional">
-    <placeholder name="selector">:input</placeholder>
-  </note>
+  <note id="jquery-selector-extension" type="additional" data-selector=":input"/>
   <example>
     <desc>Finds all input elements.</desc>
     <code><![CDATA[

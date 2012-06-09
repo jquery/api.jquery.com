@@ -1,4 +1,4 @@
-<note id="jquery-selector-extension-alt" type="additional">
-	<desc>Because <code>%selector%</code> is a jQuery extension and not part of the CSS specification, queries using <code>%selector%</code> cannot take advantage of the performance boost provided by the native DOM <code>querySelectorAll()</code> method. For better performance in modern browsers, use <code>%alt%</code> instead.
-	</desc>
+<?xml version="1.0"?>
+<note>
+	Because <code><placeholder name="selector"/></code> is a jQuery extension and not part of the CSS specification, queries using <code><placeholder name="selector"/></code> cannot take advantage of the performance boost provided by the native DOM <code>querySelectorAll()</code> method. For better performance in modern browsers, use <code><placeholder name="alt"/></code> instead.
 </note>

@@ -14,10 +14,7 @@
     <p>Note that since JavaScript arrays use <em>0-based indexing</em>, these selectors reflect that fact. This is why <code>$('.myclass:eq(1)')</code> selects the second element in the document with the class myclass, rather than the first. In contrast, <code>:nth-child(n)</code> uses <em>1-based indexing</em> to conform to the CSS specification.</p>
     <p>Unlike the <a href="http://api.jquery.com/eq/"><code>.eq(index)</code></a> method, the <code>:eq(index)</code> selector does <em>not</em> accept a negative value for <code>index</code>. For example, while <code>$('li').eq(-1)</code> selects the last <code>li</code> element, <code>$('li:eq(-1)')</code> selects nothing.</p>
   </longdesc>
-  <note id="jquery-selector-extension-alt" type="additional">
-    <placeholder name="selector">:eq()</placeholder>
-    <placeholder name="alt">$("your-pure-css-selector").eq(index)</placeholder>
-  </note>
+  <note id="jquery-selector-extension-alt" type="additional" data-selector=":eq()" data-alt="$(&quot;your-pure-css-selector&quot;).eq(index)"/>
   <example>
     <desc>Finds the third td.</desc>
     <code><![CDATA[$("td:eq(2)").css("color", "red");]]></code>

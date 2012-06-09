@@ -9,10 +9,7 @@
   <longdesc>
     <p><code>$(':checkbox')</code> is equivalent to <code>$('[type=checkbox]')</code>. As with other pseudo-class selectors (those that begin with a ":") it is recommended to precede it with a tag name or some other selector; otherwise, the universal selector ("*") is implied. In other words, the bare <code>$(':checkbox')</code> is equivalent to <code>$('*:checkbox')</code>, so <code>$('input:checkbox')</code> should be used instead. </p>
   </longdesc>
-  <note id="jquery-selector-extension-alt" type="additional">
-    <placeholder name="selector">:checkbox</placeholder>
-    <placeholder name="alt">[type="checkbox"]</placeholder>
-  </note>
+  <note id="jquery-selector-extension-alt" type="additional" data-selector=":checkbox" data-alt="[type=&quot;checkbox&quot;]"/>
   <example>
     <desc>Finds all checkbox inputs.</desc>
     <code><![CDATA[

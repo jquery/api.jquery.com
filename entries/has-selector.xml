@@ -12,10 +12,7 @@
   <longdesc>
     <p>The expression <code>$('div:has(p)')</code> matches a <code>&lt;div&gt;</code> if a <code>&lt;p&gt;</code> exists anywhere among its descendants, not just as a direct child.</p>
   </longdesc>
-  <note id="jquery-selector-extension-alt" type="additional">
-    <placeholder name="selector">:has()</placeholder>
-    <placeholder name="alt">$("your-pure-css-selector").has(selector/DOMElement)</placeholder>
-  </note>
+  <note id="jquery-selector-extension-alt" type="additional" data-selector=":has()" data-alt="$(&quot;your-pure-css-selector&quot;).has(selector/DOMElement)"/>
   <example>
     <desc>Adds the class "test" to all divs that have a paragraph inside of them.</desc>
     <code><![CDATA[$("div:has(p)").addClass("test");]]></code>

@@ -5,15 +5,16 @@ var // modules
 	fs = require( "fs" ),
 	path = require( "path" ),
 	pygmentize = require( "pygmentize" ),
+	rimraf = require( "rimraf" ),
 	spawn = require( "child_process" ).spawn,
 	
 	// files
 	pageFiles = grunt.file.expandFiles( "pages/*.html" ),
 	entryFiles = grunt.file.expandFiles( "entries/*.xml" ),
-	categoryFiles = grunt.file.expandFiles( "categories/*.xml" ),
+	noteFiles = grunt.file.expandFiles( "notes/*.xml" ),
 	resourceFiles = grunt.file.expandFiles( "resources/*" ),
 	
-	xmlFiles = [].concat( entryFiles, categoryFiles, "cat2tax.xsl", "categories.xml", "entries2html.xsl", "xml2json.xsl" );
+	xmlFiles = [].concat( entryFiles, noteFiles, "cat2tax.xsl", "categories.xml", "entries2html.xsl", "xml2json.xsl" );
 	
 function pathSlug( fileName ) {
 	return path.basename( fileName, path.extname( fileName ) );
@@ -61,7 +62,7 @@ grunt.registerTask( "xmllint", function() {
 			taskDone();
 			return;
 		}
-		grunt.log.writeln( "Lint free files: " + entryFiles.length );
+		grunt.log.writeln( "Lint free files: " + xmlFiles.length );
 		taskDone();
 	});
 });
@@ -76,6 +77,7 @@ grunt.registerTask( "build-pages", function() {
 	grunt.utils.async.forEachSeries( pageFiles, function( fileName, fileDone ) {
 		var targetFileName = targetDir + path.basename( fileName );
 		grunt.verbose.write( "Reading " + fileName + "..." );
+		grunt.verbose.ok();
 		grunt.verbose.write( "Pygmentizing " + targetFileName + "..." );
 		pygmentize.file( fileName, function( error, data ) {
 			if ( error ) {
@@ -110,12 +112,11 @@ grunt.registerTask( "build-entries", function() {
 	grunt.file.mkdir( targetDir );
 
 	grunt.utils.async.forEachSeries( entryFiles, function( fileName, fileDone ) {
-		grunt.verbose.write( "Reading " + fileName + "..." );
+		grunt.verbose.write( "Transforming (pass 1: preproc-xinclude.xsl) " + fileName + "..." );
 		grunt.utils.spawn({
 			cmd: "xsltproc",
-			args: [ "entries2html.xsl", fileName ]
-		}, function( err, result ) {
-			var targetFileName;
+			args: [ "preproc-xinclude.xsl", fileName ]
+		}, function( err, pass1result ) {
 			if ( err ) {
 				grunt.verbose.error();
 				grunt.log.error( err );
@@ -123,25 +124,42 @@ grunt.registerTask( "build-entries", function() {
 				return;
 			}
 			grunt.verbose.ok();
-
-			targetFileName = targetDir + path.basename( fileName );
-			targetFileName = targetFileName.substr( 0, targetFileName.length - "xml".length ) + "html";
-
-			grunt.verbose.write( "Pygmentizing " + targetFileName + "..." );
-			pygmentize.file( result, function( error, data ) {
-				if ( error ) {
+			
+			var targetXMLFileName = "entries_tmp/" + path.basename( fileName );
+			
+			grunt.file.write( targetXMLFileName, pass1result );
+			
+			grunt.verbose.write( "Transforming (pass 2: entries2html.xsl) " + fileName + "..." );
+			grunt.utils.spawn({
+				cmd: "xsltproc",
+				args: [ "--xinclude", "entries2html.xsl", targetXMLFileName ]
+			}, function( err, pass2result ) {
+				if ( err ) {
 					grunt.verbose.error();
-					grunt.log.error( error );
+					grunt.log.error( err );
 					fileDone();
 					return;
 				}
 				grunt.verbose.ok();
 
-				grunt.file.write( targetFileName, data );
+				var targetHTMLFileName = targetDir + path.basename( fileName );
+				targetHTMLFileName = targetHTMLFileName.substr( 0, targetHTMLFileName.length - "xml".length ) + "html";
 
-				fileDone();				
-			});
+				grunt.verbose.write( "Pygmentizing " + targetHTMLFileName + "..." );
+				pygmentize.file( pass2result, function( error, data ) {
+					if ( error ) {
+						grunt.verbose.error();
+						grunt.log.error( error );
+						fileDone();
+						return;
+					}
+					grunt.verbose.ok();
 
+					grunt.file.write( targetHTMLFileName, data );
+
+					fileDone();				
+				});
+			});	
 		});
 	}, function() {
 		if ( task.errorCount ) {
@@ -149,6 +167,7 @@ grunt.registerTask( "build-entries", function() {
 			taskDone();
 			return;
 		}
+		rimraf.sync( "entries_tmp" );
 		grunt.log.writeln( "Built " + entryFiles.length + " entries." );
 		taskDone();
 	});
@@ -210,12 +229,13 @@ grunt.registerTask( "build-resources", function() {
 
 grunt.registerTask( "xmltidy", function() {
 	var task = this,
-		taskDone = task.async();
+		taskDone = task.async(),
+		filesToTidy = [].concat( entryFiles, noteFiles, "categories.xml" );
 	
 	// Only tidy files that are lint free
 	task.requires( "xmllint" );
 
-	grunt.utils.async.forEachSeries( entryFiles, function( fileName, fileDone )  {
+	grunt.utils.async.forEachSeries( filesToTidy, function( fileName, fileDone )  {
 		grunt.verbose.write( "Tidying " + fileName + "..." );
 		grunt.utils.spawn({
 			cmd: "xmllint",
@@ -239,7 +259,7 @@ grunt.registerTask( "xmltidy", function() {
 			taskDone();
 			return;
 		}
-		grunt.log.writeln( "Tidied " + entryFiles.length + " files." );
+		grunt.log.writeln( "Tidied " + filesToTidy.length + " files." );
 		taskDone();
 	});
 });

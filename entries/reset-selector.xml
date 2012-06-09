@@ -9,10 +9,7 @@
   <longdesc>
     <p><code>:reset</code> is equivalent to <code>[type="reset"]</code></p>
   </longdesc>
-  <note id="jquery-selector-extension-alt" type="additional">
-    <placeholder name="alt">[type="reset"]</placeholder>
-    <placeholder name="selector">:reset</placeholder>
-  </note>
+  <note id="jquery-selector-extension-alt" type="additional" data-selector=":reset" data-alt="[type=&quot;reset&quot;]"/>
   <example>
     <desc>Finds all reset inputs.</desc>
     <code><![CDATA[
