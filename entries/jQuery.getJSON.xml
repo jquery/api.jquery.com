@@ -77,7 +77,7 @@ jqxhr.complete(function(){ alert("second complete"); });</pre>
     <code><![CDATA[
 $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",
   {
-    tags: "cat",
+    tags: "mount rainier",
     tagmode: "any",
     format: "json"
   },
