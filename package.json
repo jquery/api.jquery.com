@@ -23,7 +23,7 @@
   "dependencies": {
     "grunt": "0.3.x",
     "grunt-clean": "0.1.0",
-    "grunt-wordpress": "0.1.1",
+    "grunt-wordpress": "1.0.0",
     "pygmentize": "0.5.2",
     "rimraf": "latest"
   },
