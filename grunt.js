@@ -7,15 +7,15 @@ var // modules
 	pygmentize = require( "pygmentize" ),
 	rimraf = require( "rimraf" ),
 	spawn = require( "child_process" ).spawn,
-	
+
 	// files
 	pageFiles = grunt.file.expandFiles( "pages/*.html" ),
 	entryFiles = grunt.file.expandFiles( "entries/*.xml" ),
 	noteFiles = grunt.file.expandFiles( "notes/*.xml" ),
 	resourceFiles = grunt.file.expandFiles( "resources/*" ),
-	
+
 	xmlFiles = [].concat( entryFiles, noteFiles, "cat2tax.xsl", "categories.xml", "entries2html.xsl", "xml2json.xsl" );
-	
+
 function pathSlug( fileName ) {
 	return path.basename( fileName, path.extname( fileName ) );
 }
@@ -35,7 +35,7 @@ grunt.initConfig({
 	},
 	wordpress: grunt.utils._.extend({
 		dir: "dist/wordpress"
-	}, grunt.file.readJSON( "config.json" ) )
+	}, grunt.file.readJSON( "config-stage.json" ) )
 });
 
 grunt.registerTask( "xmllint", function() {
@@ -71,9 +71,9 @@ grunt.registerTask( "build-pages", function() {
 	var task = this,
 		taskDone = task.async(),
 		targetDir = grunt.config( "wordpress.dir" ) + "/posts/page/";
-	
+
 	grunt.file.mkdir( targetDir );
-	
+
 	grunt.utils.async.forEachSeries( pageFiles, function( fileName, fileDone ) {
 		var targetFileName = targetDir + path.basename( fileName );
 		grunt.verbose.write( "Reading " + fileName + "..." );
@@ -90,7 +90,7 @@ grunt.registerTask( "build-pages", function() {
 
 			grunt.file.write( targetFileName, data );
 
-			fileDone();				
+			fileDone();
 		});
 	}, function() {
 		if ( task.errorCount ) {
@@ -99,7 +99,7 @@ grunt.registerTask( "build-pages", function() {
 			return;
 		}
 		grunt.log.writeln( "Built " + pageFiles.length + " pages." );
-		taskDone();		
+		taskDone();
 	});
 });
 
@@ -124,11 +124,11 @@ grunt.registerTask( "build-entries", function() {
 				return;
 			}
 			grunt.verbose.ok();
-			
+
 			var targetXMLFileName = "entries_tmp/" + path.basename( fileName );
-			
+
 			grunt.file.write( targetXMLFileName, pass1result );
-			
+
 			grunt.verbose.write( "Transforming (pass 2: entries2html.xsl) " + fileName + "..." );
 			grunt.utils.spawn({
 				cmd: "xsltproc",
@@ -157,9 +157,9 @@ grunt.registerTask( "build-entries", function() {
 
 					grunt.file.write( targetHTMLFileName, data );
 
-					fileDone();				
+					fileDone();
 				});
-			});	
+			});
 		});
 	}, function() {
 		if ( task.errorCount ) {
@@ -231,7 +231,7 @@ grunt.registerTask( "xmltidy", function() {
 	var task = this,
 		taskDone = task.async(),
 		filesToTidy = [].concat( entryFiles, noteFiles, "categories.xml" );
-	
+
 	// Only tidy files that are lint free
 	task.requires( "xmllint" );
 
@@ -251,7 +251,7 @@ grunt.registerTask( "xmltidy", function() {
 
 			grunt.file.write( fileName, result );
 
-			fileDone();				
+			fileDone();
 		});
 	}, function() {
 		if ( task.errorCount ) {
@@ -267,6 +267,5 @@ grunt.registerTask( "xmltidy", function() {
 grunt.registerTask( "default", "build-wordpress" );
 grunt.registerTask( "build-wordpress", "clean lint xmllint build-pages build-entries build-categories build-resources" );
 grunt.registerTask( "tidy", "xmllint xmltidy" );
-grunt.registerTask( "deploy", "wordpress-deploy" );
 
 };
