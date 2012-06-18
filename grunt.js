@@ -28,6 +28,9 @@ grunt.initConfig({
 	xmltidy: {
 		all: [].concat( entryFiles, noteFiles, "categories.xml" )
 	},
+	"build-pages": {
+		all: grunt.file.expandFiles( "pages/*" )
+	},
 	"build-xml-entries": {
 		all: entryFiles
 	},
@@ -37,42 +40,6 @@ grunt.initConfig({
 	wordpress: grunt.utils._.extend({
 		dir: "dist/wordpress"
 	}, grunt.file.readJSON( "config.json" ) )
-});
-
-grunt.registerTask( "build-pages", function() {
-	var task = this,
-		taskDone = task.async(),
-		targetDir = grunt.config( "wordpress.dir" ) + "/posts/page/";
-
-	grunt.file.mkdir( targetDir );
-
-	grunt.utils.async.forEachSeries( pageFiles, function( fileName, fileDone ) {
-		var targetFileName = targetDir + path.basename( fileName );
-		grunt.verbose.write( "Reading " + fileName + "..." );
-		grunt.verbose.ok();
-		grunt.verbose.write( "Pygmentizing " + targetFileName + "..." );
-		pygmentize.file( fileName, function( error, data ) {
-			if ( error ) {
-				grunt.verbose.error();
-				grunt.log.error( error );
-				fileDone();
-				return;
-			}
-			grunt.verbose.ok();
-
-			grunt.file.write( targetFileName, data );
-
-			fileDone();
-		});
-	}, function() {
-		if ( task.errorCount ) {
-			grunt.warn( "Task \"" + task.name + "\" failed." );
-			taskDone();
-			return;
-		}
-		grunt.log.writeln( "Built " + pageFiles.length + " pages." );
-		taskDone();
-	});
 });
 
 grunt.registerTask( "default", "build-wordpress" );

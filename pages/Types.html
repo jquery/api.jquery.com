@@ -13,11 +13,12 @@ ol ul { margin-left: 1.5em !important; }
 </p><p>You should be able to try out most of the examples below by just copying them to the <a href="http://www.getfirebug.com/" class="external text" title="http://www.getfirebug.com/">Firebug</a> console (note: Firebug requires <a href="http://www.getfirefox.com" class="external text" title="http://www.getfirefox.com">Firefox</a>).
 </p><p>Whenever an example mentions that a type defaults to a boolean value, the result is good to know when using that type in a boolean context:
 </p>
-<pre><code data-lang="javascript">var x = ""
-if ( x )
-  console.log( "x defaulted to true" )
-else
-  console.log( "x defaulted to false" )
+<pre><code>var x = "";
+if ( x ) {
+  console.log( "x defaulted to true" );
+} else {
+  console.log( "x defaulted to false" );
+}
 </code></pre>
 <p>In this case, <code>"x defaulted to false"</code> is printed.
 </p><p>To keep the examples short, the invert-operator is used to show a boolean context:
