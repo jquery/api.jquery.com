@@ -24,8 +24,8 @@
     "grunt": "0.3.x",
     "grunt-clean": "0.1.0",
     "grunt-wordpress": "1.0.0",
-    "pygmentize": "0.5.2",
-    "rimraf": "latest"
+    "grunt-jquery-content": "0.1.0",
+    "pygmentize": "0.5.2"
   },
   "devDependencies": {},
   "keywords": []
