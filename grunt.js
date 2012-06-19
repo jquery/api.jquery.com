@@ -1,10 +1,7 @@
 /*jshint node:true */
 module.exports = function( grunt ) {
 
-var // modules
-	pygmentize = require( "pygmentize" ),
-
-	// files
+var // files
 	pageFiles = grunt.file.expandFiles( "pages/*.html" ),
 	entryFiles = grunt.file.expandFiles( "entries/*.xml" ),
 	noteFiles = grunt.file.expandFiles( "notes/*.xml" ),
