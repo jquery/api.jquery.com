@@ -12,8 +12,8 @@
         <img src="/resources/0042_04_04.png"/>
       </p>
       <p>This method is also able to find the width of the window and document.</p>
-      <pre>$(window).width();   // returns width of browser viewport
-      $(document).width(); // returns width of HTML document</pre>
+      <pre><code>$(window).width();   // returns width of browser viewport
+      $(document).width(); // returns width of HTML document</code></pre>
       <p>Note that <code>.width()</code> will always return the content width, regardless of the value of the CSS <code>box-sizing</code> property.</p>
     </longdesc>
     <example>

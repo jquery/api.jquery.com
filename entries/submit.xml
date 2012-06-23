@@ -27,22 +27,22 @@
       <p>Depending on the browser, the Enter key may only cause a form submission if the form has exactly one text field, or only when there is a submit button present. The interface should not rely on a particular behavior for this key unless the issue is forced by observing the keypress event for presses of the Enter key.</p>
     </blockquote>
     <p>For example, consider the HTML:</p>
-    <pre>&lt;form id="target" action="destination.html"&gt;
+    <pre><code>&lt;form id="target" action="destination.html"&gt;
   &lt;input type="text" value="Hello there" /&gt;
   &lt;input type="submit" value="Go" /&gt;
 &lt;/form&gt;
 &lt;div id="other"&gt;
   Trigger the handler
-&lt;/div&gt;</pre>
+&lt;/div&gt;</code></pre>
     <p>The event handler can be bound to the form:</p>
-    <pre>$('#target').submit(function() {
+    <pre><code>$('#target').submit(function() {
   alert('Handler for .submit() called.');
   return false;
-});</pre>
+});</code></pre>
     <p>Now when the form is submitted, the message is alerted. This happens prior to the actual submission, so we can cancel the submit action by calling <code>.preventDefault()</code> on the event object or by returning <code>false</code> from our handler. We can trigger the event manually when another element is clicked:</p>
-    <pre>$('#other').click(function() {
+    <pre><code>$('#other').click(function() {
   $('#target').submit();
-});</pre>
+});</code></pre>
     <p>After this code executes, clicks on <span class="output">Trigger the handler</span> will also display the message. In addition, the default <code>submit</code> action on the form will be fired, so the form will be submitted.</p>
     <p>The JavaScript <code>submit</code> event does not bubble in Internet Explorer. However, scripts that rely on event delegation with the <code>submit</code> event will work consistently across browsers as of jQuery 1.4, which has normalized the event's behavior. </p>
   </longdesc>

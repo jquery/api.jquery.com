@@ -124,17 +124,17 @@ $("input").change(function() {
     <longdesc>
       <p>The <code>.prop()</code> method is a convenient way to set the value of properties&#x2014;especially when setting multiple properties, using values returned by a function, or setting values on multiple elements at once. It should be used when setting <code>selectedIndex</code>, <code>tagName</code>, <code>nodeName</code>, <code>nodeType</code>, <code>ownerDocument</code>, <code>defaultChecked</code>, or <code>defaultSelected</code>. Since jQuery 1.6, these properties can no longer be set with the <code>.attr()</code> method. They do not have corresponding attributes and are only properties.</p>
       <p>Properties generally affect the dynamic state of a DOM element without changing the serialized HTML attribute. Examples include the <code>value</code> property of input elements, the <code>disabled</code> property of inputs and buttons, or the <code>checked</code> property of a checkbox. The <code>.prop()</code> method should be used to set disabled and checked instead of the <code><a href="http://api.jquery.com/attr">.attr()</a></code> method. The <code><a href="http://api.jquery.com/val">.val()</a></code> method should be used for getting and setting value.</p>
-      <pre>
+      <pre><code>
 $("input").prop("disabled", false);
 $("input").prop("checked", true);
 $("input").val("someValue");
-</pre>
+</code></pre>
       <p><strong>Important:</strong> the <code><a href="http://api.jquery.com/removeProp">.removeProp()</a></code> method should not be used to set these properties to false. Once a native property is removed, it cannot be added again. See <code><a href="http://api.jquery.com/removeProp">.removeProp()</a></code> for more information.</p>
       <h4 id="computed-prop-values">Computed property values</h4>
       <p>By using a function to set properties, you can compute the value based on other properties of the element. For example, to toggle all checkboxes based off their individual values:</p>
-      <pre>$("input[type='checkbox']").prop("checked", function( i, val ) {
+      <pre><code>$("input[type='checkbox']").prop("checked", function( i, val ) {
   return !val;
-});</pre>
+});</code></pre>
       <p><strong>Note: </strong>If nothing is returned in the setter function (ie. <code>function(index, prop){})</code>, or if <code>undefined</code> is returned, the current value is not changed. This is useful for selectively setting values only when certain criteria are met.</p>
     </longdesc>
     <note id="prop-memory-leaks" type="additional"/>

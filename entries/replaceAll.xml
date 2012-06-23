@@ -10,26 +10,26 @@
   <desc>Replace each target element with the set of matched elements.</desc>
   <longdesc>
     <p>The <code>.replaceAll()</code> method is corollary to <code><a href="/replaceWith">.replaceWith()</a></code>, but with the source and target reversed. Consider this DOM structure:</p>
-    <pre>&lt;div class="container"&gt;
+    <pre><code>&lt;div class="container"&gt;
   &lt;div class="inner first"&gt;Hello&lt;/div&gt;
   &lt;div class="inner second"&gt;And&lt;/div&gt;
   &lt;div class="inner third"&gt;Goodbye&lt;/div&gt;
-&lt;/div&gt;</pre>
+&lt;/div&gt;</code></pre>
     <p>We can create an element, then replace other elements with it:</p>
-    <pre>$('&lt;h2&gt;New heading&lt;/h2&gt;').replaceAll('.inner');</pre>
+    <pre><code>$('&lt;h2&gt;New heading&lt;/h2&gt;').replaceAll('.inner');</code></pre>
     <p>This causes all of them to be replaced:</p>
-    <pre>&lt;div class="container"&gt;
+    <pre><code>&lt;div class="container"&gt;
   &lt;h2&gt;New heading&lt;/h2&gt;
   &lt;h2&gt;New heading&lt;/h2&gt;
   &lt;h2&gt;New heading&lt;/h2&gt;
-&lt;/div&gt;</pre>
+&lt;/div&gt;</code></pre>
     <p>Or, we could select an element to use as the replacement:</p>
-    <pre>$('.first').replaceAll('.third');</pre>
+    <pre><code>$('.first').replaceAll('.third');</code></pre>
     <p>This results in the DOM structure:</p>
-    <pre>&lt;div class="container"&gt;
+    <pre><code>&lt;div class="container"&gt;
   &lt;div class="inner second"&gt;And&lt;/div&gt;
   &lt;div class="inner first"&gt;Hello&lt;/div&gt;
-&lt;/div&gt;</pre>
+&lt;/div&gt;</code></pre>
     <p>From this example, we can see that the selected element replaces the target by being moved from its old location, not by being cloned.</p>
   </longdesc>
   <example>

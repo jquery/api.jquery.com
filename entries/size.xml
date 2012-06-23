@@ -8,15 +8,15 @@
   <longdesc>
     <p>The <code>.size()</code> method is functionally equivalent to the <code><a href="http://api.jquery.com/length/">.length</a></code> property; however, <strong>the <code>.length</code> property is preferred</strong> because it does not have the overhead of a function call.</p>
     <p>Given a simple unordered list on the page:</p>
-    <pre>
+    <pre><code>
 &lt;ul&gt;
   &lt;li&gt;foo&lt;/li&gt;
   &lt;li&gt;bar&lt;/li&gt;
 &lt;/ul&gt;
-    </pre>
+    </code></pre>
     <p>Both <code>.size()</code> and <code>.length</code> identify the number of items:</p>
-    <pre>alert( "Size: " + $("li").size() );
-alert( "Size: " + $("li").length );</pre>
+    <pre><code>alert( "Size: " + $("li").size() );
+alert( "Size: " + $("li").length );</code></pre>
     <p>This results in two alerts:</p>
     <p>
       <span class="output">Size: 2</span>

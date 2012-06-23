@@ -7,7 +7,7 @@
   <desc>Retrieve all the DOM elements contained in the jQuery set, as an array.</desc>
   <longdesc>
     <p><code>.toArray()</code> returns all of the elements in the jQuery set:</p>
-    <pre>alert($('li').toArray());</pre>
+    <pre><code>alert($('li').toArray());</code></pre>
     <p>All of the matched DOM nodes are returned by this call, contained in a standard array:</p>
     <p>
       <span class="result">[&lt;li id="foo"&gt;, &lt;li id="bar"&gt;]</span>

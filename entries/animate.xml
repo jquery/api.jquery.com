@@ -78,13 +78,13 @@
     <p>If supplied, the <code>complete</code> callback function is fired once the animation is complete. This can be useful for stringing different animations together in sequence. The callback is not sent any arguments, but <code>this</code> is set to the DOM element being animated. If multiple elements are animated, the callback is executed once per matched element, not once for the animation as a whole.</p>
     <h4 id="basic-usage">Basic Usage</h4>
     <p>To animate any element, such as a simple image:</p>
-    <pre>&lt;div id="clickme"&gt;
+    <pre><code>&lt;div id="clickme"&gt;
   Click here
 &lt;/div&gt;
 &lt;img id="book" src="book.png" alt="" width="100" height="123"
-  style="position: relative; left: 10px;" /&gt;</pre>
+  style="position: relative; left: 10px;" /&gt;</code></pre>
     <p>To animate the opacity, left offset, and height of the image simultaneously:</p>
-    <pre>$('#clickme').click(function() {
+    <pre><code>$('#clickme').click(function() {
   $('#book').animate({
     opacity: 0.25,
     left: '+=50',
@@ -93,7 +93,7 @@
     // Animation complete.
   });
 });
-</pre>
+</code></pre>
     <p class="image">
       <img src="/resources/animate-1.jpg" alt=""/>
     </p>
@@ -118,7 +118,7 @@
       <li><code>fx</code>: a reference to the <code>jQuery.fx</code> prototype object, which contains a number of properties such as <code>elem</code> for the animated element, <code>start</code> and <code>end</code> for the first and last value of the animated property, respectively, and <code>prop</code> for the property being animated.</li>
     </ul>
     <p>Note that the <code>step</code> function is called for each animated property on each animated element. For example, given two list items, the <code>step</code> function fires four times at each step of the animation:  </p>
-    <pre>$('li').animate({
+    <pre><code>$('li').animate({
   opacity: .5,
   height: '50%'
 },
@@ -127,13 +127,13 @@
     var data = fx.elem.id + ' ' + fx.prop + ': ' + now;
     $('body').append('&lt;div&gt;' + data + '&lt;/div&gt;');
   }
-});</pre>
+});</code></pre>
     <h4 id="easing">Easing</h4>
     <p>The remaining parameter of <code>.animate()</code> is a string naming an easing function to use. An easing function specifies the speed at which the animation progresses at different points within the animation. The only easing implementations in the jQuery library are the default, called <code>swing</code>, and one that progresses at a constant pace, called <code>linear</code>. More easing functions are available with the use of plug-ins, most notably the <a href="http://jqueryui.com/">jQuery UI suite</a>.</p>
     <h4 id="per-property-easing">Per-property Easing</h4>
     <p>As of jQuery version 1.4, you can set per-property easing functions within a single <code>.animate()</code> call. In the first version of <code>.animate()</code>, each property can take an array as its value: The first member of the array is the CSS property and the second member is an easing function.  If a per-property easing function is not defined for a particular property, it uses the value of the <code>.animate()</code> method's optional easing argument. If the easing argument is not defined, the default <code>swing</code> function is used.</p>
     <p>For example, to simultaneously animate the width and height with the <code>swing</code> easing function and the opacity with the <code>linear</code> easing function:</p>
-    <pre>$('#clickme').click(function() {
+    <pre><code>$('#clickme').click(function() {
   $('#book').animate({
     width: ['toggle', 'swing'],
     height: ['toggle', 'swing'],
@@ -141,9 +141,9 @@
   }, 5000, 'linear', function() {
       $(this).after('&lt;div&gt;Animation complete.&lt;/div&gt;');
   });
-});</pre>
+});</code></pre>
     <p>In the second version of <code>.animate()</code>, the options map can include the <code>specialEasing</code> property, which is itself a map of CSS properties and their corresponding easing functions.  For example, to simultaneously animate the width using the <code>linear</code> easing function and the height using the <code>easeOutBounce</code> easing function:</p>
-    <pre>$('#clickme').click(function() {
+    <pre><code>$('#clickme').click(function() {
   $('#book').animate({
     width: 'toggle',
     height: 'toggle'
@@ -157,7 +157,7 @@
       $(this).after('&lt;div&gt;Animation complete.&lt;/div&gt;');
     }
   });
-});</pre>
+});</code></pre>
     <p>As previously noted, a plugin is required for the <code>easeOutBounce</code> function.</p>
   </longdesc>
   <note id="jquery.fx.off" type="additional" data-title=".animate()"/>

@@ -26,26 +26,26 @@
     <p>The <code>keypress</code> event is sent to an element when the browser registers keyboard input. This is similar to the <code>keydown</code> event, except in the case of key repeats. If the user presses and holds a key, a <code>keydown </code>event is triggered once, but separate <code>keypress</code> events are triggered for each inserted character. In addition, modifier keys (such as Shift) trigger <code>keydown</code> events but not <code>keypress</code> events.</p>
     <p>A <code>keypress</code> event handler can be attached to any element, but the event is only sent to the element that has the focus. Focusable elements can vary between browsers, but form elements can always get focus so are reasonable candidates for this event type.</p>
     <p>For example, consider the HTML:</p>
-    <pre>&lt;form&gt;
+    <pre><code>&lt;form&gt;
   &lt;fieldset&gt;
     &lt;input id="target" type="text" value="Hello there" /&gt;
   &lt;/fieldset&gt;
 &lt;/form&gt;
 &lt;div id="other"&gt;
   Trigger the handler
-&lt;/div&gt;</pre>
+&lt;/div&gt;</code></pre>
     <p>The event handler can be bound to the input field:</p>
-    <pre>$("#target").keypress(function() {
+    <pre><code>$("#target").keypress(function() {
   alert("Handler for .keypress() called.");
-});</pre>
+});</code></pre>
     <p>Now when the insertion point is inside the field, pressing a key displays the alert:</p>
     <p>
       <span class="output">Handler for .keypress() called.</span>
     </p>
     <p>The message repeats if the key is held down. To trigger the event manually, apply <code>.keypress()</code> without an argument::</p>
-    <pre>$('#other').click(function() {
+    <pre><code>$('#other').click(function() {
   $("#target").keypress();
-});</pre>
+});</code></pre>
     <p>After this code executes, clicks on <span class="output">Trigger the handler</span> will also alert the message.</p>
     <p>If key presses anywhere need to be caught (for example, to implement global shortcut keys on a page), it is useful to attach this behavior to the <code>document</code> object. Because of event bubbling, all key presses will make their way up the DOM to the <code>document</code> object unless explicitly stopped.</p>
     <p>To determine which character was entered, examine the <code>event</code> object that is passed to the handler function. While browsers use differing properties to store this information, jQuery normalizes the <code>.which</code> property so you can reliably use it to retrieve the character code.</p>

@@ -11,29 +11,29 @@
   <longdesc>
     <p>The <code><a href="/after">.after()</a></code> and <code>.insertAfter()</code> methods perform the same task. The major difference is in the syntax-specifically, in the placement of the content and target. With<code> .after()</code>, the selector expression preceding the method is the container after which the content is inserted. With <code>.insertAfter()</code>, on the other hand, the content precedes the method, either as a selector expression or as markup created on the fly, and it is inserted after the target container.</p>
     <p>Consider the following HTML:</p>
-    <pre>&lt;div class="container"&gt;
+    <pre><code>&lt;div class="container"&gt;
   &lt;h2&gt;Greetings&lt;/h2&gt;
   &lt;div class="inner"&gt;Hello&lt;/div&gt;
   &lt;div class="inner"&gt;Goodbye&lt;/div&gt;
-&lt;/div&gt;</pre>
+&lt;/div&gt;</code></pre>
     <p>We can create content and insert it after several elements at once:</p>
-    <pre>$('&lt;p&gt;Test&lt;/p&gt;').insertAfter('.inner');</pre>
+    <pre><code>$('&lt;p&gt;Test&lt;/p&gt;').insertAfter('.inner');</code></pre>
     <p>Each inner <code>&lt;div&gt;</code> element gets this new content:</p>
-    <pre>&lt;div class="container"&gt;
+    <pre><code>&lt;div class="container"&gt;
   &lt;h2&gt;Greetings&lt;/h2&gt;
   &lt;div class="inner"&gt;Hello&lt;/div&gt;
   &lt;p&gt;Test&lt;/p&gt;
   &lt;div class="inner"&gt;Goodbye&lt;/div&gt;
   &lt;p&gt;Test&lt;/p&gt;
-&lt;/div&gt;</pre>
+&lt;/div&gt;</code></pre>
     <p>We can also select an element on the page and insert it after another:</p>
-    <pre>$('h2').insertAfter($('.container'));</pre>
+    <pre><code>$('h2').insertAfter($('.container'));</code></pre>
     <p>If an element selected this way is inserted elsewhere, it will be moved after the target (not cloned):</p>
-    <pre>&lt;div class="container"&gt;
+    <pre><code>&lt;div class="container"&gt;
   &lt;div class="inner"&gt;Hello&lt;/div&gt;
   &lt;div class="inner"&gt;Goodbye&lt;/div&gt;
 &lt;/div&gt;
-&lt;h2&gt;Greetings&lt;/h2&gt;</pre>
+&lt;h2&gt;Greetings&lt;/h2&gt;</code></pre>
     <p>If there is more than one target element, however, cloned copies of the inserted element will be created for each target after the first, and that new set (the original element plus clones) is returned.</p>
   </longdesc>
   <example>

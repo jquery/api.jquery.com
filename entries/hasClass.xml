@@ -10,13 +10,13 @@
   <desc>Determine whether any of the matched elements are assigned the given class.</desc>
   <longdesc>
     <p>Elements may have more than one class assigned to them. In HTML, this is represented by separating the class names with a space:</p>
-    <pre>&lt;div id="mydiv" class="foo bar"&gt;&lt;/div&gt;</pre>
+    <pre><code>&lt;div id="mydiv" class="foo bar"&gt;&lt;/div&gt;</code></pre>
     <p>The <code>.hasClass()</code> method will return <code>true</code> if the class is assigned to an element, even if other classes also are. For example, given the HTML above, the following will return <code>true</code>:</p>
-    <pre>$('#mydiv').hasClass('foo')</pre>
+    <pre><code>$('#mydiv').hasClass('foo')</code></pre>
     <p>As would:</p>
-    <pre>$('#mydiv').hasClass('bar')</pre>
+    <pre><code>$('#mydiv').hasClass('bar')</code></pre>
     <p>While this would return <code>false</code>:</p>
-    <pre>$('#mydiv').hasClass('quux')</pre>
+    <pre><code>$('#mydiv').hasClass('quux')</code></pre>
   </longdesc>
   <example>
     <desc>Looks for the paragraph that contains 'selected' as a class.</desc>

@@ -12,7 +12,7 @@
     <p>Given a jQuery object that represents a set of DOM elements, the <code>.children()</code> method allows us to search throughthe children of these elements in the DOM tree and construct a new jQuery object from the matching elements. The <code>.children()</code> method differs from <code><a href="http://api.jquery.com/find/">.find()</a></code> in that <code>.children()</code> only travels a single level down the DOM tree while <code>.find()</code> can traverse down multiple levels to select descendant elements (grandchildren, etc.) as well. Note also that like most jQuery methods, <code>.children()</code> does not return text nodes; to get <em>all</em> children including text and comment nodes, use <code><a href="http://api.jquery.com/contents">.contents()</a></code>.</p>
     <p>The <code>.children()</code> method optionally accepts a selector expression of the same type that we can pass to the <code>$()</code> function. If the selector is supplied, the elements will be filtered by testing whether they match it.</p>
     <p>Consider a page with a basic nested list on it:</p>
-    <pre>
+    <pre><code>
 &lt;ul class="level-1"&gt;
   &lt;li class="item-i"&gt;I&lt;/li&gt;
   &lt;li class="item-ii"&gt;II
@@ -30,9 +30,9 @@
   &lt;/li&gt;
   &lt;li class="item-iii"&gt;III&lt;/li&gt;
 &lt;/ul&gt;
-</pre>
+</code></pre>
     <p>If we begin at the level-2 list, we can find its children:</p>
-    <pre>$('ul.level-2').children().css('background-color', 'red');</pre>
+    <pre><code>$('ul.level-2').children().css('background-color', 'red');</code></pre>
     <p>The result of this call is a red background behind items A, B, and C. Since we do not supply a selector expression, all of the children are part of the returned jQuery object. If we had supplied one, only the matching items among these three would be included.</p>
   </longdesc>
   <example>

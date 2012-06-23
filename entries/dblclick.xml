@@ -24,27 +24,27 @@
     <p>This method is a shortcut for <code>.bind('dblclick', handler)</code> in the first two variations, and <code>.trigger('dblclick')</code> in the third.
     The <code>dblclick</code> event is sent to an element when the element is double-clicked. Any HTML element can receive this event.
     For example, consider the HTML:</p>
-    <pre>&lt;div id="target"&gt;
+    <pre><code>&lt;div id="target"&gt;
   Double-click here
 &lt;/div&gt;
 &lt;div id="other"&gt;
   Trigger the handler
-&lt;/div&gt;</pre>
+&lt;/div&gt;</code></pre>
     <p class="image">
       <img src="/resources/0042_05_04.png" alt=""/>
     </p>
     <p>The event handler can be bound to any <code>&lt;div&gt;</code>:</p>
-    <pre>$('#target').dblclick(function() {
+    <pre><code>$('#target').dblclick(function() {
   alert('Handler for .dblclick() called.');
-});</pre>
+});</code></pre>
     <p>Now double-clicking on this element displays the alert:</p>
     <p>
       <span class="output">Handler for .dblclick() called.</span>
     </p>
     <p>To trigger the event manually, apply <code>.dblclick()</code> without an argument:</p>
-    <pre>$('#other').click(function() {
+    <pre><code>$('#other').click(function() {
   $('#target').dblclick();
-});</pre>
+});</code></pre>
     <p>After this code executes, (single) clicks on <span class="output">Trigger the handler</span> will also alert the message.</p>
     <p>The <code>dblclick</code> event is only triggered after this exact series of events:</p>
     <ul>

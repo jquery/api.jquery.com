@@ -19,26 +19,26 @@
   <desc>Load data from the server using a HTTP GET request.</desc>
   <longdesc>
     <p>This is a shorthand Ajax function, which is equivalent to:</p>
-    <pre>$.ajax({
+    <pre><code>$.ajax({
   url: <em>url</em>,
   data: <em>data</em>,
   success: <em>success</em>,
   dataType: <em>dataType</em>
 });
-</pre>
+</code></pre>
     <p>The <code>success</code> callback function is passed the returned data, which will be an XML root element, text string, JavaScript file, or JSON object, depending on the MIME type of the response. It is also passed the text status of the response. </p>
     <p><strong>As of jQuery 1.5</strong>, the <code>success</code> callback function is also passed a <a href="http://api.jquery.com/jQuery.get/#jqxhr-object">"jqXHR" object</a> (in <strong>jQuery 1.4</strong>, it was passed the <code>XMLHttpRequest</code> object). However, since JSONP and cross-domain GET requests do not use <abbr title="XMLHTTPRequest">XHR</abbr>,  in those cases the <code>(j)XHR</code> and <code>textStatus</code> parameters passed to the success callback are undefined.</p>
     <p>Most implementations will specify a success handler:</p>
-    <pre>$.get('ajax/test.html', function(data) {
+    <pre><code>$.get('ajax/test.html', function(data) {
   $('.result').html(data);
   alert('Load was performed.');
 });
-</pre>
+</code></pre>
     <p>This example fetches the requested HTML snippet and inserts it on the page.</p>
     <h4 id="jqxhr-object">The jqXHR Object</h4>
     <p><strong>As of jQuery 1.5</strong>, all of jQuery's Ajax methods return  a superset of the <code>XMLHTTPRequest</code> object. This jQuery XHR object, or "jqXHR," returned by <code>$.get()</code> implements the Promise interface, giving it all the properties, methods, and behavior of a Promise (see <a href="http://api.jquery.com/category/deferred-object/">Deferred object</a> for more information). For convenience and consistency with the callback names used by <code><a href="http://api.jquery.com/jQuery.ajax/">$.ajax()</a></code>, it provides <code>.error()</code>, <code>.success()</code>, and <code>.complete()</code> methods. These methods take a function argument that is called when the request terminates, and the function receives the same arguments as the correspondingly-named <code>$.ajax()</code> callback.</p>
     <p>The Promise interface in jQuery 1.5 also allows jQuery's Ajax methods, including <code>$.get()</code>, to chain multiple <code>.success()</code>, <code>.complete()</code>, and <code>.error()</code> callbacks on a single request, and even to assign these callbacks after the request may have completed. If the request is already complete, the callback is fired immediately.</p>
-    <pre>// Assign handlers immediately after making the request,
+    <pre><code>// Assign handlers immediately after making the request,
   // and remember the jqxhr object for this request
   var jqxhr = $.get("example.php", function() {
     alert("success");
@@ -50,7 +50,7 @@
   // perform other work here ...
 
   // Set another completion function for the request above
-  jqxhr.complete(function(){ alert("second complete"); });</pre>
+  jqxhr.complete(function(){ alert("second complete"); });</code></pre>
   </longdesc>
   <note id="same-origin-policy" type="additional"/>
   <note id="use-ajaxerror" type="additional" data-title="jQuery.get()"/>

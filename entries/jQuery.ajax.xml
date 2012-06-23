@@ -41,12 +41,12 @@
         <desc>When sending data to the server, use this content-type. Default is "application/x-www-form-urlencoded", which is fine for most cases. If you explicitly pass in a content-type to <code>$.ajax()</code> then it'll always be sent to the server (even if no data is sent). Data will always be transmitted to the server using UTF-8 charset; you must decode this appropriately on the server side.</desc>
       </option>
       <option name="context" type="Object">
-        <desc>This object will be made the context of all Ajax-related callbacks. By default, the context is an object that represents the ajax settings used in the call (<code>$.ajaxSettings</code> merged with the settings passed to <code>$.ajax</code>). For example,  specifying a DOM element as the context will make that the context for the <code>complete</code> callback of a request, like so: <pre>$.ajax({
+        <desc>This object will be made the context of all Ajax-related callbacks. By default, the context is an object that represents the ajax settings used in the call (<code>$.ajaxSettings</code> merged with the settings passed to <code>$.ajax</code>). For example,  specifying a DOM element as the context will make that the context for the <code>complete</code> callback of a request, like so: <pre><code>$.ajax({
   url: "test.html",
   context: document.body
 }).done(function() {
   $(this).addClass("done");
-});</pre></desc>
+});</code></pre></desc>
       </option>
       <option name="converters" type="PlainObject" default="{&quot;* text&quot;: window.String, &quot;text html&quot;: true, &quot;text json&quot;: jQuery.parseJSON, &quot;text xml&quot;: jQuery.parseXML}" added="1.5">
         <desc>A map of dataType-to-dataType converters. Each converter's value is a function that returns the transformed value of the response.</desc>
@@ -107,13 +107,13 @@
       <option name="statusCode" type="PlainObject" default="{}" added="1.5">
         <desc>
           <p>A map of numeric HTTP codes and functions to be called when the response has the corresponding code. For example, the following will alert when the response status is a 404:</p>
-          <pre>$.ajax({
+          <pre><code>$.ajax({
   statusCode: {
     404: function() {
       alert("page not found");
     }
   }
-});</pre>
+});</code></pre>
           <p>If the request is successful, the status code functions take the same parameters as the success callback; if it results in an error, they take the same parameters as the <code>error</code> callback.</p>
         </desc>
       </option>
@@ -144,12 +144,12 @@
       <option name="xhrFields" type="PlainObject" added="1.5.1">
         <desc>
           <p>A map of fieldName-fieldValue pairs to set on the native <code><abbr title="XMLHttpRequest">XHR</abbr></code> object. For example, you can use it to set <code>withCredentials</code> to <code>true</code> for cross-domain requests if needed.
-<pre>$.ajax({
+<pre><code>$.ajax({
    url: a_cross_domain_url,
    xhrFields: {
       withCredentials: true
    }
-});</pre>
+});</code></pre>
 <p><strong>In jQuery 1.5</strong>, the <code>withCredentials</code> property was not propagated to the native <code>XHR</code> and thus CORS requests requiring it would ignore this flag. For this reason, we recommend using jQuery 1.5.1+ should you require the use of it.
 </p>
 </p>
@@ -161,13 +161,13 @@
   <longdesc>
     <p>The <code>$.ajax()</code> function underlies all Ajax requests sent by jQuery.  It is often unnecessary to directly call this function, as several higher-level alternatives like <code><a href="/jQuery.get">$.get()</a></code> and <code><a href="/load">.load()</a></code> are available and are easier to use. If less common options are required, though, <code>$.ajax()</code> can be used more flexibly.</p>
     <p>At its simplest, the <code>$.ajax()</code> function can be called with no arguments:</p>
-    <pre>$.ajax();</pre>
+    <pre><code>$.ajax();</code></pre>
     <p><strong>Note:</strong> Default settings can be set globally by using the <code><a href="/jQuery.ajaxSetup">$.ajaxSetup()</a></code> function.</p>
     <p>This example, using no options, loads the contents of the current page, but does nothing with the result. To use the result, we can implement one of the callback functions.</p>
     <h4 id="jqXHR">The jqXHR Object</h4>
     <p>The jQuery XMLHttpRequest (jqXHR) object returned by <code>$.ajax()</code> <strong>as of jQuery 1.5</strong> is a superset of the browser's native XMLHttpRequest object. For example, it contains <code>responseText</code> and <code>responseXML</code> properties, as well as a <code>getResponseHeader()</code> method. When the transport mechanism is something other than XMLHttpRequest (for example, a script tag for a JSONP request) the <code>jqXHR</code> object simulates native XHR functionality where possible. </p>
     <p><strong>As of jQuery 1.5.1</strong>, the <code>jqXHR</code> object also contains the <code>overrideMimeType()</code> method (it was available in jQuery 1.4.x, as well, but was temporarily removed in jQuery 1.5). The <code>.overrideMimeType()</code> method may be used in the <code>beforeSend()</code> callback function, for example, to modify the response content-type header:</p>
-    <pre>
+    <pre><code>
 $.ajax({
   url: "http://fiddle.jshell.net/favicon.png",
   beforeSend: function ( xhr ) {
@@ -178,12 +178,12 @@ $.ajax({
     console.log("Sample of data:", data.slice(0, 100));
   }
 });
-</pre>
+</code></pre>
     <p>The jqXHR objects returned by <code>$.ajax()</code> as of jQuery 1.5 implement the Promise interface, giving them all the properties, methods, and behavior of a Promise (see <a href="http://api.jquery.com/category/deferred-object/">Deferred object</a> for more information).  For convenience and consistency with the callback names used by <code>$.ajax()</code>, jqXHR also provides <code>.error()</code>, <code>.success()</code>, and <code>.complete()</code> methods. These methods take a function argument that is called when the <code>$.ajax()</code> request terminates, and the function receives the same arguments as the correspondingly-named <code>$.ajax()</code> callback. This allows you to assign multiple callbacks on a single request, and even to assign callbacks after the request may have completed. (If the request is already complete, the callback is fired immediately.)</p>
     <blockquote>
       <p><strong>Deprecation Notice:</strong> The <code>jqXHR.success()</code>, <code>jqXHR.error()</code>, and <code>jqXHR.complete()</code> callbacks will be deprecated in jQuery 1.8. To prepare your code for their eventual removal, use <code>jqXHR.done()</code>, <code>jqXHR.fail()</code>, and <code>jqXHR.always()</code> instead.</p>
     </blockquote>
-    <pre>// Assign handlers immediately after making the request,
+    <pre><code>// Assign handlers immediately after making the request,
 // and remember the jqxhr object for this request
 var jqxhr = $.ajax( "example.php" )
     .done(function() { alert("success"); })
@@ -193,7 +193,7 @@ var jqxhr = $.ajax( "example.php" )
 // perform other work here ...
 
 // Set another completion function for the request above
-jqxhr.always(function() { alert("second complete"); });</pre>
+jqxhr.always(function() { alert("second complete"); });</code></pre>
     <p>For backward compatibility with <code>XMLHttpRequest</code>, a <code>jqXHR</code> object will expose the following properties and methods:</p>
     <ul>
       <li>
@@ -232,13 +232,13 @@ jqxhr.always(function() { alert("second complete"); });</pre>
       <li><code>complete</code> callbacks fire, in the order they are registered, when the request finishes, whether in failure or success. They receive the <code>jqXHR</code> object, as well as a string containing the success or error code.</li>
     </ol>
     <p>For example, to make use of the returned HTML, we can implement a <code>success</code> handler:</p>
-    <pre>$.ajax({
+    <pre><code>$.ajax({
   url: 'ajax/test.html',
   success: function(data) {
     $('.result').html(data);
     alert('Load was performed.');
   }
-});</pre>
+});</code></pre>
     <h4 id="data-types">Data Types</h4>
     <p>The <code>$.ajax()</code> function relies on the server to provide information about the retrieved data. If the server reports the return data as XML, the result can be traversed using normal XML methods or jQuery's selectors. If another type is detected, such as HTML in the example above, the data is treated as text.</p>
     <p>Different data handling can be achieved by using the <code>dataType</code> option. Besides plain <code>xml</code>, the <code>dataType</code> can be <code>html</code>, <code>json</code>, <code>jsonp</code>, <code>script</code>, or <code>text</code>.</p>
@@ -262,7 +262,7 @@ jqxhr.always(function() { alert("second complete"); });</pre>
     <p>The <code>$.ajax()</code> function returns the <code>XMLHttpRequest</code> object that it creates. Normally jQuery handles the creation of this object internally, but a custom function for manufacturing one can be specified using the <code>xhr</code> option. The returned object can generally be discarded, but does provide a lower-level interface for observing and manipulating the request. In particular, calling <code>.abort()</code> on the object will halt the request before it completes.</p>
     <p><strong>At present</strong>, due to a bug in Firefox where <code>.getAllResponseHeaders()</code> returns the empty string although <code>.getResponseHeader('Content-Type')</code> returns a non-empty string, automatically decoding JSON CORS responses in Firefox with jQuery is not supported.</p>
     <p>A workaround to this is possible by overriding <code>jQuery.ajaxSettings.xhr</code> as follows:</p>
-    <pre>
+    <pre><code>
 var _super = jQuery.ajaxSettings.xhr;
 jQuery.ajaxSettings.xhr = function () {
   var xhr = _super(),
@@ -286,10 +286,10 @@ jQuery.ajaxSettings.xhr = function () {
 
   return xhr;
 };
-</pre>
+</code></pre>
     <h4>Using Converters</h4>
     <p><code>$.ajax()</code> converters support mapping data types to other data types. If, however, you want to map a custom data type to a known type (e.g <code>json</code>), you must added a correspondance between the response Content-Type and the actual data type using the <code>contents</code> option:</p>
-    <pre>
+    <pre><code>
 $.ajaxSetup({
   contents: {
     mycustomtype: /mycustomtype/
@@ -301,10 +301,10 @@ $.ajaxSetup({
     }
   }
 });
-</pre>
+</code></pre>
     <p>This extra map is necessary because the response Content-Types and data types never have a strict one-to-one correspondance (hence the regular expression).</p>
     <p>To convert from a supported type (e.g <code>text</code>, <code>json</code>) to a custom data type and back again, use another pass-through converter:</p>
-    <pre>
+    <pre><code>
 $.ajaxSetup({
   contents: {
     mycustomtype: /mycustomtype/
@@ -317,7 +317,7 @@ $.ajaxSetup({
     }
   }
 });
-</pre>
+</code></pre>
     <p>The above now allows passing from <code>text</code> to <code>mycustomtype</code> and then <code>mycustomtype</code> to <code>json</code>.</p>
     <h4>Extending Ajax</h4>
     <p><strong>As of jQuery 1.5</strong>, jQuery's Ajax implementation includes prefilters, converters, and transports that allow you to extend Ajax with a great deal of flexibility. For more information about these advanced features, see the <a href="http://api.jquery.com/extending-ajax/">Extending Ajax</a> page.</p>

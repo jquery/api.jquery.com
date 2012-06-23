@@ -11,7 +11,7 @@
   <longdesc>
     <h2 id="example-1">Example</h2>
     <p>Using <code>callbacks.fire()</code> to invoke the callbacks in a list with any arguments that have been passed:</p>
-    <pre>
+    <pre><code>
 // a sample logging function to be added to a callbacks list
 var foo = function( value ){
     console.log( 'foo:' + value );
@@ -39,7 +39,7 @@ callbacks.fire( 'hello again' );
 // outputs:
 // 'foo: hello again'
 // 'bar: hello again'
-</pre>
+</code></pre>
   </longdesc>
   <category slug="callbacks-object"/>
   <category slug="version/1.7"/>

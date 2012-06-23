@@ -9,20 +9,20 @@
     <longdesc>
       <p>The <code>.val()</code> method is primarily used to get the values of form elements such as <code>input</code>, <code>select</code> and <code>textarea</code>. In the case of <code>&lt;select multiple="multiple"&gt;</code> elements, the <code>.val()</code> method returns an array containing each selected option; if no option is selected, it returns <code>null</code>. </p>
       <p>For selects and checkboxes, you can also use the <a href="/selected">:selected</a> and <a href="/checked">:checked</a> selectors to get at values, for example:</p>
-      <pre>$('select.foo option:selected').val();    // get the value from a dropdown select
+      <pre><code>$('select.foo option:selected').val();    // get the value from a dropdown select
 $('select.foo').val();                    // get the value from a dropdown select even easier
 $('input:checkbox:checked').val();        // get the value from a checked checkbox
-$('input:radio[name=bar]:checked').val(); // get the value from a set of radio buttons</pre>
+$('input:radio[name=bar]:checked').val(); // get the value from a set of radio buttons</code></pre>
       <blockquote>
         <p><strong>Note: </strong> At present, using <code>.val()</code> on textarea elements strips carriage return characters from the browser-reported value. When this value is sent to the server via XHR however, carriage returns are preserved (or added by browsers which do not include them in the raw value). A workaround for this issue can be achieved using a valHook as follows:</p>
       </blockquote>
-      <pre>
+      <pre><code>
 $.valHooks.textarea = {
   get: function( elem ) {
     return elem.value.replace( /\r?\n/g, "\r\n" );
   }
 };
-</pre>
+</code></pre>
     </longdesc>
     <example>
       <desc>Get the single value from a single select and an array of values from a multiple select and display their values.</desc>
@@ -97,10 +97,10 @@ $.valHooks.textarea = {
       <p>This method is typically used to set the values of form fields. </p>
       <p>Passing an array of element values allows matching  <code>&lt;input type="checkbox"&gt;</code>, <code>&lt;input type="radio"&gt;</code> and <code>&lt;option&gt;</code>s inside of n <code>&lt;select multiple="multiple"&gt;</code> to be selected. In the case of <code>&lt;input type="radio"&gt;</code>s that are part of a radio group and <code>&lt;select multiple="multiple"&gt;</code> the other elements will be deselected.</p>
       <p>The <code>.val()</code> method allows us to set the value by passing in a function. As of jQuery 1.4, the function is passed two arguments, the current element's index and its current value: </p>
-      <pre>$('input:text.items').val(function( index, value ) {
+      <pre><code>$('input:text.items').val(function( index, value ) {
   return value + ' ' + this.className;
 });
-</pre>
+</code></pre>
       <p>This example appends the string " items" to the text inputs' values.</p>
     </longdesc>
     <example>

@@ -73,27 +73,27 @@ var title = $("em").attr("title");
     <desc>Set one or more attributes for the set of matched elements.</desc>
     <longdesc>
       <p>The <code>.attr()</code> method is a convenient way to set the value of attributes&#x2014;especially when setting multiple attributes or using values returned by a function. Consider the following image:</p>
-      <pre>&lt;img id="greatphoto" src="brush-seller.jpg" alt="brush seller" /&gt;</pre>
+      <pre><code>&lt;img id="greatphoto" src="brush-seller.jpg" alt="brush seller" /&gt;</code></pre>
       <h4 id="setting-simple-attr">Setting a simple attribute</h4>
       <p>To change the <code>alt</code> attribute, simply pass the name of the attribute and its new value to the <code>.attr()</code> method:</p>
-      <pre>$('#greatphoto').attr('alt', 'Beijing Brush Seller');</pre>
+      <pre><code>$('#greatphoto').attr('alt', 'Beijing Brush Seller');</code></pre>
       <p><em>Add</em> an attribute the same way:</p>
-      <pre>$('#greatphoto')
-.attr('title', 'Photo by Kelly Clark');</pre>
+      <pre><code>$('#greatphoto')
+.attr('title', 'Photo by Kelly Clark');</code></pre>
       <h4 id="setting-several-attrs">Setting several attributes at once</h4>
       <p>To change the <code>alt</code> attribute and add the <code>title</code> attribute at the same time, pass both sets of names and values into the method at once using a map (plain JavaScript object). Each key-value pair in the map adds or modifies an attribute:</p>
-      <pre>$('#greatphoto').attr({
+      <pre><code>$('#greatphoto').attr({
   alt: 'Beijing Brush Seller',
   title: 'photo by Kelly Clark'
-});</pre>
+});</code></pre>
       <p>When setting multiple attributes, the quotes around attribute names are optional.</p>
       <p><strong>WARNING</strong>: When setting the 'class' attribute, you must always use quotes!</p>
       <p><strong>Note</strong>: jQuery prohibits changing the <code>type</code> attribute on an <code>&lt;input&gt;</code> or <code>&lt;button&gt;</code> element and will throw an error in all browsers. This is because the <code>type</code> attribute cannot be changed in Internet Explorer.</p>
       <h4 id="computed-attr-values">Computed attribute values</h4>
       <p>By using a function to set attributes, you can compute the value based on other properties of the element. For example, to concatenate a new value with an existing value:</p>
-      <pre>$('#greatphoto').attr('title', function(i, val) {
+      <pre><code>$('#greatphoto').attr('title', function(i, val) {
   return val + ' - photo by Kelly Clark'
-});</pre>
+});</code></pre>
       <p>This use of a function to compute attribute values can be particularly useful when modifying the attributes of multiple elements at once.</p>
       <p><strong>Note: </strong>If nothing is returned in the setter function (ie. <code>function(index, attr){})</code>, or if <code>undefined</code> is returned, the current value is not changed. This is useful for selectively setting values only when certain criteria are met.</p>
     </longdesc>

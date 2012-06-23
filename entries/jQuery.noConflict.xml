@@ -10,16 +10,16 @@
   <desc><![CDATA[Relinquish jQuery's control of the <code>$</code> variable.]]></desc>
   <longdesc>
     <p>Many JavaScript libraries use <code> $</code> as a function or variable name, just as jQuery does. In jQuery's case, <code> $</code> is just an alias for <code>jQuery</code>, so all functionality is available without using <code> $</code>. If we need to use another JavaScript library alongside jQuery, we can return control of <code> $</code> back to the other library with a call to <code>$.noConflict()</code>:</p>
-    <pre>
+    <pre><code>
 &lt;script type="text/javascript" src="other_lib.js"&gt;&lt;/script&gt;
 &lt;script type="text/javascript" src="jquery.js"&gt;&lt;/script&gt;
 &lt;script type="text/javascript"&gt;
   $.noConflict();
   // Code that uses other library's $ can follow here.
 &lt;/script&gt;
-</pre>
+</code></pre>
     <p>This technique is especially effective in conjunction with the .ready() method's ability to alias the jQuery object, as within callback passed to .ready() we can use $ if we wish without fear of conflicts later:</p>
-    <pre>
+    <pre><code>
 &lt;script type="text/javascript" src="other_lib.js"&gt;&lt;/script&gt;
 &lt;script type="text/javascript" src="jquery.js"&gt;&lt;/script&gt;
 &lt;script type="text/javascript"&gt;
@@ -29,7 +29,7 @@
   });
   // Code that uses other library's $ can follow here.
 &lt;/script&gt;
-</pre>
+</code></pre>
     <p>If necessary, we can free up the <code> jQuery</code> name as well by passing <code>true</code> as an argument to the method. This is rarely necessary, and if we must do this (for example, if we need to use multiple versions of the <code>jQuery</code> library on the same page), we need to consider that most plug-ins rely on the presence of the jQuery variable and may not operate correctly in this situation.</p>
   </longdesc>
   <example>

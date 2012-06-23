@@ -12,7 +12,7 @@
     <p>Given a jQuery object that represents a set of DOM elements, the <code>.parent()</code> method allows us to search through the parents of these elements in the DOM tree and construct a new jQuery object from the matching elements. The <a href="/parents/"><code>.parents()</code></a> and <code>.parent()</code> methods are similar, except that the latter only travels a single level up the DOM tree.</p>
     <p>The method optionally accepts a selector expression of the same type that we can pass to the <code>$()</code> function. If the selector is supplied, the elements will be filtered by testing whether they match it.</p>
     <p>Consider a page with a basic nested list on it:</p>
-    <pre>
+    <pre><code>
 &lt;ul class="level-1"&gt;
   &lt;li class="item-i"&gt;I&lt;/li&gt;
   &lt;li class="item-ii"&gt;II
@@ -30,9 +30,9 @@
   &lt;/li&gt;
   &lt;li class="item-iii"&gt;III&lt;/li&gt;
 &lt;/ul&gt;
-    </pre>
+    </code></pre>
     <p>If we begin at item A, we can find its parents:</p>
-    <pre>$('li.item-a').parent().css('background-color', 'red');</pre>
+    <pre><code>$('li.item-a').parent().css('background-color', 'red');</code></pre>
     <p>The result of this call is a red background for the level-2 list. Since we do not supply a selector expression, the parent element is unequivocally included as part of the object. If we had supplied one, the element would be tested for a match before it was included.</p>
   </longdesc>
   <example>

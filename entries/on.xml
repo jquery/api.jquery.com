@@ -42,23 +42,23 @@
     <p><strong>Event handlers are bound only to the currently selected elements; they must exist on the page at the time your code makes the call to <code>.on()</code>.</strong> To ensure the elements are present and can be selected, perform event binding inside a document ready handler for elements that are in the HTML markup on the page. If new HTML is being injected into the page, select the elements and attach event handlers <em>after</em> the new HTML is placed into the page. Or, use delegated events to attach an event handler, as described next.</p>
     <p>Delegated events have the advantage that they can process events from <em>descendant elements</em> that are added to the document at a later time. By picking an element that is guaranteed to be present at the time the delegated event handler is attached, you can use delegated events to avoid the need to frequently attach and remove event handlers. This element could be the container element of a view in a Model-View-Controller design, for example, or <code>document</code> if the event handler wants to monitor all bubbling events in the document. The <code>document</code> element is available in the <code>head</code> of the document before loading any other HTML, so it is safe to attach events there without waiting for the document to be ready.</p>
     <p>In addition to their ability to handle events on descendant elements not yet created, another advantage of delegated events is their potential for much lower overhead when many elements must be monitored. On a data table with 1,000 rows in its <code>tbody</code>, this example attaches a handler to 1,000 elements:</p>
-    <pre>
+    <pre><code>
 $("#dataTable tbody tr").on("click", function(event){
   alert($(this).text());
 });
-</pre>
+</code></pre>
     <p>A delegated-events approach attaches an event handler to only one element, the tbody, and the event only needs to bubble up one level (from the clicked <code>tr</code> to <code>tbody</code>):</p>
-    <pre>
+    <pre><code>
 $("#dataTable tbody").on("click", "tr", function(event){
   alert($(this).text());
 });
-</pre>
+</code></pre>
     <h2 id="event-handler">The event handler and its environment</h2>
     <p>The <code>handler</code> argument is a function (or the value <code>false</code>, see below), and is required unless you pass an object for the <code>events</code> argument. You can provide an anonymous handler function at the point of the <code>.on()</code> call, as the examples have done above, or declare a named function and pass its name:</p>
-    <pre>
+    <pre><code>
 function notify() { alert("clicked"); }
 $("button").on("click", notify);
-</pre>
+</code></pre>
     <p>When the browser triggers an event or other JavaScript calls jQuery's <code>.trigger()</code> method, jQuery passes the handler an <a href="http://api.jquery.com/category/event-object/"><code>event object</code></a> it can use to analyze and change the status of the event. This object is a <em>normalized subset</em> of data provided by the browser; the browser's unmodified native event object is available in <code>event.originalEvent</code>. For example, <a href="http://api.jquery.com/event.type"><code>event.type</code></a> contains the event name (e.g., "resize") and <a href="http://api.jquery.com/event.target"><code>event.target</code></a> indicates the deepest (innermost) element where the event occurred.</p>
     <p>By default, most events bubble up from the original event target to the <code>document</code> element. At each element along the way, jQuery calls any matching event handlers that have been attached. A handler can prevent the event from bubbling further up the document tree (and thus prevent handlers on those elements from running) by calling <code>event.stopPropagation()</code>. Any other handlers attached on the current element <em>will</em> run however. To prevent that, call <code>event.stopImmediatePropagation()</code>. (Event handlers bound to an element are called in the same order that they were bound.)</p>
     <p>Similarly, a handler can call <code>event.preventDefault()</code> to cancel any default action that the browser may have for this event; for example, the default action on a <code>click</code> event is to follow the link. Not all browser events have default actions, and not all default actions can be canceled. See the <a href="http://www.w3.org/TR/DOM-Level-3-Events/#event-types-list">W3C Events Specification</a> for details.</p>
@@ -67,11 +67,11 @@ $("button").on("click", notify);
     <h2 id="passing-data">Passing data to the handler</h2>
     <p>If a <code>data</code> argument is provided to <code>.on()</code> and is not <code>null</code> or <code>undefined</code>, it is passed to the handler in the <a href="http://api.jquery.com/event.data/"><code>event.data</code></a> property each time an event is triggered. The <code>data</code> argument can be any type, but if a string is used the <code>selector</code> must either be provided or explicitly passed as <code>null</code> so that the data is not mistaken for a selector. Best practice is to use an object (map) so that multiple values can be passed as properties.</p>
     <p>As of jQuery 1.4, the same event handler can be bound to an element multiple times. This is especially useful when the <code>event.data</code> feature is being used, or when other unique data resides in a closure around the event handler function. For example:</p>
-    <pre>
+    <pre><code>
 function greet(event) { alert("Hello "+event.data.name); }
 $("button").on("click", { name: "Karl" }, greet);
 $("button").on("click", { name: "Addy" }, greet);
-</pre>
+</code></pre>
     <p>The above code will generate two different alerts when the button is clicked.</p>
     <p>As an alternative or in addition to the <code>data</code> argument provided to the <code>.on()</code> method, you can also pass data to an event handler using a second argument to <a href="http://api.jquery.com/trigger/">.trigger()</a> or <a href="http://api.jquery.com/triggerHandler/">.triggerHandler()</a>.</p>
     <h2 id="event-performance">Event performance</h2>

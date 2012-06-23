@@ -39,22 +39,22 @@
     <p>There are shorthand methods for some standard browser events such as <a href="/click"><code>.click()</code></a> that can be used to attach or trigger event handlers. For a complete list of shorthand methods, see the <a href="http://api.jquery.com/category/events/">events category</a>.</p>
     <p>When an event reaches an element, all handlers bound to that event type for the element are fired. If there are multiple handlers registered, they will always execute in the order in which they were bound. After all handlers have executed, the event continues along the normal event propagation path.</p>
     <p>A basic usage of <code>.bind()</code> is:</p>
-    <pre>
+    <pre><code>
 $('#foo').bind('click', function() {
   alert('User clicked on "foo."');
 });
-</pre>
+</code></pre>
     <p>This code will cause the element with an ID of <code>foo</code> to respond to the <code>click</code> event. When a user clicks inside this element thereafter, the alert will be shown.</p>
     <h4 id="multiple-events">Multiple Events</h4>
     <p>Multiple event types can be bound at once by including each one separated by a space:</p>
-    <pre>
+    <pre><code>
 $('#foo').bind('mouseenter mouseleave', function() {
   $(this).toggleClass('entered');
 });
-</pre>
+</code></pre>
     <p>The effect of this on <code>&lt;div id="foo"&gt;</code> (when it does not initially have the "entered" class) is to add the "entered" class when the mouse enters the <code>&lt;div&gt;</code> and remove the class when the mouse leaves. </p>
     <p>As of jQuery 1.4 we can bind multiple event handlers simultaneously by passing a map of event type/handler pairs:</p>
-    <pre>
+    <pre><code>
 $('#foo').bind({
   click: function() {
     // do something on click
@@ -63,13 +63,13 @@ $('#foo').bind({
     // do something on mouseenter
   }
 });
-</pre>
+</code></pre>
     <h4 id="event-handlers">Event Handlers</h4>
     <p>The <code>handler</code> parameter takes a callback function, as shown above. Within the handler, the keyword <code>this</code> refers to the DOM element to which the handler is bound. To make use of the element in jQuery, it can be passed to the normal <code>$()</code> function. For example:</p>
-    <pre>$('#foo').bind('click', function() {
+    <pre><code>$('#foo').bind('click', function() {
   alert($(this).text());
 });
-</pre>
+</code></pre>
     <p>After this code is executed, when the user clicks inside the element with an ID of <code>foo</code>, its text contents will be shown as an alert.
     </p>
     <p>As of jQuery 1.4.2 duplicate event handlers can be bound to an element instead of being discarded. This is useful when the event data feature is being used, or when other unique data resides in a closure around the event handler function.</p>
@@ -81,17 +81,17 @@ $('#foo').bind({
     <p>The event object is often unnecessary and the parameter omitted, as sufficient context is usually available when the handler is bound to know exactly what needs to be done when the handler is triggered. However, at times it becomes necessary to gather more information about the user's environment at the time the event was initiated. <a href="http://api.jquery.com/category/events/event-object/">View the full Event Object</a>.</p>
     <p>Returning <code>false</code> from a handler is equivalent to calling both <code>.preventDefault()</code> and <code>.stopPropagation()</code> on the event object.</p>
     <p>Using the event object in a handler looks like this:</p>
-    <pre>$(document).ready(function() {
+    <pre><code>$(document).ready(function() {
   $('#foo').bind('click', function(event) {
     alert('The mouse cursor is at ('
       + event.pageX + ', ' + event.pageY + ')');
   });
 });
-</pre>
+</code></pre>
     <p>Note the parameter added to the anonymous function. This code will cause a click on the element with ID <code>foo</code> to report the page coordinates of the mouse cursor at the time of the click.</p>
     <h4 id="passing-event-data">Passing Event Data</h4>
     <p>The optional <code>eventData</code> parameter is not commonly used. When provided, this argument allows us to pass additional information to the handler. One handy use of this parameter is to work around issues caused by closures. For example, suppose we have two event handlers that both refer to the same external variable:</p>
-    <pre>var message = 'Spoon!';
+    <pre><code>var message = 'Spoon!';
 $('#foo').bind('click', function() {
   alert(message);
 });
@@ -99,10 +99,10 @@ message = 'Not in the face!';
 $('#bar').bind('click', function() {
   alert(message);
 });
-</pre>
+</code></pre>
     <p>Because the handlers are closures that both have <code>message</code> in their environment, both will display the message <span class="output">Not in the face!</span> when triggered. The variable's value has changed. To sidestep this, we can pass the message in using <code>eventData</code>:
     </p>
-    <pre>var message = 'Spoon!';
+    <pre><code>var message = 'Spoon!';
 $('#foo').bind('click', {msg: message}, function(event) {
   alert(event.data.msg);
 });
@@ -110,7 +110,7 @@ message = 'Not in the face!';
 $('#bar').bind('click', {msg: message}, function(event) {
   alert(event.data.msg);
 });
-</pre>
+</code></pre>
     <p>This time the variable is not referred to directly within the handlers; instead, the variable is passed in <em>by value</em> through <code>eventData</code>, which fixes the value at the time the event is bound. The first handler will now display <span class="output">Spoon!</span> while the second will alert <span class="output">Not in the face!</span>
     </p>
     <blockquote>

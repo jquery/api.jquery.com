@@ -11,23 +11,23 @@
   <longdesc>
     <p>Similar to <code><a href="/empty">.empty()</a></code>, the <code>.remove()</code> method takes elements out of the DOM. Use <code>.remove()</code> when you want to remove the element itself, as well as everything inside it. In addition to the elements themselves, all bound events and jQuery data  associated with the elements are removed. To remove the elements without removing data and events, use <code><a href="http://api.jquery.com/detach/">.detach()</a></code> instead.</p>
     <p>Consider the following HTML:</p>
-    <pre>&lt;div class="container"&gt;
+    <pre><code>&lt;div class="container"&gt;
   &lt;div class="hello"&gt;Hello&lt;/div&gt;
   &lt;div class="goodbye"&gt;Goodbye&lt;/div&gt;
-&lt;/div&gt;</pre>
+&lt;/div&gt;</code></pre>
     <p>We can target any element for removal:</p>
-    <pre>$('.hello').remove();</pre>
+    <pre><code>$('.hello').remove();</code></pre>
     <p>This will result in a DOM structure with the <code>&lt;div&gt;</code> element deleted:</p>
-    <pre>&lt;div class="container"&gt;
+    <pre><code>&lt;div class="container"&gt;
   &lt;div class="goodbye"&gt;Goodbye&lt;/div&gt;
-&lt;/div&gt;</pre>
+&lt;/div&gt;</code></pre>
     <p>If we had any number of nested elements inside <code>&lt;div class="hello"&gt;</code>, they would be removed, too. Other jQuery constructs such as data or event handlers are erased as well.</p>
     <p>We can also include a selector as an optional parameter. For example, we could rewrite the previous DOM removal code as follows:</p>
-    <pre>$('div').remove('.hello');</pre>
+    <pre><code>$('div').remove('.hello');</code></pre>
     <p>This would result in the same DOM structure:</p>
-    <pre>&lt;div class="container"&gt;
+    <pre><code>&lt;div class="container"&gt;
   &lt;div class="goodbye"&gt;Goodbye&lt;/div&gt;
-&lt;/div&gt;</pre>
+&lt;/div&gt;</code></pre>
   </longdesc>
   <example>
     <desc>Removes all paragraphs from the DOM</desc>
