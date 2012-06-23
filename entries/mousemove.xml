@@ -24,19 +24,19 @@
     <p>This method is a shortcut for <code>.bind('mousemove', handler)</code> in the first two variations, and <code>.trigger('mousemove')</code> in the third.</p>
     <p>The <code>mousemove</code> event is sent to an element when the mouse pointer moves inside the element. Any HTML element can receive this event.</p>
     <p>For example, consider the HTML:</p>
-    <pre>&lt;div id="target"&gt;
+    <pre><code>&lt;div id="target"&gt;
   Move here
 &lt;/div&gt;
 &lt;div id="other"&gt;
   Trigger the handler
 &lt;/div&gt;
-&lt;div id="log"&gt;&lt;/div&gt;</pre>
+&lt;div id="log"&gt;&lt;/div&gt;</code></pre>
     <p>The event handler can be bound to the target:</p>
-    <pre>$("#target").mousemove(function(event) {
+    <pre><code>$("#target").mousemove(function(event) {
   var msg = "Handler for .mousemove() called at ";
   msg += event.pageX + ", " + event.pageY;
   $("#log").append("&lt;div&gt;" + msg + "&lt;/div&gt;");
-});</pre>
+});</code></pre>
     <p>Now when the mouse pointer moves within the target button, the messages are appended to &lt;div id="log"&gt;:</p>
     <p>
       <span class="output">Handler for .mousemove() called at (399, 48)</span>
@@ -49,9 +49,9 @@
       <br/>
     </p>
     <p>To trigger the event manually, apply <code>.mousemove()</code> without an argument:</p>
-    <pre>$("#other").click(function() {
+    <pre><code>$("#other").click(function() {
   $("#target").mousemove();
-});</pre>
+});</code></pre>
     <p>After this code executes, clicks on the Trigger button will also append the message:</p>
     <p>
       <span class="output">Handler for .mousemove() called at (undefined, undefined)</span>

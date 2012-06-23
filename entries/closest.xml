@@ -60,7 +60,7 @@
           </tr>
         </tbody>
       </table>
-      <pre>
+      <pre><code>
 &lt;ul id="one" class="level-1"&gt;
   &lt;li class="item-i"&gt;I&lt;/li&gt;
   &lt;li id="ii" class="item-ii"&gt;II
@@ -78,24 +78,24 @@
   &lt;/li&gt;
   &lt;li class="item-iii"&gt;III&lt;/li&gt;
 &lt;/ul&gt;
-</pre>
+</code></pre>
       <p>Suppose we perform a search for <code>&lt;ul&gt;</code> elements starting at item A:</p>
-      <pre>
+      <pre><code>
 $('li.item-a').closest('ul')
   .css('background-color', 'red');
-</pre>
+</code></pre>
       <p>This will change the color of the level-2 <code>&lt;ul&gt;</code>, since it is the first encountered when traveling up the DOM tree.</p>
       <p>Suppose we search for an <code>&lt;li&gt;</code> element instead:</p>
-      <pre>$('li.item-a').closest('li')
+      <pre><code>$('li.item-a').closest('li')
   .css('background-color', 'red');
-</pre>
+</code></pre>
       <p>This will change the color of list item A. The <code>.closest()</code> method begins its search <em>with the element itself</em> before progressing up the DOM tree, and stops when item A matches the selector.</p>
       <p>We can pass in a DOM element as the context within which to search for the closest element.</p>
-      <pre>var listItemII = document.getElementById('ii');
+      <pre><code>var listItemII = document.getElementById('ii');
 $('li.item-a').closest('ul', listItemII)
   .css('background-color', 'red');
 $('li.item-a').closest('#one', listItemII)
-  .css('background-color', 'green');</pre>
+  .css('background-color', 'green');</code></pre>
       <p>This will change the color of the level-2 <code>&lt;ul&gt;</code>, because it is both the first <code>&lt;ul&gt;</code> ancestor of list item A and a descendant of list item II. It will not change the color of the level-1 <code>&lt;ul&gt;</code>, however, because it is not a descendant of list item II.</p>
     </longdesc>
     <example>

@@ -9,7 +9,7 @@
     <p>Given a jQuery object that represents a set of DOM elements, the <code>.contents()</code> method allows us to search throughthe immediate children of these elements in the DOM tree and construct a new jQuery object from the matching elements. The <code>.contents()</code> and <code>.children()</code> methods are similar, except that the former includes text nodes as well as HTML elements in the resulting jQuery object.</p>
     <p>The <code>.contents()</code> method can also be used to get the content document of an iframe, if the iframe is on the same domain as the main page.</p>
     <p>Consider a simple <code>&lt;div&gt;</code> with a number of text nodes, each of which is separated by two line break elements (<code>&lt;br /&gt;</code>):</p>
-    <pre>&lt;div class="container"&gt;
+    <pre><code>&lt;div class="container"&gt;
   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed 
   do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
   &lt;br /&gt;&lt;br /&gt;
@@ -19,9 +19,9 @@
   Duis aute irure dolor in reprehenderit in voluptate velit 
   esse cillum dolore eu fugiat nulla pariatur.
 &lt;/div&gt;
-</pre>
+</code></pre>
     <p>We can employ the <code>.contents()</code> method to help convert this blob of text into three well-formed paragraphs:</p>
-    <pre>
+    <pre><code>
 $('.container').contents().filter(function() {
   return this.nodeType == 3;
 })
@@ -29,7 +29,7 @@ $('.container').contents().filter(function() {
 .end()
 .filter('br')
   .remove();
-</pre>
+</code></pre>
     <p>This code first retrieves the contents  of <code>&lt;div class="container"&gt;</code> and then filters it for text nodes, which are wrapped in paragraph tags. This is accomplished by testing the <a href="https://developer.mozilla.org/en/nodeType"><code>.nodeType</code> property</a> of the element. This DOM property holds a numeric code indicating the node's type; text nodes use the code 3. The contents are again filtered, this time for <code>&lt;br /&gt;</code> elements, and these elements are removed.</p>
   </longdesc>
   <example>

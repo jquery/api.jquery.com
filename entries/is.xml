@@ -29,27 +29,27 @@
   <longdesc>
     <p>Unlike other filtering methods, <code>.is()</code> does not create a new jQuery object. Instead, it allows you to test the contents of a jQuery object without modification. This is often useful inside callbacks, such as event handlers.</p>
     <p>Suppose you have a list, with two of its items containing a child element:</p>
-    <pre>
+    <pre><code>
 &lt;ul&gt;
   &lt;li&gt;list &lt;strong&gt;item 1&lt;/strong&gt;&lt;/li&gt;
   &lt;li&gt;&lt;span&gt;list item 2&lt;/span&gt;&lt;/li&gt;
   &lt;li&gt;list item 3&lt;/li&gt;
 &lt;/ul&gt;
-</pre>
+</code></pre>
     <p>You can attach a click handler to the &lt;ul&gt; element, and then limit the code to be triggered only when a list item itself, not one of its children, is clicked:</p>
-    <pre>$("ul").click(function(event) {
+    <pre><code>$("ul").click(function(event) {
   var $target = $(event.target);
   if ( $target.is("li") ) {
     $target.css("background-color", "red");
   }
-});</pre>
+});</code></pre>
     <p>Now, when the user clicks on the word "list" in the first item or anywhere in the third item, the clicked list item will be given a red background. However, when the user clicks on item 1 in the first item or anywhere in the second item, nothing will occur, because in those cases the target of the event would be <code>&lt;strong&gt;</code> or <code>&lt;span&gt;</code>, respectively.
 </p>
     <p>Prior to jQuery 1.7, in selector strings with positional selectors such as <code>:first</code>, <code>:gt()</code>, or <code>:even</code>, the positional filtering is done against the jQuery object passed to <code>.is()</code>, <em>not</em> against the containing document. So for the HTML shown above, an expression such as <code>$("li:first").is("li:last")</code> returns <code>true</code>, but <code>$("li:first-child").is("li:last-child")</code> returns <code>false</code>. In addition, a bug in Sizzle prevented many positional selectors from working properly. These two factors made positional selectors almost unusable in filters.</p>
     <p>Starting with jQuery 1.7, selector strings with positional selectors apply the selector against the document, and then determine whether the first element of the current jQuery set matches any of the resulting elements. So for the HTML shown above, an expression such as <code>$("li:first").is("li:last")</code> returns <code>false</code>. Note that since positional selectors are jQuery additions and not W3C standard, we recommend using the W3C selectors whenever feasible.</p>
     <h4>Using a Function</h4>
     <p>The second form of this method evaluates expressions related to elements based on a function rather than a selector. For each element, if the function returns <code>true</code>, <code>.is()</code> returns <code>true</code> as well. For example, given a somewhat more involved HTML snippet:</p>
-    <pre>
+    <pre><code>
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;list&lt;/strong&gt; item 1 - one strong tag&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;list&lt;/strong&gt; item &lt;strong&gt;2&lt;/strong&gt; -
@@ -58,9 +58,9 @@
   &lt;li&gt;list item 4&lt;/li&gt;
   &lt;li&gt;list item 5&lt;/li&gt;
 &lt;/ul&gt;
-</pre>
+</code></pre>
     <p>You can attach a click handler to every <code>&lt;li&gt;</code> that evaluates the number of <code>&lt;strong&gt;</code> elements within the clicked <code>&lt;li&gt;</code> at that time like so:</p>
-    <pre>
+    <pre><code>
 $("li").click(function() {
   var $li = $(this),
     isWithTwo = $li.is(function() {
@@ -72,7 +72,7 @@ $("li").click(function() {
     $li.css("background-color", "red");
   }
 });
-</pre>
+</code></pre>
   </longdesc>
   <example>
     <desc>Shows a few ways is() can be used inside an event handler.</desc>

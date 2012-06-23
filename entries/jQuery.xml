@@ -41,38 +41,38 @@
     <desc>Accepts a string containing a CSS selector which is then used to match a set of elements.</desc>
     <longdesc>
       <p>In the first formulation listed above,  <code>jQuery()</code> &#x2014; which can also be written as <code>$()</code> &#x2014; searches through the DOM for any elements that match the provided selector and creates a new jQuery object that references these elements:</p>
-      <pre>$('div.foo');</pre>
+      <pre><code>$('div.foo');</code></pre>
       <p>If no elements match the provided selector, the new jQuery object is "empty"; that is, it contains no elements and has <code><a href="http://api.jquery.com/length/">.length</a></code> property of 0.</p>
       <h4 id="selector-context">Selector Context</h4>
       <p>By default, selectors perform their searches within the DOM starting at the document root. However, an alternate context can be given for the search by using the optional second parameter to the  <code>$()</code> function. For example, to do a search within an event handler, the search can be restricted like so:</p>
-      <pre>
+      <pre><code>
 $('div.foo').click(function() {
   $('span', this).addClass('bar');
 });
-</pre>
+</code></pre>
       <p>When the search for the span selector is restricted to the context of <code>this</code>, only spans within the clicked element will get the additional class.</p>
       <p>Internally, selector context is implemented with the <code>.find()</code> method, so  <code>$('span', this)</code> is equivalent to  <code>$(this).find('span')</code>.</p>
       <h4 id="using-dom-elements">Using DOM elements</h4>
       <p>The second and third formulations of this function create a jQuery object using one or more DOM elements that were already selected in some other way. A common use of this facility is to call jQuery methods on an element that has been passed to a callback function through the keyword <code>this</code>:</p>
-      <pre>
+      <pre><code>
 $('div.foo').click(function() {
   $(this).slideUp();
 });
-</pre>
+</code></pre>
       <p>This example causes elements to be hidden with a sliding animation when clicked. Because the handler receives the clicked item in the <code>this</code> keyword as a bare DOM element, the element must be passed to the <code>$()</code> function before applying jQuery methods to it.</p>
       <p>XML data returned from an Ajax call can be passed to the <code>$()</code> function so individual elements of the XML structure can be retrieved using <code>.find()</code> and other DOM traversal methods.</p>
-      <pre>
+      <pre><code>
 $.post('url.xml', function(data) {
   var $child = $(data).find('child');
 })
-</pre>
+</code></pre>
       <h4 id="cloning-jquery-objects">Cloning jQuery Objects</h4>
       <p>When a jQuery object is passed to the <code>$()</code> function, a clone of the object is created. This new jQuery object references the same DOM elements as the initial one.</p>
       <h4 id="returning-empty-set">Returning an Empty Set</h4>
       <p>As of jQuery 1.4, calling the <code>jQuery()</code> method with <em>no arguments</em> returns an empty jQuery set (with a <code><a href="http://api.jquery.com/length/">.length</a></code> property of 0). In previous versions of jQuery, this would return a set containing the document node.</p>
       <h4 id="working-with-plain-objects">Working With Plain Objects</h4>
       <p>At present, the only operations supported on plain JavaScript objects wrapped in jQuery are: <code>.data()</code>,<code>.prop()</code>,<code>.bind()</code>, <code>.unbind()</code>, <code>.trigger()</code> and <code>.triggerHandler()</code>. The use of <code>.data()</code> (or any method requiring <code>.data()</code>) on a plain object will result in a new property on the object called jQuery{randomNumber} (eg. jQuery123456789).</p>
-      <pre>
+      <pre><code>
 // define a plain object
 var foo = {foo:'bar', hello:'world'};
 
@@ -96,11 +96,11 @@ $foo.bind('eventName', function (){
 });
 
 $foo.trigger('eventName'); // logs 'eventName was called'
-</pre>
+</code></pre>
       <p>Should <code>.trigger('eventName')</code> be used, it will search for an 'eventName' property on the object and attempt to execute it after any attached jQuery handlers are executed. It does not check whether the property is a function or not. To avoid this behavior, <code>.triggerHandler('eventName')</code> should be used instead.</p>
-      <pre>
+      <pre><code>
 $foo.triggerHandler('eventName'); // also logs 'eventName was called'
-</pre>
+</code></pre>
     </longdesc>
     <example>
       <desc>Find all p elements that are children of a div element and apply a border to them.</desc>
@@ -157,34 +157,34 @@ $foo.triggerHandler('eventName'); // also logs 'eventName was called'
       <p>When passing in complex HTML, some browsers may not generate a DOM that exactly replicates the HTML source provided. As mentioned, we use the browser's <code>.innerHTML</code> property to parse the passed HTML and insert it into the current document. During this process, some  browsers filter out certain elements such as  <code>&lt;html&gt;</code>,  <code>&lt;title&gt;</code>, or  <code>&lt;head&gt;</code> elements. As a result, the  elements inserted may not be representative of the original string  passed.</p>
       <p> Filtering isn't however just limited to these tags. For example, Internet Explorer prior to version 8 will also convert all <code>href</code> properties on links to absolute URLs, and Internet Explorer prior to version 9 will not correctly handle HTML5 elements without the addition of a separate <a href="http://code.google.com/p/html5shiv/">compatibility layer</a>.</p>
       <p>To ensure cross-platform compatibility, the snippet must be well-formed. Tags that can contain other elements should be paired with a closing tag:</p>
-      <pre>$('&lt;a href="http://jquery.com"&gt;&lt;/a&gt;');</pre>
+      <pre><code>$('&lt;a href="http://jquery.com"&gt;&lt;/a&gt;');</code></pre>
       <p>Alternatively, jQuery allows XML-like tag syntax (with or without a space before the slash):</p>
-      <pre>$('&lt;a/&gt;');</pre>
+      <pre><code>$('&lt;a/&gt;');</code></pre>
       <p>Tags that cannot contain elements may be quick-closed or not:</p>
-      <pre>$('&lt;img /&gt;');
+      <pre><code>$('&lt;img /&gt;');
 $('&lt;input&gt;');
-</pre>
+</code></pre>
       <p>When passing HTML to <code>jQuery()</code>, please also note that text nodes are not treated as DOM elements. With the exception of a few methods (such as <code>.content()</code>), they are generally otherwise ignored or removed. E.g:</p>
-      <pre>
+      <pre><code>
 var el = $('1&lt;br/&gt;2&lt;br/&gt;3'); // returns [&lt;br&gt;, "2", &lt;br&gt;]
 el  = $('1&lt;br/&gt;2&lt;br/&gt;3 &gt;'); // returns [&lt;br&gt;, "2", &lt;br&gt;, "3 &amp;gt;"]
-</pre>
+</code></pre>
       <p>This behaviour is expected. </p>
       <p>As of jQuery 1.4, the second argument to <code>jQuery()</code> can accept a map consisting of a superset of the properties that can be passed to the <a href="/attr">.attr()</a> method. Furthermore, any <a href="/category/events/">event type</a> can be passed in, and the following jQuery methods can be called: <a href="/val">val</a>, <a href="/css">css</a>, <a href="/html">html</a>, <a href="/text">text</a>, <a href="/data">data</a>, <a href="/width">width</a>, <a href="/height">height</a>, or <a href="/offset">offset</a>. The name <code>"class"</code> must be quoted in the map since it is a JavaScript reserved word, and <code>"className"</code> cannot be used since it is not the correct attribute name. </p>
       <p><strong>Note:</strong> Internet Explorer will not allow you to create an <code>input</code> or <code>button</code> element and change its type; you must specify the type using <code>'&lt;input type="checkbox" /&gt;'</code> for example. A demonstration of this can be seen below:</p>
       <p>Unsupported in IE:</p>
-      <pre>
+      <pre><code>
 $('&lt;input /&gt;', {
   type: 'text',
   name: 'test'
 }).appendTo("body");
-</pre>
+</code></pre>
       <p>Supported workaround:</p>
-      <pre>
+      <pre><code>
 $('&lt;input type="text" /&gt;').attr({
     name: 'test'
 }).appendTo("body");
-</pre>
+</code></pre>
     </longdesc>
     <example>
       <desc>Create a div element (and all of its contents) dynamically and append it to the body element. Internally, an element is created and its innerHTML property set to the given markup.</desc>

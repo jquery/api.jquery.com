@@ -13,11 +13,11 @@
   </signature>
   <longdesc>
     <p>A typical prefilter registration using <code>$.ajaxPrefilter()</code> looks like this:</p>
-    <pre>
+    <pre><code>
 $.ajaxPrefilter( function( options, originalOptions, jqXHR ) {
   // Modify options, control originalOptions, store jqXHR, etc
 });
-</pre>
+</code></pre>
     <p>where:</p>
     <ul>
       <li><code>options</code> are the request options</li>
@@ -25,7 +25,7 @@ $.ajaxPrefilter( function( options, originalOptions, jqXHR ) {
       <li><code>jqXHR</code> is the jqXHR object of the request</li>
     </ul>
     <p>Prefilters are a perfect fit when custom options need to be handled.  Given the following code, for example, a call to <code>$.ajax()</code> would automatically abort a request to the same URL if the custom <code>abortOnRetry</code> option is set to <code>true</code>:</p>
-    <pre>
+    <pre><code>
 var currentRequests = {};
 
 $.ajaxPrefilter(function( options, originalOptions, jqXHR ) {
@@ -36,30 +36,30 @@ $.ajaxPrefilter(function( options, originalOptions, jqXHR ) {
     currentRequests[ options.url ] = jqXHR;
   }
 });
-</pre>
+</code></pre>
     <p>Prefilters can also be used to modify existing options. For example, the following proxies cross-domain requests through http://mydomain.net/proxy/:</p>
-    <pre>
+    <pre><code>
 $.ajaxPrefilter( function( options ) {
   if ( options.crossDomain ) {
     options.url = "http://mydomain.net/proxy/" + encodeURIComponent( options.url );
     options.crossDomain = false;
   }
 });
-</pre>
+</code></pre>
     <p>If the optional <code>dataTypes</code> argument is supplied, the prefilter will be only be applied to requests with the indicated dataTypes. For example, the following only applies the given prefilter to JSON and script requests:</p>
-    <pre>
+    <pre><code>
 $.ajaxPrefilter( "json script", function( options, originalOptions, jqXHR ) {
   // Modify options, control originalOptions, store jqXHR, etc
 });
-</pre>
+</code></pre>
     <p>The <code>$.ajaxPrefilter()</code> method can also redirect a request to another dataType by returning that dataType. For example, the following sets a request as "script" if the URL has some specific properties defined in a custom <code>isActuallyScript()</code> function:</p>
-    <pre>
+    <pre><code>
 $.ajaxPrefilter(function( options ) {
   if ( isActuallyScript( options.url ) ) {
     return "script";
   }
 });
-</pre>
+</code></pre>
     <p>This would ensure not only that the request is considered "script" but also that all the prefilters specifically attached to the script dataType would be applied to it.</p>
   </longdesc>
   <category slug="ajax/low-level-interface"/>

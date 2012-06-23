@@ -74,16 +74,16 @@
     <p>The <code>.slideToggle()</code> method animates the height of the matched elements. This causes lower parts of the page to slide up or down, appearing to reveal or conceal the items. If the element is initially displayed, it will be hidden; if hidden, it will be shown. The <code>display</code> property is saved and restored as needed. If an element has a <code>display</code> value of <code>inline</code>, then is hidden and shown, it will once again be displayed <code>inline</code>. When the height reaches 0 after a hiding animation, the <code>display</code> style property is set to <code>none</code> to ensure that the element no longer affects the layout of the page.</p>
     <p>Durations are given in milliseconds; higher values indicate slower animations, not faster ones. The strings <code>'fast'</code> and <code>'slow'</code> can be supplied to indicate durations of <code>200</code> and <code>600</code> milliseconds, respectively.</p>
     <p>We can animate any element, such as a simple image:</p>
-    <pre>&lt;div id="clickme"&gt;
+    <pre><code>&lt;div id="clickme"&gt;
   Click here
 &lt;/div&gt;
-&lt;img id="book" src="book.png" alt="" width="100" height="123" /&gt;</pre>
+&lt;img id="book" src="book.png" alt="" width="100" height="123" /&gt;</code></pre>
     <p>We will cause <code>.slideToggle()</code> to be called when another element is clicked:</p>
-    <pre>$('#clickme').click(function() {
+    <pre><code>$('#clickme').click(function() {
   $('#book').slideToggle('slow', function() {
     // Animation complete.
   });
-});
+});</code>
 </pre>
     <p>With the element initially shown, we can hide it slowly with the first click:</p>
     <p class="image four-across">

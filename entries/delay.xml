@@ -15,7 +15,7 @@
     <p>Added to jQuery in version 1.4, the <code>.delay()</code> method allows us to delay the execution of functions that follow it in the queue. It can be used with the standard effects queue or with a custom queue. Only subsequent events in a queue are delayed; for example this will <em>not</em> delay the no-arguments forms of <code>.show()</code> or <code>.hide()</code>  which do not use the effects queue.</p>
     <p>Durations are given in milliseconds; higher values indicate slower animations, not faster ones. The strings <code>'fast'</code> and <code>'slow'</code> can be supplied to indicate durations of 200 and 600 milliseconds, respectively.</p>
     <p>Using the standard effects queue, we can, for example, set an 800-millisecond delay between the <code>.slideUp()</code> and <code>.fadeIn()</code> of <code>&lt;div id="foo"&gt;</code>:</p>
-    <pre>$('#foo').slideUp(300).delay(800).fadeIn(400);</pre>
+    <pre><code>$('#foo').slideUp(300).delay(800).fadeIn(400);</code></pre>
     <p>When this statement is executed, the element slides up for 300 milliseconds and then pauses for 800 milliseconds before fading in for 400 milliseconds.</p>
     <blockquote>
       <p>

@@ -24,7 +24,7 @@
     <p>This method is a shortcut for <code>.bind('mouseover', handler)</code> in the first two variations, and <code>.trigger('mouseover')</code> in the third.</p>
     <p>The <code>mouseover</code> event is sent to an element when the mouse pointer enters the element. Any HTML element can receive this event.</p>
     <p>For example, consider the HTML:</p>
-    <pre>&lt;div id="outer"&gt;
+    <pre><code>&lt;div id="outer"&gt;
   Outer
   &lt;div id="inner"&gt;
     Inner
@@ -33,18 +33,18 @@
 &lt;div id="other"&gt;
   Trigger the handler
 &lt;/div&gt;
-&lt;div id="log"&gt;&lt;/div&gt;</pre>
+&lt;div id="log"&gt;&lt;/div&gt;</code></pre>
     <p class="image">
       <img src="/resources/0042_05_06.png" alt=""/>
     </p>
     <p>The event handler can be bound to any element:</p>
-    <pre>$('#outer').mouseover(function() {
+    <pre><code>$('#outer').mouseover(function() {
   $('#log').append('&lt;div&gt;Handler for .mouseover() called.&lt;/div&gt;');
-});</pre>
+});</code></pre>
     <p>Now when the mouse pointer moves over the <span class="output">Outer</span> <code>&lt;div&gt;</code>, the message is appended to <code>&lt;div id="log"&gt;</code>. We can also trigger the event when another element is clicked:</p>
-    <pre>$('#other').click(function() {
+    <pre><code>$('#other').click(function() {
       $('#outer').mouseover();
-      });</pre>
+      });</code></pre>
     <p>After this code executes, clicks on <span class="output">Trigger the handler</span> will also append the message.</p>
     <p>This event type can cause many headaches due to event bubbling. For instance, when the mouse pointer moves over the <span class="output">Inner</span> element in this example, a <code>mouseover</code> event will be sent to that, then trickle up to <span class="output">Outer</span>. This can trigger our bound <code>mouseover</code> handler at inopportune times. See the discussion for <code>.mouseenter()</code> for a useful alternative.</p>
   </longdesc>

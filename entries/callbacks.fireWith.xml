@@ -14,7 +14,7 @@
   <longdesc>
     <h2 id="example-1">Example</h2>
     <p>Using <code>callbacks.fireWith()</code> to fire a list of callbacks with a specific context and an array of arguments:</p>
-    <pre>
+    <pre><code>
 // a sample logging function to be added to a callbacks list
 var log = function( value1, value2 ){
     console.log( 'Received:' + value1 + ',' + value2 );
@@ -31,7 +31,7 @@ callbacks.add( log );
 callbacks.fireWith( window, ['foo','bar']);
 
 // outputs: Received: foo, bar
-</pre>
+</code></pre>
   </longdesc>
   <category slug="callbacks-object"/>
   <category slug="version/1.7"/>

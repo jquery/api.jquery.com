@@ -24,51 +24,51 @@
     <p>If a selector string is passed as an argument, <code>.index()</code> returns an integer indicating the position of the original element relative to the elements matched by the selector. If the element is not found, <code>.index()</code> will return -1.</p>
     <h4>Detail</h4>
     <p>The complementary operation to <code>.get()</code>, which accepts an index and returns a DOM node, <code>.index()</code> can take a DOM node and returns an index. Suppose we have a simple unordered list on the page:</p>
-    <pre>
+    <pre><code>
 &lt;ul&gt;
   &lt;li id="foo"&gt;foo&lt;/li&gt;
   &lt;li id="bar"&gt;bar&lt;/li&gt;
   &lt;li id="baz"&gt;baz&lt;/li&gt;
 &lt;/ul&gt;
-</pre>
+</code></pre>
     <p>If we retrieve one of the three list items (for example, through a DOM function or as the context to an event handler), <code>.index()</code> can search for this list item within the set of matched elements:</p>
-    <pre>
+    <pre><code>
 var listItem = document.getElementById('bar');
 alert('Index: ' + $('li').index(listItem));
 We get back the zero-based position of the list item:
-</pre>
+</code></pre>
     <p>
       <span class="output">Index: 1</span>
     </p>
     <p>Similarly, if we retrieve a jQuery object consisting of one of the three list items, <code>.index()</code> will search for that list item:</p>
-    <pre>
+    <pre><code>
 var listItem = $('#bar');
 alert('Index: ' + $('li').index(listItem));
-</pre>
+</code></pre>
     <p>We get back the zero-based position of the list item:</p>
     <p>
       <span class="output">Index: 1</span>
     </p>
     <p>Note that if the jQuery collection used as the <code>.index()</code> method's argument contains more than one element, the first element within the matched set of elements will be used.</p>
-    <pre>
+    <pre><code>
 var listItems = $('li:gt(0)');
 alert('Index: ' + $('li').index(listItems));
-</pre>
+</code></pre>
     <p>We get back the zero-based position of the first list item within the matched set:</p>
     <p>
       <span class="output">Index: 1</span>
     </p>
     <p>If we use a string as the <code>.index()</code> method's argument, it is interpreted as a jQuery selector string. The first element among the object's matched elements which also matches this selector is located.</p>
-    <pre>
+    <pre><code>
 var listItem = $('#bar');
 alert('Index: ' + listItem.index('li'));
-</pre>
+</code></pre>
     <p>We get back the zero-based position of the list item:</p>
     <p>
       <span class="output">Index: 1</span>
     </p>
     <p>If we omit the argument, <code>.index()</code> will return the position of the first element within the set of matched elements in relation to its siblings:</p>
-    <pre>alert('Index: ' + $('#bar').index();</pre>
+    <pre><code>alert('Index: ' + $('#bar').index();</code></pre>
     <p>Again, we get back the zero-based position of the list item:</p>
     <p>
       <span class="output">Index: 1</span>

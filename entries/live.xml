@@ -34,17 +34,17 @@
     <p><strong>As of jQuery 1.7</strong>, the <code>.live()</code> method is deprecated. Use <a href="http://api.jquery.com/on/"><code>.on()</code></a> to attach event handlers. Users of older versions of jQuery should use <a href="http://api.jquery.com/delegate/"><code>.delegate()</code></a> in preference to <code>.live()</code>.</p>
     <p>This method provides a means to attach delegated event handlers to the <code>document</code> element of a page, which simplifies the use of event handlers when content is dynamically added to a page. See the discussion of direct versus delegated events in the <a href="http://api.jquery.com/on/"><code>.on()</code></a> method for more information. </p>
     <p>Rewriting the <code>.live()</code> method in terms of its successors is straightforward; these are templates for equivalent calls for all three event attachment methods:</p>
-    <pre>
+    <pre><code>
 $(<em>selector</em>).live(<em>events</em>, <em>data</em>, <em>handler</em>);                // jQuery 1.3+
 $(document).delegate(<em>selector</em>, <em>events</em>, <em>data</em>, <em>handler</em>);  // jQuery 1.4.3+
 $(document).on(<em>events</em>, <em>selector</em>, <em>data</em>, <em>handler</em>);        // jQuery 1.7+
-</pre>
+</code></pre>
     <p>The <code>events</code> argument can either be a space-separated list of event type names and optional namespaces, or an <code>event-map</code> of event names strings and handlers. The <code>data</code> argument is optional and can be omitted. For example, the following three method calls are functionally equivalent (but see below for more effective and performant ways to attach delegated event handlers):</p>
-    <pre>
+    <pre><code>
 $("a.offsite").live("click", function(){ alert("Goodbye!"); });                // jQuery 1.3+
 $(document).delegate("a.offsite", "click", function(){ alert("Goodbye!"); });  // jQuery 1.4.3+
 $(document).on("click", "a.offsite", function(){ alert("Goodbye!"); });        // jQuery 1.7+
-</pre>
+</code></pre>
     <p>Use of the <code>.live()</code> method is no longer recommended since later versions of jQuery offer better methods that do not have its drawbacks. In particular, the following issues arise with the use of <code>.live()</code>:</p>
     <ul>
       <li>jQuery attempts to retrieve the elements specified by the selector before calling the <code>.live()</code> method, which may be time-consuming on large documents.</li>

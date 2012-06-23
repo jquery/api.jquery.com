@@ -11,19 +11,19 @@
   <longdesc>
     <p>The <code>.wrapAll()</code> function can take any string or object that could be passed to the <code>$()</code> function to specify a DOM structure. This structure may be nested several levels deep, but should contain only one inmost element. The structure will be wrapped around all of the elements in the set of matched elements, as a single group.</p>
     <p>Consider the following HTML:</p>
-    <pre>&lt;div class="container"&gt;
+    <pre><code>&lt;div class="container"&gt;
   &lt;div class="inner"&gt;Hello&lt;/div&gt;
   &lt;div class="inner"&gt;Goodbye&lt;/div&gt;
-&lt;/div&gt;</pre>
+&lt;/div&gt;</code></pre>
     <p>Using <code>.wrapAll()</code>, we can insert an HTML structure around the inner <code>&lt;div&gt;</code> elements like so:</p>
-    <pre>$('.inner').wrapAll('&lt;div class="new" /&gt;');</pre>
+    <pre><code>$('.inner').wrapAll('&lt;div class="new" /&gt;');</code></pre>
     <p>The new <code>&lt;div&gt;</code> element is created on the fly and added to the DOM. The result is a new <code>&lt;div&gt;</code> wrapped around all matched elements:</p>
-    <pre>&lt;div class="container"&gt;
+    <pre><code>&lt;div class="container"&gt;
   &lt;div class="new"&gt;
     &lt;div class="inner"&gt;Hello&lt;/div&gt;
     &lt;div class="inner"&gt;Goodbye&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</pre>
+&lt;/div&gt;</code></pre>
   </longdesc>
   <example>
     <desc>Wrap a new div around all of the paragraphs.</desc>
