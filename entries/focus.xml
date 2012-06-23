@@ -30,26 +30,26 @@
       <p>Attempting to set focus to a hidden element causes an error in Internet Explorer. Take care to only use <code>.focus()</code> on elements that are visible. To run an element's focus event handlers without setting focus to the element, use <code>.triggerHandler("focus")</code> instead of <code>.focus()</code>.</p>
     </blockquote>
     <p>For example, consider the HTML:</p>
-    <pre>&lt;form&gt;
+    <pre><code>&lt;form&gt;
   &lt;input id="target" type="text" value="Field 1" /&gt;
   &lt;input type="text" value="Field 2" /&gt;
 &lt;/form&gt;
 &lt;div id="other"&gt;
   Trigger the handler
 &lt;/div&gt;
-</pre>
+</code></pre>
     <p>The event handler can be bound to the first input field:</p>
-    <pre>$('#target').focus(function() {
+    <pre><code>$('#target').focus(function() {
   alert('Handler for .focus() called.');
-});</pre>
+});</code></pre>
     <p>Now clicking on the first field, or tabbing to it from another field, displays the alert:</p>
     <p>
       <span class="output">Handler for .focus() called.</span>
     </p>
     <p>We can trigger the event when another element is clicked:</p>
-    <pre>$('#other').click(function() {
+    <pre><code>$('#other').click(function() {
   $('#target').focus();
-});</pre>
+});</code></pre>
     <p>After this code executes, clicks on <span class="output">Trigger the handler</span> will also alert the message.</p>
     <p>The <code>focus</code> event does not bubble in Internet Explorer. Therefore, scripts that rely on event delegation with the <code>focus</code> event will not work consistently across browsers. As of version 1.4.2, however, jQuery works around this limitation by mapping <code>focus</code> to the <code>focusin</code> event in its event delegation methods, <a href="http://api.jquery.com/live/"><code>.live()</code></a> and <a href="http://api.jquery.com/delegate/"><code>.delegate()</code></a>.</p>
   </longdesc>

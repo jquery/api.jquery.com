@@ -24,20 +24,20 @@
     <p>This method is a shortcut for <code>.bind('select', handler)</code> in the first two variations, and <code>.trigger('select')</code> in the third.</p>
     <p>The <code>select</code> event is sent to an element when the user makes a text selection inside it. This event is limited to <code>&lt;input type="text"&gt;</code> fields and <code>&lt;textarea&gt;</code> boxes.</p>
     <p>For example, consider the HTML:</p>
-    <pre>&lt;form&gt;
+    <pre><code>&lt;form&gt;
   &lt;input id="target" type="text" value="Hello there" /&gt;
 &lt;/form&gt;
 &lt;div id="other"&gt;
   Trigger the handler
-&lt;/div&gt;</pre>
+&lt;/div&gt;</code></pre>
     <p>The event handler can be bound to the text input:</p>
-    <pre>$('#target').select(function() {
+    <pre><code>$('#target').select(function() {
   alert('Handler for .select() called.');
-});</pre>
+});</code></pre>
     <p>Now when any portion of the text is selected, the alert is displayed. Merely setting the location of the insertion point will not trigger the event. To trigger the event manually, apply <code>.select()</code> without an argument:</p>
-    <pre>$('#other').click(function() {
+    <pre><code>$('#other').click(function() {
   $('#target').select();
-});</pre>
+});</code></pre>
     <p>After this code executes, clicks on the Trigger button will also alert the message:</p>
     <p>
       <span class="output">Handler for .select() called.</span>

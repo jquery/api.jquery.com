@@ -8,7 +8,7 @@
   <longdesc>
     <h2 id="example-1">Example</h2>
     <p>Using <code>callbacks.disable()</code> to disable further calls being made to a callback list:</p>
-    <pre>
+    <pre><code>
 // a sample logging function to be added to a callbacks list
 var foo = function( value ){
     console.log( value );
@@ -27,7 +27,7 @@ callbacks.disable();
 
 // attempt to fire with 'foobar' as an argument
 callbacks.fire( 'foobar' ); // foobar isn't output
-</pre>
+</code></pre>
   </longdesc>
   <category slug="callbacks-object"/>
   <category slug="version/1.7"/>

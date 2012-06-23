@@ -17,34 +17,34 @@
   <longdesc>
     <p>The <code>.wrap()</code> function can take any string or object that could be passed to the <code>$()</code> factory function to specify a DOM structure. This structure may be nested several levels deep, but should contain only one inmost element. A copy of this structure will be wrapped around each of the elements in the set of matched elements. This method returns the original set of elements for chaining purposes.</p>
     <p>Consider the following HTML:</p>
-    <pre>&lt;div class="container"&gt;
+    <pre><code>&lt;div class="container"&gt;
   &lt;div class="inner"&gt;Hello&lt;/div&gt;
   &lt;div class="inner"&gt;Goodbye&lt;/div&gt;
-&lt;/div&gt;</pre>
+&lt;/div&gt;</code></pre>
     <p>Using <code>.wrap()</code>, we can insert an HTML structure around the inner <code>&lt;div&gt;</code> elements like so:</p>
-    <pre>$('.inner').wrap('&lt;div class="new" /&gt;');</pre>
+    <pre><code>$('.inner').wrap('&lt;div class="new" /&gt;');</code></pre>
     <p>The new <code>&lt;div&gt;</code> element is created on the fly and added to the DOM. The result is a new <code>&lt;div&gt;</code> wrapped around each matched element:</p>
-    <pre>&lt;div class="container"&gt;
+    <pre><code>&lt;div class="container"&gt;
   &lt;div class="new"&gt;
     &lt;div class="inner"&gt;Hello&lt;/div&gt;
   &lt;/div&gt;
   &lt;div class="new"&gt;
     &lt;div class="inner"&gt;Goodbye&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</pre>
+&lt;/div&gt;</code></pre>
     <p>The second version of this method allows us to instead specify a callback function. This callback function will be called once for every matched element; it should return a DOM element, jQuery object, or HTML snippet in which to wrap the corresponding element. For example:</p>
-    <pre>$('.inner').wrap(function() {
+    <pre><code>$('.inner').wrap(function() {
   return '&lt;div class="' + $(this).text() + '" /&gt;';
-});</pre>
+});</code></pre>
     <p>This will cause each <code>&lt;div&gt;</code> to have a class corresponding to the text it wraps:</p>
-    <pre>&lt;div class="container"&gt;
+    <pre><code>&lt;div class="container"&gt;
   &lt;div class="Hello"&gt;
     &lt;div class="inner"&gt;Hello&lt;/div&gt;
   &lt;/div&gt;
   &lt;div class="Goodbye"&gt;
     &lt;div class="inner"&gt;Goodbye&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</pre>
+&lt;/div&gt;</code></pre>
   </longdesc>
   <example>
     <desc>Wrap a new div around all of the paragraphs.</desc>

@@ -28,19 +28,19 @@
     <p>There is also <code>$(document).bind("ready", handler)</code>, <em>deprecated as of jQuery 1.8</em>. This behaves similarly to the ready method but if the ready event has already fired and you try to <code>.bind("ready")</code> the bound handler will not be executed. Ready handlers bound this way are executed <em>after</em> any bound by the other three methods above.</p>
     <p>The <code>.ready()</code> method can only be called on a jQuery object matching the current document, so the selector can be omitted.</p>
     <p>The <code>.ready()</code> method is typically used with an anonymous function:</p>
-    <pre>$(document).ready(function() {
+    <pre><code>$(document).ready(function() {
   // Handler for .ready() called.
-});</pre>
+});</code></pre>
     <p>Which is equivalent to calling:</p>
-    <pre>$(function() {
+    <pre><code>$(function() {
      // Handler for .ready() called.
-    });</pre>
+    });</code></pre>
     <p>If <code>.ready()</code> is called after the DOM has been initialized, the new handler passed in will be executed immediately.</p>
     <h4>Aliasing the jQuery Namespace</h4>
     <p>When using another JavaScript library, we may wish to call <code><a href="/jQuery.noConflict">$.noConflict()</a></code> to avoid namespace difficulties. When this function is called, the <code>$</code> shortcut is no longer available, forcing us to write <code>jQuery</code> each time we would normally write <code>$</code>. However, the handler passed to the <code>.ready()</code> method can take an argument, which is passed the global <code>jQuery</code> object. This means we can rename the object within the context of our <code>.ready()</code> handler without affecting other code:</p>
-    <pre>jQuery(document).ready(function($) {
+    <pre><code>jQuery(document).ready(function($) {
   // Code using $ as usual goes here.
-});</pre>
+});</code></pre>
   </longdesc>
   <example>
     <desc>Display a message when the DOM is loaded.</desc>

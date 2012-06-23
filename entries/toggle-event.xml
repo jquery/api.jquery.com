@@ -19,16 +19,16 @@
       <p>Note: jQuery also provides an animation method named <a href="http://api.jquery.com/toggle/">.toggle()</a> that toggles the visibility of elements. Whether the animation or the event method is fired depends on the set of arguments passed.</p>
     </blockquote>
     <p>The <code>.toggle()</code> method binds a handler for the <code>click</code> event, so the rules outlined for the triggering of <code>click</code> apply here as well.</p>
-    <pre>For example, consider the HTML:
+    <pre><code>For example, consider the HTML:
 &lt;div id="target"&gt;
   Click here
-&lt;/div&gt;</pre>
+&lt;/div&gt;</code></pre>
     <p>Event handlers can then be bound to the <code>&lt;div&gt;</code>:</p>
-    <pre>$('#target').toggle(function() {
+    <pre><code>$('#target').toggle(function() {
   alert('First handler for .toggle() called.');
 }, function() {
   alert('Second handler for .toggle() called.');
-});</pre>
+});</code></pre>
     <p>As the element is clicked repeatedly, the messages alternate:</p>
     <p>
       <span class="output">First handler for .toggle() called.</span>

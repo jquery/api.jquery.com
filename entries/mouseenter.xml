@@ -24,7 +24,7 @@
     <p>This method is a shortcut for <code>.bind('mouseenter', handler)</code> in the first two variations, and <code>.trigger('mouseenter')</code> in the third.</p>
     <p>The <code>mouseenter</code> JavaScript event is proprietary to Internet Explorer. Because of the event's general utility, jQuery simulates this event so that it can be used regardless of browser. This event is sent to an element when the mouse pointer enters the element. Any HTML element can receive this event.</p>
     <p>For example, consider the HTML:</p>
-    <pre>&lt;div id="outer"&gt;
+    <pre><code>&lt;div id="outer"&gt;
   Outer
   &lt;div id="inner"&gt;
     Inner
@@ -33,18 +33,18 @@
 &lt;div id="other"&gt;
   Trigger the handler
 &lt;/div&gt;
-&lt;div id="log"&gt;&lt;/div&gt;</pre>
+&lt;div id="log"&gt;&lt;/div&gt;</code></pre>
     <p class="image">
       <img src="/resources/0042_05_08.png" alt=""/>
     </p>
     <p>The event handler can be bound to any element:</p>
-    <pre>$('#outer').mouseenter(function() {
+    <pre><code>$('#outer').mouseenter(function() {
   $('#log').append('&lt;div&gt;Handler for .mouseenter() called.&lt;/div&gt;');
-});</pre>
+});</code></pre>
     <p>Now when the mouse pointer moves over the <span class="output">Outer</span> <code>&lt;div&gt;</code>, the message is appended to <code>&lt;div id="log"&gt;</code>. You can also trigger the event when another element is clicked:</p>
-    <pre>$('#other').click(function() {
+    <pre><code>$('#other').click(function() {
       $('#outer').mouseenter();
-    });</pre>
+    });</code></pre>
     <p>After this code executes, clicks on <span class="output">Trigger the handler</span> will also append the message.</p>
     <p>The <code>mouseenter</code> event differs from <code>mouseover</code> in the way it handles event bubbling. If <code>mouseover</code> were used in this example, then when the mouse pointer moved over the <span class="output">Inner</span> element, the handler would be triggered. This is usually undesirable behavior. The <code>mouseenter</code> event, on the other hand, only triggers its handler when the mouse enters the element it is bound to, not a descendant. So in this example, the handler is triggered when the mouse enters the <span class="output">Outer</span> element, but not the <span class="output">Inner</span> element.</p>
   </longdesc>

@@ -11,16 +11,16 @@
   <longdesc>
     <p>The <code>.each()</code> method is designed to make DOM looping constructs concise and less error-prone. When called it iterates over the DOM elements that are part of the jQuery object. Each time the callback runs, it is passed the current loop iteration, beginning from 0. More importantly, the callback is fired in the context of the current DOM element, so the keyword <code>this</code> refers to the element.</p>
     <p>Suppose we had a simple unordered list on the page:</p>
-    <pre>&lt;ul&gt;
+    <pre><code>&lt;ul&gt;
     &lt;li&gt;foo&lt;/li&gt;
     &lt;li&gt;bar&lt;/li&gt;
 &lt;/ul&gt;
-    </pre>
+    </code></pre>
     <p>We can select the list items and iterate across them:</p>
-    <pre>$('li').each(function(index) {
+    <pre><code>$('li').each(function(index) {
     alert(index + ': ' + $(this).text());
 });
-  </pre>
+  </code></pre>
     <p>A message is thus alerted for each item in the list:</p>
     <p>
       <span class="output">0: foo</span>

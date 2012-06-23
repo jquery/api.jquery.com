@@ -8,7 +8,7 @@
   <longdesc>
     <h2 id="example-1">Example</h2>
     <p>Using <code>callbacks.empty()</code> to empty a list of callbacks:</p>
-    <pre>
+    <pre><code>
 // a sample logging function to be added to a callbacks list
 var foo = function( value1, value2 ){
     console.log( 'foo:' + value1 + ',' + value2 );
@@ -31,7 +31,7 @@ callbacks.empty();
 // check to ensure all callbacks have been removed
 console.log( callbacks.has( foo ) ); // false
 console.log( callbacks.has( bar ) ); // false
-</pre>
+</code></pre>
   </longdesc>
   <category slug="callbacks-object"/>
   <category slug="version/1.7"/>

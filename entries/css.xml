@@ -72,9 +72,9 @@ div { width:60px; height:60px; margin:5px; float:left; }
       <p>When using <code>.css()</code> as a setter, jQuery modifies the element's <code>style</code> property. For example,  <code>$('#mydiv').css('color', 'green')</code> is equivalent to <code>document.getElementById('mydiv').style.color = 'green'</code>. Setting the value of a style property to an empty string &#x2014; e.g. <code>$('#mydiv').css('color', '')</code> &#x2014; removes that property from an element if it has already been directly applied, whether in the HTML style attribute, through jQuery's <code>.css()</code> method, or through direct DOM manipulation of the <code>style</code> property. It does not, however, remove a style that has been applied with a CSS rule in a stylesheet or <code>&lt;style&gt;</code> element.</p>
       <p>As of jQuery 1.6, <code>.css()</code> accepts relative values similar to <code>.animate()</code>. Relative values are a string starting with <code>+=</code> or <code>-=</code> to increment or decrement the current value. For example, if an element's padding-left was 10px, <code>.css( "padding-left", "+=15" )</code> would result in a total padding-left of 25px.</p>
       <p>As of jQuery 1.4, <code>.css()</code> allows us to pass a function as the property value:</p>
-      <pre>$('div.example').css('width', function(index) {
+      <pre><code>$('div.example').css('width', function(index) {
   return index * 50;
-});</pre>
+});</code></pre>
       <p>This example sets the widths of the matched elements to incrementally larger values.</p>
       <p><strong>Note: </strong>If nothing is returned in the setter function (ie. <code>function(index, style){})</code>, or if <code>undefined</code> is returned, the current value is not changed. This is useful for selectively setting values only when certain criteria are met.</p>
     </longdesc>

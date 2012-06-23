@@ -24,7 +24,7 @@
     <p>This method is a shortcut for <code>.bind('change', handler)</code> in the first two variations, and <code>.trigger('change')</code> in the third.</p>
     <p>The <code>change</code> event is sent to an element when its value changes. This event is limited to <code>&lt;input&gt;</code> elements, <code>&lt;textarea&gt;</code> boxes and <code>&lt;select&gt;</code> elements. For select boxes, checkboxes, and radio buttons, the event is fired immediately when the user makes a selection with the mouse, but for the other element types the event is deferred until the element loses focus.</p>
     <p>For example, consider the HTML:</p>
-    <pre>&lt;form&gt;
+    <pre><code>&lt;form&gt;
   &lt;input class="target" type="text" value="Field 1" /&gt;
   &lt;select class="target"&gt;
     &lt;option value="option1" selected="selected"&gt;Option 1&lt;/option&gt;
@@ -33,15 +33,15 @@
 &lt;/form&gt;
 &lt;div id="other"&gt;
   Trigger the handler
-&lt;/div&gt;</pre>
+&lt;/div&gt;</code></pre>
     <p>The event handler can be bound to the text input and the select box:</p>
-    <pre>$('.target').change(function() {
+    <pre><code>$('.target').change(function() {
   alert('Handler for .change() called.');
-});</pre>
+});</code></pre>
     <p>Now when the second option is selected from the dropdown, the alert is displayed. It is also displayed if you change the text in the field and then click away. If the field loses focus without the contents having changed, though, the event is not triggered. To trigger the event manually, apply <code>.change()</code> without arguments:</p>
-    <pre>$('#other').click(function() {
+    <pre><code>$('#other').click(function() {
   $('.target').change();
-});</pre>
+});</code></pre>
     <p>After this code executes, clicks on <span class="output">Trigger the handler</span> will also alert the message. The message will display twice, because the handler has been bound to the <code>change</code> event on both of the form elements.</p>
     <p>As of jQuery 1.4, the <code>change</code> event bubbles in Internet Explorer, behaving consistently with the event in other modern browsers.</p>
   </longdesc>

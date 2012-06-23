@@ -21,11 +21,11 @@
     <p>This method is a shortcut for <code>.bind('load', handler)</code>.</p>
     <p>The <code>load</code> event is sent to an element when it and all sub-elements have been completely loaded. This event can be sent to any element associated with a URL: images, scripts, frames, iframes, and the <code>window</code> object.</p>
     <p>For example, consider a page with a simple image:</p>
-    <pre>&lt;img src="book.png" alt="Book" id="book" /&gt;</pre>
+    <pre><code>&lt;img src="book.png" alt="Book" id="book" /&gt;</code></pre>
     <p>The event handler can be bound to the image:</p>
-    <pre>$('#book').load(function() {
+    <pre><code>$('#book').load(function() {
   // Handler for .load() called.
-});</pre>
+});</code></pre>
     <p>As soon as the image has been loaded, the handler is called.</p>
     <p>In general, it is not necessary to wait for all images to be fully loaded. If code can be executed earlier, it is usually best to place it in a handler sent to the <code>.ready()</code> method.
     </p>

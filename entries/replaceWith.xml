@@ -16,42 +16,42 @@
   <desc>Replace each element in the set of matched elements with the provided new content.</desc>
   <longdesc>
     <p>The <code>.replaceWith()</code> method removes content from the DOM and inserts new content in its place with a single call. Consider this DOM structure:</p>
-    <pre>&lt;div class="container"&gt;
+    <pre><code>&lt;div class="container"&gt;
   &lt;div class="inner first"&gt;Hello&lt;/div&gt;
   &lt;div class="inner second"&gt;And&lt;/div&gt;
   &lt;div class="inner third"&gt;Goodbye&lt;/div&gt;
-&lt;/div&gt;</pre>
+&lt;/div&gt;</code></pre>
     <p>The second inner <code>&lt;div&gt;</code> could be replaced with the specified HTML:</p>
-    <pre>$('div.second').replaceWith('&lt;h2&gt;New heading&lt;/h2&gt;');</pre>
+    <pre><code>$('div.second').replaceWith('&lt;h2&gt;New heading&lt;/h2&gt;');</code></pre>
     <p>This results in the structure:</p>
-    <pre>&lt;div class="container"&gt;
+    <pre><code>&lt;div class="container"&gt;
   &lt;div class="inner first"&gt;Hello&lt;/div&gt;
   &lt;h2&gt;New heading&lt;/h2&gt;
   &lt;div class="inner third"&gt;Goodbye&lt;/div&gt;
-&lt;/div&gt;</pre>
+&lt;/div&gt;</code></pre>
     <p><em>All</em> inner <code>&lt;div&gt;</code> elements could be targeted at once:</p>
-    <pre>$('div.inner').replaceWith('&lt;h2&gt;New heading&lt;/h2&gt;');</pre>
+    <pre><code>$('div.inner').replaceWith('&lt;h2&gt;New heading&lt;/h2&gt;');</code></pre>
     <p>This causes all of them to be replaced:</p>
-    <pre>&lt;div class="container"&gt;
+    <pre><code>&lt;div class="container"&gt;
   &lt;h2&gt;New heading&lt;/h2&gt;
   &lt;h2&gt;New heading&lt;/h2&gt;
   &lt;h2&gt;New heading&lt;/h2&gt;
-&lt;/div&gt;</pre>
+&lt;/div&gt;</code></pre>
     <p>An element could also be selected as the replacement:</p>
-    <pre>$('div.third').replaceWith($('.first'));</pre>
+    <pre><code>$('div.third').replaceWith($('.first'));</code></pre>
     <p>This results in the DOM structure:</p>
-    <pre>&lt;div class="container"&gt;
+    <pre><code>&lt;div class="container"&gt;
   &lt;div class="inner second"&gt;And&lt;/div&gt;
   &lt;div class="inner first"&gt;Hello&lt;/div&gt;
-&lt;/div&gt;</pre>
+&lt;/div&gt;</code></pre>
     <p>This example demonstrates that the selected element replaces the target by being moved from its old location, not by being cloned.</p>
     <p>The <code>.replaceWith()</code> method, like most jQuery methods, returns the jQuery object so that other methods can be chained onto it. However, it must be noted that the <em>original</em> jQuery object is returned. This object refers to the element that has been removed from the DOM, not the new element that has replaced it.</p>
     <p>As of jQuery 1.4, <code>.replaceWith()</code> can also work on disconnected DOM nodes. For example, with the following code, <code>.replaceWith()</code> returns a jQuery set containing only a paragraph.:</p>
-    <pre>$("&lt;div/&gt;").replaceWith("&lt;p&gt;&lt;/p&gt;");</pre>
+    <pre><code>$("&lt;div/&gt;").replaceWith("&lt;p&gt;&lt;/p&gt;");</code></pre>
     <p>The <code>.replaceWith()</code> method can also take a function as its argument:</p>
-    <pre>$('div.container').replaceWith(function() {
+    <pre><code>$('div.container').replaceWith(function() {
   return $(this).contents();
-});</pre>
+});</code></pre>
     <p>This results in <code>&lt;div class="container"&gt;</code> being replaced by its three child <code>&lt;div&gt;</code>s. The return value of the function may be an HTML string, DOM element, or jQuery object.</p>
   </longdesc>
   <example>

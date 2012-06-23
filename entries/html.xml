@@ -9,13 +9,13 @@
     <longdesc>
       <p>This method is not available on XML documents.</p>
       <p>In an HTML document, <code>.html()</code> can be used to get the contents of any element. If the selector expression matches more than one element, only the first match will have its HTML content returned. Consider this code:</p>
-      <pre>$('div.demo-container').html();</pre>
+      <pre><code>$('div.demo-container').html();</code></pre>
       <p>In order for the following <code>&lt;div&gt;</code>'s content to be retrieved, it would have to be the first one with <code>class="demo-container"</code> in the document:</p>
-      <pre>&lt;div class="demo-container"&gt;
+      <pre><code>&lt;div class="demo-container"&gt;
   &lt;div class="demo-box"&gt;Demonstration Box&lt;/div&gt;
-  &lt;/div&gt;</pre>
+  &lt;/div&gt;</code></pre>
       <p>The result would look like this:</p>
-      <pre>&lt;div class="demo-box"&gt;Demonstration Box&lt;/div&gt;</pre>
+      <pre><code>&lt;div class="demo-box"&gt;Demonstration Box&lt;/div&gt;</code></pre>
       <p>This method uses the browser's <code>innerHTML</code> property. Some browsers may not return HTML that exactly replicates the HTML source in an original document. For example, Internet Explorer sometimes leaves off the quotes around attribute values if they contain only alphanumeric characters.</p>
     </longdesc>
     <example>
@@ -64,21 +64,21 @@ $("p").click(function () {
     <longdesc>
       <p>The <code>.html()</code> method is not available in XML documents. </p>
       <p>When <code>.html()</code> is used to set an element's content, any content that was in that element is completely replaced by the new content. Consider the following HTML:</p>
-      <pre>&lt;div class="demo-container"&gt;
+      <pre><code>&lt;div class="demo-container"&gt;
   &lt;div class="demo-box"&gt;Demonstration Box&lt;/div&gt;
-&lt;/div&gt;</pre>
+&lt;/div&gt;</code></pre>
       <p>The content of <code>&lt;div class="demo-container"&gt;</code> can be set like this:</p>
-      <pre>$('div.demo-container')
-  .html('&lt;p&gt;All new content. &lt;em&gt;You bet!&lt;/em&gt;&lt;/p&gt;');</pre>
+      <pre><code>$('div.demo-container')
+  .html('&lt;p&gt;All new content. &lt;em&gt;You bet!&lt;/em&gt;&lt;/p&gt;');</code></pre>
       <p>That line of code will replace everything inside <code>&lt;div class="demo-container"&gt;</code>:</p>
-      <pre>&lt;div class="demo-container"&gt;
+      <pre><code>&lt;div class="demo-container"&gt;
   &lt;p&gt;All new content. &lt;em&gt;You bet!&lt;/em&gt;&lt;/p&gt;
-&lt;/div&gt;</pre>
+&lt;/div&gt;</code></pre>
       <p>As of jQuery 1.4, the <code>.html()</code> method allows the HTML content to be set by passing in a function.</p>
-      <pre>$('div.demo-container').html(function() {
+      <pre><code>$('div.demo-container').html(function() {
   var emph = '&lt;em&gt;' + $('p').length + ' paragraphs!&lt;/em&gt;';
   return '&lt;p&gt;All new content for ' + emph + '&lt;/p&gt;';
-});</pre>
+});</code></pre>
       <p>Given a document with six paragraphs, this example will set the HTML of <code>&lt;div class="demo-container"&gt;</code> to <code>&lt;p&gt;All new content for &lt;em&gt;6 paragraphs!&lt;/em&gt;&lt;/p&gt;</code>.</p>
       <p>This method uses the browser's <code>innerHTML</code> property. Some browsers may not generate a DOM that exactly replicates the HTML source provided. For example, Internet Explorer prior to version 8 will convert all <code>href</code> properties on links to absolute URLs, and Internet Explorer prior to version 9 will not correctly handle HTML5 elements without the addition of a separate <a href="http://code.google.com/p/html5shiv/">compatibility layer</a>.</p>
       <p><strong>Note:</strong> In Internet Explorer up to and including version 9, setting the text content of an HTML element may corrupt the text nodes of its children that are being removed from the document as a result of the operation. If you are keeping references to these DOM elements and need them to be unchanged, use <code>.empty().html(string)</code> instead of <code>.html(string)</code> so that the elements are removed from the document before the new string is assigned to the element.</p>
