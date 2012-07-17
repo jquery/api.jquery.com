@@ -9,7 +9,8 @@
   </signature>
   <desc>Pass each element in the current matched set through a function, producing a new jQuery object containing the return values.</desc>
   <longdesc>
-    <p>As the return value is a jQuery-wrapped array, it's very common to <code>get()</code> the returned object to work with a basic array.</p>
+    <p>If you wish to process a plain array or object, use the <a href="/jQuery.map/">jQuery.map()</a> instead. </p>
+    <p>As the return value is a jQuery object, which contains an array, it's very common to call <code>.get()</code> on the result to work with a basic array.</p>
     <p>The <code>.map()</code> method is particularly useful for getting or setting the value of a collection of elements. Consider a form with a set of checkboxes in it:</p>
     <pre><code>
 &lt;form method="post" action=""&gt;
@@ -33,10 +34,10 @@
   &lt;/fieldset&gt;
 &lt;/form&gt;
 </code></pre>
-    <p>We can get a comma-separated list of checkbox <code>ID</code>s:</p>
+    <p>To get a comma-separated list of checkbox <code>ID</code>s:</p>
     <pre><code>$(':checkbox').map(function() {
       return this.id;
-    }).get().join(',');</code></pre>
+    }).get().join();</code></pre>
     <p>The result of this call is the string, <code>"two,four,six,eight"</code>.</p>
     <p>Within the callback function, <code>this</code> refers to the current DOM element for each iteration. The function can return an individual data item or an array of data items to be inserted into the resulting set. If an array is returned, the elements inside the array are inserted into the set. If the function returns <code>null</code> or <code>undefined</code>, no element will be inserted.</p>
   </longdesc>
