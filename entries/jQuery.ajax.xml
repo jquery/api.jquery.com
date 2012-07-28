@@ -37,8 +37,8 @@
       <option name="contents" type="PlainObject" added="1.5">
         <desc>A map of string/regular-expression pairs that determine how jQuery will parse the response, given its content type.</desc>
       </option>
-      <option default="'application/x-www-form-urlencoded'" name="contentType" type="String">
-        <desc>When sending data to the server, use this content-type. Default is "application/x-www-form-urlencoded", which is fine for most cases. If you explicitly pass in a content-type to <code>$.ajax()</code> then it'll always be sent to the server (even if no data is sent). Data will always be transmitted to the server using UTF-8 charset; you must decode this appropriately on the server side.</desc>
+      <option default="'application/x-www-form-urlencoded; charset=UTF-8'" name="contentType" type="String">
+        <desc>When sending data to the server, use this content type. Default is "application/x-www-form-urlencoded; charset=UTF-8", which is fine for most cases. If you explicitly pass in a content-type to <code>$.ajax()</code>, then it'll always be sent to the server (even if no data is sent). If no charset is specified, data will be transmitted to the server using the server's default charset; you must decode this appropriately on the server side.</desc>
       </option>
       <option name="context" type="Object">
         <desc>This object will be made the context of all Ajax-related callbacks. By default, the context is an object that represents the ajax settings used in the call (<code>$.ajaxSettings</code> merged with the settings passed to <code>$.ajax</code>). For example,  specifying a DOM element as the context will make that the context for the <code>complete</code> callback of a request, like so: <pre><code>$.ajax({
