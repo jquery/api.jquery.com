@@ -6,7 +6,9 @@
     <added>1.2</added>
   </signature>
   <desc>Select all elements that are in the progress of an animation at the time the selector is run.</desc>
-  <longdesc/>
+  <longdesc>
+    <p><strong>Note:</strong> If you use a custom jQuery build <em>without the effects module</em>, the <code>:animated</code> selector will throw an error. </p>
+  </longdesc>
   <note id="jquery-selector-extension" type="additional" data-selector=":animated"/>
   <example>
     <desc>Change the color of any div that is animated.</desc>
