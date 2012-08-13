@@ -19,14 +19,19 @@
     return;
   }
 
-  $.cssHooks["someCSSProp"] = {
-    get: function( elem, computed, extra ) {
-      // handle getting the CSS property
-    },
-    set: function( elem, value ) {
-      // handle setting the CSS value
-    }
-  };
+  // Wrap in a document ready call, because jQuery writes
+  // cssHooks at this time and will blow away your functions
+  // if they exist.
+  $(function () {
+    $.cssHooks["someCSSProp"] = {
+      get: function( elem, computed, extra ) {
+        // handle getting the CSS property
+      },
+      set: function( elem, value ) {
+        // handle setting the CSS value
+      }
+    };
+  });
 })(jQuery);
 </code>
     </pre>
