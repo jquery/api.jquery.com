@@ -24,7 +24,7 @@
     "grunt": "0.3.x",
     "grunt-clean": "0.3.0",
     "grunt-wordpress": "1.0.2",
-    "grunt-jquery-content": "0.3.0"
+    "grunt-jquery-content": "0.3.x"
   },
   "devDependencies": {},
   "keywords": []

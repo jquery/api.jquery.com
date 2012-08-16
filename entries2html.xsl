@@ -389,7 +389,7 @@
             <xsl:value-of select="position() - 1"/>
           </xsl:attribute>
           <h4><xsl:if test="$number-examples &gt; 1">Example: </xsl:if><span class="desc"><xsl:value-of select="desc" /></span></h4>
-  <pre><code data-linenos="true"><xsl:choose>
+  <pre><code data-linenum="true"><xsl:choose>
             <xsl:when test="html">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;<xsl:if test="css/text()">
