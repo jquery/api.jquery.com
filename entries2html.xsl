@@ -123,20 +123,7 @@
   </xsl:choose>
 </xsl:template>
 
-<xsl:template match="/">
-
-<script>
-	{
-		"title": <xsl:call-template name="escape-string"><xsl:with-param name="s" select="//entry/title/text()"/></xsl:call-template>,
-		"excerpt": <xsl:call-template name="escape-string"><xsl:with-param name="s" select="//entry[1]/desc/text()|//entry[1]/desc/*"/></xsl:call-template>,
-		"termSlugs": {
-			"category": [
-				<xsl:for-each select="//entry/category"><xsl:if test="position() &gt; 1"><xsl:text>,</xsl:text></xsl:if>"<xsl:value-of select="@slug"/>"</xsl:for-each>
-			]
-		}
-	}
-</script>
-<xsl:if test="count(//entry) &gt; 1">
+<xsl:template name="toc">
 <div class="toc">
   <h4><span>Contents:</span></h4>
   <ul class="toc-list">
@@ -184,6 +171,23 @@
     </xsl:for-each>
   </ul>
 </div>
+</xsl:template>
+
+<xsl:template match="/">
+
+<script>
+	{
+		"title": <xsl:call-template name="escape-string"><xsl:with-param name="s" select="//entry/title/text()"/></xsl:call-template>,
+		"excerpt": <xsl:call-template name="escape-string"><xsl:with-param name="s" select="//entry[1]/desc/text()|//entry[1]/desc/*"/></xsl:call-template>,
+		"termSlugs": {
+			"category": [
+				<xsl:for-each select="//entry/category"><xsl:if test="position() &gt; 1"><xsl:text>,</xsl:text></xsl:if>"<xsl:value-of select="@slug"/>"</xsl:for-each>
+			]
+		}
+	}
+</script>
+<xsl:if test="count(//entry) &gt; 1">
+  <xsl:call-template name="toc"/>
 </xsl:if>
 
 <xsl:for-each select="//entry">
