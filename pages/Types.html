@@ -58,7 +58,6 @@ if ( x ) {
 <li class="toclevel-2"><a href="#Prototype"><span class="toctext">Prototype</span></a></li>
 </ul>
 </li>
-<li class="toclevel-1"><a href="#Options"><span class="toctext">Options</span></a></li>
 <li class="toclevel-1"><a href="#Array"><span class="toctext">Array</span></a>
 <ul>
 <li class="toclevel-2"><a href="#Iteration_2"><span class="toctext">Iteration</span></a></li>
@@ -215,13 +214,6 @@ typeof Infinity // "number"
 <pre><code data-lang="javascript">if ( true ) console.log( "always!" )
 if ( false ) console.log( "never!" )
 </code></pre>
-<p>When an <a href="#Options" title="">option</a> is specified as a boolean, it often looks like this:
-</p>
-<pre><code data-lang="javascript">$( "..." ).somePlugin({
-  hideOnStartup: true,
-  onlyOnce: false
-});
-</code></pre>
 <a name="Object"></a><h2> Object </h2>
 <p>Everything in JavaScript is an object, though some are more objective (haha). The easiest way to create an object is the object literal:
 </p>
@@ -297,19 +289,6 @@ form.clearForm() // works for all instances of jQuery objects, because the new m
 (This example needs clarification: how does it modify the prototype when the word "prototype" doesn't appear anywhere? The implication is that form.fn is simply an alias for form.prototype, but if that's the case then it should be explained.&nbsp;:-?)
 </p><p>In javascript:the definitive guide 5 edition,dont add attibute to Object.prototype
 </p>
-<a name="Options"></a><h2> Options </h2>
-<p>Options in jQuery are plain JavaScript objects. Whenever Options is mentioned as a type, that object and also all of its properties should be optional. There are exceptions where at least one option is required. jQuery's most prominent use of Options is its <a href="http://docs.jquery.com/Ajax/jQuery.ajax" title="Ajax/jQuery.ajax">AJAX</a>-method. Nearly all jQuery plugins provide an Options-based API: They work without any configuration, but allow users to specify whatever customization they need.
-</p><p>Let's look at an example from the form plugin. It allows you to submit a form via AJAX with this simple line of code:
-</p>
-<pre><code data-lang="javascript">$( "#myform" ).ajaxForm();
-</code></pre>
-<p>In that mode, it uses the form's action-attribute as the AJAX-URL and the form's method-attribute to determine whether to GET or POST the form. You can override both defaults by specifying them as options:
-</p>
-<pre><code data-lang="javascript">$( "#myform" ).ajaxForm({
-  url: "mypage.php",
-  type: "POST"
-});
-</code></pre>
 <a name="Array"></a><h2> Array </h2>
 <p>Arrays in JavaScript are mutable lists with a few built-in methods. You can define arrays using the array literal:
 </p>

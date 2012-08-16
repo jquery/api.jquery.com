@@ -126,9 +126,6 @@
     </xsl:if>
   </xsl:when>
   <xsl:otherwise>
-    <xsl:if test="$typename = 'Options'">
-      <xsl:variable name="typename">PlainObject</xsl:variable>
-    </xsl:if>
     <!-- not function - just display typename -->
     <a href="http://api.jquery.com/Types#{$typename}"><xsl:value-of select="$typename" /></a>
   </xsl:otherwise>

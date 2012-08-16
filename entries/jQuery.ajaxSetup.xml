@@ -3,7 +3,7 @@
   <title>jQuery.ajaxSetup()</title>
   <signature>
     <added>1.1</added>
-    <argument name="options" type="Options">
+    <argument name="options" type="PlainObject">
       <desc>A set of key/value pairs that configure the default Ajax request. All options are optional. </desc>
     </argument>
   </signature>

@@ -16,7 +16,7 @@
   </signature>
   <signature>
     <added>1.0</added>
-    <argument name="options" type="Options">
+    <argument name="options" type="PlainObject">
       <desc>A map of additional options to pass to the method.</desc>
     </argument>
   </signature>
