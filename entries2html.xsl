@@ -18,15 +18,6 @@
     <xsl:if test="@default">
       <div class="default-value"><strong>Default: </strong> <xsl:value-of select="@default" /></div>
     </xsl:if>
-    <!-- <xsl:for-each select="argument|parameter">
-      <xsl:if test="count(property)">
-        <div class="param-properties">
-          <xsl:value-of select="@name" />
-          <xsl:text> Properties: </xsl:text>
-          <xsl:apply-templates select="property" />
-        </div>
-      </xsl:if>
-    </xsl:for-each> -->
     <p>
       <xsl:copy-of select="desc/text()|desc/*" />
     </p>
@@ -50,7 +41,7 @@
 
 
 <!--
-  Render type(s) for a parameter or argument element.
+  Render type(s) for an argument element.
   Type can either by a @type attribute or one or more <type> child elements.
 -->
 <xsl:template name="render-types">
@@ -111,7 +102,7 @@
   -->
   <xsl:when test="$typename = 'Function'">
     <xsl:text>Function(</xsl:text>
-    <xsl:for-each select="argument|parameter">
+    <xsl:for-each select="argument">
       <xsl:if test="position() &gt; 1">, </xsl:if>
       <xsl:value-of select="@name" />
       <xsl:text>: </xsl:text>
