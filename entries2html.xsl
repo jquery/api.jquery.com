@@ -194,7 +194,6 @@
   <xsl:variable name="entry-name" select="@name" />
   <xsl:variable name="entry-name-trans" select="translate($entry-name,'$., ()/{}','s---')" />
   <xsl:variable name="entry-type" select="@type" />
-  <xsl:variable name="plugin-name" select="@plugin" />
   <xsl:variable name="entry-index" select="position()" />
   <xsl:variable name="number-examples" select="count(example)" />
   <xsl:variable name="entry-pos" select="concat($entry-name-trans,$entry-index)" />
@@ -204,15 +203,7 @@
       <xsl:value-of select="$entry-pos"></xsl:value-of>
     </xsl:attribute>
     <xsl:attribute name="class">
-      <xsl:choose>
-        <xsl:when test="$plugin-name">
-          <xsl:value-of select="concat('entry plugin ', $entry-type)" />
-        </xsl:when>
-        <xsl:otherwise>
-          <xsl:value-of select="concat('entry ', $entry-type)" />
-        </xsl:otherwise>
-      </xsl:choose>
-
+      <xsl:value-of select="concat('entry ', $entry-type)" />
     </xsl:attribute>
   <h2 class="jq-clearfix roundTop section-title">
     <span class="name">
