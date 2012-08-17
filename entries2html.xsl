@@ -492,9 +492,9 @@
 								</p>
 							</xsl:otherwise>
 						</xsl:choose>
-						<xsl:if test="@type='Options'">
+						<xsl:if test="option">
 							<div class="options">
-								<xsl:apply-templates select="../../options/option"/>
+								<xsl:apply-templates select="option"/>
 							</div>
 						</xsl:if>
 					</xsl:for-each>
