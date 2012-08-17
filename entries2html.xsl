@@ -463,29 +463,25 @@
             <xsl:copy-of select="code/text()" />
           </xsl:otherwise>
         </xsl:choose></code></pre>
+
         <xsl:if test="html">
           <h4>Demo:</h4>
-          <div><xsl:choose>
-            <xsl:when test="html">
-              <xsl:attribute name="class">demo code-demo</xsl:attribute>
-              <xsl:if test="height">
-                <xsl:attribute name="rel"><xsl:value-of select="height"/></xsl:attribute>
-              </xsl:if>
-            </xsl:when>
-            <xsl:otherwise>
-              <xsl:attribute name="class">demo</xsl:attribute>
-            </xsl:otherwise>
-          </xsl:choose>
-        </div>
+          <div class="demo code-demo">
+            <xsl:if test="height">
+              <xsl:attribute name="data-height">
+                <xsl:value-of select="height"/>
+              </xsl:attribute>
+            </xsl:if>
+          </div>
         </xsl:if>
+
         <xsl:if test="results">
           <h4>Result:</h4>
-          <pre>
-            <code class="results">
-              <xsl:value-of select="results"/>
-            </code>
-          </pre>
+          <pre><code class="results">
+            <xsl:value-of select="results"/>
+          </code></pre>
         </xsl:if>
+
         </div>
       </xsl:for-each>
       </div>
