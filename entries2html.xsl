@@ -1,5 +1,148 @@
-<xsl:stylesheet version='1.0' xmlns:xsl='http://www.w3.org/1999/XSL/Transform'>
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 <xsl:output method="html" omit-xml-declaration="yes"/>
+
+<xsl:template match="/">
+	<script>{
+		"title":
+			<xsl:call-template name="escape-string">
+				<xsl:with-param name="s" select="//entry/title/text()"/>
+			</xsl:call-template>,
+		"excerpt":
+			<xsl:call-template name="escape-string">
+				<xsl:with-param name="s" select="//entry[1]/desc/text()|//entry[1]/desc/*"/>
+			</xsl:call-template>,
+		"termSlugs": {
+			"category": [
+				<xsl:for-each select="//entry/category">
+					<xsl:if test="position() &gt; 1"><xsl:text>,</xsl:text></xsl:if>
+					<xsl:text>"</xsl:text>
+					<xsl:value-of select="@slug"/>
+					<xsl:text>"</xsl:text>
+				</xsl:for-each>
+			]
+		}
+	}</script>
+
+	<xsl:if test="count(//entry) &gt; 1">
+		<xsl:call-template name="toc"/>
+	</xsl:if>
+
+	<xsl:for-each select="//entry">
+		<xsl:variable name="entry-name" select="@name"/>
+		<xsl:variable name="entry-name-trans" select="translate($entry-name,'$., ()/{}','s---')"/>
+		<xsl:variable name="entry-type" select="@type"/>
+		<xsl:variable name="entry-index" select="position()"/>
+		<xsl:variable name="entry-pos" select="concat($entry-name-trans,$entry-index)"/>
+		<xsl:variable name="number-examples" select="count(example)"/>
+
+		<xsl:if test="./added">
+			<span class="versionAdded">version added: <xsl:value-of select="added"/></span>
+		</xsl:if>
+
+		<article>
+			<xsl:attribute name="id">
+				<xsl:value-of select="$entry-pos"/>
+			</xsl:attribute>
+			<xsl:attribute name="class">
+				<xsl:value-of select="concat('entry ', $entry-type)"/>
+			</xsl:attribute>
+
+			<xsl:call-template name="entry-title"/>
+
+			<div class="jq-box roundBottom entry-details">
+				<xsl:call-template name="entry-body"/>
+
+				<xsl:if test="normalize-space(longdesc/*)">
+					<div class="longdesc">
+						<xsl:copy-of select="longdesc/*" />
+					</div>
+				</xsl:if>
+
+				<xsl:if test="note">
+					<h3>Additional Notes:</h3>
+					<div class="longdesc">
+						<ul>
+							<xsl:for-each select="note">
+								<li><xsl:apply-templates select="."/></li>
+							</xsl:for-each>
+						</ul>
+					</div>
+				</xsl:if>
+
+			<xsl:if test="$number-examples &gt; 0">
+			<div id="examples">
+				<h3>Example<xsl:if test="$number-examples &gt; 1">s</xsl:if>:</h3>
+				<div class="entry-examples">
+					<xsl:attribute name="id">
+						<xsl:text>entry-examples</xsl:text>
+							<xsl:if test="$entry-index &gt; 1">
+								<xsl:text>-</xsl:text><xsl:value-of select="$entry-index - 1"/>
+							</xsl:if>
+					</xsl:attribute>
+				<xsl:for-each select="example">
+					<div class="entry-example">
+						<xsl:attribute name="id">
+							<xsl:text>example-</xsl:text>
+							<xsl:if test="$entry-index &gt; 1">
+								<xsl:value-of select="$entry-index - 1"/>
+								<xsl:text>-</xsl:text>
+							</xsl:if>
+							<xsl:value-of select="position() - 1"/>
+						</xsl:attribute>
+						<h4><xsl:if test="$number-examples &gt; 1">Example: </xsl:if><span class="desc"><xsl:value-of select="desc" /></span></h4>
+		<pre><code data-linenum="true"><xsl:choose>
+							<xsl:when test="html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;<xsl:if test="css/text()">
+	&lt;style&gt;<xsl:copy-of select="css/text()" />&lt;/style&gt;</xsl:if>
+	&lt;script src="http://code.jquery.com/jquery-latest.js"&gt;&lt;/script&gt;<xsl:if test="code/@location='head'">
+	&lt;script&gt;
+	<xsl:copy-of select="code/text()" />
+	&lt;/script&gt;
+</xsl:if>
+&lt;/head&gt;
+&lt;body&gt;
+	<xsl:copy-of select="html/text()" />
+<xsl:choose>
+	<xsl:when test="code/@location='head'"></xsl:when>
+	<xsl:otherwise>
+&lt;script&gt;<xsl:copy-of select="code/text()" />&lt;/script&gt;</xsl:otherwise>
+</xsl:choose>
+
+&lt;/body&gt;
+&lt;/html&gt;</xsl:when>
+						<xsl:otherwise>
+							<xsl:attribute name="class">example</xsl:attribute>
+							<xsl:copy-of select="code/text()" />
+						</xsl:otherwise>
+					</xsl:choose></code></pre>
+
+					<xsl:if test="html">
+						<h4>Demo:</h4>
+						<div class="demo code-demo">
+							<xsl:if test="height">
+								<xsl:attribute name="data-height">
+									<xsl:value-of select="height"/>
+								</xsl:attribute>
+							</xsl:if>
+						</div>
+					</xsl:if>
+
+					<xsl:if test="results">
+						<h4>Result:</h4>
+						<pre><code class="results">
+							<xsl:value-of select="results"/>
+						</code></pre>
+					</xsl:if>
+								</div>
+							</xsl:for-each>
+						</div>
+					</div>
+				</xsl:if>
+			</div>
+		</article>
+	</xsl:for-each>
+</xsl:template>
 
 <xsl:template match="option|property">
 		<h5 class="option">
@@ -359,149 +502,6 @@
 			</li>
 		</xsl:for-each>
 	</ul>
-</xsl:template>
-
-<xsl:template match="/">
-	<script>{
-		"title":
-			<xsl:call-template name="escape-string">
-				<xsl:with-param name="s" select="//entry/title/text()"/>
-			</xsl:call-template>,
-		"excerpt":
-			<xsl:call-template name="escape-string">
-				<xsl:with-param name="s" select="//entry[1]/desc/text()|//entry[1]/desc/*"/>
-			</xsl:call-template>,
-		"termSlugs": {
-			"category": [
-				<xsl:for-each select="//entry/category">
-					<xsl:if test="position() &gt; 1"><xsl:text>,</xsl:text></xsl:if>
-					<xsl:text>"</xsl:text>
-					<xsl:value-of select="@slug"/>
-					<xsl:text>"</xsl:text>
-				</xsl:for-each>
-			]
-		}
-	}</script>
-
-	<xsl:if test="count(//entry) &gt; 1">
-		<xsl:call-template name="toc"/>
-	</xsl:if>
-
-	<xsl:for-each select="//entry">
-		<xsl:variable name="entry-name" select="@name"/>
-		<xsl:variable name="entry-name-trans" select="translate($entry-name,'$., ()/{}','s---')"/>
-		<xsl:variable name="entry-type" select="@type"/>
-		<xsl:variable name="entry-index" select="position()"/>
-		<xsl:variable name="entry-pos" select="concat($entry-name-trans,$entry-index)"/>
-		<xsl:variable name="number-examples" select="count(example)"/>
-
-		<xsl:if test="./added">
-			<span class="versionAdded">version added: <xsl:value-of select="added"/></span>
-		</xsl:if>
-
-		<div>
-			<xsl:attribute name="id">
-				<xsl:value-of select="$entry-pos"/>
-			</xsl:attribute>
-			<xsl:attribute name="class">
-				<xsl:value-of select="concat('entry ', $entry-type)"/>
-			</xsl:attribute>
-
-			<xsl:call-template name="entry-title"/>
-
-			<div class="jq-box roundBottom entry-details">
-				<xsl:call-template name="entry-body"/>
-
-			<xsl:if test="normalize-space(longdesc/*)">
-				<div class="longdesc">
-					<xsl:copy-of select="longdesc/*" />
-				</div>
-			</xsl:if>
-		<xsl:if test="note">
-			<h3>Additional Notes:</h3>
-			<div class="longdesc">
-				<ul>
-					<xsl:for-each select="note">
-						<li><xsl:apply-templates select="."/></li>
-					</xsl:for-each>
-				</ul>
-			</div>
-		</xsl:if>
-			<xsl:if test="$number-examples &gt; 0">
-			<div id="examples">
-				<h3>Example<xsl:if test="$number-examples &gt; 1">s</xsl:if>:</h3>
-				<div class="entry-examples">
-					<xsl:attribute name="id">
-						<xsl:text>entry-examples</xsl:text>
-							<xsl:if test="$entry-index &gt; 1">
-								<xsl:text>-</xsl:text><xsl:value-of select="$entry-index - 1"/>
-							</xsl:if>
-					</xsl:attribute>
-				<xsl:for-each select="example">
-					<div class="entry-example">
-						<xsl:attribute name="id">
-							<xsl:text>example-</xsl:text>
-							<xsl:if test="$entry-index &gt; 1">
-								<xsl:value-of select="$entry-index - 1"/>
-								<xsl:text>-</xsl:text>
-							</xsl:if>
-							<xsl:value-of select="position() - 1"/>
-						</xsl:attribute>
-						<h4><xsl:if test="$number-examples &gt; 1">Example: </xsl:if><span class="desc"><xsl:value-of select="desc" /></span></h4>
-		<pre><code data-linenum="true"><xsl:choose>
-							<xsl:when test="html">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;<xsl:if test="css/text()">
-	&lt;style&gt;<xsl:copy-of select="css/text()" />&lt;/style&gt;</xsl:if>
-	&lt;script src="http://code.jquery.com/jquery-latest.js"&gt;&lt;/script&gt;<xsl:if test="code/@location='head'">
-	&lt;script&gt;
-	<xsl:copy-of select="code/text()" />
-	&lt;/script&gt;
-</xsl:if>
-&lt;/head&gt;
-&lt;body&gt;
-	<xsl:copy-of select="html/text()" />
-<xsl:choose>
-	<xsl:when test="code/@location='head'"></xsl:when>
-	<xsl:otherwise>
-&lt;script&gt;<xsl:copy-of select="code/text()" />&lt;/script&gt;</xsl:otherwise>
-</xsl:choose>
-
-&lt;/body&gt;
-&lt;/html&gt;</xsl:when>
-						<xsl:otherwise>
-							<xsl:attribute name="class">example</xsl:attribute>
-							<xsl:copy-of select="code/text()" />
-						</xsl:otherwise>
-					</xsl:choose></code></pre>
-
-					<xsl:if test="html">
-						<h4>Demo:</h4>
-						<div class="demo code-demo">
-							<xsl:if test="height">
-								<xsl:attribute name="data-height">
-									<xsl:value-of select="height"/>
-								</xsl:attribute>
-							</xsl:if>
-						</div>
-					</xsl:if>
-
-					<xsl:if test="results">
-						<h4>Result:</h4>
-						<pre><code class="results">
-							<xsl:value-of select="results"/>
-						</code></pre>
-					</xsl:if>
-
-					</div>
-				</xsl:for-each>
-				</div>
-			</div>
-			</xsl:if>
-		</div>
-	</div>
-</xsl:for-each>
-
 </xsl:template>
 
 <!-- escape-string, from xml2json.xsl -->
