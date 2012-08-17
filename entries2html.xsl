@@ -442,13 +442,7 @@
 &lt;html&gt;
 &lt;head&gt;<xsl:if test="css/text()">
   &lt;style&gt;<xsl:copy-of select="css/text()" />&lt;/style&gt;</xsl:if>
-  <xsl:choose>
-    <xsl:when test="count(js)">
-    <xsl:for-each select="js">
-  &lt;script src="<xsl:value-of select="@src" />"&gt;&lt;/script&gt;</xsl:for-each>
-  </xsl:when>
-  <xsl:otherwise>
-  &lt;script src="http://code.jquery.com/jquery-latest.js"&gt;&lt;/script&gt;</xsl:otherwise></xsl:choose><xsl:if test="code/@location='head'">
+  &lt;script src="http://code.jquery.com/jquery-latest.js"&gt;&lt;/script&gt;<xsl:if test="code/@location='head'">
   &lt;script&gt;
   <xsl:copy-of select="code/text()" />
   &lt;/script&gt;
