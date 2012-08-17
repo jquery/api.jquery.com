@@ -423,6 +423,7 @@
 		</div>
 	</xsl:if>
     <xsl:if test="$number-examples &gt; 0">
+    <div id="examples">
       <h3>Example<xsl:if test="$number-examples &gt; 1">s</xsl:if>:</h3>
       <div class="entry-examples">
         <xsl:attribute name="id">
@@ -500,6 +501,7 @@
         </div>
       </xsl:for-each>
       </div>
+    </div>
     </xsl:if>
   </div>
 </div>
