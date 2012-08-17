@@ -401,12 +401,6 @@
     <div class="jq-box roundBottom entry-details">
       <xsl:call-template name="entry-body"/>
 
-    <xsl:if test="normalize-space(download/*)">
-      <div class="download">
-        <xsl:copy-of select="download/*" />
-      </div>
-    </xsl:if>
-
     <xsl:if test="normalize-space(longdesc/*)">
       <div class="longdesc">
         <xsl:copy-of select="longdesc/*" />
