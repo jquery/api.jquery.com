@@ -173,6 +173,65 @@
 </div>
 </xsl:template>
 
+<xsl:template name="entry-title">
+  <xsl:param name="entry-type" select="@type"/>
+  <xsl:param name="entry-name" select="@name"/>
+
+  <h2 class="jq-clearfix roundTop section-title">
+    <xsl:choose>
+      <xsl:when test="$entry-type='method'">
+        <span class="name">
+          <xsl:if test="not(contains($entry-name, '.')) and not(contains($entry-name, '{')) and $entry-name != 'jQuery'">.</xsl:if>
+          <xsl:value-of select="@name"/>
+          <xsl:text>(</xsl:text>
+          <xsl:if test="signature/argument"><xsl:text> </xsl:text>
+            <xsl:variable name="sig-arg-num" select="count(signature[1]/argument)"/>
+            <xsl:for-each select="signature[1]/argument">
+              <xsl:if test="@optional"> [</xsl:if>
+              <xsl:if test="position() &gt; 1">
+                <xsl:text>, </xsl:text>
+              </xsl:if>
+              <xsl:value-of select="@name"/>
+              <xsl:if test="@optional">] </xsl:if>
+            </xsl:for-each>
+            <xsl:text> </xsl:text>
+          </xsl:if>
+          <xsl:text>)</xsl:text>
+        </span>
+        <xsl:text> </xsl:text>
+        <span class="returns">
+          <xsl:if test="@return != ''">
+            <xsl:text>Returns: </xsl:text>
+            <a class="return" href="http://api.jquery.com/Types/#{@return}">
+              <xsl:value-of select="@return"/>
+            </a>
+          </xsl:if>
+        </span>
+      </xsl:when>
+      <xsl:when test="$entry-type='selector'">
+        <span>
+          <xsl:value-of select="@name"/>
+          <xsl:text> selector</xsl:text>
+        </span>
+      </xsl:when>
+      <xsl:when test="$entry-type='property'">
+        <span>
+          <xsl:value-of select="@name"/>
+        </span>
+        <xsl:text> </xsl:text>
+        <span class="returns">
+          <xsl:if test="@return != ''">
+            <xsl:text>Returns: </xsl:text>
+            <a class="return" href="http://api.jquery.com/Types/#{@return}">
+              <xsl:value-of select="@return"/>
+            </a>
+          </xsl:if>
+        </span>
+      </xsl:when>
+    </xsl:choose>
+  </h2>
+</xsl:template>
+
 <xsl:template match="/">
 
 <script>
@@ -205,38 +264,8 @@
     <xsl:attribute name="class">
       <xsl:value-of select="concat('entry ', $entry-type)" />
     </xsl:attribute>
-  <h2 class="jq-clearfix roundTop section-title">
-    <span class="name">
-      <xsl:choose>
-        <xsl:when test="$entry-type='method'"><xsl:if test="not(contains($entry-name, '.')) and not(contains($entry-name, '{')) and $entry-name != 'jQuery'">.</xsl:if></xsl:when>
-      </xsl:choose>
-      <xsl:value-of select="@name" /><xsl:if test="@type='method'">(<xsl:if test="signature/argument"><xsl:text> </xsl:text>
-      <xsl:variable name="sig-arg-num" select="count(signature[1]/argument)" />
 
-      <xsl:for-each select="signature[1]/argument">
-        <xsl:if test="@optional"> [</xsl:if>
-        <xsl:if test="position() &gt; 1">
-          <xsl:text>, </xsl:text>
-        </xsl:if>
-        <xsl:value-of select="@name" />
-        <xsl:if test="@optional">] </xsl:if>
-      </xsl:for-each>
-      <xsl:text> </xsl:text></xsl:if>)</xsl:if>
-    </span>
-    <xsl:text> </xsl:text>
-
-    <xsl:choose>
-      <xsl:when test="$entry-type='selector'">
-        <xsl:text> selector</xsl:text>
-      </xsl:when>
-      <xsl:otherwise>
-
-        <span class="returns">
-          <xsl:if test="@return != ''">Returns: <a class="return" href="http://api.jquery.com/Types/#{@return}"><xsl:value-of select="@return" /></a></xsl:if>
-        </span>
-      </xsl:otherwise>
-    </xsl:choose>
-  </h2>
+    <xsl:call-template name="entry-title"/>
   <div class="jq-box roundBottom entry-details">
     <xsl:choose>
       <xsl:when test="$entry-type='selector'">
