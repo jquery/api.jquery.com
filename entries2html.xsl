@@ -93,6 +93,81 @@
 	</xsl:for-each>
 </xsl:template>
 
+<xsl:template name="toc">
+	<div class="toc">
+		<h4><span>Contents:</span></h4>
+		<ul class="toc-list">
+			<xsl:for-each select="//entry">
+				<xsl:variable name="entry-name-trans" select="translate(@name,'$., ()/{}','s---')" />
+				<xsl:variable name="entry-url" select="concat('#',$entry-name-trans,position())"/>
+				<xsl:choose>
+					<xsl:when test="@type='method'">
+						<xsl:call-template name="toc-method">
+							<xsl:with-param name="entry-url" select="$entry-url"/>
+						</xsl:call-template>
+					</xsl:when>
+					<xsl:otherwise>
+						<xsl:call-template name="toc-basic">
+							<xsl:with-param name="entry-url" select="$entry-url"/>
+						</xsl:call-template>
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:for-each>
+		</ul>
+	</div>
+</xsl:template>
+
+<xsl:template name="toc-basic">
+	<xsl:param name="entry-url"/>
+	<li><a href="{$entry-url}"><xsl:value-of select="@name"/></a></li>
+</xsl:template>
+
+<xsl:template name="toc-method">
+	<xsl:param name="entry-url"/>
+	<xsl:variable name="entry-name" select="@name"/>
+
+	<li>
+		<a href="{$entry-url}">
+			<xsl:value-of select="@name"/>(
+			<xsl:if test="signature/argument">
+				<xsl:text> </xsl:text>
+				<xsl:for-each select="signature[1]/argument">
+					<xsl:if test="@optional">[<xsl:text>&#160;</xsl:text></xsl:if>
+					<xsl:if test="position() &gt; 1">
+						<xsl:text>, </xsl:text>
+					</xsl:if>
+					<xsl:value-of select="@name"/>
+					<xsl:if test="@optional"><xsl:text>&#160;</xsl:text>]</xsl:if>
+					<xsl:text> </xsl:text>
+				</xsl:for-each>
+				<xsl:text>&#160;</xsl:text>
+			</xsl:if>)
+		</a>
+
+		<ul>
+			<xsl:for-each select="signature">
+				<li>
+					<xsl:variable name="method-sig-arg-num" select="count(argument)"/>
+					<xsl:if test="not(contains($entry-name, '.')) and $entry-name != 'jQuery'">.</xsl:if>
+					<xsl:value-of select="$entry-name"/>(
+					<xsl:if test="argument">
+						<xsl:text> </xsl:text>
+						<xsl:for-each select="argument">
+							<xsl:if test="@optional"> [</xsl:if>
+								<xsl:if test="position() &gt; 1">
+									<xsl:text>, </xsl:text>
+								</xsl:if>
+								<xsl:value-of select="@name"/>
+							<xsl:if test="@optional">] </xsl:if>
+						</xsl:for-each>
+						<xsl:text> </xsl:text>
+					</xsl:if>)
+				</li>
+			</xsl:for-each>
+		</ul>
+	</li>
+</xsl:template>
+
 <!-- examples -->
 <xsl:template match="example">
 	<xsl:param name="entry-index"/>
@@ -282,56 +357,6 @@
 		<a href="http://api.jquery.com/Types#{$typename}"><xsl:value-of select="$typename" /></a>
 	</xsl:otherwise>
 	</xsl:choose>
-</xsl:template>
-
-<xsl:template name="toc">
-<div class="toc">
-	<h4><span>Contents:</span></h4>
-	<ul class="toc-list">
-		<xsl:for-each select="//entry">
-			<xsl:variable name="entry-name" select="@name" />
-			<xsl:variable name="entry-name-trans" select="translate($entry-name,'$., ()/{}','s---')" />
-			<xsl:variable name="arg-num" select="count(signature[1]/argument)" />
-			<li>
-				<a href="#{concat($entry-name-trans,position())}">
-				<xsl:value-of select="@name" /><xsl:if test="@type='method'">(<xsl:if test="signature/argument"><xsl:text> </xsl:text>
-					<xsl:for-each select="signature[1]/argument">
-
-						<xsl:if test="@optional">[<xsl:text>&#160;</xsl:text></xsl:if>
-						<xsl:if test="position() &gt; 1">
-							<xsl:text>, </xsl:text>
-						</xsl:if>
-						<xsl:value-of select="@name" />
-						<xsl:if test="@optional"><xsl:text>&#160;</xsl:text>]</xsl:if>
-						<xsl:text> </xsl:text>
-						</xsl:for-each>
-				<xsl:text>&#160;</xsl:text></xsl:if>)</xsl:if>
-					<xsl:text> </xsl:text>
-				</a>
-
-			<xsl:if test="@type='method'">
-					<ul>
-						<xsl:for-each select="signature">
-							<li>
-								<xsl:variable name="method-sig-arg-num" select="count(argument)" />
-
-									<xsl:if test="not(contains($entry-name, '.')) and $entry-name != 'jQuery'">.</xsl:if><xsl:value-of select="$entry-name" />(<xsl:if test="argument"><xsl:text> </xsl:text>
-										<xsl:for-each select="argument">
-										<xsl:if test="@optional"> [</xsl:if>
-											<xsl:if test="position() &gt; 1">
-												<xsl:text>, </xsl:text>
-											</xsl:if>
-											<xsl:value-of select="@name" />
-										<xsl:if test="@optional">] </xsl:if>
-										</xsl:for-each><xsl:text> </xsl:text></xsl:if>)
-							</li>
-						</xsl:for-each>
-					</ul>
-			</xsl:if>
-			</li>
-		</xsl:for-each>
-	</ul>
-</div>
 </xsl:template>
 
 <xsl:template name="entry-title">
