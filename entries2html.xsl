@@ -128,44 +128,40 @@
 
 	<li>
 		<a href="{$entry-url}">
-			<xsl:value-of select="@name"/>(
-			<xsl:if test="signature/argument">
-				<xsl:text> </xsl:text>
-				<xsl:for-each select="signature[1]/argument">
-					<xsl:if test="@optional">[<xsl:text>&#160;</xsl:text></xsl:if>
-					<xsl:if test="position() &gt; 1">
-						<xsl:text>, </xsl:text>
-					</xsl:if>
-					<xsl:value-of select="@name"/>
-					<xsl:if test="@optional"><xsl:text>&#160;</xsl:text>]</xsl:if>
-					<xsl:text> </xsl:text>
-				</xsl:for-each>
-				<xsl:text>&#160;</xsl:text>
-			</xsl:if>)
+			<xsl:for-each select="signature[1]">
+				<xsl:call-template name="method-signature">
+					<xsl:with-param name="method-name" select="$entry-name"/>
+				</xsl:call-template>
+			</xsl:for-each>
 		</a>
 
 		<ul>
 			<xsl:for-each select="signature">
 				<li>
-					<xsl:variable name="method-sig-arg-num" select="count(argument)"/>
-					<xsl:if test="not(contains($entry-name, '.')) and $entry-name != 'jQuery'">.</xsl:if>
-					<xsl:value-of select="$entry-name"/>(
-					<xsl:if test="argument">
-						<xsl:text> </xsl:text>
-						<xsl:for-each select="argument">
-							<xsl:if test="@optional"> [</xsl:if>
-								<xsl:if test="position() &gt; 1">
-									<xsl:text>, </xsl:text>
-								</xsl:if>
-								<xsl:value-of select="@name"/>
-							<xsl:if test="@optional">] </xsl:if>
-						</xsl:for-each>
-						<xsl:text> </xsl:text>
-					</xsl:if>)
+					<xsl:call-template name="method-signature">
+						<xsl:with-param name="method-name" select="$entry-name"/>
+					</xsl:call-template>
 				</li>
 			</xsl:for-each>
 		</ul>
 	</li>
+</xsl:template>
+
+<xsl:template name="method-signature">
+	<xsl:param name="method-name"/>
+
+	<xsl:if test="not(contains($method-name, '.')) and $method-name != 'jQuery'">.</xsl:if>
+	<xsl:value-of select="$method-name"/>(
+	<xsl:if test="argument">
+		<xsl:for-each select="argument">
+			<xsl:text> </xsl:text>
+			<xsl:if test="@optional">[</xsl:if>
+			<xsl:if test="position() &gt; 1"><xsl:text>, </xsl:text></xsl:if>
+			<xsl:value-of select="@name"/>
+			<xsl:if test="@optional"><xsl:text> ]</xsl:text></xsl:if>
+		</xsl:for-each>
+		<xsl:text> </xsl:text>
+	</xsl:if>)
 </xsl:template>
 
 <!-- examples -->
@@ -367,22 +363,11 @@
 		<xsl:choose>
 			<xsl:when test="$entry-type='method'">
 				<span class="name">
-					<xsl:if test="not(contains($entry-name, '.')) and not(contains($entry-name, '{')) and $entry-name != 'jQuery'">.</xsl:if>
-					<xsl:value-of select="@name"/>
-					<xsl:text>(</xsl:text>
-					<xsl:if test="signature/argument"><xsl:text> </xsl:text>
-						<xsl:variable name="sig-arg-num" select="count(signature[1]/argument)"/>
-						<xsl:for-each select="signature[1]/argument">
-							<xsl:if test="@optional"> [</xsl:if>
-							<xsl:if test="position() &gt; 1">
-								<xsl:text>, </xsl:text>
-							</xsl:if>
-							<xsl:value-of select="@name"/>
-							<xsl:if test="@optional">] </xsl:if>
-						</xsl:for-each>
-						<xsl:text> </xsl:text>
-					</xsl:if>
-					<xsl:text>)</xsl:text>
+					<xsl:for-each select="signature[1]">
+						<xsl:call-template name="method-signature">
+							<xsl:with-param name="method-name" select="$entry-name"/>
+						</xsl:call-template>
+					</xsl:for-each>
 				</span>
 				<xsl:text> </xsl:text>
 				<span class="returns">
