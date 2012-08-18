@@ -69,29 +69,81 @@
 					</div>
 				</xsl:if>
 
-			<xsl:if test="$number-examples &gt; 0">
-			<div id="examples">
-				<h3>Example<xsl:if test="$number-examples &gt; 1">s</xsl:if>:</h3>
-				<div class="entry-examples">
-					<xsl:attribute name="id">
-						<xsl:text>entry-examples</xsl:text>
+				<xsl:if test="example">
+					<section class="entry-examples">
+						<xsl:attribute name="id">
+							<xsl:text>entry-examples</xsl:text>
 							<xsl:if test="$entry-index &gt; 1">
 								<xsl:text>-</xsl:text><xsl:value-of select="$entry-index - 1"/>
 							</xsl:if>
-					</xsl:attribute>
-				<xsl:for-each select="example">
-					<div class="entry-example">
-						<xsl:attribute name="id">
-							<xsl:text>example-</xsl:text>
-							<xsl:if test="$entry-index &gt; 1">
-								<xsl:value-of select="$entry-index - 1"/>
-								<xsl:text>-</xsl:text>
-							</xsl:if>
-							<xsl:value-of select="position() - 1"/>
 						</xsl:attribute>
-						<h4><xsl:if test="$number-examples &gt; 1">Example: </xsl:if><span class="desc"><xsl:value-of select="desc" /></span></h4>
-		<pre><code data-linenum="true"><xsl:choose>
-							<xsl:when test="html">&lt;!DOCTYPE html&gt;
+
+						<header>
+							<h3 class="underline">Example<xsl:if test="$number-examples &gt; 1">s</xsl:if>:</h3>
+						</header>
+
+						<xsl:apply-templates select="example">
+							<xsl:with-param name="entry-index" select="$entry-index"/>
+							<xsl:with-param name="number-examples" select="$number-examples"/>
+						</xsl:apply-templates>
+					</section>
+				</xsl:if>
+			</div>
+		</article>
+	</xsl:for-each>
+</xsl:template>
+
+<!-- examples -->
+<xsl:template match="example">
+	<xsl:param name="entry-index"/>
+	<xsl:param name="number-examples"/>
+
+	<div class="entry-example">
+		<xsl:attribute name="id">
+			<xsl:text>example-</xsl:text>
+			<xsl:if test="$entry-index &gt; 1">
+				<xsl:value-of select="$entry-index - 1"/>
+				<xsl:text>-</xsl:text>
+			</xsl:if>
+			<xsl:value-of select="position() - 1"/>
+		</xsl:attribute>
+
+		<h4>
+			<xsl:if test="$number-examples &gt; 1">Example: </xsl:if>
+			<span class="desc"><xsl:value-of select="desc"/></span>
+		</h4>
+		<pre><code data-linenum="true">
+			<xsl:choose>
+				<xsl:when test="html">
+					<xsl:call-template name="example-code"/>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:copy-of select="code/text()"/>
+				</xsl:otherwise>
+			</xsl:choose>
+		</code></pre>
+
+		<xsl:if test="html">
+			<h4>Demo:</h4>
+			<div class="demo code-demo">
+				<xsl:if test="height">
+					<xsl:attribute name="data-height">
+						<xsl:value-of select="height"/>
+					</xsl:attribute>
+				</xsl:if>
+			</div>
+		</xsl:if>
+
+		<xsl:if test="results">
+			<h4>Result:</h4>
+			<pre><code class="results">
+				<xsl:value-of select="results"/>
+			</code></pre>
+		</xsl:if>
+	</div>
+</xsl:template>
+<xsl:template name="example-code">
+&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;<xsl:if test="css/text()">
 	&lt;style&gt;<xsl:copy-of select="css/text()" />&lt;/style&gt;</xsl:if>
@@ -110,38 +162,7 @@
 </xsl:choose>
 
 &lt;/body&gt;
-&lt;/html&gt;</xsl:when>
-						<xsl:otherwise>
-							<xsl:attribute name="class">example</xsl:attribute>
-							<xsl:copy-of select="code/text()" />
-						</xsl:otherwise>
-					</xsl:choose></code></pre>
-
-					<xsl:if test="html">
-						<h4>Demo:</h4>
-						<div class="demo code-demo">
-							<xsl:if test="height">
-								<xsl:attribute name="data-height">
-									<xsl:value-of select="height"/>
-								</xsl:attribute>
-							</xsl:if>
-						</div>
-					</xsl:if>
-
-					<xsl:if test="results">
-						<h4>Result:</h4>
-						<pre><code class="results">
-							<xsl:value-of select="results"/>
-						</code></pre>
-					</xsl:if>
-								</div>
-							</xsl:for-each>
-						</div>
-					</div>
-				</xsl:if>
-			</div>
-		</article>
-	</xsl:for-each>
+&lt;/html&gt;
 </xsl:template>
 
 <xsl:template match="option|property">
