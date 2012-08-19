@@ -1,4 +1,0 @@
-<?xml version="1.0"?>
-<note>
-	If a request with <placeholder name="title"/> returns an error code, it will fail silently unless the script has also called the global <a href="http://api.jquery.com/ajaxError/">.ajaxError() </a> method. Alternatively, as of jQuery 1.5, the <code>.error()</code> method of the <code>jqXHR</code> object returned by <placeholder name="title"/> is also available for error handling.
-</note>

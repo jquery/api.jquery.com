@@ -1,4 +1,0 @@
-<?xml version="1.0"?>
-<note>
-  Script and JSONP requests are not subject to the same origin policy restrictions.
-</note>

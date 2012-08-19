@@ -7,13 +7,4 @@
       <xsl:apply-templates select="@* | node()"/>
     </xsl:copy>
   </xsl:template>
-  <!-- Create note xinclude based on note id -> filename -->
-  <xsl:template match="note">
-      <xsl:copy>
-        <xsl:apply-templates select="@* | node()"/>
-        <xi:include xmlns:xi="http://www.w3.org/2001/XInclude">
-            <xsl:attribute name="href">../notes/<xsl:value-of select="@id"/>.xml</xsl:attribute>
-        </xi:include>
-      </xsl:copy>
-  </xsl:template>
 </xsl:stylesheet>
