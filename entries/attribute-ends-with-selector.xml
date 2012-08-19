@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <entry type="selector" name="attributeEndsWith" return="">
   <title>Attribute Ends With Selector [name$="value"]</title>
-  <sample>[attribute$="value"]</sample>
+  <sample>[attribute$='value']</sample>
   <signature>
     <added>1.0</added>
     <argument name="attribute" type="String">

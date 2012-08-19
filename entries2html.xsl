@@ -427,7 +427,7 @@
 						</a>
 					</span>
 				</xsl:if>
-				<xsl:text>jQuery('</xsl:text><xsl:value-of select="sample"/><xsl:text>')</xsl:text>
+				<xsl:text>jQuery( "</xsl:text><xsl:value-of select="sample"/><xsl:text>" )</xsl:text>
 			</h4>
 
 			<xsl:for-each select="signature/argument">
