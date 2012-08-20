@@ -144,197 +144,6 @@
 	</li>
 </xsl:template>
 
-<xsl:template name="method-signature">
-	<xsl:param name="method-name"/>
-
-	<xsl:if test="not(contains($method-name, '.')) and $method-name != 'jQuery'">.</xsl:if>
-	<xsl:value-of select="$method-name"/>(
-	<xsl:if test="argument">
-		<xsl:text> </xsl:text>
-		<xsl:for-each select="argument">
-			<xsl:if test="@optional"> [</xsl:if>
-			<xsl:if test="position() &gt; 1"><xsl:text>, </xsl:text></xsl:if>
-			<xsl:value-of select="@name"/>
-			<xsl:if test="@optional"><xsl:text> ]</xsl:text></xsl:if>
-		</xsl:for-each>
-		<xsl:text> </xsl:text>
-	</xsl:if>)
-</xsl:template>
-
-<!-- examples -->
-<xsl:template match="example">
-	<xsl:param name="entry-index"/>
-	<xsl:param name="number-examples"/>
-
-	<div class="entry-example">
-		<xsl:attribute name="id">
-			<xsl:text>example-</xsl:text>
-			<xsl:if test="$entry-index &gt; 1">
-				<xsl:value-of select="$entry-index - 1"/>
-				<xsl:text>-</xsl:text>
-			</xsl:if>
-			<xsl:value-of select="position() - 1"/>
-		</xsl:attribute>
-
-		<h4>
-			<xsl:if test="$number-examples &gt; 1">Example: </xsl:if>
-			<span class="desc"><xsl:value-of select="desc"/></span>
-		</h4>
-		<pre><code data-linenum="true">
-			<xsl:choose>
-				<xsl:when test="html">
-					<xsl:call-template name="example-code"/>
-				</xsl:when>
-				<xsl:otherwise>
-					<xsl:copy-of select="code/text()"/>
-				</xsl:otherwise>
-			</xsl:choose>
-		</code></pre>
-
-		<xsl:if test="html">
-			<h4>Demo:</h4>
-			<div class="demo code-demo">
-				<xsl:if test="height">
-					<xsl:attribute name="data-height">
-						<xsl:value-of select="height"/>
-					</xsl:attribute>
-				</xsl:if>
-			</div>
-		</xsl:if>
-
-		<xsl:if test="results">
-			<h4>Result:</h4>
-			<pre><code class="results">
-				<xsl:value-of select="results"/>
-			</code></pre>
-		</xsl:if>
-	</div>
-</xsl:template>
-<xsl:template name="example-code">
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;<xsl:if test="css/text()">
-	&lt;style&gt;<xsl:copy-of select="css/text()" />&lt;/style&gt;</xsl:if>
-	&lt;script src="http://code.jquery.com/jquery-latest.js"&gt;&lt;/script&gt;<xsl:if test="code/@location='head'">
-	&lt;script&gt;
-	<xsl:copy-of select="code/text()" />
-	&lt;/script&gt;
-</xsl:if>
-&lt;/head&gt;
-&lt;body&gt;
-	<xsl:copy-of select="html/text()" />
-<xsl:choose>
-	<xsl:when test="code/@location='head'"></xsl:when>
-	<xsl:otherwise>
-&lt;script&gt;<xsl:copy-of select="code/text()" />&lt;/script&gt;</xsl:otherwise>
-</xsl:choose>
-
-&lt;/body&gt;
-&lt;/html&gt;
-</xsl:template>
-
-<xsl:template match="option|property">
-		<h5 class="option">
-			<xsl:value-of select="@name" />
-			<xsl:if test="@added"> <span class="added">(added <xsl:value-of select="@added" />)</span></xsl:if>
-			<xsl:if test="@deprecated"> <span class="deprecated">(deprecated <xsl:value-of select="@deprecated" />)</span></xsl:if>
-			<xsl:if test="@removed"> <span class="removed">(removed <xsl:value-of select="@removed" />)</span></xsl:if>
-			<xsl:text>: </xsl:text>
-			<span class="type">
-				<xsl:call-template name="render-types" />
-			</span>
-		</h5>
-		<xsl:if test="@default">
-			<div class="default-value"><strong>Default: </strong> <xsl:value-of select="@default" /></div>
-		</xsl:if>
-		<p>
-			<xsl:copy-of select="desc/text()|desc/*" />
-		</p>
-</xsl:template>
-
-<!--
-	Render type(s) for an argument element.
-	Type can either by a @type attribute or one or more <type> child elements.
--->
-<xsl:template name="render-types">
-	<xsl:if test="@type and type">
-		<strong>ERROR: Use <i>either</i> @type or type elements</strong>
-	</xsl:if>
-
-	<!-- a single type -->
-	<xsl:if test="@type">
-		<xsl:call-template name="render-type">
-			<xsl:with-param name="typename" select="@type" />
-		</xsl:call-template>
-	</xsl:if>
-
-	<!-- elements. Render each type, comma seperated -->
-	<xsl:if test="type">
-		<xsl:for-each select="type">
-			<xsl:if test="position() &gt; 1">, </xsl:if>
-			<xsl:call-template name="render-type">
-				<xsl:with-param name="typename" select="@name" />
-			</xsl:call-template>
-		</xsl:for-each>
-	</xsl:if>
-</xsl:template>
-
-<xsl:template name="render-return-types">
-	<xsl:if test="@return and return">
-		<strong>ERROR: Use <i>either</i> @return or return element</strong>
-	</xsl:if>
-
-	<!-- return attribute -->
-	<xsl:if test="@return">
-		<xsl:call-template name="render-type">
-			<xsl:with-param name="typename" select="@return" />
-		</xsl:call-template>
-	</xsl:if>
-
-	<!-- a return element -->
-	<xsl:if test="return">
-		<xsl:for-each select="return">
-			<xsl:if test="position() &gt; 1">
-				<strong>ERROR: A single return element is expected</strong>
-			</xsl:if>
-			<xsl:call-template name="render-types" />
-		</xsl:for-each>
-	</xsl:if>
-</xsl:template>
-
-<!-- Render a single type -->
-<xsl:template name="render-type">
-	<xsl:param name="typename"/>
-	<xsl:choose>
-	<!--
-		If the type is "Function" we special case and write the function signature,
-		e.g. function(String)=>String
-		- formal arguments are child elements to the current element
-		- the return element is optional
-	-->
-	<xsl:when test="$typename = 'Function'">
-		<xsl:text>Function(</xsl:text>
-		<xsl:for-each select="argument">
-			<xsl:if test="position() &gt; 1">, </xsl:if>
-			<xsl:value-of select="@name" />
-			<xsl:text>: </xsl:text>
-			<xsl:call-template name="render-types" />
-		</xsl:for-each>
-		<xsl:text>)</xsl:text>
-
-		<!-- display return type if present -->
-		<xsl:if test="return or @return">
-			=>
-			<xsl:call-template name="render-return-types" />
-		</xsl:if>
-	</xsl:when>
-	<xsl:otherwise>
-		<!-- not function - just display typename -->
-		<a href="http://api.jquery.com/Types#{$typename}"><xsl:value-of select="$typename" /></a>
-	</xsl:otherwise>
-	</xsl:choose>
-</xsl:template>
-
 <xsl:template name="entry-title">
 	<xsl:param name="entry-type" select="@type"/>
 	<xsl:param name="entry-name" select="@name"/>
@@ -471,33 +280,219 @@
 				</h4>
 
 				<xsl:for-each select="argument">
-					<xsl:variable name="name" select="@name"/>
-					<xsl:choose>
-						<!-- TODO: get rid of Option -->
-						<xsl:when test="@type='Option'">
-							<div class="options">
-								<xsl:apply-templates select="../../options/option[@name=$name]"/>
+					<p class="argument">
+						<strong><xsl:value-of select="@name"/>: </strong>
+						<xsl:call-template name="render-types"/>
+						<xsl:text>
+						</xsl:text>
+						<xsl:if test="@default">
+							<div class="default-value">
+								<strong>Default: </strong>
+								<xsl:value-of select="@default"/>
 							</div>
-						</xsl:when>
-						<xsl:otherwise>
-							<p class="argument">
-								<strong><xsl:value-of select="$name"/>: </strong>
-								<xsl:call-template name="render-types"/>
-								<xsl:text>
-								</xsl:text>
-								<xsl:copy-of select="desc/text()|desc/*"/>
-							</p>
-						</xsl:otherwise>
-					</xsl:choose>
-					<xsl:if test="option">
-						<div class="options">
-							<xsl:apply-templates select="option"/>
-						</div>
-					</xsl:if>
+						</xsl:if>
+						<xsl:copy-of select="desc/text()|desc/*"/>
+					</p>
+					<xsl:apply-templates select="property"/>
 				</xsl:for-each>
 			</li>
 		</xsl:for-each>
 	</ul>
+</xsl:template>
+
+<!-- examples -->
+<xsl:template match="example">
+	<xsl:param name="entry-index"/>
+	<xsl:param name="number-examples"/>
+
+	<div class="entry-example">
+		<xsl:attribute name="id">
+			<xsl:text>example-</xsl:text>
+			<xsl:if test="$entry-index &gt; 1">
+				<xsl:value-of select="$entry-index - 1"/>
+				<xsl:text>-</xsl:text>
+			</xsl:if>
+			<xsl:value-of select="position() - 1"/>
+		</xsl:attribute>
+
+		<h4>
+			<xsl:if test="$number-examples &gt; 1">Example: </xsl:if>
+			<span class="desc"><xsl:value-of select="desc"/></span>
+		</h4>
+		<pre><code data-linenum="true">
+			<xsl:choose>
+				<xsl:when test="html">
+					<xsl:call-template name="example-code"/>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:copy-of select="code/text()"/>
+				</xsl:otherwise>
+			</xsl:choose>
+		</code></pre>
+
+		<xsl:if test="html">
+			<h4>Demo:</h4>
+			<div class="demo code-demo">
+				<xsl:if test="height">
+					<xsl:attribute name="data-height">
+						<xsl:value-of select="height"/>
+					</xsl:attribute>
+				</xsl:if>
+			</div>
+		</xsl:if>
+
+		<xsl:if test="results">
+			<h4>Result:</h4>
+			<pre><code class="results">
+				<xsl:value-of select="results"/>
+			</code></pre>
+		</xsl:if>
+	</div>
+</xsl:template>
+<xsl:template name="example-code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;<xsl:if test="css/text()">
+	&lt;style&gt;<xsl:copy-of select="css/text()" />&lt;/style&gt;</xsl:if>
+	&lt;script src="http://code.jquery.com/jquery-latest.js"&gt;&lt;/script&gt;<xsl:if test="code/@location='head'">
+	&lt;script&gt;
+	<xsl:copy-of select="code/text()" />
+	&lt;/script&gt;
+</xsl:if>
+&lt;/head&gt;
+&lt;body&gt;
+	<xsl:copy-of select="html/text()" />
+<xsl:choose>
+	<xsl:when test="code/@location='head'"></xsl:when>
+	<xsl:otherwise>
+&lt;script&gt;<xsl:copy-of select="code/text()" />&lt;/script&gt;</xsl:otherwise>
+</xsl:choose>
+
+&lt;/body&gt;
+&lt;/html&gt;
+</xsl:template>
+
+<!--
+	Render type(s) for an argument element.
+	Type can either by a @type attribute or one or more <type> child elements.
+-->
+<xsl:template name="render-types">
+	<xsl:if test="@type and type">
+		<strong>ERROR: Use <i>either</i> @type or type elements</strong>
+	</xsl:if>
+
+	<!-- a single type -->
+	<xsl:if test="@type">
+		<xsl:call-template name="render-type">
+			<xsl:with-param name="typename" select="@type" />
+		</xsl:call-template>
+	</xsl:if>
+
+	<!-- elements. Render each type, comma seperated -->
+	<xsl:if test="type">
+		<xsl:for-each select="type">
+			<xsl:if test="position() &gt; 1">, </xsl:if>
+			<xsl:call-template name="render-type">
+				<xsl:with-param name="typename" select="@name" />
+			</xsl:call-template>
+		</xsl:for-each>
+	</xsl:if>
+</xsl:template>
+
+<xsl:template name="render-return-types">
+	<xsl:if test="@return and return">
+		<strong>ERROR: Use <i>either</i> @return or return element</strong>
+	</xsl:if>
+
+	<!-- return attribute -->
+	<xsl:if test="@return">
+		<xsl:call-template name="render-type">
+			<xsl:with-param name="typename" select="@return" />
+		</xsl:call-template>
+	</xsl:if>
+
+	<!-- a return element -->
+	<xsl:if test="return">
+		<xsl:for-each select="return">
+			<xsl:if test="position() &gt; 1">
+				<strong>ERROR: A single return element is expected</strong>
+			</xsl:if>
+			<xsl:call-template name="render-types" />
+		</xsl:for-each>
+	</xsl:if>
+</xsl:template>
+
+<!-- Render a single type -->
+<xsl:template name="render-type">
+	<xsl:param name="typename"/>
+	<xsl:choose>
+	<!--
+		If the type is "Function" we special case and write the function signature,
+		e.g. function(String)=>String
+		- formal arguments are child elements to the current element
+		- the return element is optional
+	-->
+	<xsl:when test="$typename = 'Function'">
+		<xsl:text>Function(</xsl:text>
+		<xsl:for-each select="argument">
+			<xsl:if test="position() &gt; 1">, </xsl:if>
+			<xsl:value-of select="@name" />
+			<xsl:text>: </xsl:text>
+			<xsl:call-template name="render-types" />
+		</xsl:for-each>
+		<xsl:text>)</xsl:text>
+
+		<!-- display return type if present -->
+		<xsl:if test="return or @return">
+			=>
+			<xsl:call-template name="render-return-types" />
+		</xsl:if>
+	</xsl:when>
+	<xsl:otherwise>
+		<!-- not function - just display typename -->
+		<a href="http://api.jquery.com/Types#{$typename}"><xsl:value-of select="$typename" /></a>
+	</xsl:otherwise>
+	</xsl:choose>
+</xsl:template>
+
+<xsl:template name="method-signature">
+	<xsl:param name="method-name"/>
+
+	<xsl:if test="not(contains($method-name, '.')) and $method-name != 'jQuery'">.</xsl:if>
+	<xsl:value-of select="$method-name"/>(
+	<xsl:if test="argument">
+		<xsl:text> </xsl:text>
+		<xsl:for-each select="argument">
+			<xsl:if test="@optional"> [</xsl:if>
+			<xsl:if test="position() &gt; 1"><xsl:text>, </xsl:text></xsl:if>
+			<xsl:value-of select="@name"/>
+			<xsl:if test="@optional"><xsl:text> ]</xsl:text></xsl:if>
+		</xsl:for-each>
+		<xsl:text> </xsl:text>
+	</xsl:if>)
+</xsl:template>
+
+
+
+
+
+<xsl:template match="property">
+	<h5>
+		<xsl:value-of select="@name" />
+		<xsl:if test="@added"> <span class="added">(added <xsl:value-of select="@added" />)</span></xsl:if>
+		<xsl:if test="@deprecated"> <span class="deprecated">(deprecated <xsl:value-of select="@deprecated" />)</span></xsl:if>
+		<xsl:if test="@removed"> <span class="removed">(removed <xsl:value-of select="@removed" />)</span></xsl:if>
+		<xsl:text>: </xsl:text>
+		<span class="type">
+			<xsl:call-template name="render-types" />
+		</span>
+	</h5>
+	<xsl:if test="@default">
+		<div class="default-value"><strong>Default: </strong> <xsl:value-of select="@default" /></div>
+	</xsl:if>
+	<p>
+		<xsl:copy-of select="desc/text()|desc/*" />
+	</p>
 </xsl:template>
 
 <!--
