@@ -477,9 +477,24 @@
 		<div>Type: <xsl:call-template name="render-types"/></div>
 		<div>
 			<xsl:apply-templates select="desc"/>
-			<xsl:if test="@added"> (added <xsl:value-of select="@added"/>)</xsl:if>
-			<xsl:if test="@deprecated"> (deprecated <xsl:value-of select="@deprecated"/>)</xsl:if>
-			<xsl:if test="@removed"> (removed <xsl:value-of select="@removed"/>)</xsl:if>
+			<xsl:if test="@added">
+				<xsl:text> </xsl:text>
+				<strong>(added <a href="/category/version/{@added}/">
+					<xsl:value-of select="@added"/>
+				</a>)</strong>
+			</xsl:if>
+			<xsl:if test="@deprecated">
+				<xsl:text> </xsl:text>
+				<strong>(deprecated <a href="/category/version/{@deprecated}/">
+					<xsl:value-of select="@deprecated"/>
+				</a>)</strong>
+			</xsl:if>
+			<xsl:if test="@removed">
+				<xsl:text> </xsl:text>
+				<strong>(removed <a href="/category/version/{@removed}/">
+					<xsl:value-of select="@removed"/>
+				</a>)</strong>
+			</xsl:if>
 		</div>
 		<xsl:if test="property">
 			<ul>
