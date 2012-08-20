@@ -233,23 +233,23 @@
 &lt;/html&gt;
 </xsl:template>
 
-<xsl:template match="option|property">
-		<h5 class="option">
-			<xsl:value-of select="@name" />
-			<xsl:if test="@added"> <span class="added">(added <xsl:value-of select="@added" />)</span></xsl:if>
-			<xsl:if test="@deprecated"> <span class="deprecated">(deprecated <xsl:value-of select="@deprecated" />)</span></xsl:if>
-			<xsl:if test="@removed"> <span class="removed">(removed <xsl:value-of select="@removed" />)</span></xsl:if>
-			<xsl:text>: </xsl:text>
-			<span class="type">
-				<xsl:call-template name="render-types" />
-			</span>
-		</h5>
-		<xsl:if test="@default">
-			<div class="default-value"><strong>Default: </strong> <xsl:value-of select="@default" /></div>
-		</xsl:if>
-		<p>
-			<xsl:copy-of select="desc/text()|desc/*" />
-		</p>
+<xsl:template match="property">
+	<h5>
+		<xsl:value-of select="@name" />
+		<xsl:if test="@added"> <span class="added">(added <xsl:value-of select="@added" />)</span></xsl:if>
+		<xsl:if test="@deprecated"> <span class="deprecated">(deprecated <xsl:value-of select="@deprecated" />)</span></xsl:if>
+		<xsl:if test="@removed"> <span class="removed">(removed <xsl:value-of select="@removed" />)</span></xsl:if>
+		<xsl:text>: </xsl:text>
+		<span class="type">
+			<xsl:call-template name="render-types" />
+		</span>
+	</h5>
+	<xsl:if test="@default">
+		<div class="default-value"><strong>Default: </strong> <xsl:value-of select="@default" /></div>
+	</xsl:if>
+	<p>
+		<xsl:copy-of select="desc/text()|desc/*" />
+	</p>
 </xsl:template>
 
 <!--
@@ -471,29 +471,20 @@
 				</h4>
 
 				<xsl:for-each select="argument">
-					<xsl:variable name="name" select="@name"/>
-					<xsl:choose>
-						<!-- TODO: get rid of Option -->
-						<xsl:when test="@type='Option'">
-							<div class="options">
-								<xsl:apply-templates select="../../options/option[@name=$name]"/>
+					<p class="argument">
+						<strong><xsl:value-of select="@name"/>: </strong>
+						<xsl:call-template name="render-types"/>
+						<xsl:text>
+						</xsl:text>
+						<xsl:if test="@default">
+							<div class="default-value">
+								<strong>Default: </strong>
+								<xsl:value-of select="@default"/>
 							</div>
-						</xsl:when>
-						<xsl:otherwise>
-							<p class="argument">
-								<strong><xsl:value-of select="$name"/>: </strong>
-								<xsl:call-template name="render-types"/>
-								<xsl:text>
-								</xsl:text>
-								<xsl:copy-of select="desc/text()|desc/*"/>
-							</p>
-						</xsl:otherwise>
-					</xsl:choose>
-					<xsl:if test="option">
-						<div class="options">
-							<xsl:apply-templates select="option"/>
-						</div>
-					</xsl:if>
+						</xsl:if>
+						<xsl:copy-of select="desc/text()|desc/*"/>
+					</p>
+					<xsl:apply-templates select="property"/>
 				</xsl:for-each>
 			</li>
 		</xsl:for-each>
