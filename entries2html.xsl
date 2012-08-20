@@ -279,22 +279,7 @@
 					</xsl:call-template>
 				</h4>
 
-				<xsl:for-each select="argument">
-					<p class="argument">
-						<strong><xsl:value-of select="@name"/>: </strong>
-						<xsl:call-template name="render-types"/>
-						<xsl:text>
-						</xsl:text>
-						<xsl:if test="@default">
-							<div class="default-value">
-								<strong>Default: </strong>
-								<xsl:value-of select="@default"/>
-							</div>
-						</xsl:if>
-						<xsl:copy-of select="desc/text()|desc/*"/>
-					</p>
-					<xsl:apply-templates select="property"/>
-				</xsl:for-each>
+				<xsl:call-template name="arguments"/>
 			</li>
 		</xsl:for-each>
 	</ul>
@@ -433,14 +418,17 @@
 		- the return element is optional
 	-->
 	<xsl:when test="$typename = 'Function'">
-		<xsl:text>Function(</xsl:text>
-		<xsl:for-each select="argument">
-			<xsl:if test="position() &gt; 1">, </xsl:if>
-			<xsl:value-of select="@name" />
-			<xsl:text>: </xsl:text>
-			<xsl:call-template name="render-types" />
-		</xsl:for-each>
-		<xsl:text>)</xsl:text>
+		<a href="http://api.jquery.com/Types/#Function">Function</a>(
+		<xsl:if test="argument">
+			<xsl:text> </xsl:text>
+			<xsl:for-each select="argument">
+				<xsl:if test="position() &gt; 1">, </xsl:if>
+				<xsl:value-of select="@name"/>
+				<xsl:text>: </xsl:text>
+				<xsl:call-template name="render-types"/>
+			</xsl:for-each>
+			<xsl:text> </xsl:text>
+		</xsl:if>)
 
 		<!-- display return type if present -->
 		<xsl:if test="return or @return">
@@ -472,27 +460,33 @@
 	</xsl:if>)
 </xsl:template>
 
-
-
-
-
-<xsl:template match="property">
-	<h5>
-		<xsl:value-of select="@name" />
-		<xsl:if test="@added"> <span class="added">(added <xsl:value-of select="@added" />)</span></xsl:if>
-		<xsl:if test="@deprecated"> <span class="deprecated">(deprecated <xsl:value-of select="@deprecated" />)</span></xsl:if>
-		<xsl:if test="@removed"> <span class="removed">(removed <xsl:value-of select="@removed" />)</span></xsl:if>
-		<xsl:text>: </xsl:text>
-		<span class="type">
-			<xsl:call-template name="render-types" />
-		</span>
-	</h5>
-	<xsl:if test="@default">
-		<div class="default-value"><strong>Default: </strong> <xsl:value-of select="@default" /></div>
+<xsl:template name="arguments">
+	<xsl:if test="argument">
+		<ul>
+			<xsl:apply-templates select="argument"/>
+		</ul>
 	</xsl:if>
-	<p>
-		<xsl:copy-of select="desc/text()|desc/*" />
-	</p>
+</xsl:template>
+<!-- arguments and properties are rendered the same way and nest -->
+<xsl:template match="argument|property">
+	<li>
+		<div>
+			<strong><xsl:value-of select="@name"/></strong>
+			<xsl:if test="@default">(default: <xsl:value-of select="@default"/>)</xsl:if>
+		</div>
+		<div>Type: <xsl:call-template name="render-types"/></div>
+		<div>
+			<xsl:apply-templates select="desc"/>
+			<xsl:if test="@added"> (added <xsl:value-of select="@added"/>)</xsl:if>
+			<xsl:if test="@deprecated"> (deprecated <xsl:value-of select="@deprecated"/>)</xsl:if>
+			<xsl:if test="@removed"> (removed <xsl:value-of select="@removed"/>)</xsl:if>
+		</div>
+		<xsl:if test="property">
+			<ul>
+				<xsl:apply-templates select="property"/>
+			</ul>
+		</xsl:if>
+	</li>
 </xsl:template>
 
 <!--
