@@ -489,6 +489,21 @@
 	</li>
 </xsl:template>
 
+<xsl:template match="desc">
+	<xsl:param name="entry-name"/>
+	<xsl:apply-templates select="./node()">
+		<xsl:with-param name="entry-name" select="$entry-name"/>
+	</xsl:apply-templates>
+</xsl:template>
+<!-- This makes elements inside <desc> get copied over properly -->
+<xsl:template match="desc/*">
+	<xsl:copy-of select="."/>
+</xsl:template>
+<xsl:template match="desc/placeholder">
+	<xsl:param name="entry-name"/>
+	<xsl:value-of select="$entry-name"/>
+</xsl:template>
+
 <!--
 	Notes
 	TODO: Move into notes.xsl and pull in via <xsl:import>
