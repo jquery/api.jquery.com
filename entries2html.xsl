@@ -3,6 +3,8 @@
 <xsl:import href="entries2html-base.xsl"/>
 <xsl:import href="notes.xsl"/>
 
+<xsl:variable name="version-category-links" select="true()"/>
+
 <xsl:template name="example-code">
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;

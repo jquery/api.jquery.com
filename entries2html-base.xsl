@@ -1,6 +1,9 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 <xsl:output method="html" omit-xml-declaration="yes"/>
 
+<!-- Set this to true to display links to /category/version/{version} -->
+<xsl:variable name="version-category-links" select="false()"/>
+
 <xsl:template match="/">
 	<script>{
 		"title":
@@ -77,7 +80,7 @@
 					</xsl:attribute>
 
 					<header>
-						<h3 class="underline">Example<xsl:if test="$number-examples &gt; 1">s</xsl:if>:</h3>
+						<h2 class="underline">Example<xsl:if test="$number-examples &gt; 1">s</xsl:if>:</h2>
 					</header>
 
 					<xsl:apply-templates select="example">
@@ -128,6 +131,7 @@
 			<xsl:for-each select="signature[1]">
 				<xsl:call-template name="method-signature">
 					<xsl:with-param name="method-name" select="$entry-name"/>
+					<xsl:with-param name="dot" select="true()"/>
 				</xsl:call-template>
 			</xsl:for-each>
 		</a>
@@ -137,6 +141,7 @@
 				<li>
 					<xsl:call-template name="method-signature">
 						<xsl:with-param name="method-name" select="$entry-name"/>
+						<xsl:with-param name="dot" select="true()"/>
 					</xsl:call-template>
 				</li>
 			</xsl:for-each>
@@ -148,13 +153,14 @@
 	<xsl:param name="entry-type" select="@type"/>
 	<xsl:param name="entry-name" select="@name"/>
 
-	<h2 class="jq-clearfix roundTop section-title">
+	<h2 class="section-title">
 		<xsl:choose>
 			<xsl:when test="$entry-type='method'">
 				<span class="name">
 					<xsl:for-each select="signature[1]">
 						<xsl:call-template name="method-signature">
 							<xsl:with-param name="method-name" select="$entry-name"/>
+							<xsl:with-param name="dot" select="true()"/>
 						</xsl:call-template>
 					</xsl:for-each>
 				</span>
@@ -188,6 +194,12 @@
 					</xsl:if>
 				</span>
 			</xsl:when>
+			<xsl:when test="$entry-type='widget'">
+				<span>
+					<xsl:value-of select="@name"/>
+					<xsl:text> widget</xsl:text>
+				</span>
+			</xsl:when>
 		</xsl:choose>
 	</h2>
 </xsl:template>
@@ -203,6 +215,9 @@
 		</xsl:when>
 		<xsl:when test="@type='method'">
 			<xsl:call-template name="entry-body-method"/>
+		</xsl:when>
+		<xsl:when test="@type='widget'">
+			<xsl:call-template name="entry-body-widget"/>
 		</xsl:when>
 	</xsl:choose>
 </xsl:template>
@@ -276,6 +291,7 @@
 					</xsl:if>
 					<xsl:call-template name="method-signature">
 						<xsl:with-param name="method-name" select="$entry-name"/>
+						<xsl:with-param name="dot" select="true()"/>
 					</xsl:call-template>
 				</h4>
 
@@ -283,6 +299,85 @@
 			</li>
 		</xsl:for-each>
 	</ul>
+</xsl:template>
+
+<xsl:template name="entry-body-widget">
+	<xsl:variable name="entry-name" select="@name"/>
+
+	<xsl:if test="options">
+		<section id="options">
+			<header>
+				<h2 class="underline">Options</h2>
+			</header>
+			<xsl:for-each select="options/option">
+				<div id="option-{@name}">
+					<h3>
+						<xsl:value-of select="@name"/>
+					</h3>
+					<div>
+						<strong>Type: </strong><xsl:call-template name="render-types"/>
+					</div>
+					<div>
+						<strong>Default: </strong><xsl:value-of select="@default"/>
+					</div>
+					<div>
+						<xsl:apply-templates select="desc">
+							<xsl:with-param name="entry-name" select="$entry-name"/>
+						</xsl:apply-templates>
+						<xsl:call-template name="version-details"/>
+					</div>
+					<xsl:if test="type/desc">
+						<strong>Multiple types supported:</strong>
+						<ul>
+							<xsl:for-each select="type/desc">
+								<li>
+									<strong><xsl:value-of select="../@name"/></strong>
+									<xsl:text>: </xsl:text>
+									<xsl:copy-of select="node()"/>
+								</li>
+							</xsl:for-each>
+						</ul>
+					</xsl:if>
+					<xsl:apply-templates select="example">
+						<xsl:with-param name="number-examples" select="count(example)"/>
+					</xsl:apply-templates>
+				</div>
+			</xsl:for-each>
+		</section>
+	</xsl:if>
+	<xsl:if test="methods">
+		<section id="methods">
+			<header>
+				<h2 class="underline">Methods</h2>
+			</header>
+			<xsl:for-each select="methods/method">
+				<xsl:variable name="method-name" select="@name"/>
+				<div id="method-{$method-name}">
+					<xsl:for-each select="signature | self::node()[count(signature) = 0]">
+						<xsl:call-template name="widget-method-event">
+							<xsl:with-param name="entry-name" select="$entry-name"/>
+							<xsl:with-param name="method-name" select="$method-name"/>
+						</xsl:call-template>
+					</xsl:for-each>
+				</div>
+			</xsl:for-each>
+		</section>
+	</xsl:if>
+	<xsl:if test="events">
+		<section id="events">
+			<header>
+				<h2 class="underline">Events</h2>
+			</header>
+			<xsl:for-each select="events/event">
+				<div id="event-{@name}">
+					<xsl:call-template name="widget-method-event">
+						<xsl:with-param name="entry-name" select="$entry-name"/>
+						<xsl:with-param name="method-name" select="@name"/>
+					</xsl:call-template>
+				</div>
+			</xsl:for-each>
+		</section>
+	</xsl:if>
 </xsl:template>
 
 <!-- examples -->
@@ -338,7 +433,7 @@
 
 <!--
 	Render type(s) for an argument element.
-	Type can either by a @type attribute or one or more <type> child elements.
+	Type can either be a @type attribute or one or more <type> child elements.
 -->
 <xsl:template name="render-types">
 	<xsl:if test="@type and type">
@@ -424,8 +519,9 @@
 
 <xsl:template name="method-signature">
 	<xsl:param name="method-name"/>
+	<xsl:param name="dot" select="false()"/>
 
-	<xsl:if test="not(contains($method-name, '.')) and $method-name != 'jQuery'">.</xsl:if>
+	<xsl:if test="$dot and not(contains($method-name, '.')) and $method-name != 'jQuery'">.</xsl:if>
 	<xsl:value-of select="$method-name"/>(
 	<xsl:if test="argument">
 		<xsl:text> </xsl:text>
@@ -451,29 +547,12 @@
 	<li>
 		<div>
 			<strong><xsl:value-of select="@name"/></strong>
-			<xsl:if test="@default">(default: <xsl:value-of select="@default"/>)</xsl:if>
+			<xsl:if test="@default"> (default: <xsl:value-of select="@default"/>)</xsl:if>
 		</div>
 		<div>Type: <xsl:call-template name="render-types"/></div>
 		<div>
 			<xsl:apply-templates select="desc"/>
-			<xsl:if test="@added">
-				<xsl:text> </xsl:text>
-				<strong>(added <a href="/category/version/{@added}/">
-					<xsl:value-of select="@added"/>
-				</a>)</strong>
-			</xsl:if>
-			<xsl:if test="@deprecated">
-				<xsl:text> </xsl:text>
-				<strong>(deprecated <a href="/category/version/{@deprecated}/">
-					<xsl:value-of select="@deprecated"/>
-				</a>)</strong>
-			</xsl:if>
-			<xsl:if test="@removed">
-				<xsl:text> </xsl:text>
-				<strong>(removed <a href="/category/version/{@removed}/">
-					<xsl:value-of select="@removed"/>
-				</a>)</strong>
-			</xsl:if>
+			<xsl:call-template name="version-details"/>
 		</div>
 		<xsl:if test="property">
 			<ul>
@@ -481,6 +560,66 @@
 			</ul>
 		</xsl:if>
 	</li>
+</xsl:template>
+
+<xsl:template name="version-details">
+	<xsl:if test="@added">
+		<xsl:text> </xsl:text>
+		<xsl:choose>
+			<xsl:when test="$version-category-links">
+				<strong>(added <a href="/category/version/{@added}/">
+					<xsl:value-of select="@added"/>
+				</a>)</strong>
+			</xsl:when>
+			<xsl:otherwise>
+				<strong>(added <xsl:value-of select="@added"/>)</strong>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:if>
+	<xsl:if test="@deprecated">
+		<xsl:text> </xsl:text>
+		<xsl:choose>
+			<xsl:when test="$version-category-links">
+				<strong>(deprecated <a href="/category/version/{@deprecated}/">
+					<xsl:value-of select="@deprecated"/>
+				</a>)</strong>
+			</xsl:when>
+			<xsl:otherwise>
+				<strong>(deprecated <xsl:value-of select="@deprecated"/>)</strong>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:if>
+	<xsl:if test="@removed">
+		<xsl:text> </xsl:text>
+		<xsl:choose>
+			<xsl:when test="$version-category-links">
+				<strong>(removed <a href="/category/version/{@removed}/">
+					<xsl:value-of select="@removed"/>
+				</a>)</strong>
+			</xsl:when>
+			<xsl:otherwise>
+				<strong>(removed <xsl:value-of select="@removed"/>)</strong>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:if>
+</xsl:template>
+
+<xsl:template name="widget-method-event">
+	<xsl:param name="entry-name"/>
+	<xsl:param name="method-name"/>
+
+	<h3>
+		<xsl:call-template name="method-signature">
+			<xsl:with-param name="method-name" select="$method-name"/>
+		</xsl:call-template>
+	</h3>
+	<div>
+		<xsl:apply-templates select="desc">
+			<xsl:with-param name="entry-name" select="$entry-name"/>
+		</xsl:apply-templates>
+		<xsl:call-template name="version-details"/>
+	</div>
+	<xsl:call-template name="arguments"/>
 </xsl:template>
 
 <xsl:template match="desc">
