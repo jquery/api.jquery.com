@@ -4,7 +4,7 @@
   <signature>
     <added>1.0</added>
     <argument name="className" type="String">
-      <desc>One or more class names to be added to the class attribute of each matched element.</desc>
+      <desc>One or more space-separated classes to be added to the class attribute of each matched element.</desc>
     </argument>
   </signature>
   <signature>
