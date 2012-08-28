@@ -141,7 +141,7 @@ div { width:60px; height:60px; margin:5px; float:left; }
       'background-color' : '#ddd',
       'font-weight' : '',
       'color' : 'rgb(0,40,244)'
-    }
+    };
     $(this).css(cssObj);
   });
 ]]></code>
