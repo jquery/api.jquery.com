@@ -3,6 +3,8 @@
 
 <!-- Set this to true to display links to /category/version/{version} -->
 <xsl:variable name="version-category-links" select="false()"/>
+<!-- Set this to false to prevent prefixing method names with a dot -->
+<xsl:variable name="method-prefix-dot" select="true()"/>
 
 <xsl:template match="/">
 	<script>{
@@ -133,7 +135,7 @@
 			<xsl:for-each select="signature[1]">
 				<xsl:call-template name="method-signature">
 					<xsl:with-param name="method-name" select="$entry-name"/>
-					<xsl:with-param name="dot" select="true()"/>
+					<xsl:with-param name="dot" select="$method-prefix-dot"/>
 				</xsl:call-template>
 			</xsl:for-each>
 		</a>
@@ -143,7 +145,7 @@
 				<li>
 					<xsl:call-template name="method-signature">
 						<xsl:with-param name="method-name" select="$entry-name"/>
-						<xsl:with-param name="dot" select="true()"/>
+						<xsl:with-param name="dot" select="$method-prefix-dot"/>
 					</xsl:call-template>
 				</li>
 			</xsl:for-each>
@@ -162,7 +164,7 @@
 					<xsl:for-each select="signature[1]">
 						<xsl:call-template name="method-signature">
 							<xsl:with-param name="method-name" select="$entry-name"/>
-							<xsl:with-param name="dot" select="true()"/>
+							<xsl:with-param name="dot" select="$method-prefix-dot"/>
 						</xsl:call-template>
 					</xsl:for-each>
 				</span>
@@ -274,7 +276,7 @@
 					</xsl:if>
 					<xsl:call-template name="method-signature">
 						<xsl:with-param name="method-name" select="$entry-name"/>
-						<xsl:with-param name="dot" select="true()"/>
+						<xsl:with-param name="dot" select="$method-prefix-dot"/>
 					</xsl:call-template>
 				</h4>
 
