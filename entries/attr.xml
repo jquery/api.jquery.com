@@ -28,7 +28,7 @@ var title = $("em").attr("title");
   $("div").text(title);
 ]]></code>
       <css><![CDATA[
-  em { color:blue; font-weight;bold; }
+  em { color:blue; font-weight:bold; }
   div { color:red; }
 ]]></css>
       <html><![CDATA[
