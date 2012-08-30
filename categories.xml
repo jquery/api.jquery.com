@@ -381,5 +381,6 @@
         <hr/>
       ]]></desc>
     </category>
+    <category name="All" slug="all"/>
   </category>
 </categories>
