@@ -23,7 +23,7 @@
   "dependencies": {
     "grunt": "0.3.x",
     "grunt-clean": "0.3.0",
-    "grunt-wordpress": "1.0.2",
+    "grunt-wordpress": "1.0.3",
     "grunt-jquery-content": "0.3.x"
   },
   "devDependencies": {},
