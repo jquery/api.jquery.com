@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<entry name="callbacks.add" type="method" return="undefined">
+<entry name="callbacks.add" type="method" return="Callbacks">
   <title>callbacks.add()</title>
   <signature>
     <added>1.7</added>
@@ -9,6 +9,7 @@
   </signature>
   <desc>Add a callback or a collection of callbacks to a callback list.</desc>
   <longdesc>
+    <p>This method returns the Callbacks object onto which it is attached (<code>this</code>). </p>
     <h2 id="example-1">Example</h2>
     <p>Using <code>callbacks.add()</code> to add new callbacks to a callback list:</p>
     <pre><code>

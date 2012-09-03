@@ -1,11 +1,13 @@
 <?xml version="1.0"?>
-<entry name="callbacks.lock" type="method" return="undefined">
+<entry name="callbacks.lock" type="method" return="Callbacks">
   <title>callbacks.lock()</title>
   <signature>
     <added>1.7</added>
   </signature>
   <desc>Lock a callback list in its current state.</desc>
-  <longdesc/>
+  <longdesc>
+    <p>This method returns the Callbacks object onto which it is attached (<code>this</code>). </p>
+  </longdesc>
   <example>
     <desc>Using <code>callbacks.lock()</code> to lock a callback list to avoid further changes being made to the list state:</desc>
     <code><![CDATA[// a sample logging function to be added to a callbacks list

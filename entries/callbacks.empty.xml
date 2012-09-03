@@ -1,11 +1,12 @@
 <?xml version="1.0"?>
-<entry name="callbacks.empty" type="method" return="undefined">
+<entry name="callbacks.empty" type="method" return="Callbacks">
   <title>callbacks.empty()</title>
   <signature>
     <added>1.7</added>
   </signature>
   <desc>Remove all of the callbacks from a list.</desc>
   <longdesc>
+    <p>This method returns the Callbacks object onto which it is attached (<code>this</code>). </p>
     <h2 id="example-1">Example</h2>
     <p>Using <code>callbacks.empty()</code> to empty a list of callbacks:</p>
     <pre><code>

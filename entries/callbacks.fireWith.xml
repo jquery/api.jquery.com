@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<entry name="callbacks.fireWith" type="method" return="undefined">
+<entry name="callbacks.fireWith" type="method" return="Callbacks">
   <title>callbacks.fireWith()</title>
   <signature>
     <added>1.7</added>
@@ -12,6 +12,7 @@
   </signature>
   <desc>Call all callbacks in a list with the given context and arguments.</desc>
   <longdesc>
+    <p>This method returns the Callbacks object onto which it is attached (<code>this</code>). </p>
     <h2 id="example-1">Example</h2>
     <p>Using <code>callbacks.fireWith()</code> to fire a list of callbacks with a specific context and an array of arguments:</p>
     <pre><code>

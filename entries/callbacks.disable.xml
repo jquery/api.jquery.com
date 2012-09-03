@@ -1,11 +1,12 @@
 <?xml version="1.0"?>
-<entry name="callbacks.disable" type="method" return="undefined">
+<entry name="callbacks.disable" type="method" return="Callbacks">
   <title>callbacks.disable()</title>
   <signature>
     <added>1.7</added>
   </signature>
   <desc>Disable a callback list from doing anything more.</desc>
   <longdesc>
+    <p>This method returns the Callbacks object onto which it is attached (<code>this</code>). </p>
     <h2 id="example-1">Example</h2>
     <p>Using <code>callbacks.disable()</code> to disable further calls being made to a callback list:</p>
     <pre><code>

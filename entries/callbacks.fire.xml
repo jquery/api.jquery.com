@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<entry name="callbacks.fire" type="method" return="undefined">
+<entry name="callbacks.fire" type="method" return="Callbacks">
   <title>callbacks.fire()</title>
   <signature>
     <added>1.7</added>
@@ -9,6 +9,7 @@
   </signature>
   <desc>Call all of the callbacks with the given arguments</desc>
   <longdesc>
+    <p>This method returns the Callbacks object onto which it is attached (<code>this</code>). </p>
     <h2 id="example-1">Example</h2>
     <p>Using <code>callbacks.fire()</code> to invoke the callbacks in a list with any arguments that have been passed:</p>
     <pre><code>

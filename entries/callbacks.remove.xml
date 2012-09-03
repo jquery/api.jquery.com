@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<entry name="callbacks.remove" type="method" return="undefined">
+<entry name="callbacks.remove" type="method" return="Callbacks">
   <title>callbacks.remove()</title>
   <signature>
     <added>1.7</added>
@@ -8,7 +8,9 @@
     </argument>
   </signature>
   <desc>Remove a callback or a collection of callbacks from a callback list.</desc>
-  <longdesc/>
+  <longdesc>
+    <p>This method returns the Callbacks object onto which it is attached (<code>this</code>). </p>
+  </longdesc>
   <example>
     <desc>Using <code>callbacks.remove()</code> to remove callbacks from a callback list:</desc>
     <code><![CDATA[// a sample logging function to be added to a callbacks list
