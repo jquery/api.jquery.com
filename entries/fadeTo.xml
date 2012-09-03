@@ -10,7 +10,7 @@
     <argument name="opacity" type="Number">
       <desc>A number between 0 and 1 denoting the target opacity.</desc>
     </argument>
-    <argument name="callback" type="Callback" optional="true">
+    <argument name="complete" type="Function" optional="true">
       <desc>A function to call once the animation is complete.</desc>
     </argument>
   </signature>
@@ -25,7 +25,7 @@
     <argument name="easing" type="String" optional="true">
       <desc>A string indicating which easing function to use for the transition.</desc>
     </argument>
-    <argument name="callback" type="Callback" optional="true">
+    <argument name="complete" type="Function" optional="true">
       <desc>A function to call once the animation is complete.</desc>
     </argument>
   </signature>
