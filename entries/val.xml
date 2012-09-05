@@ -82,7 +82,7 @@ $.valHooks.textarea = {
   <entry type="method" name="val" return="jQuery">
     <signature>
       <added>1.0</added>
-      <argument name="value" type="String">
+      <argument name="value" type="String, Array">
         <desc>A string of text or an array of strings corresponding to the value of each matched element to set as selected/checked.</desc>
       </argument>
     </signature>
