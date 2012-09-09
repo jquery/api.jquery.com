@@ -8,12 +8,11 @@
   <longdesc>
     <p>This method returns the Callbacks object onto which it is attached (<code>this</code>). </p>
     <h2 id="example-1">Example</h2>
-    <p>Using <code>callbacks.disable()</code> to disable further calls being made to a callback list:</p>
-    <pre><code>
-// a sample logging function to be added to a callbacks list
-var foo = function( value ){
-    console.log( value );
-}
+    <p>Use <code>callbacks.disable()</code> to disable further calls to a callback list:</p>
+    <pre><code><![CDATA[// a sample logging function to be added to a callbacks list
+var foo = function( value ) {
+  console.log( value );
+};
 
 var callbacks = $.Callbacks();
 
@@ -21,14 +20,16 @@ var callbacks = $.Callbacks();
 callbacks.add( foo );
 
 // fire the items on the list
-callbacks.fire( 'foo' ); // outputs: foo
+callbacks.fire( "foo" );
+// outputs: foo
 
 // disable further calls being possible
 callbacks.disable();
 
-// attempt to fire with 'foobar' as an argument
-callbacks.fire( 'foobar' ); // foobar isn't output
-</code></pre>
+// attempt to fire with "foobar" as an argument
+callbacks.fire( "foobar" );
+// foobar isn't output
+]]></code></pre>
   </longdesc>
   <category slug="callbacks-object"/>
   <category slug="version/1.7"/>

@@ -3,7 +3,7 @@
   <title>callbacks.remove()</title>
   <signature>
     <added>1.7</added>
-    <argument name="callbacks" type="Function">
+    <argument name="callbacks" type="Function, Array">
       <desc>A function, or array of functions, that are to be removed from the callback list.</desc>
     </argument>
   </signature>
@@ -12,27 +12,28 @@
     <p>This method returns the Callbacks object onto which it is attached (<code>this</code>). </p>
   </longdesc>
   <example>
-    <desc>Using <code>callbacks.remove()</code> to remove callbacks from a callback list:</desc>
+    <desc>Use <code>callbacks.remove()</code> to remove callbacks from a callback list:</desc>
     <code><![CDATA[// a sample logging function to be added to a callbacks list
-var foo = function( value ){
-    console.log( 'foo:' + value );
-}
+var foo = function( value ) {
+  console.log( "foo: " + value );
+};
 
 var callbacks = $.Callbacks();
 
-// add the function 'foo' to the list
+// add the function "foo" to the list
 callbacks.add( foo );
 
 // fire the items on the list
-callbacks.fire( 'hello' ); // outputs: 'foo: hello'
+callbacks.fire( "hello" );
+// outputs: "foo: hello"
 
-// remove 'foo' from the callback list
+// remove "foo" from the callback list
 callbacks.remove( foo );
 
 // fire the items on the list again
-callbacks.fire( 'world' );
+callbacks.fire( "world" );
 
-// nothing output as 'foo' is no longer in the list
+// nothing output as "foo" is no longer in the list
 ]]></code>
   </example>
   <category slug="callbacks-object"/>

@@ -3,7 +3,7 @@
   <title>jQuery.inArray()</title>
   <signature>
     <added>1.2</added>
-    <argument name="value" type="Any">
+    <argument name="value" type="Anything">
       <desc>The value to search for.</desc>
     </argument>
     <argument name="array" type="Array">

@@ -3,7 +3,7 @@
   <title>callbacks.add()</title>
   <signature>
     <added>1.7</added>
-    <argument name="callbacks" type="Function">
+    <argument name="callbacks" type="Function, Array">
       <desc>A function, or array of functions, that are to be added to the callback list.</desc>
     </argument>
   </signature>
@@ -11,37 +11,36 @@
   <longdesc>
     <p>This method returns the Callbacks object onto which it is attached (<code>this</code>). </p>
     <h2 id="example-1">Example</h2>
-    <p>Using <code>callbacks.add()</code> to add new callbacks to a callback list:</p>
-    <pre><code>
-// a sample logging function to be added to a callbacks list
-var foo = function( value ){
-    console.log( 'foo:' + value );
-}
+    <p>Use <code>callbacks.add()</code> to add new callbacks to a callback list:</p>
+    <pre><code><![CDATA[// a sample logging function to be added to a callbacks list
+var foo = function( value ) {
+  console.log( "foo: " + value );
+};
 
 // another function to also be added to the list
 var bar = function( value ){
-    console.log( 'bar:' + value );
-}
+  console.log( "bar: " + value );
+};
 
 var callbacks = $.Callbacks();
 
-// add the function 'foo' to the list
+// add the function "foo" to the list
 callbacks.add( foo );
 
 // fire the items on the list
-callbacks.fire( 'hello' );
-// outputs: 'foo: hello'
+callbacks.fire( "hello" );
+// outputs: "foo: hello"
 
-// add the function 'bar' to the list
+// add the function "bar" to the list
 callbacks.add( bar );
 
 // fire the items on the list again
-callbacks.fire( 'world' );
+callbacks.fire( "world" );
 
 // outputs:
-// 'foo: world'
-// 'bar: world'
-</code>
+// "foo: world"
+// "bar: world"
+]]></code>
 </pre>
   </longdesc>
   <category slug="callbacks-object"/>

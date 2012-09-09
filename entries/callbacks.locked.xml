@@ -7,27 +7,28 @@
   <desc>Determine if the callbacks list has been locked.</desc>
   <longdesc/>
   <example>
-    <desc>Using <code>callbacks.locked()</code> to determine the lock-state of a callback list:</desc>
+    <desc>Use <code>callbacks.locked()</code> to determine the lock-state of a callback list:</desc>
     <code><![CDATA[// a sample logging function to be added to a callbacks list
-  var foo = function( value ){
-      console.log( 'foo:' + value);
-  }
+var foo = function( value ) {
+  console.log( "foo: " + value);
+};
 
-  var callbacks = $.Callbacks();
+var callbacks = $.Callbacks();
 
-  // add the logging function to the callback list
-  callbacks.add( foo );
+// add the logging function to the callback list
+callbacks.add( foo );
 
-  // fire the items on the list, passing an argument
-  callbacks.fire( 'hello' );
-  // outputs 'foo: hello'
+// fire the items on the list, passing an argument
+callbacks.fire( "hello" );
+// outputs "foo: hello"
 
-  // lock the callbacks list
-  callbacks.lock();
+// lock the callbacks list
+callbacks.lock();
 
-  // test the lock-state of the list
-  console.log ( callbacks.locked() ); //true
-  ]]></code>
+// test the lock-state of the list
+console.log ( callbacks.locked() );
+// true
+]]></code>
   </example>
   <category slug="callbacks-object"/>
   <category slug="version/1.7"/>

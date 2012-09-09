@@ -8,16 +8,15 @@
   <longdesc>
     <p>This method returns the Callbacks object onto which it is attached (<code>this</code>). </p>
     <h2 id="example-1">Example</h2>
-    <p>Using <code>callbacks.empty()</code> to empty a list of callbacks:</p>
-    <pre><code>
-// a sample logging function to be added to a callbacks list
-var foo = function( value1, value2 ){
-    console.log( 'foo:' + value1 + ',' + value2 );
+    <p>Use <code>callbacks.empty()</code> to empty a list of callbacks:</p>
+    <pre><code><![CDATA[// a sample logging function to be added to a callbacks list
+var foo = function( value1, value2 ) {
+  console.log( "foo: " + value1 + "," + value2 );
 }
 
 // another function to also be added to the list
 var bar = function( value1, value2 ){
-    console.log( 'bar:' + value1 + ',' + value2 );
+    console.log( "bar: " + value1 + "," + value2 );
 }
 
 var callbacks = $.Callbacks();
@@ -30,9 +29,11 @@ callbacks.add( bar );
 callbacks.empty();
 
 // check to ensure all callbacks have been removed
-console.log( callbacks.has( foo ) ); // false
-console.log( callbacks.has( bar ) ); // false
-</code></pre>
+console.log( callbacks.has( foo ) );
+// false
+console.log( callbacks.has( bar ) );
+// false
+]]></code></pre>
   </longdesc>
   <category slug="callbacks-object"/>
   <category slug="version/1.7"/>
