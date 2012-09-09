@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<entry name="callbacks.locked" type="method" return="Boolean">
+  <title>callbacks.locked()</title>
+  <signature>
+    <added>1.7</added>
+  </signature>
+  <desc>Determine if the callbacks list has been disabled.</desc>
+  <longdesc/>
+  <example>
+    <desc>Use <code>callbacks.disabled()</code> to determine if the callbacks list has been disabled:</desc>
+    <code><![CDATA[// a sample logging function to be added to a callbacks list
+  var foo = function( value ) {
+    console.log( "foo:" + value );
+  };
+
+  var callbacks = $.Callbacks();
+
+  // add the logging function to the callback list
+  callbacks.add( foo );
+
+  // fire the items on the list, passing an argument
+  callbacks.fire( "hello" );
+  // outputs "foo: hello"
+
+  // disable the callbacks list
+  callbacks.disable();
+
+  // test the disabled state of the list
+  console.log ( callbacks.disabled() );
+  // outputs: true
+  ]]></code>
+  </example>
+  <category slug="callbacks-object"/>
+  <category slug="version/1.7"/>
+</entry>
