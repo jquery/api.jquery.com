@@ -29,7 +29,7 @@ $.get("test.php").done(function() {
   <example>
     <desc>Resolve a Deferred object when the user clicks a button, triggering a number of callback functions:</desc>
     <code><![CDATA[
-// 3 functions to call when the Deferred object is resolved
+/* 3 functions to call when the Deferred object is resolved */
 function fn1() {
   $("p").append(" 1 ");
 }
@@ -40,19 +40,19 @@ function fn3(n) {
   $("p").append(n + " 3 " + n);
 }
 
-// create a deferred object
+/* create a deferred object */
 var dfd = $.Deferred();
 
-// add handlers to be called when dfd is resolved
+/* add handlers to be called when dfd is resolved */
 dfd
-// .done() can take any number of functions or arrays of functions
+/* .done() can take any number of functions or arrays of functions */
 .done( [fn1, fn2], fn3, [fn2, fn1] )
-// we can chain done methods, too
+/* we can chain done methods, too */
 .done(function(n) {
   $("p").append(n + " we're done.");
 });
 
-// resolve the Deferred object when the button is clicked
+/* resolve the Deferred object when the button is clicked */
 $("button").bind("click", function() {
   dfd.resolve("and");
 });
