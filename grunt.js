@@ -1,12 +1,7 @@
 /*jshint node:true */
 module.exports = function( grunt ) {
 
-var // files
-	pageFiles = grunt.file.expandFiles( "pages/*.html" ),
-	entryFiles = grunt.file.expandFiles( "entries/*.xml" ),
-	noteFiles = grunt.file.expandFiles( "notes/*.xml" ),
-
-	xmlFiles = [].concat( entryFiles, noteFiles, "cat2tax.xsl", "categories.xml", "entries2html.xsl", "xml2json.xsl" );
+var entryFiles = grunt.file.expandFiles( "entries/*.xml" );
 
 grunt.loadNpmTasks( "grunt-clean" );
 grunt.loadNpmTasks( "grunt-wordpress" );
@@ -20,19 +15,19 @@ grunt.initConfig({
 		grunt: "grunt.js"
 	},
 	xmllint: {
-		all: xmlFiles
+		all: [].concat( entryFiles, "categories.xml", "entries2html.xsl", "notes.xsl" )
 	},
 	xmltidy: {
-		all: [].concat( entryFiles, noteFiles, "categories.xml" )
+		all: [].concat( entryFiles, "categories.xml" )
 	},
 	"build-pages": {
-		all: grunt.file.expandFiles( "pages/*" )
+		all: grunt.file.expandFiles( "pages/**" )
 	},
 	"build-xml-entries": {
 		all: entryFiles
 	},
 	"build-resources": {
-		all: grunt.file.expandFiles( "resources/*" )
+		all: grunt.file.expandFiles( "resources/**" )
 	},
 	wordpress: grunt.utils._.extend({
 		dir: "dist/wordpress"
@@ -40,7 +35,8 @@ grunt.initConfig({
 });
 
 grunt.registerTask( "default", "build-wordpress" );
-grunt.registerTask( "build-wordpress", "clean lint xmllint build-pages build-xml-entries build-xml-categories build-resources" );
+grunt.registerTask( "build", "build-pages build-xml-entries build-xml-categories build-xml-full build-resources" );
+grunt.registerTask( "build-wordpress", "clean lint xmllint build" );
 grunt.registerTask( "tidy", "xmllint xmltidy" );
 
 };
