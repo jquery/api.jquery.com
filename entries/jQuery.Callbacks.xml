@@ -14,12 +14,12 @@
     <h3 id="getting-started">Getting started</h3>
     <p>The following are two sample methods named <code>fn1</code> and <code>fn2</code>:</p>
     <pre><code>
-function fn1( value ){
+function fn1( value ) {
     console.log( value );
 }
 
-function fn2( value ){
-    fn1("fn2 says:" + value);
+function fn2( value ) {
+    fn1("fn2 says: " + value);
     return false;
 }
 </code></pre>
@@ -51,13 +51,13 @@ callbacks.add( fn2 );
 // outputs: bar!, fn2 says: bar!
 callbacks.fire( "bar!" );
 
-callbacks.remove(fn2);
+callbacks.remove( fn2 );
 
 // only outputs foobar, as fn2 has been removed.
 callbacks.fire( "foobar" );
 </code></pre>
     <h3 id="supported-flags">Supported Flags</h3>
-    <p>The <code>flags</code> argument is an optional argument to <code>$.Callbacks()</code>, structured as a list of space-separated strings that change how the callback list behaves (eg. <code>$.Callbacks( 'unique stopOnFalse' )</code>).</p>
+    <p>The <code>flags</code> argument is an optional argument to <code>$.Callbacks()</code>, structured as a list of space-separated strings that change how the callback list behaves (eg. <code>$.Callbacks( "unique stopOnFalse" )</code>).</p>
     <h2>Possible flags:</h2>
     <ul>
       <li><code>once</code>: Ensures the callback list can only be fired once (like a Deferred).</li>
@@ -67,7 +67,7 @@ callbacks.fire( "foobar" );
     </ul>
     <p>By default a callback list will act like an event callback list and can be "fired" multiple times.</p>
     <p>For examples of how <code>flags</code> should ideally be used, see below:</p>
-    <h2 id="once"><code>$.Callbacks( 'once' )</code>:</h2>
+    <h2 id="once"><code>$.Callbacks( "once" )</code>:</h2>
     <pre><code>
 var callbacks = $.Callbacks( "once" );
 callbacks.add( fn1 );
@@ -82,7 +82,7 @@ output:
 foo
 */
 </code></pre>
-    <h2 id="memory"><code>$.Callbacks( 'memory' )</code>:</h2>
+    <h2 id="memory"><code>$.Callbacks( "memory" )</code>:</h2>
     <pre><code>var callbacks = $.Callbacks( "memory" );
 callbacks.add( fn1 );
 callbacks.fire( "foo" );
@@ -100,7 +100,7 @@ fn2 says:bar
 foobar
 */
 </code></pre>
-    <h2 id="unique"><code>$.Callbacks( 'unique' )</code>:</h2>
+    <h2 id="unique"><code>$.Callbacks( "unique" )</code>:</h2>
     <pre><code>var callbacks = $.Callbacks( "unique" );
 callbacks.add( fn1 );
 callbacks.fire( "foo" );
@@ -118,7 +118,7 @@ fn2 says:bar
 foobar
 */
 </code></pre>
-    <h2 id="stopOnFalse"><code>$.Callbacks( 'stopOnFalse' )</code>:</h2>
+    <h2 id="stopOnFalse"><code>$.Callbacks( "stopOnFalse" )</code>:</h2>
     <pre><code>
 function fn1( value ){
     console.log( value );
@@ -126,11 +126,11 @@ function fn1( value ){
 }
 
 function fn2( value ){
-    fn1("fn2 says:" + value);
+    fn1( "fn2 says: " + value );
     return false;
 }
 
-var callbacks = $.Callbacks( "stopOnFalse");
+var callbacks = $.Callbacks( "stopOnFalse" );
 callbacks.add( fn1 );
 callbacks.fire( "foo" );
 callbacks.add( fn2 );
@@ -148,13 +148,13 @@ foobar
     <p>Because <code>$.Callbacks()</code> supports a list of flags rather than just one, setting several flags has a cumulative effect similar to "&amp;&amp;". This means it's possible to combine flags to create callback lists that, say, both are <i>unique</i> and <i>ensure if list was already fired, adding more callbacks will have it called with the latest fired value</i> (i.e. <code>$.Callbacks("unique memory")</code>).</p>
     <h2 id="unique-memory"><code>$.Callbacks( 'unique memory' )</code>:</h2>
     <pre><code>
-function fn1( value ){
+function fn1( value ) {
     console.log( value );
     return false;
 }
 
-function fn2( value ){
-    fn1("fn2 says:" + value);
+function fn2( value ) {
+    fn1( "fn2 says: " + value );
     return false;
 }
 
@@ -189,11 +189,11 @@ var callbacks = $.Callbacks(),
     fire = callbacks.fire;
 
 add( fn1 );
-fire( "hello world");
+fire( "hello world" );
 remove( fn1 );
 </code></pre>
     <h3 id="pubsub">$.Callbacks, $.Deferred and Pub/Sub</h3>
-    <p>The general idea behind pub/sub (the Observer pattern) is the promotion of loose coupling in applications. Rather than single objects calling on the methods of other objects, an object instead subscribes to a specific task or activity of another object and is notified when it occurs. Observers are also called Subscribers, and we refer to the object being observed as the Publisher (or the subject). Publishers notify subscribers when events occur.</p>
+    <p>The general idea behind pub/sub (Publish/Subscribe, or, the Observer pattern) is the promotion of loose coupling in applications. Rather than single objects calling on the methods of other objects, an object instead subscribes to a specific task or activity of another object and is notified when it occurs. Observers are also called Subscribers, and we refer to the object being observed as the Publisher (or the subject). Publishers notify subscribers when events occur.</p>
     <p>To demonstrate the component-creation capabilities of <code>$.Callbacks()</code>, it's possible to implement a Pub/Sub system using only callback lists. Using <code>$.Callbacks</code> as a topics queue, a system for publishing and subscribing to topics can be implemented as follows:</p>
     <pre><code>var topics = {};
 
@@ -238,7 +238,7 @@ fn2 says: hello world!
 woo! mail!
 */
 </code></pre>
-    <p>Whilst this is useful, the implementation can be taken further. Using <code>$.Deferreds</code>,  it's possible to ensure publishers only publish notifications for subscribers once particular tasks have been completed (resolved). See the below code sample for some further comments on how this could be used in practice:</p>
+    <p>While this is useful, the implementation can be taken further. Using <code>$.Deferreds</code>,  it's possible to ensure publishers only publish notifications for subscribers once particular tasks have been completed (resolved). See the below code sample for some further comments on how this could be used in practice:</p>
     <pre><code>// subscribe to the mailArrived notification
 $.Topic( "mailArrived" ).subscribe( fn1 );
 
@@ -258,7 +258,7 @@ dfd.done( topic.publish );
 // (eg. waiting on an ajax call to complete) so that
 // messages are only published once the task has actually
 // finished.
-dfd.resolve( "its been published!" );
+dfd.resolve( "it's been published!" );
 </code></pre>
   </longdesc>
   <category slug="callbacks-object"/>
