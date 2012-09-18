@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<entry name="deferred.then" type="method" return="Deferred">
+<entry name="deferred.then" type="method" return="Promise">
   <title>deferred.then()</title>
   <signature>
     <added>1.5</added>
@@ -36,7 +36,11 @@
   <longdesc>
     <p>All three arguments (including progressCallbacks, as of jQuery 1.7) can be either a single function or an array of functions. The arguments can also be <code>null</code> if no callback of that type is desired. Alternatively, use <code>.done()</code>, <code>.fail()</code> or <code>.progress()</code> to set only one type of callback. </p>
     <p>When the Deferred is resolved, the doneCallbacks are called. If the Deferred is instead rejected, the failCallbacks are called. As of jQuery 1.7, the <code>deferred.notify()</code> or <code>deferred.notifyWith()</code> methods can be called to invoke the progressCallbacks as many times as desired before the Deferred is resolved or rejected.</p>
-    <p>Callbacks are executed in the order they were added. Since <code>deferred.then</code> returns the deferred object, other methods of the deferred object can be chained to this one, including additional <code>.then()</code> methods. For more information, see the documentation for <a href="http://api.jquery.com/category/deferred-object/">Deferred object</a>.</p>
+    <p>Callbacks are executed in the order they were added. Since
+      <code>deferred.then</code> returns a Promise, other methods of the
+      Promise object can be chained to this one, including additional
+      <code>.then()</code> methods.
+    </p>
   </longdesc>
   <example>
     <desc>Since the <a href="/jQuery.get"><code>jQuery.get</code></a> method returns a jqXHR object, which is derived from a Deferred object, we can attach handlers using the <code>.then</code> method.</desc>
