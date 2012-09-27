@@ -4,7 +4,7 @@
   <signature>
     <added>1.6</added>
     <argument name="propertyName" type="String">
-      <desc>The name of the property to set.</desc>
+      <desc>The name of the property to remove.</desc>
     </argument>
   </signature>
   <desc>Remove a property for the set of matched elements.</desc>
