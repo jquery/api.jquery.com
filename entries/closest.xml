@@ -136,10 +136,11 @@ $('li.item-a').closest('#one', listItemII)
     <category slug="version/1.4"/>
     <category slug="version/1.6"/>
   </entry>
-  <entry type="method" name="closest" return="Array">
+  <entry type="method" name="closest" return="Array" removed="1.8">
     <signature>
       <added>1.4</added>
       <deprecated>1.7</deprecated>
+      <removed>1.8</removed>
       <argument name="selectors" type="Array">
         <desc>An array or string containing a selector expression to match elements against (can also be a jQuery object).</desc>
       </argument>
@@ -149,18 +150,8 @@ $('li.item-a').closest('#one', listItemII)
     </signature>
     <desc>Gets an array of all the elements and selectors matched against the current element up through the DOM tree.</desc>
     <longdesc>
-      <p><strong>This signature (only!) is deprecated as of jQuery 1.7.</strong> This method is primarily meant to be used internally or by plugin authors.</p>
+      <p><strong>This signature (only!) is deprecated as of jQuery 1.7 and <em>removed</em> in jQuery 1.8</strong>. It was primarily meant to be used internally or by plugin authors.</p>
     </longdesc>
-    <example>
-      <desc>Show how event delegation can be done with closest.</desc>
-      <code><![CDATA[
-  var close = $("li:first").closest(["ul", "body"]);
-  $.each(close, function(i){
-  $("li").eq(i).html( this.selector + ": " + this.elem.nodeName );
-  });]]></code>
-      <css><![CDATA[]]></css>
-      <html><![CDATA[<ul><li></li><li></li></ul>]]></html>
-    </example>
     <category slug="traversing/tree-traversal"/>
     <category slug="version/1.3"/>
     <category slug="version/1.4"/>
