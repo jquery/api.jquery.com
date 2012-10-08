@@ -14,7 +14,7 @@
 		<!-- no parameters -->
 	</property>
 	<property name="step" type="Function">
-		<desc>A function to be called after each step of the animation.</desc>
+		<desc>A function to be called after each step of the animation for each animated element and for each animated property.</desc>
 		<argument name="now" type="Number">
 			<desc>The numeric value of the property being animated at each step</desc>
 		</argument>
@@ -40,4 +40,45 @@
 	<property name="specialEasing" type="PlainObject" added="1.4">
 		<desc>A map of one or more of the CSS properties defined by the properties argument and their corresponding easing functions.</desc>
 	</property>
+
+	<property name="progress" type="Function" added="1.8">
+		<desc>A function to be called after each step of the animation, only once per animated element regardless of the number of animated properties.</desc>
+		<argument name="animation" type="Promise">
+			<desc>An enhanced Promise oject with additional properties for the animation</desc>
+		</argument>
+		<argument name="progress" type="Number">
+			<desc>A number from 0 to 1 indicating the progress of the animation</desc>
+		</argument>
+		<argument name="remainingMs" type="Number">
+			<desc>A number indicating the remaining number of milliseconds until the end of the animation</desc>
+		</argument>
+	</property>
+	<property name="done" type="Function" added="1.8">
+		<desc>A function to be called when the animation completes (its Promise object is resolved).</desc>
+		<argument name="animation" type="Promise">
+			<desc>An enhanced Promise oject with additional properties for the animation</desc>
+		</argument>
+		<argument name="jumpedToEnd" type="Boolean">
+			<desc>Indicates whether the animation jumped to the end</desc>
+		</argument>
+	</property>
+	<property name="fail" type="Function" added="1.8">
+		<desc>A function to be called when the animation fails to complete (its Promise object is rejected).</desc>
+		<argument name="animation" type="Promise">
+			<desc>An enhanced Promise oject with additional properties for the animation</desc>
+		</argument>
+		<argument name="jumpedToEnd" type="Boolean">
+			<desc>Indicates whether the animation jumped to the end</desc>
+		</argument>
+	</property>
+	<property name="always" type="Function" added="1.8">
+		<desc>A function to be called when the animation completes or stops without completing (its Promise object is either resolved or rejected).</desc>
+		<argument name="animation" type="Promise">
+			<desc>An enhanced Promise oject with additional properties for the animation</desc>
+		</argument>
+		<argument name="jumpedToEnd" type="Boolean">
+			<desc>Indicates whether the animation jumped to the end</desc>
+		</argument>
+	</property>
+
 </argument>
