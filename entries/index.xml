@@ -68,7 +68,7 @@ alert('Index: ' + listItem.index('li'));
       <span class="output">Index: 1</span>
     </p>
     <p>If we omit the argument, <code>.index()</code> will return the position of the first element within the set of matched elements in relation to its siblings:</p>
-    <pre><code>alert('Index: ' + $('#bar').index();</code></pre>
+    <pre><code>alert('Index: ' + $('#bar').index());</code></pre>
     <p>Again, we get back the zero-based position of the list item:</p>
     <p>
       <span class="output">Index: 1</span>
