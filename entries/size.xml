@@ -50,7 +50,6 @@ $(document.body)
  <div></div>
 ]]></html>
   </example>
-  <category slug="deprecated"/>
   <category slug="miscellaneous/dom-element-methods"/>
   <category slug="version/1.0"/>
 </entry>
