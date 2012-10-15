@@ -11,7 +11,7 @@
   </signature>
   <desc> Add handlers to be called when the Deferred object generates progress notifications.</desc>
   <longdesc>
-    <p>The argument can be either a single function or an array of functions. When the Deferred generates progress notifications by calling <code>notify</code> or <code>notifyWith</code>, the <code>progressCallbacks</code> are called. Since <code>deferred.progress()</code> returns the Deferred object, other methods of the Deferred object can be chained to this one. When the Deferred is resolved or rejected, progress callbacks will no longer be called. For more information, see the documentation for <a href="/category/deferred-object/">Deferred object</a>.</p>
+    <p>The argument can be either a single function or an array of functions. When the Deferred generates progress notifications by calling <code>notify</code> or <code>notifyWith</code>, the <code>progressCallbacks</code> are called. Since <code>deferred.progress()</code> returns the Deferred object, other methods of the Deferred object can be chained to this one. When the Deferred is resolved or rejected, progress callbacks will no longer be called, with the exception that any progressCallbacks added after the Deferred enters the resolved or rejected state are executed immediately when they are added, using the arguments that were passed to the <code>.notify()</code> or <code>notifyWith()</code> call. For more information, see the documentation for <a href="/category/deferred-object/">Deferred object</a>.</p>
   </longdesc>
   <category slug="deferred-object"/>
   <category slug="version/1.7"/>
