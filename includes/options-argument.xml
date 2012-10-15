@@ -14,24 +14,12 @@
 		<!-- no parameters -->
 	</property>
 	<property name="step" type="Function">
-		<desc>A function to be called after each step of the animation for each animated element and for each animated property.</desc>
+		<desc>A function to be called for each animated property of each animated element. This function provides an opportunity to modify the Tween object to change the value of the property before it is set.</desc>
 		<argument name="now" type="Number">
 			<desc>The numeric value of the property being animated at each step</desc>
 		</argument>
-		<argument name="fx" type="PlainObject">
-			<desc>A map of properties related to the animation and the element being animated</desc>
-			<property name="elem" type="DOM">
-				<desc>The animated element</desc>
-			</property>
-			<property name="start" type="Number">
-				<desc>The first value of the animated property</desc>
-			</property>
-			<property name="end" type="Number">
-				<desc>The last value of the animated property</desc>
-			</property>
-			<property name="prop" type="String">
-				<desc>The property being animated</desc>
-			</property>
+		<argument name="tween" type="Tween">
+			<desc>An object of properties related to the animation and the element being animated. For information about the tween object and its properties, see <a href="/jQuery.Tween/">jQuery.Tween</a></desc>
 		</argument>
 	</property>
 	<property name="queue" type="Boolean" default="true">
@@ -50,7 +38,7 @@
 			<desc>A number from 0 to 1 indicating the progress of the animation</desc>
 		</argument>
 		<argument name="remainingMs" type="Number">
-			<desc>A number indicating the remaining number of milliseconds until the end of the animation</desc>
+			<desc>A number indicating the remaining number of milliseconds until the scheduled end of the animation</desc>
 		</argument>
 	</property>
 	<property name="done" type="Function" added="1.8">
