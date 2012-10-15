@@ -38,7 +38,7 @@
     <desc><![CDATA[These items have been deprecated, though not necessarily removed, from jQuery. Be aware that these may be removed from future versions of jQuery.]]></desc>
   </category>
   <category name="Dimensions" slug="dimensions">
-	  <desc><![CDATA[These methods are used to get and set the CSS dimensions for the various properties.]]></desc></desc>
+	  <desc><![CDATA[These methods are used to get and set the CSS dimensions for the various properties.]]></desc>
   </category>
   <category name="Effects" slug="effects">
     <desc><![CDATA[The jQuery library provides several techniques for adding animation to a web page. These include simple, standard animations that are frequently used, and the ability to craft sophisticated custom effects.]]></desc>
