@@ -287,7 +287,11 @@ jQuery.ajaxSettings.xhr = function () {
   return xhr;
 };
 </code></pre>
-    <h4>Using Converters</h4>
+
+    <h4 id="extending-ajax">Extending Ajax</h4>
+    <p><strong>As of jQuery 1.5</strong>, jQuery's Ajax implementation includes <a href="/jQuery.ajaxPrefilter/">prefilters</a>, <a href="/jQuery.ajaxTransport/">transports</a>, and converters that allow you to extend Ajax with a great deal of flexibility.</p>
+
+    <h4 id="using-converters">Using Converters</h4>
     <p><code>$.ajax()</code> converters support mapping data types to other data types. If, however, you want to map a custom data type to a known type (e.g <code>json</code>), you must added a correspondance between the response Content-Type and the actual data type using the <code>contents</code> option:</p>
     <pre><code>
 $.ajaxSetup({
@@ -319,8 +323,6 @@ $.ajaxSetup({
 });
 </code></pre>
     <p>The above now allows passing from <code>text</code> to <code>mycustomtype</code> and then <code>mycustomtype</code> to <code>json</code>.</p>
-    <h4>Extending Ajax</h4>
-    <p><strong>As of jQuery 1.5</strong>, jQuery's Ajax implementation includes prefilters, converters, and transports that allow you to extend Ajax with a great deal of flexibility. For more information about these advanced features, see the <a href="http://api.jquery.com/extending-ajax/">Extending Ajax</a> page.</p>
   </longdesc>
   <note id="same-origin-policy" type="additional"/>
   <note id="same-origin-policy-exceptions" type="additional"/>
