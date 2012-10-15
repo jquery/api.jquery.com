@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <entry type="method" name="jQuery.sub" return="jQuery">
   <title>jQuery.sub()</title>
+  <deprecated>1.7</deprecated>
   <signature>
     <added>1.5</added>
-    <deprecated>1.7</deprecated>
   </signature>
   <desc>Creates a new copy of jQuery whose properties and methods can be modified without affecting the original jQuery object.</desc>
   <longdesc>

@@ -1,11 +1,13 @@
 <?xml version="1.0"?>
-<entry type="method" name="size" return="Number">
+<entry type="method" name="size" return="Number" deprecated="1.8">
   <title>.size()</title>
   <signature>
     <added>1.0</added>
   </signature>
   <desc>Return the number of elements in the jQuery object.</desc>
   <longdesc>
+    <p>The <code>.size()</code> method is deprecated as of jQuery 1.8. Use the <code><a href="/length/">.length</a></code> property instead.</p>
+
     <p>The <code>.size()</code> method is functionally equivalent to the <code><a href="http://api.jquery.com/length/">.length</a></code> property; however, <strong>the <code>.length</code> property is preferred</strong> because it does not have the overhead of a function call.</p>
     <p>Given a simple unordered list on the page:</p>
     <pre><code>
@@ -48,6 +50,7 @@ $(document.body)
  <div></div>
 ]]></html>
   </example>
+  <category slug="deprecated"/>
   <category slug="miscellaneous/dom-element-methods"/>
   <category slug="version/1.0"/>
 </entry>
