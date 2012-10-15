@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<entry name="jQuery.Animation" type="method" return="Promise">
+  <title>jQuery.Animation()</title>
+  <signature>
+    <added>1.8</added>
+    <argument name="progressCallbacks" type="Function">
+      <desc>
+        A function, or array of functions, that is called when the Deferred generates progress notifications.
+      </desc>
+    </argument>
+  </signature>
+  <desc> </desc>
+  <longdesc>
+    <p>
+      The <code>jQuery.Tween</code> function is called internally by <code>.animate()</code>. It is provided mostly for plugin authors to further customize animations.
+    </p>
+    <p>The <code>jQuery.Tween</code> function returns a Tween object with the following properties:</p>
+    <ul>
+      <li><strong>elem</strong>: The animated DOM element</li>
+      <li><strong>prop</strong>: The property being animated</li>
+      <li><strong>easing</strong>: A string representing the easing being used</li>
+      <li><strong>start</strong>: A number representing the starting value of the tween</li>
+      <li><strong>now</strong>: A number representing the current value of the tween</li>
+      <li><strong>end</strong>: A number representing the ending value of the tween</li>
+      <li><strong>unit</strong>: A string representing the CSS unit for the tween</li>
+      <li><strong>options</strong>: A reference to the animation options object</li>
+      <li><strong>cur()</strong>: A function that reads the current value of the animated property from the element</li>
+    </ul>
+
+  </longdesc>
+  <category slug="effects/custom-effects"/>
+  <category slug="version/1.8"/>
+</entry>
