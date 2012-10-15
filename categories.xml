@@ -35,13 +35,13 @@
     <p>The Deferred object is chainable, similar to the way a jQuery object is chainable, but it has its own methods. After creating a Deferred object, you can use any of the methods below by either chaining directly from the object creation or saving the object in a variable and invoking one or more methods on that variable.</p>]]></desc>
   </category>
   <category name="Deprecated" slug="deprecated">
-    <desc><![CDATA[These items have been deprecated, though not necessarily removed, from jQuery.]]></desc>
+    <desc><![CDATA[These items have been deprecated, though not necessarily removed, from jQuery. Be aware that these may be removed from future versions of jQuery.]]></desc>
   </category>
   <category name="Dimensions" slug="dimensions">
-    <desc/>
+	  <desc><![CDATA[These methods are used to get and set the CSS dimensions for the various properties.]]></desc></desc>
   </category>
   <category name="Effects" slug="effects">
-    <desc><![CDATA[The jQuery library provides several techniques for adding animation to a web page. These include simple, standard animations that are frequently used, and the ability to craft sophisticated custom effects. In this chapter, we'll closely examine each of the effect methods, revealing all of the mechanisms jQuery has for providing visual feedback to the user.]]></desc>
+    <desc><![CDATA[The jQuery library provides several techniques for adding animation to a web page. These include simple, standard animations that are frequently used, and the ability to craft sophisticated custom effects.]]></desc>
     <category name="Basics" slug="basics">
       <desc/>
     </category>
@@ -140,13 +140,13 @@
     </category>
   </category>
   <category name="Forms" slug="forms">
-    <desc/>
+	  <desc><![CDATA[These methods and event handlers handle forms and their various elements.]]></desc>
   </category>
   <category name="Internals" slug="internals">
     <desc><![CDATA[Although this category is referred to as 'internal', any methods documented within the API site should be considered public and may be freely used. ]]></desc>
   </category>
   <category name="Manipulation" slug="manipulation">
-    <desc><![CDATA[All of the methods in this chapter manipulate the DOM in some manner. A few of them simply change one of the attributes of an element (also listed in the <a href="/category/attributes/">Attributes category</a>), while others set an element's style properties (also listed in the <a href="/category/css/">CSS category</a>). Still others modify entire elements (or groups of elements) themselves&#x2014;inserting, copying, removing, and so on. All of these methods are referred to as "setters," as they change the values of properties.
+    <desc><![CDATA[All of the methods in this section manipulate the DOM in some manner. A few of them simply change one of the attributes of an element (also listed in the <a href="/category/attributes/">Attributes category</a>), while others set an element's style properties (also listed in the <a href="/category/css/">CSS category</a>). Still others modify entire elements (or groups of elements) themselves&#x2014;inserting, copying, removing, and so on. All of these methods are referred to as "setters," as they change the values of properties.
 			A few of these methods&#x2014;such as <code>.attr()</code>, <code>.html()</code>, and <code>.val()</code>&#x2014;also act as "getters," retrieving information from DOM elements for later use.
 		]]></desc>
     <category name="Class Attribute" slug="class-attribute">
@@ -210,7 +210,7 @@
   <category name="Selectors" slug="selectors">
     <desc><![CDATA[
       <p>Borrowing from CSS 1&#x2013;3, and then adding its own, jQuery offers a powerful set of tools for matching a set of elements in a document.</p>
-      <p>If you wish to use any of the meta-characters ( such as <code> !"#$%&amp;'()*+,./:;&lt;=&gt;?@[\]^`{|}~</code> ) as a literal part of a name, you must escape the character with two backslashes: <code>\\</code>. For example, if you have an element with <code>id="foo.bar"</code>, you can use the selector <code>$("#foo\\.bar")</code>. The W3C CSS specification contains the <a href="http://www.w3.org/TR/CSS21/syndata.html#value-def-identifier">complete set of rules regarding valid CSS selectors</a>. Also useful is the blog entry by Mathias Bynens on <a href="http://mathiasbynens.be/notes/css-escapes">CSS character escape sequences for identifiers</a>.</p>
+      <p>To use any of the meta-characters ( such as <code> !"#$%&amp;'()*+,./:;&lt;=&gt;?@[\]^`{|}~</code> ) as a literal part of a name, it must be escaped with with two backslashes: <code>\\</code>. For example, an element with <code>id="foo.bar"</code>, can use the selector <code>$("#foo\\.bar")</code>. The W3C CSS specification contains the <a href="http://www.w3.org/TR/CSS21/syndata.html#value-def-identifier">complete set of rules regarding valid CSS selectors</a>. Also useful is the blog entry by Mathias Bynens on <a href="http://mathiasbynens.be/notes/css-escapes">CSS character escape sequences for identifiers</a>.</p>
     ]]></desc>
     <category name="Attribute" slug="attribute-selectors">
       <desc><![CDATA[
