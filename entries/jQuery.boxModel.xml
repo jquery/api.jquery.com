@@ -25,7 +25,6 @@ $("p").html("The box model for this iframe is: <span>" +
     <code><![CDATA[$.boxModel]]></code>
     <results><![CDATA[false]]></results>
   </example>
-  <category slug="deprecated"/>
   <category slug="utilities"/>
   <category slug="version/1.0"/>
 </entry>

@@ -1,8 +1,7 @@
 <?xml version="1.0"?>
 <entries>
-  <entry type="method" name="die" return="jQuery">
+  <entry type="method" name="die" return="jQuery" deprecated="1.7">
     <title>.die()</title>
-    <deprecated>1.7</deprecated>
     <desc><![CDATA[Remove all event handlers previously attached using <code>.live()</code> from the elements.]]></desc>
     <signature>
       <added>1.4.1</added>
@@ -12,15 +11,12 @@
     See the discussions of <code>.live()</code> and <code>.unbind()</code> for further details.</p>
       <p><strong>As of jQuery 1.7</strong>, use of <code>.die()</code> (and its complementary method, <code>.live()</code>) is not recommended. Instead, use <a href="http://api.jquery.com/off/"><code>.off()</code></a> to remove event handlers bound with <a href="http://api.jquery.com/on/"><code>.on()</code></a></p>
       <p><strong>Note:</strong> In order for .die() to function correctly, the selector used with it must match exactly the selector initially used with .live().</p>
-    </longdesc>
-    <category slug="deprecated"/>
     <category slug="events/event-handler-attachment"/>
     <category slug="version/1.3"/>
     <category slug="version/1.4.1"/>
     <category slug="version/1.4.3"/>
   </entry>
-  <entry type="method" name="die" return="jQuery">
-    <deprecated>1.7</deprecated>
+  <entry type="method" name="die" return="jQuery" deprecated="1.7">
     <desc><![CDATA[Remove an event handler previously attached using <code>.live()</code> from the elements.]]></desc>
     <signature>
       <added>1.3</added>
@@ -87,7 +83,6 @@ $("p").live("click", foo); // ... now foo will be called when paragraphs are cli
 
 $("p").die("click", foo); // ... foo will no longer be called.]]></code>
     </example>
-    <category slug="deprecated"/>
     <category slug="events/event-handler-attachment"/>
     <category slug="version/1.3"/>
     <category slug="version/1.4.1"/>

@@ -34,9 +34,6 @@
     <desc><![CDATA[<p>The Deferred object, introduced in jQuery 1.5, is a chainable utility object created by calling the <a href="/jQuery.Deferred/"><code>jQuery.Deferred()</code></a> method. It can register multiple callbacks into callback queues, invoke callback queues, and relay the success or failure state of any synchronous or asynchronous function.</p>
     <p>The Deferred object is chainable, similar to the way a jQuery object is chainable, but it has its own methods. After creating a Deferred object, you can use any of the methods below by either chaining directly from the object creation or saving the object in a variable and invoking one or more methods on that variable.</p>]]></desc>
   </category>
-  <category name="Deprecated" slug="deprecated">
-    <desc><![CDATA[These items have been deprecated, though not necessarily removed, from jQuery.]]></desc>
-  </category>
   <category name="Dimensions" slug="dimensions">
     <desc/>
   </category>
