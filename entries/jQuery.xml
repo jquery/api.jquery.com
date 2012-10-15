@@ -145,7 +145,7 @@ $foo.triggerHandler('eventName'); // also logs 'eventName was called'
         <desc>A string defining a single, standalone, HTML element (e.g. &lt;div/&gt; or &lt;div&gt;&lt;/div&gt;).</desc>
       </argument>
       <argument name="props" type="PlainObject">
-        <desc>An map of attributes, events, and methods to call on the newly-created element.</desc>
+        <desc>A map of attributes, events, and methods to call on the newly-created element.</desc>
       </argument>
     </signature>
     <desc>Creates DOM elements on the fly from the provided string of raw HTML.</desc>
@@ -168,7 +168,14 @@ var el = $('1&lt;br/&gt;2&lt;br/&gt;3'); // returns [&lt;br&gt;, "2", &lt;br&gt;
 el  = $('1&lt;br/&gt;2&lt;br/&gt;3 &gt;'); // returns [&lt;br&gt;, "2", &lt;br&gt;, "3 &amp;gt;"]
 </code></pre>
       <p>This behaviour is expected. </p>
-      <p>As of jQuery 1.4, the second argument to <code>jQuery()</code> can accept a map consisting of a superset of the properties that can be passed to the <a href="/attr">.attr()</a> method. Furthermore, any <a href="/category/events/">event type</a> can be passed in, and the following jQuery methods can be called: <a href="/val">val</a>, <a href="/css">css</a>, <a href="/html">html</a>, <a href="/text">text</a>, <a href="/data">data</a>, <a href="/width">width</a>, <a href="/height">height</a>, or <a href="/offset">offset</a>. The name <code>"class"</code> must be quoted in the map since it is a JavaScript reserved word, and <code>"className"</code> cannot be used since it is not the correct attribute name. </p>
+      <p>As of jQuery 1.4, the second argument to <code>jQuery()</code> can accept a plain object consisting of a superset of the properties that can be passed to the <a href="/attr">.attr()</a> method. Furthermore, any <a href="/category/events/">event type</a> can be passed in, and the following jQuery methods can be called: <a href="/val">val</a>, <a href="/css">css</a>, <a href="/html">html</a>, <a href="/text">text</a>, <a href="/data">data</a>, <a href="/width">width</a>, <a href="/height">height</a>, or <a href="/offset">offset</a>.</p>
+      <p><strong>As of jQuery 1.8</strong>, any jQuery instance method (a method of <code>jQuery.fn</code>) can be used as a property of the object passed to the second parameter:</p>
+      <pre><code>
+$( "<div></div>", {
+  append: "<span>hello</span>"
+}).appendTo( "body" );
+      </code></pre>
+      <p>The name <code>"class"</code> must be quoted in the map since it is a JavaScript reserved word, and <code>"className"</code> cannot be used since it is not the correct attribute name. </p>
       <p><strong>Note:</strong> Internet Explorer will not allow you to create an <code>input</code> or <code>button</code> element and change its type; you must specify the type using <code>'&lt;input type="checkbox" /&gt;'</code> for example. A demonstration of this can be seen below:</p>
       <p>Unsupported in IE:</p>
       <pre><code>
