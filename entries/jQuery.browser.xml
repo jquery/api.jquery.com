@@ -69,7 +69,6 @@
  }
 ]]></code>
     </example>
-    <category slug="deprecated"/>
     <category slug="properties/global-jquery-object-properties"/>
     <category slug="utilities"/>
     <category slug="version/1.0"/>
@@ -120,7 +119,6 @@ if ( $.browser.msie ) {
 }
 ]]></code>
     </example>
-    <category slug="deprecated"/>
     <category slug="properties/global-jquery-object-properties"/>
     <category slug="utilities"/>
     <category slug="version/1.0"/>
