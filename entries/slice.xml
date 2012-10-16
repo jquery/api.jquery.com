@@ -12,7 +12,7 @@
   </signature>
   <desc>Reduce the set of matched elements to a subset specified by a range of indices.</desc>
   <longdesc>
-    <p>Given a jQuery object that represents a set of DOM elements, the <code>.slice()</code> method constructs a new jQuery object from a subset of the matching elements. The supplied <code>start</code> index identifies the position of one of the elements in the set; if <code>end</code> is omitted, all elements after this one will be included in the result.</p>
+    <p>Given a jQuery object that represents a set of DOM elements, the <code>.slice()</code> method constructs a new jQuery object containing a subset of the elements specified by the <code>start</code> and optional <code>end</code> arguments. The supplied <code>start</code> index identifies the position of one of the elements in the set; if <code>end</code> is omitted, all elements after this one will be included in the result.</p>
     <p>Consider a page with a simple list on it:</p>
     <pre><code>
 &lt;ul&gt;
