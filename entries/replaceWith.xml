@@ -13,7 +13,7 @@
       <desc>A function that returns content with which to replace the set of matched elements.</desc>
     </argument>
   </signature>
-  <desc>Replace each element in the set of matched elements with the provided new content.</desc>
+  <desc>Replace each element in the set of matched elements with the provided new content and return the set of elements that was removed.</desc>
   <longdesc>
     <p>The <code>.replaceWith()</code> method removes content from the DOM and inserts new content in its place with a single call. Consider this DOM structure:</p>
     <pre><code>&lt;div class="container"&gt;
