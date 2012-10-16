@@ -17,17 +17,17 @@
       <argument name="element" type="Element">
         <desc>A DOM element to wrap in a jQuery object.</desc>
       </argument>
+    </signature>    
+    <signature>
+      <added>1.0</added>
+      <argument name="elementArray" type="Array">
+        <desc>An array containing a set of DOM elements to wrap in a jQuery object.</desc>
+      </argument>
     </signature>
     <signature>
       <added>1.0</added>
       <argument name="object" type="PlainObject">
         <desc>A plain object to wrap in a jQuery object.</desc>
-      </argument>
-    </signature>
-    <signature>
-      <added>1.0</added>
-      <argument name="elementArray" type="Array">
-        <desc>An array containing a set of DOM elements to wrap in a jQuery object.</desc>
       </argument>
     </signature>
     <signature>
@@ -54,7 +54,9 @@ $('div.foo').click(function() {
       <p>When the search for the span selector is restricted to the context of <code>this</code>, only spans within the clicked element will get the additional class.</p>
       <p>Internally, selector context is implemented with the <code>.find()</code> method, so  <code>$('span', this)</code> is equivalent to  <code>$(this).find('span')</code>.</p>
       <h4 id="using-dom-elements">Using DOM elements</h4>
-      <p>The second and third formulations of this function create a jQuery object using one or more DOM elements that were already selected in some other way. A common use of this facility is to call jQuery methods on an element that has been passed to a callback function through the keyword <code>this</code>:</p>
+      <p>The second and third formulations of this function create a jQuery object using one or more DOM elements that were already selected in some other way.</p>
+      <p><strong>Note:</strong>These formulations are meant to consume only DOM elements; feeding mixed data to the elementArray form is particularly discouraged.</p>
+      <p>A common use of this facility is to call jQuery methods on an element that has been passed to a callback function through the keyword <code>this</code>:</p>
       <pre><code>
 $('div.foo').click(function() {
   $(this).slideUp();
