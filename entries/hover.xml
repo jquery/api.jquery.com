@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <entries>
+  <desc>Bind one or two handlers to the matched elements, to be executed when the mouse pointer enters and leaves the elements.</desc>
   <entry type="method" name="hover" return="jQuery">
     <title>.hover()</title>
     <desc>Bind two handlers to the matched elements, to be executed when the mouse pointer enters and leaves the elements.</desc>

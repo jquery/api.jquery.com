@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <entries>
+  <desc>Get the combined text contents of each element in the set of matched elements, including their descendants, or set the text contents of the matched elements.</desc>
   <entry type="method" name="text" return="String">
     <title>.text()</title>
     <signature>

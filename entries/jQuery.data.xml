@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <entries>
+  <desc>Store arbitrary data associated with the specified element and/or return the value that was set.</desc>
   <entry type="method" name="jQuery.data" return="Object">
     <title>jQuery.data()</title>
     <signature>

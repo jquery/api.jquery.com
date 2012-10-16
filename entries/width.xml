@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <entries>
+  <desc>Get the current computed width for the first element in the set of matched elements or set the width of every matched element.</desc>
   <entry type="method" name="width" return="Integer">
     <title>.width()</title>
     <signature>

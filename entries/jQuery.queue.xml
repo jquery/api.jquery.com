@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <entries>
+  <desc>Show or manipulate the queue of functions to be executed on the matched element.</desc>
   <entry type="method" name="jQuery.queue" return="Array">
     <title>jQuery.queue()</title>
     <signature>

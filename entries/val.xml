@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <entries>
+  <desc>Get the current value of the first element in the set of matched elements or set the value of every matched element.</desc>
   <entry type="method" name="val" return="String, Number, Array">
     <title>.val()</title>
     <signature>

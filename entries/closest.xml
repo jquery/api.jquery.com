@@ -147,7 +147,7 @@ $('li.item-a').closest('#one', listItemII)
         <desc>A DOM element within which a matching element may be found. If no context is passed in then the context of the jQuery set will be used instead.</desc>
       </argument>
     </signature>
-    <desc>Gets an array of all the elements and selectors matched against the current element up through the DOM tree.</desc>
+    <desc>Get an array of all the elements and selectors matched against the current element up through the DOM tree.</desc>
     <longdesc>
       <p><strong>This signature (only!) is deprecated as of jQuery 1.7 and <em>removed</em> in jQuery 1.8</strong>. It was primarily meant to be used internally or by plugin authors.</p>
     </longdesc>

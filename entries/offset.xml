@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <entries>
+  <desc>Get the current coordinates of the first element, or set the coordinates of every element, in the set of matched elements, relative to the document.</desc>
   <entry type="method" name="offset" return="Object">
     <title>.offset()</title>
     <signature>

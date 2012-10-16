@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <entries>
+  <desc>Get the HTML contents of the first element in the set of matched elements or set the HTML contents of every matched element.</desc>
   <entry type="method" name="html" return="String">
     <title>.html()</title>
     <signature>

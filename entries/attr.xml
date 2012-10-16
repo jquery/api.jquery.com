@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <entries>
+  <desc>Get the value of an attribute for the first element in the set of matched elements or set one or more attributes for every matched element.</desc>
   <entry type="method" name="attr" return="String">
     <title>.attr()</title>
     <signature>

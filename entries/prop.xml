@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <entries>
+  <desc>Get the value of a property for the first element in the set of matched elements or set one or more properties for every matched element.</desc>
   <entry type="method" name="prop" return="String">
     <title>.prop()</title>
     <signature>

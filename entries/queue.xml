@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <entries>
+  <desc>Show or manipulate the queue of functions to be executed on the matched elements.</desc>
   <entry type="method" name="queue" return="Array">
     <title>.queue()</title>
     <signature>

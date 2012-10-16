@@ -5,7 +5,7 @@
     <signature>
       <added>1.2.6</added>
     </signature>
-    <desc>Get the current vertical position of the scroll bar for the first element in the set of matched elements.</desc>
+    <desc>Get the current vertical position of the scroll bar for the first element in the set of matched elements or set the vertical position of the scroll bar for every matched element.</desc>
     <longdesc>
       <p>The vertical scroll position is the same as the number of pixels that are hidden from view above the scrollable area. If the scroll bar is at the very top, or if the element is not scrollable, this number will be <code>0</code>.</p>
     </longdesc>
