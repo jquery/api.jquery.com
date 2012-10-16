@@ -3,6 +3,8 @@
 
 module.exports = function( grunt ) {
 
+"use strict";
+
 var entryFiles = grunt.file.expandFiles( "entries/*.xml" );
 
 grunt.loadNpmTasks( "grunt-clean" );
