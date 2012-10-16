@@ -5,7 +5,7 @@
     <added>1.4</added>
   </signature>
   <desc>Reduce the set of matched elements to the first in the set.</desc>
-  <longdesc>[<p>Given a jQuery object that represents a set of DOM elements, the <code>.first()</code> method constructs a new jQuery object from the first matching element.</p>
+  <longdesc><p>Given a jQuery object that represents a set of DOM elements, the <code>.first()</code> method constructs a new jQuery object from the first matching element.</p>
 <p>Consider a page with a simple list on it:</p>
 <pre><code>
 &lt;ul&gt;
