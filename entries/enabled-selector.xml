@@ -7,10 +7,15 @@
   </signature>
   <desc>Selects all elements that are enabled.</desc>
   <longdesc>
-    <p>As with other pseudo-class selectors (those that begin with a ":") it is recommended to precede it with a tag name or some other selector; otherwise, the universal selector ("*") is implied. In other words, the bare <code>$(':enabled')</code> is equivalent to <code>$('*:enabled')</code>, so <code>$('input:enabled')</code> should be used instead. </p>
+    <p>As with other pseudo-class selectors (those that begin with a ":") it is recommended to precede it with a tag name or some other selector; otherwise, the universal selector ("*") is implied. In other words, the bare <code>$(':enabled')</code> is equivalent to <code>$('*:enabled')</code>, so <code>$('input:enabled')</code> or similar should be used instead. </p>
+
+    <p>Although their resulting selections are usually the same, <code>:enabled</code> selector is subtly different from <code>:not([disabled])</code>; <code>:enabled</code> selects elements that have their boolean disabled property strictly equal to false, while <code>:not([disabled])</code> selects elements that do not have a disabled <em>attribute</em> set (regardless of its value).</p>
+
+    <p>The <code>:enabled</code> selector should only be used for selecting HTML elements that support the <code>disabled</code> attribute (<code>&lt;button&gt;</code>, <code>&lt;input&gt;</code>, <code>&lt;optgroup&gt;</code>, <code>&lt;option&gt;</code>, <code>&lt;select&gt;</code>, and <code>&lt;textarea&gt;</code>).</p>
+
   </longdesc>
   <example>
-    <desc>Finds all input elements that are enabled.</desc>
+    <desc>Find all input elements that are enabled.</desc>
     <code><![CDATA[$("input:enabled").val("this is it");]]></code>
     <html><![CDATA[<form>
 
