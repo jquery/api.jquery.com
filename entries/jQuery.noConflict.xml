@@ -7,7 +7,7 @@
       <desc>A Boolean indicating whether to remove all jQuery variables from the global scope (including jQuery itself).</desc>
     </argument>
   </signature>
-  <desc><![CDATA[Relinquish jQuery's control of the <code>$</code> variable.]]></desc>
+  <desc>Relinquish jQuery's control of the <code>$</code> variable.</desc>
   <longdesc>
     <p>Many JavaScript libraries use <code>$</code> as a function or variable name, just as jQuery does. In jQuery's case, <code>$</code> is just an alias for <code>jQuery</code>, so all functionality is available without using <code>$</code>. If you need to use another JavaScript library alongside jQuery, return control of <code>$</code> back to the other library with a call to <code>$.noConflict()</code>. Old references of <code>$</code> are saved during jQuery initialization; <code>noConflict()</code> simply restores them.</p>
     <pre><code>

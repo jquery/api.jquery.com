@@ -64,7 +64,7 @@ jQuery.data(document.body, 'bar', 'test');
         <desc>The DOM element to query for the data.</desc>
       </argument>
     </signature>
-    <desc><![CDATA[Returns value at named data store for the element, as set by <code>jQuery.data(element, name, value)</code>, or the full data store for the element.]]></desc>
+    <desc>Returns value at named data store for the element, as set by <code>jQuery.data(element, name, value)</code>, or the full data store for the element.</desc>
     <longdesc>
       <p><strong>Note:</strong> This is a low-level method; a more convenient <code><a href="/data">.data()</a></code> is also available.</p>
       <p><strong>Regarding HTML5 data-* attributes:</strong> This low-level method does NOT retrieve the <code>data-*</code> attributes unless the more convenient <code><a href="/data">.data()</a></code> method has already retrieved them.</p>

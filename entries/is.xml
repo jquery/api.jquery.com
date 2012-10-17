@@ -25,7 +25,7 @@
       <desc>An element to match the current set of elements against.</desc>
     </argument>
   </signature>
-  <desc><![CDATA[Check the current matched set of elements against a selector, element, or jQuery object and return <code>true</code> if at least one of these elements matches the given arguments.]]></desc>
+  <desc>Check the current matched set of elements against a selector, element, or jQuery object and return <code>true</code> if at least one of these elements matches the given arguments.</desc>
   <longdesc>
     <p>Unlike other filtering methods, <code>.is()</code> does not create a new jQuery object. Instead, it allows you to test the contents of a jQuery object without modification. This is often useful inside callbacks, such as event handlers.</p>
     <p>Suppose you have a list, with two of its items containing a child element:</p>

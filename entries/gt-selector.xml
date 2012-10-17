@@ -8,7 +8,7 @@
       <desc>Zero-based index.</desc>
     </argument>
   </signature>
-  <desc><![CDATA[Select all elements at an index greater than <code>index</code> within the matched set.]]></desc>
+  <desc>Select all elements at an index greater than <code>index</code> within the matched set.</desc>
   <longdesc>
     <p>
       <strong>index-related selectors</strong>

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <entry type="method" name="die" return="jQuery" deprecated="1.7">
   <title>.die()</title>
-  <desc><![CDATA[Remove event handlers previously attached using <code>.live()</code> from the elements.]]></desc>
+  <desc>Remove event handlers previously attached using <code>.live()</code> from the elements.</desc>
   <signature>
     <added>1.4.1</added>
   </signature>
