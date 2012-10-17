@@ -17,7 +17,7 @@
       <argument name="element" type="Element">
         <desc>A DOM element to wrap in a jQuery object.</desc>
       </argument>
-    </signature>    
+    </signature>
     <signature>
       <added>1.0</added>
       <argument name="elementArray" type="Array">
