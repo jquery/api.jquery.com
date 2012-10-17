@@ -26,19 +26,33 @@
   <example>
     <desc>Find all <code>div</code>s, and all the paragraphs inside of them, and give them both class names.  Notice the <code>div</code> doesn't have the yellow background color since it didn't use <code>.andSelf()</code>.</desc>
     <code><![CDATA[
-    $("div").find("p").andSelf().addClass("border");
-    $("div").find("p").addClass("background");
-
+$("div.left, div.right").find("div, div > p").addClass("border");
+$("div.before-andself").find("p").addClass("background");
+$("div.after-andself").find("p").andSelf().addClass("background");
 ]]></code>
     <css><![CDATA[
-  p, div { margin:5px; padding:5px; }
-  .border { border: 2px solid red; }
-  .background { background:yellow; }
-  ]]></css>
-    <html><![CDATA[<div>
+p, div { margin:5px; padding:5px; }
+.border { border: 2px solid red; }
+.background { background:yellow; }
+.left, .right { width: 45%; float: left;}
+.right { margin-left:3%; }
+    ]]></css>
+    <html><![CDATA[
+<div class="left">
+  <p><strong>Before <code>andSelf()</code></strong></p>
+  <div class="before-andself">
     <p>First Paragraph</p>
     <p>Second Paragraph</p>
-  </div>]]></html>
+  </div>
+</div>
+<div class="right">
+  <p><strong>After <code>andSelf()</code></strong></p>
+  <div class="after-andself">
+    <p>First Paragraph</p>
+    <p>Second Paragraph</p>
+  </div>
+</div>
+]]></html>
   </example>
   <category slug="traversing/miscellaneous-traversal"/>
   <category slug="version/1.2"/>
