@@ -28,7 +28,7 @@
 &lt;/div&gt;</code></pre>
     <p>We can also select an element on the page and insert it before another:</p>
     <pre><code>$('h2').insertBefore($('.container'));</code></pre>
-    <p>If an element selected this way is inserted elsewhere, it will be moved before the target (not cloned):</p>
+    <p>If an element selected this way is inserted into a single location elsewhere in the DOM, it will be moved before the target (not cloned):</p>
     <pre><code>&lt;h2&gt;Greetings&lt;/h2&gt;
 &lt;div class="container"&gt;
   &lt;div class="inner"&gt;Hello&lt;/div&gt;

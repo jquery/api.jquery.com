@@ -37,7 +37,7 @@
 &lt;/div&gt;</code></pre>
     <p>An element in the DOM can also be selected and inserted after another element:</p>
     <pre><code>$('.container').after($('h2'));</code></pre>
-    <p>If an element selected this way is inserted elsewhere, it will be moved rather than cloned:</p>
+    <p>If an element selected this way is inserted into a single location elsewhere in the DOM, it will be moved rather than cloned:</p>
     <pre><code>&lt;div class="container"&gt;
   &lt;div class="inner"&gt;Hello&lt;/div&gt;
   &lt;div class="inner"&gt;Goodbye&lt;/div&gt;
