@@ -1,18 +1,25 @@
 <?xml version="1.0"?>
 <entry type="selector" name="eq" return="">
   <title>:eq() Selector</title>
-  <sample>:eq(index)</sample>
   <signature>
+    <sample>:eq(index)</sample>
     <added>1.0</added>
     <argument name="index" type="Number">
       <desc>Zero-based index of the element to match.</desc>
+    </argument>
+  </signature>
+  <signature>
+    <sample>:eq(-index)</sample>
+    <added>1.8</added>
+    <argument name="-index" type="Integer">
+      <desc>Zero-based index of the element to match, counting backwards from the last element. </desc>
     </argument>
   </signature>
   <desc>Select the element at index <code>n</code> within the matched set.</desc>
   <longdesc>
     <p>The index-related selectors (<code>:eq()</code>, <code>:lt()</code>, <code>:gt()</code>, <code>:even</code>, <code>:odd</code>) filter the set of elements that have matched the expressions that precede them. They narrow the set down based on the order of the elements within this matched set. For example, if elements are first selected with a class selector (<code>.myclass</code>) and four elements are returned, these elements are given indices <code>0</code> through <code>3</code> for the purposes of these selectors.</p>
     <p>Note that since JavaScript arrays use <em>0-based indexing</em>, these selectors reflect that fact. This is why <code>$('.myclass:eq(1)')</code> selects the second element in the document with the class myclass, rather than the first. In contrast, <code>:nth-child(n)</code> uses <em>1-based indexing</em> to conform to the CSS specification.</p>
-    <p>Unlike the <a href="http://api.jquery.com/eq/"><code>.eq(index)</code></a> method, the <code>:eq(index)</code> selector does <em>not</em> accept a negative value for <code>index</code>. For example, while <code>$('li').eq(-1)</code> selects the last <code>li</code> element, <code>$('li:eq(-1)')</code> selects nothing.</p>
+    <p>Prior to jQuery 1.8, the <code>:eq(index)</code> selector did <em>not</em> accept a negative value for <code>index</code> (though the <a href="/eq/"><code>.eq(index)</code></a> method did).</p>
   </longdesc>
   <note id="jquery-selector-extension-alt" type="additional" data-selector=":eq()" data-alt="$(&quot;your-pure-css-selector&quot;).eq(index)"/>
   <example>
@@ -28,18 +35,41 @@
     <height>160</height>
     <desc>Apply three different styles to list items to demonstrate that <code>:eq()</code> is designed to select a single element while <code>:nth-child()</code> or <code>:eq()</code> within a looping construct such as <code>.each()</code> can select multiple elements.</desc>
     <code><![CDATA[
-// applies yellow background color to a single <li>
+/* applies yellow background color to a single <li> */
 $("ul.nav li:eq(1)").css( "backgroundColor", "#ff0" );
 
-// applies italics to text of the second <li> within each <ul class="nav">
+/* applies italics to text of the second <li> within each <ul class="nav"> */
 $("ul.nav").each(function(index) {
   $(this).find("li:eq(1)").css( "fontStyle", "italic" );
 });
 
-// applies red text color to descendants of <ul class="nav">
-// for each <li> that is the second child of its parent
+/* applies red text color to descendants of <ul class="nav"> */
+/* for each <li> that is the second child of its parent */
 $("ul.nav li:nth-child(2)").css( "color", "red" );
 ]]></code>
+    <html><![CDATA[<ul class="nav">
+   <li>List 1, item 1</li>
+   <li>List 1, item 2</li>
+   <li>List 1, item 3</li>
+</ul>
+<ul class="nav">
+  <li>List 2, item 1</li>
+  <li>List 2, item 2</li>
+  <li>List 2, item 3</li>
+</ul>
+]]></html>
+  </example>
+  <example>
+    <desc>Add a class to List 2, item 2 by targeting the second to last &lt;li&gt; </desc>
+    <css><![CDATA[
+.foo {
+  color: blue;
+  background-color: yellow;
+}
+]]></css>
+    <code><![CDATA[
+$( "li:eq(-2)" ).addClass( "foo" )
+    ]]></code>
     <html><![CDATA[<ul class="nav">
    <li>List 1, item 1</li>
    <li>List 1, item 2</li>
@@ -55,4 +85,5 @@ $("ul.nav li:nth-child(2)").css( "color", "red" );
   <category slug="selectors/basic-filter-selectors"/>
   <category slug="selectors/jquery-selector-extensions"/>
   <category slug="version/1.0"/>
+  <category slug="version/1.8"/>
 </entry>
