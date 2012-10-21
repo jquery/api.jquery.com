@@ -35,6 +35,7 @@
   }
 });</code></pre>
   </longdesc>
+  <note id="ajax-global-false" type="additional" data-title=".ajaxComplete()"/>
   <example>
     <desc>Show a message when an Ajax request completes.</desc>
     <code><![CDATA[$("#msg").ajaxComplete(function(event,request, settings){

@@ -25,6 +25,7 @@
     <p>When the user clicks the element with class <code>trigger</code> and the Ajax request completes, the log message is displayed.</p>
     <p>Because <code>.ajaxStop()</code> is implemented as a method of jQuery object instances, we can use the <code>this</code> keyword as we do here to refer to the selected elements within the callback function.</p>
   </longdesc>
+  <note id="ajax-global-false" type="additional" data-title=".ajaxStop()"/>
   <example>
     <desc>Hide a loading message after all the Ajax requests have stopped.</desc>
     <code><![CDATA[$("#loading").ajaxStop(function(){

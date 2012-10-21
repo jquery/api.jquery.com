@@ -34,6 +34,9 @@
 		<xsl:when test="@id = 'use-ajaxerror'">
 			If a request with <xsl:value-of select="@data-title"/> returns an error code, it will fail silently unless the script has also called the global <a href="http://api.jquery.com/ajaxError/">.ajaxError() </a> method. Alternatively, as of jQuery 1.5, the <code>.error()</code> method of the <code>jqXHR</code> object returned by <xsl:value-of select="@data-title"/> is also available for error handling.
 		</xsl:when>
+		<xsl:when test="@id = 'ajax-global-false'">
+			If <code><a href="/jQuery.Ajax/">$.ajax()</a></code> or <code><a href="/jQuery.ajaxSetup/">$.ajaxSetup()</a></code> is called with the <code>global</code> option set to <code>false</code>, the <code><xsl:value-of select="@data-title"/></code> method will not fire.
+		</xsl:when>
 	</xsl:choose>
 </xsl:template>
 </xsl:stylesheet>

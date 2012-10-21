@@ -25,6 +25,7 @@
     <p>When the user clicks the element with class <code>trigger</code> and the Ajax request is sent, the log message is displayed.</p>
     <p><strong>Note:</strong> Because <code>.ajaxStart()</code> is implemented as a method of jQuery object instances, we can use the <code>this</code> keyword as we do here to refer to the selected elements within the callback function.</p>
   </longdesc>
+  <note id="ajax-global-false" type="additional" data-title=".ajaxStart()"/>
   <example>
     <desc>Show a loading message whenever an Ajax request starts (and none is already active).</desc>
     <code><![CDATA[$("#loading").ajaxStart(function(){
