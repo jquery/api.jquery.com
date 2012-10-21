@@ -14,28 +14,28 @@
     <pre><code>&lt;button class="trigger"&gt;Trigger&lt;/button&gt;
 &lt;div class="result"&gt;&lt;/div&gt;
 &lt;div class="log"&gt;&lt;/div&gt;</code></pre>
-    <p>Attach the event handler to any element:</p>
-    <pre><code>$("div.log").ajaxError(function() {
-  $(this).text( "Triggered ajaxError handler." );
+    <p>Attach the event handler to the document:</p>
+    <pre><code>$(document).ajaxError(function() {
+  $( "div.log" ).text( "Triggered ajaxError handler." );
 });</code></pre>
     <p>Now, make an Ajax request using any jQuery method:</p>
-    <pre><code>$("button.trigger").click(function() {
-  $("div.result").load( "ajax/missing.html" );
+    <pre><code>$( "button.trigger" ).click(function() {
+  $( "div.result" ).load( "ajax/missing.html" );
 });</code></pre>
     <p>When the user clicks the button and the Ajax request fails, because the requested file is missing, the log message is displayed.</p>
-    <p><strong>Note:</strong> Because <code>.ajaxError()</code> is implemented as a method of jQuery object instances, you can use the <code>this</code> keyword within the callback function to refer to the selected elements.</p>
-    <p>All <code>ajaxError</code> handlers are invoked, regardless of what Ajax request was completed. To differentiate between the requests, you can use the parameters passed to the handler. Each time an <code>ajaxError</code> handler is executed, it is passed the event object, the <code>jqXHR</code> object (prior to jQuery 1.5, the <code><abbr title="XMLHttpRequest">XHR</abbr></code> object), and the settings object that was used in the creation of the request. If the request failed because JavaScript raised an exception, the exception object is passed to the handler as a fourth parameter. For example, to restrict the error callback to only handling events dealing with a particular URL:</p>
-    <pre><code>$( "div.log" ).ajaxError(function(e, jqxhr, settings, exception) {
+    <p><strong>Note:</strong> Because <code>.ajaxError()</code> is implemented as a method of jQuery object instances, you can use the <code>this</code> keyword within the callback function to refer to the selected elements. <strong>As of jQuery 1.8, however, the <code>.ajaxError()</code> method should only be attached to <code>document</code>.</strong></p>
+    <p>All <code>ajaxError</code> handlers are invoked, regardless of what Ajax request was completed. To differentiate between the requests, use the parameters passed to the handler. Each time an <code>ajaxError</code> handler is executed, it is passed the event object, the <code>jqXHR</code> object (prior to jQuery 1.5, the <code><abbr title="XMLHttpRequest">XHR</abbr></code> object), and the settings object that was used in the creation of the request. If the request failed because JavaScript raised an exception, the exception object is passed to the handler as a fourth parameter. For example, to restrict the error callback to only handling events dealing with a particular URL:</p>
+    <pre><code>$( document ).ajaxError(function(event, jqxhr, settings, exception) {
   if ( settings.url == "ajax/missing.html" ) {
-    $(this).text( "Triggered ajaxError handler." );
+    $( "div.log" ).text( "Triggered ajaxError handler." );
   }
 });</code></pre>
   </longdesc>
   <note id="ajax-global-false" type="additional" data-title=".ajaxError()"/>
   <example>
     <desc>Show a message when an Ajax request fails.</desc>
-    <code><![CDATA[$("#msg").ajaxError(function(event, request, settings){
-  $(this).append("<li>Error requesting page " + settings.url + "</li>");
+    <code><![CDATA[$(document).ajaxError(function(event, request, settings) {
+  $( "#msg" ).append( "<li>Error requesting page " + settings.url + "</li>" );
 });]]></code>
   </example>
   <category slug="ajax/global-ajax-event-handlers"/>
