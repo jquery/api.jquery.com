@@ -365,6 +365,14 @@
         <hr/>
       ]]></desc>
     </category>
+    <category name="Version 1.8" slug="1.8">
+      <desc><![CDATA[
+        <p>Aspects of the API that were changed in the corresponding version of jQuery. API changes in jQuery 1.8.0 dealt primarily with animations and the removal of some methods such as <code>deferred.isResolved()</code>, <code>deferred.isRejected()</code>, <code>$.curCSS()</code>, <code>$.attrFn()</code>, and <code>$(element).closest(Array)</code> returning Array.
+        </p>
+        <p>For more information, see the Release Notes/Changelog at <a href="http://blog.jquery.com/2012/08/09/jquery-1-8-released/">http://blog.jquery.com/2012/08/09/jquery-1-8-released//</a></p>
+        <hr/>
+      ]]></desc>
+    </category>
     <category name="All" slug="all"/>
   </category>
 </categories>
