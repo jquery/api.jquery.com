@@ -30,11 +30,12 @@
   </signature>
   <desc>Merge the contents of two or more objects together into the first object.</desc>
   <longdesc>
-    <p>When we supply two or more objects to <code>$.extend()</code>, properties from all of the objects are added to the target object.</p>
-    <p>If only one argument is supplied to <code>$.extend()</code>, this means the target argument was omitted. In this case, the jQuery object itself is assumed to be the target. By doing this, we can add new functions to the jQuery namespace.  This can be useful for plugin authors wishing to add new methods to JQuery.</p>
-    <p>Keep in mind that the target object (first argument) will be modified, and will also be returned from <code>$.extend()</code>. If, however, we want to preserve both of the original objects, we can do so by passing an empty object as the target:</p>
+    <p>When two or more objects are supplied to <code>$.extend()</code>, properties from all of the objects are added to the target object.</p>
+    <p>If only one argument is supplied to <code>$.extend()</code>, this means the target argument was omitted. In this case, the jQuery object itself is assumed to be the target. By doing this, you can add new functions to the jQuery namespace. This can be useful for plugin authors wishing to add new methods to JQuery.</p>
+    <p>Keep in mind that the target object (first argument) will be modified, and will also be returned from <code>$.extend()</code>. If, however, you want to preserve both of the original objects, you can do so by passing an empty object as the target:</p>
     <pre><code>var object = $.extend({}, object1, object2);</code></pre>
-    <p>The merge performed by <code>$.extend()</code> is not recursive by default; if a property of the first object is itself an object or array, it will be completely overwritten by a property with the same key in the second object. The values are not merged. This can be seen in the example below by examining the value of banana. However, by passing <code>true</code> for the first function argument, objects will be recursively merged. (Passing <code>false</code> for the first argument is not supported.)</p>
+    <p>The merge performed by <code>$.extend()</code> is not recursive by default; if a property of the first object is itself an object or array, it will be completely overwritten by a property with the same key in the second object. The values are not merged. This can be seen in the example below by examining the value of banana. However, by passing <code>true</code> for the first function argument, objects will be recursively merged.</p>
+    <p><strong>Warning</strong>: Passing <code>false</code> for the first argument is not supported.</p>
     <p>Undefined properties are not copied. However, properties inherited from the object's prototype <em>will</em> be copied over. Properties that are an object constructed via <code>new MyCustomObject(args)</code>, or built-in JavaScript types such as Date or RegExp, are not re-constructed and will appear as plain Objects in the resulting object or array.</p>
     <p>On a <code>deep</code> extend, Object and Array are extended, but object wrappers on primitive types such as String, Boolean, and Number are not.</p>
     <p>For needs that fall outside of this behavior, write a custom extend method instead. </p>
