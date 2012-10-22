@@ -1,7 +1,6 @@
 /*jshint node:true */
-"use strict";
-
 module.exports = function( grunt ) {
+"use strict";
 
 var entryFiles = grunt.file.expandFiles( "entries/*.xml" );
 
