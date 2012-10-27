@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<entry type="method" name="live" return="jQuery" depreacated="1.7">
+<entry type="method" name="live" return="jQuery" deprecated="1.7">
   <title>.live()</title>
   <desc>Attach an event handler for all elements which match the current selector, now and in the future.</desc>
   <signature>
