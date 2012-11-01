@@ -1,0 +1,52 @@
+<script>
+{
+  "title": "Ajax Events"
+}
+</script>
+<p>Ajax requests produce a number of different events that you can subscribe to. Here's a full list of the events and in what order they are broadcast.</p>
+<p>There are two types of events:</p>
+<h3>Local Events </span></h3>
+<p>These are callbacks that you can subscribe to within the Ajax request object, like so:</p>
+<pre><code> $.ajax({
+   beforeSend: function(){
+     // Handle the beforeSend event
+   },
+   complete: function(){
+     // Handle the complete event
+   }
+   // ......
+ });
+</code></pre>
+<h3>Global Events</h3>
+<p>These events are broadcast to all elements in the DOM, triggering any handlers which may be listening. You can listen for these events like so:</p>
+<pre> $("#loading").bind("ajaxSend", function(){
+   $(this).show();
+ }).bind("ajaxComplete", function(){
+   $(this).hide();
+ });
+</pre>
+<p>Global events can be disabled for a particular Ajax request by passing in the global option, like so:</p>
+<pre><code> $.ajax({
+   url: "test.html",
+   global: false,
+   // ...
+ });
+</code></pre>
+<h3>Events</h3>
+<p>This is the full list of Ajax events that are broadcast, and in the order in which they are broadcast. The indented events are broadcast for each and every Ajax request (unless a global option has been set). The ajaxStart and ajaxStop events are events that relate to all Ajax requests together.
+</p>
+<ul>
+  <li> <b>ajaxStart</b> (Global Event)<br>This event is broadcast if an Ajax request is started and no other Ajax requests are currently running.
+    <ul>
+      <li> <b>beforeSend</b> (Local Event)<br>This event, which is triggered before an Ajax request is started, allows you to modify the XMLHttpRequest object (setting additional headers, if need be.)</li>
+      <li> <b>ajaxSend</b> (Global Event)<br>This global event is also triggered before the request is run.</li>
+      <li> <b>success</b> (Local Event)<br>This event is only called if the request was successful (no errors from the server, no errors with the data).</li>
+      <li> <b>ajaxSuccess</b> (Global Event)<br>This event is also only called if the request was successful.</li>
+      <li> <b>error</b> (Local Event)<br>This event is only called if an error occurred with the request (you can never have both an error and a success callback with a request).</li>
+      <li> <b>ajaxError</b> (Global Event)<br>This global event behaves the same as the local error event.</li>
+      <li> <b>complete</b> (Local Event)<br>This event is called regardless of if the request was successful, or not. You will always receive a complete callback, even for synchronous requests.</li>
+      <li> <b>ajaxComplete</b> (Global Event)<br>This event behaves the same as the complete event and will be triggered every time an Ajax request finishes.</li>
+    </ul>
+  </li>
+  <li><b>ajaxStop</b> (Global Event)<br>This global event is triggered if there are no more Ajax requests being processed.</li>
+</ul>
