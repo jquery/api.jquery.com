@@ -19,11 +19,37 @@
       <desc>The name of the function whose context will be changed (should be a property of the <code>context</code> object).</desc>
     </argument>
   </signature>
+  <signature>
+    <added>1.6</added>
+    <argument name="function" type="Function">
+      <desc>The function whose context will be changed.</desc>
+    </argument>
+    <argument name="context" type="PlainObject">
+      <desc>The object to which the context (<code>this</code>) of the function should be set.</desc>
+    </argument>
+    <argument name="additionalArguments" type="Anything" optional="true">
+      <desc>Any number of arguments to be passed to the function referenced in the <code>function</code> argument.</desc>
+    </argument>
+  </signature>
+  <signature>
+    <added>1.6</added>
+    <argument name="context" type="PlainObject">
+      <desc>The object to which the context of the function should be set.</desc>
+    </argument>
+    <argument name="name" type="String">
+      <desc>The name of the function whose context will be changed (should be a property of the <code>context</code> object).</desc>
+    </argument>
+    <argument name="additionalArguments" type="Anything" optional="true">
+      <desc>Any number of arguments to be passed to the function named in the <code>name</code> argument.</desc>
+    </argument>
+  </signature>
+
   <desc>Takes a function and returns a new one that will always have a particular context.</desc>
   <longdesc>
     <p>This method is most useful for attaching event handlers to an element where the context is pointing back to a different object. Additionally, jQuery makes sure that even if you bind the function returned from <code>jQuery.proxy()</code> it will still unbind the correct function if passed the original.</p>
     <p>Be aware, however, that jQuery's event binding subsystem assigns a unique id to each event handling function in order to track it when it is used to specify the function to be unbound. The function represented by <code>jQuery.proxy()</code> is seen as a single function by the event subsystem, even when it is used to bind different contexts. To avoid unbinding the wrong handler, use a unique event namespace for binding and unbinding (e.g., <code>"click.myproxy1"</code>) rather than specifying the proxied function during unbinding.
 </p>
+    <p><strong>As of jQuery 1.6</strong>, any number of additional arguments may supplied to <code>$.proxy()</code>, and they will be passed to the function whose context will be changed.</p>
   </longdesc>
   <example>
     <desc>Change the context of functions bound to a click handler using the "function, context" signature. Unbind the first handler after first click.</desc>
@@ -35,13 +61,13 @@
 var me = {
   type: "zombie",
   test: function(event) {
-    // Without proxy, `this` would refer to the event target
-    // use event.target to reference that element.
+    /* Without proxy, `this` would refer to the event target */
+    /* use event.target to reference that element. */
     var element = event.target;
     $(element).css("background-color", "red");
 
-    // With proxy, `this` refers to the me object encapsulating
-    // this function.
+    /* With proxy, `this` refers to the me object encapsulating */
+    /* this function. */
     $("#log").append( "Hello " + this.type + "<br>" );
     $("#test").unbind("click", this.test);
   }
@@ -54,22 +80,26 @@ var you = {
   }
 };
 
-// execute you.test() in the context of the `you` object
-// no matter where it is called
-// i.e. the `this` keyword will refer to `you`
+/* execute you.test() in the context of the `you` object */
+/* no matter where it is called */
+/* i.e. the `this` keyword will refer to `you` */
 var youClick = $.proxy( you.test, you );
 
 
-// attach click handlers to #test
+/* attach click handlers to #test */
 $("#test")
-  // this === "zombie"; handler unbound after first click
-  .click( $.proxy( me.test, me ) )
-  // this === "person"
-  .click( youClick )
-  // this === "zombie"
-  .click( $.proxy( you.test, me ) )
-  // this === "<button> element"
-  .click( you.test );
+
+  /* this === "zombie"; handler unbound after first click */
+  .on( "click", $.proxy( me.test, me ) )
+
+  /* this === "person" */
+  .on( "click", youClick )
+
+  /* this === "zombie" */
+  .on( "click", $.proxy( you.test, me ) )
+
+  /* this === "<button> element" */
+  .on( "click", you.test );
 ]]></code>
   </example>
   <example>
@@ -83,14 +113,65 @@ $("#test")
     name: "John",
     test: function() {
       $("#log").append( this.name );
-      $("#test").unbind("click", obj.test);
+      $("#test").off("click", obj.test);
     }
   };
 
-  $("#test").click( jQuery.proxy( obj, "test" ) );
+  $("#test").on( "click", jQuery.proxy( obj, "test" ) );
 ]]></code>
+  </example>
+
+  <example>
+    <desc>Change the context of a function bound to the click handler,
+    </desc>
+    <html><![CDATA[
+<p><button type="button" id="test">Test</button></p>
+<div id="log"></div>
+]]></html>
+    <code><![CDATA[
+var me = {
+  /* I'm a dog */
+  type: "dog",
+
+  /* Note that event comes *after* one and two */
+  test: function(one, two, event) {
+    $("#log")
+
+      /* `one` maps to `you`, the 1st additional */
+      /* argument in the $.proxy function call */
+      .append( "<h3>Hello " + one.type + ":</h3>" )
+
+      /* the `this` keyword refers to `me` */
+      /*(the 2nd, context, argument of $.proxy) */
+      .append( "I am a " + this.type + ", " )
+
+      /* `two` maps to `they`, the 2nd additional */
+      /* argument in the $.proxy function call */
+      .append( "and they are " + two.type + ".<br>" )
+
+      /* the event type is "click" */
+      .append( "Thanks for " + event.type + "ing " )
+
+      /* the clicked element is `event.target`, */
+      /* and its type is "button" */
+      .append( "the " + event.target.type + "." );
+  }
+};
+
+var you = { type: "cat" };
+var they = { type: "fish" };
+
+
+/* Set up handler to execute me.test() in the context */
+/* of `me`, with `you` and `they` as additional arguments */
+var proxy = $.proxy( me.test, me, you, they );
+
+$("#test")
+.on( "click", proxy );
+    ]]></code>
   </example>
   <category slug="events/event-handler-attachment"/>
   <category slug="utilities"/>
   <category slug="version/1.4"/>
+  <category slug="version/1.6"/>
 </entry>
