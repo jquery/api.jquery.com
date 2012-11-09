@@ -24,9 +24,12 @@ if ( x ) {
 </code></pre>
 <p>In this case, <code>"x defaulted to false"</code> is printed.
 </p>
-<p>To keep the examples short, the invert-operator is used to show a boolean context:
+<p>To keep the examples short, the invert ("not") operator and double-negation are used to show a boolean context:
 </p>
-<pre><code data-lang="javascript">!x // true
+<pre><code data-lang="javascript">
+var x = "";
+!x // true
+!!x // false (Double negation: Since "not (empty string)" is true, negating that makes it false)
 </code></pre>
 <p>On to the actual types.
 </p>
@@ -125,6 +128,7 @@ if ( x ) {
 <p>An empty string defaults to false:
 </p>
 <pre><code data-lang="javascript">!"" // true
+!!"" // false
 !"hello" // false
 !"true" // false
 !new Boolean( false ) // false
@@ -144,7 +148,7 @@ typeof 3.543 // "number"
 <p>If a number is zero, it defaults to false:
 </p>
 <pre><code data-lang="javascript">!0 // true
-!!0 // false (Double negation: Since "not 0" is true, negating that makes it false)
+!!0 // false
 !1 // false
 !-1 // false
 </code></pre>
@@ -217,8 +221,8 @@ typeof Infinity // "number"
 <h2 id="Boolean"> Boolean </h2>
 <p>A boolean in JavaScript can be either true or false:
 </p>
-<pre><code data-lang="javascript">if ( true ) console.log( "always!" )
-if ( false ) console.log( "never!" )
+<pre><code data-lang="javascript">if ( true ) console.log( "always!" );
+if ( false ) console.log( "never!" );
 </code></pre>
 <h2 id="Object"> Object </h2>
 <p>Everything in JavaScript is an object, though some are more objective (haha). The easiest way to create an object is the object literal:
@@ -281,6 +285,7 @@ for( key in obj ) {
 <p>An object, no matter if it has properties or not, never defaults to false:
 </p>
 <pre><code data-lang="javascript">!{} // false
+!!{} // true
 </code></pre>
 <h3 id="Prototype"> Prototype </h3>
 <p>All objects have a prototype property. Whenever the interpreter looks for a property, it also checks the prototype. jQuery uses that extensively to add methods to jQuery instances.
@@ -369,6 +374,7 @@ x.splice( 1, 2 ) // [ 2, 3 ]
 <p>An array, no matter if it has elements or not, never defaults to false:
 </p>
 <pre><code data-lang="javascript">![] // false
+!![] // true
 </code></pre>
 <h3 id="Array.3CType.3E_Notation"> Array&lt;Type&gt; Notation </h3>
 <p>In the jQuery API you'll often find the notation of Array&lt;Type&gt;:
