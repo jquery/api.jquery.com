@@ -187,20 +187,6 @@ $( "<div></div>", {
 }).appendTo( "body" );
       </code></pre>
       <p>The name <code>"class"</code> must be quoted in the map since it is a JavaScript reserved word, and <code>"className"</code> cannot be used since it is not the correct attribute name. </p>
-      <p><strong>Note:</strong> Internet Explorer will not allow you to create an <code>input</code> or <code>button</code> element and change its type; you must specify the type using <code>"&lt;input type="checkbox" /&gt;"</code>, for example. A demonstration of this can be seen below:</p>
-      <p>Unsupported in IE:</p>
-      <pre><code>
-$( "&lt;input /&gt;", {
-  type: "text",
-  name: "test"
-}).appendTo( "body" );
-</code></pre>
-      <p>Supported workaround:</p>
-      <pre><code>
-$( "&lt;input type="text" /&gt;" ).attr({
-    name: "test"
-}).appendTo( "body" );
-</code></pre>
     </longdesc>
     <example>
       <desc>Create a div element (and all of its contents) dynamically and append it to the body element. Internally, an element is created and its innerHTML property set to the given markup.</desc>
