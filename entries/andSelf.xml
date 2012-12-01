@@ -6,7 +6,7 @@
   </signature>
   <desc>Add the previous set of elements on the stack to the current set.</desc>
   <longdesc>
-    <p>As described in the discussion for <code><a href="http://api.jquery.com/end/">.end()</a></code>, jQuery objects maintain aninternal stack that keeps track of changes to the matched set of elements. When one of the DOM traversal methods is called, the new set of elements is pushed onto the stack. If the previous set of elements is desired as well, <code>.andSelf()</code> can help.</p>
+    <p>As described in the discussion for <code><a href="http://api.jquery.com/end/">.end()</a></code>, jQuery objects maintain an internal stack that keeps track of changes to the matched set of elements. When one of the DOM traversal methods is called, the new set of elements is pushed onto the stack. If the previous set of elements is desired as well, <code>.andSelf()</code> can help.</p>
     <p>Consider a page with a simple list on it:</p>
     <pre><code>
 &lt;ul&gt;
@@ -24,7 +24,7 @@
     <p>First, the initial selector locates item 3, initializing the stack with the set containing just this item. The call to <code>.nextAll()</code> then pushes the set of items 4 and 5 onto the stack. Finally, the <code>.andSelf()</code> invocation merges these two sets together, creating a jQuery object that points to all three items in document order: <code>{[&lt;li.third-item&gt;,&lt;li&gt;,&lt;li&gt; ]}</code>.</p>
   </longdesc>
   <example>
-    <desc>Find all <code>div</code>s, and all the paragraphs inside of them, and give them both class names.  Notice the <code>div</code> doesn't have the yellow background color since it didn't use <code>.andSelf()</code>.</desc>
+    <desc><code>andSelf()</code> causes the previous set of DOM elements in the traversal stack to be added to the current set. In the first example the top stack contains the set resulting from <code>.find("p")</code> In the second example, <code>andSelf()</code> has added the previous set of elements on the stack, in this case <code>$("div.after-andself")</code>, to the current set, selecting the div and its enclosed p tags.</desc>
     <code><![CDATA[
 $("div.left, div.right").find("div, div > p").addClass("border");
 $("div.before-andself").find("p").addClass("background");
