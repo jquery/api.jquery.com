@@ -384,21 +384,22 @@ x.splice( 1, 2 ) // [ 2, 3 ]
 <p>This indicates that the method doesn't only expect an array as the argument, but also specifies the expected type. The notation is borrowed from Java 5's generics notation (or C++ templates).
 </p>
 <h2 id="PlainObject"> PlainObject </h2>
-<p>The PlainObject type is used by the AJAX function to hold the data of a request.  This type could be a string, an array&lt;form elements&gt;, a jQuery object with form elements or an object with key/value pairs.
-In the last case, it is possible to assign multiple values to one key by assigning an array.
+<p>The PlainObject type is a JavaScript object containing zero or more key-value pairs. The plain object is, in other words, an <code>Object</code> object. It is designated "plain" in jQuery documentation to distinguish it from other kinds of JavaScript objects: for example, <code>null</code>, user-defined arrays, and host objects such as <code>document</code>, all of which have a <code>typeof</code> value of "object." The <code><a href="/jQuery.isPlainObject">jQuery.isPlainObject()</a></code> method identifies whether the passed argument is a plain object or not, as demonstrated below:
 </p>
-<pre><code data-lang="javascript">{ 'key[]': [ 'valuea', 'valueb' ] }
+<pre><code data-lang="javascript">
+  var a = [];
+  var d = document;
+  var o = {};
+
+  typeof a; // object
+  typeof d; // object
+  typeof o; // object
+
+  jQuery.isPlainObject( a ); // false
+  jQuery.isPlainObject( d ); // false
+  jQuery.isPlainObject( o ); // true
 </code></pre>
-<p>becomes on the server-side (in PHP):
-</p>
-<pre><code data-lang="php">&lt;?php
-$_REQUEST['key'][0]="valuea";
-$_REQUEST['key'][1]="valueb";
-</code></pre>
-<p>in Rails or Merb:
-</p>
-<pre><code data-lang="ruby">params[:key] = ["valuea", "valueb"]
-</code></pre>
+
 <h2 id="Function"> Function </h2>
 <p>A function in JavaScript can be either named or anonymous. Any function can be assigned to a variable or passed to a method, but passing member functions this way can cause them to be called in the context of another object (i.e. with a different "this" object).
 </p>

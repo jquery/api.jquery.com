@@ -14,7 +14,7 @@
     <pre><code>
   console.log($.isPlainObject(document.location));
 </code></pre>
-    <p>which throws an invalid pointer exception in IE8. With this in mind, it's important to be aware of any of the gotchas involved in using <code>$.isPlainObject()</code> against older browsers. Some basic example of use-cases that do function correctly cross-browser can be found below.</p>
+    <p>which throws an invalid pointer exception in IE8. With this in mind, it's important to be aware of any of the gotchas involved in using <code>$.isPlainObject()</code> against older browsers. A couple basic examples that do function correctly cross-browser can be found below.</p>
   </longdesc>
   <example>
     <desc>Check an object to see if it's a plain object.</desc>
