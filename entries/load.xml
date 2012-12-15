@@ -20,6 +20,7 @@
     </blockquote>
     <p>This method is the simplest way to fetch data from the server. It is roughly equivalent to <code>$.get(url, data, success)</code> except that it is a method rather than global function and it has an implicit callback function.  When a successful response is detected (i.e. when <code>textStatus</code> is "success" or "notmodified"), <code>.load()</code> sets the HTML contents of the matched element to the returned data. This means that most uses of the method can be quite simple:</p>
     <pre><code>$('#result').load('ajax/test.html');</code></pre>
+    <p>If no element is matched by the selector — in this case, if the document does not contain an element with id="result" — the Ajax request will <em>not</em> be sent.</p>
     <h4 id="callback-function">Callback Function</h4>
     <p>If a "complete" callback is provided, it is executed after post-processing and HTML insertion has been performed. The callback is fired once for each element in the jQuery collection, and <code>this</code> is set to each DOM element in turn.</p>
     <pre><code>$('#result').load('ajax/test.html', function() {
