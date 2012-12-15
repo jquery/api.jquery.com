@@ -6,8 +6,8 @@
     <argument name="url" type="String">
       <desc>A string containing the URL to which the request is sent.</desc>
     </argument>
-    <argument name="data" optional="true" type="Map, String">
-      <desc>A map or string that is sent to the server with the request.</desc>
+    <argument name="data" optional="true" type="PlainObject, String">
+      <desc>A plain object or string that is sent to the server with the request.</desc>
     </argument>
     <argument name="success(data, textStatus, jqXHR)" optional="true" type="Function">
       <desc>A callback function that is executed if the request succeeds.</desc>

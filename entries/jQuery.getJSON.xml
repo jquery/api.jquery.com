@@ -7,7 +7,7 @@
       <desc>A string containing the URL to which the request is sent.</desc>
     </argument>
     <argument name="data" optional="true" type="PlainObject">
-      <desc>A map or string that is sent to the server with the request.</desc>
+      <desc>A plain object or string that is sent to the server with the request.</desc>
     </argument>
     <argument name="success(data, textStatus, jqXHR)" optional="true" type="Function">
       <desc>A callback function that is executed if the request succeeds.</desc>
@@ -23,7 +23,7 @@
   success: <em>callback</em>
 });
 </code></pre>
-    <p>Data that is sent to the server is appended to the URL as a query string. If the value of the <code>data</code> parameter is an object (map), it is converted to a string and url-encoded before it is appended to the URL.</p>
+    <p>Data that is sent to the server is appended to the URL as a query string. If the value of the <code>data</code> parameter is a plain object, it is converted to a string and url-encoded before it is appended to the URL.</p>
     <p>Most implementations will specify a success handler:</p>
     <pre><code>$.getJSON('ajax/test.json', function(data) {
   var items = [];

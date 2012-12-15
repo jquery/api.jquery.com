@@ -150,8 +150,8 @@ $( "div > p").css("border", "1px solid gray");
       <argument name="html" type="String">
         <desc>A string defining a single, standalone, HTML element (e.g. &lt;div/&gt; or &lt;div&gt;&lt;/div&gt;).</desc>
       </argument>
-      <argument name="props" type="PlainObject">
-        <desc>A map of attributes, events, and methods to call on the newly-created element.</desc>
+      <argument name="attributes" type="PlainObject">
+        <desc>An object of attributes, events, and methods to call on the newly-created element.</desc>
       </argument>
     </signature>
     <desc>Creates DOM elements on the fly from the provided string of raw HTML.</desc>
@@ -186,7 +186,7 @@ $( "<div></div>", {
   }
 }).appendTo( "body" );
       </code></pre>
-      <p>The name <code>"class"</code> must be quoted in the map since it is a JavaScript reserved word, and <code>"className"</code> cannot be used since it is not the correct attribute name. </p>
+      <p>The name <code>"class"</code> must be quoted in the object since it is a JavaScript reserved word, and <code>"className"</code> cannot be used since it refers to the DOM property, not the attribute. </p>
     </longdesc>
     <example>
       <desc>Create a div element (and all of its contents) dynamically and append it to the body element. Internally, an element is created and its innerHTML property set to the given markup.</desc>

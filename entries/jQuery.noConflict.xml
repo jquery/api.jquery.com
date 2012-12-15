@@ -33,7 +33,7 @@
     <p>If necessary, you can free up the <code>jQuery</code> name as well by passing <code>true</code> as an argument to the method. This is rarely necessary, and if you must do this (for example, if you need to use multiple versions of the jQuery library on the same page), you need to consider that most plug-ins rely on the presence of the <code>jQuery</code> variable and may not operate correctly in this situation.</p>
   </longdesc>
   <example>
-    <desc>Maps the original object that was referenced by $ back to $.</desc>
+    <desc>Map the original object that was referenced by $ back to $.</desc>
     <code><![CDATA[jQuery.noConflict();
 // Do something with jQuery
 jQuery("div p").hide();

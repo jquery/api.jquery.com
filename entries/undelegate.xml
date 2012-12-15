@@ -32,7 +32,7 @@
       <desc>A selector which will be used to filter the event results.</desc>
     </argument>
     <argument name="events" type="PlainObject">
-      <desc>A map of one or more event types and previously bound functions to unbind from them.</desc>
+      <desc>An object of one or more event types and previously bound functions to unbind from them.</desc>
     </argument>
   </signature>
   <signature>

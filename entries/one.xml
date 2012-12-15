@@ -8,7 +8,7 @@
       <desc>A string containing one or more JavaScript event types, such as "click" or "submit," or custom event names.</desc>
     </argument>
     <argument name="data" type="PlainObject" optional="true">
-      <desc>A map of data that will be passed to the event handler.</desc>
+      <desc>An object containing data that will be passed to the event handler.</desc>
     </argument>
     <argument name="handler(eventObject)" type="Function">
       <desc>A function to execute at the time the event is triggered.</desc>
@@ -32,7 +32,7 @@
   <signature>
     <added>1.7</added>
     <argument name="events" type="PlainObject">
-      <desc>A map in which the string keys represent one or more space-separated event types and optional namespaces, and the values represent a handler function to be called for the event(s).</desc>
+      <desc>An object in which the string keys represent one or more space-separated event types and optional namespaces, and the values represent a handler function to be called for the event(s).</desc>
     </argument>
     <argument name="selector" type="String" optional="true">
       <desc>A selector string to filter the descendants of the selected elements that will call the handler. If the selector is null or omitted, the handler is always called when it reaches the selected element.</desc>

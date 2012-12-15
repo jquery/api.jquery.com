@@ -7,7 +7,7 @@
       <desc>A string containing one or more DOM event types, such as "click" or "submit," or custom event names.</desc>
     </argument>
     <argument name="eventData" type="Object" optional="true">
-      <desc>A map of data that will be passed to the event handler.</desc>
+      <desc>An object containing data that will be passed to the event handler.</desc>
     </argument>
     <argument name="handler(eventObject)" type="Function">
       <desc>A function to execute each time the event is triggered.</desc>
@@ -19,7 +19,7 @@
       <desc>A string containing one or more DOM event types, such as "click" or "submit," or custom event names.</desc>
     </argument>
     <argument name="eventData" type="Object" optional="true">
-      <desc>A map of data that will be passed to the event handler.</desc>
+      <desc>An object containing data that will be passed to the event handler.</desc>
     </argument>
     <argument name="preventBubble" type="Boolean">
       <desc>Setting the third argument to false will attach a function that prevents the default action from occurring and stops the event from bubbling. The default is true.</desc>
@@ -28,7 +28,7 @@
   <signature>
     <added>1.4</added>
     <argument name="events" type="Object">
-      <desc>A map of one or more DOM event types and functions to execute for them.</desc>
+      <desc>An object containing one or more DOM event types and functions to execute for them.</desc>
     </argument>
   </signature>
   <desc>Attach a handler to an event for the elements.</desc>
@@ -53,7 +53,7 @@ $('#foo').bind('mouseenter mouseleave', function() {
 });
 </code></pre>
     <p>The effect of this on <code>&lt;div id="foo"&gt;</code> (when it does not initially have the "entered" class) is to add the "entered" class when the mouse enters the <code>&lt;div&gt;</code> and remove the class when the mouse leaves. </p>
-    <p>As of jQuery 1.4 we can bind multiple event handlers simultaneously by passing a map of event type/handler pairs:</p>
+    <p>As of jQuery 1.4 we can bind multiple event handlers simultaneously by passing an object of event type/handler pairs:</p>
     <pre><code>
 $('#foo').bind({
   click: function() {

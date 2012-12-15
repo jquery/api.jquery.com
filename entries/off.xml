@@ -17,7 +17,7 @@
   <signature>
     <added>1.7</added>
     <argument name="events" type="PlainObject">
-      <desc>A map where the string keys represent one or more space-separated event types and optional namespaces, and the values represent handler functions previously attached for the event(s).</desc>
+      <desc>An object where the string keys represent one or more space-separated event types and optional namespaces, and the values represent handler functions previously attached for the event(s).</desc>
     </argument>
     <argument name="selector" type="String" optional="true">
       <desc>A selector which should match the one originally passed to <code>.on()</code> when attaching event handlers.</desc>

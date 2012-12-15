@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <entries>
-  <entry type="property" name="jQuery.browser" return="Map">
+  <entry type="property" name="jQuery.browser" return="PlainObject">
     <title>jQuery.browser</title>
     <signature>
       <added>1.0</added>

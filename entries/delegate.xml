@@ -23,7 +23,7 @@
       <desc>A string containing one or more space-separated JavaScript event types, such as "click" or "keydown," or custom event names.</desc>
     </argument>
     <argument name="eventData" type="Object">
-      <desc>A map of data that will be passed to the event handler.</desc>
+      <desc>An object containing data that will be passed to the event handler.</desc>
     </argument>
     <argument name="handler(eventObject)" type="Function">
       <desc>A function to execute at the time the event is triggered.</desc>
@@ -35,7 +35,7 @@
       <desc>A selector to filter the elements that trigger the event.</desc>
     </argument>
     <argument name="events" type="PlainObject">
-      <desc>A map of one or more event types and functions to execute for them.</desc>
+      <desc>A plain object of one or more event types and functions to execute for them.</desc>
     </argument>
   </signature>
   <longdesc>

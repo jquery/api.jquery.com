@@ -5,7 +5,7 @@
   <signature>
     <added>1.0</added>
     <argument name="properties" type="PlainObject">
-      <desc>A map of CSS properties that the animation will move toward.</desc>
+      <desc>An object of CSS properties and values that the animation will move toward.</desc>
     </argument>
     <xi:include href="../includes/duration-argument.xml" xmlns:xi="http://www.w3.org/2003/XInclude"/>
     <xi:include href="../includes/easing-argument.xml" xmlns:xi="http://www.w3.org/2003/XInclude"/>
@@ -14,13 +14,13 @@
   <signature>
     <added>1.0</added>
     <argument name="properties" type="PlainObject">
-      <desc>A map of CSS properties that the animation will move toward.</desc>
+      <desc>An object of CSS properties and values that the animation will move toward.</desc>
     </argument>
     <xi:include href="../includes/options-argument.xml" xmlns:xi="http://www.w3.org/2003/XInclude"/>
   </signature>
 
   <longdesc>
-    <p>The <code>.animate()</code> method allows us to create animation effects on any numeric CSS property. The only required parameter is a map of CSS properties. This map is similar to the one that can be sent to the <code>.css()</code> method, except that the range of properties is more restrictive.</p>
+    <p>The <code>.animate()</code> method allows us to create animation effects on any numeric CSS property. The only required parameter is a plain object of CSS properties. This object is similar to the one that can be sent to the <code>.css()</code> method, except that the range of properties is more restrictive.</p>
     <h4 id="animation-properties">Animation Properties and Values</h4>
     <p>All animated properties should be animated to a <em>single numeric value</em>, except as noted below; most properties that are non-numeric cannot be animated using basic jQuery functionality (For example, <code>width</code>, <code>height</code>, or <code>left</code> can be animated but <code>background-color</code> cannot be, unless the <a href="https://github.com/jquery/jquery-color">jQuery.Color()</a> plugin is used). Property values are treated as a number of pixels unless otherwise specified. The units <code>em</code> and <code>%</code> can be specified where applicable.</p>
     <p>In addition to style properties, some non-style properties such as <code>scrollTop</code> and <code>scrollLeft</code>, as well as custom properties, can be animated.</p>
@@ -100,7 +100,7 @@
       $(this).after('&lt;div&gt;Animation complete.&lt;/div&gt;');
   });
 });</code></pre>
-    <p>In the second version of <code>.animate()</code>, the options map can include the <code>specialEasing</code> property, which is itself a map of CSS properties and their corresponding easing functions.  For example, to simultaneously animate the width using the <code>linear</code> easing function and the height using the <code>easeOutBounce</code> easing function:</p>
+    <p>In the second version of <code>.animate()</code>, the options object can include the <code>specialEasing</code> property, which is itself an object of CSS properties and their corresponding easing functions.  For example, to simultaneously animate the width using the <code>linear</code> easing function and the height using the <code>easeOutBounce</code> easing function:</p>
     <pre><code>$('#clickme').click(function() {
   $('#book').animate({
     width: 'toggle',
@@ -290,7 +290,7 @@ div {
 }, { duration: "slow", easing: "easein" });]]></code>
   </example>
   <example>
-    <desc>Animate all paragraphs and execute a callback function when the animation is complete.  The first argument is a map of CSS properties, the second specifies that the animation should take 1000 milliseconds to complete, the third states the easing type, and the fourth argument is an anonymous callback function. </desc>
+    <desc>Animate all paragraphs and execute a callback function when the animation is complete.  The first argument is an object of CSS properties, the second specifies that the animation should take 1000 milliseconds to complete, the third states the easing type, and the fourth argument is an anonymous callback function. </desc>
     <code><![CDATA[$( "p" ).animate({
   height: 200, width: 400, opacity: 0.5
 }, 1000, "linear", function() {

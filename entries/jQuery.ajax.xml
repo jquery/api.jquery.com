@@ -24,7 +24,7 @@
       <property name="beforeSend" type="Function">
         <argument name="jqXHR" type="jqXHR"/>
         <argument name="settings" type="PlainObject"/>
-        <desc>A pre-request callback function that can be used to modify the jqXHR (in jQuery 1.4.x, XMLHTTPRequest) object before it is sent. Use this to set custom headers, etc. The jqXHR and settings maps are passed as arguments. This is an <a href="/Ajax_Events">Ajax Event</a>. Returning <code>false</code> in the <code>beforeSend</code> function will cancel the request. <strong>As of jQuery 1.5</strong>, the <code>beforeSend</code> option will be called regardless of the type of request.</desc>
+        <desc>A pre-request callback function that can be used to modify the jqXHR (in jQuery 1.4.x, XMLHTTPRequest) object before it is sent. Use this to set custom headers, etc. The jqXHR and settings objects are passed as arguments. This is an <a href="/Ajax_Events">Ajax Event</a>. Returning <code>false</code> in the <code>beforeSend</code> function will cancel the request. <strong>As of jQuery 1.5</strong>, the <code>beforeSend</code> option will be called regardless of the type of request.</desc>
       </property>
       <property name="cache" default="true, false for dataType 'script' and 'jsonp'" type="Boolean">
         <desc>If set to <code>false</code>, it will force requested pages not to be cached by the browser. <strong>Note:</strong> Setting <code>cache</code> to false will only work correctly with HEAD and GET requests. It works by appending "_={timestamp}" to the GET parameters. The parameter is not needed for other types of requests, except in IE8 when a POST is made to a URL that has already been requested by a GET.</desc>
@@ -35,7 +35,7 @@
         <desc>A function to be called when the request finishes (after <code>success</code> and <code>error</code> callbacks are executed). The function gets passed two arguments: The jqXHR (in jQuery 1.4.x, XMLHTTPRequest) object and a string categorizing the status of the request (<code>"success"</code>, <code>"notmodified"</code>, <code>"error"</code>, <code>"timeout"</code>, <code>"abort"</code>, or <code>"parsererror"</code>). <strong>As of jQuery 1.5</strong>, the <code>complete</code> setting can accept an array of functions. Each function will be called in turn. This is an <a href="/Ajax_Events">Ajax Event</a>.</desc>
       </property>
       <property name="contents" type="PlainObject" added="1.5">
-        <desc>A map of string/regular-expression pairs that determine how jQuery will parse the response, given its content type.</desc>
+        <desc>An object of string/regular-expression pairs that determine how jQuery will parse the response, given its content type.</desc>
       </property>
       <property default="'application/x-www-form-urlencoded; charset=UTF-8'" name="contentType" type="String">
         <desc>When sending data to the server, use this content type. Default is "application/x-www-form-urlencoded; charset=UTF-8", which is fine for most cases. If you explicitly pass in a content-type to <code>$.ajax()</code>, then it'll always be sent to the server (even if no data is sent). If no charset is specified, data will be transmitted to the server using the server's default charset; you must decode this appropriately on the server side.</desc>
@@ -49,7 +49,7 @@
 });</code></pre></desc>
       </property>
       <property name="converters" type="PlainObject" default="{&quot;* text&quot;: window.String, &quot;text html&quot;: true, &quot;text json&quot;: jQuery.parseJSON, &quot;text xml&quot;: jQuery.parseXML}" added="1.5">
-        <desc>A map of dataType-to-dataType converters. Each converter's value is a function that returns the transformed value of the response.</desc>
+        <desc>An object containing dataType-to-dataType converters. Each converter's value is a function that returns the transformed value of the response.</desc>
       </property>
       <property name="crossDomain" type="Boolean" default="false for same-domain requests, true for cross-domain requests" added="1.5">
         <desc>If you wish to force a crossDomain request (such as JSONP) on the same domain, set the value of crossDomain to <code>true</code>. This allows, for example, server-side redirection to another domain.</desc>
@@ -78,7 +78,7 @@
         <desc>Whether to trigger global Ajax event handlers for this request. The default is <code>true</code>. Set to <code>false</code> to prevent the global handlers like <code>ajaxStart</code> or <code>ajaxStop</code> from being triggered. This can be used to control various <a href="/Ajax_Events">Ajax Events</a>.</desc>
       </property>
       <property name="headers" type="PlainObject" default="{}" added="1.5">
-        <desc>A map of additional header key/value pairs to send along with the request. This setting is set before the <code>beforeSend</code> function is called; therefore, any values in the headers setting can be overwritten from within the <code>beforeSend</code> function.</desc>
+        <desc>An object of additional header key/value pairs to send along with the request. This setting is set before the <code>beforeSend</code> function is called; therefore, any values in the headers setting can be overwritten from within the <code>beforeSend</code> function.</desc>
       </property>
       <property default="false" name="ifModified" type="Boolean">
         <desc>Allow the request to be successful only if the response has changed since the last request. This is done by checking the Last-Modified header. Default value is <code>false</code>, ignoring the header. In jQuery 1.4 this technique also checks the 'etag' specified by the server to catch unmodified data.</desc>
@@ -106,7 +106,7 @@
       </property>
       <property name="statusCode" type="PlainObject" default="{}" added="1.5">
         <desc>
-          <p>A map of numeric HTTP codes and functions to be called when the response has the corresponding code. For example, the following will alert when the response status is a 404:</p>
+          <p>An object of numeric HTTP codes and functions to be called when the response has the corresponding code. For example, the following will alert when the response status is a 404:</p>
           <pre><code>$.ajax({
   statusCode: {
     404: function() {
@@ -143,7 +143,7 @@
       </property>
       <property name="xhrFields" type="PlainObject" added="1.5.1">
         <desc>
-          <p>A map of fieldName-fieldValue pairs to set on the native <code><abbr title="XMLHttpRequest">XHR</abbr></code> object. For example, you can use it to set <code>withCredentials</code> to <code>true</code> for cross-domain requests if needed.
+          <p>An object of fieldName-fieldValue pairs to set on the native <code><abbr title="XMLHttpRequest">XHR</abbr></code> object. For example, you can use it to set <code>withCredentials</code> to <code>true</code> for cross-domain requests if needed.
 <pre><code>$.ajax({
    url: a_cross_domain_url,
    xhrFields: {
@@ -225,7 +225,7 @@ jqxhr.always(function() { alert("second complete"); });</code></pre>
     <p>Some types of Ajax requests, such as JSONP and cross-domain GET requests, do not use XHR; in those cases the <code>XMLHttpRequest</code> and <code>textStatus</code> parameters passed to the callback are <code>undefined</code>.</p>
     <p>Here are the callback hooks provided by <code>$.ajax()</code>:</p>
     <ol>
-      <li><code>beforeSend</code> callback is invoked; it receives the <code>jqXHR</code> object and the <code>settings</code> map as parameters.</li>
+      <li><code>beforeSend</code> callback is invoked; it receives the <code>jqXHR</code> object and the <code>settings</code> object as parameters.</li>
       <li><code>error</code> callbacks are invoked, in the order they are registered, if the request fails. They receive the <code>jqXHR</code>, a string indicating the error type, and an exception object if applicable. Some built-in errors will provide a string as the exception object: "abort", "timeout", "No Transport".</li>
       <li><code>dataFilter</code> callback is invoked immediately upon successful receipt of response data. It receives the returned data and the value of <code>dataType</code>, and must return the (possibly altered) data to pass on to <code>success</code>.</li>
       <li><code>success</code> callbacks are then invoked, in the order they are registered, if the request succeeds. They receive the returned data, a string containing the success code, and the <code>jqXHR</code> object.</li>
@@ -251,7 +251,7 @@ jqxhr.always(function() { alert("second complete"); });</code></pre>
     <p>When data is retrieved from remote servers (which is only possible using the <code>script</code> or <code>jsonp</code> data types), the <code>error</code> callbacks and global events will never be fired.</p>
     <h4 id="sending-data-to-server">Sending Data to the Server</h4>
     <p>By default, Ajax requests are sent using the GET HTTP method. If the POST method is required, the method can be specified by setting a value for the <code>type</code> option. This option affects how the contents of the <code>data</code> option are sent to the server. POST data will always be transmitted to the server using UTF-8 charset, per the W3C XMLHTTPRequest standard.</p>
-    <p>The <code>data</code> option can contain either a query string of the form <code>key1=value1&amp;key2=value2</code>, or a map of the form <code>{key1: 'value1', key2: 'value2'}</code>. If the latter form is used, the data is converted into a query string using <code><a href="http://api.jquery.com/jQuery.param/">jQuery.param()</a></code> before it is sent. This processing can be circumvented by setting <code>processData</code> to <code>false</code>.  The processing might be undesirable if you wish to send an XML object to the server; in this case, change the <code>contentType</code> option from <code>application/x-www-form-urlencoded</code> to a more appropriate MIME type.</p>
+    <p>The <code>data</code> option can contain either a query string of the form <code>key1=value1&amp;key2=value2</code>, or an object of the form <code>{key1: 'value1', key2: 'value2'}</code>. If the latter form is used, the data is converted into a query string using <code><a href="http://api.jquery.com/jQuery.param/">jQuery.param()</a></code> before it is sent. This processing can be circumvented by setting <code>processData</code> to <code>false</code>.  The processing might be undesirable if you wish to send an XML object to the server; in this case, change the <code>contentType</code> option from <code>application/x-www-form-urlencoded</code> to a more appropriate MIME type.</p>
     <h4 id="advanced-options">Advanced Options</h4>
     <p>The <code>global</code> option prevents handlers registered using <code><a href="/ajaxSend">.ajaxSend()</a></code>, <code><a href="/ajaxError">.ajaxError()</a></code>, and similar methods from firing when this request would trigger them. This can be useful to, for example, suppress a loading indicator that was implemented with <code><a href="/ajaxSend">.ajaxSend()</a></code> if the requests are frequent and brief. With cross-domain script and JSONP requests, the global option is automatically set to <code>false</code>. See the descriptions of these methods below for more details.  See the descriptions of these methods below for more details.</p>
     <p>If the server performs HTTP authentication before providing a response, the user name and password pair can be sent via the <code>username</code> and <code>password</code> options.</p>
@@ -292,7 +292,7 @@ jQuery.ajaxSettings.xhr = function () {
     <p><strong>As of jQuery 1.5</strong>, jQuery's Ajax implementation includes <a href="/jQuery.ajaxPrefilter/">prefilters</a>, <a href="/jQuery.ajaxTransport/">transports</a>, and converters that allow you to extend Ajax with a great deal of flexibility.</p>
 
     <h4 id="using-converters">Using Converters</h4>
-    <p><code>$.ajax()</code> converters support mapping data types to other data types. If, however, you want to map a custom data type to a known type (e.g <code>json</code>), you must added a correspondance between the response Content-Type and the actual data type using the <code>contents</code> option:</p>
+    <p><code>$.ajax()</code> converters support mapping data types to other data types. If, however, you want to map a custom data type to a known type (e.g <code>json</code>), you must add a correspondance between the response Content-Type and the actual data type using the <code>contents</code> option:</p>
     <pre><code>
 $.ajaxSetup({
   contents: {
@@ -306,7 +306,7 @@ $.ajaxSetup({
   }
 });
 </code></pre>
-    <p>This extra map is necessary because the response Content-Types and data types never have a strict one-to-one correspondance (hence the regular expression).</p>
+    <p>This extra object is necessary because the response Content-Types and data types never have a strict one-to-one correspondance (hence the regular expression).</p>
     <p>To convert from a supported type (e.g <code>text</code>, <code>json</code>) to a custom data type and back again, use another pass-through converter:</p>
     <pre><code>
 $.ajaxSetup({

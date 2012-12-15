@@ -10,7 +10,7 @@
   <signature>
     <added>1.4.3</added>
     <argument name="eventData" type="PlainObject" optional="true">
-      <desc>A map of data that will be passed to the event handler.</desc>
+      <desc>An object containing data that will be passed to the event handler.</desc>
     </argument>
     <argument name="handler(eventObject)" type="Function">
       <desc>A function to execute each time the event is triggered.</desc>

@@ -113,7 +113,7 @@ var dimensions = { width: 10, height: 15, length: 20 },
     <results><![CDATA[["width", "height", "length"] ]]></results>
   </example>
   <example>
-    <desc>Maps the original array to a new one; each element is squared.</desc>
+    <desc>Map the original array to a new one; each element is squared.</desc>
     <code><![CDATA[
 $.map( [0,1,2,3], function (a) {
   return a * a;

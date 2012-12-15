@@ -17,7 +17,7 @@
       <desc>A string containing a JavaScript event type, such as "click" or "keydown." As of jQuery 1.4 the string can contain multiple, space-separated event types or custom event names.</desc>
     </argument>
     <argument name="data" type="PlainObject">
-      <desc>A map of data that will be passed to the event handler.</desc>
+      <desc>An object containing data that will be passed to the event handler.</desc>
     </argument>
     <argument name="handler(eventObject)" type="Function">
       <desc>A function to execute at the time the event is triggered.</desc>
@@ -26,7 +26,7 @@
   <signature>
     <added>1.4.3</added>
     <argument name="events" type="PlainObject">
-      <desc>A map of one or more JavaScript event types and functions to execute for them.</desc>
+      <desc>A plain object of one or more JavaScript event types and functions to execute for them.</desc>
     </argument>
   </signature>
   <longdesc>
@@ -38,7 +38,7 @@ $(<em>selector</em>).live(<em>events</em>, <em>data</em>, <em>handler</em>);    
 $(document).delegate(<em>selector</em>, <em>events</em>, <em>data</em>, <em>handler</em>);  // jQuery 1.4.3+
 $(document).on(<em>events</em>, <em>selector</em>, <em>data</em>, <em>handler</em>);        // jQuery 1.7+
 </code></pre>
-    <p>The <code>events</code> argument can either be a space-separated list of event type names and optional namespaces, or an <code>event-map</code> of event names strings and handlers. The <code>data</code> argument is optional and can be omitted. For example, the following three method calls are functionally equivalent (but see below for more effective and performant ways to attach delegated event handlers):</p>
+    <p>The <code>events</code> argument can either be a space-separated list of event type names and optional namespaces, or an object of event name strings and handlers. The <code>data</code> argument is optional and can be omitted. For example, the following three method calls are functionally equivalent (but see below for more effective and performant ways to attach delegated event handlers):</p>
     <pre><code>
 $("a.offsite").live("click", function(){ alert("Goodbye!"); });                // jQuery 1.3+
 $(document).delegate("a.offsite", "click", function(){ alert("Goodbye!"); });  // jQuery 1.4.3+
@@ -113,7 +113,7 @@ $("button").click(function () {
   ]]></html>
   </example>
   <example>
-    <desc>Use a map to bind multiple live event handlers. Note that .live() calls the click, mouseover, and mouseout event handlers for all paragraphs--even new ones.</desc>
+    <desc>Use an object to bind multiple live event handlers. Note that .live() calls the click, mouseover, and mouseout event handlers for all paragraphs--even new ones.</desc>
     <code><![CDATA[
 $("p").live({
   click: function() {

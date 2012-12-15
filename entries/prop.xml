@@ -109,7 +109,7 @@ $("input").change(function() {
     <signature>
       <added>1.6</added>
       <argument name="properties" type="PlainObject">
-        <desc>A map of property-value pairs to set.</desc>
+        <desc>An object of property-value pairs to set.</desc>
       </argument>
     </signature>
     <signature>
