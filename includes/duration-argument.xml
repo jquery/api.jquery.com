@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<argument name="duration" default="400">
+<argument name="duration" default="400" optional="true">
 	<desc>A string or number determining how long the animation will run.</desc>
 	<type name="Number"/>
 	<type name="String"/>
