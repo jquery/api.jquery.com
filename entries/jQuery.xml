@@ -174,7 +174,8 @@ var el = $( "1&lt;br/&gt;2&lt;br/&gt;3" ); // returns [&lt;br&gt;, "2", &lt;br&g
 el  = $( "1&lt;br/&gt;2&lt;br/&gt;3 &gt;" ); // returns [&lt;br&gt;, "2", &lt;br&gt;, "3 &amp;gt;"]
 </code></pre>
       <p>This behavior is expected. </p>
-      <p>As of jQuery 1.4, the second argument to <code>jQuery()</code> can accept a plain object consisting of a superset of the properties that can be passed to the <a href="/attr">.attr()</a> method. Furthermore, any <a href="/category/events/">event type</a> can be passed in, and the following jQuery methods can be called: <a href="/val">val</a>, <a href="/css">css</a>, <a href="/html">html</a>, <a href="/text">text</a>, <a href="/data">data</a>, <a href="/width">width</a>, <a href="/height">height</a>, or <a href="/offset">offset</a>.</p>
+      <p>As of jQuery 1.4, the second argument to <code>jQuery()</code> can accept a plain object consisting of a superset of the properties that can be passed to the <a href="/attr">.attr()</a> method.</p>
+      <p><strong>Important:</strong> If the second argument is passed, the HTML string in the first argument must represent a a simple element with no attributes. <strong>As of jQuery 1.4</strong>, any <a href="/category/events/">event type</a> can be passed in, and the following jQuery methods can be called: <a href="/val">val</a>, <a href="/css">css</a>, <a href="/html">html</a>, <a href="/text">text</a>, <a href="/data">data</a>, <a href="/width">width</a>, <a href="/height">height</a>, or <a href="/offset">offset</a>.</p>
       <p><strong>As of jQuery 1.8</strong>, any jQuery instance method (a method of <code>jQuery.fn</code>) can be used as a property of the object passed to the second parameter:</p>
       <pre><code>
 $( "<div></div>", {
@@ -187,6 +188,16 @@ $( "<div></div>", {
 }).appendTo( "body" );
       </code></pre>
       <p>The name <code>"class"</code> must be quoted in the object since it is a JavaScript reserved word, and <code>"className"</code> cannot be used since it refers to the DOM property, not the attribute. </p>
+      <p>While the second argument is convenient, its flexibility can lead to unintended consequences (e.g. <code>$("&lt;input&gt;", {size: "4"})</code> calling the <code>.size()</code> method instead of setting the size attribute). The previous code block could thus be written instead as:</p>
+<pre><code>
+$( "<div></div>" )
+.addClass( "my-div" )
+.on({
+  touchstart: function( event ) {
+    // do something
+  }
+}).appendTo( "body" );
+</code></pre>
     </longdesc>
     <example>
       <desc>Create a div element (and all of its contents) dynamically and append it to the body element. Internally, an element is created and its innerHTML property set to the given markup.</desc>
