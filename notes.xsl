@@ -37,6 +37,9 @@
 		<xsl:when test="@id = 'ajax-global-false'">
 			If <code><a href="/jQuery.Ajax/">$.ajax()</a></code> or <code><a href="/jQuery.ajaxSetup/">$.ajaxSetup()</a></code> is called with the <code>global</code> option set to <code>false</code>, the <code><xsl:value-of select="@data-title"/></code> method will not fire.
 		</xsl:when>
+		<xsl:when test="@id = 'slide-in-ie'">
+			If <code><xsl:value-of select="@data-title"/></code> is called on an unordered list (<code>&lt;ul&gt;</code>) and its <code>&lt;li&gt;</code> elements have position (relative, absolute, or fixed), the effect may not work properly in IE6 through at least IE9 unless the <code>&lt;ul&gt;</code> has "layout." To remedy the problem, add the <code>position: relative;</code> and <code>zoom: 1;</code> CSS declarations to the <code>ul</code>.
+		</xsl:when>
 	</xsl:choose>
 </xsl:template>
 </xsl:stylesheet>
