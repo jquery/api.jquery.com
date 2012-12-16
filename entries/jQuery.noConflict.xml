@@ -10,6 +10,7 @@
   <desc>Relinquish jQuery's control of the <code>$</code> variable.</desc>
   <longdesc>
     <p>Many JavaScript libraries use <code>$</code> as a function or variable name, just as jQuery does. In jQuery's case, <code>$</code> is just an alias for <code>jQuery</code>, so all functionality is available without using <code>$</code>. If you need to use another JavaScript library alongside jQuery, return control of <code>$</code> back to the other library with a call to <code>$.noConflict()</code>. Old references of <code>$</code> are saved during jQuery initialization; <code>noConflict()</code> simply restores them.</p>
+    <p>If for some reason two versions of jQuery are loaded (which is not recommended), calling <code>$.noConflict(true)</code> from the second version will return the globally scoped jQuery variables to those of the first version.</p>
     <pre><code>
 &lt;script type="text/javascript" src="other_lib.js"&gt;&lt;/script&gt;
 &lt;script type="text/javascript" src="jquery.js"&gt;&lt;/script&gt;
@@ -70,6 +71,32 @@ $("content").style.display = 'none';
 // Do something with another version of jQuery
 jQuery("div > p").hide();]]></results>
   </example>
+  <example>
+    <desc>Load two versions of jQuery (not recommended). Then, restore jQuery's globally scoped variables to the first loaded jQuery.</desc>
+    <html><![CDATA[
+<div id="log">
+  <h3>Before $.noConflict(true)</h3>
+</div>
+<script src="http://code.jquery.com/jquery-1.6.2.js"></script>
+]]></html>
+    <code><![CDATA[
+var $log = $( "#log" );
+
+$log.append( "2nd loaded jQuery version ($): " + $.fn.jquery + "<br>" );
+
+/*
+Restore globally scoped jQuery variables to the first version loaded
+(the newer version)
+*/
+jq162 = jQuery.noConflict(true);
+
+$log.append( "<h3>After $.noConflict(true)</h3>" );
+$log.append( "1st loaded jQuery version ($): " + $.fn.jquery + "<br>" );
+$log.append( "2nd loaded jQuery version (jq162): " + jq162.fn.jquery + "<br>" );
+]]></code>
+
+  </example>
+
   <category slug="core"/>
   <category slug="miscellaneous/setup-methods"/>
   <category slug="version/1.0"/>
