@@ -2,7 +2,7 @@
 <entry type="method" name="addBack" return="jQuery">
   <title>.addBack()</title>
   <signature>
-    <added>1.6</added>
+    <added>1.8</added>
     <argument name="selector" type="Selector" optional="true">
       <desc>A string containing a selector expression to match the current set of elements against.</desc>
     </argument>
@@ -62,5 +62,5 @@ p, div { margin:5px; padding:5px; }
 ]]></html>
   </example>
   <category slug="traversing/miscellaneous-traversal"/>
-  <category slug="version/1.2"/>
+  <category slug="version/1.8"/>
 </entry>
