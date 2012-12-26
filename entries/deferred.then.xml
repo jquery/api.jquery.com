@@ -2,7 +2,26 @@
 <entry name="deferred.then" type="method" return="Promise">
   <title>deferred.then()</title>
   <signature>
+    <added>1.8</added>
+    <argument name="doneFilter" type="Function">
+      <desc>
+        A function that is called when the Deferred is resolved.
+      </desc>
+    </argument>
+    <argument name="failFilter" type="Function" optional="true">
+      <desc>
+        An optional function that is called when the Deferred is rejected.
+      </desc>
+    </argument>
+    <argument name="progressFilter" type="Function" optional="true">
+      <desc>
+        An optional function that is called when progress notifications are sent to the Deferred.
+      </desc>
+    </argument>
+  </signature>
+  <signature>
     <added>1.5</added>
+    <removed>1.8</removed>
     <argument name="doneCallbacks" type="Function">
       <desc>
         A function, or array of functions, called when the Deferred is resolved.
@@ -16,6 +35,7 @@
   </signature>
   <signature>
     <added>1.7</added>
+    <removed>1.8</removed>
     <argument name="doneCallbacks" type="Function">
       <desc>
         A function, or array of functions, called when the Deferred is resolved.
@@ -32,10 +52,14 @@
       </desc>
     </argument>
   </signature>
-  <desc> Add handlers to be called when the Deferred object is resolved or rejected. </desc>
+  <desc>Add handlers to be called when the Deferred object is resolved, rejected, or still in progress. </desc>
+
   <longdesc>
-    <p>All three arguments (including progressCallbacks, as of jQuery 1.7) can be either a single function or an array of functions. The arguments can also be <code>null</code> if no callback of that type is desired. Alternatively, use <code>.done()</code>, <code>.fail()</code> or <code>.progress()</code> to set only one type of callback. </p>
-    <p>When the Deferred is resolved, the doneCallbacks are called. If the Deferred is instead rejected, the failCallbacks are called. As of jQuery 1.7, the <code>deferred.notify()</code> or <code>deferred.notifyWith()</code> methods can be called to invoke the progressCallbacks as many times as desired before the Deferred is resolved or rejected.</p>
+    <p><strong>Prior to jQuery 1.8</strong>, the arguments could be a function or an array of functions.</p>
+    <p>For all signatures, the arguments can be <code>null</code> if no callback of that type is desired. Alternatively, use <code>.done()</code>, <code>.fail()</code> or <code>.progress()</code> to set only one type of callback without filtering status or values. </p>
+
+    <p><strong>As of jQuery 1.8</strong>, the <code>deferred.then()</code> method returns a new promise that can filter the status and values of a deferred through a function, replacing the now-deprecated <code>deferred.pipe()</code> method. The <code>doneFilter</code> and <code>failFilter</code> functions filter the original deferred's resolved / rejected status and values. The <code>progressFilter</code> function filters any calls to the original deferred's <code>notify</code> or <code>notifyWith</code> methods. These filter functions can return a new value to be passed along to the promise's <code>.done()</code> or <code>.fail()</code> callbacks, or they can return another observable object (Deferred, Promise, etc) which will pass its resolved / rejected status and values to the promise's callbacks. If the filter function used is <code>null</code>, or not specified, the promise will be resolved or rejected with the same values as the original.</p>
+
     <p>Callbacks are executed in the order they were added. Since
       <code>deferred.then</code> returns a Promise, other methods of the
       Promise object can be chained to this one, including additional
@@ -49,6 +73,58 @@ $.get("test.php").then(
     function(){ alert("$.get succeeded"); },
     function(){ alert("$.get failed!"); }
 );
+]]></code>
+  </example>
+  <example>
+    <desc>Filter the resolve value:</desc>
+    <html><![CDATA[
+<button>Filter Resolve</button>
+<p></p>
+]]></html>
+    <code><![CDATA[
+var filterResolve = function() {
+
+  var defer = $.Deferred(),
+      filtered = defer.then(function( value ) {
+        return value * 2;
+      });
+
+  defer.resolve( 5 );
+  filtered.done(function( value ) {
+    $( "p" ).html( "Value is ( 2*5 = ) 10: " + value );
+  });
+};
+
+$( "button" ).on( "click", filterResolve );
+]]></code>
+
+  </example>
+  <example>
+    <desc>Filter reject value:</desc>
+    <code><![CDATA[
+var defer = $.Deferred(),
+    filtered = defer.then( null, function( value ) {
+      return value * 3;
+    });
+
+defer.reject( 6 );
+filtered.fail(function( value ) {
+  alert( "Value is ( 3*6 = ) 18: " + value );
+});
+]]></code>
+  </example>
+  <example>
+    <desc>Chain tasks:</desc>
+    <code><![CDATA[
+var request = $.ajax( url, { dataType: "json" } ),
+    chained = request.then(function( data ) {
+      return $.ajax( url2, { data: { user: data.userId } } );
+    });
+
+chained.done(function( data ) {
+  // data retrieved from url2 as provided by the first request
+});
+
 ]]></code>
   </example>
   <category slug="deferred-object"/>

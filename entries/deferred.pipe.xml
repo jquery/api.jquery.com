@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<entry name="deferred.pipe" type="method" return="Promise">
+<entry name="deferred.pipe" type="method" return="Promise" deprecated="1.8">
   <title>deferred.pipe()</title>
   <signature>
     <added>1.6</added>
@@ -34,6 +34,7 @@
   </signature>
   <desc> Utility method to filter and/or chain Deferreds.  </desc>
   <longdesc>
+    <p><strong>Deprecation Notice:</strong>As of jQuery 1.8, the deferred.pipe() method is deprecated. The <code>deferred.then()</code> method, which replaces it, should be used instead.</p>
     <p>The <code>deferred.pipe()</code> method returns a new promise that filters the status and values of a deferred through a function.  The <code>doneFilter</code> and <code>failFilter</code> functions filter the original deferred's resolved / rejected status and values. <strong>As of jQuery 1.7</strong>, the method also accepts a <code>progressFilter</code> function to filter any calls to the original deferred's <code>notify</code> or <code>notifyWith</code> methods. These filter functions can return a new value to be passed along to the piped promise's <code>done()</code> or <code>fail()</code> callbacks, or they can return another observable object (Deferred, Promise, etc) which will pass its resolved / rejected status and values to the piped promise's callbacks. If the filter function used is <code>null</code>, or not specified, the piped promise will be resolved or rejected with the same values as the original.</p>
   </longdesc>
   <example>
@@ -81,4 +82,5 @@ chained.done(function( data ) {
   <category slug="deferred-object"/>
   <category slug="version/1.6"/>
   <category slug="version/1.7"/>
+  <category slug="version/1.8"/>
 </entry>
