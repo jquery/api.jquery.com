@@ -102,7 +102,7 @@
         <desc>By default, data passed in to the data option as an object (technically, anything other than a string) will be processed and transformed into a query string, fitting to the default content-type "application/x-www-form-urlencoded". If you want to send a DOMDocument, or other non-processed data, set this option to <code>false</code>.</desc>
       </property>
       <property name="scriptCharset" type="String">
-        <desc>Only for requests with "jsonp" or "script" dataType and "GET" type. Forces the request to be interpreted as a certain charset. Only needed for charset differences between the remote and local content.</desc>
+        <desc>Only applies when the "script" transport is used (e.g., cross-domain requests with "jsonp" or "script" dataType and "GET" type). Sets the <code>charset</code> attribute on the script tag used in the request. Used when the character set on the local page is not the same as the one on the remote script.</desc>
       </property>
       <property name="statusCode" type="PlainObject" default="{}" added="1.5">
         <desc>
