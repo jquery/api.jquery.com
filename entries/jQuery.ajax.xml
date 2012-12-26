@@ -163,7 +163,7 @@
     <p>At its simplest, the <code>$.ajax()</code> function can be called with no arguments:</p>
     <pre><code>$.ajax();</code></pre>
     <p><strong>Note:</strong> Default settings can be set globally by using the <code><a href="/jQuery.ajaxSetup">$.ajaxSetup()</a></code> function.</p>
-    <p>This example, using no options, loads the contents of the current page, but does nothing with the result. To use the result, we can implement one of the callback functions.</p>
+    <p>This example, using no options, loads the contents of the current page, but does nothing with the result. To use the result, you can implement one of the callback functions.</p>
     <h4 id="jqXHR">The jqXHR Object</h4>
     <p>The jQuery XMLHttpRequest (jqXHR) object returned by <code>$.ajax()</code> <strong>as of jQuery 1.5</strong> is a superset of the browser's native XMLHttpRequest object. For example, it contains <code>responseText</code> and <code>responseXML</code> properties, as well as a <code>getResponseHeader()</code> method. When the transport mechanism is something other than XMLHttpRequest (for example, a script tag for a JSONP request) the <code>jqXHR</code> object simulates native XHR functionality where possible. </p>
     <p><strong>As of jQuery 1.5.1</strong>, the <code>jqXHR</code> object also contains the <code>overrideMimeType()</code> method (it was available in jQuery 1.4.x, as well, but was temporarily removed in jQuery 1.5). The <code>.overrideMimeType()</code> method may be used in the <code>beforeSend()</code> callback function, for example, to modify the response content-type header:</p>
@@ -179,7 +179,28 @@ $.ajax({
   }
 });
 </code></pre>
-    <p>The jqXHR objects returned by <code>$.ajax()</code> as of jQuery 1.5 implement the Promise interface, giving them all the properties, methods, and behavior of a Promise (see <a href="http://api.jquery.com/category/deferred-object/">Deferred object</a> for more information). These methods take a function argument that is called when the <code>$.ajax()</code> request terminates, and the function receives the same arguments as the correspondingly-named <code>$.ajax()</code> callback. This allows you to assign multiple callbacks on a single request, and even to assign callbacks after the request may have completed. (If the request is already complete, the callback is fired immediately.)</p>
+    <p>The jqXHR objects returned by <code>$.ajax()</code> as of jQuery 1.5 implement the Promise interface, giving them all the properties, methods, and behavior of a Promise (see <a href="http://api.jquery.com/category/deferred-object/">Deferred object</a> for more information). These methods take one or more function arguments that are called when the <code>$.ajax()</code> request terminates. This allows you to assign multiple callbacks on a single request, and even to assign callbacks after the request may have completed. (If the request is already complete, the callback is fired immediately.) Available Promise methods of the jqXHR object include: </p>
+    <ul>
+      <li>
+        <strong>jqXHR.done(function(data, textStatus, jqXHR) {});</strong>
+        <p>An alternative construct to the success callback option, the <code>.done()</code> method replaces the deprecated <code>jqXHR.success()</code> method. Refer to <code><a href="/deferred.done/">deferred.done()</a></code> for implementation details.</p>
+      </li>
+      <li>
+        <strong>jqXHR.fail(function(jqXHR, textStatus, errorThrown) {});</strong>
+        <p>An alternative construct to the error callback option, the <code>.fail()</code> method replaces the deprecated <code>.error()</code> method. Refer to <code><a href="/deferred.fail/">deferred.fail()</a></code> for implementation details.
+        </p>
+      </li>
+      <li>
+        <strong>jqXHR.always(function(data|jqXHR, textStatus, jqXHR|errorThrown) { });</strong>
+        <p>An alternative construct to the complete callback option, the <code>.always()</code> method replaces the deprecated <code>.complete()</code> method.</p>
+        <p>In response to a successful request, the function's arguments are the same as those of <code>.done()</code>: data, textStatus, and the jqXHR object. For failed requests the arguments are the same as those of <code>.fail()</code>: the jqXHR object, textStatus, and errorThrown. Refer to <code><a href="/deferred.always/">deferred.always()</a></code> for implementation details.</p>
+      </li>
+      <li>
+        <strong>jqXHR.then(function(data, textStatus, jqXHR) {}, function(jqXHR, textStatus, errorThrown) {});</strong>
+        <p>Incorporates the functionality of the <code>.done()</code> and <code>.fail()</code> methods, allowing (as of jQuery 1.8) the underlying Promise to be manipulated. Refer to <a href="/deferred.then/"><code>deferred.then()</code></a> for implementation details.
+        </p>
+      </li>
+    </ul>
     <blockquote>
       <p><strong>Deprecation Notice:</strong> The <code>jqXHR.success()</code>, <code>jqXHR.error()</code>, and <code>jqXHR.complete()</code> callbacks are deprecated as of jQuery 1.8. To prepare your code for their eventual removal, use <code>jqXHR.done()</code>, <code>jqXHR.fail()</code>, and <code>jqXHR.always()</code> instead.</p>
     </blockquote>
@@ -194,6 +215,7 @@ var jqxhr = $.ajax( "example.php" )
 
 // Set another completion function for the request above
 jqxhr.always(function() { alert("second complete"); });</code></pre>
+    <p>The <code>this</code> reference within all callbacks is the object in the <code>context</code> option passed to <code>$.ajax</code> in the settings; if <code>context</code> is not specified, <code>this</code> is a reference to the Ajax settings themselves.</p>
     <p>For backward compatibility with <code>XMLHttpRequest</code>, a <code>jqXHR</code> object will expose the following properties and methods:</p>
     <ul>
       <li>
@@ -220,25 +242,17 @@ jqxhr.always(function() { alert("second complete"); });</code></pre>
     <p>No <code>onreadystatechange</code> mechanism is provided, however, since <code>success</code>, <code>error</code>, <code>complete</code> and <code>statusCode</code> cover all conceivable requirements.</p>
     <h4 id="callback-functions">Callback Function Queues</h4>
     <p>The <code>beforeSend</code>, <code>error</code>, <code>dataFilter</code>, <code>success</code> and <code>complete</code> options all accept callback functions that are invoked at the appropriate times.</p>
-    <p><strong>As of jQuery 1.5</strong>, the <code>error</code> (<code>fail</code>), <code>success</code> (<code>done</code>), and <code>complete</code> (<code>always</code>, as of jQuery 1.6) callback hooks are first-in, first-out managed queues. This means you can assign more than one callback for each hook. See <a href="http://api.jquery.com/category/deferred-object/">Deferred object methods</a>, which are implemented internally for these <code>$.ajax()</code> callback hooks.</p>
-    <p>The <code>this</code> reference within all callbacks is the object in the <code>context</code> option passed to <code>$.ajax</code> in the settings; if <code>context</code> is not specified, <code>this</code> is a reference to the Ajax settings themselves.</p>
-    <p>Some types of Ajax requests, such as JSONP and cross-domain GET requests, do not use XHR; in those cases the <code>XMLHttpRequest</code> and <code>textStatus</code> parameters passed to the callback are <code>undefined</code>.</p>
-    <p>Here are the callback hooks provided by <code>$.ajax()</code>:</p>
+    <p><strong>As of jQuery 1.5</strong>, the <code>fail</code> and <code>done</code>, and, as of jQuery 1.6, <code>always</code> callback hooks are first-in, first-out managed queues, allowing for more than one callback for each hook. See <a href="http://api.jquery.com/category/deferred-object/">Deferred object methods</a>, which are implemented internally for these <code>$.ajax()</code> callback hooks.</p>
+    <p>The callback hooks provided by <code>$.ajax()</code> are as follows:</p>
     <ol>
-      <li><code>beforeSend</code> callback is invoked; it receives the <code>jqXHR</code> object and the <code>settings</code> object as parameters.</li>
-      <li><code>error</code> callbacks are invoked, in the order they are registered, if the request fails. They receive the <code>jqXHR</code>, a string indicating the error type, and an exception object if applicable. Some built-in errors will provide a string as the exception object: "abort", "timeout", "No Transport".</li>
-      <li><code>dataFilter</code> callback is invoked immediately upon successful receipt of response data. It receives the returned data and the value of <code>dataType</code>, and must return the (possibly altered) data to pass on to <code>success</code>.</li>
-      <li><code>success</code> callbacks are then invoked, in the order they are registered, if the request succeeds. They receive the returned data, a string containing the success code, and the <code>jqXHR</code> object.</li>
-      <li><code>complete</code> callbacks fire, in the order they are registered, when the request finishes, whether in failure or success. They receive the <code>jqXHR</code> object, as well as a string containing the success or error code.</li>
+      <li><code>beforeSend</code> callback option is invoked; it receives the <code>jqXHR</code> object and the <code>settings</code> object as parameters.</li>
+      <li><code>error</code> callback option is invoked, if the request fails. It receives the <code>jqXHR</code>, a string indicating the error type, and an exception object if applicable. Some built-in errors will provide a string as the exception object: "abort", "timeout", "No Transport".</li>
+      <li><code>dataFilter</code> callback option is invoked immediately upon successful receipt of response data. It receives the returned data and the value of <code>dataType</code>, and must return the (possibly altered) data to pass on to <code>success</code>.</li>
+      <li><code>success</code> callback option is invoked, if the request succeeds. It receives the returned data, a string containing the success code, and the <code>jqXHR</code> object.</li>
+      <li><strong>Promise callbacks</strong> — <code>.done()</code>, <code>.fail()</code>, <code>.always()</code>, and <code>.then()</code> — are invoked, in the order they are registered. </li>
+      <li><code>complete</code> callback option fires, when the request finishes, whether in failure or success. It receives the <code>jqXHR</code> object, as well as a string containing the success or error code.</li>
     </ol>
-    <p>For example, to make use of the returned HTML, we can implement a <code>success</code> handler:</p>
-    <pre><code>$.ajax({
-  url: 'ajax/test.html',
-  success: function(data) {
-    $('.result').html(data);
-    alert('Load was performed.');
-  }
-});</code></pre>
+
     <h4 id="data-types">Data Types</h4>
     <p>The <code>$.ajax()</code> function relies on the server to provide information about the retrieved data. If the server reports the return data as XML, the result can be traversed using normal XML methods or jQuery's selectors. If another type is detected, such as HTML in the example above, the data is treated as text.</p>
     <p>Different data handling can be achieved by using the <code>dataType</code> option. Besides plain <code>xml</code>, the <code>dataType</code> can be <code>html</code>, <code>json</code>, <code>jsonp</code>, <code>script</code>, or <code>text</code>.</p>
