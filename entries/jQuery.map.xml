@@ -21,7 +21,7 @@
   </signature>
   <desc>Translate all items in an array or object to new array of items.</desc>
   <longdesc>
-    <p>If you wish to process a jQuery object — for example, <code>$('div').map( callback );</code> — use <a href="/jQuery.map/">.map()</a> instead. </p>
+    <p>If you wish to process a jQuery object — for example, <code>$('div').map( callback );</code> — use <a href="/map/">.map()</a> instead. </p>
     <p>The <code>$.map()</code> method applies a function to each item in an array or object and maps the results into a new array. <strong>Prior to jQuery 1.6</strong>, <code>$.map()</code> supports traversing <em>arrays only</em>. <strong>As of jQuery 1.6</strong> it also traverses objects.</p>
     <p>Array-like objects &#x2014; those with a <code>.length</code> property <em>and</em> a value on the <code>.length - 1</code> index &#x2014; must be converted to actual arrays before being passed to <code>$.map()</code>. The jQuery library provides <a href="http://api.jquery.com/jQuery.makeArray/">$.makeArray()</a> for such conversions.</p>
     <pre>
@@ -47,7 +47,7 @@ $.map( realArray, function(val, i) {
     </ul>
   </longdesc>
   <example>
-    <desc>A couple examples of using .map()</desc>
+    <desc>Use $.map() to change the values of an array.</desc>
     <code><![CDATA[
     var arr = [ "a", "b", "c", "d", "e" ];
     $("div").text(arr.join(", "));
@@ -81,7 +81,7 @@ $.map( realArray, function(val, i) {
     <results><![CDATA[[4, 5, 6] ]]></results>
   </example>
   <example>
-    <desc>Maps the original array to a new one and adds 1 to each value if it is bigger then zero, otherwise it's removed.</desc>
+    <desc>Map the original array to a new one, adding 1 to each value if it is bigger then zero and removing it if not.</desc>
     <code><![CDATA[$.map( [0,1,2], function(n){
   return n > 0 ? n + 1 : null;
 });]]></code>
@@ -101,15 +101,15 @@ var dimensions = { width: 10, height: 15, length: 20 };
 dimensions = $.map( dimensions, function( value, index ) {
   return value * 2;
 }); ]]></code>
-    <results><![CDATA[[20, 30, 40] ]]></results>
+    <results><![CDATA[ [20, 30, 40] ]]></results>
   </example>
   <example>
     <desc>Map an object's keys to an array.</desc>
     <code><![CDATA[
-var dimensions = { width: 10, height: 15, length: 20 },
-    keys = $.map( dimensions, function( value, index ) {
-      return index;
-    }); ]]></code>
+var dimensions = { width: 10, height: 15, length: 20 };
+var keys = $.map( dimensions, function( value, key ) {
+  return key;
+}); ]]></code>
     <results><![CDATA[["width", "height", "length"] ]]></results>
   </example>
   <example>
@@ -121,7 +121,7 @@ $.map( [0,1,2,3], function (a) {
     <results><![CDATA[[0, 1, 4, 9] ]]></results>
   </example>
   <example>
-    <desc>Remove items by returning <code>null</code> from the function. This removes any numbers less than 50, and the rest are decreased by 45.</desc>
+    <desc>Map the original array to a new one, removing numbers less than 50 by returning <code>null</code> and subtracting 45 from the rest.</desc>
     <code><![CDATA[
 $.map( [0, 1, 52, 97], function (a) {
   return (a > 50 ? a - 45 : null);
@@ -129,7 +129,7 @@ $.map( [0, 1, 52, 97], function (a) {
     <results><![CDATA[[7, 52] ]]></results>
   </example>
   <example>
-    <desc>Augmenting the resulting array by returning an array inside the function.</desc>
+    <desc>Augment the resulting array by returning an array inside the function.</desc>
     <code><![CDATA[var array = [0, 1, 52, 97];
 array = $.map(array, function(a, index) {
   return [a - 45, index];
