@@ -43,7 +43,10 @@
   <example>
     <desc>Prepends all spans to the element with the ID "foo"</desc>
     <css><![CDATA[div { background:yellow; }]]></css>
-    <code><![CDATA[$("span").prependTo("#foo"); // check prepend() examples]]></code>
+    <code><![CDATA[
+// Check prepend() for more examples
+$("span").prependTo("#foo");
+]]></code>
     <html><![CDATA[<div id="foo">FOO!</div>
 
   <span>I have something to say... </span>]]></html>
