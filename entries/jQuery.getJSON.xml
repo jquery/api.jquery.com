@@ -17,10 +17,10 @@
   <longdesc>
     <p>This is a shorthand Ajax function, which is equivalent to:</p>
     <pre><code>$.ajax({
-  url: <em>url</em>,
-  dataType: 'json',
-  data: <em>data</em>,
-  success: <em>callback</em>
+  dataType: "json",
+  url: url,
+  data: data,
+  success: success
 });
 </code></pre>
     <p>Data that is sent to the server is appended to the URL as a query string. If the value of the <code>data</code> parameter is a plain object, it is converted to a string and url-encoded before it is appended to the URL.</p>

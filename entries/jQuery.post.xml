@@ -20,11 +20,11 @@
   <longdesc>
     <p>This is a shorthand Ajax function, which is equivalent to:</p>
     <pre><code>$.ajax({
-  type: 'POST',
-  url: <em>url</em>,
-  data: <em>data</em>,
-  success: <em>success</em>,
-  dataType: <em>dataType</em>
+  type: "POST",
+  url: url,
+  data: data,
+  success: success,
+  dataType: dataType
 });
 </code></pre>
     <p>The <code>success</code> callback function is passed the returned data, which will be an XML root element or a text string depending on the MIME type of the response. It is also passed the text status of the response.</p>

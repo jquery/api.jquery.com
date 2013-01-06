@@ -14,9 +14,9 @@
   <longdesc>
     <p>This is a shorthand Ajax function, which is equivalent to:</p>
     <pre><code>$.ajax({
-  url: <em>url</em>,
+  url: url,
   dataType: "script",
-  success: <em>success</em>
+  success: success
 });
 </code></pre>
     <p>The script is executed in the global context, so it can refer to other variables and use jQuery functions. Included scripts can have some impact on the current page.</p>
