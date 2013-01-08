@@ -52,7 +52,7 @@
     <p>Note that <code>keydown</code> and <code>keyup</code> provide a code indicating which key is pressed, while <code>keypress</code> indicates which character was entered. For example, a lowercase "a" will be reported as 65 by <code>keydown</code> and <code>keyup</code>, but as 97 by <code>keypress</code>. An uppercase "A" is reported as 65 by all events. Because of this distinction, when catching special keystrokes such as arrow keys, <code>.keydown()</code> or <code>.keyup()</code> is a better choice.</p>
   </longdesc>
   <example>
-    <desc>Show the event object when a key is pressed in the input. Note: This demo relies on a simple $.print() plugin (http://api.jquery.com/scripts/events.js) for the event object's output.</desc>
+    <desc>Show the event object when a key is pressed in the input. Note: This demo relies on a simple $.print() plugin (http://api.jquery.com/resources/events.js) for the event object's output.</desc>
     <code><![CDATA[
 var xTriggered = 0;
 $("#target").keypress(function(event) {
@@ -92,7 +92,7 @@ input { display: block; margin-bottom: .25em; }
 <button id="other">
   Trigger the handler
 </button>
-<script src="http://api.jquery.com/scripts/events.js"></script>
+<script src="http://api.jquery.com/resources/events.js"></script>
   ]]></html>
   </example>
   <category slug="events/keyboard-events"/>
