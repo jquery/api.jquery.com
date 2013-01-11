@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<entry type="method" name="stop" return="jQuery">
+  <title>.finish()</title>
+  <desc>Stop the currently-running animation, remove all queued animations, and complete all animations for the matched elements.</desc>
+  <signature>
+    <added>1.9</added>
+    <argument name="queue" type="String" optional="true">
+      <desc>The name of the queue in which to stop animations.</desc>
+    </argument>
+  </signature>
+  <longdesc>
+    <p>When <code>.finish()</code> is called on an element, the currently-running animation and all queued animations (if any) immediately stop and their CSS properties set to their target values. All queued animations are removed.</p>
+    <p>If the first argument is provided, only the animations in the queue represented by that string will be stopped.</p>
+    <p>The <code>.finish()</code> method is similar to <code>.stop(true, true)</code> in that it clears the queue and the current animation jumps to its end value. It differs, however, in that <code>.finish()</code> also causes the CSS property of all <em>queued</em> animations to jump to their end values, as well.</p>
+    <blockquote>
+      <p>Animations may be stopped globally by setting the property <code>$.fx.off</code> to <code>true</code>. When this is done, all animation methods will immediately set elements to their final state when called, rather than displaying an effect.</p>
+    </blockquote>
+  </longdesc>
+  <example>
+    <desc>Click the Go button once to start the animation, and then click the other buttons to see how they affect the current and queued animations.</desc>
+    <code><![CDATA[
+var horiz = $("#path").width() - 20,
+    vert = $("#path").height() - 20;
+
+var btns = {
+  bstt: function () {
+    $("div.box").stop(true, true);
+  },
+  bs: function () {
+    $("div.box").stop();
+  },
+  bsft: function () {
+    $("div.box").stop(false, true);
+  },
+  bf: function () {
+    $("div.box").finish();
+  },
+  bcf: function () {
+    $("div.box").clearQueue().finish();
+  },
+  bsff: function () {
+    $("div.box").stop(false, false);
+  },
+  bstf: function () {
+    $("div.box").stop(true, false);
+  },
+  bcs: function () {
+    $("div.box").clearQueue().stop();
+  }
+};
+
+
+$("button.b").on("click", function () {
+  btns[this.id]();
+});
+
+$("#go").on("click", function () {
+  $(".box")
+    .clearQueue()
+    .stop()
+    .css({
+    left: 10,
+    top: 10
+  })
+    .animate({
+    top: vert
+  }, 3000)
+    .animate({
+    left: horiz
+  }, 3000)
+    .animate({
+    top: 10
+  }, 3000);
+});
+]]></code>
+    <html><![CDATA[<div class="box"></div>
+<div id="path">
+  <button id="go">Go</button>
+  <br>
+  <button id="bstt" class="b">.stop(true,true)</button>
+  <button id="bcf" class="b">.clearQueue().finish()</button>
+  <br>
+  <button id="bstf" class="b">.stop(true, false)</button>
+  <button id="bcs" class="b">.clearQueue().stop()</button>
+  <br>
+  <button id="bsff" class="b">.stop(false, false)</button>
+  <button id="bs" class="b">.stop()</button>
+  <br>
+  <button id="bsft" class="b">.stop(false, true)</button>
+  <br>
+  <button id="bf" class="b">.finish()</button>
+</div>
+]]></html>
+    <css><![CDATA[.box {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 15px;
+  height: 15px;
+  background: black;
+}
+#path {
+  height: 244px;
+  font-size: 70%;
+  border-left: 2px dashed red;
+  border-bottom: 2px dashed green;
+  border-right: 2px dashed blue;
+}
+button {
+  width: 12em;
+  display: block;
+  text-align: left;
+  margin: 0 auto;
+}
+]]></css>
+  </example>
+  <category slug="effects/custom-effects"/>
+  <category slug="version/1.9"/>
+</entry>
