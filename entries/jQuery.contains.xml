@@ -7,19 +7,20 @@
       <desc>The DOM element that may contain the other element.</desc>
     </argument>
     <argument name="contained" type="Element">
-      <desc>The DOM element that may be contained by the other element.</desc>
+      <desc>The DOM element that may be contained by (a descendant of) the other element.</desc>
     </argument>
   </signature>
-  <desc>Check to see if a DOM element is within another DOM element.</desc>
+  <desc>Check to see if a DOM element is a descendant of another DOM element.</desc>
   <longdesc>
+    <p>The <code>$.contains()</code> method returns <code>true</code> if the DOM element provided by the second argument is a descendant of the DOM element provided by the first argument, whether it is a direct child or nested more deeply. Otherwise, it returns <code>false</code>. Only <em>element</em> nodes are supported; if the second argument is a text or comment node, <code>$.contains()</code> will return <code>false</code>.</p>
     <blockquote>
       <p><strong>Note:</strong> The first argument <em>must</em> be a DOM element, not a jQuery object or plain JavaScript object.</p>
     </blockquote>
   </longdesc>
   <example>
-    <desc>Check if an element is inside another. Text and comment nodes are not supported.</desc>
-    <code><![CDATA[jQuery.contains(document.documentElement, document.body); // true
-jQuery.contains(document.body, document.documentElement); // false]]></code>
+    <desc>Check if an element is a descendant of another.</desc>
+    <code><![CDATA[$.contains( document.documentElement, document.body ); // true
+$.contains( document.body, document.documentElement ); // false]]></code>
   </example>
   <category slug="utilities"/>
   <category slug="version/1.4"/>
