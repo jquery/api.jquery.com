@@ -10,14 +10,15 @@
     <p>The <code>:checked</code> selector works for checkboxes and radio buttons. For select elements, use the <code>:selected</code> selector.</p>
   </longdesc>
   <example>
-    <desc>Finds all input elements that are checked.</desc>
+    <desc>Determine how many input elements are checked.</desc>
     <code><![CDATA[
-function countChecked() {
-  var n = $("input:checked").length;
-  $("div").text(n + (n === 1 ? " is" : " are") + " checked!");
-}
+var countChecked = function() {
+  var n = $( "input:checked" ).length;
+  $( "div" ).text( n + (n === 1 ? " is" : " are") + " checked!" );
+};
 countChecked();
-$(":checkbox").click(countChecked);
+
+$( "input[type=checkbox]" ).on( "click", countChecked );
 ]]></code>
     <css><![CDATA[
   div { color:red; }
@@ -25,22 +26,23 @@ $(":checkbox").click(countChecked);
     <html><![CDATA[
 <form>
   <p>
-    <input type="checkbox" name="newsletter" checked="checked" value="Hourly" />
+    <input type="checkbox" name="newsletter" value="Hourly" checked="checked">
 
-    <input type="checkbox" name="newsletter" value="Daily" />
-    <input type="checkbox" name="newsletter" value="Weekly" />
+    <input type="checkbox" name="newsletter" value="Daily">
+    <input type="checkbox" name="newsletter" value="Weekly">
 
-    <input type="checkbox" name="newsletter" checked="checked" value="Monthly" />
-    <input type="checkbox" name="newsletter" value="Yearly" />
+    <input type="checkbox" name="newsletter" value="Monthly" checked>
+    <input type="checkbox" name="newsletter" value="Yearly">
   </p>
 </form>
 <div></div>
 ]]></html>
   </example>
   <example>
+    <desc>Identify the checked radio input.</desc>
     <code><![CDATA[
-$("input").click(function() {
-  $("#log").html( $(":checked").val() + " is checked!" );
+$( "input" ).on( "click", function() {
+  $( "#log" ).html( $("input:checked").val() + " is checked!" );
 });
 ]]></code>
     <css><![CDATA[
