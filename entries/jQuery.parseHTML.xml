@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<entry type="method" name="jQuery.parseHTML" return="Array">
+  <title>jQuery.parseHTML()</title>
+  <desc>Parses a string into an array of DOM nodes.</desc>
+  <signature>
+    <added>1.8</added>
+    <argument name="data" type="String">
+      <desc>HTML string to be parsed</desc>
+    </argument>
+    <argument name="context" type="Element" optional="true" default="document">
+      <desc>DOM element to serve as the context in which the HTML fragment will be created</desc>
+    </argument>
+    <argument name="keepScripts" type="Boolean" optional="true" default="false">
+      <desc>A Boolean indicating whether to include scripts passed in the HTML string</desc>
+    </argument>
+  </signature>
+  <longdesc>
+    <p><code>jQuery.parseHTML</code> uses a native DOM element creation function to convert the string to a set of DOM elements, which can then be inserted into the document.</p>
+  </longdesc>
+  <example>
+    <desc>Create an array of Dom nodes using an HTML string and insert it into a div.</desc>
+    <html><![CDATA[
+<div id="log"></div>
+]]></html>
+    <code><![CDATA[
+var $log = $( "#log" ),
+    str = "hello, <b>my name is</b> jQuery.",
+    html = $.parseHTML( str ),
+    nodeNames = [];
+
+// Append the parsed HTML
+$log.append( html );
+
+// Gather the parsed HTML's node names
+$.each( html, function( i, el ) {
+    nodeNames[i] = "<li>" + el.nodeName + "</li>";
+});
+
+$log.append( "<h3>Node Names:</h3>" );
+
+// Insert the node names
+$( "<ol></ol>" )
+  .append( nodeNames.join( "" ) )
+  .appendTo( $log );
+
+]]></code>
+  </example>
+  <category slug="utilities"/>
+  <category slug="version/1.8"/>
+</entry>
