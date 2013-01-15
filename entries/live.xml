@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <entry type="method" name="live" return="jQuery" deprecated="1.7">
   <title>.live()</title>
+  <removed>1.9</removed>
   <desc>Attach an event handler for all elements which match the current selector, now and in the future.</desc>
   <signature>
     <added>1.3</added>
@@ -63,23 +64,6 @@ $(document).on("click", "a.offsite", function(){ alert("Goodbye!"); });        /
     </ul>
   </longdesc>
   <example>
-    <desc>Click a paragraph to add another. Note that .live() binds the click event to all paragraphs - even new ones.</desc>
-    <code><![CDATA[
-$("p").live("click", function(){
-  $(this).after("<p>Another paragraph!</p>");
-});
-]]></code>
-    <css><![CDATA[
-  p { background:yellow; font-weight:bold; cursor:pointer;
-      padding:5px; }
-  p.over { background: #ccc; }
-  span { color:red; }
-  ]]></css>
-    <html><![CDATA[<p>Click me!</p>
-
-  <span></span>]]></html>
-  </example>
-  <example>
     <desc>Cancel a default action and prevent it from bubbling up by returning false.</desc>
     <code><![CDATA[$("a").live("click", function() { return false; })]]></code>
   </example>
@@ -102,15 +86,6 @@ $("button").click(function () {
   $("p").trigger("myCustomEvent");
 });
 ]]></code>
-    <css><![CDATA[
-  p { color:red; }
-  span { color:blue; }
-  ]]></css>
-    <html><![CDATA[
-  <p>Has an attached custom event.</p>
-  <button>Trigger custom event</button>
-  <span style="display:none;"></span>
-  ]]></html>
   </example>
   <example>
     <desc>Use an object to bind multiple live event handlers. Note that .live() calls the click, mouseover, and mouseout event handlers for all paragraphs--even new ones.</desc>
@@ -127,15 +102,6 @@ $("p").live({
   }
 });
 ]]></code>
-    <css><![CDATA[
-  p { background:yellow; font-weight:bold; cursor:pointer; padding:5px; }
-  p.over { background: #ccc; }
-  span { color:red; }
-  ]]></css>
-    <html><![CDATA[
-  <p>Click me!</p>
-  <span></span>
-  ]]></html>
   </example>
   <category slug="events/event-handler-attachment"/>
   <category slug="version/1.3"/>
