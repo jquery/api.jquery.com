@@ -379,7 +379,7 @@
       <desc><![CDATA[
         <p>Aspects of the API that were changed in the corresponding version of jQuery. Changes in jQuery 1.9 dealt primarily removal or modification of several APIs that behaved inconsistently or inefficiently in the past. A <a href="https://github.com/jquery/jquery-migrate">jQuery Migrate Plugin</a> was offered to help developers with a transitional upgrade path.
         </p>
-        <p>For more information, see the <a href="http://jquery.com/upgrade-guide/1.9/#jquery-core-1-9-upgrade-guide">jQuery Core 1.9 Upgrade guide</a> and the <a href="http://blog.jquery.com/">Release Notes/Changelog</a></p>
+        <p>For more information, see the <a href="http://jquery.com/upgrade-guide/1.9/">jQuery Core 1.9 Upgrade guide</a> and the <a href="http://blog.jquery.com/2013/01/15/jquery-1-9-final-jquery-2-0-beta-migrate-final-released/">Release Notes/Changelog</a></p>
         <hr/>
       ]]></desc>
     </category>
