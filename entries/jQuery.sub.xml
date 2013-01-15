@@ -1,8 +1,6 @@
 <?xml version="1.0"?>
-<entry type="method" name="jQuery.sub" return="jQuery" deprecated="1.7">
+<entry type="method" name="jQuery.sub" return="jQuery" deprecated="1.7" removed="1.9">
   <title>jQuery.sub()</title>
-  <deprecated>1.7</deprecated>
-  <removed>1.9</removed>
   <signature>
     <added>1.5</added>
   </signature>

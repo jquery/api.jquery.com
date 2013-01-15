@@ -136,10 +136,9 @@ $('li.item-a').closest('#one', listItemII)
     <category slug="version/1.4"/>
     <category slug="version/1.6"/>
   </entry>
-  <entry type="method" name="closest" return="Array" removed="1.8" deprecated="1.7">
+  <entry type="method" name="closest" return="Array" deprecated="1.7" removed="1.8">
     <signature>
       <added>1.4</added>
-      <removed>1.8</removed>
       <argument name="selectors" type="Array">
         <desc>An array or string containing a selector expression to match elements against (can also be a jQuery object).</desc>
       </argument>

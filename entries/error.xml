@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
-<entry type="method" name="error" return="jQuery">
+<entry type="method" name="error" return="jQuery" deprecated="1.8">
   <title>.error()</title>
-  <deprecated>1.8</deprecated>
   <desc>Bind an event handler to the "error" JavaScript event.</desc>
   <signature>
     <added>1.0</added>

@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<entry type="method" name="die" return="jQuery" deprecated="1.7">
+<entry type="method" name="die" return="jQuery" deprecated="1.7" removed="1.9">
   <title>.die()</title>
   <desc>Remove event handlers previously attached using <code>.live()</code> from the elements.</desc>
   <signature>
@@ -27,36 +27,6 @@
     <p><strong>As of jQuery 1.7</strong>, use of <code>.die()</code> (and its complementary method, <code>.live()</code>) is not recommended. Instead, use <a href="http://api.jquery.com/off/"><code>.off()</code></a> to remove event handlers bound with <a href="http://api.jquery.com/on/"><code>.on()</code></a></p>
     <p><strong>Note:</strong> In order for .die() to function correctly, the selector used with it must match exactly the selector initially used with .live().</p>
   </longdesc>
-  <category slug="events/event-handler-attachment"/>
-  <category slug="version/1.3"/>
-  <category slug="version/1.4.1"/>
-  <category slug="version/1.4.3"/>
-  <example>
-    <desc>Can bind and unbind events to the colored button.</desc>
-    <code><![CDATA[
-function aClick() {
-  $("div").show().fadeOut("slow");
-}
-$("#bind").click(function () {
-$("#theone").live("click", aClick)
-            .text("Can Click!");
-});
-$("#unbind").click(function () {
-$("#theone").die("click", aClick)
-            .text("Does nothing...");
-});
-
-]]></code>
-    <css><![CDATA[
-button { margin:5px; }
-button#theone { color:red; background:yellow; }
-]]></css>
-    <html><![CDATA[<button id="theone">Does nothing...</button>
-<button id="bind">Bind Click</button>
-<button id="unbind">Unbind Click</button>
-
-<div style="display:none;">Click!</div>]]></html>
-  </example>
   <example>
     <desc>To unbind all live events from all paragraphs, write:</desc>
     <code><![CDATA[$("p").die()]]></code>

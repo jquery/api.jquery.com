@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
-<entry type="property" name="jQuery.boxModel" return="Boolean">
+<entry type="property" name="jQuery.boxModel" return="Boolean" deprecated="1.3">
   <title>jQuery.boxModel</title>
-  <deprecated>1.3</deprecated>
   <signature>
     <added>1.0</added>
   </signature>
