@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<entry type="selector" name="last-of-type" return="">
+  <title>:last-of-type Selector</title>
+  <sample>:last-of-type</sample>
+  <signature>
+    <added>1.9</added>
+  </signature>
+  <desc>Selects all elements that are the last among siblings of the same element name.</desc>
+  <longdesc>
+    <p>The <code>:last-of-type</code> selector matches elements that have no other element with the same parent and the same element name coming after it in the document tree.</p>
+  </longdesc>
+  <example>
+    <desc>Find the last span in each matched div and add some css plus a hover state.</desc>
+    <code><![CDATA[
+$("span:last-of-type")
+    .css({color:"red", fontSize:"80%"})
+    .hover(function () {
+          $(this).addClass("solast");
+        }, function () {
+          $(this).removeClass("solast");
+        });
+]]></code>
+    <css><![CDATA[
+span.solast { text-decoration:line-through; }
+  ]]></css>
+    <html><![CDATA[<div>
+    <span>Corey,</span>
+    <span>Yehuda,</span>
+    <span>Adam,</span>
+    <span>Todd</span>
+  </div>
+  <div>
+    <span>Jörn,</span>
+    <span>Scott,</span>
+    <span>Timo,</span>
+    <b>Nobody</b>
+  </div>]]></html>
+  </example>
+  <category slug="selectors/child-filter-selectors"/>
+  <category slug="version/1.9"/>
+</entry>

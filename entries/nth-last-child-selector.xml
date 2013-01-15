@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<entry type="selector" name="nth-last-child" return="">
+  <title>:nth-last-child() Selector</title>
+  <sample>:nth-last-child(index/even/odd/equation)</sample>
+  <signature>
+    <added>1.9</added>
+    <argument name="index" type="Number/String">
+      <desc>The index of each child to match, starting with the last one (<code>1</code>), the string <code>even</code> or <code>odd</code>, or an equation ( eg. <code>:nth-last-child(even)</code>, <code>:nth-last-child(4n)</code> )</desc>
+    </argument>
+  </signature>
+  <desc>Selects all elements that are the nth-child of their parent, counting from the last element to the first.</desc>
+  <longdesc>
+    <p>Because jQuery's implementation of <code>:nth-</code> selectors is strictly derived from the CSS specification, the value of <code>n</code> is "1-indexed", meaning that the counting starts at 1. For other selector expressions such as <code>:eq()</code> or <code>:even</code> jQuery follows JavaScript's "0-indexed" counting. Given a single <code>&lt;ul&gt;</code> containing three <code>&lt;li&gt;</code>s, <code>$('li:nth-last-child(1)')</code> selects the third, last, <code>&lt;li&gt;</code>.</p>
+    <p>Further discussion of this usage can be found in the <a href="http://www.w3.org/TR/css3-selectors/#nth-last-child-pseudo">W3C CSS specification</a>.</p>
+  </longdesc>
+  <example>
+    <desc>Find the second to last li in each matched ul and note it.</desc>
+    <code><![CDATA[$("ul li:nth-last-child(2)").append("<span> - 2nd to last!</span>");]]></code>
+    <css><![CDATA[
+  div { float:left; }
+  span { color:blue; }
+  ]]></css>
+    <html><![CDATA[<div>
+  <ul>
+    <li>John</li>
+    <li>Karl</li>
+    <li>Adam</li>
+  </ul>
+</div>
+<div>
+  <ul>
+    <li>Dan</li>
+  </ul>
+</div>
+<div>
+  <ul>
+    <li>Dave</li>
+    <li>Rick</li>
+    <li>Timmy</li>
+    <li>Gibson</li>
+  </ul>
+</div>]]></html>
+  </example>
+  <example>
+    <desc>This is a playground to see how the selector works with different strings. </desc>
+    <code><![CDATA[
+$("button").click(function () {
+  var str = $(this).text();
+  $("tr").css("background", "white");
+  $("tr" + str).css("background", "#ff0000");
+  $("#inner").text(str);
+});
+]]></code>
+    <css><![CDATA[
+button { display:block; font-size:12px; width:100px; }
+div { float:left; margin:10px; font-size:10px;
+      border:1px solid black; }
+span { color:blue; font-size:18px; }
+#inner { color:red; }
+td { width:50px; text-align:center; }
+]]></css>
+    <html><![CDATA[<div>
+  <button>:nth-last-child(even)</button>
+  <button>:nth-last-child(odd)</button>
+  <button>:nth-last-child(3n)</button>
+  <button>:nth-last-child(2)</button>
+</div>
+<div>
+  <button>:nth-last-child(3n+1)</button>
+  <button>:nth-last-child(3n+2)</button>
+</div>
+
+<div>
+  <table>
+    <tr><td>John</td></tr>
+    <tr><td>Karl</td></tr>
+    <tr><td>Brandon</td></tr>
+    <tr><td>Benjamin</td></tr>
+  </table>
+</div>
+<div>
+  <table>
+    <tr><td>Sam</td></tr>
+  </table>
+</div>
+<div>
+  <table>
+    <tr><td>Glen</td></tr>
+    <tr><td>Tane</td></tr>
+    <tr><td>Ralph</td></tr>
+    <tr><td>David</td></tr>
+    <tr><td>Mike</td></tr>
+    <tr><td>Dan</td></tr>
+  </table>
+</div>
+
+<span>tr<span id="inner"></span></span>
+]]></html>
+  </example>
+  <category slug="selectors/child-filter-selectors"/>
+  <category slug="version/1.9"/>
+</entry>
