@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<entry type="method" name="stop" return="jQuery">
+<entry type="method" name="finish" return="jQuery">
   <title>.finish()</title>
   <desc>Stop the currently-running animation, remove all queued animations, and complete all animations for the matched elements.</desc>
   <signature>
