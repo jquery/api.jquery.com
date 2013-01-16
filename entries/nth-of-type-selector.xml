@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<entry type="selector" name="nth-of-type" return="">
+  <title>:nth-of-type() Selector</title>
+  <sample>:nth-of-type(index/even/odd/equation)</sample>
+  <signature>
+    <added>1.9</added>
+    <argument name="index" type="Number/String">
+      <desc>The index of each child to match, starting with <code>1</code>, the string <code>even</code> or <code>odd</code>, or an equation ( eg. <code>:nth-of-type(even)</code>, <code>:nth-of-type(4n)</code> )</desc>
+    </argument>
+  </signature>
+  <desc>Selects all elements that are the nth child of their parent in relation to siblings with the same element name.</desc>
+  <longdesc>
+    <p>Because jQuery's implementation of <code>:nth-</code> selectors is strictly derived from the CSS specification, the value of <code>n</code> is "1-indexed", meaning that the counting starts at 1. For other selector expressions such as <code>:eq()</code> or <code>:even</code> jQuery follows JavaScript's "0-indexed" counting. </p>
+    <p>Further discussion of this usage can be found in the <a href="http://www.w3.org/TR/css3-selectors/#nth-of-type-pseudo">W3C CSS specification</a>.</p>
+  </longdesc>
+    <example>
+      <desc>Find each span that is second in relation to its sibling spans.</desc>
+      <code><![CDATA[
+$( "span:nth-of-type(2)" )
+  .append( "<span> is 2nd sibling span</span>" )
+  .addClass( "nth" );
+]]></code>
+  <css><![CDATA[
+.nth { color: red; }
+]]></css>
+    <html><![CDATA[<div>
+  <span>John</span>,
+  <b>Kim</b>,
+  <span>Adam</span>,
+  <b>Rafael</b>,
+  <span>Oleg</span>
+</div>
+<div>
+  <b>Dave</b>,
+  <span>Ann</span>
+</div>
+<div>
+  <i><span>Maurice</span></i>,
+  <span>Richard</span>,
+  <span>Ralph</span>,
+  <span>Jason</span>
+</div>]]></html>
+    </example>
+  <category slug="selectors/child-filter-selectors"/>
+  <category slug="version/1.9"/>
+</entry>

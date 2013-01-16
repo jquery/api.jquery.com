@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<entry type="selector" name="lang" return="">
+  <title>:lang Selector</title>
+  <sample>:lang(language)</sample>
+  <signature>
+    <added>1.9</added>
+    <argument name="language" type="String">
+      <desc>A language code.</desc>
+    </argument>
+  </signature>
+  <desc>Selects all elements of the specified language.</desc>
+  <longdesc>
+    <p>The <code>:lang</code> selector matches elements that have a language value equal to the supplied language code or that start with the supplied language code immediately followed by "-". For example, the selector <code>$("div:lang(en)")</code>will match <code>&lt;div lang="en"&gt;</code> and <code>&lt;div lang="en-us"&gt;</code> (and any of their descendant <code>&lt;div&gt;</code>s), but not <code>&lt;div lang="fr"&gt;</code></p>
+    <p>For HTML elements, the language value is determined by the <code>lang</code> attribute and possibly information from  <code>meta</code> elements or HTTP headers.</p>
+    <p>Further discussion of this usage can be found in the <a href="http://www.w3.org/TR/css3-selectors/#lang-pseudo">W3C CSS specification</a>.</p>
+  </longdesc>
+  <example>
+    <desc>Color div elements according to their language.</desc>
+    <code><![CDATA[
+$( "div:lang(en-us)" ).addClass( "usa" );
+$( "div:lang(es-es)" ).addClass( "spain" );
+]]></code>
+    <html><![CDATA[
+<h3>USA</h3>
+<div lang="en-us">red
+  <div>white
+    <div>and blue</div>
+  </div>
+</div>
+<h3>España</h3>
+<div lang="es-es">rojo
+  <div>amarillo
+    <div>y rojo</div>
+  </div>
+</div>
+]]></html>
+<css><![CDATA[
+body { background-color: #ccc; }
+h3 { margin: .25em 0; }
+div { line-height: 1.5em}
+.usa { background-color: #f00; color: #fff; }
+.usa .usa { background-color: #fff; color: #000; }
+.usa .usa .usa { background-color: #00f; color: #fff; }
+
+.spain { background-color: #f00; color: #ff0; }
+.spain .spain { background-color: #ff0; color: #f00; line-height: 3em; }
+.spain .spain .spain { background-color: #f00; color: #ff0; line-height: 1.5em; }
+]]></css>
+  </example>
+  <category slug="selectors/basic-filter-selectors"/>
+  <category slug="version/1.9"/>
+</entry>

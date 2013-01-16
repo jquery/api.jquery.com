@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<entry type="selector" name="target" return="">
+  <title>:target Selector</title>
+  <sample>:target</sample>
+  <signature>
+    <added>1.9</added>
+  </signature>
+  <desc>Selects the target element indicated by the fragment identifier of the document's URI.</desc>
+  <longdesc>
+    <p>If the document's URI contains a fragment identifier, or hash, then the <code>:target</code> selector will match the element with an ID that matches the identifier. For example, given a document with a URI of http://example.com/#foo, <code>$( "p:target" )</code> will select the <code>&lt;p id="foo"&gt;</code> element.</p>
+    <p>Further discussion of this usage can be found in the <a href="http://www.w3.org/TR/css3-selectors/#target-pseudo">W3C CSS specification</a>.</p>
+  </longdesc>
+  <category slug="selectors/basic-filter-selectors"/>
+  <category slug="version/1.9"/>
+</entry>

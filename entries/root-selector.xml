@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<entry type="selector" name="root" return="">
+  <title>:root Selector</title>
+  <sample>:root</sample>
+  <signature>
+    <added>1.9</added>
+    <argument name="index" type="Number/String">
+      <desc>The index of each child to match, starting with <code>1</code>, the string <code>even</code> or <code>odd</code>, or an equation ( eg. <code>:nth-last-child(even)</code>, <code>:nth-last-child(4n)</code> )</desc>
+    </argument>
+  </signature>
+  <desc>Selects the element that is the root of the document.</desc>
+  <longdesc>
+    <p>In HTML, the root of the document, and thus the element that <code>$(":root")</code> selects, is always the <code>&lt;html&gt;</code> element.</p>
+  </longdesc>
+  <example>
+    <desc>Display the tag name of the root element.</desc>
+    <code><![CDATA[
+$( "<b></b>" ).html( $( ":root" )[0].nodeName ).appendTo( "#log" );
+]]></code>
+    <css><![CDATA[
+span.fot { color: red; font-size: 120%; font-style: italic; }
+  ]]></css>
+    <html><![CDATA[<div id="log">The root of this document is: </div>]]></html>
+  </example>
+
+  <category slug="selectors/basic-filter-selectors"/>
+  <category slug="version/1.9"/>
+
+</entry>
