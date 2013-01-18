@@ -18,7 +18,7 @@
     </code></pre>
     <p>You can select the list items and iterate across them:</p>
 <pre><code>$( "li" ).each(function( index ) {
-  console.log( index + ": "" + $(this).text() );
+  console.log( index + ": " + $(this).text() );
 });
   </code></pre>
     <p>A message is thus logged for each item in the list:</p>
