@@ -53,6 +53,7 @@ $("#dataTable tbody").on("click", "tr", function(event){
   alert($(this).text());
 });
 </code></pre>
+    <p><strong>Note:</strong> Delegated events do not work for SVG.</p>
     <h2 id="event-handler">The event handler and its environment</h2>
     <p>The <code>handler</code> argument is a function (or the value <code>false</code>, see below), and is required unless you pass an object for the <code>events</code> argument. You can provide an anonymous handler function at the point of the <code>.on()</code> call, as the examples have done above, or declare a named function and pass its name:</p>
     <pre><code>
