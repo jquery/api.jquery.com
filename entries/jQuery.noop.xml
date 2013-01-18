@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<entry type="method" name="jQuery.noop" return="Function">
+<entry type="method" name="jQuery.noop" return="undefined">
   <title>jQuery.noop()</title>
   <signature>
     <added>1.4</added>
