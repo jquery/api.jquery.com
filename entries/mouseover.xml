@@ -21,7 +21,7 @@
     <added>1.0</added>
   </signature>
   <longdesc>
-    <p>This method is a shortcut for <code>.bind('mouseover', handler)</code> in the first two variations, and <code>.trigger('mouseover')</code> in the third.</p>
+    <p>This method is a shortcut for <code>.on('mouseover', handler)</code> in the first two variations, and <code>.trigger('mouseover')</code> in the third.</p>
     <p>The <code>mouseover</code> event is sent to an element when the mouse pointer enters the element. Any HTML element can receive this event.</p>
     <p>For example, consider the HTML:</p>
     <pre><code>&lt;div id="outer"&gt;

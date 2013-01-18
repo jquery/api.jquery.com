@@ -50,7 +50,7 @@ div {
 
 ]]></html>
     <code><![CDATA[
-$("button").bind( "click", function() {
+$("button").on( "click", function() {
   $("p").append( "Started...");
 
   $("div").each(function( i ) {
@@ -86,7 +86,7 @@ var effect = function() {
   return $("div").fadeIn(800).delay(1200).fadeOut();
 };
 
-$("button").bind( "click", function() {
+$("button").on( "click", function() {
   $("p").append( " Started... ");
 
   $.when( effect() ).done(function() {

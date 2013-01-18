@@ -21,7 +21,7 @@
     <added>1.0</added>
   </signature>
   <longdesc>
-    <p>This method is a shortcut for <code>.bind('scroll', handler)</code> in the first and second variations, and <code>.trigger('scroll')</code> in the third.</p>
+    <p>This method is a shortcut for <code>.on('scroll', handler)</code> in the first and second variations, and <code>.trigger('scroll')</code> in the third.</p>
     <p>The <code>scroll</code> event is sent to an element when the user scrolls to a different place in the element. It applies to <code>window</code> objects, but also to scrollable frames and elements with the <code>overflow </code>CSS property set to <code>scroll</code> (or <code>auto</code> when the element's explicit height or width is less than the height or width of its contents).</p>
     <p>For example, consider the HTML:</p>
     <pre><code>&lt;div id="target" style="overflow: scroll; width: 200px; height: 100px;"&gt;

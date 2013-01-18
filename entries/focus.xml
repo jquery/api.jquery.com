@@ -22,7 +22,7 @@
   </signature>
   <longdesc>
     <ul>
-      <li>This method is a shortcut for <code>.bind('focus', handler)</code> in the first and second variations, and <code>.trigger('focus')</code> in the third.</li>
+      <li>This method is a shortcut for <code>.on('focus', handler)</code> in the first and second variations, and <code>.trigger('focus')</code> in the third.</li>
       <li>The <code>focus</code> event is sent to an element when it gains focus. This event is implicitly applicable to a limited set of elements, such as  form elements (<code>&lt;input&gt;</code>, <code>&lt;select&gt;</code>, etc.) and links (<code>&lt;a href&gt;</code>). In recent browser versions, the event can be extended to include all element types by explicitly setting the element's <code>tabindex</code> property. An element can gain focus via keyboard commands, such as the Tab key, or by mouse clicks on the element.</li>
       <li>Elements with focus are usually highlighted in some way by the browser, for example with a dotted line surrounding the element. The focus is used to determine which element is the first to receive keyboard-related events.</li>
     </ul>

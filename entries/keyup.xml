@@ -21,7 +21,7 @@
     <added>1.0</added>
   </signature>
   <longdesc>
-    <p>This method is a shortcut for <code>.bind('keyup', handler)</code> in the first two variations, and <code>.trigger('keyup')</code> in the third.</p>
+    <p>This method is a shortcut for <code>.on('keyup', handler)</code> in the first two variations, and <code>.trigger('keyup')</code> in the third.</p>
     <p>The <code>keyup</code> event is sent to an element when the user releases a key on the keyboard. It can be attached to any element, but the event is only sent to the element that has the focus. Focusable elements can vary between browsers, but form elements can always get focus so are reasonable candidates for this event type.</p>
     <p>For example, consider the HTML:</p>
     <pre><code>&lt;form&gt;

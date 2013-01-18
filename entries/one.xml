@@ -51,12 +51,12 @@ $("body").one("click", "#foo", function() {
 });
 </code></pre>
     <p>After the code is executed, a click on the element with ID <code>foo</code> will display the alert. Subsequent clicks will do nothing. This code is equivalent to:</p>
-    <pre><code>$("#foo").bind("click", function( event ) {
+    <pre><code>$("#foo").on("click", function( event ) {
   alert("This will be displayed only once.");
-  $(this).unbind( event );
+  $(this).off( event );
 });
 </code></pre>
-    <p>In other words, explicitly calling <code>.unbind()</code> from within a regularly-bound handler has exactly the same effect.</p>
+    <p>In other words, explicitly calling <code>.off()</code> from within a regularly-bound handler has exactly the same effect.</p>
     <p>If the first argument contains more than one space-separated event types, the event handler is called <em>once for each event type</em>.</p>
   </longdesc>
   <example>

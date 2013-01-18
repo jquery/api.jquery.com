@@ -21,7 +21,7 @@
     <added>1.0</added>
   </signature>
   <longdesc>
-    <p>This method is a shortcut for <code>.bind('change', handler)</code> in the first two variations, and <code>.trigger('change')</code> in the third.</p>
+    <p>This method is a shortcut for <code>.on('change', handler)</code> in the first two variations, and <code>.trigger('change')</code> in the third.</p>
     <p>The <code>change</code> event is sent to an element when its value changes. This event is limited to <code>&lt;input&gt;</code> elements, <code>&lt;textarea&gt;</code> boxes and <code>&lt;select&gt;</code> elements. For select boxes, checkboxes, and radio buttons, the event is fired immediately when the user makes a selection with the mouse, but for the other element types the event is deferred until the element loses focus.</p>
     <p>For example, consider the HTML:</p>
     <pre><code>&lt;form&gt;

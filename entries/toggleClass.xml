@@ -144,13 +144,13 @@ var appendClass = function() {
 
 appendClass();
 
-$('button').bind('click', function() {
+$('button').on('click', function() {
   var tc = this.className || undefined;
   divs.toggleClass(tc);
   appendClass();
 });
 
-$('a').bind('click', function(event) {
+$('a').on('click', function(event) {
   event.preventDefault();
   divs.empty().each(function(i) {
     this.className = cls[i];

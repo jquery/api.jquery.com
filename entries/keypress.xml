@@ -22,7 +22,7 @@
   </signature>
   <longdesc>
     <p><strong>Note:</strong> as the <code>keypress</code> event isn't covered by any official specification, the actual behavior encountered when using it may differ across browsers, browser versions, and platforms.</p>
-    <p>This method is a shortcut for <code>.bind("keypress", handler)</code> in the first two variations, and <code>.trigger("keypress")</code> in the third.</p>
+    <p>This method is a shortcut for <code>.on('keypress', handler)</code> in the first two variations, and <code>.trigger('keypress')</code> in the third.</p>
     <p>The <code>keypress</code> event is sent to an element when the browser registers keyboard input. This is similar to the <code>keydown</code> event, except in the case of key repeats. If the user presses and holds a key, a <code>keydown </code>event is triggered once, but separate <code>keypress</code> events are triggered for each inserted character. In addition, modifier keys (such as Shift) trigger <code>keydown</code> events but not <code>keypress</code> events.</p>
     <p>A <code>keypress</code> event handler can be attached to any element, but the event is only sent to the element that has the focus. Focusable elements can vary between browsers, but form elements can always get focus so are reasonable candidates for this event type.</p>
     <p>For example, consider the HTML:</p>

@@ -61,7 +61,7 @@ $("li.fade").hover(function(){$(this).fadeOut(100);$(this).fadeIn(500);});
     </example>
     <example>
       <desc>To unbind the above example use:</desc>
-      <code><![CDATA[$("td").unbind('mouseenter mouseleave');]]></code>
+      <code><![CDATA[$("td").off('mouseenter mouseleave');]]></code>
     </example>
     <category slug="events/mouse-events"/>
     <category slug="version/1.0"/>
@@ -77,7 +77,7 @@ $("li.fade").hover(function(){$(this).fadeOut(100);$(this).fadeIn(500);});
     <longdesc>
       <p>The <code>.hover()</code> method, when passed a single function, will execute that handler for both <code>mouseenter</code> and <code>mouseleave</code> events. This allows the user to use jQuery's various toggle methods within the handler or to respond differently within the handler depending on the <code>event.type</code>.</p>
       <p>Calling <code>$(selector).hover(handlerInOut)</code> is shorthand for:</p>
-      <pre><code>$(selector).bind("mouseenter mouseleave", handlerInOut);</code></pre>
+      <pre><code>$(selector).on("mouseenter mouseleave", handlerInOut);</code></pre>
       <p>See the discussions for <code><a href="/mouseenter">.mouseenter()</a></code> and <code><a href="/mouseleave">.mouseleave()</a></code> for more details.</p>
     </longdesc>
     <example>

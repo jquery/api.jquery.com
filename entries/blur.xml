@@ -21,7 +21,7 @@
     <added>1.0</added>
   </signature>
   <longdesc>
-    <p>This method is a shortcut for <code>.bind('blur', handler)</code> in the first two variations, and <code>.trigger('blur')</code> in the third.</p>
+    <p>This method is a shortcut for <code>.on('blur', handler)</code> in the first two variations, and <code>.trigger('blur')</code> in the third.</p>
     <p>The <code>blur</code> event is sent to an element when it loses focus. Originally, this event was only applicable to form elements, such as <code>&lt;input&gt;</code>. In recent browsers, the domain of the event has been extended to include all element types. An element can lose focus via keyboard commands, such as the Tab key, or by mouse clicks elsewhere on the page.</p>
     <p>For example, consider the HTML:</p>
     <pre><code>&lt;form&gt;

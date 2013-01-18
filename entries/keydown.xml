@@ -21,7 +21,7 @@
   </signature>
   <desc>Bind an event handler to the "keydown" JavaScript event, or trigger that event on an element.</desc>
   <longdesc>
-    <p>This method is a shortcut for <code>.bind('keydown', handler)</code> in the first and second variations, and <code>.trigger('keydown')</code> in the third.</p>
+    <p>This method is a shortcut for <code>.on('keydown', handler)</code> in the first and second variations, and <code>.trigger('keydown')</code> in the third.</p>
     <p>The <code>keydown</code> event is sent to an element when the user first presses a key on the keyboard. It can be attached to any element, but the event is only sent to the element that has the focus. Focusable elements can vary between browsers, but form elements can always get focus so are reasonable candidates for this event type.</p>
     <p>For example, consider the HTML:</p>
     <pre><code>&lt;form&gt;
