@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<entry name="callbacks.locked" type="method" return="Boolean">
-  <title>callbacks.locked()</title>
+<entry name="callbacks.disabled" type="method" return="Boolean">
+  <title>callbacks.disabled()</title>
   <signature>
     <added>1.7</added>
   </signature>
