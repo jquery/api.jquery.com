@@ -34,7 +34,7 @@
   </longdesc>
   <example>
     <desc>Replace all the paragraphs with bold words.</desc>
-    <code><![CDATA[$("<b>Paragraph. </b>").replaceAll("p"); // check replaceWith() examples]]></code>
+    <code><![CDATA[$("<b>Paragraph. </b>").replaceAll("p");]]></code>
     <html><![CDATA[<p>Hello</p>
   <p>cruel</p>
   <p>World</p>]]></html>
