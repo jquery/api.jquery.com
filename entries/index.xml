@@ -35,8 +35,8 @@
     <pre><code>
 var listItem = document.getElementById('bar');
 alert('Index: ' + $('li').index(listItem));
-We get back the zero-based position of the list item:
 </code></pre>
+    <p>We get back the zero-based position of the list item:</p>
     <p>
       <span class="output">Index: 1</span>
     </p>
