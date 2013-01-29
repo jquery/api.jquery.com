@@ -172,7 +172,7 @@ div { height: 50px; margin: 5px; padding: 5px; float: left; }
 </p>]]></html>
     </example>
     <example>
-      <desc>To set the text-weight of hovered paragraphs to bolder, background to blue, and diffent css on leave:</desc>
+      <desc>To set the text-weight of hovered paragraphs to bolder, background to blue, and different CSS when leave:</desc>
       <code><![CDATA[
   $("p").hover(function () {
     $(this).css({'background-color' : 'yellow', 'font-weight' : 'bolder'});
