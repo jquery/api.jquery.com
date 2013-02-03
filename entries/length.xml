@@ -15,7 +15,8 @@
   var n = $("div").length;
   $("span").text("There are " + n + " divs." +
                  "Click to add more.");
-}).trigger('click'); // trigger the click to start]]></code>
+}).trigger('click'); // trigger the click to start
+]]></code>
     <css><![CDATA[
   body { cursor:pointer; }
   div { width:50px; height:30px; margin:5px; float:left;
