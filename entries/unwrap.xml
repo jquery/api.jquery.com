@@ -11,10 +11,13 @@
   <example>
     <desc>Wrap/unwrap a div around each of the paragraphs.</desc>
     <code><![CDATA[
-$("button").toggle(function(){
-  $("p").wrap("<div></div>");
-}, function(){
-  $("p").unwrap();
+var pTags = $("p");
+$("button").click( function(){
+  if ( pTags.parent().is("div") ) {
+    pTags.unwrap();
+  } else {
+    pTags.wrap("<div></div>");
+  }
 });]]></code>
     <css><![CDATA[
   div { border: 2px solid blue; }
