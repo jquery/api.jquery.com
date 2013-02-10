@@ -4,8 +4,10 @@
   <desc>Adjust the opacity of the matched elements.</desc>
   <signature>
     <added>1.0</added>
-    <argument name="duration" type="String,Number">
+    <argument name="duration">
       <desc>A string or number determining how long the animation will run.</desc>
+      <type name="String"/>
+      <type name="Number"/>
     </argument>
     <argument name="opacity" type="Number">
       <desc>A number between 0 and 1 denoting the target opacity.</desc>
@@ -16,8 +18,10 @@
   </signature>
   <signature>
     <added>1.4.3</added>
-    <argument name="duration" type="String,Number">
+    <argument name="duration">
       <desc>A string or number determining how long the animation will run.</desc>
+      <type name="String"/>
+      <type name="Number"/>
     </argument>
     <argument name="opacity" type="Number">
       <desc>A number between 0 and 1 denoting the target opacity.</desc>

@@ -62,8 +62,10 @@ $(document).height(); // returns height of HTML document</code></pre>
   <entry type="method" name="height" return="jQuery">
     <signature>
       <added>1.0</added>
-      <argument name="value" type="String, Number">
+      <argument name="value">
         <desc>An integer representing the number of pixels, or an integer with an optional unit of measure appended (as a string).</desc>
+        <type name="String"/>
+        <type name="Number"/>
       </argument>
     </signature>
     <signature>

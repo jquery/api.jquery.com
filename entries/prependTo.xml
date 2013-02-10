@@ -3,7 +3,11 @@
   <title>.prependTo()</title>
   <signature>
     <added>1.0</added>
-    <argument name="target" type="Selector, Element, jQuery">
+    <argument name="target">
+      <type name="Selector"/>
+      <type name="htmlString"/>
+      <type name="Element"/>
+      <type name="jQuery"/>
       <desc>A selector, element, HTML string, or jQuery object; the matched set of elements will be inserted at the beginning of the element(s) specified by this parameter.</desc>
     </argument>
   </signature>

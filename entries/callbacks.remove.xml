@@ -3,8 +3,10 @@
   <title>callbacks.remove()</title>
   <signature>
     <added>1.7</added>
-    <argument name="callbacks" type="Function, Array">
+    <argument name="callbacks">
       <desc>A function, or array of functions, that are to be removed from the callback list.</desc>
+      <type name="Function"/>
+      <type name="Array"/>
     </argument>
   </signature>
   <desc>Remove a callback or a collection of callbacks from a callback list.</desc>

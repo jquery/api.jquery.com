@@ -3,13 +3,17 @@
   <title>jQuery.param()</title>
   <signature>
     <added>1.2</added>
-    <argument name="obj" type="Array, Object">
+    <argument name="obj">
+      <type name="Array"/>
+      <type name="PlainObject"/>
       <desc>An array or object to serialize.</desc>
     </argument>
   </signature>
   <signature>
     <added>1.4</added>
-    <argument name="obj" type="Array, Object">
+    <argument name="obj">
+      <type name="Array"/>
+      <type name="PlainObject"/>
       <desc>An array or object to serialize.</desc>
     </argument>
     <argument name="traditional" type="Boolean">
@@ -35,10 +39,10 @@
     <p>We can display a query string representation of an object and a URI-decoded version of the same as follows:</p>
     <pre><code>var myObject = {
   a: {
-    one: 1, 
-    two: 2, 
+    one: 1,
+    two: 2,
     three: 3
-  }, 
+  },
   b: [1,2,3]
 };
 var recursiveEncoded = $.param(myObject);
@@ -56,10 +60,10 @@ alert(recursiveDecoded);
     <p>To emulate the behavior of <code>$.param()</code> prior to jQuery 1.4, we can set the <code>traditional</code> argument to <code>true</code>:</p>
     <pre><code>var myObject = {
   a: {
-    one: 1, 
-    two: 2, 
+    one: 1,
+    two: 2,
     three: 3
-  }, 
+  },
   b: [1,2,3]
 };
 var shallowEncoded = $.param(myObject, true);
@@ -89,14 +93,14 @@ alert(shallowDecoded);
   <example>
     <desc>Serialize a few complex objects</desc>
     <code><![CDATA[
-// <=1.3.2: 
+// <=1.3.2:
 $.param({ a: [2,3,4] }) // "a=2&a=3&a=4"
 // >=1.4:
 $.param({ a: [2,3,4] }) // "a[]=2&a[]=3&a[]=4"
 
-// <=1.3.2: 
+// <=1.3.2:
 $.param({ a: { b:1,c:2 }, d: [3,4,{ e:5 }] }) // "a=[object+Object]&d=3&d=4&d=[object+Object]"
-// >=1.4: 
+// >=1.4:
 $.param({ a: { b:1,c:2 }, d: [3,4,{ e:5 }] }) // "a[b]=1&a[c]=2&d[]=3&d[]=4&d[2][e]=5"
 
 ]]></code>

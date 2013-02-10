@@ -52,7 +52,9 @@ var title = $("em").attr("title");
       <argument name="attributeName" type="String">
         <desc>The name of the attribute to set.</desc>
       </argument>
-      <argument name="value" type="String,Number">
+      <argument name="value">
+        <type name="String"/>
+        <type name="Number"/>
         <desc>A value to set for the attribute.</desc>
       </argument>
     </signature>

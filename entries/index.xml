@@ -12,8 +12,10 @@
   </signature>
   <signature>
     <added>1.0</added>
-    <argument name="element" type="Element, jQuery">
+    <argument name="element">
       <desc>The DOM element or first element within the jQuery object to look for.</desc>
+      <type name="Element"/>
+      <type name="jQuery"/>
     </argument>
   </signature>
   <desc>Search for a given element from among the matched elements.</desc>

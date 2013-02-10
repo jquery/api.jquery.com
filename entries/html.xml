@@ -51,7 +51,7 @@ $("p").click(function () {
   <entry type="method" name="html" return="jQuery">
     <signature>
       <added>1.0</added>
-      <argument name="htmlString" type="String">
+      <argument name="htmlString" type="htmlString">
         <desc>A string of HTML to set as the content of each matched element.</desc>
       </argument>
     </signature>

@@ -8,7 +8,9 @@
       <argument name="selector" type="selector">
         <desc>A string containing a selector expression</desc>
       </argument>
-      <argument name="context" optional="true" type="Element, jQuery">
+      <argument name="context" optional="true">
+        <type name="Element"/>
+        <type name="jQuery"/>
         <desc>A DOM Element, Document, or jQuery to use as context</desc>
       </argument>
     </signature>
@@ -138,7 +140,7 @@ $( "div > p").css("border", "1px solid gray");
   <entry type="method" name="jQuery" return="jQuery">
     <signature>
       <added>1.0</added>
-      <argument name="html" type="String">
+      <argument name="html" type="htmlString">
         <desc>A string of HTML to create on the fly. Note that this parses HTML, <strong>not</strong> XML.</desc>
       </argument>
       <argument name="ownerDocument" optional="true" type="document">
@@ -147,7 +149,7 @@ $( "div > p").css("border", "1px solid gray");
     </signature>
     <signature>
       <added>1.4</added>
-      <argument name="html" type="String">
+      <argument name="html" type="htmlString">
         <desc>A string defining a single, standalone, HTML element (e.g. &lt;div/&gt; or &lt;div&gt;&lt;/div&gt;).</desc>
       </argument>
       <argument name="attributes" type="PlainObject">

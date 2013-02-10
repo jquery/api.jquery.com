@@ -86,8 +86,10 @@ div { height: 50px; margin: 5px; padding: 5px; float: left; }
       <argument name="propertyName" type="String">
         <desc>A CSS property name.</desc>
       </argument>
-      <argument name="value" type="String, Number">
+      <argument name="value">
         <desc>A value to set for the property.</desc>
+        <type name="String"/>
+        <type name="Number"/>
       </argument>
     </signature>
     <signature>

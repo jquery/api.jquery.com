@@ -3,11 +3,18 @@
   <title>.before()</title>
   <signature>
     <added>1.0</added>
-    <argument name="content" type="String, Element, jQuery">
+    <argument name="content">
       <desc>HTML string, DOM element, or jQuery object to insert before each element in the set of matched elements.</desc>
+      <type name="htmlString"/>
+      <type name="Element"/>
+      <type name="jQuery"/>
     </argument>
-    <argument name="content" type="String, Element, Array, jQuery" optional="true">
+    <argument name="content" optional="true">
       <desc>One or more additional DOM elements, arrays of elements, HTML strings, or jQuery objects to insert before each element in the set of matched elements.</desc>
+      <type name="htmlString"/>
+      <type name="Element"/>
+      <type name="Array"/>
+      <type name="jQuery"/>
     </argument>
   </signature>
   <signature>

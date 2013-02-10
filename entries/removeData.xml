@@ -9,8 +9,10 @@
   </signature>
   <signature>
     <added>1.7</added>
-    <argument name="list" type="Array,String" optional="true">
+    <argument name="list" optional="true">
       <desc>An array or space-separated string naming the pieces of data to delete.</desc>
+      <type name="Array"/>
+      <type name="String"/>
     </argument>
   </signature>
   <desc>Remove a previously-stored piece of data.</desc>

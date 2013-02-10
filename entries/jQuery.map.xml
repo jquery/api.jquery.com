@@ -12,7 +12,9 @@
   </signature>
   <signature>
     <added>1.6</added>
-    <argument name="arrayOrObject" type="Array,Object">
+    <argument name="arrayOrObject">
+      <type name="Array"/>
+      <type name="Object"/>
       <desc>The Array or Object to translate.</desc>
     </argument>
     <argument name="callback( value, indexOrKey )" type="Function">

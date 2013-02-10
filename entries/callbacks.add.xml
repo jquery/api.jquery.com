@@ -3,8 +3,10 @@
   <title>callbacks.add()</title>
   <signature>
     <added>1.7</added>
-    <argument name="callbacks" type="Function, Array">
+    <argument name="callbacks">
       <desc>A function, or array of functions, that are to be added to the callback list.</desc>
+      <type name="Function"/>
+      <type name="Array"/>
     </argument>
   </signature>
   <desc>Add a callback or a collection of callbacks to a callback list.</desc>
