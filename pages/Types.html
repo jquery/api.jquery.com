@@ -43,6 +43,7 @@ var x = "";
       <li class="toclevel-2"><a href="#Boolean_Default"><span class="toctext">Boolean Default</span></a></li>
     </ul>
   </li>
+  <li class="toclevel-1"><a href="#htmlString"><span class="toctext">htmlString</span></a></li>
   <li class="toclevel-1"><a href="#Number"><span class="toctext">Number</span></a>
     <ul>
       <li class="toclevel-2"><a href="#Boolean_Default_2"><span class="toctext">Boolean Default</span></a></li>
@@ -93,24 +94,24 @@ var x = "";
 </ol>
 
 <h2 id="String"> String </h2>
+<p>A string in JavaScript is an immutable object that contains none, one or many characters.
+</p>
 <pre><code data-lang="javascript">"I'm a String in JavaScript!"
 'So am I!'
 </code></pre>
-<p>A string in JavaScript is an immutable object that contains none, one or many characters.
-</p>
 <p>The type of a string is "string".
 </p>
 <pre><code data-lang="javascript">typeof "some string"; // "string"
 </code></pre>
 <h3 id="Quoting"> Quoting </h3>
-<p>A string can be defined using single or double quotes. You can nest single quotes inside of double quotes, and the other way round. To mix double quotes with double quotes, the nested ones have to be escaped with a backslash.
+<p>A string can be defined using single or double quotes. You can nest single quotes inside of double quotes, and the other way around. To mix double quotes with double quotes (or single with single), the nested ones have to be escaped with a backslash.
 </p>
 <pre><code data-lang="javascript">"You make 'me' sad."
-'Holy "cranking" moses!'
+'That\'s "cranking" good fun!'
 "&lt;a href=\"home\"&gt;Home&lt;/a&gt;"
 </code></pre>
 <h3 id="Built-in_Methods"> Built-in Methods </h3>
-<p>A string in JavaScript has some built-in methods to manipulate the string, though the result is always a new string - or something else, eg. split returns an <a href="http://docs.jquery.com/Types#Array" title="Types">array</a>.
+<p>A string in JavaScript has some built-in methods to manipulate the string, though the result is always a new string - or something else, eg. split returns an <a href="http://api.jquery.com/Types#Array" title="Types">array</a>.
 </p>
 <pre><code data-lang="javascript">"hello".charAt( 0 ) // "h"
 "hello".toUpperCase() // "HELLO"
@@ -133,12 +134,31 @@ var x = "";
 !"true" // false
 !new Boolean( false ) // false
 </code></pre>
+
+<h2 id="htmlString"> htmlString </h2>
+<p>A string is designated <strong>htmlString</strong> in jQuery documentation when it is used to represent one or more DOM elements, typically to be created and inserted in the document. When passed as an argument of the <code>jQuery()</code> function, the string is identified as HTML if it starts with <code>&lt;tag ... &gt;</code>) and is parsed as such until the final <code>&gt;</code> character. </p>
+<p>For explicit parsing of a string to HTML, the <code><a href="/jQuery.parseHTML/">$.parseHTML()</a></code> method is available as of jQuery 1.8.</p>
+<pre><code data-lang="javascript">// Appends <b>hello</b>:
+$( "<b>hello</b>" ).appendTo( "body" );
+
+// Appends <b>hello</b>:
+$( "<b>hello</b>bye" ).appendTo( "body" );
+
+// Syntax error, unrecognized expression: bye<b>hello</b>
+$( "bye<b>hello</b>" ).appendTo( "body" );
+
+// Appends bye<b>hello</b>:
+$( $.parseHTML( "bye<b>hello</b>" ) ).appendTo( "body" );
+
+// Appends <b>hello</b>wait<b>bye</b>:
+$( "<b>hello</b>wait<b>bye</b>" ).appendTo( "body" );
+</code></pre>
 <h2 id="Number"> Number </h2>
+<p>Numbers in JavaScript are double-precision 64-bit format IEEE 754 values. They are immutable, just as <a href="#String" title="">strings</a>. All operators common in c-based languages are available to work with numbers (+, -, *, /, %, =, +=, -=, *=, /=, ++, --).
+</p>
 <pre><code data-lang="javascript">12
 3.543
 </code></pre>
-<p>Numbers in JavaScript are double-precision 64-bit format IEEE 754 values. They are immutable, just as <a href="#String" title="">strings</a>. All operators common in c-based languages are available to work with numbers (+, -, *, /, %, =, +=, -=, *=, /=, ++, --).
-</p>
 <p>The type of a number is "number".
 </p>
 <pre><code data-lang="javascript">typeof 12 // "number"
@@ -259,8 +279,6 @@ operations[ "multiply" ] = "*"; // "*"
 <h3 id="Iteration"> Iteration </h3>
 <p>Iterating over objects is easy with the for-in-loop:
 </p>
-<p><br />
-</p>
 <pre><code data-lang="javascript">var obj = {
   name: "Pete",
   age: 15
@@ -271,16 +289,15 @@ for( key in obj ) {
 </code></pre>
 <p>Note that for-in-loop can be spoiled by extending Object.prototype (see <a href="http://erik.eae.net/archives/2005/06/06/22.13.54" class="external text" title="http://erik.eae.net/archives/2005/06/06/22.13.54">Object.prototype is verboten</a>) so take care when using other libraries.
 </p>
-<p>jQuery provides a generic <a href="http://docs.jquery.com/Utilities/jQuery.each" title="Utilities/jQuery.each">each-function</a> to iterate over properties of objects, as well as elements of arrays:
+<p>jQuery provides a generic <a href="http://api.jquery.com/jQuery.each/"><em>each</em> function</a> to iterate over properties of objects, as well as elements of arrays:
 </p>
 <pre><code data-lang="javascript">jQuery.each( obj, function( key, value ) {
   console.log( "key", key, "value", value );
 });
 </code></pre>
-<p>The drawback is that the callback is called in the context of each value, therefore you lose the context of your own object if applicable. More on this below at Functions.
+<p>The drawback is that the callback is called in the context of each value and you therefore lose the context of your own object if applicable. More on this below at Functions.
 </p>
-<p><br />
-</p>
+
 <h3 id="Boolean_default_3"> Boolean default </h3>
 <p>An object, no matter if it has properties or not, never defaults to false:
 </p>
@@ -288,22 +305,24 @@ for( key in obj ) {
 !!{} // true
 </code></pre>
 <h3 id="Prototype"> Prototype </h3>
-<p>All objects have a prototype property. Whenever the interpreter looks for a property, it also checks the prototype. jQuery uses that extensively to add methods to jQuery instances.
+<p>All objects have a prototype property. Whenever the interpreter looks for a property, it also checks in the object's prototype if the property is not found on the object itself. jQuery uses the prototype extensively to add methods to jQuery instances. Internally, jQuery makes <code>jQuery.fn</code> an alias of <code>jQuery.prototype</code> so you can use either one (though plugin developers have standardized on <code>fn</code>).
 </p>
 <pre><code data-lang="javascript">var form = $("#myform");
-form.clearForm; // undefined
-form.fn.clearForm = function() {
+console.log( form.clearForm ); // undefined
+
+// jQuery.fn == jQuery.prototype
+jQuery.fn.clearForm = function() {
   return this.find( ":input" ).each(function() {
     this.value = "";
   }).end();
 };
-form.clearForm() // works for all instances of jQuery objects, because the new method was added to the prototype
+
+// works for all instances of jQuery objects, because
+// the new method was added to the prototype
+console.log( form.clearForm ); // function
+form.clearForm();
 </code></pre>
-<p><br />
-(This example needs clarification: how does it modify the prototype when the word "prototype" doesn't appear anywhere? The implication is that form.fn is simply an alias for form.prototype, but if that's the case then it should be explained.&nbsp;:-?)
-</p>
-<p>In javascript:the definitive guide 5 edition,dont add attibute to Object.prototype
-</p>
+
 <h2 id="Array"> Array </h2>
 <p>Arrays in JavaScript are mutable lists with a few built-in methods. You can define arrays using the array literal:
 </p>
@@ -339,14 +358,14 @@ y[ 2 ] // 3
   // Do something with item
 }
 </code></pre>
-<p>jQuery provides a generic <a href="http://docs.jquery.com/Utilities/jQuery.each" title="Utilities/jQuery.each">each-function</a> to iterate over element of arrays, as well as properties of objects:
+<p>jQuery provides a generic <a href="http://api.jquery.com/jQuery.each/"><em>each</em> function</a> to iterate over element of arrays, as well as properties of objects:
 </p>
 <pre><code data-lang="javascript">var x = [ 1, 2, 3 ];
 jQuery.each( x, function( index, value ) {
   console.log( "index", index, "value", value );
 });
 </code></pre>
-<p>The drawback is that the callback is called in the context of each value, therefore you lose the context of your own object if applicable. More on this below at Functions.
+<p>The drawback is that the callback is called in the context of each value and you therefore lose the context of your own object if applicable. More on this below at Functions.
 </p>
 <p>The length property can also be used to add elements to the end of an array. That is equivalent to using the push-method:
 </p>
@@ -521,11 +540,9 @@ c.print(); // 1
 <p><br />
 </p>
 <h2 id="Selector"> Selector </h2>
-<p>A selector is used in jQuery to select DOM elements from a DOM document. That document is, in most cases, the DOM document present in all browsers, but can also be a XML document received via AJAX.
+<p>A selector is used in jQuery to select DOM elements from a DOM document. That document is, in most cases, the DOM document present in all browsers, but can also be an XML document received via AJAX.
 </p>
-<p>The selectors are a composition of CSS and custom additions. XPath selectors are available as a plugin.
-</p>
-<p>All selectors available in jQuery are documented on the <a href="http://docs.jquery.com/Selectors" title="Selectors">Selectors API page</a>.
+<p>The selectors are a composition of CSS and custom additions. All selectors available in jQuery are documented on the <a href="http://api.jquery.com/category/selectors" title="Selectors">Selectors API page</a>.
 </p>
 <p>There are lot of plugins that leverage jQuery's selectors in other ways. The validation plugin accepts a selector to specify a dependency, whether an input is required or not:
 </p>
@@ -591,10 +608,10 @@ c.print(); // 1
 <p>As of jQuery 1.5, the <a href="http://api.jquery.com/jQuery.ajax/">$.ajax()</a> method returns the jqXHR object, which is a superset of the XMLHTTPRequest object. For more information, see the <a href="http://api.jquery.com/jQuery.ajax/#jqXHR">jqXHR section of the $.ajax entry</a>
 </p>
 <h2 id="Deferred"> Deferred Object</h2>
-<p>As of jQuery 1.5, the <a href="http://api.jquery.com/category/deferred-object">Deferred</a> object provides a way to register multiple callbacks into self-managed callback queues, invoke callback queues as appropriate, and relay the success or failure state of any synchronous or asynchronous function.</a>
+<p>As of jQuery 1.5, the <a href="http://api.jquery.com/category/deferred-object">Deferred</a> object provides a way to register multiple callbacks into self-managed callback queues, invoke callback queues as appropriate, and relay the success or failure state of any synchronous or asynchronous function.
 </p>
 <h2 id="Promise"> Promise Object</h2>
-<p>This object provides a subset of the methods of the <a href="http://api.jquery.com/category/deferred-object">Deferred</a> object (<a href="http://api.jquery.com/deferred.then/"><code>then</code></a>, <a href="http://api.jquery.com/deferred.done/"><code>done</code></a>, <a href="http://api.jquery.com/deferred.fail/"><code>fail</code></a>, <a href="http://api.jquery.com/deferred.always"><code>always</code></a>, <a href="http://api.jquery.com/deferred.pipe/"><code>pipe</code></a>. <a href="http://api.jquery.com/deferred.isResolved/"><code>isResolved</code></a>, and <a href="http://api.jquery.com/deferred.isRejected/"><code>isRejected</code></a>) to prevent users from changing the state of the Deferred.</a>
+<p>This object provides a subset of the methods of the <a href="http://api.jquery.com/category/deferred-object">Deferred</a> object (<a href="http://api.jquery.com/deferred.then/"><code>then</code></a>, <a href="http://api.jquery.com/deferred.done/"><code>done</code></a>, <a href="http://api.jquery.com/deferred.fail/"><code>fail</code></a>, <a href="http://api.jquery.com/deferred.always"><code>always</code></a>, <a href="http://api.jquery.com/deferred.pipe/"><code>pipe</code></a>. <a href="http://api.jquery.com/deferred.isResolved/"><code>isResolved</code></a>, and <a href="http://api.jquery.com/deferred.isRejected/"><code>isRejected</code></a>) to prevent users from changing the state of the Deferred.
 </p>
 <h2 id="Callbacks">Callbacks Object</h2>
 <p>A multi-purpose object that provides a powerful way to manage callback lists. It supports adding, removing, firing, and disabling callbacks. The Callbacks object is created and returned by the <code>$.Callbacks</code> function and subsequently returned by most of that function's methods. </p>
