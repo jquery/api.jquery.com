@@ -21,7 +21,7 @@
     <added>1.0</added>
   </signature>
   <longdesc>
-    <p>This method is a shortcut for <code>.bind('mouseout', handler)</code> in the first two variation, and <code>.trigger('mouseout')</code> in the third.</p>
+    <p>This method is a shortcut for <code>.on('mouseout', handler)</code> in the first two variation, and <code>.trigger('mouseout')</code> in the third.</p>
     <p>The <code>mouseout</code> event is sent to an element when the mouse pointer leaves the element. Any HTML element can receive this event.</p>
     <p>For example, consider the HTML:</p>
     <pre><code>&lt;div id="outer"&gt;
@@ -81,9 +81,9 @@ $("div.overout").mouseout(function(){
 });
 
 var n = 0;
-$("div.enterleave").bind("mouseenter",function(){
+$("div.enterleave").on("mouseenter",function(){
   $("p:first",this).text("mouse enter");
-}).bind("mouseleave",function(){
+}).on("mouseleave",function(){
   $("p:first",this).text("mouse leave");
   $("p:last",this).text(++n);
 });

@@ -79,7 +79,7 @@ $.post( "url.xml", function(data) {
       <h4 id="returning-empty-set">Returning an Empty Set</h4>
       <p>As of jQuery 1.4, calling the <code>jQuery()</code> method with <em>no arguments</em> returns an empty jQuery set (with a <code><a href="http://api.jquery.com/length/">.length</a></code> property of 0). In previous versions of jQuery, this would return a set containing the document node.</p>
       <h4 id="working-with-plain-objects">Working With Plain Objects</h4>
-      <p>At present, the only operations supported on plain JavaScript objects wrapped in jQuery are: <code>.data()</code>,<code>.prop()</code>,<code>.bind()</code>, <code>.unbind()</code>, <code>.trigger()</code> and <code>.triggerHandler()</code>. The use of <code>.data()</code> (or any method requiring <code>.data()</code>) on a plain object will result in a new property on the object called jQuery{randomNumber} (eg. jQuery123456789).</p>
+      <p>At present, the only operations supported on plain JavaScript objects wrapped in jQuery are: <code>.data()</code>,<code>.prop()</code>,<code>.on()</code>, <code>.off()</code>, <code>.trigger()</code> and <code>.triggerHandler()</code>. The use of <code>.data()</code> (or any method requiring <code>.data()</code>) on a plain object will result in a new property on the object called jQuery{randomNumber} (eg. jQuery123456789).</p>
       <pre><code>
 // define a plain object
 var foo = {foo: "bar", hello: "world"};
@@ -99,7 +99,7 @@ $foo.data( "keyName", "someValue");
 console.log( $foo ); // will now contain a jQuery{randomNumber} property
 
 // test binding an event name and triggering
-$foo.bind( "eventName", function () {
+$foo.on( "eventName", function () {
   console.log("eventName was called");
 });
 

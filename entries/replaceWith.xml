@@ -108,7 +108,7 @@ $("p").click(function () {
   <example>
     <desc>On button click, replace the containing div with its child divs and append the class name of the selected element to the paragraph.</desc>
     <code><![CDATA[
-$('button').bind("click", function() {
+$('button').on("click", function() {
   var $container = $("div.container").replaceWith(function() {
     return $(this).contents();
   });

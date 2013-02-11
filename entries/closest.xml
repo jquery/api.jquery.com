@@ -101,7 +101,7 @@ $('li.item-a').closest('#one', listItemII)
     <example>
       <desc>Show how event delegation can be done with closest. The closest list element toggles a yellow background when it or its descendent is clicked.</desc>
       <code><![CDATA[
-  $( document ).bind("click", function( e ) {
+  $( document ).on("click", function( e ) {
     $( e.target ).closest("li").toggleClass("hilight");
   });
 ]]></code>
@@ -118,7 +118,7 @@ $('li.item-a').closest('#one', listItemII)
       <desc>Pass a jQuery object to closest. The closest list element toggles a yellow background when it or its descendent is clicked.</desc>
       <code><![CDATA[
   var $listElements = $("li").css("color", "blue");
-  $( document ).bind("click", function( e ) {
+  $( document ).on("click", function( e ) {
     $( e.target ).closest( $listElements ).toggleClass("hilight");
   });
 ]]></code>

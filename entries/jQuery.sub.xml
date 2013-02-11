@@ -50,7 +50,7 @@ typeof jQuery('body').myCustomMethod // undefined]]></code>
     });
 
     // A new remove event is now triggered from this copy of jQuery
-    $(document).bind("remove", function(e) {
+    $(document).on("remove", function(e) {
       $(e.target).parent().hide();
     });
   });

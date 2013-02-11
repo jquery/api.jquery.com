@@ -11,7 +11,7 @@
     <css>body {background-color: #eef; }
     div { padding: 20px; }</css>
     <html><![CDATA[<div id="log"></div>]]></html>
-    <code><![CDATA[$(document).bind('mousemove',function(e){
+    <code><![CDATA[$(document).on('mousemove',function(e){
           $("#log").text("e.pageX: " + e.pageX + ", e.pageY: " + e.pageY);
 }); ]]></code>
   </example>

@@ -53,7 +53,7 @@ dfd
 });
 
 /* resolve the Deferred object when the button is clicked */
-$("button").bind("click", function() {
+$("button").on("click", function() {
   dfd.resolve("and");
 });
 ]]></code>

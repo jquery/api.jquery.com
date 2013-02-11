@@ -69,7 +69,7 @@ var me = {
     /* With proxy, `this` refers to the me object encapsulating */
     /* this function. */
     $("#log").append( "Hello " + this.type + "<br>" );
-    $("#test").unbind("click", this.test);
+    $("#test").off("click", this.test);
   }
 };
 

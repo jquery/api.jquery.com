@@ -21,7 +21,7 @@
     <added>1.0</added>
   </signature>
   <longdesc>
-    <p>This method is a shortcut for <code>.bind('resize', handler)</code> in the first and second variations, and <code>.trigger('resize')</code> in the third.</p>
+    <p>This method is a shortcut for <code>.on('resize', handler)</code> in the first and second variations, and <code>.trigger('resize')</code> in the third.</p>
     <p>The <code>resize</code> event is sent to the <code>window</code> element when the size of the browser window changes:</p>
     <pre><code>$(window).resize(function() {
   $('#log').append('&lt;div&gt;Handler for .resize() called.&lt;/div&gt;');

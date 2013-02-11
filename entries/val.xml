@@ -128,7 +128,7 @@ $.valHooks.textarea = {
     <example>
       <desc>Use the function argument to modify the value of an input box.</desc>
       <code><![CDATA[
-  $('input').bind('blur', function() {
+  $('input').on('blur', function() {
     $(this).val(function( i, val ) {
       return val.toUpperCase();
     });

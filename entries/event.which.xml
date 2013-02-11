@@ -11,7 +11,7 @@
   </longdesc>
   <example>
     <desc>Log which key was depressed.</desc>
-    <code><![CDATA[$('#whichkey').bind('keydown',function(e){
+    <code><![CDATA[$('#whichkey').on('keydown',function(e){
   $('#log').html(e.type + ': ' +  e.which );
 });  ]]></code>
     <html><![CDATA[
@@ -21,7 +21,7 @@
   <example>
     <desc>Log which mouse button was depressed.</desc>
     <code><![CDATA[
-$('#whichkey').bind('mousedown',function(e){
+$('#whichkey').on('mousedown',function(e){
   $('#log').html(e.type + ': ' +  e.which );
 });
 ]]></code>
