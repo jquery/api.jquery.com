@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<entry name="deferred.isRejected" type="method" return="Boolean" deprecated="1.7">
+<entry name="deferred.isRejected" type="method" return="Boolean" deprecated="1.7" removed="1.8">
   <title>deferred.isRejected()</title>
   <signature>
     <added>1.5</added>
