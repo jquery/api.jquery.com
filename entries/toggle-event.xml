@@ -45,35 +45,7 @@
     <p>The <code>.toggle()</code> method is provided for convenience. It is relatively straightforward to implement the same behavior by hand, and this can be necessary if the assumptions built into <code>.toggle()</code> prove limiting. For example, <code>.toggle()</code> is not guaranteed to work correctly if applied twice to the same element. Since <code>.toggle()</code> internally uses a <code>click</code> handler to do its work, we must unbind <code>click</code> to remove a behavior attached with <code>.toggle()</code>, so other <code>click</code> handlers can be caught in the crossfire. The implementation also calls <code>.preventDefault()</code> on the event, so links will not be followed and buttons will not be clicked if <code>.toggle()</code> has been called on the element.</p>
   </longdesc>
   <example>
-    <desc>Click to toggle highlight on the list item.</desc>
-    <code><![CDATA[
-    $("li").toggle(
-      function () {
-        $(this).css({"list-style-type":"disc", "color":"blue"});
-      },
-      function () {
-        $(this).css({"list-style-type":"disc", "color":"red"});
-      },
-      function () {
-        $(this).css({"list-style-type":"", "color":""});
-      }
-    );
-
-]]></code>
-    <css><![CDATA[
-  ul { margin:10px; list-style:inside circle; font-weight:bold; }
-  li { cursor:pointer; }
-  ]]></css>
-    <html><![CDATA[<ul>
-    <li>Go to the store</li>
-    <li>Pick up dinner</li>
-    <li>Debug crash</li>
-
-    <li>Take a jog</li>
-  </ul>]]></html>
-  </example>
-  <example>
-    <desc>To toggle a style on table cells:</desc>
+    <desc>Toggle a style on table cells. (Not recommended. Use .toggleClass() instead.):</desc>
     <code><![CDATA[$("td").toggle(
   function () {
     $(this).addClass("selected");

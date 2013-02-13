@@ -23,18 +23,10 @@
     <example>
       <desc>Show the browser info.</desc>
       <code><![CDATA[
-    jQuery.each(jQuery.browser, function(i, val) {
-      $("<div>" + i + " : <span>" + val + "</span>")
-                .appendTo( document.body );
-    });]]></code>
-      <css><![CDATA[
-  p { color:green; font-weight:bolder; margin:3px 0 0 10px; }
-  div { color:blue; margin-left:20px; font-size:14px; }
-  span { color:red; }
-  ]]></css>
-      <html><![CDATA[
-<p>Browser info:</p>
-]]></html>
+jQuery.each(jQuery.browser, function(i, val) {
+  $("<div>" + i + " : <span>" + val + "</span>")
+  .appendTo( document.body );
+});]]></code>
     </example>
     <example>
       <desc>Returns true if the current useragent is some version of Microsoft's Internet Explorer.</desc>
@@ -95,13 +87,6 @@
 $("p").html( "The version number of the rendering engine your browser uses is: <span>" +
                 $.browser.version + "</span>" );
 ]]></code>
-      <css><![CDATA[
-  p { color:blue; margin:20px; }
-  span { color:red; }
-  ]]></css>
-      <html><![CDATA[
-<p></p>
-]]></html>
     </example>
     <example>
       <desc>Alerts the version of IE's rendering engine that is being used:</desc>
