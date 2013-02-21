@@ -41,8 +41,10 @@
     <p>If there is more than one target element, however, cloned copies of the inserted element will be created for each target after the first, and that new set (the original element plus clones) is returned.</p>
   </longdesc>
   <example>
-    <desc>Inserts all paragraphs after an element with id of "foo". Same as $("#foo").after("p")</desc>
-    <code><![CDATA[$("p").insertAfter("#foo"); // check after() examples]]></code>
+    <desc>Insert all paragraphs after an element with id of "foo". Same as $("#foo").after("p")</desc>
+    <code><![CDATA[
+$("p").insertAfter("#foo");
+]]></code>
     <css><![CDATA[#foo { background:yellow; }]]></css>
     <html><![CDATA[<p> is what I said... </p><div id="foo">FOO!</div>]]></html>
   </example>

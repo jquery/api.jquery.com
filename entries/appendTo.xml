@@ -50,8 +50,10 @@
     <p>If there is more than one target element, however, cloned copies of the inserted element will be created for each target after the first, and that new set (the original element plus clones) is returned.</p>
   </longdesc>
   <example>
-    <desc>Appends all spans to the element with the ID "foo"</desc>
-    <code><![CDATA[$("span").appendTo("#foo"); // check append() examples]]></code>
+    <desc>Append all spans to the element with the ID "foo" (Check append() documentation for more examples)</desc>
+    <code><![CDATA[
+$("span").appendTo("#foo");
+]]></code>
     <css><![CDATA[#foo { background:yellow; }]]></css>
     <html><![CDATA[<span>I have nothing more to say... </span>
 
