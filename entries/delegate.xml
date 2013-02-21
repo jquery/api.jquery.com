@@ -41,8 +41,10 @@
   <longdesc>
     <p>As of jQuery 1.7, <code>.delegate()</code> has been superseded by the <a href="http://api.jquery.com/on">.on()</a> method. For earlier versions, however, it remains the most effective means to use event delegation. More information on event binding and delegation is in the <a href="http://api.jquery.com/on">.on()</a> method. In general, these are the equivalent templates for the two methods:</p>
     <pre><code>
-$(elements).delegate(<em>selector</em>, <em>events</em>, <em>data</em>, <em>handler</em>);  // jQuery 1.4.3+
-$(elements).on(<em>events</em>, <em>selector</em>, <em>data</em>, <em>handler</em>);        // jQuery 1.7+
+// jQuery 1.4.3+
+$(elements).delegate( selector, events, data, handler );
+// jQuery 1.7+
+$(elements).on( events, selector, data, handler );
  </code></pre>
     <p>For example, the following <code>.delegate()</code> code:</p>
     <pre><code>$("table").delegate("td", "click", function() {
