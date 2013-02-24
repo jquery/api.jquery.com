@@ -75,7 +75,7 @@ $("#getw").click(function () {
     <longdesc>
       <p>When calling <code>.width("value")</code>, the value can be either a string (number and unit) or a number. If only a number is provided for the value, jQuery assumes a pixel unit. If a string is provided, however, any valid CSS measurement may be used for the width (such as <code>100px</code>, <code>50%</code>, or <code>auto</code>). Note that in modern browsers, the CSS width property does not include padding, border, or margin, unless the <code>box-sizing</code> CSS property is used.</p>
       <p>If no explicit unit is specified (like "em" or "%") then "px" is assumed.</p>
-      <p>Note that <code>.width("value")</code> sets the width of the box in accordance with the CSS <code>box-sizing</code> property. Changing this property to <code>border-box</code> will cause this function to change the <code>outerWidth</code> of the box instead of the content width.</p>
+      <p>Note that <code>.width("value")</code> sets the content width of the box regardless of the value of the CSS <code>box-sizing</code> property.</p>
     </longdesc>
     <example>
       <desc>Change the width of each div the first time it is clicked (and change its color).</desc>
