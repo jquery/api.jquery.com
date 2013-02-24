@@ -78,7 +78,7 @@ $(document).height(); // returns height of HTML document</code></pre>
     <longdesc>
       <p>When calling <code>.height(value)</code>, the value can be either a string (number and unit) or a number. If only a number is provided for the value, jQuery assumes a pixel unit. If a string is provided, however, a valid CSS measurement must be provided for the height (such as <code>100px</code>, <code>50%</code>, or <code>auto</code>). Note that in modern browsers, the CSS height property does not include padding, border, or margin.</p>
       <p>If no explicit unit was specified (like 'em' or '%') then "px" is concatenated to the value.</p>
-      <p>Note that <code>.height(value)</code> sets the height of the box in accordance with the CSS <code>box-sizing</code> property. Changing this property to <code>border-box</code> will cause this function to change the outerHeight of the box instead of the content height.</p>
+      <p>Note that <code>.height(value)</code> sets the content height of the box regardless of the value of the CSS <code>box-sizing</code> property.</p>
     </longdesc>
     <example>
       <desc>To set the height of each div on click to 30px plus a color change.</desc>
