@@ -302,7 +302,7 @@ jqxhr.always(function() { alert("second complete"); });</code></pre>
       } catch ( e ) {
       }
 
-      $( xhrCorsHeaders ).each(function ( i, headerName ) {
+      $.each( xhrCorsHeaders, function ( i, headerName ) {
         if ( xhr.getResponseHeader( headerName ) ) {
           allHeaders += headerName + ": " + xhr.getResponseHeader( headerName ) + "\n";
         }
