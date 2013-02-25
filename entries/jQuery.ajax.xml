@@ -286,7 +286,7 @@ jqxhr.always(function() { alert("second complete"); });</code></pre>
     <pre><code>
 (function () {
   var _super = jQuery.ajaxSettings.xhr,
-    xhrCorsHeaders = ["Cache-Control", "Content-Language", "Content-Type", "Expires", "Last-Modified", "Pragma"];
+    xhrCorsHeaders = [ "Cache-Control", "Content-Language", "Content-Type", "Expires", "Last-Modified", "Pragma" ];
 
   jQuery.ajaxSettings.xhr = function () {
     var xhr = _super(),
@@ -295,14 +295,14 @@ jqxhr.always(function() { alert("second complete"); });</code></pre>
     xhr.getAllResponseHeaders = function () {
       var allHeaders = "";
       try {
-        allHeaders = getAllResponseHeaders.apply(xhr);
+        allHeaders = getAllResponseHeaders.apply( xhr );
         if ( allHeaders ) {
           return allHeaders;
         }
-      } catch (e) {
+      } catch ( e ) {
       }
 
-      $( xhrCorsHeaders ).each(function (i, headerName) {
+      $( xhrCorsHeaders ).each(function ( i, headerName ) {
         if ( xhr.getResponseHeader( headerName ) ) {
           allHeaders += headerName + ": " + xhr.getResponseHeader( headerName ) + "\n";
         }
