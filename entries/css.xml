@@ -121,10 +121,10 @@ div { height: 50px; margin: 5px; padding: 5px; float: left; }
       <p><strong>Note: </strong>If nothing is returned in the setter function (ie. <code>function(index, style){})</code>, or if <code>undefined</code> is returned, the current value is not changed. This is useful for selectively setting values only when certain criteria are met.</p>
     </longdesc>
     <example>
-      <desc>To change the color of any paragraph to red on mouseover event.</desc>
+      <desc>Change the color of any paragraph to red on mouseover event.</desc>
       <code><![CDATA[
-  $("p").mouseover(function () {
-    $(this).css("color","red");
+  $("p").on( "mouseover", function() {
+    $(this).css( "color", "red" );
   });
 ]]></code>
       <css><![CDATA[
@@ -137,10 +137,10 @@ div { height: 50px; margin: 5px; padding: 5px; float: left; }
   ]]></html>
     </example>
     <example>
-      <desc>Increase the width of #box by 200 pixels</desc>
+      <desc>Increase the width of #box by 200 pixels the first time it is clicked.</desc>
       <code><![CDATA[
-  $("#box").one( "click", function () {
-    $( this ).css( "width","+=200" );
+  $("#box").one( "click", function() {
+    $( this ).css( "width", "+=200" );
   });
 ]]></code>
       <css><![CDATA[
@@ -151,13 +151,13 @@ div { height: 50px; margin: 5px; padding: 5px; float: left; }
   ]]></html>
     </example>
     <example>
-      <desc>To highlight a clicked word in the paragraph.</desc>
+      <desc>Highlight a clicked word in the paragraph.</desc>
       <code><![CDATA[
-  var words = $("p:first").text().split(" ");
-  var text = words.join("</span> <span>");
-  $("p:first").html("<span>" + text + "</span>");
-  $("span").click(function () {
-    $(this).css("background-color","yellow");
+  var words = $("p").first().text().split( /\s+/ );
+  var text = words.join( "</span> <span>" );
+  $("p").first().html( "<span>" + text + "</span>" );
+  $("span").on( "click", function() {
+    $(this).css( "background-color", "yellow" );
   });
 
 ]]></code>
@@ -174,18 +174,22 @@ div { height: 50px; margin: 5px; padding: 5px; float: left; }
 </p>]]></html>
     </example>
     <example>
-      <desc>To set the text-weight of hovered paragraphs to bolder, background to blue, and different CSS when leave:</desc>
+      <desc>Change the font weight and background color on mouseenter and mouseleave.</desc>
       <code><![CDATA[
-  $("p").hover(function () {
-    $(this).css({'background-color' : 'yellow', 'font-weight' : 'bolder'});
-  }, function () {
-    var cssObj = {
-      'background-color' : '#ddd',
-      'font-weight' : '',
-      'color' : 'rgb(0,40,244)'
-    };
-    $(this).css(cssObj);
+$("p")
+.on( "mouseenter", function() {
+  $(this).css({
+    "background-color": "yellow",
+    "font-weight": "bolder"
   });
+})
+.on( "mouseleave", function() {
+  var styles = {
+    backgroundColor : "#ddd",
+    fontWeight: ""
+  };
+  $(this).css( styles );
+});
 ]]></code>
       <css><![CDATA[
   p { color:green; }
@@ -196,19 +200,18 @@ div { height: 50px; margin: 5px; padding: 5px; float: left; }
 ]]></html>
     </example>
     <example>
-      <desc>Increase the size of a div when you click it:</desc>
+      <desc>Increase the size of a div when you click it.</desc>
       <code><![CDATA[
-  $("div").click(function() {
-    $(this).css({
-      width: function(index, value) {
-        return parseFloat(value) * 1.2;
-      },
-      height: function(index, value) {
-        return parseFloat(value) * 1.2;
-      }
-
-    });
+$("div").on( "click", function() {
+  $(this).css({
+    width: function( index, value ) {
+      return parseFloat( value ) * 1.2;
+    },
+    height: function( index, value ) {
+      return parseFloat( value ) * 1.2;
+    }
   });
+});
 ]]></code>
       <css><![CDATA[
   div { width: 20px; height: 15px; background-color: #f33; }
