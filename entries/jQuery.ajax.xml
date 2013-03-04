@@ -284,29 +284,35 @@ jqxhr.always(function() { alert("second complete"); });</code></pre>
     <p><strong>At present</strong>, due to a bug in Firefox where <code>.getAllResponseHeaders()</code> returns the empty string although <code>.getResponseHeader('Content-Type')</code> returns a non-empty string, automatically decoding JSON CORS responses in Firefox with jQuery is not supported.</p>
     <p>A workaround to this is possible by overriding <code>jQuery.ajaxSettings.xhr</code> as follows:</p>
     <pre><code>
-var _super = jQuery.ajaxSettings.xhr;
-jQuery.ajaxSettings.xhr = function () {
-  var xhr = _super(),
+(function () {
+  var _super = jQuery.ajaxSettings.xhr,
+    xhrCorsHeaders = [ "Cache-Control", "Content-Language", "Content-Type", "Expires", "Last-Modified", "Pragma" ];
+
+  jQuery.ajaxSettings.xhr = function () {
+    var xhr = _super(),
       getAllResponseHeaders = xhr.getAllResponseHeaders;
 
-  xhr.getAllResponseHeaders = function () {
-    if ( getAllResponseHeaders() ) {
-      return getAllResponseHeaders();
-    }
-    var allHeaders = "";
-
-    $( ["Cache-Control", "Content-Language", "Content-Type",
-        "Expires", "Last-Modified", "Pragma"] )
-    .each(function (i, header_name) {
-      if ( xhr.getResponseHeader( header_name ) ) {
-        allHeaders += header_name + ": " + xhr.getResponseHeader( header_name ) + "\n";
+    xhr.getAllResponseHeaders = function () {
+      var allHeaders = "";
+      try {
+        allHeaders = getAllResponseHeaders.apply( xhr );
+        if ( allHeaders ) {
+          return allHeaders;
+        }
+      } catch ( e ) {
       }
-      return allHeaders;
-    });
-  };
 
-  return xhr;
-};
+      $.each( xhrCorsHeaders, function ( i, headerName ) {
+        if ( xhr.getResponseHeader( headerName ) ) {
+          allHeaders += headerName + ": " + xhr.getResponseHeader( headerName ) + "\n";
+        }
+      });
+      return allHeaders;
+    };
+
+    return xhr;
+  };
+})();
 </code></pre>
 
     <h4 id="extending-ajax">Extending Ajax</h4>
