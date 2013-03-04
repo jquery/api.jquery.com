@@ -18,6 +18,11 @@
     <argument name="event" type="Event">
       <desc>A <a href="http://api.jquery.com/category/events/event-object/"><code>jQuery.Event</code></a> object.</desc>
     </argument>
+    <argument name="extraParameters" optional="true">
+      <type name="Array"/>
+      <type name="PlainObject"/>
+      <desc>Additional parameters to pass along to the event handler.</desc>
+    </argument>
   </signature>
   <longdesc>
     <p>Any event handlers attached with <code>.on()</code> or one of its shortcut methods are triggered when the corresponding event occurs. They can be fired manually, however, with the <code>.trigger()</code> method. A call to <code>.trigger()</code> executes the handlers in the same order they would be if the event were triggered naturally by the user:</p>
