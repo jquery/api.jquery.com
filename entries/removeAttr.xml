@@ -20,17 +20,14 @@ console.log("onclick property: ", $element[0].onclick);
     <desc>Clicking the button enables the input next to it.</desc>
     <code><![CDATA[
 (function() {
-  var inputTitle = $("input").attr("title");
   $("button").click(function () {
     var input = $(this).next();
 
-    if ( input.attr("title") == inputTitle ) {
-      input.removeAttr("title")
+    if (input.is(:disabled)){
+      input.removeAttr("disabled");
     } else {
-      input.attr("title", inputTitle);
+      input.Attr("disabled", "disabled");
     }
-
-    $("#log").html( "input title is now " + input.attr("title") );
   });
 })();
 ]]></code>
