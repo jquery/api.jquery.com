@@ -57,7 +57,7 @@ $("p:last").html(str);
     <desc>Set the content of each element in the set of matched elements to the specified text.</desc>
     <longdesc>
       <p>Unlike the <code>.html()</code> method, <code>.text()</code> can be used in both XML and HTML documents. </p>
-      <p>We need to be aware that this method escapes the string provided as necessary so that it will render correctly in HTML. To do so, it calls the DOM method <code>.createTextNode()</code>, which replaces special characters with their HTML entity equivalents (such as <code>&amp;lt;</code> for <code>&lt;</code>).  Consider the following HTML:</p>
+      <p>We need to be aware that this method escapes the string provided as necessary so that it will render correctly in HTML. To do so, it calls the DOM method <code>.createTextNode()</code>, does not interpret the string as HTML.  Consider the following HTML:</p>
       <pre><code>&lt;div class="demo-container"&gt;
   &lt;div class="demo-box"&gt;Demonstration Box&lt;/div&gt;
   &lt;ul&gt;
