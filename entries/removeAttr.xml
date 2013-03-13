@@ -17,7 +17,7 @@ console.log("onclick property: ", $element[0].onclick);
     </code></pre>
   </longdesc>
   <example>
-    <desc>Clicking the button enables the input next to it.</desc>
+    <desc>Clicking the button changes the title of the input next to it. Move the mouse pointer over the text input to see the effect of adding and removing the title attribute.</desc>
     <code><![CDATA[
 (function() {
   var inputTitle = $("input").attr("title");
@@ -34,7 +34,7 @@ console.log("onclick property: ", $element[0].onclick);
   });
 })();
 ]]></code>
-    <html><![CDATA[<button>Enable</button>
+    <html><![CDATA[<button>Change title</button>
 <input type="text" title="hello there" />
 <div id="log"></div>
 ]]></html>
