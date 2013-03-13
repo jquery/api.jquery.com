@@ -12,6 +12,7 @@
     <desc>Get the value of a property for the first element in the set of matched elements.</desc>
     <longdesc>
       <p>The <code>.prop()</code> method gets the property value for only the <em>first</em> element in the matched set. It returns <code>undefined</code> for the value of a property that has not been set, or if the matched set has no elements. To get the value for each element individually, use a looping construct such as jQuery's <code>.each()</code> or <code>.map()</code> method.</p>
+      <h4>Attributes vs. Properties</h4>
       <p>The difference between <em>attributes</em> and <em>properties</em> can be important in specific situations. <strong>Before jQuery 1.6</strong>, the <code><a href="http://api.jquery.com/attr/">.attr()</a></code> method sometimes took property values into account when retrieving some attributes, which could cause inconsistent behavior. <strong>As of jQuery 1.6</strong>, the <code>.prop()</code> method provides a way to explicitly retrieve property values, while <code>.attr()</code> retrieves attributes.</p>
       <p>For example, <code>selectedIndex</code>, <code>tagName</code>, <code>nodeName</code>, <code>nodeType</code>, <code>ownerDocument</code>, <code>defaultChecked</code>, and <code>defaultSelected</code> should be retrieved and set with the <code>.prop()</code> method. Prior to jQuery 1.6, these properties were retrievable with the <code>.attr()</code> method, but this was not within the scope of <code>attr</code>. These do not have corresponding attributes and are only properties.</p>
       <p>Concerning boolean attributes, consider a DOM element defined by the HTML markup <code>&lt;input type="checkbox" checked="checked" /&gt;</code>, and assume it is in a JavaScript variable named <code>elem</code>:</p>
@@ -56,8 +57,9 @@
           <td><code>true</code> (Boolean) Changed with checkbox state</td>
         </tr>
       </table>
-      <p>
-According to the <a href="http://www.w3.org/TR/html401/interact/forms.html#h-17.4">W3C forms specification</a>, the <code>checked</code> attribute is a <em><a href="http://www.w3.org/TR/html4/intro/sgmltut.html#h-3.3.4.2">boolean attribute</a></em>, which means the corresponding property is true if the attribute is present at all&#x2014;even if, for example, the attribute has no value or an empty string value. The preferred cross-browser-compatible way to determine if a checkbox is checked is to check for a "truthy" value on the element's property using one of the following:</p>
+      <br/>
+      <p>According to the <a href="http://www.w3.org/TR/html401/interact/forms.html#h-17.4">W3C forms specification</a>, the <code>checked</code> attribute is a <em><a href="http://www.w3.org/TR/html4/intro/sgmltut.html#h-3.3.4.2">boolean attribute</a></em>, which means the corresponding property is <strong>true</strong> if the attribute is present at all&#x2014;even if, for example, the attribute has no value or is set to empty string value or even "false". This is true of all boolean attributes.</p>
+      <p>Nevertheless, the most important concept to remember about the <code>checked</code> attribute is that it does not correspond to the <code>checked</code> property. The attribute actually corresponds to the <code>defaultChecked</code> property and should be used only to set the <em>initial</em> value of the checkbox. The <code>checked</code> attribute value does not change with the state of the checkbox, while the <code>checked</code> property does. Therefore, the cross-browser-compatible way to determine if a checkbox is checked is to use the property:</p>
       <ul>
         <li>
           <code>if ( elem.checked )</code>
@@ -69,7 +71,7 @@ According to the <a href="http://www.w3.org/TR/html401/interact/forms.html#h-17.
           <code>if ( $(elem).is(":checked") )</code>
         </li>
       </ul>
-      <p>If using jQuery 1.6, the code <code>if ( $(elem).attr("checked") )</code> will retrieve the actual content <em>attribute</em>, which does not change as the checkbox is checked and unchecked. It is meant only to store the default or initial value of the checked property. To maintain backwards compatability, the <code>.attr()</code> method in jQuery 1.6.1+ will retrieve and update the property for you so no code for boolean attributes is required to be changed to <code>.prop()</code>.  Nevertheless, the preferred way to retrieve a checked value is with one of the options listed above. To see how this works in the latest jQuery, check/uncheck the checkbox in the example below.</p>
+      <p>The same is true for other dynamic attributes, such as <code>selected</code> and <code>value</code>.</p>
     </longdesc>
     <note id="prop-memory-leaks" type="additional"/>
     <example>

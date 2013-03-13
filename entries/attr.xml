@@ -12,7 +12,6 @@
     <desc>Get the value of an attribute for the first element in the set of matched elements.</desc>
     <longdesc>
       <p>The <code>.attr()</code> method gets the attribute value for only the <em>first</em> element in the matched set. To get the value for each element individually, use a looping construct such as jQuery's <code>.each()</code> or <code>.map()</code> method.</p>
-      <p><strong>As of jQuery 1.6</strong>, the <code>.attr()</code> method returns <code>undefined</code> for attributes that have not been set. In addition, <code>.attr()</code> should not be used on plain objects, arrays, the window, or the document. To retrieve and change DOM properties, use the <a href="http://api.jquery.com/prop/">.prop()</a> method.</p>
       <p>Using jQuery's <code>.attr()</code> method to get the value of an element's attribute has two main benefits:</p>
       <ol>
         <li><strong>Convenience</strong>: It can be called directly on a jQuery object and chained to other jQuery methods.</li>
@@ -21,7 +20,91 @@
       <blockquote>
         <p><strong>Note:</strong> Attribute values are strings with the exception of a few attributes such as value and tabindex.</p>
       </blockquote>
+      <p><strong>As of jQuery 1.6</strong>, the <code>.attr()</code> method returns <code>undefined</code> for attributes that have not been set. In addition, <code>.attr()</code> should not be used on plain objects, arrays, the window, or the document. To retrieve and change DOM properties, use the <a href="http://api.jquery.com/prop/">.prop()</a> method.</p>
+
+      <h4>Attributes vs. Properties</h4>
+      <p>The difference between <em>attributes</em> and <em>properties</em> can be important in specific situations. <strong>Before jQuery 1.6</strong>, the <code>.attr()</code> method sometimes took property values into account when retrieving some attributes, which could cause inconsistent behavior. <strong>As of jQuery 1.6</strong>, the <code>.prop()</code> method provides a way to explicitly retrieve property values, while <code>.attr()</code> retrieves attributes.</p>
+      <p>For example, <code>selectedIndex</code>, <code>tagName</code>, <code>nodeName</code>, <code>nodeType</code>, <code>ownerDocument</code>, <code>defaultChecked</code>, and <code>defaultSelected</code> should be retrieved and set with the <code><a href="http://api.jquery.com/prop/">.prop()</a></code> method. Prior to jQuery 1.6, these properties were retrievable with the <code>.attr()</code> method, but this was not within the scope of <code>attr</code>. These do not have corresponding attributes and are only properties.</p>
+      <p>Concerning boolean attributes, consider a DOM element defined by the HTML markup <code>&lt;input type="checkbox" checked="checked" /&gt;</code>, and assume it is in a JavaScript variable named <code>elem</code>:</p>
+      <table class="listing">
+        <tr>
+          <th>
+            <code>elem.checked</code>
+          </th>
+          <td><code>true</code> (Boolean) Will change with checkbox state</td>
+        </tr>
+        <tr>
+          <th>
+            <code>$(elem).prop("checked")</code>
+          </th>
+          <td><code>true</code> (Boolean) Will change with checkbox state</td>
+        </tr>
+        <tr>
+          <th>
+            <code>elem.getAttribute("checked")</code>
+          </th>
+          <td><code>"checked"</code> (String) Initial state of the checkbox; does not change</td>
+        </tr>
+        <tr>
+          <th>
+            <code>$(elem).attr("checked")</code>
+            <em>(1.6)</em>
+          </th>
+          <td><code>"checked"</code> (String) Initial state of the checkbox; does not change</td>
+        </tr>
+        <tr>
+          <th>
+            <code>$(elem).attr("checked")</code>
+            <em>(1.6.1+)</em>
+          </th>
+          <td><code>"checked"</code> (String) Will change with checkbox state</td>
+        </tr>
+        <tr>
+          <th>
+            <code>$(elem).attr("checked")</code>
+            <em>(pre-1.6)</em>
+          </th>
+          <td><code>true</code> (Boolean) Changed with checkbox state</td>
+        </tr>
+      </table>
+      <br/>
+      <p>According to the <a href="http://www.w3.org/TR/html401/interact/forms.html#h-17.4">W3C forms specification</a>, the <code>checked</code> attribute is a <em><a href="http://www.w3.org/TR/html4/intro/sgmltut.html#h-3.3.4.2">boolean attribute</a></em>, which means the corresponding property is <strong>true</strong> if the attribute is present at all&#x2014;even if, for example, the attribute has no value or is set to empty string value or even "false". This is true of all boolean attributes.</p>
+      <p>Nevertheless, the most important concept to remember about the <code>checked</code> attribute is that it does not correspond to the <code>checked</code> property. The attribute actually corresponds to the <code>defaultChecked</code> property and should be used only to set the <em>initial</em> value of the checkbox. The <code>checked</code> attribute value does not change with the state of the checkbox, while the <code>checked</code> property does. Therefore, the cross-browser-compatible way to determine if a checkbox is checked is to use the property:</p>
+      <ul>
+        <li>
+          <code>if ( elem.checked )</code>
+        </li>
+        <li>
+          <code>if ( $(elem).prop("checked") )</code>
+        </li>
+        <li>
+          <code>if ( $(elem).is(":checked") )</code>
+        </li>
+      </ul>
+      <p>The same is true for other dynamic attributes, such as <code>selected</code> and <code>value</code>.</p>
     </longdesc>
+    <note id="prop-memory-leaks" type="additional"/>
+    <example>
+      <desc>Display the checked attribute and property of a checkbox as it changes.</desc>
+      <code><![CDATA[
+$("input").change(function() {
+  var $input = $(this);
+  $("p").html(".attr('checked'): <b>" + $input.attr('checked') + "</b><br>"
+              + ".prop('checked'): <b>" + $input.prop('checked') + "</b><br>"
+              + ".is(':checked'): <b>" + $input.is(':checked') ) + "</b>";
+}).change();
+]]></code>
+      <css><![CDATA[
+  p { margin: 20px 0 0 }
+  b { color: blue; }
+]]></css>
+      <html><![CDATA[
+<input id="check1" type="checkbox" checked="checked">
+<label for="check1">Check me</label>
+<p></p>
+]]></html>
+    </example>
+    <br/>
     <example>
       <desc>Find the title attribute of the first &lt;em&gt; in the page.</desc>
       <code><![CDATA[
