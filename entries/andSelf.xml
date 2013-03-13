@@ -61,4 +61,5 @@ p, div { margin:5px; padding:5px; }
   </example>
   <category slug="traversing/miscellaneous-traversal"/>
   <category slug="version/1.2"/>
+  <category slug="deprecated/deprecated-1.8"/>
 </entry>
