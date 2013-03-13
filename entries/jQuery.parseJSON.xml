@@ -9,13 +9,14 @@
   </signature>
   <desc>Takes a well-formed JSON string and returns the resulting JavaScript object.</desc>
   <longdesc>
-    <p>Passing in a malformed JSON string may result in an exception being thrown. For example, the following are all malformed JSON strings:</p>
+    <p>Passing in a malformed JSON string results in a JavaScript exception being thrown. For example, the following are all malformed JSON strings:</p>
     <ul>
       <li><code>{test: 1}</code> (test does not have double quotes around it).</li>
       <li><code>{'test': 1}</code> ('test' is using single quotes instead of double quotes).</li>
     </ul>
-    <p>Additionally if you pass in nothing, an empty string, null, or undefined, 'null' will be returned from parseJSON. Where the browser provides a native implementation of <code>JSON.parse</code>, jQuery uses it to parse the string. For details on the JSON format, see <a href="http://json.org/">http://json.org/</a>.
-</p>
+ 	<p>The JSON standard does not permit "control characters" such as a tab or newline. An example like `$.parseJSON('{"testing":"1\t2\n3"}')` will throw an error in most implementations because the JavaScript parser converts the string's tab and newline escapes into literal tab and newline; doubling the backslashes like `"1\\t2\\n3"` yields expected results. This problem is often seen when injecting JSON into a JavaScript file from a server-side language such as PHP.</p>
+	<p>Where the browser provides a native implementation of <code>JSON.parse</code>, jQuery uses it to parse the string. For details on the JSON format, see <a href="http://json.org/">http://json.org/</a>.</p>
+	<p>Prior to jQuery 1.9, `$.parseJSON` returned `null` instead of throwing an error if it was passed an empty string, `null`, or `undefined`, even though those are not valid JSON. </p>
   </longdesc>
   <example>
     <desc>Parse a JSON string.</desc>
