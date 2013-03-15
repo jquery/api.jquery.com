@@ -10,7 +10,7 @@
 &lt;html&gt;
 &lt;head&gt;<xsl:if test="css/text()">
 	&lt;style&gt;<xsl:copy-of select="css/text()" />&lt;/style&gt;</xsl:if>
-	&lt;script src="http://code.jquery.com/jquery-latest.js"&gt;&lt;/script&gt;<xsl:if test="code/@location='head'">
+	&lt;script src="http://code.jquery.com/jquery-1.9.1.js"&gt;&lt;/script&gt;<xsl:if test="code/@location='head'">
 	&lt;script&gt;
 	<xsl:copy-of select="code/text()" />
 	&lt;/script&gt;
