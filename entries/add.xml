@@ -37,6 +37,7 @@
   <desc>Add elements to the set of matched elements.</desc>
   <longdesc>
     <p>Given a jQuery object that represents a set of DOM elements, the <code>.add()</code> method constructs a new jQuery object from the union of those elements and the ones passed into the method. The argument to <code>.add()</code> can be pretty much anything that  <code>$()</code> accepts, including a jQuery selector expression, references to DOM elements, or an HTML snippet.</p>
+	<p>Do not assume that this method appends the elements to the existing collection in the order they are passed to the <code>.add()</code> method. When all elements are members of the same document, the resulting collection from <code>.add()</code> will be sorted in document order; that is, in order of each element's appearance in the document. If the collection consists of elements from different documents or ones not in any document, the sort order is undefined. To create a jQuery object with elements in a well-defined order, use the <code>$(array_of_DOM_elements)</code> signature.</p>
     <p>The updated set of elements can be used in a following (chained) method, or assigned to a variable for later use. For example:</p>
     <pre>
       <code>
