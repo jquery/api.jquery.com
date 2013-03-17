@@ -33,8 +33,7 @@ $("p").focusin(function() {
     <html><![CDATA[<p><input type="text" /> <span>focusin fire</span></p>
 <p><input type="password" /> <span>focusin fire</span></p>]]></html>
   </example>
-  <category slug="events/keyboard-events"/>
-  <category slug="events/mouse-events"/>
+  <category slug="events/form-events"/>
   <category slug="version/1.4"/>
   <category slug="version/1.4.3"/>
 </entry>
