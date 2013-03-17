@@ -40,7 +40,7 @@
     <p>We can also select an element on the page and insert it into another:</p>
     <pre><code>$('h2').appendTo($('.container'));
 </code></pre>
-    <p>If an element selected this way is inserted into a single location elsewhere in the DOM, it will be moved into the target (not cloned):</p>
+    <p>If an element selected this way is inserted into a single location elsewhere in the DOM, it will be moved into the target (not cloned) and a new set consisting of the inserted element is returned:</p>
     <pre><code>&lt;div class="container"&gt;
   &lt;div class="inner"&gt;Hello&lt;/div&gt;
   &lt;div class="inner"&gt;Goodbye&lt;/div&gt;
@@ -48,6 +48,7 @@
 &lt;/div&gt;
 </code></pre>
     <p>If there is more than one target element, however, cloned copies of the inserted element will be created for each target after the first, and that new set (the original element plus clones) is returned.</p>
+	<p><strong>Before jQuery 1.9,</strong> the append-to-single-element case did not create a new set, but instead returned the original set which made it difficult to use the <code>.end()</code> method reliably when being used with an unknown number of elements.</p>
   </longdesc>
   <example>
     <desc>Append all spans to the element with the ID "foo" (Check append() documentation for more examples)</desc>

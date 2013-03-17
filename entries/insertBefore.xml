@@ -32,13 +32,14 @@
 &lt;/div&gt;</code></pre>
     <p>We can also select an element on the page and insert it before another:</p>
     <pre><code>$('h2').insertBefore($('.container'));</code></pre>
-    <p>If an element selected this way is inserted into a single location elsewhere in the DOM, it will be moved before the target (not cloned):</p>
+    <p>If an element selected this way is inserted into a single location elsewhere in the DOM, it will be moved before the target (not cloned) and a new set consisting of the inserted element is returned:</p>
     <pre><code>&lt;h2&gt;Greetings&lt;/h2&gt;
 &lt;div class="container"&gt;
   &lt;div class="inner"&gt;Hello&lt;/div&gt;
   &lt;div class="inner"&gt;Goodbye&lt;/div&gt;
 &lt;/div&gt;</code></pre>
     <p>If there is more than one target element, however, cloned copies of the inserted element will be created for each target after the first, and that new set (the original element plus clones) is returned.</p>
+	<p><strong>Before jQuery 1.9,</strong> the append-to-single-element case did not create a new set, but instead returned the original set which made it difficult to use the <code>.end()</code> method reliably when being used with an unknown number of elements.</p>
   </longdesc>
   <example>
     <desc>Insert all paragraphs before an element with id of "foo". Same as $("#foo").before("p")</desc>
