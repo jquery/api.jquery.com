@@ -23,7 +23,7 @@
   $( ".result" ).load("ajax/test.html");
 });</code></pre>
     <p>When the user clicks the element with class <code>trigger</code> and the Ajax request is sent, the log message is displayed.</p>
-    <p><strong>Note:</strong> Because <code>.ajaxStart()</code> is implemented as a method of jQuery object instances, you can use the <code>this</code> keyword to refer to the selected elements within the callback function. <strong>As of jQuery 1.8, however, the <code>.ajaxStart()</code> method should only be attached to <code>document</code>.</strong></p>
+    <p><strong>As of jQuery 1.8, the <code>.ajaxStart()</code> method should only be attached to <code>document</code>.</strong></p>
   </longdesc>
   <note id="ajax-global-false" type="additional" data-title=".ajaxStart()"/>
   <example>
