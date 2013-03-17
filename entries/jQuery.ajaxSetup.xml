@@ -7,10 +7,11 @@
       <desc>A set of key/value pairs that configure the default Ajax request. All options are optional. </desc>
     </argument>
   </signature>
-  <desc>Set default values for future Ajax requests.</desc>
+  <desc>Set default values for future Ajax requests. Its use is not recommended.</desc>
   <longdesc>
     <p>For details on the settings available for <code>$.ajaxSetup()</code>, see <code><a href="/jQuery.ajax">$.ajax()</a></code>. </p>
     <p>All subsequent Ajax calls using any function will use the new settings, unless overridden by the individual calls, until the next invocation of <code>$.ajaxSetup()</code>.</p>
+	<p><strong>Note:</strong> The settings specified here will affect <em>all</em> calls to <code>$.ajax</code> or AJAX-based derivatives such as <code>$.get()</code>. This can cause undesirable behavior since other callers (for example, plugins) may be expecting the normal default settings. For that reason we <em>strongly recommend against using this API</em>. Instead, set the options explicitly in the call or define a simple plugin to do so.</p>
     <p>For example, the following sets a default for the <code>url</code> parameter before pinging the server repeatedly:</p>
     <pre><code>$.ajaxSetup({
   url: 'ping.php'
