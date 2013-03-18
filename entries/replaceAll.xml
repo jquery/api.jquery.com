@@ -3,8 +3,11 @@
   <title>.replaceAll()</title>
   <signature>
     <added>1.2</added>
-    <argument name="target" type="Selector">
-      <desc>A selector expression indicating which element(s) to replace.</desc>
+    <argument name="target">
+      <desc>A selector string, jQuery object, or DOM element reference indicating which element(s) to replace.</desc>
+	  <type name="Selector"/>
+      <type name="jQuery"/>
+      <type name="Element"/>
     </argument>
   </signature>
   <desc>Replace each target element with the set of matched elements.</desc>
