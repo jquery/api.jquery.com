@@ -9,7 +9,7 @@
   </signature>
   <desc>Sorts an array of DOM elements, in place, with the duplicates removed. Note that this only works on arrays of DOM elements, not strings or numbers.</desc>
   <longdesc>
-    <p>The <code>$.unique()</code> function searches through an array of objects, sorting the array, and removing any duplicate nodes. This function only works on plain JavaScript arrays of DOM elements, and is chiefly used internally by jQuery.</p>
+    <p>The <code>$.unique()</code> function searches through an array of objects, sorting the array, and removing any duplicate nodes. A node is considered a duplicate if it is the <em>exact same</em> node as one already in the array; two different nodes with identical attributes are not considered to be duplicates. This function only works on plain JavaScript arrays of DOM elements, and is chiefly used internally by jQuery. You probably will never need to use it.</p>
     <p>As of jQuery 1.4 the results will always be returned in document order.</p>
   </longdesc>
   <example>
