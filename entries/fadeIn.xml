@@ -19,7 +19,7 @@
   </signature>
 
   <longdesc>
-    <p>The <code>.fadeIn()</code> method animates the opacity of the matched elements.</p>
+    <p>The <code>.fadeIn()</code> method animates the opacity of the matched elements. It is similar to the <code><a href="/fadeTo/">.fadeTo()</a></code> method but that method does not unhide the element and can specify the final opacity level.</p>
     <p>Durations are given in milliseconds; higher values indicate slower animations, not faster ones. The strings <code>'fast'</code> and <code>'slow'</code> can be supplied to indicate durations of <code>200</code> and <code>600</code> milliseconds, respectively. If any other string is supplied, or if the <code>duration</code> parameter is omitted, the default duration of  <code>400</code> milliseconds is used.</p>
     <p>We can animate any element, such as a simple image:</p>
     <pre><code>&lt;div id="clickme"&gt;
