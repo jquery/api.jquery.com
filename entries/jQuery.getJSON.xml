@@ -54,39 +54,46 @@
     <h4 id="jsonp">JSONP</h4>
     <p>If the URL includes the string "callback=?" (or similar, as defined by the server-side API), the request is treated as JSONP instead. See the discussion of the <code>jsonp</code> data type in <code><a href="http://api.jquery.com/jQuery.ajax/">$.ajax()</a></code> for more details.</p>
     <h4 id="jqxhr-object">The jqXHR Object</h4>
-    <p><strong>As of jQuery 1.5</strong>, all of jQuery's Ajax methods return  a superset of the <code>XMLHTTPRequest</code> object. This jQuery XHR object, or "jqXHR," returned by <code>$.getJSON()</code> implements the Promise interface, giving it all the properties, methods, and behavior of a Promise (see <a href="http://api.jquery.com/category/deferred-object/">Deferred object</a> for more information). For convenience and consistency with the callback names used by <code><a href="http://api.jquery.com/jQuery.ajax/">$.ajax()</a></code>, it provides <code>.error()</code>, <code>.success()</code>, and <code>.complete()</code> methods. These methods take a function argument that is called when the request terminates, and the function receives the same arguments as the correspondingly-named <code>$.ajax()</code> callback.</p>
-    <p>The Promise interface in jQuery 1.5 also allows jQuery's Ajax methods, including <code>$.getJSON()</code>, to chain multiple <code>.success()</code>, <code>.complete()</code>, and <code>.error()</code> callbacks on a single request, and even to assign these callbacks after the request may have completed. If the request is already complete, the callback is fired immediately.</p>
+    <p><strong>As of jQuery 1.5</strong>, all of jQuery's Ajax methods return  a superset of the <code>XMLHTTPRequest</code> object. This jQuery XHR object, or "jqXHR," returned by <code>$.getJSON()</code> implements the Promise interface, giving it all the properties, methods, and behavior of a Promise (see <a href="/category/deferred-object/">Deferred object</a> for more information). The <code>jqXHR.done()</code> (for success), <code>jqXHR.fail()</code> (for error), and <code>jqXHR.always()</code> (for completion, whether success or error) methods take a function argument that is called when the request terminates. For information about the arguments this function receives, see the <a href="/jQuery.ajax/#jqXHR">jqXHR Object</a> section of the $.ajax() documentation.</p>
+    <p>The Promise interface in jQuery 1.5 also allows jQuery's Ajax methods, including <code>$.getJSON()</code>, to chain multiple <code>.done()</code>, <code>.always()</code>, and <code>.fail()</code> callbacks on a single request, and even to assign these callbacks after the request may have completed. If the request is already complete, the callback is fired immediately.</p>
     <pre><code>// Assign handlers immediately after making the request,
 // and remember the jqxhr object for this request
-var jqxhr = $.getJSON("example.json", function() {
-  alert("success");
+var jqxhr = $.getJSON( "example.json", function() {
+  console.log( "success" );
 })
-.success(function() { alert("second success"); })
-.error(function() { alert("error"); })
-.complete(function() { alert("complete"); });
+.done(function() { console.log( "second success" ); })
+.fail(function() { console.log( "error" ); })
+.always(function() { console.log( "complete" ); });
 
 // perform other work here ...
 
 // Set another completion function for the request above
-jqxhr.complete(function(){ alert("second complete"); });</code></pre>
+jqxhr.complete(function() { console.log( "second complete" ); });</code></pre>
+<h4>Deprecation Notice</h4>
+<p>The <code>jqXHR.success()</code>, <code>jqXHR.error()</code>, and <code>jqXHR.complete()</code> callback methods introduced in jQuery 1.5 are <strong>deprecated as of jQuery 1.8</strong>. To prepare your code for their eventual removal, use <code>jqXHR.done()</code>, <code>jqXHR.fail()</code>, and <code>jqXHR.always()</code> instead.</p>
   </longdesc>
   <note id="same-origin-policy" type="additional"/>
   <note id="same-origin-policy-exceptions" type="additional"/>
   <example>
-    <desc>Loads the four most recent cat pictures from the Flickr JSONP API.</desc>
+    <desc>Loads the four most recent pictures of Mount Rainier from the Flickr JSONP API.</desc>
     <code><![CDATA[
-$.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",
-  {
+(function() {
+  var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+  $.getJSON( flickerAPI, {
     tags: "mount rainier",
     tagmode: "any",
     format: "json"
-  },
-  function(data) {
-    $.each(data.items, function(i,item){
-      $("<img/>").attr("src", item.media.m).appendTo("#images");
-      if ( i == 3 ) return false;
+  })
+  .done(function( data ) {
+    $.each( data.items, function( i, item ) {
+      $( "<img/>" ).attr( "src", item.media.m ).appendTo( "#images" );
+      if ( i === 3 ) {
+        return false;
+      }
     });
-  });]]></code>
+  });
+})();
+]]></code>
     <html><![CDATA[<div id="images">
 
 </div>]]></html>
@@ -94,15 +101,21 @@ $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?
   </example>
   <example>
     <desc>Load the JSON data from test.js and access a name from the returned JSON data.</desc>
-    <code><![CDATA[$.getJSON("test.js", function(json) {
-   alert("JSON Data: " + json.users[3].name);
+    <code><![CDATA[$.getJSON( "test.js", function( json ) {
+   console.log( "JSON Data: " + json.users[3].name );
  });]]></code>
   </example>
   <example>
-    <desc>Load the JSON data from test.js, passing along additional data, and access a name from the returned JSON data.</desc>
-    <code><![CDATA[$.getJSON("test.js", { name: "John", time: "2pm" }, function(json) {
-    alert("JSON Data: " + json.users[3].name);
-    });]]></code>
+    <desc>Load the JSON data from test.js, passing along additional data, and access a name from the returned JSON data.
+      If an error occurs, log an error message instead.</desc>
+    <code><![CDATA[$.getJSON( "test.js", { name: "John", time: "2pm" } )
+.done(function( json ) {
+  console.log( "JSON Data: " + json.users[3].name );
+})
+.fail(function( jqxhr, textStatus, error ) {
+  var err = textStatus + ', ' + error;
+  console.log( "Request Failed: " + err);
+});]]></code>
   </example>
   <category slug="ajax/shorthand-methods"/>
   <category slug="version/1.0"/>
