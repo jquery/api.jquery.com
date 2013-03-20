@@ -36,6 +36,11 @@
   </category>
   <category name="Deprecated" slug="deprecated">
     <desc/>
+    <category name="Deprecated 1.3" slug="deprecated-1.3">
+      <desc><![CDATA[All the aspects of the API that were deprecated in the corresponding version of jQuery.
+        <p>For more information, see the <a href="http://docs.jquery.com/Release:jQuery_1.3">jQuery 1.3 Release Notes</a>.</p>
+      ]]></desc>
+    </category>
     <category name="Deprecated 1.4" slug="deprecated-1.4">
       <desc><![CDATA[All the aspects of the API that were deprecated in the corresponding version of jQuery.
         <p>For more information, see the <a href="http://jquery14.com/day-01/jquery-14">jQuery 1.4 Release Notes</a></p>

@@ -39,4 +39,5 @@ It is not possible to cancel the <code>unload</code> event with <code>.preventDe
   <category slug="events/document-loading"/>
   <category slug="version/1.0"/>
   <category slug="version/1.4.3"/>
+  <category slug="deprecated/deprecated-1.8"/>
 </entry>

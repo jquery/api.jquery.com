@@ -83,4 +83,5 @@ chained.done(function( data ) {
   <category slug="version/1.6"/>
   <category slug="version/1.7"/>
   <category slug="version/1.8"/>
+  <category slug="deprecated/deprecated-1.8"/>
 </entry>
