@@ -27,4 +27,5 @@ $("p").html("The box model for this iframe is: <span>" +
   </example>
   <category slug="utilities"/>
   <category slug="version/1.0"/>
+  <category slug="deprecated/deprecated-1.3"/>
 </entry>

@@ -2,7 +2,7 @@
   "name": "api.jquery.com",
   "title": "jQuery API Docs",
   "description": "API reference documentation for the jQuery JavaScript Library.",
-  "version": "1.9.1-3",
+  "version": "1.9.1-4",
   "homepage": "https://github.com/jquery/api.jquery.com",
   "author": {
     "name": "jQuery Foundation (http://jquery.org/)"
@@ -24,7 +24,7 @@
     "grunt": "0.3.x",
     "grunt-clean": "0.3.0",
     "grunt-wordpress": "1.0.5",
-    "grunt-jquery-content": "0.8.1",
+    "grunt-jquery-content": "0.8.6",
     "grunt-check-modules": "0.1.0"
   },
   "devDependencies": {},

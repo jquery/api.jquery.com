@@ -65,6 +65,7 @@ jQuery.each(jQuery.browser, function(i, val) {
     <category slug="utilities"/>
     <category slug="version/1.0"/>
     <category slug="version/1.1.3"/>
+    <category slug="deprecated/deprecated-1.3"/>
   </entry>
   <entry type="property" name="jQuery.browser.version" return="String" deprecated="1.3" removed="1.9">
     <signature>
@@ -108,6 +109,6 @@ if ( $.browser.msie ) {
     <category slug="utilities"/>
     <category slug="version/1.0"/>
     <category slug="version/1.1.3"/>
-	<category slug="deprecated/deprecated-1.4"/>
+	<category slug="deprecated/deprecated-1.3"/>
   </entry>
 </entries>
