@@ -6,45 +6,25 @@
   </signature>
   <desc>Encode a set of form elements as a string for submission.</desc>
   <longdesc>
-    <p>The <code>.serialize()</code> method creates a text string in standard URL-encoded notation. It operates on a jQuery object representing a set of form elements. The form elements can be of several types:</p>
-    <pre><code>&lt;form&gt;
-  &lt;div&gt;&lt;input type="text" name="a" value="1" id="a" /&gt;&lt;/div&gt;
-  &lt;div&gt;&lt;input type="text" name="b" value="2" id="b" /&gt;&lt;/div&gt;
-  &lt;div&gt;&lt;input type="hidden" name="c" value="3" id="c" /&gt;&lt;/div&gt;
-  &lt;div&gt;
-    &lt;textarea name="d" rows="8" cols="40"&gt;4&lt;/textarea&gt;
-  &lt;/div&gt;
-  &lt;div&gt;&lt;select name="e"&gt;
-    &lt;option value="5" selected="selected"&gt;5&lt;/option&gt;
-    &lt;option value="6"&gt;6&lt;/option&gt;
-    &lt;option value="7"&gt;7&lt;/option&gt;
-  &lt;/select&gt;&lt;/div&gt;
-  &lt;div&gt;
-    &lt;input type="checkbox" name="f" value="8" id="f" /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-    &lt;input type="submit" name="g" value="Submit" id="g" /&gt;
-  &lt;/div&gt;
-&lt;/form&gt;</code></pre>
-    <p>The <code>.serialize()</code> method can act on a jQuery object that has selected individual form elements, such as <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, and <code>&lt;select&gt;</code>. However, it is typically easier to select the <code>&lt;form&gt;</code> tag itself for serialization:</p>
-    <pre><code>$('form').submit(function() {
-  alert($(this).serialize());
-  return false;
+    <p>The <code>.serialize()</code> method creates a text string in standard URL-encoded notation. It can act on a jQuery object that has selected individual form controls, such as <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, and <code>&lt;select&gt;</code>: <code>$( "input, textarea, select" ).serialize();</code></p>
+    <p>It is typically easier, however, to select the <code>&lt;form&gt;</code> itself for serialization:</p>
+    <pre><code>$( "form" ).on( "submit", function( event ) {
+  event.preventDefault();
+  console.log( $(this).serialize() );
 });</code></pre>
-    <p>This produces a standard-looking query string:</p>
-    <pre><code>a=1&amp;b=2&amp;c=3&amp;d=4&amp;e=5</code></pre>
+    <p>In this case, jQuery serializes the successful controls within the form.</p>
     <p><strong>Warning:</strong> selecting both the form and its children will cause duplicates in the serialized string.</p>
     <p>Note: Only <a href="http://www.w3.org/TR/html401/interact/forms.html#h-17.13.2">"successful controls"</a> are serialized to the string. No submit button value is serialized since the form was not submitted using a button. For a form element's value to be included in the serialized string, the element must have a <code>name</code> attribute. Values from checkboxes and radio buttons (<code>input</code>s of type "radio" or "checkbox") are included only if they are checked. Data from file select elements is not serialized.</p>
   </longdesc>
   <example>
-    <desc>Serialize a form to a query string, that could be sent to a server in an Ajax request.</desc>
+    <desc>Serialize a form to a query string that could be sent to a server in an Ajax request.</desc>
     <code><![CDATA[
     function showValues() {
       var str = $("form").serialize();
-      $("#results").text(str);
+      $("#results").text( str );
     }
-    $(":checkbox, :radio").click(showValues);
-    $("select").change(showValues);
+    $("input[type='checkbox'], input[type='radio']").on( "click", showValues );
+    $("select").on( "change", showValues );
     showValues();
 ]]></code>
     <css><![CDATA[
@@ -71,11 +51,9 @@
   </select>
   <br/>
   <input type="checkbox" name="check" value="check1" id="ch1"/>
-
   <label for="ch1">check1</label>
 
   <input type="checkbox" name="check" value="check2" checked="checked" id="ch2"/>
-
   <label for="ch2">check2</label>
   <br />
   <input type="radio" name="radio" value="radio1" checked="checked" id="r1"/>
