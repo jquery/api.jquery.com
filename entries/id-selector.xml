@@ -11,15 +11,15 @@
   <desc>Selects a single element with the given id attribute. </desc>
   <longdesc>
     <p>For id selectors, jQuery uses the JavaScript function <code>document.getElementById()</code>, which is extremely efficient. When another selector is attached to the id selector, such as <code>h2#pageTitle</code>, jQuery performs an additional check before identifying the element as a match.</p>
-    <blockquote>
-      <p>As always, remember that as a developer, your time is typically the most valuable resource. Do not focus on optimization of selector speed unless it is clear that performance needs to be improved.</p>
-    </blockquote>
+    <p>Calling <code>jQuery()</code> (or <code>$()</code>) with an id selector as its argument will return a jQuery object containing a collection of either zero or one DOM element.</p>
     <p>Each <code>id</code> value must be used only once within a document. If more than one element has been assigned the same ID, queries that use that ID will only select the first matched element in the DOM. This behavior should not be relied on, however; a document with more than one element using the same ID is invalid.</p>
     <p>If the id contains characters like periods or colons you have to <a href="http://learn.jquery.com/faq/how-do-i-select-an-element-by-an-id-that-has-characters-used-in-css-notation/">escape those characters with backslashes</a>.</p>
   </longdesc>
   <example>
-    <desc>Finds the element with the id "myDiv".</desc>
-    <code><![CDATA[$("#myDiv").css("border","3px solid red");]]></code>
+    <desc>Select the element with the id "myDiv" and give it a red border.</desc>
+    <code><![CDATA[
+$( "#myDiv" ).css( "border","3px solid red" );
+]]></code>
     <html><![CDATA[<div id="notMe"><p>id="notMe"</p></div>
 
   <div id="myDiv">id="myDiv"</div>]]></html>
@@ -35,8 +35,10 @@
   ]]></css>
   </example>
   <example>
-    <desc>Finds the element with the id "myID.entry[1]".  See how certain characters must be escaped with backslashes.</desc>
-    <code><![CDATA[$("#myID\\.entry\\[1\\]").css("border","3px solid red");]]></code>
+    <desc>Select the element with the id "myID.entry[1]" and give it a red border. Note how certain characters must be escaped with backslashes.</desc>
+    <code><![CDATA[
+$( "#myID\\.entry\\[1\\]" ).css( "border", "3px solid red" );
+]]></code>
     <html><![CDATA[<div id="myID.entry[0]">id="myID.entry[0]"</div>
 
   <div id="myID.entry[1]">id="myID.entry[1]"</div>
