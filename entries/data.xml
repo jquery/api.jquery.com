@@ -25,9 +25,10 @@
       <pre><code>
 $('body').data('foo', 52);
 $('body').data('bar', { myType: 'test', count: 40 });
+$('body').data({ baz: [ 1, 2, 3 ] });
 
 $('body').data('foo'); // 52
-$('body').data(); // {foo: 52, bar: { myType: 'test', count: 40 }}
+$('body').data(); // {foo: 52, bar: { myType: 'test', count: 40 }, baz: [ 1, 2, 3 ] }
 </code></pre>
       <p>In jQuery 1.4.3 setting an element's data object with <code>.data(obj)</code> extends the data previously stored with that element. jQuery itself uses the <code>.data()</code> method to save information under the names 'events' and 'handle', and also reserves any data name starting with an underscore ('_') for internal use.</p>
       <p>Prior to jQuery 1.4.3 (starting in jQuery 1.4) the .data() method completely replaced all data, instead of just extending the data object. If you are using third-party plugins it may not be advisable to completely replace the element's data object, since plugins may have also set data.</p>
