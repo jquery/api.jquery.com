@@ -5,7 +5,7 @@
     <title>.get()</title>
     <signature>
       <added>1.0</added>
-      <argument name="index" type="Number">
+      <argument name="index" type="Integer">
         <desc>A zero-based integer indicating which element to retrieve.</desc>
       </argument>
     </signature>
