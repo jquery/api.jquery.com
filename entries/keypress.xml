@@ -23,8 +23,8 @@
   <longdesc>
     <p><strong>Note:</strong> as the <code>keypress</code> event isn't covered by any official specification, the actual behavior encountered when using it may differ across browsers, browser versions, and platforms.</p>
     <p>This method is a shortcut for <code>.on('keypress', handler)</code> in the first two variations, and <code>.trigger('keypress')</code> in the third.</p>
-    <p>The <code>keypress</code> event is sent to an element when the browser registers keyboard input. This is similar to the <code>keydown</code> event, except in the case of key repeats. If the user presses and holds a key, a <code>keydown </code>event is triggered once, but separate <code>keypress</code> events are triggered for each inserted character. In addition, modifier keys (such as Shift) trigger <code>keydown</code> events but not <code>keypress</code> events.</p>
-    <p>A <code>keypress</code> event handler can be attached to any element, but the event is only sent to the element that has the focus. Focusable elements can vary between browsers, but form elements can always get focus so are reasonable candidates for this event type.</p>
+    <p>The <code>keypress</code> event is sent to an element when the browser registers keyboard input. This is similar to the <code>keydown</code> event, except that modifier and non-printing keys such as <kbd>Shift</kbd>, <kbd>Esc</kbd>, and <kbd>delete</kbd> trigger <code>keydown</code> events but not <code>keypress</code> events. Other differences between the two events may arise depending on platform and browser.</p>
+    <p>A <code>keypress</code> event handler can be attached to any element, but the event is only sent to the element that has the focus. Focusable elements can vary between browsers, but form controls can always get focus so are reasonable candidates for this event type.</p>
     <p>For example, consider the HTML:</p>
     <pre><code>&lt;form&gt;
   &lt;fieldset&gt;
@@ -36,17 +36,17 @@
 &lt;/div&gt;</code></pre>
     <p>The event handler can be bound to the input field:</p>
     <pre><code>$("#target").keypress(function() {
-  alert("Handler for .keypress() called.");
+  console.log("Handler for .keypress() called.");
 });</code></pre>
-    <p>Now when the insertion point is inside the field, pressing a key displays the alert:</p>
+    <p>Now when the insertion point is inside the field, pressing a key displays the log:</p>
     <p>
       <span class="output">Handler for .keypress() called.</span>
     </p>
-    <p>The message repeats if the key is held down. To trigger the event manually, apply <code>.keypress()</code> without an argument::</p>
+    <p>To trigger the event manually, apply <code>.keypress()</code> without an argument:</p>
     <pre><code>$('#other').click(function() {
   $("#target").keypress();
 });</code></pre>
-    <p>After this code executes, clicks on <span class="output">Trigger the handler</span> will also alert the message.</p>
+    <p>After this code executes, clicks on the <span class="output">Trigger the handler</span> div will also log the message.</p>
     <p>If key presses anywhere need to be caught (for example, to implement global shortcut keys on a page), it is useful to attach this behavior to the <code>document</code> object. Because of event bubbling, all key presses will make their way up the DOM to the <code>document</code> object unless explicitly stopped.</p>
     <p>To determine which character was entered, examine the <code>event</code> object that is passed to the handler function. While browsers use differing properties to store this information, jQuery normalizes the <code>.which</code> property so you can reliably use it to retrieve the character code.</p>
     <p>Note that <code>keydown</code> and <code>keyup</code> provide a code indicating which key is pressed, while <code>keypress</code> indicates which character was entered. For example, a lowercase "a" will be reported as 65 by <code>keydown</code> and <code>keyup</code>, but as 97 by <code>keypress</code>. An uppercase "A" is reported as 65 by all events. Because of this distinction, when catching special keystrokes such as arrow keys, <code>.keydown()</code> or <code>.keyup()</code> is a better choice.</p>
