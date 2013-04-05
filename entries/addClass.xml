@@ -22,10 +22,10 @@
     <pre><code>$("p").removeClass("myClass noClass").addClass("yourClass");</code></pre>
     <p>Here, the <code>myClass</code> and <code>noClass</code> classes are removed from all paragraphs, while <code>yourClass</code> is added.</p>
     <p>As of jQuery 1.4, the <code>.addClass()</code> method's argument can receive a function.</p>
-    <pre><code>$("ul li:last").addClass(function(index) {
+    <pre><code>$("ul li").addClass(function(index) {
   return "item-" + index;
 });</code></pre>
-    <p>Given an unordered list with five <code>&lt;li&gt;</code> elements, this example adds the class "item-4" to the last <code>&lt;li&gt;</code>.</p>
+    <p>Given an unordered list with two <code>&lt;li&gt;</code> elements, this example adds the class "item-0" to the first <code>&lt;li&gt;</code> and "item-1" to the second.</p>
   </longdesc>
   <example>
     <desc>Add the class "selected" to the matched elements.</desc>
