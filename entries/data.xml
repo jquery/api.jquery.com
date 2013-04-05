@@ -85,7 +85,7 @@ alert( $("body").data("bar")); //foobar
       <h4 id="data-html5">
         <a href="#data-html5">HTML5 data-* Attributes</a>
       </h4>
-      <p>As of jQuery 1.4.3 <a href="http://ejohn.org/blog/html-5-data-attributes/">HTML 5 data- attributes</a> will be automatically pulled in to jQuery's data object. The treatment of attributes with embedded dashes was changed in jQuery 1.6 to conform to the <a href="http://www.w3.org/TR/html5/elements.html#embedding-custom-non-visible-data-with-the-data-attributes">W3C HTML5 specification</a>.</p>
+      <p>As of jQuery 1.4.3 <a href="http://ejohn.org/blog/html-5-data-attributes/">HTML 5 data- attributes</a> will be automatically pulled in to jQuery's data object. The treatment of attributes with embedded dashes was changed in jQuery 1.6 to conform to the <a href="http://www.w3.org/TR/html5/dom.html#embedding-custom-non-visible-data-with-the-data-*-attributes">W3C HTML5 specification</a>.</p>
       <p>For example, given the following HTML:</p>
       <pre><code>&lt;div data-role="page" data-last-value="43" data-hidden="true" data-options='{"name":"John"}'&gt;&lt;/div&gt;</code></pre>
       <p>All of the following jQuery code will work.</p>
