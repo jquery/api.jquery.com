@@ -21,10 +21,10 @@
 alert( "Size: " + $("li").length );</code></pre>
     <p>This results in two alerts:</p>
     <p>
-      <span class="output">Size: 2</span>
+      <samp>Size: 2</samp>
     </p>
     <p>
-      <span class="output">Size: 2</span>
+      <samp>Size: 2</samp>
     </p>
   </longdesc>
   <example>

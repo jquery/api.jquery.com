@@ -31,15 +31,15 @@
 });</code></pre>
     <p>As the element is clicked repeatedly, the messages alternate:</p>
     <p>
-      <span class="output">First handler for .toggle() called.</span>
+      <samp>First handler for .toggle() called.</samp>
       <br/>
-      <span class="output">Second handler for .toggle() called.</span>
+      <samp>Second handler for .toggle() called.</samp>
       <br/>
-      <span class="output">First handler for .toggle() called.</span>
+      <samp>First handler for .toggle() called.</samp>
       <br/>
-      <span class="output">Second handler for .toggle() called.</span>
+      <samp>Second handler for .toggle() called.</samp>
       <br/>
-      <span class="output">First handler for .toggle() called.</span>
+      <samp>First handler for .toggle() called.</samp>
     </p>
     <p>If more than two handlers are provided, <code>.toggle()</code> will cycle among all of them. For example, if there are three handlers, then the first handler will be called on the first click, the fourth click, the seventh click, and so on.</p>
     <p>The <code>.toggle()</code> method is provided for convenience. It is relatively straightforward to implement the same behavior by hand, and this can be necessary if the assumptions built into <code>.toggle()</code> prove limiting. For example, <code>.toggle()</code> is not guaranteed to work correctly if applied twice to the same element. Since <code>.toggle()</code> internally uses a <code>click</code> handler to do its work, we must unbind <code>click</code> to remove a behavior attached with <code>.toggle()</code>, so other <code>click</code> handlers can be caught in the crossfire. The implementation also calls <code>.preventDefault()</code> on the event, so links will not be followed and buttons will not be clicked if <code>.toggle()</code> has been called on the element.</p>

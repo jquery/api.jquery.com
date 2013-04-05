@@ -26,7 +26,7 @@
     <pre><code>($('li').get(0));</code></pre>
     <p>Since the index is zero-based, the first list item is returned:</p>
     <p>
-      <span class="output">&lt;li id="foo"&gt;</span>
+      <samp>&lt;li id="foo"&gt;</samp>
     </p>
     <p>Each jQuery object also masquerades as an array, so we can use the array dereferencing operator to get at the list item instead:</p>
     <pre><code>alert($('li')[0]);</code></pre>
@@ -34,7 +34,7 @@
     <pre><code>alert($('li').get(-1));</code></pre>
     <p>A negative index is counted from the end of the matched set, so this example will return the last item in the list:</p>
     <p>
-      <span class="output">&lt;li id="bar"&gt;</span>
+      <samp>&lt;li id="bar"&gt;</samp>
     </p>
   </longdesc>
   <example>

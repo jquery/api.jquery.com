@@ -44,13 +44,13 @@
 });</code></pre>
     <p>Now clicking on the first field, or tabbing to it from another field, displays the alert:</p>
     <p>
-      <span class="output">Handler for .focus() called.</span>
+      <samp>Handler for .focus() called.</samp>
     </p>
     <p>We can trigger the event when another element is clicked:</p>
     <pre><code>$('#other').click(function() {
   $('#target').focus();
 });</code></pre>
-    <p>After this code executes, clicks on <span class="output">Trigger the handler</span> will also alert the message.</p>
+    <p>After this code executes, clicks on <samp>Trigger the handler</samp> will also alert the message.</p>
     <p>The <code>focus</code> event does not bubble in Internet Explorer. Therefore, scripts that rely on event delegation with the <code>focus</code> event will not work consistently across browsers. As of version 1.4.2, however, jQuery works around this limitation by mapping <code>focus</code> to the <code>focusin</code> event in its event delegation methods, <a href="http://api.jquery.com/live/"><code>.live()</code></a> and <a href="http://api.jquery.com/delegate/"><code>.delegate()</code></a>.</p>
   </longdesc>
   <example>

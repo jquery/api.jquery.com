@@ -100,7 +100,7 @@ $('#bar').bind('click', function() {
   alert(message);
 });
 </code></pre>
-    <p>Because the handlers are closures that both have <code>message</code> in their environment, both will display the message <span class="output">Not in the face!</span> when triggered. The variable's value has changed. To sidestep this, we can pass the message in using <code>eventData</code>:
+    <p>Because the handlers are closures that both have <code>message</code> in their environment, both will display the message <samp>Not in the face!</samp> when triggered. The variable's value has changed. To sidestep this, we can pass the message in using <code>eventData</code>:
     </p>
     <pre><code>var message = 'Spoon!';
 $('#foo').bind('click', {msg: message}, function(event) {
@@ -111,7 +111,7 @@ $('#bar').bind('click', {msg: message}, function(event) {
   alert(event.data.msg);
 });
 </code></pre>
-    <p>This time the variable is not referred to directly within the handlers; instead, the variable is passed in <em>by value</em> through <code>eventData</code>, which fixes the value at the time the event is bound. The first handler will now display <span class="output">Spoon!</span> while the second will alert <span class="output">Not in the face!</span>
+    <p>This time the variable is not referred to directly within the handlers; instead, the variable is passed in <em>by value</em> through <code>eventData</code>, which fixes the value at the time the event is bound. The first handler will now display <samp>Spoon!</samp> while the second will alert <samp>Not in the face!</samp>
     </p>
     <blockquote>
       <p>Note that objects are passed to functions <em>by reference</em>, which further complicates this scenario.</p>

@@ -41,13 +41,13 @@
 </code></pre>
     <p>Now if we click on this element, the alert is displayed:</p>
     <p>
-      <span class="output">Handler for .mouseup() called.</span>
+      <samp>Handler for .mouseup() called.</samp>
     </p>
     <p>We can also trigger the event when a different element is clicked:</p>
     <pre><code>$('#other').click(function() {
   $('#target').mouseup();
 });</code></pre>
-    <p>After this code executes, clicks on <span class="output">Trigger the handler</span> will also alert the message.</p>
+    <p>After this code executes, clicks on <samp>Trigger the handler</samp> will also alert the message.</p>
     <p>If the user clicks outside an element, drags onto it, and releases the button, this is still counted as a <code>mouseup</code> event. This sequence of actions is not treated as a button press in most user interfaces, so it is usually better to use the <code>click</code> event unless we know that the <code>mouseup</code> event is preferable for a particular situation.</p>
   </longdesc>
   <example>

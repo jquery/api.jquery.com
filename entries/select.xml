@@ -40,7 +40,7 @@
 });</code></pre>
     <p>After this code executes, clicks on the Trigger button will also alert the message:</p>
     <p>
-      <span class="output">Handler for .select() called.</span>
+      <samp>Handler for .select() called.</samp>
     </p>
     <p>In addition, the default <code>select</code> action on the field will be fired, so the entire text field will be selected.</p>
     <blockquote>

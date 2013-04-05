@@ -39,13 +39,13 @@
 });</code></pre>
     <p>Now double-clicking on this element displays the alert:</p>
     <p>
-      <span class="output">Handler for .dblclick() called.</span>
+      <samp>Handler for .dblclick() called.</samp>
     </p>
     <p>To trigger the event manually, apply <code>.dblclick()</code> without an argument:</p>
     <pre><code>$('#other').click(function() {
   $('#target').dblclick();
 });</code></pre>
-    <p>After this code executes, (single) clicks on <span class="output">Trigger the handler</span> will also alert the message.</p>
+    <p>After this code executes, (single) clicks on <samp>Trigger the handler</samp> will also alert the message.</p>
     <p>The <code>dblclick</code> event is only triggered after this exact series of events:</p>
     <ul>
       <li>The mouse button is depressed while the pointer is inside the element.</li>

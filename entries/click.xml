@@ -39,13 +39,13 @@
 });</code></pre>
     <p>Now if we click on this element, the alert is displayed:</p>
     <p>
-      <span class="output">Handler for .click() called.</span>
+      <samp>Handler for .click() called.</samp>
     </p>
     <p>We can also trigger the event when a different element is clicked:</p>
     <pre><code>$("#other").click(function() {
   $("#target").click();
 });</code></pre>
-    <p>After this code executes, clicks on <span class="output">Trigger the handler</span> will also alert the message.</p>
+    <p>After this code executes, clicks on <samp>Trigger the handler</samp> will also alert the message.</p>
     <p>The <code>click</code> event is only triggered after this exact series of events:</p>
     <ul>
       <li>The mouse button is depressed while the pointer is inside the element.</li>

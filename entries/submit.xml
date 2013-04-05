@@ -43,7 +43,7 @@
     <pre><code>$('#other').click(function() {
   $('#target').submit();
 });</code></pre>
-    <p>After this code executes, clicks on <span class="output">Trigger the handler</span> will also display the message. In addition, the default <code>submit</code> action on the form will be fired, so the form will be submitted.</p>
+    <p>After this code executes, clicks on <samp>Trigger the handler</samp> will also display the message. In addition, the default <code>submit</code> action on the form will be fired, so the form will be submitted.</p>
     <p>The JavaScript <code>submit</code> event does not bubble in Internet Explorer. However, scripts that rely on event delegation with the <code>submit</code> event will work consistently across browsers as of jQuery 1.4, which has normalized the event's behavior. </p>
   </longdesc>
   <note id="domlint" type="additional"/>

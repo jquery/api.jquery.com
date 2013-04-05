@@ -37,13 +37,13 @@ $('#target').blur(function() {
 });</code></pre>
     <p>Now if the first field has the focus, clicking elsewhere or tabbing away from it displays the alert:</p>
     <p>
-      <span class="output">Handler for .blur() called.</span>
+      <samp>Handler for .blur() called.</samp>
     </p>
     <p>To trigger the event programmatically, apply <code>.blur()</code> without an argument:</p>
     <pre><code>$('#other').click(function() {
   $('#target').blur();
 });</code></pre>
-    <p>After this code executes, clicks on <span class="output">Trigger the handler</span> will also alert the message.</p>
+    <p>After this code executes, clicks on <samp>Trigger the handler</samp> will also alert the message.</p>
     <p>The <code>blur</code> event does not bubble in Internet Explorer. Therefore, scripts that rely on event delegation with the <code>blur</code> event will not work consistently across browsers. As of version 1.4.2, however, jQuery works around this limitation by mapping <code>blur</code> to the <code>focusout</code> event in its event delegation methods, <a href="http://api.jquery.com/live/"><code>.live()</code></a> and <a href="http://api.jquery.com/delegate/"><code>.delegate()</code></a>.</p>
   </longdesc>
   <example>

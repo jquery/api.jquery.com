@@ -53,9 +53,9 @@ alert(recursiveDecoded);
 </code></pre>
     <p>The values of <code>recursiveEncoded</code> and <code>recursiveDecoded</code> are alerted as follows:</p>
     <p>
-      <span class="output">a%5Bone%5D=1&amp;a%5Btwo%5D=2&amp;a%5Bthree%5D=3&amp;b%5B%5D=1&amp;b%5B%5D=2&amp;b%5B%5D=3</span>
+      <samp>a%5Bone%5D=1&amp;a%5Btwo%5D=2&amp;a%5Bthree%5D=3&amp;b%5B%5D=1&amp;b%5B%5D=2&amp;b%5B%5D=3</samp>
       <br/>
-      <span class="output">a[one]=1&amp;a[two]=2&amp;a[three]=3&amp;b[]=1&amp;b[]=2&amp;b[]=3</span>
+      <samp>a[one]=1&amp;a[two]=2&amp;a[three]=3&amp;b[]=1&amp;b[]=2&amp;b[]=3</samp>
     </p>
     <p>To emulate the behavior of <code>$.param()</code> prior to jQuery 1.4, we can set the <code>traditional</code> argument to <code>true</code>:</p>
     <pre><code>var myObject = {
@@ -74,9 +74,9 @@ alert(shallowDecoded);
 </code></pre>
     <p>The values of <code>shallowEncoded</code> and <code>shallowDecoded</code> are alerted as follows:</p>
     <p>
-      <span class="output">a=%5Bobject+Object%5D&amp;b=1&amp;b=2&amp;b=3</span>
+      <samp>a=%5Bobject+Object%5D&amp;b=1&amp;b=2&amp;b=3</samp>
       <br/>
-      <span class="output">a=[object+Object]&amp;b=1&amp;b=2&amp;b=3</span>
+      <samp>a=[object+Object]&amp;b=1&amp;b=2&amp;b=3</samp>
     </p>
   </longdesc>
   <example>
