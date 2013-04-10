@@ -26,7 +26,7 @@
           <li>jQuery.type( 3 ) === "number"</li>
           <li>jQuery.type( new Number(3) ) === "number"</li>
           <li>jQuery.type( "test" ) === "string"</li>
-          <li>jQuery.type( new String("test") ) === "string"<li>
+          <li>jQuery.type( new String("test") ) === "string"</li>
           <li>jQuery.type( function(){} ) === "function"</li>
           <li>jQuery.type( [] ) === "array"</li>
           <li>jQuery.type( new Array() ) === "array"</li>
