@@ -5,7 +5,7 @@
     <signature>
       <added>1.0</added>
     </signature>
-    <desc>Contains flags for the useragent, read from navigator.userAgent. <strong>We recommend against using this property; please try to use feature detection instead (see jQuery.support). jQuery.browser may be moved to a plugin in a future release of jQuery.</strong> </desc>
+    <desc>Contains flags for the useragent, read from navigator.userAgent. <strong>This property was removed in jQuery 1.9</strong> and is available only through the jQuery.migrate plugin. Please try to use feature detection instead.</desc>
     <longdesc>
       <p>The <code>$.browser</code> property provides information about the web browser that is accessing the page, as reported by the browser itself. It contains flags for each of the four most prevalent browser classes (Internet Explorer, Mozilla, Webkit, and Opera) as well as version information.</p>
       <p>Available flags are:</p>
@@ -29,36 +29,17 @@ jQuery.each(jQuery.browser, function(i, val) {
 });]]></code>
     </example>
     <example>
-      <desc>Returns true if the current useragent is some version of Microsoft's Internet Explorer.</desc>
+      <desc>Return true if the current useragent is some version of Microsoft's Internet Explorer. <strong>Will not work in jQuery 1.9 or later</strong> unless the <a href="https://github.com/jquery/jquery-migrate/#readme">jQuery Migrate</a> plugin is included.</desc>
       <code><![CDATA[
   $.browser.msie;
 ]]></code>
     </example>
     <example>
-      <desc>Alerts "this is WebKit!" only for WebKit browsers</desc>
+      <desc>Alert "this is WebKit!" only for WebKit browsers. <strong>Will not work in jQuery 1.9 or later</strong> unless the <a href="https://github.com/jquery/jquery-migrate/#readme">jQuery Migrate</a> plugin is included.</desc>
       <code><![CDATA[
   if ($.browser.webkit) {
     alert( "this is webkit!" );
   }
-]]></code>
-    </example>
-    <example>
-      <desc>Alerts "Do stuff for Firefox 3" only for Firefox 3 browsers.</desc>
-      <code><![CDATA[
-  var ua = $.browser;
-  if ( ua.mozilla && ua.version.slice(0,3) == "1.9" ) {
-    alert( "Do stuff for firefox 3" );
-  }
-]]></code>
-    </example>
-    <example>
-      <desc>Set a CSS property that's specific to a particular browser.</desc>
-      <code><![CDATA[
- if ( $.browser.msie ) {
-    $("#div ul li").css( "display","inline" );
- } else {
-    $("#div ul li").css( "display","inline-table" );
- }
 ]]></code>
     </example>
     <category slug="properties/global-jquery-object-properties"/>
@@ -71,7 +52,7 @@ jQuery.each(jQuery.browser, function(i, val) {
     <signature>
       <added>1.1.3</added>
     </signature>
-    <desc>The version number of the rendering engine for the user's browser.</desc>
+    <desc>The version number of the rendering engine for the user's browser. <strong>This property was removed in jQuery 1.9</strong> and is available only through the jQuery.migrate plugin.</desc>
     <longdesc>
       <p>Here are some typical results:</p>
       <ul>
@@ -83,25 +64,17 @@ jQuery.each(jQuery.browser, function(i, val) {
       <p>Note that IE8 claims to be 7 in Compatibility View.</p>
     </longdesc>
     <example>
-      <desc>Returns the version number of the rendering engine used by the user's current browser. For example, FireFox 4 returns 2.0 (the version of the Gecko rendering engine it utilizes).</desc>
+      <desc>Return the version number of the rendering engine used by the user's current browser. For example, FireFox 4 returns 2.0 (the version of the Gecko rendering engine it utilizes). <strong>Will not work in jQuery 1.9 or later</strong> unless the <a href="https://github.com/jquery/jquery-migrate/#readme">jQuery Migrate</a> plugin is included.</desc>
       <code><![CDATA[
-$("p").html( "The version number of the rendering engine your browser uses is: <span>" +
+$("p").html( "The version # of the browser's rendering engine is: <span>" +
                 $.browser.version + "</span>" );
 ]]></code>
     </example>
     <example>
-      <desc>Alerts the version of IE's rendering engine that is being used:</desc>
+      <desc>Alert the version of IE's rendering engine that is being used. <strong>Will not work in jQuery 1.9 or later</strong> unless the <a href="https://github.com/jquery/jquery-migrate/#readme">jQuery Migrate</a> plugin is included.</desc>
       <code><![CDATA[
 if ( $.browser.msie ) {
   alert( $.browser.version );
-}
-]]></code>
-    </example>
-    <example>
-      <desc>Often you only care about the "major number," the whole number, which you can get by using JavaScript's built-in <code>parseInt()</code> function:</desc>
-      <code><![CDATA[
-if ( $.browser.msie ) {
-  alert( parseInt($.browser.version, 10) );
 }
 ]]></code>
     </example>
@@ -109,6 +82,7 @@ if ( $.browser.msie ) {
     <category slug="utilities"/>
     <category slug="version/1.0"/>
     <category slug="version/1.1.3"/>
-	<category slug="deprecated/deprecated-1.3"/>
+    <category slug="deprecated/deprecated-1.3"/>
+    <category slug="removed"/>
   </entry>
 </entries>

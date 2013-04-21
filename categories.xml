@@ -227,6 +227,9 @@
       <desc><![CDATA[These properties are associated with the global jQuery object.]]></desc>
     </category>
   </category>
+  <category name="Removed" slug="removed">
+    <desc></desc>
+  </category>
   <category name="Selectors" slug="selectors">
     <desc><![CDATA[
       <p>Borrowing from CSS 1&#x2013;3, and then adding its own, jQuery offers a powerful set of tools for matching a set of elements in a document.</p>
