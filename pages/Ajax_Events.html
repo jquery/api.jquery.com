@@ -3,7 +3,7 @@
   "title": "Ajax Events"
 }
 </script>
-<p>Ajax requests produce a number of different events that you can subscribe to. Here's a full list of the events and in what order they are broadcast.</p>
+<p>Ajax requests produce a number of different events that you can subscribe to. Here's a full list of the events and in what order they are triggered.</p>
 <p>There are two types of events:</p>
 <h3>Local Events</h3>
 <p>These are callbacks that you can subscribe to within the Ajax request object, like so:</p>
@@ -18,11 +18,11 @@
  });
 </code></pre>
 <h3>Global Events</h3>
-<p>These events are broadcast to all elements in the DOM, triggering any handlers which may be listening. You can listen for these events like so:</p>
-<pre> $("#loading").bind("ajaxSend", function(){
-   $(this).show();
+<p>These events are triggered on the <code>document</code>, calling any handlers which may be listening. You can listen for these events like so:</p>
+<pre> $(document).bind("ajaxSend", function(){
+   $("#loading").show();
  }).bind("ajaxComplete", function(){
-   $(this).hide();
+   $("#loading").hide();
  });
 </pre>
 <p>Global events can be disabled for a particular Ajax request by passing in the global option, like so:</p>
@@ -33,10 +33,10 @@
  });
 </code></pre>
 <h3>Events</h3>
-<p>This is the full list of Ajax events that are broadcast, and in the order in which they are broadcast. The indented events are broadcast for each and every Ajax request (unless a global option has been set). The ajaxStart and ajaxStop events are events that relate to all Ajax requests together.
+<p>This is the full list of Ajax events , and in the order in which they are triggered. The indented events are triggered for each and every Ajax request (unless a global option has been set). The ajaxStart and ajaxStop events are events that relate to all Ajax requests together.
 </p>
 <ul>
-  <li> <b>ajaxStart</b> (Global Event)<br>This event is broadcast if an Ajax request is started and no other Ajax requests are currently running.
+  <li> <b>ajaxStart</b> (Global Event)<br>This event is triggered if an Ajax request is started and no other Ajax requests are currently running.
     <ul>
       <li> <b>beforeSend</b> (Local Event)<br>This event, which is triggered before an Ajax request is started, allows you to modify the XMLHttpRequest object (setting additional headers, if need be.)</li>
       <li> <b>ajaxSend</b> (Global Event)<br>This global event is also triggered before the request is run.</li>
