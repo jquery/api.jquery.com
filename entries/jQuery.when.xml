@@ -22,12 +22,14 @@
   </longdesc>
   <example>
     <desc>Execute a function after two ajax requests are successful. (See the jQuery.ajax() documentation for a complete description of success and error cases for an ajax request).</desc>
-    <code><![CDATA[$.when($.ajax("/page1.php"), $.ajax("/page2.php")).done(function(a1,  a2){
+    <code><![CDATA[$.when($.ajax("/page1.php"), $.ajax("/page2.php")).done(function(a1, a2){
   /* a1 and a2 are arguments resolved for the
-      page1 and page2 ajax requests, respectively */
-  var jqXHR = a1[2]; /* arguments are [ "success", statusText, jqXHR ] */
-  if ( /Whip It/.test(jqXHR.responseText) ) {
-    alert("First page has 'Whip It' somewhere.");
+      page1 and page2 ajax requests, respectively. 
+      each argument is an array with the following 
+      structure: [ data, statusText, jqXHR ] */
+  var data = a1[0] + a2[0]; /* a1[0] = "Whip", a2[0] = " It" */
+  if ( /Whip It/.test(data) ) {
+    alert("We got what we came for!");
   }
 });
 ]]></code>
