@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
-<entry type="method" name="get" return="Element, Array">
+<entry type="method" name="get">
+  <return type="Element"/>
+  <return type="Array"/>
   <title>.get()</title>
   <signature>
     <added>1.0</added>
