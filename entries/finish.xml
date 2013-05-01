@@ -12,9 +12,9 @@
     <p>When <code>.finish()</code> is called on an element, the currently-running animation and all queued animations (if any) immediately stop and their CSS properties set to their target values. All queued animations are removed.</p>
     <p>If the first argument is provided, only the animations in the queue represented by that string will be stopped.</p>
     <p>The <code>.finish()</code> method is similar to <code>.stop(true, true)</code> in that it clears the queue and the current animation jumps to its end value. It differs, however, in that <code>.finish()</code> also causes the CSS property of all <em>queued</em> animations to jump to their end values, as well.</p>
-    <blockquote>
+    <div class="warning">
       <p>Animations may be stopped globally by setting the property <code>$.fx.off</code> to <code>true</code>. When this is done, all animation methods will immediately set elements to their final state when called, rather than displaying an effect.</p>
-    </blockquote>
+    </div>
   </longdesc>
   <example>
     <desc>Click the Go button once to start the animation, and then click the other buttons to see how they affect the current and queued animations.</desc>

@@ -17,12 +17,12 @@
         <li><strong>Convenience</strong>: It can be called directly on a jQuery object and chained to other jQuery methods.</li>
         <li><strong>Cross-browser consistency</strong>: The values of some attributes are reported inconsistently across browsers, and even across versions of a single browser. The <code>.attr()</code> method reduces such inconsistencies.</li>
       </ol>
-      <blockquote>
+      <div class="warning">
         <p><strong>Note:</strong> Attribute values are strings with the exception of a few attributes such as value and tabindex.</p>
-      </blockquote>
-      <blockquote>
+      </div>
+      <div class="warning">
         <p><strong>Note:</strong> Attempting to change the <code>type</code> attribute (or property) of an <code>input</code> element created via HTML or already in an HTML document will result in an error being thrown by Internet Explorer 6, 7, or 8.</p>
-      </blockquote>
+      </div>
       <p>As of jQuery 1.6, the <code>.attr()</code> method returns <code>undefined</code> for attributes that have not been set. <strong>To retrieve and change DOM properties such as the <code>checked</code>, <code>selected</code>, or <code>disabled</code> state of form elements, use the <a href="http://api.jquery.com/prop/">.prop()</a> method.</strong></p>
 
       <h4>Attributes vs. Properties</h4>

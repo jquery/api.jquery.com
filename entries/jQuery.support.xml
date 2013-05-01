@@ -10,7 +10,7 @@
     <p>
       <strong>Since jQuery requires these tests internally, they must be performed on <em>every</em> page load. Although some of these properties are documented below, they are not subject to a long deprecation/removal cycle and may be removed once internal jQuery code no longer needs them.</strong>
     </p>
-    <blockquote>
+    <div class="warning">
       <p>Following are a few resources that explain how feature detection works:</p>
       <ul>
         <li>
@@ -23,7 +23,7 @@
           <a href="http://yura.thinkweb2.com/cft/">http://yura.thinkweb2.com/cft/</a>
         </li>
       </ul>
-    </blockquote>
+    </div>
     <p>For your own project's feature-detection needs, we strongly recommend the use of an external library such as <a href="http://modernizr.com">Modernizr</a> instead of dependency on properties in <code>jQuery.support</code>.</p>
     <p>The tests included in <code>jQuery.support</code> are as follows:</p>
     <ul>

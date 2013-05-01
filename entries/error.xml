@@ -33,9 +33,9 @@
     <p>
       <samp>Handler for .error() called.</samp>
     </p>
-    <blockquote>
+    <div class="warning">
       <p>The event handler <em>must</em> be attached before the browser fires the error event, which is why the example sets the src attribute after attaching the handler. Also, the error event may not be correctly fired when the page is served locally; <code>error</code> relies on HTTP status codes and will generally not be triggered if the URL uses the <code>file:</code> protocol.</p>
-    </blockquote>
+    </div>
     <p>Note: A jQuery error event handler should not be attached to the window object. The browser fires the window's error event when a script error occurs. However, the window error event receives different arguments and has different return value requirements than conventional event handlers. Use <code>window.onerror</code> instead.</p>
   </longdesc>
   <example>

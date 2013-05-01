@@ -48,9 +48,9 @@ $('#foo').unbind('click', function() {
   alert('The quick brown fox jumps over the lazy dog.');
 });</code></pre>
     <p>Even though the two functions are identical in content, they are created separately and so JavaScript is free to keep them as distinct function objects. To unbind a particular handler, we need a reference to that function and not a different one that happens to do the same thing.</p>
-    <blockquote>
+    <div class="warning">
       <p><strong>Note:</strong> Using a proxied function to unbind an event on an element will unbind all proxied functions on that element, as the same proxy function is used for all proxied events. To allow unbinding a specific event, use unique class names on the event (e.g. <code>click.proxy1</code>, <code>click.proxy2</code>) when attaching them.</p>
-    </blockquote>
+    </div>
     <h4>Using Namespaces</h4>
     <p>Instead of maintaining references to handlers in order to unbind them, we can namespace the events and use this capability to narrow the scope of our unbinding actions. As shown in the discussion for the <code>.bind()</code> method, namespaces are defined by using a period (<code>.</code>) character when binding a handler:</p>
     <pre><code>$('#foo').bind('click.myEvents', handler);</code></pre>

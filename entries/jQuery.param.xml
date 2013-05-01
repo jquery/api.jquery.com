@@ -29,12 +29,12 @@
     <pre><code>[{name:"first",value:"Rick"},
 {name:"last",value:"Astley"},
 {name:"job",value:"Rock Star"}]</code></pre>
-    <blockquote>
+    <div class="warning">
       <p><strong>Note:</strong> Because some frameworks have limited ability to parse serialized arrays, developers should exercise caution when passing an <code>obj</code> argument that contains objects or arrays nested within another array.</p>
-    </blockquote>
-    <blockquote>
+    </div>
+    <div class="warning">
       <p><strong>Note:</strong> Because there is no universally agreed-upon specification for param strings, it is not possible to encode complex data structures using this method in a manner that works ideally across all languages supporting such input. Until such time that there is, the <code>$.param</code> method will remain in its current form.</p>
-    </blockquote>
+    </div>
     <p>In jQuery 1.4, HTML5 input elements are also serialized.</p>
     <p>We can display a query string representation of an object and a URI-decoded version of the same as follows:</p>
     <pre><code>var myObject = {

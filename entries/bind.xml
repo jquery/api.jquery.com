@@ -113,13 +113,13 @@ $('#bar').bind('click', {msg: message}, function(event) {
 </code></pre>
     <p>This time the variable is not referred to directly within the handlers; instead, the variable is passed in <em>by value</em> through <code>eventData</code>, which fixes the value at the time the event is bound. The first handler will now display <samp>Spoon!</samp> while the second will alert <samp>Not in the face!</samp>
     </p>
-    <blockquote>
+    <div class="warning">
       <p>Note that objects are passed to functions <em>by reference</em>, which further complicates this scenario.</p>
-    </blockquote>
+    </div>
     <p>If <code>eventData</code> is present, it is the second argument to the <code>.bind()</code> method; if no additional data needs to be sent to the handler, then the callback is passed as the second and final argument.</p>
-    <blockquote>
+    <div class="warning">
       <p>See the <code>.trigger()</code> method reference for a way to pass data to a handler at the time the event happens rather than when the handler is bound.</p>
-    </blockquote>
+    </div>
     <p>As of jQuery 1.4 we can no longer attach data (and thus, events) to object, embed, or applet elements because critical errors occur when attaching data to Java applets.</p>
     <p><strong>Note: </strong>Although demonstrated in the next example, it is inadvisable to bind handlers to both the <code>click</code> and <code>dblclick</code> events for the same element. The sequence of events triggered varies from browser to browser, with some receiving two click events before the <code>dblclick</code> and others only one. Double-click sensitivity (maximum time between clicks that is detected as a double click) can vary by operating system and browser, and is often user-configurable.</p>
   </longdesc>

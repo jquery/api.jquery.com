@@ -30,9 +30,9 @@
   </signature>
 
   <longdesc>
-    <blockquote>
+    <div class="warning">
       <p>Note: The event handling suite also has a method named <a href="http://api.jquery.com/toggle-event/">.toggle()</a>. Which one is fired depends on the set of arguments passed.</p>
-    </blockquote>
+    </div>
     <p>With no parameters, the <code>.toggle()</code> method simply toggles the visibility of elements:</p>
     <pre><code>$('.target').toggle();</code></pre>
     <p>The matched elements will be revealed or hidden immediately, with no animation, by changing the CSS <code>display</code> property. If the element is initially displayed, it will be hidden; if hidden, it will be shown. The <code>display</code> property is saved and restored as needed. If an element has a <code>display</code> value of <code>inline</code>, then is hidden and shown, it will once again be displayed <code>inline</code>.</p>

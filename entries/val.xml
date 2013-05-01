@@ -17,9 +17,9 @@
 $('select.foo').val();                    // get the value from a dropdown select even easier
 $('input:checkbox:checked').val();        // get the value from a checked checkbox
 $('input:radio[name=bar]:checked').val(); // get the value from a set of radio buttons</code></pre>
-      <blockquote>
+      <div class="warning">
         <p><strong>Note: </strong> At present, using <code>.val()</code> on textarea elements strips carriage return characters from the browser-reported value. When this value is sent to the server via XHR however, carriage returns are preserved (or added by browsers which do not include them in the raw value). A workaround for this issue can be achieved using a valHook as follows:</p>
-      </blockquote>
+      </div>
       <pre><code>
 $.valHooks.textarea = {
   get: function( elem ) {

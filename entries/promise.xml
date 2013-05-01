@@ -16,9 +16,9 @@
     <p> By default, <code>type</code> is <code>"fx"</code>, which means the returned Promise is resolved when all animations of the selected elements have completed.</p>
     <p> Resolve context and sole argument is the collection onto which <code>.promise()</code> has been called. </p>
     <p> If <code>target</code> is provided, <code>.promise()</code> will attach the methods onto it and then return this object rather than create a new one. This can be useful to attach the Promise behavior to an object that already exists.</p>
-    <blockquote>
+    <div class="warning">
       <p><strong>Note: </strong>The returned Promise is linked to a Deferred object stored on the <code>.data()</code> for an element. Since the<code>.remove()</code> method removes the element's data as well as the element itself, it will prevent any of the element's unresolved Promises from resolving. If it is necessary to remove an element from the DOM before its Promise is resolved, use <code>.detach()</code> instead and follow with <code>.removeData()</code> after resolution.</p>
-    </blockquote>
+    </div>
   </longdesc>
   <example>
     <desc>Using <code>.promise()</code> on a collection with no active animation returns a resolved Promise:</desc>

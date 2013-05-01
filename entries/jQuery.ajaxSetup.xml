@@ -21,9 +21,9 @@
   // url not set here; uses ping.php
   data: {'name': 'Dan'}
 });</code></pre>
-    <blockquote>
+    <div class="warning">
       <p>Note: Global callback functions should be set with their respective global Ajax event handler methods&#x2014;<code><a href="/ajaxStart">.ajaxStart()</a></code>, <code><a href="/ajaxStop">.ajaxStop()</a></code>, <code><a href="/ajaxComplete">.ajaxComplete()</a></code>, <code><a href="/ajaxError">.ajaxError()</a></code>, <code><a href="/ajaxSuccess">.ajaxSuccess()</a></code>, <code><a href="/ajaxSend">.ajaxSend()</a></code>&#x2014;rather than within the <code>options</code> object for <code>$.ajaxSetup()</code>.</p>
-    </blockquote>
+    </div>
   </longdesc>
   <example>
     <desc>Sets the defaults for Ajax requests to the url "/xmlhttp/", disables global handlers and uses POST instead of GET. The following Ajax requests then sends some data without having to set anything else.</desc>

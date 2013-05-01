@@ -205,9 +205,9 @@ $.ajax({
         </p>
       </li>
     </ul>
-    <blockquote>
+    <div class="warning">
       <p><strong>Deprecation Notice:</strong> The <code>jqXHR.success()</code>, <code>jqXHR.error()</code>, and <code>jqXHR.complete()</code> callbacks are deprecated as of jQuery 1.8. To prepare your code for their eventual removal, use <code>jqXHR.done()</code>, <code>jqXHR.fail()</code>, and <code>jqXHR.always()</code> instead.</p>
-    </blockquote>
+    </div>
     <pre><code>// Assign handlers immediately after making the request,
 // and remember the jqxhr object for this request
 var jqxhr = $.ajax( "example.php" )
