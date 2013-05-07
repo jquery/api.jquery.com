@@ -31,7 +31,7 @@
 	<property name="progress" type="Function" added="1.8">
 		<desc>A function to be called after each step of the animation, only once per animated element regardless of the number of animated properties.</desc>
 		<argument name="animation" type="Promise">
-			<desc>An enhanced Promise oject with additional properties for the animation</desc>
+			<desc>An enhanced Promise object with additional properties for the animation</desc>
 		</argument>
 		<argument name="progress" type="Number">
 			<desc>A number from 0 to 1 indicating the progress of the animation</desc>
@@ -47,7 +47,7 @@
 	<property name="done" type="Function" added="1.8">
 		<desc>A function to be called when the animation completes (its Promise object is resolved).</desc>
 		<argument name="animation" type="Promise">
-			<desc>An enhanced Promise oject with additional properties for the animation</desc>
+			<desc>An enhanced Promise object with additional properties for the animation</desc>
 		</argument>
 		<argument name="jumpedToEnd" type="Boolean">
 			<desc>Indicates whether the animation jumped to the end</desc>
@@ -56,7 +56,7 @@
 	<property name="fail" type="Function" added="1.8">
 		<desc>A function to be called when the animation fails to complete (its Promise object is rejected).</desc>
 		<argument name="animation" type="Promise">
-			<desc>An enhanced Promise oject with additional properties for the animation</desc>
+			<desc>An enhanced Promise object with additional properties for the animation</desc>
 		</argument>
 		<argument name="jumpedToEnd" type="Boolean">
 			<desc>Indicates whether the animation jumped to the end</desc>
@@ -65,7 +65,7 @@
 	<property name="always" type="Function" added="1.8">
 		<desc>A function to be called when the animation completes or stops without completing (its Promise object is either resolved or rejected).</desc>
 		<argument name="animation" type="Promise">
-			<desc>An enhanced Promise oject with additional properties for the animation</desc>
+			<desc>An enhanced Promise object with additional properties for the animation</desc>
 		</argument>
 		<argument name="jumpedToEnd" type="Boolean">
 			<desc>Indicates whether the animation jumped to the end</desc>
