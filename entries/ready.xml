@@ -11,10 +11,10 @@
   <longdesc>
     <p>While JavaScript provides the <code>load</code> event for executing code when a page is rendered, this event does not get triggered until all assets such as images have been completely received. In most cases, the script can be run as soon as the DOM hierarchy has been fully constructed. The handler passed to <code>.ready()</code> is guaranteed to be executed after the DOM is ready, so this is usually the best place to attach all other event handlers and run other jQuery code.  When using scripts that rely on the value of CSS style properties, it's important to reference external stylesheets or embed style elements before referencing the scripts.</p>
     <p>In cases where code relies on loaded assets (for example, if the dimensions of an image are required), the code should be placed in a handler for the <code>load</code> event instead.</p>
-    <blockquote>
+    <div class="warning">
       <p>The <code>.ready()</code> method is generally incompatible with the <code>&lt;body onload=""&gt;</code> attribute. If <code>load</code> must be used, either do not use <code>.ready()</code> or use jQuery's <code>.load()</code> method to attach <code>load</code> event handlers to the window or to more specific items, like images.
       </p>
-    </blockquote>
+    </div>
     <p>All three of the following syntaxes are equivalent:</p>
     <ul>
       <li>

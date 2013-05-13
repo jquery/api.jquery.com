@@ -17,11 +17,11 @@
     <p>Using the standard effects queue, we can, for example, set an 800-millisecond delay between the <code>.slideUp()</code> and <code>.fadeIn()</code> of <code>&lt;div id="foo"&gt;</code>:</p>
     <pre><code>$('#foo').slideUp(300).delay(800).fadeIn(400);</code></pre>
     <p>When this statement is executed, the element slides up for 300 milliseconds and then pauses for 800 milliseconds before fading in for 400 milliseconds.</p>
-    <blockquote>
+    <div class="warning">
       <p>
         <strong>The <code>.delay()</code> method is best for delaying between queued jQuery effects. Because it is limited&#x2014;it doesn't, for example, offer a way to cancel the delay&#x2014;<code>.delay()</code> is not a replacement for JavaScript's native <a href="https://developer.mozilla.org/en/DOM/window.setTimeout">setTimeout</a> function, which may be more appropriate for certain use cases.</strong>
       </p>
-    </blockquote>
+    </div>
   </longdesc>
   <example>
     <desc>Animate the hiding and showing of two divs, delaying the first before showing it.</desc>

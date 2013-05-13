@@ -40,7 +40,7 @@ alert('Index: ' + $('li').index(listItem));
 We get back the zero-based position of the list item:
 </code></pre>
     <p>
-      <span class="output">Index: 1</span>
+      <samp>Index: 1</samp>
     </p>
     <p>Similarly, if we retrieve a jQuery object consisting of one of the three list items, <code>.index()</code> will search for that list item:</p>
     <pre><code>
@@ -49,7 +49,7 @@ alert('Index: ' + $('li').index(listItem));
 </code></pre>
     <p>We get back the zero-based position of the list item:</p>
     <p>
-      <span class="output">Index: 1</span>
+      <samp>Index: 1</samp>
     </p>
     <p>Note that if the jQuery collection used as the <code>.index()</code> method's argument contains more than one element, the first element within the matched set of elements will be used.</p>
     <pre><code>
@@ -58,7 +58,7 @@ alert('Index: ' + $('li').index(listItems));
 </code></pre>
     <p>We get back the zero-based position of the first list item within the matched set:</p>
     <p>
-      <span class="output">Index: 1</span>
+      <samp>Index: 1</samp>
     </p>
     <p>If we use a string as the <code>.index()</code> method's argument, it is interpreted as a jQuery selector string. The first element among the object's matched elements which also matches this selector is located.</p>
     <pre><code>
@@ -67,13 +67,13 @@ alert('Index: ' + listItem.index('li'));
 </code></pre>
     <p>We get back the zero-based position of the list item:</p>
     <p>
-      <span class="output">Index: 1</span>
+      <samp>Index: 1</samp>
     </p>
     <p>If we omit the argument, <code>.index()</code> will return the position of the first element within the set of matched elements in relation to its siblings:</p>
     <pre><code>alert('Index: ' + $('#bar').index());</code></pre>
     <p>Again, we get back the zero-based position of the list item:</p>
     <p>
-      <span class="output">Index: 1</span>
+      <samp>Index: 1</samp>
     </p>
   </longdesc>
   <example>

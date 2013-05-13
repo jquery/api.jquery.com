@@ -37,13 +37,13 @@
 </code></pre>
     <p>Now when the insertion point is inside the field and a key is pressed and released, the alert is displayed:</p>
     <p>
-      <span class="output">Handler for .keyup() called.</span>
+      <samp>Handler for .keyup() called.</samp>
     </p>
     <p>To trigger the event manually, apply <code>.keyup()</code> without arguments:</p>
     <pre><code>$('#other').click(function() {
   $('#target').keyup();
 });</code></pre>
-    <p>After this code executes, clicks on <span class="output">Trigger the handler</span> will also alert the message.</p>
+    <p>After this code executes, clicks on <samp>Trigger the handler</samp> will also alert the message.</p>
     <p>If key presses anywhere need to be caught (for example, to implement global shortcut keys on a page), it is useful to attach this behavior to the <code>document</code> object. Because of event bubbling, all key presses will make their way up the DOM to the <code>document</code> object unless explicitly stopped.</p>
     <p>To determine which key was pressed, examine the event object that is passed to the handler function. While browsers use differing properties to store this information, jQuery normalizes the <code>.which</code> property so you can reliably use it to retrieve the key code. This code corresponds to a key on the keyboard, including codes for special keys such as arrows. For catching actual text entry, <code>.keypress()</code> may be a better choice.</p>
   </longdesc>

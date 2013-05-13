@@ -46,9 +46,9 @@
     <p>If we begin at item II, we can find list items within it:</p>
     <pre><code>$('li.item-ii').find('li').css('background-color', 'red');</code></pre>
     <p>The result of this call is a red background on items A, B, 1, 2, 3, and C. Even though item II matches the selector expression, it is not included in the results; only descendants are considered candidates for the match.</p>
-    <blockquote>
+    <div class="warning">
       <p>Unlike in the rest of the tree traversal methods, the selector expression is required in a call to <code>.find()</code>. If we need to retrieve all of the descendant elements, we can pass in the universal selector <code>'*'</code> to accomplish this.</p>
-    </blockquote>
+    </div>
     <p><a href="http://api.jquery.com/jquery/#selector-context">Selector context</a> is implemented with the <code>.find()</code> <code>method;</code> therefore, <code>$('li.item-ii').find('li')</code> is equivalent to <code>$('li', 'li.item-ii')</code>.</p>
     <p><strong>As of jQuery 1.6</strong>, we can also filter the selection with a given jQuery collection or element. With the same nested list as above, if we start with:</p>
     <pre><code>var $allListElements = $('li');</code></pre>

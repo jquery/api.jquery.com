@@ -19,13 +19,17 @@
           <li>jQuery.type( null ) === "null"</li>
         </ul>
       </li>
-      <li>If the object has an internal [[Class]] equivalent to one of the browser's built-in objects, the associated name is returned. (<a href="http://perfectionkills.com/instanceof-considered-harmful-or-how-to-write-a-robust-isarray/">More details about this technique.</a>)
+      <li>If the argument is either a primitive value or an instance of a standard built-in ECMAScript object, the [[Class]] internal property is used to determine the type. (<a href="http://perfectionkills.com/instanceof-considered-harmful-or-how-to-write-a-robust-isarray/">More details about this technique.</a>)
         <ul>
           <li>jQuery.type( true ) === "boolean"</li>
+          <li>jQuery.type( new Boolean() ) === "boolean"</li>
           <li>jQuery.type( 3 ) === "number"</li>
+          <li>jQuery.type( new Number(3) ) === "number"</li>
           <li>jQuery.type( "test" ) === "string"</li>
+          <li>jQuery.type( new String("test") ) === "string"</li>
           <li>jQuery.type( function(){} ) === "function"</li>
           <li>jQuery.type( [] ) === "array"</li>
+          <li>jQuery.type( new Array() ) === "array"</li>
           <li>jQuery.type( new Date() ) === "date"</li>
           <li>jQuery.type( new Error() ) === "error" // <strong>as of jQuery 1.9</strong></li>
           <li>jQuery.type( /test/ ) === "regexp"</li>

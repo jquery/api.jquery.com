@@ -12,7 +12,7 @@
     <p>The <code>$.trim()</code> function removes all newlines, spaces (including non-breaking spaces), and tabs from the beginning and end of the supplied string. If these whitespace characters occur in the middle of the string, they are preserved.</p>
   </longdesc>
   <example>
-    <desc>Remove the two white spaces at the start and at the end of the string.</desc>
+    <desc>Remove the white spaces at the start and at the end of the string.</desc>
     <code><![CDATA[
   var str = "         lots of spaces before and after         ";
   $("#original").html("Original String: '" + str + "'");
@@ -24,7 +24,7 @@
     ]]></html>
   </example>
   <example>
-    <desc>Remove the two white spaces at the start and at the end of the string.</desc>
+    <desc>Remove the white spaces at the start and at the end of the string.</desc>
     <code><![CDATA[$.trim("    hello, how are you?    ");]]></code>
     <results><![CDATA["hello, how are you?"]]></results>
   </example>
