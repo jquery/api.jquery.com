@@ -50,5 +50,6 @@ $("p").die("click", foo); // ... foo will no longer be called.]]></code>
   <category slug="version/1.4.1"/>
   <category slug="version/1.4.3"/>
   <category slug="deprecated/deprecated-1.7"/>
+  <category slug="removed"/>
 </entry>
 

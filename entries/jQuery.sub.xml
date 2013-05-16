@@ -95,4 +95,5 @@ $(document).ready(function() {
   <category slug="core"/>
   <category slug="version/1.5"/>
   <category slug="deprecated/deprecated-1.7"/>
+  <category slug="removed"/>
 </entry>
