@@ -119,7 +119,7 @@ $("p").on("click", {foo: "bar"}, myHandler)]]></code>
   <example>
     <desc>Attach and trigger custom (non-browser) events.</desc>
     <code><![CDATA[
-$("p").on("myCustomEvent", function(e, myName, myValue){
+$("p").on("myCustomEvent", function(e, myName){
   $(this).text(myName + ", hi there!");
   $("span").stop().css("opacity", 1)
     .text("myName = " + myName)
