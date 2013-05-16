@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<entry type="method" name="size" return="Number" deprecated="1.8">
+<entry type="method" name="size" return="Integer" deprecated="1.8">
   <title>.size()</title>
   <signature>
     <added>1.0</added>
