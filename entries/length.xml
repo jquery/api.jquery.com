@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<entry type="property" name="length" return="Number">
+<entry type="property" name="length" return="Integer">
   <title>.length</title>
   <signature>
     <added>1.0</added>
