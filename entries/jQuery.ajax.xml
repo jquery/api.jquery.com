@@ -80,7 +80,7 @@
         <desc>Whether to trigger global Ajax event handlers for this request. The default is <code>true</code>. Set to <code>false</code> to prevent the global handlers like <code>ajaxStart</code> or <code>ajaxStop</code> from being triggered. This can be used to control various <a href="/Ajax_Events">Ajax Events</a>.</desc>
       </property>
       <property name="headers" type="PlainObject" default="{}" added="1.5">
-        <desc>An object of additional header key/value pairs to send along with the request. This setting is set before the <code>beforeSend</code> function is called; therefore, any values in the headers setting can be overwritten from within the <code>beforeSend</code> function.</desc>
+        <desc>An object of additional header key/value pairs to send along with requests using the XMLHttpRequest transport. The header <code>X-Requested-With: XMLHttpRequest</code> is always added, but its default <code>XMLHttpRequest</code> value can be changed here.  Values in the <code>headers</code> setting can also be overwritten from within the <code>beforeSend</code> function.</desc>
       </property>
       <property default="false" name="ifModified" type="Boolean">
         <desc>Allow the request to be successful only if the response has changed since the last request. This is done by checking the Last-Modified header. Default value is <code>false</code>, ignoring the header. In jQuery 1.4 this technique also checks the 'etag' specified by the server to catch unmodified data.</desc>
