@@ -23,9 +23,9 @@
   </code></pre>
     <p>A message is thus logged for each item in the list:</p>
     <p>
-      <span class="output">0: foo</span>
+      <samp>0: foo</samp>
       <br/>
-      <span class="output">1: bar</span>
+      <samp>1: bar</samp>
     </p>
     <p>You can stop the loop from within the callback function by returning <code>false</code>.</p>
     <p>Note: most jQuery methods that return a jQuery object also loop through the set of elements in the jQuery collection — a process known as <i>implicit iteration</i>. When this occurs, it is often unnecessary to <i>explicitly</i> iterate with the <code>.each()</code> method:</p>

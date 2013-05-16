@@ -42,9 +42,9 @@
     &lt;div class="hello"&gt;Hello&lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
-    <blockquote>
+    <div class="warning">
       <p><strong>Note:</strong> When using the <code>.clone()</code> method, you can modify the cloned elements or their contents before (re-)inserting them into the document.</p>
-    </blockquote>
+    </div>
     <p>Normally, any event handlers bound to the original element are <em>not</em> copied to the clone. The optional <code>withDataAndEvents</code> parameter allows us to change this behavior, and to instead make copies of all of the event handlers as well, bound to the new copy of the element. As of jQuery 1.4, all element data (attached by the <code>.data()</code> method) is also copied to the new copy. </p>
     <p>However, objects and arrays within element data are not copied and will continue to be shared between the cloned element and the original element. To deep copy all data, copy each one manually:</p>
     <pre><code>var $elem = $('#elem').data( "arr": [ 1 ] ), // Original element with attached data
@@ -52,9 +52,9 @@
     .data( "arr", $.extend( [], $elem.data("arr") ) ); // Deep copy to prevent data sharing
 </code></pre>
     <p>As of jQuery 1.5, <code>withDataAndEvents</code> can be optionally enhanced with <code>deepWithDataAndEvents </code> to copy the events and data for all children of the cloned element.</p>
-    <blockquote>
+    <div class="warning">
       <p><strong>Note:</strong> Using <code>.clone()</code> has the side-effect of producing elements with duplicate <code>id</code> attributes, which are supposed to be unique. Where possible, it is recommended to avoid cloning elements with this attribute or using <code>class</code> attributes as identifiers instead.</p>
-    </blockquote>
+    </div>
   </longdesc>
   <example>
     <desc>Clones all b elements (and selects the clones) and prepends them to all paragraphs.</desc>

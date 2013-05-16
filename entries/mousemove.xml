@@ -39,13 +39,13 @@
 });</code></pre>
     <p>Now when the mouse pointer moves within the target button, the messages are appended to &lt;div id="log"&gt;:</p>
     <p>
-      <span class="output">Handler for .mousemove() called at (399, 48)</span>
+      <samp>Handler for .mousemove() called at (399, 48)</samp>
       <br/>
-      <span class="output">Handler for .mousemove() called at (398, 46)</span>
+      <samp>Handler for .mousemove() called at (398, 46)</samp>
       <br/>
-      <span class="output">Handler for .mousemove() called at (397, 44)</span>
+      <samp>Handler for .mousemove() called at (397, 44)</samp>
       <br/>
-      <span class="output">Handler for .mousemove() called at (396, 42)</span>
+      <samp>Handler for .mousemove() called at (396, 42)</samp>
       <br/>
     </p>
     <p>To trigger the event manually, apply <code>.mousemove()</code> without an argument:</p>
@@ -54,7 +54,7 @@
 });</code></pre>
     <p>After this code executes, clicks on the Trigger button will also append the message:</p>
     <p>
-      <span class="output">Handler for .mousemove() called at (undefined, undefined)</span>
+      <samp>Handler for .mousemove() called at (undefined, undefined)</samp>
     </p>
     <p>When tracking mouse movement, you usually need to know the actual position of the mouse pointer. The event object that is passed to the handler contains some information about the mouse coordinates. Properties such as <code>.clientX</code>, <code>.offsetX</code>, and <code>.pageX</code> are available, but support for them differs between browsers. Fortunately, jQuery normalizes the <code>.pageX</code> and <code>.pageY</code> properties so that they can be used in all browsers. These properties provide the X and Y coordinates of the mouse pointer relative to the top-left corner of the document, as illustrated in the example output above.</p>
     <p>Keep in mind that the <code>mousemove</code> event is triggered whenever the mouse pointer moves, even for a pixel. This means that hundreds of events can be generated over a very small amount of time. If the handler has to do any significant processing, or if multiple handlers for the event exist, this can be a serious performance drain on the browser. It is important, therefore, to optimize <code>mousemove </code>handlers as much as possible, and to unbind them as soon as they are no longer needed.</p>

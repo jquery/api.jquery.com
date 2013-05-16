@@ -19,9 +19,9 @@
 </code></pre>
     <p>This produces two messages:</p>
     <p>
-      <span class="output">0: 52</span>
+      <samp>0: 52</samp>
       <br/>
-      <span class="output">1: 97</span>
+      <samp>1: 97</samp>
     </p>
     <p>If an object is used as the collection, the callback is passed a key-value pair each time:</p>
     <pre><code>var obj = {
@@ -33,9 +33,9 @@ $.each( obj, function( key, value ) {
 });</code></pre>
     <p>Once again, this produces two messages:</p>
     <p>
-      <span class="output">flammable: inflammable</span>
+      <samp>flammable: inflammable</samp>
       <br/>
-      <span class="output">duh: no duh</span>
+      <samp>duh: no duh</samp>
     </p>
     <p>We can break the <code>$.each()</code> loop at a particular iteration by making the callback function return <code>false</code>. Returning <em>non-false</em> is the same as a <code>continue</code> statement in a for loop; it will skip immediately to the next iteration.</p>
   </longdesc>

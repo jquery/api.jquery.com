@@ -16,28 +16,32 @@
     <p>A descendant of an element could be a child, grandchild, great-grandchild, and so on, of that element.</p>
   </longdesc>
   <example>
-    <desc>Finds all input descendants of forms.</desc>
-    <code><![CDATA[$("form input").css("border", "2px dotted blue");]]></code>
+    <desc>Mark all inputs that are descendants of a form with a dotted blue border. Give a yellow background to inputs that are descendants of a fieldset that is a descendant of a form.</desc>
+    <code><![CDATA[
+$( "form input" ).css( "border", "2px dotted blue" );
+$( "form fieldset input" ).css( "backgroundColor", "yellow" );
+]]></code>
     <css><![CDATA[
 
-  body { font-size:14px; }
-  form { border:2px green solid; padding:2px; margin:0;
-         background:#efe; }
-  div { color:red; }
-  fieldset { margin:1px; padding:3px; }
+  body { font-size: 14px; }
+  form { border: 2px green solid; padding: 2px;
+         margin: 0; background: #efe; }
+  div { color: red; }
+  fieldset { margin: 1px; padding: 3px; }
   ]]></css>
     <html><![CDATA[<form>
-    <div>Form is surrounded by the green outline</div>
-    <label>Child:</label>
-    <input name="name" />
+  <div>Form is surrounded by the green border.</div>
 
-    <fieldset>
-      <label>Grandchild:</label>
-      <input name="newsletter" />
-    </fieldset>
+  <label>Child of form:</label>
+  <input name="name">
 
-  </form>
-  Sibling to form: <input name="none" />]]></html>
+  <fieldset>
+    <label>Grandchild of form, child of fieldset:</label>
+    <input name="newsletter">
+  </fieldset>
+</form>
+Sibling to form: <input name="none">
+]]></html>
   </example>
   <category slug="selectors/hierarchy-selectors"/>
   <category slug="version/1.0"/>

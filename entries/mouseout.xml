@@ -41,12 +41,12 @@
     <pre><code>$('#outer').mouseout(function() {
   $('#log').append('Handler for .mouseout() called.');
 });</code></pre>
-    <p>Now when the mouse pointer moves out of the <span class="output">Outer</span> <code>&lt;div&gt;</code>, the message is appended to <code>&lt;div id="log"&gt;</code>. To trigger the event manually, apply <code>.mouseout()</code> without an argument::</p>
+    <p>Now when the mouse pointer moves out of the <samp>Outer</samp> <code>&lt;div&gt;</code>, the message is appended to <code>&lt;div id="log"&gt;</code>. To trigger the event manually, apply <code>.mouseout()</code> without an argument::</p>
     <pre><code>$('#other').click(function() {
   $('#outer').mouseout();
 });</code></pre>
-    <p>After this code executes, clicks on <span class="output">Trigger the handler</span> will also append the message.</p>
-    <p>This event type can cause many headaches due to event bubbling. For instance, when the mouse pointer moves out of the <span class="output">Inner</span> element in this example, a <code>mouseout</code> event will be sent to that, then trickle up to <span class="output">Outer</span>. This can trigger the bound <code>mouseout</code> handler at inopportune times. See the discussion for <code>.<a href="/mouseleave">mouseleave</a>()</code> for a useful alternative.</p>
+    <p>After this code executes, clicks on <samp>Trigger the handler</samp> will also append the message.</p>
+    <p>This event type can cause many headaches due to event bubbling. For instance, when the mouse pointer moves out of the <samp>Inner</samp> element in this example, a <code>mouseout</code> event will be sent to that, then trickle up to <samp>Outer</samp>. This can trigger the bound <code>mouseout</code> handler at inopportune times. See the discussion for <code>.<a href="/mouseleave">mouseleave</a>()</code> for a useful alternative.</p>
   </longdesc>
   <example>
     <desc>Show the number of times mouseout and mouseleave events are triggered.

@@ -29,10 +29,10 @@
     <p>As soon as the image has been loaded, the handler is called.</p>
     <p>In general, it is not necessary to wait for all images to be fully loaded. If code can be executed earlier, it is usually best to place it in a handler sent to the <code>.ready()</code> method.
     </p>
-    <blockquote>
+    <div class="warning">
       <p>The Ajax module also has a method named <code><a href="/load">.load()</a></code>. Which one is fired depends on the set of arguments passed.</p>
-    </blockquote>
-    <blockquote>
+    </div>
+    <div class="warning">
       <p>
         <b>Caveats of the <code>load</code> event when used with images</b>
         <p>A common challenge developers attempt to solve using the <code>.load()</code> shortcut is to execute a function when an image (or collection of images) have completely loaded. There are several known caveats with this that should be noted. These are:</p>
@@ -43,10 +43,10 @@
           <li>Can cease to fire for images that already live in the browser's cache</li>
         </ul>
       </p>
-    </blockquote>
-    <blockquote>
+    </div>
+    <div class="warning">
       <p><strong>Note:</strong> The <code>.live()</code> and <code>.delegate()</code> methods cannot be used to detect the <code>load</code> event of an iframe. The load event does not correctly bubble up the parent document and the event.target isn't set by Firefox, IE9 or Chrome, which is required to do event delegation.</p>
-    </blockquote>
+    </div>
   </longdesc>
   <example>
     <desc>Run a function when the page is fully loaded including graphics.</desc>

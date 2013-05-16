@@ -17,9 +17,9 @@
   </signature>
   <desc>Load data from the server and place the returned HTML into the matched element.</desc>
   <longdesc>
-    <blockquote>
+    <div class="warning">
       <p>Note: The event handling suite also has a method named <code><a href="/load-event">.load()</a></code>. jQuery determines which method to fire based on the set of arguments passed to it.</p>
-    </blockquote>
+    </div>
     <p>This method is the simplest way to fetch data from the server. It is roughly equivalent to <code>$.get(url, data, success)</code> except that it is a method rather than global function and it has an implicit callback function.  When a successful response is detected (i.e. when <code>textStatus</code> is "success" or "notmodified"), <code>.load()</code> sets the HTML contents of the matched element to the returned data. This means that most uses of the method can be quite simple:</p>
     <pre><code>$('#result').load('ajax/test.html');</code></pre>
     <p>If no element is matched by the selector — in this case, if the document does not contain an element with id="result" — the Ajax request will <em>not</em> be sent.</p>

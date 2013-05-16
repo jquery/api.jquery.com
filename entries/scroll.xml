@@ -48,13 +48,13 @@
 });</code></pre>
     <p>Now when the user scrolls the text up or down, one or more messages are appended to <code>&lt;div id="log"&gt;&lt;/div&gt;</code>:</p>
     <p>
-      <span class="output">Handler for .scroll() called.</span>
+      <samp>Handler for .scroll() called.</samp>
     </p>
     <p>To trigger the event manually, apply <code>.scroll()</code> without an argument:</p>
     <pre><code>$('#other').click(function() {
   $('#target').scroll();
 });</code></pre>
-    <p>After this code executes, clicks on <span class="output">Trigger the handler</span> will also append the message.</p>
+    <p>After this code executes, clicks on <samp>Trigger the handler</samp> will also append the message.</p>
     <p>A <code>scroll</code> event is sent whenever the element's scroll position changes, regardless of the cause. A mouse click or drag on the scroll bar, dragging inside the element, pressing the arrow keys, or using the mouse's scroll wheel could cause this event.</p>
   </longdesc>
   <example>

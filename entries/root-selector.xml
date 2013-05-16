@@ -4,9 +4,6 @@
   <sample>:root</sample>
   <signature>
     <added>1.9</added>
-    <argument name="index" type="Number/String">
-      <desc>The index of each child to match, starting with <code>1</code>, the string <code>even</code> or <code>odd</code>, or an equation ( eg. <code>:nth-last-child(even)</code>, <code>:nth-last-child(4n)</code> )</desc>
-    </argument>
   </signature>
   <desc>Selects the element that is the root of the document.</desc>
   <longdesc>

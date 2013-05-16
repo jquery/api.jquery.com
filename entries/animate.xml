@@ -27,9 +27,9 @@
     <p>Shorthand CSS properties (e.g. font, background, border) are not fully supported. For example, if you want to animate the rendered border width, at least a border style and border width other than "auto" must be set in advance. Or, if you want to animate font size, you would use <code>fontSize</code> or the CSS equivalent <code>'font-size'</code> rather than simply <code>'font'</code>. </p>
     <p>In addition to numeric values, each property can take the strings <code>'show'</code>, <code>'hide'</code>, and <code>'toggle'</code>. These shortcuts allow for custom hiding and showing animations that take into account the display type of the element.</p>
     <p>Animated properties can also be relative. If a value is supplied with a leading <code>+=</code> or <code>-=</code> sequence of characters, then the target value is computed by adding or subtracting the given number from the current value of the property.</p>
-    <blockquote>
+    <div class="warning">
       <p><strong>Note:</strong> Unlike shorthand animation methods such as <code>.slideDown()</code> and <code>.fadeIn()</code>, the <code>.animate()</code> method does <em>not</em> make hidden elements visible as part of the effect. For example, given <code>$('someElement').hide().animate({height:'20px'}, 500)</code>, the animation will run, but <em>the element will remain hidden</em>.</p>
-    </blockquote>
+    </div>
     <h4 id="duration">Duration</h4>
     <p>Durations are given in milliseconds; higher values indicate slower animations, not faster ones. The default duration is <code>400</code> milliseconds. The strings <code>'fast'</code> and <code>'slow'</code> can be supplied to indicate durations of <code>200</code> and <code>600</code> milliseconds, respectively.</p>
     <h4 id="complete">Complete Function</h4>
@@ -62,12 +62,12 @@
     </p>
     <p>The <code>opacity</code> of the image is already at its target value, so this property is not animated by the second click. Since the target value for <code>left</code> is a relative value, the image moves even farther to the right during this second animation.</p>
     <p>Directional properties (<code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code>) have no discernible effect on elements if their  <code>position</code> style property is <code>static</code>, which it is by default.</p>
-    <blockquote>
+    <div class="warning">
       <p><strong>Note: </strong>The <a href="http://jqueryui.com">jQuery UI</a> project extends the <code>.animate()</code> method by allowing some non-numeric styles such as colors to be animated. The project also includes mechanisms for specifying animations through CSS classes rather than individual attributes.</p>
-    </blockquote>
-    <blockquote>
+    </div>
+    <div class="warning">
       <p><strong>Note:</strong> if attempting to animate an element with a height or width of 0px, where contents of the element are visible due to overflow, jQuery may clip this overflow during animation. By fixing the dimensions of the original element being hidden however, it is possible to ensure that the animation runs smoothly. A <a href="http://www.google.com/search?q=clearfix">clearfix</a> can be used to automatically fix the dimensions of your main element without the need to set this manually.</p>
-    </blockquote>
+    </div>
     <h4 id="step">Step Function</h4>
     <p>The second version of <code>.animate()</code> provides a <code>step</code> option &#x2014; a callback function that is fired at each step of the animation. This function is useful for enabling custom animation types or altering the animation as it is occurring. It accepts two arguments (<code>now</code> and <code>fx</code>), and <code>this</code> is set to the DOM element being animated.
 </p>

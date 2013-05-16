@@ -1,11 +1,18 @@
 <?xml version="1.0"?>
 <entry type="selector" name="lt" return="">
   <title>:lt() Selector</title>
-  <sample>:lt(index)</sample>
   <signature>
+    <sample>:lt(index)</sample>
     <added>1.0</added>
     <argument name="index" type="Number">
       <desc>Zero-based index.</desc>
+    </argument>
+  </signature>
+  <signature>
+    <sample>:lt(-index)</sample>
+    <added>1.8</added>
+    <argument name="-index" type="Integer">
+      <desc>Zero-based index, counting backwards from the last element. </desc>
     </argument>
   </signature>
   <desc>Select all elements at an index less than <code>index</code> within the matched set.</desc>
@@ -15,16 +22,19 @@
     </p>
     <p>The index-related selectors (including this "less than" selector) filter the set of elements that have matched the expressions that precede them. They narrow the set down based on the order of the elements within this matched set. For example, if elements are first selected with a class selector (<code>.myclass</code>) and four elements are returned, these elements are given indices 0 through 3 for the purposes of these selectors.</p>
     <p>Note that since JavaScript arrays use <em>0-based indexing</em>, these selectors reflect that fact. This is why <code>$('.myclass:lt(1)')</code> selects the first element in the document with the class <code>myclass</code>, rather than selecting no elements. In contrast, <code>:nth-child(n)</code> uses <em>1-based indexing</em> to conform to the CSS specification.</p>
+    <p>Prior to jQuery 1.8, the <code>:lt(index)</code> selector did <em>not</em> accept a negative value for <code>index</code></p>
   </longdesc>
   <note id="jquery-selector-extension-alt" type="additional" data-selector=":lt()" data-alt="$(&quot;your-pure-css-selector&quot;).slice(0, index)"/>
   <example>
-    <desc>Finds TDs less than the one with the 4th index (TD#4).</desc>
-    <code><![CDATA[$("td:lt(4)").css("color", "red");]]></code>
-    <html><![CDATA[<table border="1">
-
+    <desc>Give TDs less than the one with the 4th index (TD#4) a yellow background and TDs less than the one with -2nd index a red text color.</desc>
+    <code><![CDATA[
+$( "td:lt(4)" ).css( "backgroundColor", "yellow" );
+$( "td:lt(-2)" ).css( "color", "red" );
+]]></code>
+    <html><![CDATA[
+<table border="1">
   <tr><td>TD #0</td><td>TD #1</td><td>TD #2</td></tr>
   <tr><td>TD #3</td><td>TD #4</td><td>TD #5</td></tr>
-
   <tr><td>TD #6</td><td>TD #7</td><td>TD #8</td></tr>
 </table>]]></html>
   </example>

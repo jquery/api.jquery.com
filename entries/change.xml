@@ -42,7 +42,7 @@
     <pre><code>$('#other').click(function() {
   $('.target').change();
 });</code></pre>
-    <p>After this code executes, clicks on <span class="output">Trigger the handler</span> will also alert the message. The message will display twice, because the handler has been bound to the <code>change</code> event on both of the form elements.</p>
+    <p>After this code executes, clicks on <samp>Trigger the handler</samp> will also alert the message. The message will display twice, because the handler has been bound to the <code>change</code> event on both of the form elements.</p>
     <p>As of jQuery 1.4, the <code>change</code> event bubbles in Internet Explorer, behaving consistently with the event in other modern browsers.</p>
   </longdesc>
   <example>

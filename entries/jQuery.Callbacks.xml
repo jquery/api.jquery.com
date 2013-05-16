@@ -19,7 +19,7 @@ function fn1( value ) {
 }
 
 function fn2( value ) {
-    fn1("fn2 says: " + value);
+    console.log("fn2 says: " + value);
     return false;
 }
 </code></pre>

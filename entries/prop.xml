@@ -1,7 +1,9 @@
 <?xml version="1.0"?>
 <entries>
   <desc>Get the value of a property for the first element in the set of matched elements or set one or more properties for every matched element.</desc>
-  <entry type="method" name="prop" return="String">
+  <entry type="method" name="prop">
+    <return type="String"/>
+    <return type="Boolean"/>
     <title>.prop()</title>
     <signature>
       <added>1.6</added>
@@ -12,14 +14,14 @@
     <desc>Get the value of a property for the first element in the set of matched elements.</desc>
     <longdesc>
       <p>The <code>.prop()</code> method gets the property value for only the <em>first</em> element in the matched set. It returns <code>undefined</code> for the value of a property that has not been set, or if the matched set has no elements. To get the value for each element individually, use a looping construct such as jQuery's <code>.each()</code> or <code>.map()</code> method.</p>
-	  <blockquote>
+	  <div class="warning">
         <p><strong>Note:</strong> Attempting to change the <code>type</code> property (or attribute) of an <code>input</code> element created via HTML or already in an HTML document will result in an error being thrown by Internet Explorer 6, 7, or 8.</p>
-      </blockquote>
+      </div>
       <h4>Attributes vs. Properties</h4>
       <p>The difference between <em>attributes</em> and <em>properties</em> can be important in specific situations. <strong>Before jQuery 1.6</strong>, the <code><a href="http://api.jquery.com/attr/">.attr()</a></code> method sometimes took property values into account when retrieving some attributes, which could cause inconsistent behavior. <strong>As of jQuery 1.6</strong>, the <code>.prop()</code> method provides a way to explicitly retrieve property values, while <code>.attr()</code> retrieves attributes.</p>
       <p>For example, <code>selectedIndex</code>, <code>tagName</code>, <code>nodeName</code>, <code>nodeType</code>, <code>ownerDocument</code>, <code>defaultChecked</code>, and <code>defaultSelected</code> should be retrieved and set with the <code>.prop()</code> method. Prior to jQuery 1.6, these properties were retrievable with the <code>.attr()</code> method, but this was not within the scope of <code>attr</code>. These do not have corresponding attributes and are only properties.</p>
       <p>Concerning boolean attributes, consider a DOM element defined by the HTML markup <code>&lt;input type="checkbox" checked="checked" /&gt;</code>, and assume it is in a JavaScript variable named <code>elem</code>:</p>
-      <table class="listing">
+      <table>
         <tr>
           <th>
             <code>elem.checked</code>

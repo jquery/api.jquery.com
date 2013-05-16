@@ -3,15 +3,17 @@
   <title>deferred.progress()</title>
   <signature>
     <added>1.7</added>
-    <argument name="progressCallbacks" type="Function">
+    <argument name="progressCallbacks">
+      <type name="Function"/>
+      <type name="Array"/>
       <desc>
-        A function, or array of functions, that is called when the Deferred generates progress notifications.
+        A function, or array of functions, to be called when the Deferred generates progress notifications.
       </desc>
     </argument>
   </signature>
   <desc> Add handlers to be called when the Deferred object generates progress notifications.</desc>
   <longdesc>
-    <p>The argument can be either a single function or an array of functions. When the Deferred generates progress notifications by calling <code>notify</code> or <code>notifyWith</code>, the <code>progressCallbacks</code> are called. Since <code>deferred.progress()</code> returns the Deferred object, other methods of the Deferred object can be chained to this one. When the Deferred is resolved or rejected, progress callbacks will no longer be called, with the exception that any <code>progressCallbacks</code> added after the Deferred enters the resolved or rejected state are executed immediately when they are added, using the arguments that were passed to the <code>.notify()</code> or <code>notifyWith()</code> call. For more information, see the documentation <a href="/jquery.deferred/">jQuery.Deferred()</a>.</p>
+    <p>The argument can be either a single function or an array of functions. When the Deferred generates progress notifications by calling <code>notify</code> or <code>notifyWith</code>, the <code>progressCallbacks</code> are called. Since <code>deferred.progress()</code> returns the Deferred object, other methods of the Deferred object can be chained to this one. When the Deferred is resolved or rejected, progress callbacks will no longer be called, with the exception that any <code>progressCallbacks</code> added after the Deferred enters the resolved or rejected state are executed immediately when they are added, using the arguments that were passed to the <code>.notify()</code> or <code>notifyWith()</code> call. For more information, see the documentation for <a href="/jQuery.Deferred/">jQuery.Deferred()</a>.</p>
   </longdesc>
   <category slug="deferred-object"/>
   <category slug="version/1.7"/>
