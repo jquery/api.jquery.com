@@ -105,4 +105,5 @@ $("p").live({
   <category slug="events/event-handler-attachment"/>
   <category slug="version/1.3"/>
   <category slug="deprecated/deprecated-1.7"/>
+  <category slug="removed"/>
 </entry>
