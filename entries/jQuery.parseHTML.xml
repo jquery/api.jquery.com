@@ -8,7 +8,7 @@
       <desc>HTML string to be parsed</desc>
     </argument>
     <argument name="context" type="Element" optional="true" default="document">
-      <desc>DOM element to serve as the context in which the HTML fragment will be created</desc>
+      <desc>Document element to serve as the context in which the HTML fragment will be created</desc>
     </argument>
     <argument name="keepScripts" type="Boolean" optional="true" default="false">
       <desc>A Boolean indicating whether to include scripts passed in the HTML string</desc>
@@ -16,6 +16,7 @@
   </signature>
   <longdesc>
     <p><code>jQuery.parseHTML</code> uses a native DOM element creation function to convert the string to a set of DOM elements, which can then be inserted into the document.</p>
+	<p>By default, the <code>context</code> is the current <code>document</code> if not specified or given as <code>null</code> or <code>undefined</code>. If the HTML was to be used in another document such as an iframe, that frame's document could be used.</p>
   </longdesc>
   <example>
     <desc>Create an array of Dom nodes using an HTML string and insert it into a div.</desc>
