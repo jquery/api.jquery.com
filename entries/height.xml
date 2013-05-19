@@ -15,7 +15,7 @@
       <p>This method is also able to find the height of the window and document.</p>
       <pre><code>$(window).height();   // returns height of browser viewport
 $(document).height(); // returns height of HTML document</code></pre>
-      <p>Note that <code>.height()</code> will always return the content height, regardless of the value of the CSS <code>box-sizing</code> property.</p>
+      <p>Note that <code>.height()</code> will always return the content height, regardless of the value of the CSS <code>box-sizing</code> property. As of jQuery 1.8, this may require retrieving the CSS height plus <code>box-sizing</code> property and then subtracting any potential border and padding on each element when the element has <code>box-sizing: border-box</code>. To avoid this penalty, use <code>.css("height")</code> rather than <code>.height()</code>.</p>
       <div class="warning">
         <p><strong>Note:</strong> Although <code>style</code> and <code>script</code> tags will report a value for <code>.width()</code> or <code>height()</code> when absolutely positioned and given <code>display:block</code>, it is strongly discouraged to call those methods on these tags. In addition to being a bad practice, the results may also prove unreliable.</p>
       </div>
