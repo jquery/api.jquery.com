@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<entry type="method" name="jQuery.fn.extend" return="Object">
+  <title>jQuery.fn.extend()</title>
+  <signature>
+    <added>1.0</added>
+    <argument name="object" type="Object">
+      <desc>An object to merge onto the jQuery prototype.</desc>
+    </argument>
+  </signature>
+  <desc>Merge the contents of an object onto the jQuery prototype to provide new jQuery instance methods.</desc>
+  <longdesc>
+    The <code>jQuery.fn.extend()</code> method extends the jQuery prototype (<code>$.fn</code>) object to provide new methods that can be chained to the <code>jQuery()</code> function.
+  </longdesc>
+  <example>
+    <desc>Add two methods to the jQuery prototype (<code>$.fn</code>) object and then use one of them.</desc>
+    <code><![CDATA[
+jQuery.fn.extend({
+  check: function() {
+    return this.each(function() { this.checked = true; });
+  },
+  uncheck: function() {
+    return this.each(function() { this.checked = false; });
+  }
+});
+
+// Use the newly created .check() method
+$( "input[type='checkbox']" ).check();
+]]></code>
+    <css>
+label { display: block; margin: .5em; }
+    </css>
+    <html><![CDATA[
+<label><input type="checkbox" name="foo"> Foo</label>
+<label><input type="checkbox" name="bar"> Bar</label>
+]]></html>
+  </example>
+  <category slug="utilities"/>
+  <category slug="version/1.0"/>
+</entry>
