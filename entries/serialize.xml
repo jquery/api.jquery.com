@@ -12,8 +12,7 @@
   event.preventDefault();
   console.log( $(this).serialize() );
 });</code></pre>
-    <p>In this case, jQuery serializes the successful controls within the form.</p>
-    <p><strong>Warning:</strong> selecting both the form and its children will cause duplicates in the serialized string.</p>
+    <p>In this case, jQuery serializes the successful controls within the form. Only <code>form</code> elements are examined for inputs they contain, in all other cases the input elements to be serialized should be part of the set passed to the <code>.serialize()</code> method. Selecting both the form and its children in a set will cause duplicates in the serialized string.</p>
     <p>Note: Only <a href="http://www.w3.org/TR/html401/interact/forms.html#h-17.13.2">"successful controls"</a> are serialized to the string. No submit button value is serialized since the form was not submitted using a button. For a form element's value to be included in the serialized string, the element must have a <code>name</code> attribute. Values from checkboxes and radio buttons (<code>input</code>s of type "radio" or "checkbox") are included only if they are checked. Data from file select elements is not serialized.</p>
   </longdesc>
   <example>
