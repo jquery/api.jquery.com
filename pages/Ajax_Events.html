@@ -18,11 +18,11 @@
  });
 </code></pre>
 <h3>Global Events</h3>
-<p>These events are broadcast to all elements in the DOM, triggering any handlers which may be listening. You can listen for these events like so:</p>
-<pre> $("#loading").bind("ajaxSend", function(){
-   $(this).show();
+<p>These events are broadcast to the <code>document</code>, triggering any handlers which may be listening. You can listen for these events like so:</p>
+<pre> $(document).bind("ajaxSend", function(){
+   $("#loading").show();
  }).bind("ajaxComplete", function(){
-   $(this).hide();
+   $("#loading").hide();
  });
 </pre>
 <p>Global events can be disabled for a particular Ajax request by passing in the global option, like so:</p>
