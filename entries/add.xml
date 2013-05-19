@@ -15,7 +15,7 @@
   </signature>
   <signature>
     <added>1.0</added>
-    <argument name="html" type="HTML">
+    <argument name="html" type="htmlString">
       <desc>An HTML fragment to add to the set of matched elements.</desc>
     </argument>
   </signature>
