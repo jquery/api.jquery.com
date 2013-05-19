@@ -30,7 +30,7 @@
   </signature>
   <desc>Merge the contents of two or more objects together into the first object.</desc>
   <longdesc>
-    <p>When two or more objects are supplied to <code>$.extend()</code>, properties from all of the objects are added to the target object.</p>
+    <p>When two or more object arguments are supplied to <code>$.extend()</code>, properties from all of the objects are added to the target object. Arguments that are <code>null</code> or <code>undefined</code> are ignored.</p>
     <p>If only one argument is supplied to <code>$.extend()</code>, this means the target argument was omitted. In this case, the jQuery object itself is assumed to be the target. By doing this, you can add new functions to the jQuery namespace. This can be useful for plugin authors wishing to add new methods to JQuery.</p>
     <p>Keep in mind that the target object (first argument) will be modified, and will also be returned from <code>$.extend()</code>. If, however, you want to preserve both of the original objects, you can do so by passing an empty object as the target:</p>
     <pre><code>var object = $.extend({}, object1, object2);</code></pre>
