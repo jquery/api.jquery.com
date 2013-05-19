@@ -18,7 +18,8 @@
   </signature>
   <desc>Create a deep copy of the set of matched elements.</desc>
   <longdesc>
-    <p>The <code>.clone()</code> method performs a <em>deep</em> copy of the set of matched elements, meaning that it copies the matched elements as well as all of their descendant elements and text nodes. When used in conjunction with one of the insertion methods, <code>.clone()</code> is a convenient way to duplicate elements on a page. Consider the following HTML:</p>
+    <p>The <code>.clone()</code> method performs a <em>deep</em> copy of the set of matched elements, meaning that it copies the matched elements as well as all of their descendant elements and text nodes. For performance reasons, the dynamic state of form elements (e.g., user data typed into <code>input</code>, and <code>textarea</code> or user selections made to a <code>select</code>) is not copied to the cloned elemements. The clone operation sets these fields to their default values as specified in the HTML.</p>
+	<p>When used in conjunction with one of the insertion methods, <code>.clone()</code> is a convenient way to duplicate elements on a page. Consider the following HTML:</p>
     <pre><code>&lt;div class="container"&gt;
   &lt;div class="hello"&gt;Hello&lt;/div&gt;
   &lt;div class="goodbye"&gt;Goodbye&lt;/div&gt;
