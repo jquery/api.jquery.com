@@ -25,6 +25,7 @@
     <p>This function is used internally to convert form element values into a serialized string representation (See <a href="/serialize/">.serialize()</a> for more information).</p>
     <p>As of jQuery 1.3, the return value of a function is used instead of the function as a String.</p>
     <p>As of jQuery 1.4, the <code>$.param()</code> method serializes deep objects recursively to accommodate modern scripting languages and frameworks such as PHP and Ruby on Rails. You can disable this functionality globally by setting <code>jQuery.ajaxSettings.traditional = true;</code>.</p>
+	<p>As of jQuery 1.8, the <code>$.param()</code> method no longer uses <code>jQuery.ajaxSettings.traditional</code> as its default setting and will default to <code>false</code>. For best compatibility across versions, call <code>$.param()</code> with an explicit value for the second argument and do not use defaults.</p>
     <p>If the object passed is in an Array, it must be an array of objects in the format returned by <a href="/serializeArray/">.serializeArray()</a></p>
     <pre><code>[{name:"first",value:"Rick"},
 {name:"last",value:"Astley"},
@@ -33,7 +34,7 @@
       <p><strong>Note:</strong> Because some frameworks have limited ability to parse serialized arrays, developers should exercise caution when passing an <code>obj</code> argument that contains objects or arrays nested within another array.</p>
     </div>
     <div class="warning">
-      <p><strong>Note:</strong> Because there is no universally agreed-upon specification for param strings, it is not possible to encode complex data structures using this method in a manner that works ideally across all languages supporting such input. Until such time that there is, the <code>$.param</code> method will remain in its current form.</p>
+      <p><strong>Note:</strong> Because there is no universally agreed-upon specification for param strings, it is not possible to encode complex data structures using this method in a manner that works ideally across all languages supporting such input. Use JSON format as an alternative for encoding complex data instead.</p>
     </div>
     <p>In jQuery 1.4, HTML5 input elements are also serialized.</p>
     <p>We can display a query string representation of an object and a URI-decoded version of the same as follows:</p>
