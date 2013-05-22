@@ -5,7 +5,7 @@
     <title>jQuery()</title>
     <signature>
       <added>1.0</added>
-      <argument name="selector" type="selector">
+      <argument name="selector" type="Selector">
         <desc>A string containing a selector expression</desc>
       </argument>
       <argument name="context" optional="true">
