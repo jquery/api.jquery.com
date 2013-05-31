@@ -99,24 +99,22 @@
           <p>The <code>jQuery.Event</code> constructor is exposed and can be used when calling <a href="/trigger">trigger</a>. The <code>new</code> operator is optional.</p>
           <p>Check <a href="/trigger">trigger</a>'s documentation to see how to combine it with your own event object.</p>
           <p>Example:</p>
-          <pre>
-            <code>//Create a new jQuery.Event object without the "new" operator.
-  var e = jQuery.Event("click");
+          <pre><code>
+//Create a new jQuery.Event object without the "new" operator.
+var e = jQuery.Event( "click" );
 
-  // trigger an artificial click event
-  jQuery("body").trigger( e );
-</code>
-          </pre>
+// trigger an artificial click event
+jQuery( "body" ).trigger( e );
+</code></pre>
           <p>As of jQuery 1.6, you can also pass an object to <code>jQuery.Event()</code> and its properties will be set on the newly created Event object.</p>
           <p>Example:</p>
-          <pre>
-            <code>  // Create a new jQuery.Event object with specified event properties.
-  var e = jQuery.Event("keydown", { keyCode: 64 });
+          <pre><code>
+// Create a new jQuery.Event object with specified event properties.
+var e = jQuery.Event( "keydown", { keyCode: 64 } );
 
-  // trigger an artificial keydown event with keyCode 64
-  jQuery("body").trigger( e );
-</code>
-          </pre>
+// trigger an artificial keydown event with keyCode 64
+jQuery( "body" ).trigger( e );
+</code></pre>
           <h4>Event Properties</h4>
           <p>jQuery normalizes the following properties for cross-browser consistency:</p>
           <ul>
@@ -144,13 +142,11 @@
           <h4>OtherProperties</h4>
           <p>Certain events may have properties specific to them. Those can be accessed as properties of the <code>event.originalEvent</code> object.</p>
           <p>Example:</p>
-          <pre>
-            <code>
-  // add the dataTransfer property for use with the native `drop` event
-  // to capture information about files dropped into the browser window
-  jQuery.event.props.push("dataTransfer");
-</code>
-          </pre>
+          <pre><code>
+// add the dataTransfer property for use with the native `drop` event
+// to capture information about files dropped into the browser window
+jQuery.event.props.push( "dataTransfer" );
+</code></pre>
         </div>
       ]]></desc>
     </category>
