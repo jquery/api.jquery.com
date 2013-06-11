@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <entry type="selector" name="lang" return="">
-  <title>:lang Selector</title>
+  <title>:lang() Selector</title>
   <sample>:lang(language)</sample>
   <signature>
     <added>1.9</added>
@@ -10,7 +10,7 @@
   </signature>
   <desc>Selects all elements of the specified language.</desc>
   <longdesc>
-    <p>The <code>:lang</code> selector matches elements that have a language value equal to the supplied language code or that start with the supplied language code immediately followed by "-". For example, the selector <code>$("div:lang(en)")</code>will match <code>&lt;div lang="en"&gt;</code> and <code>&lt;div lang="en-us"&gt;</code> (and any of their descendant <code>&lt;div&gt;</code>s), but not <code>&lt;div lang="fr"&gt;</code></p>
+    <p>The <code>:lang()</code> selector matches elements that have a language value equal to the supplied language code or that start with the supplied language code immediately followed by "-". For example, the selector <code>$("div:lang(en)")</code>will match <code>&lt;div lang="en"&gt;</code> and <code>&lt;div lang="en-us"&gt;</code> (and any of their descendant <code>&lt;div&gt;</code>s), but not <code>&lt;div lang="fr"&gt;</code></p>
     <p>For HTML elements, the language value is determined by the <code>lang</code> attribute and possibly information from  <code>meta</code> elements or HTTP headers.</p>
     <p>Further discussion of this usage can be found in the <a href="http://www.w3.org/TR/css3-selectors/#lang-pseudo">W3C CSS specification</a>.</p>
   </longdesc>
