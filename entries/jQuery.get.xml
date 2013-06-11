@@ -29,7 +29,7 @@
 });
 </code></pre>
     <p>The <code>success</code> callback function is passed the returned data, which will be an XML root element, text string, JavaScript file, or JSON object, depending on the MIME type of the response. It is also passed the text status of the response. </p>
-    <p><strong>As of jQuery 1.5</strong>, the <code>success</code> callback function is also passed a <a href="/#jqxhr-object">"jqXHR" object</a> (in <strong>jQuery 1.4</strong>, it was passed the <code>XMLHttpRequest</code> object). However, since JSONP and cross-domain GET requests do not use <abbr title="XMLHTTPRequest">XHR</abbr>,  in those cases the <code>jqXHR</code> and <code>textStatus</code> parameters passed to the success callback are undefined.</p>
+    <p><strong>As of jQuery 1.5</strong>, the <code>success</code> callback function is also passed a <a href="#jqxhr-object">"jqXHR" object</a> (in <strong>jQuery 1.4</strong>, it was passed the <code>XMLHttpRequest</code> object). However, since JSONP and cross-domain GET requests do not use <abbr title="XMLHTTPRequest">XHR</abbr>,  in those cases the <code>jqXHR</code> and <code>textStatus</code> parameters passed to the success callback are undefined.</p>
     <p>Most implementations will specify a success handler:</p>
     <pre><code>$.get('ajax/test.html', function(data) {
   $('.result').html(data);
