@@ -5,7 +5,7 @@
   <signature>
     <added>1.0</added>
   </signature>
-  <desc>Select all elements that that have at least one child node (either an element or text).</desc>
+  <desc>Select all elements that have at least one child node (either an element or text).</desc>
   <longdesc>
     <p>This is the inverse of <code>:empty</code>. </p>
     <p>One important thing to note regarding the use of <code>:parent</code> (and <code>:empty</code>) is that child nodes include text nodes.</p>
