@@ -46,10 +46,9 @@ To build and deploy your changes for previewing in a [jquery-wp-content](https:/
   * **Passive**: Click handlers are bound to elements in the collection when `.click()` is called
 
 ### Code Style
-Code in the API documentation should follow the [jQuery Core Style Guide](http://docs.jquery.com/JQuery_Core_Style_Guidelines) with the following addition and exception:
+Code in the API documentation should follow the [jQuery Core Style Guide](http://docs.jquery.com/JQuery_Core_Style_Guidelines) with the following addition:
 
 * **Document ready syntax**: Use `$( document ).ready(function() {` instead of `$(function() {` as it's harder for new users to distinguish the difference between the latter and an IIFE.
-* **Indentation**: Core guidelines say to use tabs. In API documentation, *use 2 spaces instead*. This helps keep the line width manageable and avoid horizontal scrollbars.
 
 #### Code within prose content (paragraphs and the like):
 * Methods: use a dot, followed by the method name, followed by parentheses: e.g. The `.focus()` method is a shortcut for `.bind('focus', handler)` in the first and second variations, and `.trigger('focus')` in the third.
