@@ -66,43 +66,6 @@
   <b>Hello</b><p>, how are you?</p>
 ]]></html>
   </example>
-  <example>
-    <desc>When using <code>.clone()</code> to clone a collection of elements that are not attached to the DOM, their order when inserted into the DOM is not guaranteed. However, it may be possible to preserve sort order with a workaround, as demonstrated:</desc>
-    <css><![CDATA[
-  #orig, #copy, #copy-correct {
-    float: left;
-    width: 20%;
-  }
-]]></css>
-    <code><![CDATA[
-// sort order is not guaranteed here and may vary with browser
-$('#copy').append($('#orig .elem')
-          .clone()
-          .children('a')
-          .prepend('foo - ')
-          .parent()
-          .clone());
-
-// correct way to approach where order is maintained
-$('#copy-correct')
-          .append($('#orig .elem')
-          .clone()
-          .children('a')
-          .prepend('bar - ')
-          .end());
-]]></code>
-    <html><![CDATA[
-<div id="orig">
-    <div class="elem"><a>1</a></div>
-    <div class="elem"><a>2</a></div>
-    <div class="elem"><a>3</a></div>
-    <div class="elem"><a>4</a></div>
-    <div class="elem"><a>5</a></div>
-</div>
-<div id="copy"></div>
-<div id="copy-correct"></div>
-]]></html>
-  </example>
   <category slug="manipulation/copying"/>
   <category slug="version/1.0"/>
   <category slug="version/1.5"/>
