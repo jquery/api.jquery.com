@@ -4,7 +4,7 @@
   <desc>Remove a previously-attached event handler from the elements.</desc>
   <signature>
     <added>1.0</added>
-    <argument name="eventType" type="String" optional="true">
+    <argument name="eventType" type="String">
       <desc>A string containing a JavaScript event type, such as <code>click</code> or <code>submit</code>.</desc>
     </argument>
     <argument name="handler(eventObject)" type="Function" optional="true">
