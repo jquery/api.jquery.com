@@ -13,23 +13,35 @@
   <example>
     <desc>Change the color of any div that is animated.</desc>
     <code><![CDATA[
+$( "#run" ).click(function(){
+  $( "div:animated" ).toggleClass( "colored" );
+});
 
-    $("#run").click(function(){
-      $("div:animated").toggleClass("colored");
-    });
-    function animateIt() {
-      $("#mover").slideToggle("slow", animateIt);
-    }
-    animateIt();
+function animateIt() {
+  $( "#mover" ).slideToggle( "slow", animateIt );
+}
+
+animateIt();
 ]]></code>
-    <html><![CDATA[<button id="run">Run</button>
+    <html><![CDATA[
+<button id="run">Run</button>
 
-  <div></div>
-  <div id="mover"></div>
-  <div></div>]]></html>
+<div></div>
+<div id="mover"></div>
+<div></div>
+]]></html>
     <css><![CDATA[
-  div { background:yellow; border:1px solid #AAA; width:80px; height:80px; margin:0 5px; float:left; }
-  div.colored { background:green; }
+  div {
+    background: yellow;
+    border: 1px solid #AAA;
+    width: 80px; 
+    height: 80px;
+    margin: 0 5px; 
+    float: left;
+  }
+  div.colored {
+    background: green;
+  }
   ]]></css>
   </example>
   <category slug="selectors/basic-filter-selectors"/>

@@ -17,11 +17,14 @@
   </longdesc>
   <example>
     <desc>Finds all inputs with an attribute name that starts with 'news' and puts text in them.</desc>
-    <code><![CDATA[$('input[name^="news"]').val('news here!');]]></code>
-    <html><![CDATA[<input name="newsletter" />
-
-  <input name="milkman" />
-  <input name="newsboy" />]]></html>
+    <code><![CDATA[
+$( "input[name^='news']" ).val( "news here!" );
+]]></code>
+    <html><![CDATA[
+<input name="newsletter">
+<input name="milkman">
+<input name="newsboy">
+]]></html>
   </example>
   <category slug="selectors/attribute-selectors"/>
   <category slug="version/1.0"/>

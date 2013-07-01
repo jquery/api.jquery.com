@@ -17,12 +17,15 @@
   </longdesc>
   <example>
     <desc>Finds all inputs with a name attribute that contains 'man' and sets the value with some text.</desc>
-    <code><![CDATA[$('input[name*="man"]').val('has man in it!');]]></code>
-    <html><![CDATA[<input name="man-news" />
-
-  <input name="milkman" />
-  <input name="letterman2" />
-  <input name="newmilk" />]]></html>
+    <code><![CDATA[
+$( "input[name*='man']" ).val( "has man in it!" );
+]]></code>
+    <html><![CDATA[
+<input name="man-news">
+<input name="milkman">
+<input name="letterman2">
+<input name="newmilk">
+]]></html>
   </example>
   <category slug="selectors/attribute-selectors"/>
   <category slug="version/1.0"/>

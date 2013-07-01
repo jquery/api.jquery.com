@@ -18,17 +18,17 @@
   <example>
     <desc>Finds all links with an hreflang attribute that is english.</desc>
     <code><![CDATA[
-$('a[hreflang|="en"]').css('border','3px dotted green');
+$( "a[hreflang|='en']" ).css( "border", "3px dotted green" );
 ]]></code>
     <html><![CDATA[
-  <a href="example.html" hreflang="en">Some text</a> 
-
-  <a href="example.html" hreflang="en-UK">Some other text</a>
-
-  <a href="example.html" hreflang="english">will not be outlined</a>
-  ]]></html>
+<a href="example.html" hreflang="en">Some text</a> 
+<a href="example.html" hreflang="en-UK">Some other text</a>
+<a href="example.html" hreflang="english">will not be outlined</a>
+]]></html>
     <css><![CDATA[
-a { display: inline-block; }
+  a { 
+    display: inline-block; 
+  }
   ]]></css>
   </example>
   <category slug="selectors/attribute-selectors"/>

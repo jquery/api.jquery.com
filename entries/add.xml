@@ -36,46 +36,40 @@
   </signature>
   <desc>Add elements to the set of matched elements.</desc>
   <longdesc>
-    <p>Given a jQuery object that represents a set of DOM elements, the <code>.add()</code> method constructs a new jQuery object from the union of those elements and the ones passed into the method. The argument to <code>.add()</code> can be pretty much anything that  <code>$()</code> accepts, including a jQuery selector expression, references to DOM elements, or an HTML snippet.</p>
+    <p>Given a jQuery object that represents a set of DOM elements, the <code>.add()</code> method constructs a new jQuery object from the union of those elements and the ones passed into the method. The argument to <code>.add()</code> can be pretty much anything that <code>$()</code> accepts, including a jQuery selector expression, references to DOM elements, or an HTML snippet.</p>
 	<p>Do not assume that this method appends the elements to the existing collection in the order they are passed to the <code>.add()</code> method. When all elements are members of the same document, the resulting collection from <code>.add()</code> will be sorted in document order; that is, in order of each element's appearance in the document. If the collection consists of elements from different documents or ones not in any document, the sort order is undefined. To create a jQuery object with elements in a well-defined order, use the <code>$(array_of_DOM_elements)</code> signature.</p>
     <p>The updated set of elements can be used in a following (chained) method, or assigned to a variable for later use. For example:</p>
-    <pre>
-      <code>
-$("p").add("div").addClass("widget");
-var pdiv = $("p").add("div");
-</code>
-    </pre>
+    <pre><code>
+$( "p" ).add( "div" ).addClass( "widget" );
+var pdiv = $( "p" ).add( "div" );
+      </code></pre>
     <p>The following will <em>not</em> save the added elements, because the <code>.add()</code> method creates a new set and leaves the original set in pdiv unchanged:</p>
-    <pre>
-      <code>
-var pdiv = $("p");
-pdiv.add("div");  // WRONG, pdiv will not change
-</code>
-    </pre>
+    <pre><code>
+var pdiv = $( "p" );
+pdiv.add( "div" ); // WRONG, pdiv will not change
+      </code></pre>
     <p>Consider a page with a simple list and a paragraph following it:</p>
-    <pre>
-      <code>&lt;ul&gt;
+    <pre><code>
+&lt;ul&gt;
   &lt;li&gt;list item 1&lt;/li&gt;
   &lt;li&gt;list item 2&lt;/li&gt;
   &lt;li&gt;list item 3&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;a paragraph&lt;/p&gt;</code>
-    </pre>
+&lt;p&gt;a paragraph&lt;/p&gt;
+	</code></pre>
     <p>We can select the list items and then the paragraph by using either a selector or a reference to the DOM element itself as the <code>.add()</code> method's argument:</p>
-    <pre>
-      <code>$('li').add('p').css('background-color', 'red');</code>
-    </pre>
+    <pre><code>$( "li" ).add( "p" ).css( "background-color", "red" );</code></pre>
     <p>Or:</p>
-    <pre>
-      <code>$('li').add(document.getElementsByTagName('p')[0])
-  .css('background-color', 'red');</code>
-    </pre>
+    <pre><code>
+$( "li" ).add( document.getElementsByTagName( "p" )[ 0 ] )
+  .css( "background-color", "red" );
+    </code></pre>
     <p>The result of this call is a red background behind all four elements.
 Using an HTML snippet as the <code>.add()</code> method's argument (as in the third version), we can create additional elements on the fly and add those elements to the matched set of elements. Let's say, for example, that we want to alter the background of the list items along with a newly created paragraph:</p>
-    <pre>
-      <code>$('li').add('&lt;p id="new"&gt;new paragraph&lt;/p&gt;')
-  .css('background-color', 'red');</code>
-    </pre>
+    <pre><code>
+$( "li" ).add( "&lt;p id='new'&gt;new paragraph&lt;/p&gt;" )
+  .css( "background-color", "red" );
+    </code></pre>
     <p>Although the new paragraph has been created and its background color changed, it still does not appear on the page. To place it on the page, we could add one of the insertion methods to the chain.</p>
     <p>As of jQuery 1.4 the results from .add() will always be returned in document order (rather than a simple concatenation).</p>
     <p><strong>Note:</strong> To reverse the <code>.add()</code> you can use <a href="http://api.jquery.com/not"><code>.not( elements | selector )</code></a> to remove elements from the jQuery results, or <a href="http://api.jquery.com/end"><code>.end()</code></a> to return to the selection before you added.</p>
@@ -83,48 +77,79 @@ Using an HTML snippet as the <code>.add()</code> method's argument (as in the th
   <example>
     <desc>Finds all divs and makes a border.  Then adds all paragraphs to the jQuery object to set their backgrounds yellow.</desc>
     <code><![CDATA[
-
-$("div").css("border", "2px solid red")
-        .add("p")
-        .css("background", "yellow");
+$( "div" ).css( "border", "2px solid red" )
+  .add( "p" )
+  .css( "background", "yellow" );
 ]]></code>
     <css><![CDATA[
- div { width:60px; height:60px; margin:10px; float:left; }
- p { clear:left; font-weight:bold; font-size:16px;
-     color:blue; margin:0 10px; padding:2px; }
- ]]></css>
-    <html><![CDATA[<div></div>
+  div { 
+    width: 60px; 
+    height: 60px; 
+    margin: 10px; 
+    float: left;
+  }
+  p { 
+    clear: left; 
+    font-weight: bold; 
+    font-size: 16px;
+    color: blue;
+    margin: 0 10px; 
+    padding: 2px; 
+  }
+  ]]></css>
+    <html><![CDATA[
+<div></div>
 
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
 
-  <p>Added this... (notice no border)</p>]]></html>
+<p>Added this... (notice no border)</p>
+]]></html>
   </example>
   <example>
     <desc>Adds more elements, matched by the given expression, to the set of matched elements.</desc>
-    <code><![CDATA[$("p").add("span").css("background", "yellow");]]></code>
-    <html><![CDATA[<p>Hello</p><span>Hello Again</span>]]></html>
+    <code><![CDATA[
+$( "p" ).add( "span" ).css( "background", "yellow" );
+]]></code>
+    <html><![CDATA[
+<p>Hello</p>
+<span>Hello Again</span>
+]]></html>
   </example>
   <example>
     <desc>Adds more elements, created on the fly, to the set of matched elements.</desc>
-    <code><![CDATA[$("p").clone().add("<span>Again</span>").appendTo(document.body);]]></code>
-    <html><![CDATA[<p>Hello</p>]]></html>
+    <code><![CDATA[
+$( "p" ).clone().add( "<span>Again</span>" ).appendTo( document.body );
+]]></code>
+    <html><![CDATA[
+<p>Hello</p>
+]]></html>
   </example>
   <example>
     <desc>Adds one or more Elements to the set of matched elements.</desc>
-    <code><![CDATA[$("p").add(document.getElementById("a")).css("background", "yellow");]]></code>
-    <html><![CDATA[<p>Hello</p><span id="a">Hello Again</span>]]></html>
+    <code><![CDATA[
+$( "p" ).add( document.getElementById( "a" ) ).css( "background", "yellow" );
+]]></code>
+    <html><![CDATA[
+<p>Hello</p>
+<span id="a">Hello Again</span>
+]]></html>
   </example>
   <example>
     <desc>Demonstrates how to add (or push) elements to an existing collection</desc>
-    <code><![CDATA[var collection = $("p");
+    <code><![CDATA[
+var collection = $( "p" );
 // capture the new collection
-collection = collection.add(document.getElementById("a"));
-collection.css("background", "yellow");]]></code>
-    <html><![CDATA[<p>Hello</p><span id="a">Hello Again</span>]]></html>
+collection = collection.add( document.getElementById( "a" ) );
+collection.css( "background", "yellow" );
+]]></code>
+    <html><![CDATA[
+<p>Hello</p>
+<span id="a">Hello Again</span>
+]]></html>
   </example>
   <category slug="traversing/miscellaneous-traversal"/>
   <category slug="version/1.0"/>
