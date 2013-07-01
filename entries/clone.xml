@@ -50,7 +50,7 @@
     <p>However, objects and arrays within element data are not copied and will continue to be shared between the cloned element and the original element. To deep copy all data, copy each one manually:</p>
     <pre><code>var $elem = $( "#elem" ).data( "arr": [ 1 ] ), // Original element with attached data
     $clone = $elem.clone( true )
-    .data( "arr", $.extend( [], $elem.data( "arr" ) ) ); // Deep copy to prevent data sharing
+      .data( "arr", $.extend( [], $elem.data( "arr" ) ) ); // Deep copy to prevent data sharing
 </code></pre>
     <p>As of jQuery 1.5, <code>withDataAndEvents</code> can be optionally enhanced with <code>deepWithDataAndEvents </code> to copy the events and data for all children of the cloned element.</p>
     <div class="warning">
