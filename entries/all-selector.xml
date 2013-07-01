@@ -27,7 +27,7 @@ $( "body" ).prepend( "<h3>" + elementCount + " elements found</h3>" );
   div,span,p {
     width: 80px;
     height: 40px;
-    float:left;
+    float: left;
     padding: 10px;
     margin: 10px;
     background-color: #EEEEEE;
@@ -54,7 +54,7 @@ $( "body" ).prepend( "<h3>" + elementCount + " elements found</h3>" );
   div,span,p {
     width: 80px;
     height: 40px;
-    float:left;
+    float: left;
     padding: 10px;
     margin: 10px;
     background-color: #EEEEEE;

@@ -37,19 +37,21 @@ $( "div.after-andself" ).find( "p" ).andSelf().addClass( "background" );
 ]]></code>
     <css><![CDATA[
   p, div {
-    margin:5px; padding:5px;
+    margin: 5px; 
+    padding: 5px;
   }
   .border {
     border: 2px solid red;
   }
   .background {
-    background:yellow;
+    background: yellow;
   }
   .left, .right {
-    width: 45%; float: left;
+    width: 45%; 
+    float: left;
   }
   .right {
-    margin-left:3%;
+    margin-left: 3%;
   }
   ]]></css>
     <html><![CDATA[

@@ -11,17 +11,22 @@
   <longdesc>
     <p>Whenever an Ajax request completes, jQuery checks whether there are any other outstanding Ajax requests. If none remain, jQuery triggers the <code>ajaxStop</code> event. Any and all handlers that have been registered with the <code>.ajaxStop()</code> method are executed at this time. The <code>ajaxStop</code> event is also triggered if the last outstanding Ajax request is cancelled by returning false within the <code>beforeSend</code> callback function. </p>
     <p>To observe this method in action, set up a basic Ajax load request:</p>
-    <pre><code>&lt;div class="trigger"&gt;Trigger&lt;/div&gt;
+    <pre><code>
+&lt;div class="trigger"&gt;Trigger&lt;/div&gt;
 &lt;div class="result"&gt;&lt;/div&gt;
 &lt;div class="log"&gt;&lt;/div&gt;</code></pre>
     <p>Attach the event handler to the document:</p>
-    <pre><code>$( ".log" ).ajaxStop(function() {
+    <pre><code>
+$( ".log" ).ajaxStop(function() {
   $( this ).text( "Triggered ajaxStop handler." );
-});</code></pre>
+});
+    </code></pre>
     <p>Now, make an Ajax request using any jQuery method:</p>
-    <pre><code>$( ".trigger" ).click(function() {
+    <pre><code>
+$( ".trigger" ).click(function() {
   $( ".result" ).load( "ajax/test.html" );
-});</code></pre>
+});
+    </code></pre>
     <p>When the user clicks the element with class <code>trigger</code> and the Ajax request completes, the log message is displayed.</p>
     <p><strong>As of jQuery 1.8, the <code>.ajaxStop()</code> method should only be attached to <code>document</code>.</strong></p>
   </longdesc>
@@ -31,7 +36,8 @@
     <code><![CDATA[
 $( document ).ajaxStop(function() {
   $( "#loading" ).hide();
-});]]></code>
+});
+]]></code>
   </example>
   <category slug="ajax/global-ajax-event-handlers"/>
   <category slug="version/1.0"/>

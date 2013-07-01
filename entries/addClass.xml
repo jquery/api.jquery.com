@@ -17,14 +17,20 @@
   <longdesc>
     <p>It's important to note that this method does not replace a class. It simply adds the class, appending it to any which may already be assigned to the elements.</p>
     <p>More than one class may be added at a time, separated by a space, to the set of matched elements, like so:</p>
-    <pre><code>$( "p" ).addClass( "myClass yourClass" );</code></pre>
+    <pre><code>
+$( "p" ).addClass( "myClass yourClass" );
+    </code></pre>
     <p>This method is often used with <code>.removeClass()</code> to switch elements' classes from one to another, like so:</p>
-    <pre><code>$( "p" ).removeClass( "myClass noClass" ).addClass( "yourClass" );</code></pre>
+    <pre><code>
+$( "p" ).removeClass( "myClass noClass" ).addClass( "yourClass" );
+    </code></pre>
     <p>Here, the <code>myClass</code> and <code>noClass</code> classes are removed from all paragraphs, while <code>yourClass</code> is added.</p>
     <p>As of jQuery 1.4, the <code>.addClass()</code> method's argument can receive a function.</p>
-    <pre><code>$( "ul li" ).addClass(function(index) {
+    <pre><code>
+$( "ul li" ).addClass(function( index ) {
   return "item-" + index;
-});</code></pre>
+});
+    </code></pre>
     <p>Given an unordered list with two <code>&lt;li&gt;</code> elements, this example adds the class "item-0" to the first <code>&lt;li&gt;</code> and "item-1" to the second.</p>
   </longdesc>
   <example>
@@ -57,14 +63,14 @@ $( "p:last" ).addClass( "selected highlight" );
 ]]></code>
     <css><![CDATA[
   p { 
-  margin: 8px; 
-  font-size:16px; 
+    margin: 8px; 
+    font-size: 16px; 
   }
   .selected { 
-  color:red; 
+    color: red; 
   }
   .highlight { 
-  background:yellow; 
+    background: yellow; 
   }
   ]]></css>
     <html><![CDATA[
@@ -76,7 +82,7 @@ $( "p:last" ).addClass( "selected highlight" );
   <example>
     <desc>Pass in a function to <code>.addClass()</code> to add the "green" class to a div that already has a "red" class.</desc>
     <code><![CDATA[
-$( "div" ).addClass(function(index, currentClass) {
+$( "div" ).addClass(function( index, currentClass ) {
   var addedClass;
 
   if ( currentClass === "red" ) {
@@ -89,13 +95,13 @@ $( "div" ).addClass(function(index, currentClass) {
 ]]></code>
     <css><![CDATA[
   div { 
-  background: white;
+    background: white;
   }
   .red {
-  background: red;
+    background: red;
   }
   .red.green {
-  background: green;
+    background: green;
   }
   ]]></css>
     <html><![CDATA[

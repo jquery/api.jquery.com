@@ -11,17 +11,23 @@
   <longdesc>
     <p>Whenever an Ajax request is about to be sent, jQuery checks whether there are any other outstanding Ajax requests. If none are in progress, jQuery triggers the <code>ajaxStart</code> event. Any and all handlers that have been registered with the <code>.ajaxStart()</code> method are executed at this time.</p>
     <p>To observe this method in action, set up a basic Ajax load request:</p>
-    <pre><code>&lt;div class="trigger"&gt;Trigger&lt;/div&gt;
+    <pre><code>
+&lt;div class="trigger"&gt;Trigger&lt;/div&gt;
 &lt;div class="result"&gt;&lt;/div&gt;
-&lt;div class="log"&gt;&lt;/div&gt;</code></pre>
+&lt;div class="log"&gt;&lt;/div&gt;
+    </code></pre>
     <p>Attach the event handler to any element:</p>
-    <pre><code>$(document).ajaxStart(function() {
+    <pre><code>
+$(document).ajaxStart(function() {
   $( ".log" ).text( "Triggered ajaxStart handler." );
-});</code></pre>
+});
+    </code></pre>
     <p>Now, make an Ajax request using any jQuery method:</p>
-    <pre><code>$( ".trigger" ).click(function() {
+    <pre><code>
+$( ".trigger" ).click(function() {
   $( ".result" ).load( "ajax/test.html" );
-});</code></pre>
+});
+    </code></pre>
     <p>When the user clicks the element with class <code>trigger</code> and the Ajax request is sent, the log message is displayed.</p>
     <p><strong>As of jQuery 1.8, the <code>.ajaxStart()</code> method should only be attached to <code>document</code>.</strong></p>
   </longdesc>

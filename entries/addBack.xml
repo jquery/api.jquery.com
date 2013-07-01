@@ -39,21 +39,23 @@ $( "div.after-addback" ).find( "p" ).addBack().addClass( "background" );
 ]]></code>
     <css><![CDATA[
   p, div {
-    margin:5px; padding:5px; 
+    margin: 5px; 
+    padding: 5px; 
   }
   .border {
     border: 2px solid red;
   }
   .background {
-    background:yellow;
+    background: yellow;
   }
   .left, .right {
-    width: 45%; float: left;
+    width: 45%; 
+    float: left;
   }
   .right {
-    margin-left:3%;
+    margin-left: 3%;
   }
-]]></css>
+  ]]></css>
     <html><![CDATA[
 <div class="left">
   <p><strong>Before <code>addBack()</code></strong></p>
