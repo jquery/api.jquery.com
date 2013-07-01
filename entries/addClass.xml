@@ -17,12 +17,12 @@
   <longdesc>
     <p>It's important to note that this method does not replace a class. It simply adds the class, appending it to any which may already be assigned to the elements.</p>
     <p>More than one class may be added at a time, separated by a space, to the set of matched elements, like so:</p>
-    <pre><code>$("p").addClass("myClass yourClass");</code></pre>
+    <pre><code>$( "p" ).addClass( "myClass yourClass" );</code></pre>
     <p>This method is often used with <code>.removeClass()</code> to switch elements' classes from one to another, like so:</p>
-    <pre><code>$("p").removeClass("myClass noClass").addClass("yourClass");</code></pre>
+    <pre><code>$( "p" ).removeClass( "myClass noClass" ).addClass( "yourClass" );</code></pre>
     <p>Here, the <code>myClass</code> and <code>noClass</code> classes are removed from all paragraphs, while <code>yourClass</code> is added.</p>
     <p>As of jQuery 1.4, the <code>.addClass()</code> method's argument can receive a function.</p>
-    <pre><code>$("ul li").addClass(function(index) {
+    <pre><code>$( "ul li" ).addClass(function(index) {
   return "item-" + index;
 });</code></pre>
     <p>Given an unordered list with two <code>&lt;li&gt;</code> elements, this example adds the class "item-0" to the first <code>&lt;li&gt;</code> and "item-1" to the second.</p>
@@ -30,51 +30,73 @@
   <example>
     <desc>Add the class "selected" to the matched elements.</desc>
     <code><![CDATA[
-  $("p").last().addClass("selected");
-  ]]></code>
+$( "p" ).last().addClass( "selected" );
+]]></code>
     <css><![CDATA[
-  p { margin: 8px; font-size:16px; }
-  .selected { color:blue; }
-  .highlight { background:yellow; }
+  p {
+    margin: 8px;
+    font-size:16px;
+  }
+  .selected {
+  color:blue;
+  }
+  .highlight {
+  background:yellow;
+  }
   ]]></css>
     <html><![CDATA[
-  <p>Hello</p>
-  <p>and</p>
-  <p>Goodbye</p>
-  ]]></html>
+<p>Hello</p>
+<p>and</p>
+<p>Goodbye</p>
+]]></html>
   </example>
   <example>
     <desc>Add the classes "selected" and "highlight" to the matched elements.</desc>
     <code><![CDATA[
-  $("p:last").addClass("selected highlight");
-  ]]></code>
+$( "p:last" ).addClass( "selected highlight" );
+]]></code>
     <css><![CDATA[
-  p { margin: 8px; font-size:16px; }
-  .selected { color:red; }
-  .highlight { background:yellow; }
+  p { 
+  margin: 8px; 
+  font-size:16px; 
+  }
+  .selected { 
+  color:red; 
+  }
+  .highlight { 
+  background:yellow; 
+  }
   ]]></css>
-    <html><![CDATA[<p>Hello</p>
-  <p>and</p>
-  <p>Goodbye</p>]]></html>
+    <html><![CDATA[
+<p>Hello</p>
+<p>and</p>
+<p>Goodbye</p>
+]]></html>
   </example>
   <example>
     <desc>Pass in a function to <code>.addClass()</code> to add the "green" class to a div that already has a "red" class.</desc>
     <code><![CDATA[
-  $("div").addClass(function(index, currentClass) {
-    var addedClass;
+$( "div" ).addClass(function(index, currentClass) {
+  var addedClass;
 
-    if ( currentClass === "red" ) {
-      addedClass = "green";
-      $("p").text("There is one green div");
-    }
+  if ( currentClass === "red" ) {
+    addedClass = "green";
+    $( "p" ).text( "There is one green div" );
+  }
 
-    return addedClass;
-  });
+  return addedClass;
+});
 ]]></code>
     <css><![CDATA[
-  div { background: white; }
-  .red { background: red; }
-  .red.green { background: green; }
+  div { 
+  background: white;
+  }
+  .red {
+  background: red;
+  }
+  .red.green {
+  background: green;
+  }
   ]]></css>
     <html><![CDATA[
  <div>This div should be white</div>

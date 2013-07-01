@@ -16,7 +16,7 @@
 &lt;div class="log"&gt;&lt;/div&gt;</code></pre>
     <p>Attach the event handler to the document:</p>
     <pre><code>$( ".log" ).ajaxStop(function() {
-  $(this).text( "Triggered ajaxStop handler." );
+  $( this ).text( "Triggered ajaxStop handler." );
 });</code></pre>
     <p>Now, make an Ajax request using any jQuery method:</p>
     <pre><code>$( ".trigger" ).click(function() {
@@ -28,8 +28,9 @@
   <note id="ajax-global-false" type="additional" data-title=".ajaxStop()"/>
   <example>
     <desc>Hide a loading message after all the Ajax requests have stopped.</desc>
-    <code><![CDATA[$(document).ajaxStop(function() {
-      $( "#loading" ).hide();
+    <code><![CDATA[
+$( document ).ajaxStop(function() {
+  $( "#loading" ).hide();
 });]]></code>
   </example>
   <category slug="ajax/global-ajax-event-handlers"/>
