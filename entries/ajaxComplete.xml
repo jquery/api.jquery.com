@@ -30,7 +30,7 @@
     <pre><code>$(document).ajaxComplete(function(event, xhr, settings) {
   if ( settings.url === "ajax/test.html" ) {
     $( ".log" ).text( "Triggered ajaxComplete handler. The result is " +
-                     xhr.responseHTML );
+                       xhr.responseHTML );
   }
 });</code></pre>
     <p><strong>Note:</strong> You can get the returned ajax contents by looking at <code>xhr.responseXML</code> or <code>xhr.responseHTML</code> for xml and html respectively.</p>

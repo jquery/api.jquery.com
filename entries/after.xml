@@ -33,7 +33,9 @@
   &lt;div class="inner"&gt;Goodbye&lt;/div&gt;
 &lt;/div&gt;</code></pre>
     <p>Content can be created and then inserted after several elements at once:</p>
-    <pre><code>$( ".inner" ).after( "&lt;p&gt;Test&lt;/p&gt;" );</code></pre>
+    <pre><code>
+$( ".inner" ).after( "&lt;p&gt;Test&lt;/p&gt;" );
+    </code></pre>
     <p>Each inner <code>&lt;div&gt;</code> element gets this new content:</p>
     <pre><code>&lt;div class="container"&gt;
   &lt;h2&gt;Greetings&lt;/h2&gt;
@@ -43,22 +45,28 @@
   &lt;p&gt;Test&lt;/p&gt;
 &lt;/div&gt;</code></pre>
     <p>An element in the DOM can also be selected and inserted after another element:</p>
-    <pre><code>$( ".container" ).after( $( "h2" ) );</code></pre>
+    <pre><code>
+$( ".container" ).after( $( "h2" ) );
+    </code></pre>
     <p>If an element selected this way is inserted into a single location elsewhere in the DOM, it will be moved rather than cloned:</p>
-    <pre><code>&lt;div class="container"&gt;
+    <pre><code>
+&lt;div class="container"&gt;
   &lt;div class="inner"&gt;Hello&lt;/div&gt;
   &lt;div class="inner"&gt;Goodbye&lt;/div&gt;
 &lt;/div&gt;
-&lt;h2&gt;Greetings&lt;/h2&gt;</code></pre>
+&lt;h2&gt;Greetings&lt;/h2&gt;
+    </code></pre>
     <p>If there is more than one target element, however, cloned copies of the inserted element will be created for each target after the first.</p>
     <h4 id="disconnected-dom-nodes">Inserting Disconnected DOM nodes</h4>
     <p>As of jQuery 1.4, <code>.before()</code> and <code>.after()</code> will also work on disconnected DOM nodes. For example, given the following code:</p>
     <pre><code>$( "&lt;div&gt;&lt;/div&gt;" ).after( "&lt;p&gt;&lt;/p&gt;" );</code></pre>
     <p>The result is a jQuery set containing a div and a paragraph, in that order. That set can be further manipulated, even before it is inserted in the document.</p>
-    <pre><code>$( "&lt;div&gt;&lt;/div&gt;" ).after( "&lt;p&gt;&lt;/p&gt;" ).addClass( "foo" )
+    <pre><code>
+$( "&lt;div&gt;&lt;/div&gt;" ).after( "&lt;p&gt;&lt;/p&gt;" ).addClass( "foo" )
   .filter( "p" ).attr( "id", "bar" ).html( "hello" )
   .end()
-  .appendTo( "body" );</code></pre>
+  .appendTo( "body" );
+    </code></pre>
     <p>This results in the following elements inserted just before the closing <code>&lt;/body&gt;</code> tag:</p>
     <pre><code>
 &lt;div class="foo"&gt;&lt;/div&gt;
@@ -66,14 +74,17 @@
 </code></pre>
     <h4 id="passing-a-function">Passing a Function</h4>
     <p>As of jQuery 1.4, <code>.after()</code> supports passing a function that returns the elements to insert.</p>
-    <pre><code>$( "p" ).after(function() {
+    <pre><code>
+$( "p" ).after(function() {
   return "&lt;div&gt;" + this.className + "&lt;/div&gt;";
-});</code></pre>
+});
+    </code></pre>
     <p>This example inserts a <code>&lt;div&gt;</code> after each paragraph, with each new <code>&lt;div&gt;</code> containing the class name(s) of its preceding paragraph.</p>
     <h4 id="additional-arguments">Additional Arguments</h4>
     <p>Similar to other content-adding methods such as <code><a href="http://api.jquery.com/prepend/">.prepend()</a></code> and <code><a href="http://api.jquery.com/before/">.before()</a></code>, <code>.after()</code> also supports passing in multiple arguments as input. Supported input includes DOM elements, jQuery objects, HTML strings, and arrays of DOM elements.</p>
     <p>For example, the following will insert two new <code>&lt;div&gt;</code>s and an existing <code>&lt;div&gt;</code> after the first paragraph:</p>
-    <pre><code>var $newdiv1 = $( "&lt;div id='object1'/&gt;" ),
+    <pre><code>
+var $newdiv1 = $( "&lt;div id='object1'/&gt;" ),
     newdiv2 = document.createElement( "div" ),
     existingdiv1 = document.getElementById( "foo" );
 
