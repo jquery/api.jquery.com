@@ -15,11 +15,14 @@
   <longdesc/>
   <example>
     <desc>Finds all inputs with an attribute name that ends with 'letter' and puts text in them.</desc>
-    <code><![CDATA[$('input[name$="letter"]').val('a letter');]]></code>
-    <html><![CDATA[<input name="newsletter" />
-
-  <input name="milkman" />
-  <input name="jobletter" />]]></html>
+    <code><![CDATA[
+$( "input[name$='letter']" ).val( "a letter" );
+]]></code>
+    <html><![CDATA[
+<input name="newsletter">
+<input name="milkman">
+<input name="jobletter">
+]]></html>
   </example>
   <category slug="selectors/attribute-selectors"/>
   <category slug="version/1.0"/>

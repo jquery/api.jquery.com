@@ -38,33 +38,33 @@
         </tr>
         <tr>
           <th>
-            <code>$(elem).prop("checked")</code>
+            <code>$( elem ).prop( "checked" )</code>
           </th>
           <td><code>true</code> (Boolean) Will change with checkbox state</td>
         </tr>
         <tr>
           <th>
-            <code>elem.getAttribute("checked")</code>
+            <code>elem.getAttribute( "checked" )</code>
           </th>
           <td><code>"checked"</code> (String) Initial state of the checkbox; does not change</td>
         </tr>
         <tr>
           <th>
-            <code>$(elem).attr("checked")</code>
+            <code>$( elem ).attr( "checked" )</code>
             <em>(1.6)</em>
           </th>
           <td><code>"checked"</code> (String) Initial state of the checkbox; does not change</td>
         </tr>
         <tr>
           <th>
-            <code>$(elem).attr("checked")</code>
+            <code>$( elem ).attr( "checked" )</code>
             <em>(1.6.1+)</em>
           </th>
           <td><code>"checked"</code> (String) Will change with checkbox state</td>
         </tr>
         <tr>
           <th>
-            <code>$(elem).attr("checked")</code>
+            <code>$( elem ).attr( "checked" )</code>
             <em>(pre-1.6)</em>
           </th>
           <td><code>true</code> (Boolean) Changed with checkbox state</td>
@@ -78,10 +78,10 @@
           <code>if ( elem.checked )</code>
         </li>
         <li>
-          <code>if ( $(elem).prop("checked") )</code>
+          <code>if ( $( elem ).prop( "checked" ) )</code>
         </li>
         <li>
-          <code>if ( $(elem).is(":checked") )</code>
+          <code>if ( $( elem ).is( ":checked" ) )</code>
         </li>
       </ul>
       <p>The same is true for other dynamic attributes, such as <code>selected</code> and <code>value</code>.</p>
@@ -90,17 +90,23 @@
     <example>
       <desc>Display the checked attribute and property of a checkbox as it changes.</desc>
       <code><![CDATA[
-$("input").change(function() {
-  var $input = $(this);
-  $("p").html(".attr('checked'): <b>" + $input.attr('checked') + "</b><br>"
-              + ".prop('checked'): <b>" + $input.prop('checked') + "</b><br>"
-              + ".is(':checked'): <b>" + $input.is(':checked') ) + "</b>";
-}).change();
+$( "input" )
+  .change(function() {
+    var $input = $( this );
+    $( "p" ).html( ".attr( 'checked' ): <b>" + $input.attr( "checked" ) + "</b><br>" + 
+      ".prop( 'checked' ): <b>" + $input.prop( "checked" ) + "</b><br>" +
+      ".is( ':checked' ): <b>" + $input.is( ":checked" ) + "</b>" );
+  })
+  .change();
 ]]></code>
       <css><![CDATA[
-  p { margin: 20px 0 0 }
-  b { color: blue; }
-]]></css>
+  p { 
+    margin: 20px 0 0;
+  }
+  b {
+    color: blue; 
+  }
+  ]]></css>
       <html><![CDATA[
 <input id="check1" type="checkbox" checked="checked">
 <label for="check1">Check me</label>
@@ -111,19 +117,22 @@ $("input").change(function() {
     <example>
       <desc>Find the title attribute of the first &lt;em&gt; in the page.</desc>
       <code><![CDATA[
-var title = $("em").attr("title");
-  $("div").text(title);
+var title = $( "em" ).attr( "title" );
+$( "div" ).text( title );
 ]]></code>
       <css><![CDATA[
-  em { color:blue; font-weight:bold; }
-  div { color:red; }
-]]></css>
+  em { 
+    color: blue; 
+    font-weight: bold; 
+  }
+  div { 
+    color: red; 
+  }
+  ]]></css>
       <html><![CDATA[
-<p>
-  Once there was a <em title="huge, gigantic">large</em> dinosaur...
-</p>
+<p>Once there was a <em title="huge, gigantic">large</em> dinosaur...</p>
 
-  The title of the emphasis is:<div></div>
+The title of the emphasis is:<div></div>
 ]]></html>
     </example>
     <category slug="attributes"/>
@@ -162,26 +171,30 @@ var title = $("em").attr("title");
     <desc>Set one or more attributes for the set of matched elements.</desc>
     <longdesc>
       <p>The <code>.attr()</code> method is a convenient way to set the value of attributes&#x2014;especially when setting multiple attributes or using values returned by a function. Consider the following image:</p>
-      <pre><code>&lt;img id="greatphoto" src="brush-seller.jpg" alt="brush seller" /&gt;</code></pre>
+      <pre><code>&lt;img id="greatphoto" src="brush-seller.jpg" alt="brush seller"&gt;</code></pre>
       <h4 id="setting-simple-attr">Setting a simple attribute</h4>
       <p>To change the <code>alt</code> attribute, simply pass the name of the attribute and its new value to the <code>.attr()</code> method:</p>
-      <pre><code>$('#greatphoto').attr('alt', 'Beijing Brush Seller');</code></pre>
+      <pre><code>
+$( "#greatphoto" ).attr( "alt", "Beijing Brush Seller" );
+      </code></pre>
       <p><em>Add</em> an attribute the same way:</p>
-      <pre><code>$('#greatphoto')
-.attr('title', 'Photo by Kelly Clark');</code></pre>
+      <pre><code>
+$( "#greatphoto" ).attr( "title", "Photo by Kelly Clark" );</code></pre>
       <h4 id="setting-several-attrs">Setting several attributes at once</h4>
       <p>To change the <code>alt</code> attribute and add the <code>title</code> attribute at the same time, pass both sets of names and values into the method at once using a plain JavaScript object. Each key-value pair in the object adds or modifies an attribute:</p>
-      <pre><code>$('#greatphoto').attr({
-  alt: 'Beijing Brush Seller',
-  title: 'photo by Kelly Clark'
+      <pre><code>
+$( "#greatphoto" ).attr({
+  alt: "Beijing Brush Seller",
+  title: "photo by Kelly Clark"
 });</code></pre>
       <p>When setting multiple attributes, the quotes around attribute names are optional.</p>
       <p><strong>WARNING</strong>: When setting the 'class' attribute, you must always use quotes!</p>
       <p><strong>Note</strong>: jQuery prohibits changing the <code>type</code> attribute on an <code>&lt;input&gt;</code> or <code>&lt;button&gt;</code> element and will throw an error in all browsers. This is because the <code>type</code> attribute cannot be changed in Internet Explorer.</p>
       <h4 id="computed-attr-values">Computed attribute values</h4>
       <p>By using a function to set attributes, you can compute the value based on other properties of the element. For example, to concatenate a new value with an existing value:</p>
-      <pre><code>$('#greatphoto').attr('title', function(i, val) {
-  return val + ' - photo by Kelly Clark'
+      <pre><code>
+$( "#greatphoto" ).attr( "title", function(i, val) {
+  return val + " - photo by Kelly Clark"
 });</code></pre>
       <p>This use of a function to compute attribute values can be particularly useful when modifying the attributes of multiple elements at once.</p>
       <p><strong>Note: </strong>If nothing is returned in the setter function (ie. <code>function(index, attr){})</code>, or if <code>undefined</code> is returned, the current value is not changed. This is useful for selectively setting values only when certain criteria are met.</p>
@@ -189,55 +202,66 @@ var title = $("em").attr("title");
     <example>
       <desc>Set some attributes for all &lt;img&gt;s in the page.</desc>
       <code><![CDATA[
-$("img").attr({
+$( "img" ).attr({
   src: "/resources/hat.gif",
   title: "jQuery",
   alt: "jQuery Logo"
 });
-$("div").text($("img").attr("alt"));
+$( "div" ).text( $( "img" ).attr( "alt" ) );
 ]]></code>
       <css><![CDATA[
-  img { padding:10px; }
-  div { color:red; font-size:24px; }
-]]></css>
+  img { 
+    padding: 10px; 
+  }
+  div { 
+    color: red; 
+    font-size: 24px; 
+  }
+  ]]></css>
       <html><![CDATA[
-  <img />
-  <img />
-  <img />
+<img>
+<img>
+<img>
 
-  <div><B>Attribute of Ajax</B></div>
+<div><b>Attribute of Ajax</b></div>
 ]]></html>
     </example>
     <example>
       <desc>Set the id for divs based on the position in the page.</desc>
       <code><![CDATA[
-$("div").attr("id", function (arr) {
+$( "div" ).attr( "id", function ( arr ) {
   return "div-id" + arr;
 })
 .each(function () {
-  $("span", this).html("(ID = '<b>" + this.id + "</b>')");
+  $( "span", this ).html( "(id = '<b>" + this.id + "</b>')" );
 });
 ]]></code>
       <css><![CDATA[
-  div { color:blue; }
-  span { color:red; }
-  b { font-weight:bolder; }
-        ]]></css>
+  div { 
+    color: blue; 
+  }
+  span { 
+    color: red; 
+  }
+  b { 
+    font-weight: bolder; 
+  }
+  ]]></css>
       <html><![CDATA[
-  <div>Zero-th <span></span></div>
-  <div>First <span></span></div>
-  <div>Second <span></span></div>
+<div>Zero-th <span></span></div>
+<div>First <span></span></div>
+<div>Second <span></span></div>
 ]]></html>
     </example>
     <example>
       <desc>Set the src attribute from title attribute on the image.</desc>
       <code><![CDATA[
-$("img").attr("src", function() {
-    return "/resources/" + this.title;
+$( "img" ).attr( "src", function() {
+  return "/resources/" + this.title;
 });
 ]]></code>
       <html><![CDATA[
-<img title="hat.gif"/>
+<img title="hat.gif">
 ]]></html>
     </example>
     <category slug="attributes"/>
