@@ -78,36 +78,48 @@
   &lt;/li&gt;
   &lt;li class="item-iii"&gt;III&lt;/li&gt;
 &lt;/ul&gt;
-</code></pre>
+      </code></pre>
       <p>Suppose we perform a search for <code>&lt;ul&gt;</code> elements starting at item A:</p>
       <pre><code>
-$('li.item-a').closest('ul')
-  .css('background-color', 'red');
-</code></pre>
+$( "li.item-a" )
+  .closest( "ul" )
+  .css("background-color", "red" );
+      </code></pre>
       <p>This will change the color of the level-2 <code>&lt;ul&gt;</code>, since it is the first encountered when traveling up the DOM tree.</p>
       <p>Suppose we search for an <code>&lt;li&gt;</code> element instead:</p>
-      <pre><code>$('li.item-a').closest('li')
-  .css('background-color', 'red');
-</code></pre>
+      <pre><code>
+$( "li.item-a" )
+  .closest( "li" )
+  .css( "background-color", "red" );
+      </code></pre>
       <p>This will change the color of list item A. The <code>.closest()</code> method begins its search <em>with the element itself</em> before progressing up the DOM tree, and stops when item A matches the selector.</p>
       <p>We can pass in a DOM element as the context within which to search for the closest element.</p>
-      <pre><code>var listItemII = document.getElementById('ii');
-$('li.item-a').closest('ul', listItemII)
-  .css('background-color', 'red');
-$('li.item-a').closest('#one', listItemII)
-  .css('background-color', 'green');</code></pre>
+      <pre><code>
+var listItemII = document.getElementById( "ii" );
+$( "li.item-a" )
+  .closest( "ul", listItemII )
+  .css( "background-color", "red" );
+$( "li.item-a" )
+  .closest('#one', listItemII )
+  .css( "background-color", "green" );</code></pre>
       <p>This will change the color of the level-2 <code>&lt;ul&gt;</code>, because it is both the first <code>&lt;ul&gt;</code> ancestor of list item A and a descendant of list item II. It will not change the color of the level-1 <code>&lt;ul&gt;</code>, however, because it is not a descendant of list item II.</p>
     </longdesc>
     <example>
       <desc>Show how event delegation can be done with closest. The closest list element toggles a yellow background when it or its descendent is clicked.</desc>
       <code><![CDATA[
-  $( document ).on("click", function( e ) {
-    $( e.target ).closest("li").toggleClass("hilight");
+  $( document ).on( "click", function( e ) {
+    $( e.target ).closest( "li" ).toggleClass( "hilight" );
   });
 ]]></code>
       <css><![CDATA[
-  li { margin: 3px; padding: 3px; background: #EEEEEE; }
-  li.hilight { background: yellow; }
+  li { 
+    margin: 3px; 
+    padding: 3px; 
+    background: #EEEEEE; 
+  }
+  li.hilight { 
+    background: yellow; 
+  }
   ]]></css>
       <html><![CDATA[<ul>
     <li><b>Click me!</b></li>
@@ -117,19 +129,27 @@ $('li.item-a').closest('#one', listItemII)
     <example>
       <desc>Pass a jQuery object to closest. The closest list element toggles a yellow background when it or its descendent is clicked.</desc>
       <code><![CDATA[
-  var $listElements = $("li").css("color", "blue");
-  $( document ).on("click", function( e ) {
-    $( e.target ).closest( $listElements ).toggleClass("hilight");
+  var $listElements = $( "li" ).css( "color", "blue" );
+  $( document ).on( "click", function( e ) {
+    $( e.target ).closest( $listElements ).toggleClass( "hilight" );
   });
 ]]></code>
       <css><![CDATA[
-  li { margin: 3px; padding: 3px; background: #EEEEEE; }
-  li.hilight { background: yellow; }
+  li { 
+    margin: 3px; 
+    padding: 3px; 
+    background: #EEEEEE; 
+  }
+  li.hilight { 
+    background: yellow; 
+  }
   ]]></css>
-      <html><![CDATA[<ul>
-    <li><b>Click me!</b></li>
-    <li>You can also <b>Click me!</b></li>
-  </ul>]]></html>
+      <html><![CDATA[
+<ul>
+  <li><b>Click me!</b></li>
+  <li>You can also <b>Click me!</b></li>
+</ul>
+]]></html>
     </example>
     <category slug="traversing/tree-traversal"/>
     <category slug="version/1.3"/>
@@ -148,7 +168,7 @@ $('li.item-a').closest('#one', listItemII)
     </signature>
     <desc>Get an array of all the elements and selectors matched against the current element up through the DOM tree.</desc>
     <longdesc>
-      <p><strong>This signature (only!) is deprecated as of jQuery 1.7 and <em>removed</em> in jQuery 1.8</strong>. It was primarily meant to be used internally or by plugin authors.</p>
+      <div class="warning"><strong>This signature (only!) is deprecated as of jQuery 1.7 and <em>removed</em> in jQuery 1.8</strong>. It was primarily meant to be used internally or by plugin authors.</div>
     </longdesc>
     <category slug="traversing/tree-traversal"/>
     <category slug="version/1.3"/>

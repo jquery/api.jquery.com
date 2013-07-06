@@ -14,41 +14,56 @@
   <example>
     <desc>Empty the queue.</desc>
     <code><![CDATA[
-$("#start").click(function () {
-
-  var myDiv = $("div");
-  myDiv.show("slow");
-  myDiv.animate({left:'+=200'},5000);
+$( "#start" ).click(function () {
+  var myDiv = $( "div" );
+  myDiv.show( "slow" );
+  myDiv.animate({
+    left:"+=200"
+  }, 5000 );
+  
   myDiv.queue(function () {
-    var _this = $(this);
-    _this.addClass("newcolor");
+    var _this = $( this );
+    _this.addClass( "newcolor" );
     _this.dequeue();
   });
 
-  myDiv.animate({left:'-=200'},1500);
+  myDiv.animate({
+    left:"-=200"
+  }, 1500 );
   myDiv.queue(function () {
-    var _this = $(this);
-    _this.removeClass("newcolor");
+    var _this = $( this );
+    _this.removeClass( "newcolor" );
     _this.dequeue();
   });
   myDiv.slideUp();
-
 });
 
-$("#stop").click(function () {
-  var myDiv = $("div");
+$( "#stop" ).click(function () {
+  var myDiv = $( "div" );
   myDiv.clearQueue();
   myDiv.stop();
-});]]></code>
+});
+]]></code>
     <css><![CDATA[
-div { margin:3px; width:40px; height:40px;
-    position:absolute; left:0px; top:30px;
-    background:green; display:none; }
-div.newcolor { background:blue; }
-]]></css>
-    <html><![CDATA[<button id="start">Start</button>
+  div { 
+    margin: 3px; 
+    width: 40px; 
+    height: 40px;
+    position: absolute; 
+    left: 0px; 
+    top: 30px;
+    background: green; 
+    display: none; 
+  }
+  div.newcolor { 
+    background: blue; 
+  }
+  ]]></css>
+    <html><![CDATA[
+<button id="start">Start</button>
 <button id="stop">Stop</button>
-<div></div>]]></html>
+<div></div>
+]]></html>
   </example>
   <category slug="effects/custom-effects"/>
   <category slug="data"/>

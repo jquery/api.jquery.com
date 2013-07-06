@@ -28,7 +28,7 @@ callbacks.add( log );
 // fire the callbacks on the list using the context "window"
 // and an arguments array
 
-callbacks.fireWith( window, ["foo","bar"]);
+callbacks.fireWith( window, [ "foo","bar" ] );
 
 // outputs: "Received: foo, bar"
 ]]></code></pre>

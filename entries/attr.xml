@@ -186,7 +186,8 @@ $( "#greatphoto" ).attr( "title", "Photo by Kelly Clark" );</code></pre>
 $( "#greatphoto" ).attr({
   alt: "Beijing Brush Seller",
   title: "photo by Kelly Clark"
-});</code></pre>
+});
+      </code></pre>
       <p>When setting multiple attributes, the quotes around attribute names are optional.</p>
       <p><strong>WARNING</strong>: When setting the 'class' attribute, you must always use quotes!</p>
       <p><strong>Note</strong>: jQuery prohibits changing the <code>type</code> attribute on an <code>&lt;input&gt;</code> or <code>&lt;button&gt;</code> element and will throw an error in all browsers. This is because the <code>type</code> attribute cannot be changed in Internet Explorer.</p>
@@ -195,7 +196,8 @@ $( "#greatphoto" ).attr({
       <pre><code>
 $( "#greatphoto" ).attr( "title", function(i, val) {
   return val + " - photo by Kelly Clark"
-});</code></pre>
+});
+      </code></pre>
       <p>This use of a function to compute attribute values can be particularly useful when modifying the attributes of multiple elements at once.</p>
       <p><strong>Note: </strong>If nothing is returned in the setter function (ie. <code>function(index, attr){})</code>, or if <code>undefined</code> is returned, the current value is not changed. This is useful for selectively setting values only when certain criteria are met.</p>
     </longdesc>
@@ -229,11 +231,12 @@ $( "div" ).text( $( "img" ).attr( "alt" ) );
     <example>
       <desc>Set the id for divs based on the position in the page.</desc>
       <code><![CDATA[
-$( "div" ).attr( "id", function ( arr ) {
-  return "div-id" + arr;
-})
-.each(function () {
-  $( "span", this ).html( "(id = '<b>" + this.id + "</b>')" );
+$( "div" )
+  .attr( "id", function( arr ) {
+    return "div-id" + arr;
+  })
+  .each(function() {
+    $( "span", this ).html( "(id = '<b>" + this.id + "</b>')" );
 });
 ]]></code>
       <css><![CDATA[

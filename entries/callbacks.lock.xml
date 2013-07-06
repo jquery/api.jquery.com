@@ -11,7 +11,8 @@
   </longdesc>
   <example>
     <desc>Use <code>callbacks.lock()</code> to lock a callback list to avoid further changes being made to the list state:</desc>
-    <code><![CDATA[// a sample logging function to be added to a callbacks list
+    <code><![CDATA[
+// a sample logging function to be added to a callbacks list
 var foo = function( value ) {
   console.log( "foo:" + value );
 };
@@ -32,13 +33,16 @@ callbacks.lock();
 callbacks.fire( "world" );
 
 // as the list was locked, no items
-// were called, so "world" isn"t logged
+// were called, so "world" isn't logged
 ]]></code>
   </example>
   <example>
     <desc>Use <code>callbacks.lock()</code> to lock a callback list with "memory," and then resume using the list:</desc>
-    <html><![CDATA[<div id="log"></div>]]></html>
-    <code><![CDATA[// simple function for logging results
+    <html><![CDATA[
+<div id="log"></div>
+]]></html>
+    <code><![CDATA[
+// simple function for logging results
 var log = function( value) {
   $( "#log" ).append( "<p>" + value + "</p>" );
 };
