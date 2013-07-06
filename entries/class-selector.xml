@@ -14,16 +14,19 @@
   </longdesc>
   <example>
     <desc>Finds the element with the class "myClass".</desc>
-    <code><![CDATA[$(".myClass").css("border","3px solid red");]]></code>
-    <html><![CDATA[<div class="notMe">div class="notMe"</div>
-
-  <div class="myClass">div class="myClass"</div>
-  <span class="myClass">span class="myClass"</span>]]></html>
+    <code><![CDATA[
+$( ".myClass" ).css( "border", "3px solid red" );
+]]></code>
+    <html><![CDATA[
+<div class="notMe">div class="notMe"</div>
+<div class="myClass">div class="myClass"</div>
+<span class="myClass">span class="myClass"</span>
+]]></html>
     <css><![CDATA[
   div,span {
-    width: 100px;
+    width: 120px;
     height: 40px;
-    float:left;
+    float: left;
     padding: 10px;
     margin: 10px;
     background-color: #EEEEEE;
@@ -32,16 +35,19 @@
   </example>
   <example>
     <desc>Finds the element with both "myclass" and "otherclass" classes.</desc>
-    <code><![CDATA[$(".myclass.otherclass").css("border","13px solid red");]]></code>
-    <html><![CDATA[<div class="myclass">div class="notMe"</div>
-
-  <div class="myclass otherclass">div class="myClass"</div>
-  <span class="myclass otherclass">span class="myClass"</span>]]></html>
+    <code><![CDATA[
+$( ".myclass.otherclass" ).css( "border", "13px solid red" );
+]]></code>
+    <html><![CDATA[
+<div class="myclass">div class="notMe"</div>
+<div class="myclass otherclass">div class="myClass"</div>
+<span class="myclass otherclass">span class="myClass"</span>
+]]></html>
     <css><![CDATA[
   div,span {
-    width: 100px;
+    width: 120px;
     height: 40px;
-    float:left;
+    float: left;
     padding: 10px;
     margin: 10px;
     background-color: #EEEEEE;

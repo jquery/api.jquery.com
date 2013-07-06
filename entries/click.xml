@@ -21,30 +21,36 @@
     <added>1.0</added>
   </signature>
   <longdesc>
-    <p>This method is a shortcut for <code>.on('click', handler)</code> in the first two variations, and <code>.trigger('click')</code> in the third.
+    <p>This method is a shortcut for <code>.on( "click", handler )</code> in the first two variations, and <code>.trigger( "click" )</code> in the third.
     The <code>click</code> event is sent to an element when the mouse pointer is over the element, and the mouse button is pressed and released. Any HTML element can receive this event.
     For example, consider the HTML:</p>
-    <pre><code>&lt;div id="target"&gt;
+    <pre><code>
+&lt;div id="target"&gt;
   Click here
 &lt;/div&gt;
 &lt;div id="other"&gt;
   Trigger the handler
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;
+</code></pre>
     <p class="image">
       <img src="/resources/0042_05_03.png" alt=""/>
     </p>
     <p>The event handler can be bound to any <code>&lt;div&gt;</code>:</p>
-    <pre><code>$("#target").click(function() {
-  alert("Handler for .click() called.");
-});</code></pre>
+    <pre><code>
+$( "#target" ).click(function() {
+  alert( "Handler for .click() called." );
+});
+    </code></pre>
     <p>Now if we click on this element, the alert is displayed:</p>
     <p>
       <samp>Handler for .click() called.</samp>
     </p>
     <p>We can also trigger the event when a different element is clicked:</p>
-    <pre><code>$("#other").click(function() {
-  $("#target").click();
-});</code></pre>
+    <pre><code>
+$( "#other" ).click(function() {
+  $( "#target" ).click();
+});
+</code></pre>
     <p>After this code executes, clicks on <samp>Trigger the handler</samp> will also alert the message.</p>
     <p>The <code>click</code> event is only triggered after this exact series of events:</p>
     <ul>
@@ -56,22 +62,31 @@
   <example>
     <desc>Hide paragraphs on a page when they are clicked:</desc>
     <code><![CDATA[
-    $("p").click(function () {
-      $(this).slideUp();
-    });
+$( "p" ).click(function () {
+  $( this ).slideUp();
+});
 ]]></code>
     <css><![CDATA[
-  p { color:red; margin:5px; cursor:pointer; }
-  p:hover { background:yellow; }
+  p { 
+    color: red; 
+    margin: 5px; 
+	cursor: pointer; 
+  }
+  p:hover { 
+    background: yellow; 
+  }
   ]]></css>
-    <html><![CDATA[<p>First Paragraph</p>
-
-  <p>Second Paragraph</p>
-  <p>Yet one more Paragraph</p>]]></html>
+    <html><![CDATA[
+<p>First Paragraph</p>
+<p>Second Paragraph</p>
+<p>Yet one more Paragraph</p>
+]]></html>
   </example>
   <example>
     <desc>Trigger the click event on all of the paragraphs on the page:</desc>
-    <code><![CDATA[$("p").click();]]></code>
+    <code><![CDATA[
+$( "p" ).click();
+]]></code>
   </example>
   <category slug="events/mouse-events"/>
   <category slug="version/1.0"/>

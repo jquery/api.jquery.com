@@ -15,14 +15,14 @@
   <example>
     <desc>Finds all divs containing "John" and underlines them.</desc>
     <code><![CDATA[
-$("div:contains('John')").css("text-decoration", "underline");]]></code>
+$( "div:contains('John')" ).css( "text-decoration", "underline" );
+]]></code>
     <html><![CDATA[
 <div>John Resig</div>
-
 <div>George Martin</div>
 <div>Malcom John Sinclair</div>
 <div>J. Ohn</div>
-      ]]></html>
+]]></html>
   </example>
   <category slug="selectors/content-filter-selector"/>
   <category slug="version/1.1.4"/>

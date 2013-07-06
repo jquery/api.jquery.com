@@ -32,95 +32,148 @@
 &lt;/ul&gt;
 </code></pre>
     <p>If we begin at the level-2 list, we can find its children:</p>
-    <pre><code>$('ul.level-2').children().css('background-color', 'red');</code></pre>
+    <pre><code>$( "ul.level-2" ).children().css( "background-color", "red" );</code></pre>
     <p>The result of this call is a red background behind items A, B, and C. Since we do not supply a selector expression, all of the children are part of the returned jQuery object. If we had supplied one, only the matching items among these three would be included.</p>
   </longdesc>
   <example>
     <desc>Find all children of the clicked element.</desc>
     <code><![CDATA[
+$( "#container" ).click(function ( e ) {
+  $( "*" ).removeClass( "hilite" );
+  var $kids = $( e.target ).children();
+  var len = $kids.addClass( "hilite" ).length;
 
-    $("#container").click(function (e) {
-      $("*").removeClass("hilite");
-      var $kids = $(e.target).children();
-      var len = $kids.addClass("hilite").length;
+  $( "#results span:first" ).text( len );
+  $( "#results span:last" ).text( e.target.tagName );
 
-      $("#results span:first").text(len);
-      $("#results span:last").text(e.target.tagName);
-
-      e.preventDefault();
-      return false;
-    });
+  e.preventDefault();
+  return false;
+});
 ]]></code>
     <css><![CDATA[
-  body { font-size:16px; font-weight:bolder; }
-  div { width:130px; height:82px; margin:10px; float:left;
-        border:1px solid blue; padding:4px; }
-  #container { width:auto; height:105px; margin:0; float:none;
-        border:none; }
-  .hilite { border-color:red; }
-  #results { display:block; color:red; }
-  p { margin:10px; border:1px solid transparent; }
-  span { color:blue; border:1px solid transparent; }
-  input { width:100px; }
-  em { border:1px solid transparent; }
-  a { border:1px solid transparent; }
-  b { border:1px solid transparent; }
-  button { border:1px solid transparent; }
+  body { 
+    font-size: 16px; 
+    font-weight: bolder; 
+  }
+  div { 
+    width: 130px; 
+    height: 82px; 
+    margin: 10px; 
+    float: left;
+    border: 1px solid blue; 
+    padding: 4px; 
+  }
+  #container { 
+    width: auto; 
+    height: 105px; 
+    margin: 0; 
+    float: none;
+    border: none; 
+  }
+  .hilite { 
+    border-color: red; 
+  }
+  #results { 
+    display: block; 
+    color: red; 
+  }
+  p { 
+    margin: 10px; 
+    border: 1px solid transparent; 
+  }
+  span { 
+    color: blue; 
+    border: 1px solid transparent; 
+  }
+  input { 
+    width: 100px; 
+  }
+  em { 
+    border: 1px solid transparent; 
+  }
+  a { 
+    border: 1px solid transparent; 
+  }
+  b { 
+    border: 1px solid transparent; 
+  }
+  button { 
+    border: 1px solid transparent; 
+  }
   ]]></css>
-    <html><![CDATA[<div id="container">
-
-    <div>
-      <p>This <span>is the <em>way</em> we</span>
+    <html><![CDATA[
+<div id="container">
+  <div>
+    <p>This <span>is the <em>way</em> we</span>
       write <em>the</em> demo,</p>
+  </div>
 
-    </div>
-    <div>
-      <a href="#"><b>w</b>rit<b>e</b></a> the <span>demo,</span> <button>write
-      the</button> demo,
-    </div>
+  <div>
+    <a href="#"><b>w</b>rit<b>e</b></a> the <span>demo,</span> <button>write
+    the</button> demo,
+  </div>
 
-    <div>
-      This <span>the way we <em>write</em> the <em>demo</em> so</span>
-
-      <input type="text" value="early" /> in
-    </div>
-    <p>
-      <span>t</span>he <span>m</span>orning.
-      <span id="results">Found <span>0</span> children in <span>TAG</span>.</span>
-
-    </p>
-  </div>]]></html>
+  <div>
+    This <span>the way we <em>write</em> the <em>demo</em> so</span>
+    <input type="text" value="early"> in
+  </div>
+  
+  <p>
+    <span>t</span>he <span>m</span>orning.
+    <span id="results">Found <span>0</span> children in <span>TAG</span>.</span>
+  </p>
+</div>
+]]></html>
   </example>
   <example>
     <desc>Find all children of each div.</desc>
-    <code><![CDATA[$("div").children().css("border-bottom", "3px double red");]]></code>
+    <code><![CDATA[
+$( "div" ).children().css( "border-bottom", "3px double red" );
+]]></code>
     <css><![CDATA[
-  body { font-size:16px; font-weight:bolder; }
-  span { color:blue; }
-  p { margin:5px 0; }
+  body { 
+    font-size: 16px; 
+    font-weight: bolder; 
+  }
+  span { 
+    color: blue; 
+  }
+  p { 
+    margin: 5px 0; 
+  }
   ]]></css>
-    <html><![CDATA[<p>Hello (this is a paragraph)</p>
+    <html><![CDATA[
+<p>Hello (this is a paragraph)</p>
 
-  <div><span>Hello Again (this span is a child of the a div)</span></div>
-  <p>And <span>Again</span> (in another paragraph)</p>
+<div><span>Hello Again (this span is a child of the a div)</span></div>
+<p>And <span>Again</span> (in another paragraph)</p>
 
-  <div>And One Last <span>Time</span> (most text directly in a div)</div>]]></html>
+<div>And One Last <span>Time</span> (most text directly in a div)</div>
+]]></html>
   </example>
   <example>
     <desc>Find all children with a class "selected" of each div.</desc>
-    <code><![CDATA[$("div").children(".selected").css("color", "blue");]]></code>
+    <code><![CDATA[
+$( "div" ).children( ".selected" ).css( "color", "blue" );
+]]></code>
     <css><![CDATA[
-
-  body { font-size:16px; font-weight:bolder; }
-  p { margin:5px 0; }
+  body { 
+    font-size: 16px; 
+    font-weight: bolder; 
+  }
+  p { 
+    margin: 5px 0; 
+  }
   ]]></css>
-    <html><![CDATA[<div>
-    <span>Hello</span>
-    <p class="selected">Hello Again</p>
-    <div class="selected">And Again</div>
+    <html><![CDATA[
+<div>
+  <span>Hello</span>
+  <p class="selected">Hello Again</p>
+  <div class="selected">And Again</div>
 
-    <p>And One Last Time</p>
-  </div>]]></html>
+  <p>And One Last Time</p>
+</div>
+]]></html>
   </example>
   <category slug="traversing/tree-traversal"/>
   <category slug="version/1.0"/>

@@ -13,18 +13,29 @@
   </longdesc>
   <example>
     <desc>Determine the exact context used.</desc>
-    <code><![CDATA[$("ul")
-  .append("<li>" + $("ul").context + "</li>")
-  .append("<li>" + $("ul", document.body).context.nodeName + "</li>");
-
+    <code><![CDATA[
+$( "ul" )
+  .append( "<li>" + $( "ul" ).context + "</li>")
+  .append( "<li>" + $( "ul", document.body ).context.nodeName + "</li>");
 ]]></code>
     <css><![CDATA[
-  body { cursor:pointer; }
-  div { width:50px; height:30px; margin:5px; float:left;
-        background:green; }
-  span { color:red; }
+  body { 
+    cursor: pointer; 
+  }
+  div { 
+    width: 50px; 
+    height: 30px; 
+    margin: 5px; 
+    float: left;
+    background: green; 
+  }
+  span { 
+    color: red; 
+  }
   ]]></css>
-    <html><![CDATA[Context:<ul></ul>]]></html>
+    <html><![CDATA[
+Context:<ul></ul>
+]]></html>
   </example>
   <category slug="internals"/>
   <category slug="properties/jquery-object-instance-properties"/>
