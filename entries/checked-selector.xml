@@ -21,7 +21,9 @@ countChecked();
 $( "input[type=checkbox]" ).on( "click", countChecked );
 ]]></code>
     <css><![CDATA[
-  div { color:red; }
+  div { 
+    color: red; 
+  }
   ]]></css>
     <html><![CDATA[
 <form>
@@ -46,8 +48,10 @@ $( "input" ).on( "click", function() {
 });
 ]]></code>
     <css><![CDATA[
-input, label { line-height: 1.5em; }
-]]></css>
+  input, label { 
+    line-height: 1.5em; 
+  }
+  ]]></css>
     <html><![CDATA[
 <form>
   <div>
