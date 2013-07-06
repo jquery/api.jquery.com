@@ -26,63 +26,100 @@
   </signature>
   <desc>Insert content, specified by the parameter, before each element in the set of matched elements.</desc>
   <longdesc>
-    <p>The <code>.before()</code> and <code><a href="/insertBefore">.insertBefore()</a></code> methods perform the same task. The major difference is in the syntax-specifically, in the placement of the content and target. With<code> .before()</code>, the selector expression preceding the method is the container before which the content is inserted. With <code>.insertBefore()</code>, on the other hand, the content precedes the method, either as a selector expression or as markup created on the fly, and it is inserted before the target container.</p>
+    <p>The <code>.before()</code> and <code><a href="/insertBefore">.insertBefore()</a></code> methods perform the same task. The major difference is in the syntax-specifically, in the placement of the content and target. With <code>.before()</code>, the selector expression preceding the method is the container before which the content is inserted. With <code>.insertBefore()</code>, on the other hand, the content precedes the method, either as a selector expression or as markup created on the fly, and it is inserted before the target container.</p>
     <p>Consider the following HTML:</p>
-    <pre><code>&lt;div class="container"&gt;
+    <pre><code>
+&lt;div class="container"&gt;
   &lt;h2&gt;Greetings&lt;/h2&gt;
   &lt;div class="inner"&gt;Hello&lt;/div&gt;
   &lt;div class="inner"&gt;Goodbye&lt;/div&gt;
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;
+    </code></pre>
     <p>You can create content and insert it before several elements at once:</p>
-    <pre><code>$('.inner').before('&lt;p&gt;Test&lt;/p&gt;');</code></pre>
+    <pre><code>
+$( ".inner" ).before( "&lt;p&gt;Test&lt;/p&gt;" );
+    </code></pre>
     <p>Each inner <code>&lt;div&gt;</code> element gets this new content:</p>
-    <pre><code>&lt;div class="container"&gt;
+    <pre><code>
+&lt;div class="container"&gt;
   &lt;h2&gt;Greetings&lt;/h2&gt;
   &lt;p&gt;Test&lt;/p&gt;
   &lt;div class="inner"&gt;Hello&lt;/div&gt;
   &lt;p&gt;Test&lt;/p&gt;
   &lt;div class="inner"&gt;Goodbye&lt;/div&gt;
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;
+    </code></pre>
     <p>You can also select an element on the page and insert it before another:</p>
-    <pre><code>$('.container').before($('h2'));</code></pre>
+    <pre><code>
+$( ".container" ).before( $( "h2" ) );
+    </code></pre>
     <p>If an element selected this way is inserted into a single location elsewhere in the DOM, it will be moved before the target (not cloned):</p>
-    <pre><code>&lt;h2&gt;Greetings&lt;/h2&gt;
+    <pre><code>
+&lt;h2&gt;Greetings&lt;/h2&gt;
 &lt;div class="container"&gt;
   &lt;div class="inner"&gt;Hello&lt;/div&gt;
   &lt;div class="inner"&gt;Goodbye&lt;/div&gt;
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;
+    </code></pre>
     <p>If there is more than one target element, however, cloned copies of the inserted element will be created for each target after the first.</p>
     <p>In jQuery 1.4, <code>.before()</code> and <code>.after()</code> will also work on disconnected DOM nodes:</p>
-    <pre><code>$("&lt;div/&gt;").before("&lt;p&gt;&lt;/p&gt;");</code></pre>
+    <pre><code>
+$( "&lt;div/&gt;" ).before( "&lt;p&gt;&lt;/p&gt;" );
+	</code></pre>
     <p>The result is a jQuery set that contains a paragraph and a div (in that order).</p>
     <h4 id="additional-arguments">Additional Arguments</h4>
     <p>Similar to other content-adding methods such as <code><a href="http://api.jquery.com/prepend/">.prepend()</a></code> and <code><a href="http://api.jquery.com/after/">.after()</a></code>, <code>.before()</code> also supports passing in multiple arguments as input. Supported input includes DOM elements, jQuery objects, HTML strings, and arrays of DOM elements.</p>
     <p>For example, the following will insert two new <code>&lt;div&gt;</code>s and an existing <code>&lt;div&gt;</code> before the first paragraph:</p>
-    <pre><code>var $newdiv1 = $('&lt;div id="object1"/&gt;'),
-    newdiv2 = document.createElement('div'),
-    existingdiv1 = document.getElementById('foo');
+    <pre><code>
+var $newdiv1 = $( "&lt;div id='object1'/&gt;" ),
+  newdiv2 = document.createElement( "div" ),
+  existingdiv1 = document.getElementById( "foo" );
 
-$('p').first().before($newdiv1, [newdiv2, existingdiv1]);
+$( "p" ).first().before( $newdiv1, [ newdiv2, existingdiv1 ] );
 </code></pre>
-    <p>Since <code>.before()</code> can accept any number of additional arguments, the same result can be achieved by passing in the three <code>&lt;div&gt;</code>s as three separate arguments, like so: <code>$('p').first().before($newdiv1, newdiv2, existingdiv1)</code>. The type and number of arguments will largely depend on how you collect the elements in your code.</p>
+    <p>Since <code>.before()</code> can accept any number of additional arguments, the same result can be achieved by passing in the three <code>&lt;div&gt;</code>s as three separate arguments, like so: <code>$( "p" ).first().before( $newdiv1, newdiv2, existingdiv1 )</code>. The type and number of arguments will largely depend on how you collect the elements in your code.</p>
   </longdesc>
   <example>
     <desc>Inserts some HTML before all paragraphs.</desc>
-    <code><![CDATA[$("p").before("<b>Hello</b>");]]></code>
-    <css><![CDATA[p { background:yellow; }]]></css>
-    <html><![CDATA[<p> is what I said...</p>]]></html>
+    <code><![CDATA[
+$( "p" ).before( "<b>Hello</b>" );
+]]></code>
+    <css><![CDATA[
+  p { 
+    background: yellow; 
+  }
+  ]]></css>
+    <html><![CDATA[
+<p> is what I said...</p>
+]]></html>
   </example>
   <example>
     <desc>Inserts a DOM element before all paragraphs.</desc>
-    <code><![CDATA[$("p").before( document.createTextNode("Hello") );]]></code>
-    <css><![CDATA[p { background:yellow; }]]></css>
-    <html><![CDATA[<p> is what I said...</p>]]></html>
+    <code><![CDATA[
+$( "p" ).before( document.createTextNode( "Hello" ) );
+]]></code>
+    <css><![CDATA[
+  p { 
+    background: yellow; 
+  }
+  ]]></css>
+    <html><![CDATA[
+<p> is what I said...</p>
+]]></html>
   </example>
   <example>
     <desc>Inserts a jQuery object (similar to an Array of DOM Elements) before all paragraphs.</desc>
-    <code><![CDATA[$("p").before( $("b") );]]></code>
-    <css><![CDATA[p { background:yellow; }]]></css>
-    <html><![CDATA[<p> is what I said...</p><b>Hello</b>]]></html>
+    <code><![CDATA[
+$( "p" ).before( $( "b" ) );
+]]></code>
+    <css><![CDATA[
+  p { 
+    background: yellow; 
+  }
+  ]]></css>
+    <html><![CDATA[
+<p> is what I said...</p><b>Hello</b>
+]]></html>
   </example>
   <category slug="manipulation/dom-insertion-outside"/>
   <category slug="version/1.0"/>
