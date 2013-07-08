@@ -154,8 +154,8 @@ $( "div.example" ).css( "width", function( index ) {
       <css><![CDATA[
   p { 
     color: blue; 
-    width:200px; 
-    font-size:14px; 
+    width: 200px; 
+    font-size: 14px; 
   }
   ]]></css>
       <html><![CDATA[
@@ -175,8 +175,8 @@ $( "#box" ).one( "click", function() {
   #box { 
     background: black; 
     color: snow; 
-    width:100px; 
-    padding:10px; 
+    width: 100px; 
+    padding: 10px; 
   }
   ]]></css>
       <html><![CDATA[
@@ -197,7 +197,7 @@ $( "#box" ).one( "click", function() {
   p { 
     color: blue; 
     font-weight: bold; 
-    cursor:pointer; 
+    cursor: pointer; 
   }
   ]]></css>
       <html><![CDATA[
