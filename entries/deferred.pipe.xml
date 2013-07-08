@@ -76,7 +76,6 @@ var request = $.ajax( url, { dataType: "json" } ),
 chained.done(function( data ) {
   // data retrieved from url2 as provided by the first request
 });
-
 ]]></code>
   </example>
   <category slug="deferred-object"/>

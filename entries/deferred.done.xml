@@ -21,8 +21,8 @@
   <example>
     <desc>Since the <a href="/jQuery.get"><code>jQuery.get</code></a> method returns a jqXHR object, which is derived from a Deferred object, we can attach a success callback using the <code>.done()</code> method.</desc>
     <code><![CDATA[
-$.get("test.php").done(function() {
-  alert("$.get succeeded");
+$.get( "test.php" ).done(function() {
+  alert( "$.get succeeded" );
 });
 ]]></code>
   </example>
@@ -31,13 +31,13 @@ $.get("test.php").done(function() {
     <code><![CDATA[
 /* 3 functions to call when the Deferred object is resolved */
 function fn1() {
-  $("p").append(" 1 ");
+  $( "p" ).append( " 1 " );
 }
 function fn2() {
-  $("p").append(" 2 ");
+  $( "p" ).append( " 2 " );
 }
-function fn3(n) {
-  $("p").append(n + " 3 " + n);
+function fn3( n ) {
+  $( "p" ).append( n + " 3 " + n );
 }
 
 /* create a deferred object */
@@ -46,20 +46,20 @@ var dfd = $.Deferred();
 /* add handlers to be called when dfd is resolved */
 dfd
 /* .done() can take any number of functions or arrays of functions */
-.done( [fn1, fn2], fn3, [fn2, fn1] )
+  .done( [ fn1, fn2 ], fn3, [ fn2, fn1 ] )
 /* we can chain done methods, too */
-.done(function(n) {
-  $("p").append(n + " we're done.");
-});
+  .done(function( n ) {
+    $( "p" ).append( n + " we're done." );
+  });
 
 /* resolve the Deferred object when the button is clicked */
-$("button").on("click", function() {
-  dfd.resolve("and");
+$( "button" ).on( "click", function() {
+  dfd.resolve( "and" );
 });
 ]]></code>
     <html><![CDATA[
- <button>Go</button>
- <p>Ready...</p>
+<button>Go</button>
+<p>Ready...</p>
 ]]></html>
   </example>
   <category slug="deferred-object"/>
