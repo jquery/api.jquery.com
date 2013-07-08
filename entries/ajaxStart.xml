@@ -18,7 +18,7 @@
     </code></pre>
     <p>Attach the event handler to any element:</p>
     <pre><code>
-$(document).ajaxStart(function() {
+$( document ).ajaxStart(function() {
   $( ".log" ).text( "Triggered ajaxStart handler." );
 });
     </code></pre>
