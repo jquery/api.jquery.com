@@ -23,13 +23,12 @@
       <p>The <code>.data()</code> method allows us to attach data of any type to DOM elements in a way that is safe from circular references and therefore from memory leaks.</p>
       <p> We can set several distinct values for a single element and retrieve them later:</p>
       <pre><code>
-$("body").data("foo", 52);
-$("body").data("bar", { myType: "test", count: 40 });
-$("body").data({ baz: [ 1, 2, 3 ] });
-
-$("body").data("foo"); // 52
-$("body").data(); // { foo: 52, bar: { myType: "test", count: 40 }, baz: [ 1, 2, 3 ] }
-</code></pre>
+$( "body" ).data( "foo", 52 );
+$( "body" ).data( "bar", { myType: "test", count: 40 } );
+$( "body" ).data( { baz: [ 1, 2, 3 ] } );
+$( "body" ).data( "foo" ); // 52
+$( "body" ).data(); // { foo: 52, bar: { myType: "test", count: 40 }, baz: [ 1, 2, 3 ] }
+      </code></pre>
       <p>In jQuery 1.4.3 setting an element's data object with <code>.data(obj)</code> extends the data previously stored with that element. jQuery itself uses the <code>.data()</code> method to save information under the names 'events' and 'handle', and also reserves any data name starting with an underscore ('_') for internal use.</p>
       <p>Prior to jQuery 1.4.3 (starting in jQuery 1.4) the .data() method completely replaced all data, instead of just extending the data object. If you are using third-party plugins it may not be advisable to completely replace the element's data object, since plugins may have also set data.</p>
       <p>Due to the way browsers interact with plugins and external code, the <code>.data()</code> method cannot be used on <code>&lt;object&gt;</code> (unless it's a Flash plugin), <code>&lt;applet&gt;</code> or <code>&lt;embed&gt;</code> elements.</p>
@@ -38,20 +37,26 @@ $("body").data(); // { foo: 52, bar: { myType: "test", count: 40 }, baz: [ 1, 2,
     <example>
       <desc>Store then retrieve a value from the div element.</desc>
       <code><![CDATA[
-$("div").data("test", { first: 16, last: "pizza!" });
-$("span:first").text($("div").data("test").first);
-$("span:last").text($("div").data("test").last);
+$( "div" ).data( "test", { first: 16, last: "pizza!" } );
+$( "span:first" ).text( $( "div" ).data( "test" ).first );
+$( "span:last" ).text( $( "div" ).data( "test" ).last );
 ]]></code>
       <css><![CDATA[
-  div { color:blue; }
-  span { color:red; }
+  div { 
+    color: blue;
+  }
+  span {
+    color: red;
+  }
   ]]></css>
-      <html><![CDATA[<div>
-    The values stored were
-    <span></span>
-    and
-    <span></span>
-  </div>]]></html>
+      <html><![CDATA[
+<div>
+  The values stored were
+  <span></span>
+  and
+  <span></span>
+</div>
+]]></html>
     </example>
     <category slug="data"/>
     <category slug="miscellaneous/data-storage"/>
@@ -73,15 +78,15 @@ $("span:last").text($("div").data("test").last);
     <longdesc>
       <p>The <code>.data()</code> method allows us to attach data of any type to DOM elements in a way that is safe from circular references and therefore from memory leaks. We can retrieve several distinct values for a single element one at a time, or as a set:</p>
       <pre><code>
-alert($('body').data('foo'));
-alert($('body').data());
-</code></pre>
+alert( $( "body" ).data( "foo" ) );
+alert( $( "body" ).data() );
+      </code></pre>
       <p>The above lines alert the data values that were set on the <code>body</code> element. If no data at all was set on that element, <code>undefined</code> is returned.</p>
       <pre><code>
-alert( $("body").data("foo")); //undefined
-$("body").data("bar", "foobar");
-alert( $("body").data("bar")); //foobar
-</code></pre>
+alert( $( "body" ).data( "foo" ) ); //undefined
+$( "body" ).data( "bar", "foobar" );
+alert( $( "body" ).data( "bar" ) ); //foobar
+      </code></pre>
       <h4 id="data-html5">
         <a href="#data-html5">HTML5 data-* Attributes</a>
       </h4>
@@ -89,65 +94,78 @@ alert( $("body").data("bar")); //foobar
       <p>For example, given the following HTML:</p>
       <pre><code>&lt;div data-role="page" data-last-value="43" data-hidden="true" data-options='{"name":"John"}'&gt;&lt;/div&gt;</code></pre>
       <p>All of the following jQuery code will work.</p>
-      <pre><code>$("div").data("role") === "page";
-$("div").data("lastValue") === 43;
-$("div").data("hidden") === true;
-$("div").data("options").name === "John";</code></pre>
+      <pre><code>
+$( "div" ).data( "role" ) === "page";
+$( "div" ).data( "lastValue" ) === 43;
+$( "div" ).data( "hidden" ) === true;
+$( "div" ).data( "options" ).name === "John";
+      </code></pre>
       <p>Every attempt is made to convert the string to a JavaScript value (this includes booleans, numbers, objects, arrays, and null). A value is only converted to a number if doing so doesn't change the value's representation. For example, "1E02" and "100.000" are equivalent as numbers (numeric value 100) but converting them would alter their representation so they are left as strings. The string value "100" is converted to the number 100.</p>
 	  <p>When the data attribute is an object (starts with '{') or array (starts with '[') then <code>jQuery.parseJSON</code> is used to parse the string; it must follow <a href="http://en.wikipedia.org/wiki/JSON#Data_types.2C_syntax_and_example">valid JSON syntax</a> <em>including quoted property names</em>. If the value isn't parseable as a JavaScript value, it is left as a string.</p>
 	  <p>To retrieve the value's attribute as a string without any attempt to convert it, use the <code><a href="/attr/">attr()</a></code> method.</p>
 	  <p>The data- attributes are pulled in the first time the data property is accessed and then are no longer accessed or mutated (all data values are then stored internally in jQuery).</p>
       <p>Calling <code>.data()</code> with no parameters retrieves all of the values as a JavaScript object. This object can be safely cached in a variable as long as a new object is not set with <code>.data(obj)</code>. Using the object directly to get or set values is faster than making individual calls to <code>.data()</code> to get or set each value:</p>
       <pre><code>
-var mydata = $("#mydiv").data();
+var mydata = $( "#mydiv" ).data();
 if ( mydata.count &lt; 9 ) {
-    mydata.count = 43;
-    mydata.status = "embiggened";
+  mydata.count = 43;
+  mydata.status = "embiggened";
 }
-</code></pre>
+    </code></pre>
     </longdesc>
     <note id="no-data-on-xml" type="additional"/>
     <example>
       <desc>Get the data named "blah" stored at for an element.</desc>
       <code><![CDATA[
-$("button").click(function(e) {
+$( "button" ).click(function( e ) {
   var value;
 
-  switch ($("button").index(this)) {
+  switch ( $( "button" ).index( this ) ) {
     case 0 :
-      value = $("div").data("blah");
+      value = $( "div" ).data( "blah" );
       break;
     case 1 :
-      $("div").data("blah", "hello");
+      $( "div" ).data( "blah", "hello" );
       value = "Stored!";
       break;
     case 2 :
-      $("div").data("blah", 86);
+      $( "div" ).data( "blah", 86 );
       value = "Stored!";
       break;
     case 3 :
-      $("div").removeData("blah");
+      $( "div" ).removeData( "blah" );
       value = "Removed!";
       break;
   }
 
-  $("span").text("" + value);
+  $( "span" ).text( "" + value );
 });
-
 ]]></code>
       <css><![CDATA[
-  div { margin:5px; background:yellow; }
-  button { margin:5px; font-size:14px; }
-  p { margin:5px; color:blue; }
-  span { color:red; }
+  div { 
+    margin: 5px; 
+    background: yellow; 
+  }
+  button { 
+    margin: 5px; 
+    font-size: 14px; 
+  }
+  p { 
+    margin: 5px; 
+    color: blue; 
+  }
+  span { 
+    color: red; 
+  }
   ]]></css>
-      <html><![CDATA[<div>A div</div>
-  <button>Get "blah" from the div</button>
-  <button>Set "blah" to "hello"</button>
-
-  <button>Set "blah" to 86</button>
-  <button>Remove "blah" from the div</button>
-  <p>The "blah" value of this div is <span>?</span></p>]]></html>
+      <html><![CDATA[
+<div>A div</div>
+<button>Get "blah" from the div</button>
+<button>Set "blah" to "hello"</button>
+<button>Set "blah" to 86</button>
+<button>Remove "blah" from the div</button>
+<p>The "blah" value of this div is <span>?</span></p>
+]]></html>
     </example>
     <category slug="data"/>
     <category slug="miscellaneous/data-storage"/>

@@ -21,9 +21,9 @@
   <example>
     <desc>Since the <a href="http://api.jquery.com/jQuery.get/"><code>jQuery.get()</code></a> method returns a <code>jqXHR</code> object, which is derived from a Deferred object, we can attach a callback for both success and error using the <code>deferred.always()</code> method.</desc>
     <code><![CDATA[
-$.get("test.php").always( function() {
-  alert("$.get completed with success or error callback arguments");
-} );
+$.get( "test.php" ).always(function() {
+  alert( "$.get completed with success or error callback arguments" );
+});
 ]]></code>
   </example>
   <category slug="deferred-object"/>

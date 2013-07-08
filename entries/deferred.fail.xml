@@ -21,9 +21,13 @@
   <example>
     <desc>Since the <a href="http://api.jquery.com/jQuery.get/"><code>jQuery.get</code></a> method returns a jqXHR object, which is derived from a Deferred, you can attach a success and failure callback using the <code>deferred.done()</code> and <code>deferred.fail()</code> methods.</desc>
     <code><![CDATA[
-$.get("test.php")
-  .done(function(){ alert("$.get succeeded"); })
-  .fail(function(){ alert("$.get failed!"); });
+$.get( "test.php" )
+  .done(function(){ 
+    alert( "$.get succeeded" ); 
+  })
+  .fail(function(){ 
+    alert( "$.get failed!" );
+  });
 ]]></code>
   </example>
   <category slug="deferred-object"/>

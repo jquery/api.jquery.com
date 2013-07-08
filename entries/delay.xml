@@ -15,7 +15,9 @@
     <p>Added to jQuery in version 1.4, the <code>.delay()</code> method allows us to delay the execution of functions that follow it in the queue. It can be used with the standard effects queue or with a custom queue. Only subsequent events in a queue are delayed; for example this will <em>not</em> delay the no-arguments forms of <code>.show()</code> or <code>.hide()</code>  which do not use the effects queue.</p>
     <p>Durations are given in milliseconds; higher values indicate slower animations, not faster ones. The strings <code>'fast'</code> and <code>'slow'</code> can be supplied to indicate durations of 200 and 600 milliseconds, respectively.</p>
     <p>Using the standard effects queue, we can, for example, set an 800-millisecond delay between the <code>.slideUp()</code> and <code>.fadeIn()</code> of <code>&lt;div id="foo"&gt;</code>:</p>
-    <pre><code>$('#foo').slideUp(300).delay(800).fadeIn(400);</code></pre>
+    <pre><code>
+$( "#foo" ).slideUp( 300 ).delay( 800 ).fadeIn( 400 );
+    </code></pre>
     <p>When this statement is executed, the element slides up for 300 milliseconds and then pauses for 800 milliseconds before fading in for 400 milliseconds.</p>
     <div class="warning">
       <p>
@@ -26,19 +28,32 @@
   <example>
     <desc>Animate the hiding and showing of two divs, delaying the first before showing it.</desc>
     <css><![CDATA[
-div { position: absolute; width: 60px; height: 60px; float: left; }
-.first { background-color: #3f3; left: 0;}
-.second { background-color: #33f; left: 80px;}
-]]></css>
+  div { 
+    position: absolute; 
+    width: 60px; 
+    height: 60px; 
+    float: left; 
+  }
+  .first {
+    background-color: #3f3;
+    left: 0;
+  }
+  .second {
+    background-color: #33f; 
+    left: 80px;
+  }
+  ]]></css>
     <code><![CDATA[
-    $("button").click(function() {
-      $("div.first").slideUp(300).delay(800).fadeIn(400);
-      $("div.second").slideUp(300).fadeIn(400);
-    });]]></code>
+$( "button" ).click(function() {
+  $( "div.first" ).slideUp( 300 ).delay( 800 ).fadeIn( 400 );
+  $( "div.second" ).slideUp( 300 ).fadeIn( 400 );
+});
+]]></code>
     <html><![CDATA[
 <p><button>Run</button></p>
 <div class="first"></div>
-<div class="second"></div>]]></html>
+<div class="second"></div>
+]]></html>
   </example>
   <category slug="effects/custom-effects"/>
   <category slug="version/1.4"/>

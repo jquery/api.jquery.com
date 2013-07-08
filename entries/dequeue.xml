@@ -14,24 +14,34 @@
   <example>
     <desc>Use dequeue to end a custom queue function which allows the queue to keep going.</desc>
     <code><![CDATA[
-$("button").click(function () {
-  $("div").animate({left:'+=200px'}, 2000);
-  $("div").animate({top:'0px'}, 600);
-  $("div").queue(function () {
-    $(this).toggleClass("red");
-    $(this).dequeue();
+$( "button" ).click(function () {
+  $( "div" ).animate({ left:"+=200px" }, 2000 );
+  $( "div" ).animate({ top:"0px" }, 600 );
+  $( "div" ).queue(function () {
+    $( this ).toggleClass( "red" );
+    $( this ).dequeue();
   });
-  $("div").animate({left:'10px', top:'30px'}, 700);
+  $( "div" ).animate({ left:"10px", top:"30px" }, 700 );
 });
 ]]></code>
     <css><![CDATA[
-  div { margin:3px; width:50px; position:absolute;
-  height:50px; left:10px; top:30px;
-  background-color:yellow; }
-  div.red { background-color:red; }
-]]></css>
-    <html><![CDATA[<button>Start</button>
-<div></div>]]></html>
+  div { 
+    margin: 3px;
+    width: 50px;
+    position: absolute;
+    height: 50px;
+    left: 10px;
+    top: 30px;
+    background-color: yellow; 
+  }
+  div.red { 
+    background-color: red;
+  }
+  ]]></css>
+    <html><![CDATA[
+<button>Start</button>
+<div></div>
+]]></html>
   </example>
   <category slug="effects/custom-effects"/>
   <category slug="data"/>
