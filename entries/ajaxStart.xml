@@ -34,7 +34,8 @@ $( ".trigger" ).click(function() {
   <note id="ajax-global-false" type="additional" data-title=".ajaxStart()"/>
   <example>
     <desc>Show a loading message whenever an Ajax request starts (and none is already active).</desc>
-    <code><![CDATA[$(document).ajaxStart(function() {
+    <code><![CDATA[
+$( document ).ajaxStart(function() {
    $( "#loading" ).show();
  });]]></code>
   </example>
