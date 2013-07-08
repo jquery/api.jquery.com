@@ -54,7 +54,7 @@ $( "#clickme" ).click(function() {
     // Animation complete.
   });
 });
-</code></pre>
+    </code></pre>
     <p class="image">
       <img src="/resources/animate-1.jpg" alt=""/>
     </p>
@@ -72,8 +72,7 @@ $( "#clickme" ).click(function() {
       <p><strong>Note:</strong> if attempting to animate an element with a height or width of 0px, where contents of the element are visible due to overflow, jQuery may clip this overflow during animation. By fixing the dimensions of the original element being hidden however, it is possible to ensure that the animation runs smoothly. A <a href="http://www.google.com/search?q=clearfix">clearfix</a> can be used to automatically fix the dimensions of your main element without the need to set this manually.</p>
     </div>
     <h4 id="step">Step Function</h4>
-    <p>The second version of <code>.animate()</code> provides a <code>step</code> option &#x2014; a callback function that is fired at each step of the animation. This function is useful for enabling custom animation types or altering the animation as it is occurring. It accepts two arguments (<code>now</code> and <code>fx</code>), and <code>this</code> is set to the DOM element being animated.
-</p>
+    <p>The second version of <code>.animate()</code> provides a <code>step</code> option &#x2014; a callback function that is fired at each step of the animation. This function is useful for enabling custom animation types or altering the animation as it is occurring. It accepts two arguments (<code>now</code> and <code>fx</code>), and <code>this</code> is set to the DOM element being animated.</p>
     <ul>
       <li><code>now</code>: the numeric value of the property being animated at each step</li>
       <li><code>fx</code>: a reference to the <code>jQuery.fx</code> prototype object, which contains a number of properties such as <code>elem</code> for the animated element, <code>start</code> and <code>end</code> for the first and last value of the animated property, respectively, and <code>prop</code> for the property being animated.</li>
@@ -83,13 +82,13 @@ $( "#clickme" ).click(function() {
 $( "li" ).animate({
   opacity: .5,
   height: "50%"
-  },
-  {
+  }, {
   step: function( now, fx ) {
     var data = fx.elem.id + " " + fx.prop + ": " + now;
     $( "body" ).append( "&lt;div&gt;" + data + "&lt;/div&gt;" );
   }
-});</code></pre>
+});
+    </code></pre>
     <h4 id="easing">Easing</h4>
     <p>The remaining parameter of <code>.animate()</code> is a string naming an easing function to use. An easing function specifies the speed at which the animation progresses at different points within the animation. The only easing implementations in the jQuery library are the default, called <code>swing</code>, and one that progresses at a constant pace, called <code>linear</code>. More easing functions are available with the use of plug-ins, most notably the <a href="http://jqueryui.com/">jQuery UI suite</a>.</p>
     <h4 id="per-property-easing">Per-property Easing</h4>
@@ -102,17 +101,17 @@ $( "#clickme" ).click(function() {
     height: [ "toggle", "swing" ],
     opacity: "toggle"
   }, 5000, "linear", function() {
-      $( this ).after( "&lt;div&gt;Animation complete.&lt;/div&gt;" );
+    $( this ).after( "&lt;div&gt;Animation complete.&lt;/div&gt;" );
   });
-});</code></pre>
+});
+    </code></pre>
     <p>In the second version of <code>.animate()</code>, the options object can include the <code>specialEasing</code> property, which is itself an object of CSS properties and their corresponding easing functions.  For example, to simultaneously animate the width using the <code>linear</code> easing function and the height using the <code>easeOutBounce</code> easing function:</p>
     <pre><code>
 $( "#clickme" ).click(function() {
   $( "#book" ).animate({
     width: "toggle",
     height: "toggle"
-  }, 
-  {
+  }, {
     duration: 5000,
     specialEasing: {
       width: "linear",
@@ -130,7 +129,6 @@ $( "#clickme" ).click(function() {
   <example>
     <desc>Click the button to animate the div with a number of different properties.</desc>
     <code><![CDATA[
-
 /* Using multiple unit types within one animation. */
 
 $( "#go" ).click(function(){
@@ -145,7 +143,6 @@ $( "#go" ).click(function(){
 ]]></code>
     <html><![CDATA[
 <button id="go">&raquo; Run</button>
-
 <div id="block">Hello!</div>
 ]]></html>
     <css><![CDATA[
@@ -154,7 +151,7 @@ $( "#go" ).click(function(){
     width: 100px;
     border: 1px solid green;
   }
-]]></css>
+  ]]></css>
   </example>
   <example>
     <desc>Animates a div's left property with a relative value. Click several times on the buttons to see the relative animations queued up.</desc>
@@ -166,7 +163,6 @@ $( "#right" ).click(function(){
 $( "#left" ).click(function(){
   $( ".block" ).animate({ "left": "-=50px" }, "slow" );
 });
-
 ]]></code>
     <html><![CDATA[
 <button id="left">&laquo;</button> 
@@ -181,8 +177,8 @@ $( "#left" ).click(function(){
     width: 90px;
     height: 90px;
     margin: 5px;
- }
-]]></css>
+  }
+  ]]></css>
   </example>
   <example>
     <desc>The first button shows how an unqueued animation works.  It expands the div out to 90% width <strong>while</strong> the font-size is increasing. Once the font-size change is complete, the border animation will begin.
@@ -192,18 +188,17 @@ The second button starts a traditional chained animation, where each animation w
 $( "#go1" ).click(function(){
   $( "#block1" ).animate({ 
     width: "90%" 
-  }, 
-  { 
+  }, { 
     queue: false, 
     duration: 3000 
   }).animate({ fontSize: "24px" }, 1500 )
-	.animate({ borderRightWidth: "15px" }, 1500 );
+    .animate({ borderRightWidth: "15px" }, 1500 );
 });
 
 $( "#go2" ).click(function(){
   $( "#block2" ).animate({ width: "90%" }, 1000 )
-     .animate({ fontSize: "24px" }, 1000 )
-     .animate({ borderLeftWidth: "15px" }, 1000 );
+    .animate({ fontSize: "24px" }, 1000 )
+    .animate({ borderLeftWidth: "15px" }, 1000 );
 });
 
 $( "#go3" ).click(function(){
@@ -217,29 +212,29 @@ $( "#go4" ).click(function(){
     borderWidth: "" 
   });
 });
-
 ]]></code>
-    <html><![CDATA[<button id="go1">&raquo; Animate Block1</button>
+    <html><![CDATA[
+<button id="go1">&raquo; Animate Block1</button>
 <button id="go2">&raquo; Animate Block2</button>
 <button id="go3">&raquo; Animate Both</button>
-
 <button id="go4">&raquo; Reset</button>
 <div id="block1">Block1</div>
-<div id="block2">Block2</div>]]></html>
+<div id="block2">Block2</div>
+]]></html>
     <css><![CDATA[
-div {
-  background-color: #bca;
-  width: 200px;
-  height: 1.1em;
-  text-align: center;
-  border: 2px solid green;
-  margin: 3px;
-  font-size: 14px;
-}
-button {
-  font-size: 14px;
-}
-]]></css>
+  div {
+    background-color: #bca;
+    width: 200px;
+    height: 1.1em;
+    text-align: center;
+    border: 2px solid green;
+    margin: 3px;
+    font-size: 14px;
+  }
+  button {
+    font-size: 14px;
+  }
+  ]]></css>
   </example>
   <example>
     <desc>Animates the first div's left property and synchronizes the remaining divs, using the step function to set their left properties at each stage of the animation. </desc>
@@ -247,8 +242,7 @@ button {
 $( "#go" ).click(function(){
   $( ".block:first" ).animate({
     left: 100
-  }, 
-  {
+  }, {
     duration: 1000,
     step: function( now, fx ){
       $( ".block:gt(0)" ).css( "left", now );
@@ -257,15 +251,15 @@ $( "#go" ).click(function(){
 });
 ]]></code>
     <css><![CDATA[
-div {
-   position: relative;
-   background-color: #abc;
-   width: 40px;
-   height: 40px;
-   float: left;
-   margin: 5px;
-}
-]]></css>
+  div {
+    position: relative;
+    background-color: #abc;
+    width: 40px;
+    height: 40px;
+    float: left;
+    margin: 5px;
+  }
+  ]]></css>
     <html><![CDATA[
 <p><button id="go">Run »</button></p>
 <div class="block"></div> <div class="block"></div>
@@ -277,30 +271,29 @@ div {
     <desc>Animate all paragraphs to toggle both height and opacity, completing the animation within 600 milliseconds.</desc>
     <code><![CDATA[
 $( "p" ).animate({
-    height: "toggle", 
-    opacity: "toggle"
-  }, "slow" );
+  height: "toggle", 
+  opacity: "toggle"
+}, "slow" );
 ]]></code>
   </example>
   <example>
     <desc>Animate all paragraphs to a left style of 50 and opacity of 1 (opaque, visible), completing the animation within 500 milliseconds.</desc>
     <code><![CDATA[
 $( "p" ).animate({
-    left: 50, 
-    opacity: 1
-  }, 500 );
+  left: 50, 
+  opacity: 1
+}, 500 );
 ]]></code>
   </example>
   <example>
     <desc>Animate the left and opacity style properties of all paragraphs; run the animation <em>outside</em> the queue, so that it will automatically start without waiting for its turn.</desc>
     <code><![CDATA[
 $( "p" ).animate({
-    left: "50px", 
-    opacity: 1
-  }, 
-  { 
-    duration: 500, 
-    queue: false 
+  left: "50px", 
+  opacity: 1
+}, { 
+  duration: 500, 
+  queue: false 
 });
 ]]></code>
   </example>
@@ -316,11 +309,10 @@ $( "p" ).animate({
     <desc>Animates all paragraphs to toggle both height and opacity, completing the animation within 600 milliseconds.</desc>
     <code><![CDATA[
 $( "p" ).animate({
-    height: "toggle", 
-    opacity: "toggle"
-  }, 
-  { 
-    duration: "slow" 
+  height: "toggle", 
+  opacity: "toggle"
+}, { 
+  duration: "slow" 
 });
 ]]></code>
   </example>
@@ -328,12 +320,11 @@ $( "p" ).animate({
     <desc>Use an easing function to provide a different style of animation. This will only work if you have a plugin that provides this easing function.</desc>
     <code><![CDATA[
 $( "p" ).animate({
-    opacity: "show"
-  }, 
-  { 
-    duration: "slow", 
-    easing: "easein" 
-  });
+  opacity: "show"
+}, { 
+  duration: "slow", 
+  easing: "easein" 
+});
 ]]></code>
   </example>
   <example>
