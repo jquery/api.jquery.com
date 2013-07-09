@@ -14,23 +14,34 @@
   <example>
     <desc>Detach all paragraphs from the DOM</desc>
     <code><![CDATA[
-    $("p").click(function(){
-      $(this).toggleClass("off");
-    });
-    var p;
-    $("button").click(function(){
-      if ( p ) {
-        p.appendTo("body");
-        p = null;
-      } else {
-        p = $("p").detach();
-      }
-    });]]></code>
-    <css><![CDATA[p { background:yellow; margin:6px 0; } p.off { background: black; }]]></css>
-    <html><![CDATA[<p>Hello</p>
-  how are
-  <p>you?</p>
-  <button>Attach/detach paragraphs</button>]]></html>
+$( "p" ).click(function() {
+  $( this ).toggleClass( "off" );
+});
+var p;
+$( "button" ).click(function() {
+  if ( p ) {
+    p.appendTo( "body" );
+    p = null;
+  } else {
+    p = $( "p" ).detach();
+  }
+});
+]]></code>
+    <css><![CDATA[
+  p {
+    background: yellow;
+    margin: 6px 0;
+  }
+  p.off {
+    background: black;
+  }
+]]></css>
+    <html><![CDATA[
+<p>Hello</p>
+how are
+<p>you?</p>
+<button>Attach/detach paragraphs</button>
+]]></html>
   </example>
   <category slug="manipulation/dom-removal"/>
   <category slug="version/1.4"/>

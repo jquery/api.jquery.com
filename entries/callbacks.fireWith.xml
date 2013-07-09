@@ -12,27 +12,28 @@
   </signature>
   <desc>Call all callbacks in a list with the given context and arguments.</desc>
   <longdesc>
-    <p>This method returns the Callbacks object onto which it is attached (<code>this</code>). </p>
-    <h2 id="example-1">Example</h2>
-    <p>Use <code>callbacks.fireWith()</code> to fire a list of callbacks with a specific context and an array of arguments:</p>
-    <pre><code><![CDATA[// a sample logging function to be added to a callbacks list
+    <p>This method returns the Callbacks object onto which it is attached (<code>this</code>).</p>
+  </longdesc>
+  <example>
+    <desc>Use <code>callbacks.fireWith()</code> to fire a list of callbacks with a specific context and an array of arguments:</desc>
+    <code><![CDATA[
+// A sample logging function to be added to a callbacks list
 var log = function( value1, value2 ) {
   console.log( "Received: " + value1 + "," + value2 );
 };
 
 var callbacks = $.Callbacks();
 
-// add the log method to the callbacks list
+// Add the log method to the callbacks list
 callbacks.add( log );
 
-// fire the callbacks on the list using the context "window"
+// Fire the callbacks on the list using the context "window"
 // and an arguments array
 
 callbacks.fireWith( window, [ "foo","bar" ] );
-
-// outputs: "Received: foo, bar"
-]]></code></pre>
-  </longdesc>
+// Outputs: "Received: foo, bar"
+]]></code>
+  </example>
   <category slug="callbacks-object"/>
   <category slug="version/1.7"/>
 </entry>

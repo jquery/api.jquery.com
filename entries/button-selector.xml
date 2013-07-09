@@ -15,27 +15,28 @@
     <code><![CDATA[
 var input = $( ":button" ).addClass( "marked" );
 $( "div" ).text( "For this type jQuery found " + input.length + "." );
-$( "form" ).submit(function () { 
-  return false; 
-}); // so it won't submit
+// Prevent the form from submitting
+$( "form" ).submit(function( event ) {
+  event.preventDefault();
+});
 ]]></code>
     <css><![CDATA[
-  textarea { 
-    height: 35px; 
+  textarea {
+    height: 35px;
   }
-  div { 
-    color: red; 
+  div {
+    color: red;
   }
-  fieldset { 
-    margin: 0; 
-    padding: 0; 
-    border-width: 0; 
+  fieldset {
+    margin: 0;
+    padding: 0;
+    border-width: 0;
   }
-  .marked { 
-    background-color: yellow; 
-    border: 3px red solid; 
+  .marked {
+    background-color: yellow;
+    border: 3px red solid;
   }
-  ]]></css>
+]]></css>
     <html><![CDATA[
 <form>
   <fieldset>
@@ -52,7 +53,9 @@ $( "form" ).submit(function () {
 
     <input type="submit">
     <input type="text">
-    <select><option>Option</option></select>
+    <select>
+      <option>Option</option>
+    </select>
 
     <textarea></textarea>
     <button>Button</button>

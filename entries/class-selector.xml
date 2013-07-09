@@ -23,7 +23,7 @@ $( ".myClass" ).css( "border", "3px solid red" );
 <span class="myClass">span class="myClass"</span>
 ]]></html>
     <css><![CDATA[
-  div,span {
+  div, span {
     width: 120px;
     height: 40px;
     float: left;
@@ -31,7 +31,7 @@ $( ".myClass" ).css( "border", "3px solid red" );
     margin: 10px;
     background-color: #EEEEEE;
   }
-  ]]></css>
+]]></css>
   </example>
   <example>
     <desc>Finds the element with both "myclass" and "otherclass" classes.</desc>
@@ -44,7 +44,7 @@ $( ".myclass.otherclass" ).css( "border", "13px solid red" );
 <span class="myclass otherclass">span class="myClass"</span>
 ]]></html>
     <css><![CDATA[
-  div,span {
+  div, span {
     width: 120px;
     height: 40px;
     float: left;
@@ -52,7 +52,7 @@ $( ".myclass.otherclass" ).css( "border", "13px solid red" );
     margin: 10px;
     background-color: #EEEEEE;
   }
-  ]]></css>
+]]></css>
   </example>
   <category slug="selectors/basic-css-selectors"/>
   <category slug="version/1.0"/>

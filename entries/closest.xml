@@ -83,7 +83,7 @@
       <pre><code>
 $( "li.item-a" )
   .closest( "ul" )
-  .css("background-color", "red" );
+  .css( "background-color", "red" );
       </code></pre>
       <p>This will change the color of the level-2 <code>&lt;ul&gt;</code>, since it is the first encountered when traveling up the DOM tree.</p>
       <p>Suppose we search for an <code>&lt;li&gt;</code> element instead:</p>
@@ -100,50 +100,53 @@ $( "li.item-a" )
   .closest( "ul", listItemII )
   .css( "background-color", "red" );
 $( "li.item-a" )
-  .closest('#one', listItemII )
-  .css( "background-color", "green" );</code></pre>
+  .closest( "#one", listItemII )
+  .css( "background-color", "green" );
+      </code></pre>
       <p>This will change the color of the level-2 <code>&lt;ul&gt;</code>, because it is both the first <code>&lt;ul&gt;</code> ancestor of list item A and a descendant of list item II. It will not change the color of the level-1 <code>&lt;ul&gt;</code>, however, because it is not a descendant of list item II.</p>
     </longdesc>
     <example>
       <desc>Show how event delegation can be done with closest. The closest list element toggles a yellow background when it or its descendent is clicked.</desc>
       <code><![CDATA[
-  $( document ).on( "click", function( e ) {
-    $( e.target ).closest( "li" ).toggleClass( "hilight" );
-  });
+$( document ).on( "click", function( event ) {
+  $( event.target ).closest( "li" ).toggleClass( "hilight" );
+});
 ]]></code>
       <css><![CDATA[
-  li { 
-    margin: 3px; 
-    padding: 3px; 
-    background: #EEEEEE; 
+  li {
+    margin: 3px;
+    padding: 3px;
+    background: #EEEEEE;
   }
-  li.hilight { 
-    background: yellow; 
+  li.hilight {
+    background: yellow;
   }
-  ]]></css>
-      <html><![CDATA[<ul>
-    <li><b>Click me!</b></li>
-    <li>You can also <b>Click me!</b></li>
-  </ul>]]></html>
+]]></css>
+      <html><![CDATA[
+<ul>
+  <li><b>Click me!</b></li>
+  <li>You can also <b>Click me!</b></li>
+</ul>
+]]></html>
     </example>
     <example>
       <desc>Pass a jQuery object to closest. The closest list element toggles a yellow background when it or its descendent is clicked.</desc>
       <code><![CDATA[
-  var $listElements = $( "li" ).css( "color", "blue" );
-  $( document ).on( "click", function( e ) {
-    $( e.target ).closest( $listElements ).toggleClass( "hilight" );
-  });
+var listElements = $( "li" ).css( "color", "blue" );
+$( document ).on( "click", function( event ) {
+  $( event.target ).closest( listElements ).toggleClass( "hilight" );
+});
 ]]></code>
       <css><![CDATA[
-  li { 
-    margin: 3px; 
-    padding: 3px; 
-    background: #EEEEEE; 
+  li {
+    margin: 3px;
+    padding: 3px;
+    background: #EEEEEE;
   }
-  li.hilight { 
-    background: yellow; 
+  li.hilight {
+    background: yellow;
   }
-  ]]></css>
+]]></css>
       <html><![CDATA[
 <ul>
   <li><b>Click me!</b></li>

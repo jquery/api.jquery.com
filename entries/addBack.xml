@@ -21,9 +21,10 @@
 &lt;/ul&gt;
     </code></pre>
     <p>The result of the following code is a red background behind items 3, 4 and 5:</p>
-    <pre><code>$( "li.third-item" ).nextAll().addBack()
+    <pre><code>
+$( "li.third-item" ).nextAll().addBack()
   .css( "background-color", "red" );
-</code></pre>
+    </code></pre>
     <p>First, the initial selector locates item 3, initializing the stack with the set containing just this item. The call to <code>.nextAll()</code> then pushes the set of items 4 and 5 onto the stack. Finally, the <code>.addBack()</code> invocation merges these two sets together, creating a jQuery object that points to all three items in document order: <code>{[&lt;li.third-item&gt;,&lt;li&gt;,&lt;li&gt; ]}</code>.</p>
   </longdesc>
   <example>
@@ -39,8 +40,8 @@ $( "div.after-addback" ).find( "p" ).addBack().addClass( "background" );
 ]]></code>
     <css><![CDATA[
   p, div {
-    margin: 5px; 
-    padding: 5px; 
+    margin: 5px;
+    padding: 5px;
   }
   .border {
     border: 2px solid red;
@@ -49,13 +50,13 @@ $( "div.after-addback" ).find( "p" ).addBack().addClass( "background" );
     background: yellow;
   }
   .left, .right {
-    width: 45%; 
+    width: 45%;
     float: left;
   }
   .right {
     margin-left: 3%;
   }
-  ]]></css>
+]]></css>
     <html><![CDATA[
 <div class="left">
   <p><strong>Before <code>addBack()</code></strong></p>

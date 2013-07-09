@@ -65,24 +65,24 @@ $( "table" ).on( "click", "td", function() {
   <example>
     <desc>Click a paragraph to add another. Note that .delegate() attaches a click event handler to all paragraphs - even new ones.</desc>
     <code><![CDATA[
-$( "body" ).delegate( "p", "click", function(){
+$( "body" ).delegate( "p", "click", function() {
   $( this ).after( "<p>Another paragraph!</p>" );
 });
 ]]></code>
     <css><![CDATA[
-  p { 
+  p {
     background: yellow;
     font-weight: bold;
     cursor: pointer;
     padding: 5px;
   }
-  p.over { 
-    background: #ccc; 
+  p.over {
+    background: #ccc;
   }
-  span { 
-    color: red; 
+  span {
+    color: red;
   }
-  ]]></css>
+]]></css>
     <html><![CDATA[
 <p>Click me!</p>
 
@@ -92,7 +92,7 @@ $( "body" ).delegate( "p", "click", function(){
   <example>
     <desc>To display each paragraph's text in an alert box whenever it is clicked:</desc>
     <code><![CDATA[
-$( "body" ).delegate( "p", "click", function(){
+$( "body" ).delegate( "p", "click", function() {
   alert( $( this ).text() );
 });
 ]]></code>
@@ -100,15 +100,15 @@ $( "body" ).delegate( "p", "click", function(){
   <example>
     <desc>To cancel a default action and prevent it from bubbling up, return false:</desc>
     <code><![CDATA[
-$( "body" ).delegate( "a", "click", function() { 
-  return false; 
+$( "body" ).delegate( "a", "click", function() {
+  return false;
 });
 ]]></code>
   </example>
   <example>
     <desc>To cancel only the default action by using the preventDefault method.</desc>
     <code><![CDATA[
-$( "body" ).delegate( "a", "click", function( event ){
+$( "body" ).delegate( "a", "click", function( event ) {
   event.preventDefault();
 });
 ]]></code>
@@ -116,24 +116,27 @@ $( "body" ).delegate( "a", "click", function( event ){
   <example>
     <desc>Can bind custom events too.</desc>
     <code><![CDATA[
-$( "body" ).delegate( "p", "myCustomEvent", function( e, myName, myValue ){
+$( "body" ).delegate( "p", "myCustomEvent", function( e, myName, myValue ) {
   $( this ).text( "Hi there!" );
-  $( "span" ).stop().css( "opacity", 1 )
+  $( "span" )
+    .stop()
+    .css( "opacity", 1 )
     .text( "myName = " + myName )
-    .fadeIn( 30 ).fadeOut( 1000 );
+    .fadeIn( 30 )
+    .fadeOut( 1000 );
 });
-$( "button" ).click(function () {
+$( "button" ).click(function() {
   $( "p" ).trigger( "myCustomEvent" );
 });
 ]]></code>
     <css><![CDATA[
-  p { 
+  p {
     color: red;
   }
   span {
     color: blue;
   }
-  ]]></css>
+]]></css>
     <html><![CDATA[
 <p>Has an attached custom event.</p>
 <button>Trigger custom event</button>

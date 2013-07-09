@@ -5,27 +5,28 @@
     <added>1.7</added>
   </signature>
   <desc>Determine if the callbacks have already been called at least once.</desc>
-  <longdesc>
-    <h2 id="example-1">Example</h2>
-    <p>Use <code>callbacks.fired()</code> to determine if the callbacks in a list have been called at least once:</p>
-    <pre><code><![CDATA[// a sample logging function to be added to a callbacks list
+  <longdesc/>
+  <example>
+    <desc>Use <code>callbacks.fired()</code> to determine if the callbacks in a list have been called at least once:</desc>
+    <code><![CDATA[
+// A sample logging function to be added to a callbacks list
 var foo = function( value ) {
   console.log( "foo:" + value );
 };
 
 var callbacks = $.Callbacks();
 
-// add the function "foo" to the list
+// Add the function "foo" to the list
 callbacks.add( foo );
 
-// fire the items on the list
-callbacks.fire( "hello" ); // outputs: "foo: hello"
-callbacks.fire( "world" ); // outputs: "foo: world"
+// Fire the items on the list
+callbacks.fire( "hello" ); // Outputs: "foo: hello"
+callbacks.fire( "world" ); // Outputs: "foo: world"
 
-// test to establish if the callbacks have been called
+// Test to establish if the callbacks have been called
 console.log( callbacks.fired() );
-]]></code></pre>
-  </longdesc>
+]]></code>
+  </example>
   <category slug="callbacks-object"/>
   <category slug="version/1.7"/>
 </entry>

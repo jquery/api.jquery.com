@@ -28,21 +28,21 @@ $( "#foo" ).slideUp( 300 ).delay( 800 ).fadeIn( 400 );
   <example>
     <desc>Animate the hiding and showing of two divs, delaying the first before showing it.</desc>
     <css><![CDATA[
-  div { 
-    position: absolute; 
-    width: 60px; 
-    height: 60px; 
-    float: left; 
+  div {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    float: left;
   }
   .first {
     background-color: #3f3;
     left: 0;
   }
   .second {
-    background-color: #33f; 
+    background-color: #33f;
     left: 80px;
   }
-  ]]></css>
+]]></css>
     <code><![CDATA[
 $( "button" ).click(function() {
   $( "div.first" ).slideUp( 300 ).delay( 800 ).fadeIn( 400 );

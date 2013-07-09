@@ -22,22 +22,30 @@ $( "form input" ).css( "border", "2px dotted blue" );
 $( "form fieldset input" ).css( "backgroundColor", "yellow" );
 ]]></code>
     <css><![CDATA[
-
-  body { font-size: 14px; }
-  form { border: 2px green solid; padding: 2px;
-         margin: 0; background: #efe; }
-  div { color: red; }
-  fieldset { margin: 1px; padding: 3px; }
-  ]]></css>
-    <html><![CDATA[<form>
+  form {
+    border: 2px green solid;
+    padding: 2px;
+    margin: 0;
+    background: #efe;
+  }
+  div {
+    color: red;
+  }
+  fieldset {
+    margin: 1px;
+    padding: 3px;
+  }
+]]></css>
+    <html><![CDATA[
+<form>
   <div>Form is surrounded by the green border.</div>
 
-  <label>Child of form:</label>
-  <input name="name">
+  <label for="name">Child of form:</label>
+  <input name="name" id="name">
 
   <fieldset>
-    <label>Grandchild of form, child of fieldset:</label>
-    <input name="newsletter">
+    <label for="newsletter">Grandchild of form, child of fieldset:</label>
+    <input name="newsletter" id="newsletter">
   </fieldset>
 </form>
 Sibling to form: <input name="none">

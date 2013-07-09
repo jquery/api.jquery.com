@@ -70,10 +70,10 @@
     <desc>Since the <a href="/jQuery.get"><code>jQuery.get</code></a> method returns a jqXHR object, which is derived from a Deferred object, we can attach handlers using the <code>.then</code> method.</desc>
     <code><![CDATA[
 $.get( "test.php" ).then(
-  function(){ 
-    alert( "$.get succeeded" ); 
-  }, function(){ 
-    alert( "$.get failed!" ); 
+  function() {
+    alert( "$.get succeeded" );
+  }, function() {
+    alert( "$.get failed!" );
   }
 );
 ]]></code>
@@ -86,11 +86,10 @@ $.get( "test.php" ).then(
 ]]></html>
     <code><![CDATA[
 var filterResolve = function() {
-
   var defer = $.Deferred(),
-      filtered = defer.then(function( value ) {
-        return value * 2;
-      });
+    filtered = defer.then(function( value ) {
+      return value * 2;
+    });
 
   defer.resolve( 5 );
   filtered.done(function( value ) {
@@ -100,15 +99,14 @@ var filterResolve = function() {
 
 $( "button" ).on( "click", filterResolve );
 ]]></code>
-
   </example>
   <example>
     <desc>Filter reject value:</desc>
     <code><![CDATA[
 var defer = $.Deferred(),
-    filtered = defer.then( null, function( value ) {
-      return value * 3;
-    });
+  filtered = defer.then( null, function( value ) {
+    return value * 3;
+  });
 
 defer.reject( 6 );
 filtered.fail(function( value ) {
@@ -120,9 +118,9 @@ filtered.fail(function( value ) {
     <desc>Chain tasks:</desc>
     <code><![CDATA[
 var request = $.ajax( url, { dataType: "json" } ),
-    chained = request.then(function( data ) {
-      return $.ajax( url2, { data: { user: data.userId } } );
-    });
+  chained = request.then(function( data ) {
+    return $.ajax( url2, { data: { user: data.userId } } );
+  });
 
 chained.done(function( data ) {
   // data retrieved from url2 as provided by the first request

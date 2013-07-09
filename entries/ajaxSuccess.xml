@@ -14,7 +14,8 @@
     <pre><code>
 &lt;div class="trigger"&gt;Trigger&lt;/div&gt;
 &lt;div class="result"&gt;&lt;/div&gt;
-&lt;div class="log"&gt;&lt;/div&gt;</code></pre>
+&lt;div class="log"&gt;&lt;/div&gt;
+    </code></pre>
     <p>Attach the event handler to any element:</p>
     <pre><code>
 $(document).ajaxSuccess(function() {
@@ -34,7 +35,7 @@ $( ".trigger" ).on( "click", function() {
 $( document ).ajaxSuccess(function( event, xhr, settings ) {
   if ( settings.url == "ajax/test.html" ) {
     $( ".log" ).text( "Triggered ajaxSuccess handler. The ajax response was: " +
-                       xhr.responseText );
+      xhr.responseText );
   }
 });
     </code></pre>

@@ -24,7 +24,7 @@ $( "body" ).prepend( "<h3>" + elementCount + " elements found</h3>" );
   h3 {
     margin: 0;
   }
-  div,span,p {
+  div, span, p {
     width: 80px;
     height: 40px;
     float: left;
@@ -32,7 +32,7 @@ $( "body" ).prepend( "<h3>" + elementCount + " elements found</h3>" );
     margin: 10px;
     background-color: #EEEEEE;
   }
-  ]]></css>
+]]></css>
   </example>
   <example>
     <desc>Find all elements within document.body so elements like head, script, etc. are excluded.</desc>
@@ -51,7 +51,7 @@ $( "body" ).prepend( "<h3>" + elementCount + " elements found</h3>" );
   h3 {
     margin: 0;
   }
-  div,span,p {
+  div, span, p {
     width: 80px;
     height: 40px;
     float: left;
@@ -60,11 +60,11 @@ $( "body" ).prepend( "<h3>" + elementCount + " elements found</h3>" );
     background-color: #EEEEEE;
   }
   #test {
-    width: auto; 
-    height: auto; 
+    width: auto;
+    height: auto;
     background-color: transparent;
   }
-  ]]></css>
+]]></css>
   </example>
   <category slug="selectors/basic-css-selectors"/>
   <category slug="version/1.0"/>

@@ -25,20 +25,20 @@
     <example>
       <desc>Get the background color of a clicked div.</desc>
       <code><![CDATA[
-$( "div" ).click(function () {
+$( "div" ).click(function() {
   var color = $( this ).css( "background-color" );
   $( "#result" ).html( "That div is <span style='color:" +
     color + ";'>" + color + "</span>." );
 });
 ]]></code>
       <css><![CDATA[
-  div { 
-    width: 60px; 
-    height: 60px; 
-    margin: 5px; 
-    float: left; 
+  div {
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+    float: left;
   }
-  ]]></css>
+]]></css>
       <html><![CDATA[
 <span id="result">&nbsp;</span>
 <div style="background-color:blue;"></div>
@@ -51,10 +51,12 @@ $( "div" ).click(function () {
     <example>
       <desc>Get the width, height, text color, and background color of a clicked div.</desc>
       <code><![CDATA[
-$( "div" ).click(function () {
+$( "div" ).click(function() {
   var html = [ "The clicked div has the following styles:" ];
 
-  var styleProps = $(this).css( [ "width", "height", "color", "background-color" ] );
+  var styleProps = $( this ).css([
+    "width", "height", "color", "background-color"
+  ]);
   $.each( styleProps, function( prop, value ) {
     html.push( prop + ": " + value );
   });
@@ -63,32 +65,32 @@ $( "div" ).click(function () {
 });
 ]]></code>
       <css><![CDATA[
-  div { 
-    height: 50px; 
-    margin: 5px; 
-    padding: 5px; 
-    float: left; 
+  div {
+    height: 50px;
+    margin: 5px;
+    padding: 5px;
+    float: left;
   }
-  #box1 { 
-    width: 50px; 
-    color: yellow; 
-    background-color: blue; 
+  #box1 {
+    width: 50px;
+    color: yellow;
+    background-color: blue;
   }
-  #box2 { 
-    width: 80px; 
-    color: rgb(255,255,255); 
-    background-color: rgb(15,99,30); 
+  #box2 {
+    width: 80px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(15, 99, 30);
   }
-  #box3 { 
-    width: 40px; 
-    color: #fcc; 
-    background-color: #123456; 
+  #box3 {
+    width: 40px;
+    color: #fcc;
+    background-color: #123456;
   }
-  #box4 { 
-    width: 70px; 
-    background-color: #f11; 
+  #box4 {
+    width: 70px;
+    background-color: #f11;
   }
-  ]]></css>
+]]></css>
       <html><![CDATA[
 <p id="result">&nbsp;</p>
 <div id="box1">1</div>
@@ -140,29 +142,30 @@ $( "div" ).click(function () {
       <pre><code>
 $( "div.example" ).css( "width", function( index ) {
   return index * 50;
-});</code></pre>
+});
+      </code></pre>
       <p>This example sets the widths of the matched elements to incrementally larger values.</p>
       <p><strong>Note: </strong>If nothing is returned in the setter function (ie. <code>function( index, style ){} )</code>, or if <code>undefined</code> is returned, the current value is not changed. This is useful for selectively setting values only when certain criteria are met.</p>
     </longdesc>
     <example>
       <desc>Change the color of any paragraph to red on mouseover event.</desc>
       <code><![CDATA[
-  $( "p" ).on( "mouseover", function() {
-    $( this ).css( "color", "red" );
-  });
+$( "p" ).on( "mouseover", function() {
+  $( this ).css( "color", "red" );
+});
 ]]></code>
       <css><![CDATA[
-  p { 
-    color: blue; 
-    width: 200px; 
-    font-size: 14px; 
+  p {
+    color: blue;
+    width: 200px;
+    font-size: 14px;
   }
-  ]]></css>
+]]></css>
       <html><![CDATA[
   <p>Just roll the mouse over me.</p>
 
   <p>Or me to see a color change.</p>
-  ]]></html>
+]]></html>
     </example>
     <example>
       <desc>Increase the width of #box by 200 pixels the first time it is clicked.</desc>
@@ -172,13 +175,13 @@ $( "#box" ).one( "click", function() {
 });
 ]]></code>
       <css><![CDATA[
-  #box { 
-    background: black; 
-    color: snow; 
-    width: 100px; 
-    padding: 10px; 
+  #box {
+    background: black;
+    color: snow;
+    width: 100px;
+    padding: 10px;
   }
-  ]]></css>
+]]></css>
       <html><![CDATA[
 <div id="box">Click me to grow</div>
 ]]></html>
@@ -186,20 +189,20 @@ $( "#box" ).one( "click", function() {
     <example>
       <desc>Highlight a clicked word in the paragraph.</desc>
       <code><![CDATA[
-  var words = $( "p" ).first().text().split( /\s+/ );
-  var text = words.join( "</span> <span>" );
-  $( "p" ).first().html( "<span>" + text + "</span>" );
-  $( "span" ).on( "click", function() {
-    $( this ).css( "background-color", "yellow" );
-  });
+var words = $( "p" ).first().text().split( /\s+/ );
+var text = words.join( "</span> <span>" );
+$( "p" ).first().html( "<span>" + text + "</span>" );
+$( "span" ).on( "click", function() {
+  $( this ).css( "background-color", "yellow" );
+});
 ]]></code>
       <css><![CDATA[
-  p { 
-    color: blue; 
-    font-weight: bold; 
-    cursor: pointer; 
+  p {
+    color: blue;
+    font-weight: bold;
+    cursor: pointer;
   }
-  ]]></css>
+]]></css>
       <html><![CDATA[
 <p>
   Once upon a time there was a man
@@ -215,7 +218,7 @@ $( "#box" ).one( "click", function() {
       <code><![CDATA[
 $( "p" )
   .on( "mouseenter", function() {
-    $(this).css({
+    $( this ).css({
       "background-color": "yellow",
       "font-weight": "bolder"
     });
@@ -229,13 +232,13 @@ $( "p" )
 });
 ]]></code>
       <css><![CDATA[
-  p { 
-    color: green; 
+  p {
+    color: green;
   }
 ]]></css>
       <html><![CDATA[
-  <p>Move the mouse over a paragraph.</p>
-  <p>Like this one or the one above.</p>
+<p>Move the mouse over a paragraph.</p>
+<p>Like this one or the one above.</p>
 ]]></html>
     </example>
     <example>
@@ -253,12 +256,12 @@ $( "div" ).on( "click", function() {
 });
 ]]></code>
       <css><![CDATA[
-  div { 
-    width: 20px; 
-    height: 15px; 
-    background-color: #f33; 
+  div {
+    width: 20px;
+    height: 15px;
+    background-color: #f33;
   }
-  ]]></css>
+]]></css>
       <html><![CDATA[
 <div>click</div>
 <div>click</div>

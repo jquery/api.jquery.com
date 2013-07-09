@@ -31,7 +31,7 @@
 &lt;div id="other"&gt;
   Trigger the handler
 &lt;/div&gt;
-</code></pre>
+    </code></pre>
     <p class="image">
       <img src="/resources/0042_05_03.png" alt=""/>
     </p>
@@ -50,7 +50,7 @@ $( "#target" ).click(function() {
 $( "#other" ).click(function() {
   $( "#target" ).click();
 });
-</code></pre>
+    </code></pre>
     <p>After this code executes, clicks on <samp>Trigger the handler</samp> will also alert the message.</p>
     <p>The <code>click</code> event is only triggered after this exact series of events:</p>
     <ul>
@@ -62,20 +62,20 @@ $( "#other" ).click(function() {
   <example>
     <desc>Hide paragraphs on a page when they are clicked:</desc>
     <code><![CDATA[
-$( "p" ).click(function () {
+$( "p" ).click(function() {
   $( this ).slideUp();
 });
 ]]></code>
     <css><![CDATA[
-  p { 
-    color: red; 
-    margin: 5px; 
-	cursor: pointer; 
+  p {
+    color: red;
+    margin: 5px;
+    cursor: pointer;
   }
-  p:hover { 
-    background: yellow; 
+  p:hover {
+    background: yellow;
   }
-  ]]></css>
+]]></css>
     <html><![CDATA[
 <p>First Paragraph</p>
 <p>Second Paragraph</p>

@@ -17,27 +17,29 @@ var input = $( "form input:checkbox" )
   .wrap( "<span></span>" )
   .parent()
   .css({
-    background: "yellow", 
+    background: "yellow",
     border: "3px red solid"
   });
+
 $( "div" )
   .text( "For this type jQuery found " + input.length + "." )
   .css( "color", "red" );
-$( "form" )
-  .submit(function () { 
-    return false; 
-  }); // so it won't submit
+
+// Prevent the form from submitting
+$( "form" ).submit(function( event ) {
+    event.preventDefault();
+});
 ]]></code>
     <css><![CDATA[
-  textarea { 
-    height: 25px; 
+  textarea {
+    height: 25px;
   }
-  ]]></css>
+]]></css>
     <html><![CDATA[
 <form>
   <input type="button" value="Input Button">
   <input type="checkbox">
-  
+
   <input type="checkbox">
   <input type="file">
   <input type="hidden">
@@ -53,7 +55,7 @@ $( "form" )
   <select>
     <option>Option</option>
   </select>
-  
+
   <textarea></textarea>
   <button>Button</button>
 </form>

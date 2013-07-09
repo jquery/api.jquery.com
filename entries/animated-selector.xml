@@ -13,7 +13,7 @@
   <example>
     <desc>Change the color of any div that is animated.</desc>
     <code><![CDATA[
-$( "#run" ).click(function(){
+$( "#run" ).click(function() {
   $( "div:animated" ).toggleClass( "colored" );
 });
 
@@ -34,15 +34,15 @@ animateIt();
   div {
     background: yellow;
     border: 1px solid #AAA;
-    width: 80px; 
+    width: 80px;
     height: 80px;
-    margin: 0 5px; 
+    margin: 0 5px;
     float: left;
   }
   div.colored {
     background: green;
   }
-  ]]></css>
+]]></css>
   </example>
   <category slug="selectors/basic-filter-selectors"/>
   <category slug="selectors/jquery-selector-extensions"/>

@@ -6,31 +6,33 @@
   </signature>
   <desc>Disable a callback list from doing anything more.</desc>
   <longdesc>
-    <p>This method returns the Callbacks object onto which it is attached (<code>this</code>). </p>
-    <h2 id="example-1">Example</h2>
-    <p>Use <code>callbacks.disable()</code> to disable further calls to a callback list:</p>
-    <pre><code><![CDATA[// a sample logging function to be added to a callbacks list
+    <p>This method returns the Callbacks object onto which it is attached (<code>this</code>).</p>
+  </longdesc>
+  <example>
+    <desc>Use <code>callbacks.disable()</code> to disable further calls to a callback list:</desc>
+    <code><![CDATA[
+// A sample logging function to be added to a callbacks list
 var foo = function( value ) {
   console.log( value );
 };
 
 var callbacks = $.Callbacks();
 
-// add the above function to the list
+// Add the above function to the list
 callbacks.add( foo );
 
-// fire the items on the list
+// Fire the items on the list
 callbacks.fire( "foo" );
-// outputs: foo
+// Outputs: foo
 
-// disable further calls being possible
+// Disable further calls being possible
 callbacks.disable();
 
-// attempt to fire with "foobar" as an argument
+// Attempt to fire with "foobar" as an argument
 callbacks.fire( "foobar" );
 // foobar isn't output
-]]></code></pre>
-  </longdesc>
+]]></code>
+  </example>
   <category slug="callbacks-object"/>
   <category slug="version/1.7"/>
 </entry>
