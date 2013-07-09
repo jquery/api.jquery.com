@@ -27,17 +27,20 @@
   <longdesc>
     <p>The <code>.after()</code> and <code><a href="/insertAfter">.insertAfter()</a></code> methods perform the same task. The major difference is in the syntax&#x2014;specifically, in the placement of the content and target. With <code>.after()</code>, the selector expression preceding the method is the container after which the content is inserted. With <code>.insertAfter()</code>, on the other hand, the content precedes the method, either as a selector expression or as markup created on the fly, and it is inserted after the target container.</p>
     <p>Using the following HTML:</p>
-    <pre><code>&lt;div class="container"&gt;
+    <pre><code>
+&lt;div class="container"&gt;
   &lt;h2&gt;Greetings&lt;/h2&gt;
   &lt;div class="inner"&gt;Hello&lt;/div&gt;
   &lt;div class="inner"&gt;Goodbye&lt;/div&gt;
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;
+    </code></pre>
     <p>Content can be created and then inserted after several elements at once:</p>
     <pre><code>
 $( ".inner" ).after( "&lt;p&gt;Test&lt;/p&gt;" );
     </code></pre>
     <p>Each inner <code>&lt;div&gt;</code> element gets this new content:</p>
-    <pre><code>&lt;div class="container"&gt;
+    <pre><code>
+&lt;div class="container"&gt;
   &lt;h2&gt;Greetings&lt;/h2&gt;
   &lt;div class="inner"&gt;Hello&lt;/div&gt;
   &lt;p&gt;Test&lt;/p&gt;
@@ -62,8 +65,12 @@ $( ".container" ).after( $( "h2" ) );
     <pre><code>$( "&lt;div&gt;&lt;/div&gt;" ).after( "&lt;p&gt;&lt;/p&gt;" );</code></pre>
     <p>The result is a jQuery set containing a div and a paragraph, in that order. That set can be further manipulated, even before it is inserted in the document.</p>
     <pre><code>
-$( "&lt;div&gt;&lt;/div&gt;" ).after( "&lt;p&gt;&lt;/p&gt;" ).addClass( "foo" )
-  .filter( "p" ).attr( "id", "bar" ).html( "hello" )
+$( "&lt;div&gt;&lt;/div&gt;" )
+  .after( "&lt;p&gt;&lt;/p&gt;" )
+  .addClass( "foo" )
+  .filter( "p" )
+    .attr( "id", "bar" )
+    .html( "hello" )
   .end()
   .appendTo( "body" );
     </code></pre>
@@ -71,7 +78,7 @@ $( "&lt;div&gt;&lt;/div&gt;" ).after( "&lt;p&gt;&lt;/p&gt;" ).addClass( "foo" )
     <pre><code>
 &lt;div class="foo"&gt;&lt;/div&gt;
 &lt;p class="foo" id="bar"&gt;hello&lt;/p&gt;
-</code></pre>
+    </code></pre>
     <h4 id="passing-a-function">Passing a Function</h4>
     <p>As of jQuery 1.4, <code>.after()</code> supports passing a function that returns the elements to insert.</p>
     <pre><code>
@@ -85,11 +92,11 @@ $( "p" ).after(function() {
     <p>For example, the following will insert two new <code>&lt;div&gt;</code>s and an existing <code>&lt;div&gt;</code> after the first paragraph:</p>
     <pre><code>
 var $newdiv1 = $( "&lt;div id='object1'/&gt;" ),
-    newdiv2 = document.createElement( "div" ),
-    existingdiv1 = document.getElementById( "foo" );
+  newdiv2 = document.createElement( "div" ),
+  existingdiv1 = document.getElementById( "foo" );
 
 $( "p" ).first().after( $newdiv1, [ newdiv2, existingdiv1 ] );
-</code></pre>
+    </code></pre>
     <p>Since <code>.after()</code> can accept any number of additional arguments, the same result can be achieved by passing in the three <code>&lt;div&gt;</code>s as three separate arguments, like so: <code>$( "p" ).first().after( $newdiv1, newdiv2, existingdiv1 )</code>. The type and number of arguments will largely depend on the elements that are collected in the code.</p>
   </longdesc>
   <example>
@@ -99,9 +106,9 @@ $( "p" ).after( "<b>Hello</b>" );
 ]]></code>
     <css><![CDATA[
   p {
-  background: yellow;
+    background: yellow;
   }
-  ]]></css>
+]]></css>
     <html><![CDATA[
 <p>I would like to say: </p>
 ]]></html>
@@ -112,10 +119,10 @@ $( "p" ).after( "<b>Hello</b>" );
 $( "p" ).after( document.createTextNode( "Hello" ) );
 ]]></code>
     <css><![CDATA[
-  p { 
-  background: yellow; 
+  p {
+    background: yellow;
   }
-  ]]></css>
+]]></css>
     <html><![CDATA[
 <p>I would like to say: </p>
 ]]></html>
@@ -127,11 +134,12 @@ $( "p" ).after( $( "b" ) );
 ]]></code>
     <css><![CDATA[
   p {
-  background: yellow;
+    background: yellow;
   }
-  ]]></css>
+]]></css>
     <html><![CDATA[
-<b>Hello</b><p>I would like to say: </p>
+<b>Hello</b>
+<p>I would like to say: </p>
 ]]></html>
   </example>
   <category slug="manipulation/dom-insertion-outside"/>

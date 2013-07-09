@@ -41,15 +41,15 @@ $( "p" ).last().addClass( "selected" );
     <css><![CDATA[
   p {
     margin: 8px;
-    font-size:16px;
+    font-size: 16px;
   }
   .selected {
-  color:blue;
+    color: blue;
   }
   .highlight {
-  background:yellow;
+    background: yellow;
   }
-  ]]></css>
+]]></css>
     <html><![CDATA[
 <p>Hello</p>
 <p>and</p>
@@ -62,17 +62,17 @@ $( "p" ).last().addClass( "selected" );
 $( "p:last" ).addClass( "selected highlight" );
 ]]></code>
     <css><![CDATA[
-  p { 
-    margin: 8px; 
-    font-size: 16px; 
+  p {
+    margin: 8px;
+    font-size: 16px;
   }
-  .selected { 
-    color: red; 
+  .selected {
+    color: red;
   }
-  .highlight { 
-    background: yellow; 
+  .highlight {
+    background: yellow;
   }
-  ]]></css>
+]]></css>
     <html><![CDATA[
 <p>Hello</p>
 <p>and</p>
@@ -94,7 +94,7 @@ $( "div" ).addClass(function( index, currentClass ) {
 });
 ]]></code>
     <css><![CDATA[
-  div { 
+  div {
     background: white;
   }
   .red {
@@ -103,7 +103,7 @@ $( "div" ).addClass(function( index, currentClass ) {
   .red.green {
     background: green;
   }
-  ]]></css>
+]]></css>
     <html><![CDATA[
  <div>This div should be white</div>
  <div class="red">This div will be green because it now has the "green" and "red" classes.

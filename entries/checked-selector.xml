@@ -21,10 +21,10 @@ countChecked();
 $( "input[type=checkbox]" ).on( "click", countChecked );
 ]]></code>
     <css><![CDATA[
-  div { 
-    color: red; 
+  div {
+    color: red;
   }
-  ]]></css>
+]]></css>
     <html><![CDATA[
 <form>
   <p>
@@ -44,14 +44,14 @@ $( "input[type=checkbox]" ).on( "click", countChecked );
     <desc>Identify the checked radio input.</desc>
     <code><![CDATA[
 $( "input" ).on( "click", function() {
-  $( "#log" ).html( $("input:checked").val() + " is checked!" );
+  $( "#log" ).html( $( "input:checked" ).val() + " is checked!" );
 });
 ]]></code>
     <css><![CDATA[
-  input, label { 
-    line-height: 1.5em; 
+  input, label {
+    line-height: 1.5em;
   }
-  ]]></css>
+]]></css>
     <html><![CDATA[
 <form>
   <div>

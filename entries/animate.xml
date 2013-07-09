@@ -59,7 +59,7 @@ $( "#clickme" ).click(function() {
       <img src="/resources/animate-1.jpg" alt=""/>
     </p>
     <p>Note that the target value of the <code>height</code> property is <code>'toggle'</code>. Since the image was visible before, the animation shrinks the height to 0 to hide it. A second click then reverses this transition:
-</p>
+    </p>
     <p class="image">
       <img src="/resources/animate-2.jpg" alt=""/>
     </p>
@@ -82,7 +82,7 @@ $( "#clickme" ).click(function() {
 $( "li" ).animate({
   opacity: .5,
   height: "50%"
-  }, {
+}, {
   step: function( now, fx ) {
     var data = fx.elem.id + " " + fx.prop + ": " + now;
     $( "body" ).append( "&lt;div&gt;" + data + "&lt;/div&gt;" );
@@ -129,9 +129,9 @@ $( "#clickme" ).click(function() {
   <example>
     <desc>Click the button to animate the div with a number of different properties.</desc>
     <code><![CDATA[
-/* Using multiple unit types within one animation. */
+// Using multiple unit types within one animation.
 
-$( "#go" ).click(function(){
+$( "#go" ).click(function() {
   $( "#block" ).animate({
     width: "70%",
     opacity: 0.4,
@@ -151,12 +151,12 @@ $( "#go" ).click(function(){
     width: 100px;
     border: 1px solid green;
   }
-  ]]></css>
+]]></css>
   </example>
   <example>
     <desc>Animates a div's left property with a relative value. Click several times on the buttons to see the relative animations queued up.</desc>
     <code><![CDATA[
-$( "#right" ).click(function(){
+$( "#right" ).click(function() {
   $( ".block" ).animate({ "left": "+=50px" }, "slow" );
 });
 
@@ -165,7 +165,7 @@ $( "#left" ).click(function(){
 });
 ]]></code>
     <html><![CDATA[
-<button id="left">&laquo;</button> 
+<button id="left">&laquo;</button>
 <button id="right">&raquo;</button>
 <div class="block"></div>
 ]]></html>
@@ -178,38 +178,41 @@ $( "#left" ).click(function(){
     height: 90px;
     margin: 5px;
   }
-  ]]></css>
+]]></css>
   </example>
   <example>
     <desc>The first button shows how an unqueued animation works.  It expands the div out to 90% width <strong>while</strong> the font-size is increasing. Once the font-size change is complete, the border animation will begin.
 
 The second button starts a traditional chained animation, where each animation will start once the previous animation on the element has completed.</desc>
     <code><![CDATA[
-$( "#go1" ).click(function(){
-  $( "#block1" ).animate({ 
-    width: "90%" 
-  }, { 
-    queue: false, 
-    duration: 3000 
-  }).animate({ fontSize: "24px" }, 1500 )
+$( "#go1" ).click(function() {
+  $( "#block1" )
+    .animate({
+      width: "90%"
+    }, {
+      queue: false,
+      duration: 3000
+    })
+    .animate({ fontSize: "24px" }, 1500 )
     .animate({ borderRightWidth: "15px" }, 1500 );
 });
 
-$( "#go2" ).click(function(){
-  $( "#block2" ).animate({ width: "90%" }, 1000 )
+$( "#go2" ).click(function() {
+  $( "#block2" )
+    .animate({ width: "90%" }, 1000 )
     .animate({ fontSize: "24px" }, 1000 )
     .animate({ borderLeftWidth: "15px" }, 1000 );
 });
 
-$( "#go3" ).click(function(){
+$( "#go3" ).click(function() {
   $( "#go1" ).add( "#go2" ).click();
 });
 
-$( "#go4" ).click(function(){
-  $( "div" ).css({ 
-    width: "", 
-    fontSize: "", 
-    borderWidth: "" 
+$( "#go4" ).click(function() {
+  $( "div" ).css({
+    width: "",
+    fontSize: "",
+    borderWidth: ""
   });
 });
 ]]></code>
@@ -234,12 +237,12 @@ $( "#go4" ).click(function(){
   button {
     font-size: 14px;
   }
-  ]]></css>
+]]></css>
   </example>
   <example>
     <desc>Animates the first div's left property and synchronizes the remaining divs, using the step function to set their left properties at each stage of the animation. </desc>
     <code><![CDATA[
-$( "#go" ).click(function(){
+$( "#go" ).click(function() {
   $( ".block:first" ).animate({
     left: 100
   }, {
@@ -259,19 +262,22 @@ $( "#go" ).click(function(){
     float: left;
     margin: 5px;
   }
-  ]]></css>
+]]></css>
     <html><![CDATA[
 <p><button id="go">Run »</button></p>
-<div class="block"></div> <div class="block"></div>
-<div class="block"></div> <div class="block"></div>
-<div class="block"></div> <div class="block"></div>
+<div class="block"></div>
+<div class="block"></div>
+<div class="block"></div>
+<div class="block"></div>
+<div class="block"></div>
+<div class="block"></div>
 ]]></html>
   </example>
   <example>
     <desc>Animate all paragraphs to toggle both height and opacity, completing the animation within 600 milliseconds.</desc>
     <code><![CDATA[
 $( "p" ).animate({
-  height: "toggle", 
+  height: "toggle",
   opacity: "toggle"
 }, "slow" );
 ]]></code>
@@ -280,7 +286,7 @@ $( "p" ).animate({
     <desc>Animate all paragraphs to a left style of 50 and opacity of 1 (opaque, visible), completing the animation within 500 milliseconds.</desc>
     <code><![CDATA[
 $( "p" ).animate({
-  left: 50, 
+  left: 50,
   opacity: 1
 }, 500 );
 ]]></code>
@@ -289,11 +295,11 @@ $( "p" ).animate({
     <desc>Animate the left and opacity style properties of all paragraphs; run the animation <em>outside</em> the queue, so that it will automatically start without waiting for its turn.</desc>
     <code><![CDATA[
 $( "p" ).animate({
-  left: "50px", 
+  left: "50px",
   opacity: 1
-}, { 
-  duration: 500, 
-  queue: false 
+}, {
+  duration: 500,
+  queue: false
 });
 ]]></code>
   </example>
@@ -309,10 +315,10 @@ $( "p" ).animate({
     <desc>Animates all paragraphs to toggle both height and opacity, completing the animation within 600 milliseconds.</desc>
     <code><![CDATA[
 $( "p" ).animate({
-  height: "toggle", 
+  height: "toggle",
   opacity: "toggle"
-}, { 
-  duration: "slow" 
+}, {
+  duration: "slow"
 });
 ]]></code>
   </example>
@@ -321,9 +327,9 @@ $( "p" ).animate({
     <code><![CDATA[
 $( "p" ).animate({
   opacity: "show"
-}, { 
-  duration: "slow", 
-  easing: "easein" 
+}, {
+  duration: "slow",
+  easing: "easein"
 });
 ]]></code>
   </example>
@@ -331,10 +337,10 @@ $( "p" ).animate({
     <desc>Animate all paragraphs and execute a callback function when the animation is complete.  The first argument is an object of CSS properties, the second specifies that the animation should take 1000 milliseconds to complete, the third states the easing type, and the fourth argument is an anonymous callback function. </desc>
     <code><![CDATA[
 $( "p" ).animate({
-  height: 200, 
-  width: 400, 
+  height: 200,
+  width: 400,
   opacity: 0.5
-  }, 1000, "linear", function() {
+}, 1000, "linear", function() {
   alert( "all done" );
 });
 ]]></code>

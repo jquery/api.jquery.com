@@ -27,11 +27,13 @@ To build and deploy your changes for previewing in a [jquery-wp-content](https:/
   * **No**: The `load`, `scroll` and `error` events (e.g., on an `<img>` element) do not bubble
 
 #### Spelling
+
 * The documentation standardizes on American English spelling. For example:
   * **Yes**: color, while, among, customize, argument
   * **No**: colour, whilst, amongst, customise, arguement
 
 #### Pronoun Usage
+
 * Use second-person pronoun ("you") when necessary, but try to avoid it.
 * Favor the definite article ("the") over second-person possesive ("your").
   * **Yes**: Insert the paragraph after the unordered list.
@@ -41,27 +43,32 @@ To build and deploy your changes for previewing in a [jquery-wp-content](https:/
   * **No**: And now we have our paragraph beneath the unordered list.
 
 #### "Voice"
+
 * Prefer active voice over passive.
   * **Active**: Calling `.click()` binds a click handler to the elements in the collection
   * **Passive**: Click handlers are bound to elements in the collection when `.click()` is called
 
 ### Code Style
-Code in the API documentation should follow the [jQuery Core Style Guide](http://docs.jquery.com/JQuery_Core_Style_Guidelines) with the following addition:
+
+Code in the API documentation should follow the [jQuery Core Style Guide](http://contribute.jquery.org/style-guide/) with the following addition:
 
 * **Document ready syntax**: Use `$( document ).ready(function() {` instead of `$(function() {` as it's harder for new users to distinguish the difference between the latter and an IIFE.
 
 #### Code within prose content (paragraphs and the like):
-* Methods: use a dot, followed by the method name, followed by parentheses: e.g. The `.focus()` method is a shortcut for `.bind('focus', handler)` in the first and second variations, and `.trigger('focus')` in the third.
+
+* Methods: use a dot, followed by the method name, followed by parentheses: e.g. The `.focus()` method is a shortcut for `.on( "focus", handler )` in the first and second variations, and `.trigger( "focus" )` in the third.
 * Properties: use a dot, followed by the property name: e.g. `.length`.
 * Functions: use the function name, followed by parentheses: `myFunction()`.
 
 #### Examples
+
 * Examples should indicate what the expected result will be before presenting the code. This makes code clearer and skimming easier, especially for newer coders who may not understand what is supposed to be happening from reading the code itself.
   * **Yes**: Find all p elements that are children of a div element and apply a border to them.
   * **No**: Find all p elements that are children of a div element.
 * Make your example easy to follow with good comments so that the explanation isn't necessary.
 
 ### Rhetorical Context
+
 * Subject
   * The entirety of jQuery's public API
 * Audience

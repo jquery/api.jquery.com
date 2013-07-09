@@ -29,21 +29,29 @@
   </longdesc>
   <example>
     <desc>To unbind all live events from all paragraphs, write:</desc>
-    <code><![CDATA[$("p").die()]]></code>
+    <code><![CDATA[
+$( "p" ).die();
+]]></code>
   </example>
   <example>
     <desc>To unbind all live click events from all paragraphs, write:</desc>
-    <code><![CDATA[$("p").die( "click" )]]></code>
+    <code><![CDATA[
+$( "p" ).die( "click" );
+]]></code>
   </example>
   <example>
     <desc>To unbind just one previously bound handler, pass the function in as the second argument:</desc>
-    <code><![CDATA[var foo = function () {
-  // code to handle some kind of event
+    <code><![CDATA[
+var foo = function() {
+  // Code to handle some kind of event
 };
 
-$("p").live("click", foo); // ... now foo will be called when paragraphs are clicked ...
+// Now foo will be called when paragraphs are clicked
+$( "p" ).live( "click", foo );
 
-$("p").die("click", foo); // ... foo will no longer be called.]]></code>
+// Now foo will no longer be called
+$( "p" ).die( "click", foo );
+]]></code>
   </example>
   <category slug="events/event-handler-attachment"/>
   <category slug="version/1.3"/>
@@ -52,4 +60,3 @@ $("p").die("click", foo); // ... foo will no longer be called.]]></code>
   <category slug="deprecated/deprecated-1.7"/>
   <category slug="removed"/>
 </entry>
-

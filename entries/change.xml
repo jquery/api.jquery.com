@@ -57,7 +57,7 @@ $( "#other" ).click(function() {
 $( "select" )
   .change(function () {
     var str = "";
-    $( "select option:selected" ).each(function () {
+    $( "select option:selected" ).each(function() {
       str += $( this ).text() + " ";
     });
     $( "div" ).text( str );
@@ -65,10 +65,10 @@ $( "select" )
   .change();
 ]]></code>
     <css><![CDATA[
-  div { 
-    color: red; 
+  div {
+    color: red;
   }
-  ]]></css>
+]]></css>
     <html><![CDATA[
 <select name="sweets" multiple="multiple">
   <option>Chocolate</option>
@@ -85,7 +85,7 @@ $( "select" )
     <desc>To add a validity test to all text input elements:</desc>
     <code><![CDATA[
 $( "input[type='text']" ).change(function() {
-  // check input( $( this ).val() ) for validity here
+  // Check input( $( this ).val() ) for validity here
 });
 ]]></code>
   </example>

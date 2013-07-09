@@ -8,24 +8,25 @@
   <longdesc/>
   <example>
     <desc>Use <code>callbacks.locked()</code> to determine the lock-state of a callback list:</desc>
-    <code><![CDATA[// a sample logging function to be added to a callbacks list
+    <code><![CDATA[
+// A sample logging function to be added to a callbacks list
 var foo = function( value ) {
-  console.log( "foo: " + value);
+  console.log( "foo: " + value );
 };
 
 var callbacks = $.Callbacks();
 
-// add the logging function to the callback list
+// Add the logging function to the callback list
 callbacks.add( foo );
 
-// fire the items on the list, passing an argument
+// Fire the items on the list, passing an argument
 callbacks.fire( "hello" );
-// outputs "foo: hello"
+// Outputs "foo: hello"
 
-// lock the callbacks list
+// Lock the callbacks list
 callbacks.lock();
 
-// test the lock-state of the list
+// Test the lock-state of the list
 console.log ( callbacks.locked() );
 // true
 ]]></code>

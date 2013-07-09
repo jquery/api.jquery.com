@@ -61,10 +61,10 @@ $( "h2" ).appendTo( $( ".container" ) );
 $( "span" ).appendTo( "#foo" );
 ]]></code>
     <css><![CDATA[
-  #foo { 
-    background:yellow; 
+  #foo {
+    background: yellow;
   }
-  ]]></css>
+]]></css>
     <html><![CDATA[
 <span>I have nothing more to say... </span>
 

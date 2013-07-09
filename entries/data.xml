@@ -42,13 +42,13 @@ $( "span:first" ).text( $( "div" ).data( "test" ).first );
 $( "span:last" ).text( $( "div" ).data( "test" ).last );
 ]]></code>
       <css><![CDATA[
-  div { 
+  div {
     color: blue;
   }
   span {
     color: red;
   }
-  ]]></css>
+]]></css>
       <html><![CDATA[
 <div>
   The values stored were
@@ -83,9 +83,9 @@ alert( $( "body" ).data() );
       </code></pre>
       <p>The above lines alert the data values that were set on the <code>body</code> element. If no data at all was set on that element, <code>undefined</code> is returned.</p>
       <pre><code>
-alert( $( "body" ).data( "foo" ) ); //undefined
+alert( $( "body" ).data( "foo" ) ); // undefined
 $( "body" ).data( "bar", "foobar" );
-alert( $( "body" ).data( "bar" ) ); //foobar
+alert( $( "body" ).data( "bar" ) ); // foobar
       </code></pre>
       <h4 id="data-html5">
         <a href="#data-html5">HTML5 data-* Attributes</a>
@@ -117,7 +117,7 @@ if ( mydata.count &lt; 9 ) {
     <example>
       <desc>Get the data named "blah" stored at for an element.</desc>
       <code><![CDATA[
-$( "button" ).click(function( e ) {
+$( "button" ).click(function() {
   var value;
 
   switch ( $( "button" ).index( this ) ) {
@@ -142,22 +142,22 @@ $( "button" ).click(function( e ) {
 });
 ]]></code>
       <css><![CDATA[
-  div { 
-    margin: 5px; 
-    background: yellow; 
+  div {
+    margin: 5px;
+    background: yellow;
   }
-  button { 
-    margin: 5px; 
-    font-size: 14px; 
+  button {
+    margin: 5px;
+    font-size: 14px;
   }
-  p { 
-    margin: 5px; 
-    color: blue; 
+  p {
+    margin: 5px;
+    color: blue;
   }
-  span { 
-    color: red; 
+  span {
+    color: red;
   }
-  ]]></css>
+]]></css>
       <html><![CDATA[
 <div>A div</div>
 <button>Get "blah" from the div</button>

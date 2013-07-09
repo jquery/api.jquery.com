@@ -16,12 +16,15 @@
   </longdesc>
   <example>
     <desc>Finds all input elements that are disabled.</desc>
-    <code><![CDATA[$("input:disabled").val("this is it");]]></code>
-    <html><![CDATA[<form>
-
-    <input name="email" disabled="disabled" />
-    <input name="id" />
-  </form>]]></html>
+    <code><![CDATA[
+$( "input:disabled" ).val( "this is it" );
+]]></code>
+    <html><![CDATA[
+<form>
+  <input name="email" disabled="disabled">
+  <input name="id">
+</form>
+]]></html>
   </example>
   <category slug="selectors/form-selectors"/>
   <category slug="version/1.0"/>

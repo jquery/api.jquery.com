@@ -14,7 +14,8 @@
     <pre><code>
 &lt;div class="trigger"&gt;Trigger&lt;/div&gt;
 &lt;div class="result"&gt;&lt;/div&gt;
-&lt;div class="log"&gt;&lt;/div&gt;</code></pre>
+&lt;div class="log"&gt;&lt;/div&gt;
+    </code></pre>
     <p>Attach the event handler to the document:</p>
     <pre><code>
 $( ".log" ).ajaxStop(function() {

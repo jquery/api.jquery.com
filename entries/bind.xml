@@ -57,10 +57,10 @@ $( "#foo" ).bind( "mouseenter mouseleave", function() {
     <pre><code>
 $( "#foo" ).bind({
   click: function() {
-    // do something on click
+    // Do something on click
   },
   mouseenter: function() {
-    // do something on mouseenter
+    // Do something on mouseenter
   }
 });
     </code></pre>
@@ -84,9 +84,9 @@ $( "#foo" ).bind( "click", function() {
     <p>Using the event object in a handler looks like this:</p>
     <pre><code>
 $( document ).ready(function() {
-  $( "#foo" ).bind( "click", function(event) {
-    alert( "The mouse cursor is at (" + 
-      event.pageX + ", " + event.pageY + 
+  $( "#foo" ).bind( "click", function( event ) {
+    alert( "The mouse cursor is at (" +
+      event.pageX + ", " + event.pageY +
       ")" );
   });
 });
@@ -110,13 +110,13 @@ $( "#bar" ).bind( "click", function() {
 var message = "Spoon!";
 $( "#foo" ).bind( "click", {
   msg: message
-}, function(event) {
+}, function( event ) {
   alert( event.data.msg );
 });
 message = "Not in the face!";
 $( "#bar" ).bind( "click", {
   msg: message
-}, function(event) {
+}, function( event ) {
   alert( event.data.msg );
 });
     </code></pre>
@@ -135,31 +135,31 @@ $( "#bar" ).bind( "click", {
   <example>
     <desc>Handle click and double-click for the paragraph.  Note: the coordinates are window relative, so in this case relative to the demo iframe.</desc>
     <code><![CDATA[
-$( "p" ).bind( "click", function( event ){
+$( "p" ).bind( "click", function( event ) {
   var str = "( " + event.pageX + ", " + event.pageY + " )";
   $( "span" ).text( "Click happened! " + str );
 });
-$( "p" ).bind( "dblclick", function(){
+$( "p" ).bind( "dblclick", function() {
   $( "span" ).text( "Double-click happened in " + this.nodeName );
 });
-$( "p" ).bind( "mouseenter mouseleave", function( event ){
+$( "p" ).bind( "mouseenter mouseleave", function( event ) {
   $( this ).toggleClass( "over" );
 });
 ]]></code>
     <css><![CDATA[
-  p { 
-    background: yellow; 
-    font-weight: bold; 
+  p {
+    background: yellow;
+    font-weight: bold;
     cursor: pointer;
-    padding: 5px; 
+    padding: 5px;
   }
-   p.over { 
-     background: #ccc; 
+  p.over {
+     background: #ccc;
   }
-  span { 
-    color: red; 
+  span {
+    color: red;
   }
-  ]]></css>
+]]></css>
     <html><![CDATA[
 <p>Click or double click here.</p>
 <span></span>
@@ -168,7 +168,7 @@ $( "p" ).bind( "mouseenter mouseleave", function( event ){
   <example>
     <desc>To display each paragraph's text in an alert box whenever it is clicked:</desc>
     <code><![CDATA[
-$( "p" ).bind( "click", function(){
+$( "p" ).bind( "click", function() {
   alert( $( this ).text() );
 });
 ]]></code>
@@ -181,14 +181,14 @@ function handler( event ) {
 }
 $( "p" ).bind( "click", {
   foo: "bar"
-}, handler )
+}, handler );
 ]]></code>
   </example>
   <example>
     <desc>Cancel a default action and prevent it from bubbling up by returning <code>false</code>:</desc>
     <code><![CDATA[
 $( "form" ).bind( "submit", function() {
-  return false; 
+  return false;
 })
 ]]></code>
   </example>
@@ -211,40 +211,44 @@ $( "form" ).bind( "submit", function( event ) {
   <example>
     <desc>Bind custom events.</desc>
     <code><![CDATA[
-$( "p" ).bind( "myCustomEvent", function( e, myName, myValue ){
+$( "p" ).bind( "myCustomEvent", function( e, myName, myValue ) {
   $( this ).text( myName + ", hi there!" );
-  $( "span" ).stop().css( "opacity", 1 )
+  $( "span" )
+    .stop()
+    .css( "opacity", 1 )
     .text( "myName = " + myName )
     .fadeIn( 30 )
     .fadeOut( 1000 );
   });
-$( "button" ).click(function () {
+$( "button" ).click(function() {
   $( "p" ).trigger( "myCustomEvent", [ "John" ] );
 });
 ]]></code>
     <css><![CDATA[
-  p { 
-    color:red; 
+  p {
+    color: red;
   }
-  span { 
-    color:blue; 
+  span {
+    color: blue;
   }
   ]]></css>
-    <html><![CDATA[<p>Has an attached custom event.</p>
+    <html><![CDATA[
+<p>Has an attached custom event.</p>
 <button>Trigger custom event</button>
-<span style="display:none;"></span>]]></html>
+<span style="display: none;"></span>
+]]></html>
   </example>
   <example>
     <desc>Bind multiple events simultaneously.</desc>
     <code><![CDATA[
 $( "div.test" ).bind({
-  click: function(){
+  click: function() {
     $( this ).addClass( "active" );
   },
-  mouseenter: function(){
+  mouseenter: function() {
     $( this ).addClass( "inside" );
   },
-  mouseleave: function(){
+  mouseleave: function() {
     $( this ).removeClass( "inside" );
   }
 });

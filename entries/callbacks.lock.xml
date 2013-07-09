@@ -6,34 +6,34 @@
   </signature>
   <desc>Lock a callback list in its current state.</desc>
   <longdesc>
-    <p>This method returns the Callbacks object onto which it is attached (<code>this</code>). </p>
+    <p>This method returns the Callbacks object onto which it is attached (<code>this</code>).</p>
     <p>If the Callbacks object is created with the <code>"memory"</code> flag as its argument, additional functions may be added and fired after the callback list is locked.</p>
   </longdesc>
   <example>
     <desc>Use <code>callbacks.lock()</code> to lock a callback list to avoid further changes being made to the list state:</desc>
     <code><![CDATA[
-// a sample logging function to be added to a callbacks list
+// A sample logging function to be added to a callbacks list
 var foo = function( value ) {
   console.log( "foo:" + value );
 };
 
 var callbacks = $.Callbacks();
 
-// add the logging function to the callback list
+// Add the logging function to the callback list
 callbacks.add( foo );
 
-// fire the items on the list, passing an argument
+// Fire the items on the list, passing an argument
 callbacks.fire( "hello" );
-// outputs "foo: hello"
+// Outputs "foo: hello"
 
-// lock the callbacks list
+// Lock the callbacks list
 callbacks.lock();
 
-// try firing the items again
+// Try firing the items again
 callbacks.fire( "world" );
 
-// as the list was locked, no items
-// were called, so "world" isn't logged
+// As the list was locked, no items were called,
+// so "world" isn't logged
 ]]></code>
   </example>
   <example>
@@ -42,12 +42,12 @@ callbacks.fire( "world" );
 <div id="log"></div>
 ]]></html>
     <code><![CDATA[
-// simple function for logging results
-var log = function( value) {
+// Simple function for logging results
+var log = function( value ) {
   $( "#log" ).append( "<p>" + value + "</p>" );
 };
 
-// two sample functions to be added to a callbacks list
+// Two sample functions to be added to a callbacks list
 var foo = function( value ) {
   log( "foo: " + value );
 };
@@ -55,40 +55,39 @@ var bar = function( value ) {
   log( "bar: " + value );
 };
 
-// create the callbacks object with the "memory" flag
+// Create the callbacks object with the "memory" flag
 var callbacks = $.Callbacks( "memory" );
 
-// add the foo logging function to the callback list
+// Add the foo logging function to the callback list
 callbacks.add( foo );
 
-// fire the items on the list, passing an argument
+// Fire the items on the list, passing an argument
 callbacks.fire( "hello" );
-// outputs "foo: hello"
+// Outputs "foo: hello"
 
-// lock the callbacks list
+// Lock the callbacks list
 callbacks.lock();
 
-// try firing the items again
+// Try firing the items again
 callbacks.fire( "world" );
-// as the list was locked, no items were called,
+// As the list was locked, no items were called,
 // so "foo: world" isn't logged
 
-// add the foo function to the callback list again
+// Add the foo function to the callback list again
 callbacks.add( foo );
 
-// try firing the items again
+// Try firing the items again
 callbacks.fire( "silentArgument" );
-// outputs "foo: hello" because the argument value was stored in memory
+// Outputs "foo: hello" because the argument value was stored in memory
 
-// add the bar function to the callback list
+// Add the bar function to the callback list
 callbacks.add( bar );
 
 callbacks.fire( "youHadMeAtHello" );
-// outputs "bar: hello" because the list is still locked,
+// Outputs "bar: hello" because the list is still locked,
 // and the argument value is still stored in memory
 ]]></code>
   </example>
-
   <category slug="callbacks-object"/>
   <category slug="version/1.7"/>
 </entry>

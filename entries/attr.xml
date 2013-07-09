@@ -93,20 +93,20 @@
 $( "input" )
   .change(function() {
     var $input = $( this );
-    $( "p" ).html( ".attr( 'checked' ): <b>" + $input.attr( "checked" ) + "</b><br>" + 
+    $( "p" ).html( ".attr( 'checked' ): <b>" + $input.attr( "checked" ) + "</b><br>" +
       ".prop( 'checked' ): <b>" + $input.prop( "checked" ) + "</b><br>" +
       ".is( ':checked' ): <b>" + $input.is( ":checked" ) + "</b>" );
   })
   .change();
 ]]></code>
       <css><![CDATA[
-  p { 
+  p {
     margin: 20px 0 0;
   }
   b {
-    color: blue; 
+    color: blue;
   }
-  ]]></css>
+]]></css>
       <html><![CDATA[
 <input id="check1" type="checkbox" checked="checked">
 <label for="check1">Check me</label>
@@ -121,14 +121,14 @@ var title = $( "em" ).attr( "title" );
 $( "div" ).text( title );
 ]]></code>
       <css><![CDATA[
-  em { 
-    color: blue; 
-    font-weight: bold; 
+  em {
+    color: blue;
+    font-weight: bold;
   }
-  div { 
-    color: red; 
+  div {
+    color: red;
   }
-  ]]></css>
+]]></css>
       <html><![CDATA[
 <p>Once there was a <em title="huge, gigantic">large</em> dinosaur...</p>
 
@@ -179,7 +179,8 @@ $( "#greatphoto" ).attr( "alt", "Beijing Brush Seller" );
       </code></pre>
       <p><em>Add</em> an attribute the same way:</p>
       <pre><code>
-$( "#greatphoto" ).attr( "title", "Photo by Kelly Clark" );</code></pre>
+$( "#greatphoto" ).attr( "title", "Photo by Kelly Clark" );
+      </code></pre>
       <h4 id="setting-several-attrs">Setting several attributes at once</h4>
       <p>To change the <code>alt</code> attribute and add the <code>title</code> attribute at the same time, pass both sets of names and values into the method at once using a plain JavaScript object. Each key-value pair in the object adds or modifies an attribute:</p>
       <pre><code>
@@ -194,8 +195,8 @@ $( "#greatphoto" ).attr({
       <h4 id="computed-attr-values">Computed attribute values</h4>
       <p>By using a function to set attributes, you can compute the value based on other properties of the element. For example, to concatenate a new value with an existing value:</p>
       <pre><code>
-$( "#greatphoto" ).attr( "title", function(i, val) {
-  return val + " - photo by Kelly Clark"
+$( "#greatphoto" ).attr( "title", function( i, val ) {
+  return val + " - photo by Kelly Clark";
 });
       </code></pre>
       <p>This use of a function to compute attribute values can be particularly useful when modifying the attributes of multiple elements at once.</p>
@@ -212,14 +213,14 @@ $( "img" ).attr({
 $( "div" ).text( $( "img" ).attr( "alt" ) );
 ]]></code>
       <css><![CDATA[
-  img { 
-    padding: 10px; 
+  img {
+    padding: 10px;
   }
-  div { 
-    color: red; 
-    font-size: 24px; 
+  div {
+    color: red;
+    font-size: 24px;
   }
-  ]]></css>
+]]></css>
       <html><![CDATA[
 <img>
 <img>
@@ -240,16 +241,16 @@ $( "div" )
 });
 ]]></code>
       <css><![CDATA[
-  div { 
-    color: blue; 
+  div {
+    color: blue;
   }
-  span { 
-    color: red; 
+  span {
+    color: red;
   }
-  b { 
-    font-weight: bolder; 
+  b {
+    font-weight: bolder;
   }
-  ]]></css>
+]]></css>
       <html><![CDATA[
 <div>Zero-th <span></span></div>
 <div>First <span></span></div>

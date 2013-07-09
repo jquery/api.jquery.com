@@ -41,9 +41,9 @@
     <desc>Filter resolve value:</desc>
     <code><![CDATA[
 var defer = $.Deferred(),
-    filtered = defer.pipe(function( value ) {
-      return value * 2;
-    });
+  filtered = defer.pipe(function( value ) {
+    return value * 2;
+  });
 
 defer.resolve( 5 );
 filtered.done(function( value ) {
@@ -55,9 +55,9 @@ filtered.done(function( value ) {
     <desc>Filter reject value:</desc>
     <code><![CDATA[
 var defer = $.Deferred(),
-    filtered = defer.pipe( null, function( value ) {
-      return value * 3;
-    });
+  filtered = defer.pipe( null, function( value ) {
+    return value * 3;
+  });
 
 defer.reject( 6 );
 filtered.fail(function( value ) {
@@ -69,9 +69,9 @@ filtered.fail(function( value ) {
     <desc>Chain tasks:</desc>
     <code><![CDATA[
 var request = $.ajax( url, { dataType: "json" } ),
-    chained = request.pipe(function( data ) {
-      return $.ajax( url2, { data: { user: data.userId } } );
-    });
+  chained = request.pipe(function( data ) {
+    return $.ajax( url2, { data: { user: data.userId } } );
+  });
 
 chained.done(function( data ) {
   // data retrieved from url2 as provided by the first request

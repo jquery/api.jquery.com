@@ -22,8 +22,8 @@
 $( "ul.topnav > li" ).css( "border", "3px double red" );
 ]]></code>
     <css><![CDATA[
-  body { 
-    font-size: 14px; 
+  body {
+    font-size: 14px;
   }
   ]]></css>
     <html><![CDATA[
@@ -31,9 +31,9 @@ $( "ul.topnav > li" ).css( "border", "3px double red" );
   <li>Item 1</li>
   <li>Item 2
     <ul>
-	  <li>Nested item 1</li>
-	  <li>Nested item 2</li>
-	  <li>Nested item 3</li>
+    <li>Nested item 1</li>
+    <li>Nested item 2</li>
+    <li>Nested item 3</li>
     </ul>
   </li>
   <li>Item 3</li>

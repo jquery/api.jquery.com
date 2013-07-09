@@ -19,7 +19,7 @@
   <desc>Create a deep copy of the set of matched elements.</desc>
   <longdesc>
     <p>The <code>.clone()</code> method performs a <em>deep</em> copy of the set of matched elements, meaning that it copies the matched elements as well as all of their descendant elements and text nodes. For performance reasons, the dynamic state of form elements (e.g., user data typed into <code>input</code>, and <code>textarea</code> or user selections made to a <code>select</code>) is not copied to the cloned elements. The clone operation sets these fields to their default values as specified in the HTML.</p>
-	<p>When used in conjunction with one of the insertion methods, <code>.clone()</code> is a convenient way to duplicate elements on a page. Consider the following HTML:</p>
+    <p>When used in conjunction with one of the insertion methods, <code>.clone()</code> is a convenient way to duplicate elements on a page. Consider the following HTML:</p>
     <pre><code>
 &lt;div class="container"&gt;
   &lt;div class="hello"&gt;Hello&lt;/div&gt;
@@ -59,9 +59,11 @@ $( ".hello" ).clone().appendTo( ".goodbye" );
     <p>Normally, any event handlers bound to the original element are <em>not</em> copied to the clone. The optional <code>withDataAndEvents</code> parameter allows us to change this behavior, and to instead make copies of all of the event handlers as well, bound to the new copy of the element. As of jQuery 1.4, all element data (attached by the <code>.data()</code> method) is also copied to the new copy. </p>
     <p>However, objects and arrays within element data are not copied and will continue to be shared between the cloned element and the original element. To deep copy all data, copy each one manually:</p>
     <pre><code>
-var $elem = $( "#elem" ).data( "arr": [ 1 ] ), // Original element with attached data
+// Original element with attached data
+var $elem = $( "#elem" ).data( "arr": [ 1 ] ),
     $clone = $elem.clone( true )
-      .data( "arr", $.extend( [], $elem.data( "arr" ) ) ); // Deep copy to prevent data sharing
+      // Deep copy to prevent data sharing
+      .data( "arr", $.extend( [], $elem.data( "arr" ) ) );
     </code></pre>
     <p>As of jQuery 1.5, <code>withDataAndEvents</code> can be optionally enhanced with <code>deepWithDataAndEvents </code> to copy the events and data for all children of the cloned element.</p>
     <div class="warning">

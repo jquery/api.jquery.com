@@ -15,11 +15,11 @@
     <desc>Determine the exact context used.</desc>
     <code><![CDATA[
 $( "ul" )
-  .append( "<li>" + $( "ul" ).context + "</li>")
-  .append( "<li>" + $( "ul", document.body ).context.nodeName + "</li>");
+  .append( "<li>" + $( "ul" ).context + "</li>" )
+  .append( "<li>" + $( "ul", document.body ).context.nodeName + "</li>" );
 ]]></code>
     <html><![CDATA[
-Context:<ul></ul>
+Context: <ul></ul>
 ]]></html>
   </example>
   <category slug="internals"/>

@@ -65,8 +65,8 @@ $( "#other" ).click(function() {
   <example>
     <desc>To bind a "Hello World!" alert box the dblclick event on every paragraph on the page:</desc>
     <code><![CDATA[
-$( "p" ).dblclick( function () { 
-  alert( "Hello World!" ); 
+$( "p" ).dblclick(function() {
+  alert( "Hello World!" );
 });
 ]]></code>
   </example>
@@ -74,24 +74,25 @@ $( "p" ).dblclick( function () {
     <desc>Double click to toggle background color.</desc>
     <code><![CDATA[
 var divdbl = $( "div:first" );
-divdbl.dblclick(function () {
+divdbl.dblclick(function() {
   divdbl.toggleClass( "dbl" );
 });
 ]]></code>
     <css><![CDATA[
-  div { 
+  div {
     background: blue;
     color: white;
     height: 100px;
     width: 150px;
  }
-  div.dbl { 
+  div.dbl {
     background: yellow;
-    color: black; 
+    color: black;
   }
-  ]]></css>
+]]></css>
     <html><![CDATA[
-<div></div><span>Double click the block</span>
+<div></div>
+<span>Double click the block</span>
 ]]></html>
   </example>
   <category slug="events/mouse-events"/>
