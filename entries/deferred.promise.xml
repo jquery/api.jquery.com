@@ -17,42 +17,42 @@
   <example>
     <desc>Create a Deferred and set two timer-based functions to either resolve or reject the Deferred after a random interval. Whichever one fires first "wins" and will call one of the callbacks. The second timeout has no effect since the Deferred is already complete (in a resolved or rejected state) from the first timeout action. Also set a timer-based progress notification function, and call a progress handler that adds "working..." to the document body.</desc>
     <code><![CDATA[
-function asyncEvent(){
-    var dfd = new jQuery.Deferred();
+function asyncEvent() {
+  var dfd = new jQuery.Deferred();
 
-    // Resolve after a random interval
-    setTimeout(function(){
-        dfd.resolve("hurray");
-    }, Math.floor(400+Math.random()*2000));
+  // Resolve after a random interval
+  setTimeout(function() {
+    dfd.resolve( "hurray" );
+  }, Math.floor( 400 + Math.random() * 2000 ) );
 
-    // Reject after a random interval
-    setTimeout(function(){
-        dfd.reject("sorry");
-    }, Math.floor(400+Math.random()*2000));
+  // Reject after a random interval
+  setTimeout(function() {
+    dfd.reject( "sorry" );
+  }, Math.floor( 400 + Math.random() * 2000 ) );
 
-    // Show a "working..." message every half-second
-    setTimeout(function working(){
-        if ( dfd.state() === "pending" ) {
-            dfd.notify("working... ");
-            setTimeout(working, 500);
-        }
-    }, 1);
+  // Show a "working..." message every half-second
+  setTimeout(function working() {
+    if ( dfd.state() === "pending" ) {
+      dfd.notify( "working... " );
+      setTimeout( working, 500 );
+    }
+  }, 1 );
 
-    // Return the Promise so caller can't change the Deferred
-    return dfd.promise();
+  // Return the Promise so caller can't change the Deferred
+  return dfd.promise();
 }
 
 // Attach a done, fail, and progress handler for the asyncEvent
 $.when( asyncEvent() ).then(
-    function(status){
-        alert( status+', things are going well' );
-    },
-    function(status){
-        alert( status+', you fail this time' );
-    },
-    function(status){
-        $("body").append(status);
-    }
+  function( status ) {
+    alert( status + ", things are going well" );
+  },
+  function( status ) {
+    alert( status + ", you fail this time" );
+  },
+  function( status ) {
+    $( "body" ).append( status );
+  }
 );
 ]]></code>
   </example>
@@ -65,8 +65,8 @@ var obj = {
     alert( "Hello " + name );
   }
 },
-// Create a Deferred
-defer = $.Deferred();
+    // Create a Deferred
+    defer = $.Deferred();
 
 // Set object as a promise
 defer.promise( obj );
