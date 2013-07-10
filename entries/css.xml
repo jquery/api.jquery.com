@@ -90,7 +90,7 @@ $( "div" ).click(function() {
     width: 70px;
     background-color: #f11;
   }
-  ]]></css>
+]]></css>
       <html><![CDATA[
 <p id="result">&nbsp;</p>
 <div id="box1">1</div>
