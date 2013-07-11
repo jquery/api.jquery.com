@@ -8,15 +8,22 @@
   <longdesc>   </longdesc>
   <example>
     <desc>Show the mouse position relative to the left and top edges of the document (within this iframe).</desc>
-    <css>body {background-color: #eef; }
-      div { padding: 20px; }
-    </css>
-    <html><![CDATA[<div id="log"></div>]]></html>
+    <css><![CDATA[
+    body {
+      background-color: #eef;
+    }
+    div {
+      padding: 20px;
+    }
+]]></css>
+    <html><![CDATA[
+<div id="log"></div>
+]]></html>
     <code><![CDATA[
-$(document).on('mousemove',function(e){
-  $("#log").text("e.pageX: " + e.pageX + ", e.pageY: " + e.pageY);
+$( document ).on( "mousemove", function( e ) {
+  $( "#log" ).text( "e.pageX: " + e.pageX + ", e.pageY: " + e.pageY );
 });
-    ]]></code>
+]]></code>
   </example>
   <category slug="events/event-object"/>
   <category slug="version/1.0.4"/>

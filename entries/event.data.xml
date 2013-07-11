@@ -18,13 +18,13 @@
 <div id="log"></div>
 ]]></html>
     <code><![CDATA[
-var logDiv = $("#log");
+var logDiv = $( "#log" );
 
-/* Note: This code is for demonstration purposes only. */
+// Note: This code is for demonstration purposes only.
 for (var i = 0; i < 5; i++) {
-  $("button").eq(i).on("click", {value: i}, function(event) {
+  $( "button" ).eq( i ).on( "click", {value: i}, function( event ) {
     var msgs = [
-      "button = " + $(this).index(),
+      "button = " + $( this ).index(),
       "event.data.value = " + event.data.value,
       "i = " + i
     ];

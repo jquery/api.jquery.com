@@ -7,17 +7,23 @@
   <desc>Remove all child nodes of the set of matched elements from the DOM.</desc>
   <longdesc>
     <p>This method removes not only child (and other descendant) elements, but also any text within the set of matched elements. This is because, according to the DOM specification, any string of text within an element is considered a child node of that element. Consider the following HTML:</p>
-    <pre><code>&lt;div class="container"&gt;
+    <pre><code>
+&lt;div class="container"&gt;
   &lt;div class="hello"&gt;Hello&lt;/div&gt;
   &lt;div class="goodbye"&gt;Goodbye&lt;/div&gt;
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;
+    </code></pre>
     <p>We can target any element for removal:</p>
-    <pre><code>$('.hello').empty();</code></pre>
+    <pre><code>
+$( ".hello" ).empty();
+    </code></pre>
     <p>This will result in a DOM structure with the <code>Hello</code> text deleted:</p>
-    <pre><code>&lt;div class="container"&gt;
+    <pre><code>
+&lt;div class="container"&gt;
   &lt;div class="hello"&gt;&lt;/div&gt;
   &lt;div class="goodbye"&gt;Goodbye&lt;/div&gt;
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;
+    </code></pre>
     <p>If we had any number of nested elements inside <code>&lt;div class="hello"&gt;</code>, they would be removed, too. </p>
     <p>To avoid memory leaks, jQuery removes other constructs such as data and event handlers from the child elements before removing the elements themselves.</p>
     <p>If you want to remove elements without destroying their data or event handlers (so they can be re-added later), use <a href="/detach/"><code>.detach()</code></a> instead.</p>
@@ -25,18 +31,22 @@
   <example>
     <desc>Removes all child nodes (including text nodes) from all paragraphs</desc>
     <code><![CDATA[
-  $("button").click(function () {
-    $("p").empty();
-  });
+$( "button" ).click(function () {
+  $( "p" ).empty();
+});
 ]]></code>
     <css><![CDATA[
-  p { background:yellow; }
+  p {
+    background: yellow;
+  }
 ]]></css>
-    <html><![CDATA[<p>
+    <html><![CDATA[
+<p>
   Hello, <span>Person</span> <a href="javascript:;">and person</a>
 </p>
 
-<button>Call empty() on above paragraph</button>]]></html>
+<button>Call empty() on above paragraph</button>
+]]></html>
   </example>
   <category slug="manipulation/dom-removal"/>
   <category slug="version/1.0"/>

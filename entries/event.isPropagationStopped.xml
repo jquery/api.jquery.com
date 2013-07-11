@@ -11,26 +11,25 @@
   <example>
     <desc>Checks whether event.stopPropagation() was called</desc>
     <code><![CDATA[
-
-function propStopped(e) {
+function propStopped( e ) {
   var msg = "";
   if ( e.isPropagationStopped() ) {
     msg =  "called"
   } else {
     msg = "not called";
   }
-  $("#stop-log").append( "<div>" + msg + "</div>" );
+  $( "#stop-log" ).append( "<div>" + msg + "</div>" );
 }
 
-$("button").click(function(event) {
-  propStopped(event);
+$( "button" ).click(function(event) {
+  propStopped( event );
   event.stopPropagation();
-  propStopped(event);
+  propStopped( event );
 });
 ]]></code>
     <html><![CDATA[
-  <button>click me</button>
-  <div id="stop-log"></div>
+<button>click me</button>
+<div id="stop-log"></div>
   ]]></html>
   </example>
   <category slug="events/event-object"/>

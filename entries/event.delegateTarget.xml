@@ -11,9 +11,11 @@
   </longdesc>
   <example>
     <desc>When a button in any box class is clicked, change the box's background color to red.</desc>
-    <code><![CDATA[$(".box").on("click", "button", function(event) {
-  $(event.delegateTarget).css("background-color", "red");
-});  ]]></code>
+    <code><![CDATA[
+$( ".box" ).on( "click", "button", function( event ) {
+  $( event.delegateTarget ).css( "background-color", "red" );
+});
+]]></code>
   </example>
   <category slug="events/event-object"/>
   <category slug="events"/>

@@ -6,30 +6,41 @@
   </signature>
   <desc> Keeps the rest of the handlers from being executed and prevents the event from bubbling up the DOM tree.</desc>
   <longdesc>
-    <p>In addition to keeping any additional handlers on an element from being executed, this method also stops the bubbling by implicitly calling <code>event.stopPropagation()</code>. To simply prevent the event from bubbling to ancestor elements but allow other event handlers to execute on the same element, we can use <code><a href="http://api.jquery.com/event.stopPropagation">event.stopPropagation()</a></code> instead.</p>
-    <p>Use <code><a href="http://api.jquery.com/event.isImmediatePropagationStopped">event.isImmediatePropagationStopped()</a></code> to know whether this method was ever called (on that event object).</p>
+    <p>In addition to keeping any additional handlers on an element from being executed, this method also stops the bubbling by implicitly calling <code>event.stopPropagation()</code>. To simply prevent the event from bubbling to ancestor elements but allow other event handlers to execute on the same element, we can use <code><a href="/event.stopPropagation">event.stopPropagation()</a></code> instead.</p>
+    <p>Use <code><a href="/event.isImmediatePropagationStopped">event.isImmediatePropagationStopped()</a></code> to know whether this method was ever called (on that event object).</p>
   </longdesc>
   <note id="propagation-for-live-or-delegate" type="additional"/>
   <example>
     <desc>Prevents other event handlers from being called.</desc>
     <css><![CDATA[
-p { height: 30px; width: 150px; background-color: #ccf; }
-div {height: 30px; width: 150px; background-color: #cfc; }
+  p {
+    height: 30px;
+    width: 150px;
+    background-color: #ccf;
+  }
+  div {
+    height: 30px;
+    width: 150px;
+    background-color: #cfc;
+  }
 ]]></css>
     <code><![CDATA[
-$("p").click(function(event){
+$( "p" ).click(function( event ) {
   event.stopImmediatePropagation();
 });
-$("p").click(function(event){
+$( "p" ).click(function( event ) {
   // This function won't be executed
-  $(this).css("background-color", "#f00");
+  $( this ).css( "background-color", "#f00" );
 });
-$("div").click(function(event) {
+$( "div" ).click(function( event ) {
   // This function will be executed
-    $(this).css("background-color", "#f00");
-});]]></code>
-    <html><![CDATA[<p>paragraph</p>
-<div>division</div>]]></html>
+    $( this ).css( "background-color", "#f00" );
+});
+]]></code>
+    <html><![CDATA[
+<p>paragraph</p>
+<div>division</div>
+]]></html>
   </example>
   <category slug="events/event-object"/>
   <category slug="version/1.3"/>

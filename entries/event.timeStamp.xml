@@ -12,23 +12,29 @@
   <example>
     <desc>Display the time since the click handler last executed.</desc>
     <css><![CDATA[
-div { height: 100px; width: 300px; margin: 10px;
-      background-color: #ffd; overflow: auto; }
+  div {
+    height: 100px;
+    width: 300px;
+    margin: 10px;
+    background-color: #ffd;
+    overflow: auto;
+  }
 ]]></css>
     <code><![CDATA[
 var last, diff;
-$('div').click(function(event) {
+$( "div" ).click(function( event ) {
   if ( last ) {
-    diff = event.timeStamp - last
-    $('div').append('time since last event: ' + diff + '<br/>');
+    diff = event.timeStamp - last;
+    $( "div" ).append( "time since last event: " + diff + "<br>" );
   } else {
-    $('div').append('Click again.<br/>');
+    $( "div" ).append( "Click again.<br>" );
   }
   last = event.timeStamp;
 });
 ]]></code>
     <html><![CDATA[
-<div>Click.</div>]]></html>
+<div>Click.</div>
+]]></html>
   </example>
   <category slug="events/event-object"/>
   <category slug="version/1.2.6"/>

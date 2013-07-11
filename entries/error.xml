@@ -18,16 +18,19 @@
     </argument>
   </signature>
   <longdesc>
-    <p>This method is a shortcut for <code>.on('error', handler)</code>.</p>
+    <p>This method is a shortcut for <code>.on( "error", handler )</code>.</p>
     <p>The <code>error</code> event is sent to elements, such as images, that are referenced by a document and loaded by the browser. It is called if the element was not loaded correctly.</p>
     <p>For example, consider a page with a simple image element:</p>
-    <pre><code>&lt;img alt="Book" id="book" /&gt;</code></pre>
+    <pre><code>
+&lt;img alt="Book" id="book"&gt;
+    </code></pre>
     <p>The event handler can be bound to the image:</p>
-    <pre><code>$('#book')
+    <pre><code>
+$( "#book" )
   .error(function() {
-    alert('Handler for .error() called.')
+    alert( "Handler for .error() called." )
   })
-  .attr("src", "missing.png");
+  .attr( "src", "missing.png" );
     </code></pre>
     <p>If the image cannot be loaded (for example, because it is not present at the supplied URL), the alert  is displayed:</p>
     <p>
@@ -40,11 +43,13 @@
   </longdesc>
   <example>
     <desc>To hide the "broken image" icons for IE users, you can try:</desc>
-    <code><![CDATA[$("img")
-  .error(function(){
-    $(this).hide();
+    <code><![CDATA[
+$( "img" )
+  .error(function() {
+    $( this ).hide();
   })
-  .attr("src", "missing.png");]]></code>
+  .attr( "src", "missing.png" );
+]]></code>
   </example>
   <category slug="events/browser-events"/>
   <category slug="version/1.0"/>

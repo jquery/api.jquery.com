@@ -8,9 +8,11 @@
   <longdesc>   </longdesc>
   <example>
     <desc>On all anchor clicks, alert the event type.</desc>
-    <code><![CDATA[$("a").click(function(event) {
-  alert(event.type); // "click"
-}); ]]></code>
+    <code><![CDATA[
+$( "a" ).click(function( event ) {
+  alert( event.type ); // "click"
+});
+]]></code>
   </example>
   <category slug="events/event-object"/>
   <category slug="version/1.0"/>

@@ -10,85 +10,115 @@
     <p>Suppose we have a couple short lists on a page:</p>
     <pre><code>
 &lt;ul class="first"&gt;
-   &lt;li class="foo"&gt;list item 1&lt;/li&gt;
-   &lt;li&gt;list item 2&lt;/li&gt;
-   &lt;li class="bar"&gt;list item 3&lt;/li&gt;
+  &lt;li class="foo"&gt;list item 1&lt;/li&gt;
+  &lt;li&gt;list item 2&lt;/li&gt;
+  &lt;li class="bar"&gt;list item 3&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ul class="second"&gt;
-   &lt;li class="foo"&gt;list item 1&lt;/li&gt;
-   &lt;li&gt;list item 2&lt;/li&gt;
-   &lt;li class="bar"&gt;list item 3&lt;/li&gt;
+  &lt;li class="foo"&gt;list item 1&lt;/li&gt;
+  &lt;li&gt;list item 2&lt;/li&gt;
+  &lt;li class="bar"&gt;list item 3&lt;/li&gt;
 &lt;/ul&gt;
 </code></pre>
     <p>The <code>end()</code> method is useful primarily when exploiting jQuery's chaining properties. When not using chaining, we can usually just call up a previous object by variable name, so we don't need to manipulate the stack. With <code>end()</code>, though, we can string all the method calls together:</p>
     <pre><code>
-$('ul.first').find('.foo').css('background-color', 'red')
-  .end().find('.bar').css('background-color', 'green');
-</code></pre>
+$( "ul.first" )
+  .find( ".foo" )
+    .css( "background-color", "red" )
+  .end()
+    .find( ".bar" )
+  .css( "background-color", "green" );
+    </code></pre>
     <p>This chain searches for items with the class <code>foo</code> within the first list only and turns their backgrounds red. Then <code>end()</code> returns the object to its state before the call to <code>find()</code>, so the second <code>find()</code> looks for '.bar' inside <code>&lt;ul class="first"&gt;</code>, not just inside that list's <code>&lt;li class="foo"&gt;</code>, and turns the matching elements' backgrounds green. The net result is that items 1 and 3 of the first list have a colored background, and none of the items from the second list do.</p>
     <p>A long jQuery chain can be visualized as a structured code block, with filtering methods providing the openings of nested blocks and <code>end()</code> methods closing them:</p>
     <pre><code>
-$('ul.first').find('.foo')
-  .css('background-color', 'red')
-.end().find('.bar')
-  .css('background-color', 'green')
-.end();
-</code></pre>
+$( "ul.first" )
+  .find( ".foo" )
+    .css( "background-color", "red" )
+  .end()
+  .find( ".bar" )
+    .css( "background-color", "green" )
+  .end();
+    </code></pre>
     <p>The last <code>end()</code> is unnecessary, as we are discarding the jQuery object immediately thereafter. However, when the code is written in this form, the <code>end()</code> provides visual symmetry and a sense of completion &#x2014;making the program, at least to the eyes of some developers, more readable, at the cost of a slight hit to performance as it is an additional function call.</p>
   </longdesc>
   <example>
     <desc>Selects all paragraphs, finds span elements inside these, and reverts the selection back to the paragraphs.</desc>
     <code><![CDATA[
-jQuery.fn.showTags = function (n) {
-  var tags = this.map(function () {
-                          return this.tagName;
-                        })
-                    .get().join(", ");
-  $("b:eq(" + n + ")").text(tags);
+jQuery.fn.showTags = function( n ) {
+  var tags = this.map(function() {
+    return this.tagName;
+  })
+  .get()
+  .join(", ");
+  $( "b:eq( " + n + " )" ).text( tags );
   return this;
 };
 
-$("p").showTags(0)
-      .find("span")
-      .showTags(1)
-      .css("background", "yellow")
-      .end()
-      .showTags(2)
-      .css("font-style", "italic");
-
+$( "p" )
+  .showTags( 0 )
+  .find( "span" )
+    .showTags( 1 )
+    .css( "background", "yellow" )
+  .end()
+  .showTags( 2 )
+  .css( "font-style", "italic" );
 ]]></code>
     <css><![CDATA[
-  p, div { margin:1px; padding:1px; font-weight:bold;
-           font-size:16px; }
-  div { color:blue; }
-  b { color:red; }
-  ]]></css>
-    <html><![CDATA[<p>
-    Hi there <span>how</span> are you <span>doing</span>?
-  </p>
+  p, div {
+    margin: 1px;
+    padding: 1px;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  div {
+    color: blue;
+  }
+  b {
+    color: red;
+  }
+]]></css>
+    <html><![CDATA[
+<p>
+  Hi there <span>how</span> are you <span>doing</span>?
+</p>
 
-  <p>
-    This <span>span</span> is one of
-    several <span>spans</span> in this
-    <span>sentence</span>.
-  </p>
+<p>
+  This <span>span</span> is one of
+  several <span>spans</span> in this
+  <span>sentence</span>.
+</p>
 
-  <div>
-    Tags in jQuery object initially: <b></b>
-  </div>
-  <div>
-    Tags in jQuery object after find: <b></b>
+<div>
+  Tags in jQuery object initially: <b></b>
+</div>
 
-  </div>
-  <div>
-    Tags in jQuery object after end: <b></b>
-  </div>]]></html>
+<div>
+  Tags in jQuery object after find: <b></b>
+</div>
+
+<div>
+  Tags in jQuery object after end: <b></b>
+</div>
+]]></html>
   </example>
   <example>
     <desc>Selects all paragraphs, finds span elements inside these, and reverts the selection back to the paragraphs.</desc>
-    <code><![CDATA[$("p").find("span").end().css("border", "2px red solid");]]></code>
-    <css><![CDATA[p { margin:10px; padding:10px; }]]></css>
-    <html><![CDATA[<p><span>Hello</span>, how are you?</p>]]></html>
+    <code><![CDATA[
+$( "p" )
+  .find( "span" )
+  .end()
+  .css( "border", "2px red solid" );
+]]></code>
+    <css><![CDATA[
+  p {
+    margin: 10px;
+    padding: 10px;
+  }
+]]></css>
+    <html><![CDATA[
+<p><span>Hello</span>, how are you?</p>
+]]></html>
   </example>
   <category slug="traversing/miscellaneous-traversal"/>
   <category slug="version/1.0"/>

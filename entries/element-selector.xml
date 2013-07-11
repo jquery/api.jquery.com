@@ -14,21 +14,24 @@
   </longdesc>
   <example>
     <desc>Finds every DIV element.</desc>
-    <code><![CDATA[$("div").css("border","9px solid red");]]></code>
-    <html><![CDATA[<div>DIV1</div>
-
-  <div>DIV2</div>
-  <span>SPAN</span>]]></html>
+    <code><![CDATA[
+$( "div" ).css( "border", "9px solid red" );
+]]></code>
+    <html><![CDATA[
+<div>DIV1</div>
+<div>DIV2</div>
+<span>SPAN</span>
+]]></html>
     <css><![CDATA[
-  div,span {
+  div, span {
     width: 60px;
     height: 60px;
-    float:left;
+    float: left;
     padding: 10px;
     margin: 10px;
-    background-color: #EEEEEE;
+    background-color: #eee;
   }
-  ]]></css>
+]]></css>
   </example>
   <category slug="selectors/basic-css-selectors"/>
   <category slug="version/1.0"/>

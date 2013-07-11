@@ -10,9 +10,11 @@
   </longdesc>
   <example>
     <desc>On mouseout of anchors, alert the element type being entered.</desc>
-    <code><![CDATA[$("a").mouseout(function(event) {
-  alert(event.relatedTarget.nodeName); // "DIV"
-});  ]]></code>
+    <code><![CDATA[
+$( "a" ).mouseout(function( event ) {
+  alert( event.relatedTarget.nodeName ); // "DIV"
+});
+]]></code>
   </example>
   <category slug="events/event-object"/>
   <category slug="version/1.1.4"/>

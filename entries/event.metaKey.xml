@@ -4,21 +4,28 @@
   <signature>
     <added>1.0.4</added>
   </signature>
-	<desc>Indicates whether the META key was pressed when the event fired.</desc>
-	<longdesc>
+  <desc>Indicates whether the META key was pressed when the event fired.</desc>
+  <longdesc>
     <p>Returns a boolean value (<code>true</code> or <code>false</code>) that indicates whether or not the <kbd>META</kbd> key was pressed at the time the event fired.
     This key might map to an alternative key name on some platforms.</p>
-	</longdesc>
+  </longdesc>
   <example>
     <desc>Determine whether the META key was pressed when the event fired.</desc>
-    <css>body {background-color: #eef; }
-    div { padding: 20px; }</css>
-	<html><![CDATA[
+    <css><![CDATA[
+    body {
+      background-color: #eef;
+    }
+    div {
+      padding: 20px;
+    }
+]]></css>
+    <html><![CDATA[
 <button value="Test" name="Test" id="checkMetaKey">Click me!</button>
-<div id="display"></div>]]></html>
-		<code><![CDATA[
-$('#checkMetaKey').click(function(e){
-  $('#display').text(e.metaKey);
+<div id="display"></div>
+]]></html>
+    <code><![CDATA[
+$( "#checkMetaKey" ).click(function( e ) {
+  $( "#display" ).text( e.metaKey );
 });
 ]]></code>
   </example>

@@ -11,26 +11,25 @@
   <example>
     <desc>Checks whether event.stopImmediatePropagation() was called.</desc>
     <code><![CDATA[
-
-function immediatePropStopped(e) {
+function immediatePropStopped( e ) {
   var msg = "";
   if ( e.isImmediatePropagationStopped() ) {
     msg =  "called"
   } else {
     msg = "not called";
   }
-  $("#stop-log").append( "<div>" + msg + "</div>" );
+  $( "#stop-log" ).append( "<div>" + msg + "</div>" );
 }
 
-$("button").click(function(event) {
-  immediatePropStopped(event);
+$( "button" ).click(function( event ) {
+  immediatePropStopped( event );
   event.stopImmediatePropagation();
-  immediatePropStopped(event);
+  immediatePropStopped( event );
 });
 ]]></code>
     <html><![CDATA[
-  <button>click me</button>
-  <div id="stop-log"></div>
+<button>click me</button>
+<div id="stop-log"></div>
   ]]></html>
   </example>
   <category slug="events/event-object"/>

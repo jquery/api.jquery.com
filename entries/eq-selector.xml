@@ -18,39 +18,44 @@
   <desc>Select the element at index <code>n</code> within the matched set.</desc>
   <longdesc>
     <p>The index-related selectors (<code>:eq()</code>, <code>:lt()</code>, <code>:gt()</code>, <code>:even</code>, <code>:odd</code>) filter the set of elements that have matched the expressions that precede them. They narrow the set down based on the order of the elements within this matched set. For example, if elements are first selected with a class selector (<code>.myclass</code>) and four elements are returned, these elements are given indices <code>0</code> through <code>3</code> for the purposes of these selectors.</p>
-    <p>Note that since JavaScript arrays use <em>0-based indexing</em>, these selectors reflect that fact. This is why <code>$('.myclass:eq(1)')</code> selects the second element in the document with the class myclass, rather than the first. In contrast, <code>:nth-child(n)</code> uses <em>1-based indexing</em> to conform to the CSS specification.</p>
+    <p>Note that since JavaScript arrays use <em>0-based indexing</em>, these selectors reflect that fact. This is why <code>$( ".myclass:eq(2)" )</code> selects the second element in the document with the class myclass, rather than the first. In contrast, <code>:nth-child(n)</code> uses <em>1-based indexing</em> to conform to the CSS specification.</p>
     <p>Prior to jQuery 1.8, the <code>:eq(index)</code> selector did <em>not</em> accept a negative value for <code>index</code> (though the <a href="/eq/"><code>.eq(index)</code></a> method did).</p>
   </longdesc>
   <note id="jquery-selector-extension-alt" type="additional" data-selector=":eq()" data-alt="$(&quot;your-pure-css-selector&quot;).eq(index)"/>
   <example>
     <desc>Finds the third td.</desc>
-    <code><![CDATA[$("td:eq(2)").css("color", "red");]]></code>
-    <html><![CDATA[<table border="1">
+    <code><![CDATA[
+$( "td:eq( 2 )" ).css( "color", "red" );
+]]></code>
+    <html><![CDATA[
+<table border="1">
   <tr><td>TD #0</td><td>TD #1</td><td>TD #2</td></tr>
   <tr><td>TD #3</td><td>TD #4</td><td>TD #5</td></tr>
   <tr><td>TD #6</td><td>TD #7</td><td>TD #8</td></tr>
-</table>]]></html>
+</table>
+]]></html>
   </example>
   <example>
     <height>160</height>
     <desc>Apply three different styles to list items to demonstrate that <code>:eq()</code> is designed to select a single element while <code>:nth-child()</code> or <code>:eq()</code> within a looping construct such as <code>.each()</code> can select multiple elements.</desc>
     <code><![CDATA[
-/* applies yellow background color to a single <li> */
-$("ul.nav li:eq(1)").css( "backgroundColor", "#ff0" );
+// Applies yellow background color to a single <li>
+$( "ul.nav li:eq( 1 )" ).css( "backgroundColor", "#ff0" );
 
-/* applies italics to text of the second <li> within each <ul class="nav"> */
-$("ul.nav").each(function(index) {
-  $(this).find("li:eq(1)").css( "fontStyle", "italic" );
+// Applies italics to text of the second <li> within each <ul class="nav">
+$( "ul.nav" ).each(function( index ) {
+  $( this ).find( "li:eq( 1 )" ).css( "fontStyle", "italic" );
 });
 
-/* applies red text color to descendants of <ul class="nav"> */
-/* for each <li> that is the second child of its parent */
-$("ul.nav li:nth-child(2)").css( "color", "red" );
+// Applies red text color to descendants of <ul class="nav">
+// for each <li> that is the second child of its parent
+$( "ul.nav li:nth-child( 2 )" ).css( "color", "red" );
 ]]></code>
-    <html><![CDATA[<ul class="nav">
-   <li>List 1, item 1</li>
-   <li>List 1, item 2</li>
-   <li>List 1, item 3</li>
+    <html><![CDATA[
+<ul class="nav">
+  <li>List 1, item 1</li>
+  <li>List 1, item 2</li>
+  <li>List 1, item 3</li>
 </ul>
 <ul class="nav">
   <li>List 2, item 1</li>
@@ -62,18 +67,19 @@ $("ul.nav li:nth-child(2)").css( "color", "red" );
   <example>
     <desc>Add a class to List 2, item 2 by targeting the second to last &lt;li&gt; </desc>
     <css><![CDATA[
-.foo {
-  color: blue;
-  background-color: yellow;
-}
+  .foo {
+    color: blue;
+    background-color: yellow;
+  }
 ]]></css>
     <code><![CDATA[
-$( "li:eq(-2)" ).addClass( "foo" )
-    ]]></code>
-    <html><![CDATA[<ul class="nav">
-   <li>List 1, item 1</li>
-   <li>List 1, item 2</li>
-   <li>List 1, item 3</li>
+$( "li:eq( -2 )" ).addClass( "foo" )
+]]></code>
+    <html><![CDATA[
+<ul class="nav">
+  <li>List 1, item 1</li>
+  <li>List 1, item 2</li>
+  <li>List 1, item 3</li>
 </ul>
 <ul class="nav">
   <li>List 2, item 1</li>

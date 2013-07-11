@@ -11,11 +11,11 @@
   <example>
     <desc>Display previous handler's return value</desc>
     <code><![CDATA[
-$("button").click(function(event) {
+$( "button" ).click(function( event ) {
   return "hey";
 });
-$("button").click(function(event) {
-  $("p").html( event.result );
+$( "button" ).click(function( event ) {
+  $( "p" ).html( event.result );
 });
 ]]></code>
     <html><![CDATA[

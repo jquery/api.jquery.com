@@ -11,11 +11,11 @@
   <example>
     <desc>Determine the event namespace used.</desc>
     <code><![CDATA[
-$("p").on("test.something", function(event) {
+$( "p" ).on( "test.something", function( event ) {
   alert( event.namespace );
 });
-$("button").click(function(event) {
-  $("p").trigger("test.something");
+$( "button" ).click(function( event ) {
+  $( "p" ).trigger( "test.something" );
 });
 ]]></code>
     <html><![CDATA[

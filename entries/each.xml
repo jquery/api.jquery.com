@@ -11,16 +11,18 @@
   <longdesc>
     <p>The <code>.each()</code> method is designed to make DOM looping constructs concise and less error-prone. When called it iterates over the DOM elements that are part of the jQuery object. Each time the callback runs, it is passed the current loop iteration, beginning from 0. More importantly, the callback is fired in the context of the current DOM element, so the keyword <code>this</code> refers to the element.</p>
     <p>Suppose you have a simple unordered list on the page:</p>
-    <pre><code>&lt;ul&gt;
-    &lt;li&gt;foo&lt;/li&gt;
-    &lt;li&gt;bar&lt;/li&gt;
+    <pre><code>
+&lt;ul&gt;
+  &lt;li&gt;foo&lt;/li&gt;
+  &lt;li&gt;bar&lt;/li&gt;
 &lt;/ul&gt;
     </code></pre>
     <p>You can select the list items and iterate across them:</p>
-<pre><code>$( "li" ).each(function( index ) {
-  console.log( index + ": " + $(this).text() );
+    <pre><code>
+$( "li" ).each(function( index ) {
+  console.log( index + ": " + $( this ).text() );
 });
-  </code></pre>
+    </code></pre>
     <p>A message is thus logged for each item in the list:</p>
     <p>
       <samp>0: foo</samp>
@@ -29,9 +31,10 @@
     </p>
     <p>You can stop the loop from within the callback function by returning <code>false</code>.</p>
     <p>Note: most jQuery methods that return a jQuery object also loop through the set of elements in the jQuery collection — a process known as <i>implicit iteration</i>. When this occurs, it is often unnecessary to <i>explicitly</i> iterate with the <code>.each()</code> method:</p>
-<pre><code>// The .each() method is unnecessary here:
+<pre><code>
+// The .each() method is unnecessary here:
 $( "li" ).each(function() {
-  $(this).addClass( "foo" );
+  $( this ).addClass( "foo" );
 });
 
 // Instead, you should rely on implicit iteration:
@@ -41,79 +44,102 @@ $( "li" ).addClass( "bar" );
   <example>
     <desc>Iterate over three divs and sets their color property.</desc>
     <code><![CDATA[
-    $(document.body).click(function () {
-      $( "div" ).each(function (i) {
-        if ( this.style.color != "blue" ) {
-          this.style.color = "blue";
-        } else {
-          this.style.color = "";
-        }
-      });
-    });
+$( document.body ).click(function () {
+  $( "div" ).each(function ( i ) {
+    if ( this.style.color != "blue" ) {
+      this.style.color = "blue";
+    } else {
+      this.style.color = "";
+    }
+  });
+});
 ]]></code>
     <css><![CDATA[
-  div { color:red; text-align:center; cursor:pointer;
-        font-weight:bolder; width:300px; }
-  ]]></css>
-    <html><![CDATA[<div>Click here</div>
-  <div>to iterate through</div>
-  <div>these divs.</div>]]></html>
+  div {
+    color: red;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bolder;
+    width: 300px;
+  }
+]]></css>
+    <html><![CDATA[
+<div>Click here</div>
+<div>to iterate through</div>
+<div>these divs.</div>
+]]></html>
   </example>
   <example>
-    <desc>To access a jQuery object instead of the regular DOM element, use <code>$(this)</code>. For example:</desc>
+    <desc>To access a jQuery object instead of the regular DOM element, use <code>$( this )</code>. For example:</desc>
     <code><![CDATA[
-    $( "span" ).click(function () {
-      $( "li" ).each(function(){
-        $( this ).toggleClass( "example" );
-      });
-    });
-
+$( "span" ).click(function() {
+  $( "li" ).each(function() {
+    $( this ).toggleClass( "example" );
+  });
+});
 ]]></code>
     <css><![CDATA[
-  ul { font-size:18px; margin:0; }
-  span { color:blue; text-decoration:underline; cursor:pointer; }
-  .example { font-style:italic; }
-  ]]></css>
-    <html><![CDATA[To do list: <span>(click here to change)</span>
-  <ul>
-    <li>Eat</li>
-    <li>Sleep</li>
-
-    <li>Be merry</li>
-  </ul>]]></html>
+  ul {
+    font-size: 18px;
+    margin: 0;
+  }
+  span {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  .example {
+    font-style: italic;
+  }
+]]></css>
+    <html><![CDATA[
+To do list: <span>(click here to change)</span>
+<ul>
+  <li>Eat</li>
+  <li>Sleep</li>
+  <li>Be merry</li>
+</ul>
+]]></html>
   </example>
   <example>
     <desc>Use "return" to break out of each() loops early.</desc>
     <code><![CDATA[
-    $( "button" ).click(function () {
-      $( "div" ).each(function ( index, domEle) {
-        // domEle == this
-        $( domEle ).css( "backgroundColor", "yellow" );
-        if ( $(this).is( "#stop" ) ) {
-          $( "span" ).text( "Stopped at div index #" + index );
-          return false;
-        }
-      });
-    });
-
+$( "button" ).click(function() {
+  $( "div" ).each(function( index, domEle ) {
+    // domEle == this
+    $( domEle ).css( "backgroundColor", "yellow" );
+    if ( $( this ).is( "#stop" ) ) {
+      $( "span" ).text( "Stopped at div index #" + index );
+      return false;
+    }
+  });
+});
 ]]></code>
     <css><![CDATA[
-  div { width:40px; height:40px; margin:5px; float:left;
-        border:2px blue solid; text-align:center; }
-  span { color:red; }
-  ]]></css>
-    <html><![CDATA[<button>Change colors</button>
-  <span></span>
-  <div></div>
-  <div></div>
-
-  <div></div>
-  <div></div>
-  <div id="stop">Stop here</div>
-  <div></div>
-
-  <div></div>
-  <div></div>]]></html>
+  div {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    float: left;
+    border: 2px blue solid;
+    text-align: center;
+  }
+  span {
+    color: red;
+  }
+]]></css>
+    <html><![CDATA[
+<button>Change colors</button>
+<span></span>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div id="stop">Stop here</div>
+<div></div>
+<div></div>
+<div></div>
+]]></html>
   </example>
   <category slug="miscellaneous/collection-manipulation"/>
   <category slug="traversing"/>

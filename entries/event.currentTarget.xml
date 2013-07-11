@@ -13,9 +13,11 @@
   </longdesc>
   <example>
     <desc>Alert that currentTarget matches the `this` keyword.</desc>
-    <code><![CDATA[$("p").click(function(event) {
+    <code><![CDATA[
+$( "p" ).click(function( event ) {
   alert( event.currentTarget === this ); // true
-});  ]]></code>
+});
+]]></code>
   </example>
   <category slug="events/event-object"/>
   <category slug="version/1.3"/>

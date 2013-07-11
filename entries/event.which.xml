@@ -11,23 +11,27 @@
   </longdesc>
   <example>
     <desc>Log which key was depressed.</desc>
-    <code><![CDATA[$('#whichkey').on('keydown',function(e){
-  $('#log').html(e.type + ': ' +  e.which );
-});  ]]></code>
-    <html><![CDATA[
-<input id="whichkey" value="type something">
-<div id="log"></div>]]></html>
-  </example>
-  <example>
-    <desc>Log which mouse button was depressed.</desc>
     <code><![CDATA[
-$('#whichkey').on('mousedown',function(e){
-  $('#log').html(e.type + ': ' +  e.which );
+$( "#whichkey" ).on( "keydown", function( e ) {
+  $( "#log" ).html( e.type + ": " +  e.which );
 });
 ]]></code>
     <html><![CDATA[
 <input id="whichkey" value="type something">
-<div id="log"></div>]]></html>
+<div id="log"></div>
+]]></html>
+  </example>
+  <example>
+    <desc>Log which mouse button was depressed.</desc>
+    <code><![CDATA[
+$( "#whichkey" ).on( "mousedown", function( e ) {
+  $( "#log" ).html( e.type + ": " +  e.which );
+});
+]]></code>
+    <html><![CDATA[
+<input id="whichkey" value="type something">
+<div id="log"></div>
+]]></html>
   </example>
   <category slug="events/event-object"/>
   <category slug="version/1.1.3"/>

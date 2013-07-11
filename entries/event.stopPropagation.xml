@@ -13,10 +13,12 @@
   <note id="propagation-for-live-or-delegate" type="additional"/>
   <example>
     <desc>Kill the bubbling on the click event.</desc>
-    <code><![CDATA[$("p").click(function(event){
+    <code><![CDATA[
+$( "p" ).click(function( event ) {
   event.stopPropagation();
   // do something
-});  ]]></code>
+});
+]]></code>
   </example>
   <category slug="events/event-object"/>
   <category slug="version/1.0"/>

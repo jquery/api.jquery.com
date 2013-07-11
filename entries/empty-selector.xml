@@ -13,17 +13,23 @@
   </longdesc>
   <example>
     <desc>Finds all elements that are empty - they don't have child elements or text.</desc>
-    <code><![CDATA[$("td:empty").text("Was empty!").css('background', 'rgb(255,220,200)');]]></code>
+    <code><![CDATA[
+$( "td:empty" )
+  .text( "Was empty!" )
+  .css( "background", "rgb(255,220,200)" );
+]]></code>
     <css><![CDATA[
-
-  td { text-align:center; }
-  ]]></css>
-    <html><![CDATA[<table border="1">
-    <tr><td>TD #0</td><td></td></tr>
-    <tr><td>TD #2</td><td></td></tr>
-
-    <tr><td></td><td>TD#5</td></tr>
-  </table>]]></html>
+  td {
+    text-align: center;
+  }
+]]></css>
+    <html><![CDATA[
+<table border="1">
+  <tr><td>TD #0</td><td></td></tr>
+  <tr><td>TD #2</td><td></td></tr>
+  <tr><td></td><td>TD#5</td></tr>
+</table>
+]]></html>
   </example>
   <category slug="selectors/content-filter-selector"/>
   <category slug="version/1.0"/>

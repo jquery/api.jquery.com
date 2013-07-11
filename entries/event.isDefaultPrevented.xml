@@ -8,11 +8,13 @@
   <longdesc>   </longdesc>
   <example>
     <desc>Checks whether event.preventDefault() was called.</desc>
-    <code><![CDATA[$("a").click(function(event){
+    <code><![CDATA[
+$( "a" ).click(function( event ) {
   alert( event.isDefaultPrevented() ); // false
   event.preventDefault();
   alert( event.isDefaultPrevented() ); // true
-});  ]]></code>
+});
+]]></code>
   </example>
   <category slug="events/event-object"/>
   <category slug="version/1.3"/>

@@ -10,30 +10,38 @@
   </longdesc>
   <example>
     <desc>Display the tag's name on click</desc>
-    <code><![CDATA[$("body").click(function(event) {
-  $("#log").html("clicked: " + event.target.nodeName);
-});  ]]></code>
-    <css>
-span, strong, p {
-  padding: 8px; display: block; border: 1px solid #999;  }
-    </css>
+    <code><![CDATA[
+$( "body" ).click(function( event ) {
+  $( "#log" ).html( "clicked: " + event.target.nodeName );
+});
+]]></code>
+    <css><![CDATA[
+  span, strong, p {
+    padding: 8px;
+    display: block;
+    border: 1px solid #999;
+  }
+]]></css>
     <html><![CDATA[
 <div id="log"></div>
 <div>
   <p>
     <strong><span>click</span></strong>
   </p>
-</div>]]></html>
+</div>
+]]></html>
   </example>
   <example>
     <desc>Implements a simple event delegation: The click handler is added to an unordered list, and the children of its li children are hidden. Clicking one of the li children toggles (see toggle()) their children.</desc>
-    <code><![CDATA[function handler(event) {
-  var $target = $(event.target);
-  if( $target.is("li") ) {
+    <code><![CDATA[
+function handler( event ) {
+  var $target = $( event.target );
+  if( $target.is( "li" ) ) {
     $target.children().toggle();
   }
 }
-$("ul").click(handler).find("ul").hide();]]></code>
+$( "ul" ).click( handler ).find( "ul" ).hide();
+]]></code>
     <html><![CDATA[
 <ul>
   <li>item 1
@@ -48,7 +56,8 @@ $("ul").click(handler).find("ul").hide();]]></code>
       <li>sub item 2-b</li>
     </ul>
   </li>
-</ul>]]></html>
+</ul>
+]]></html>
   </example>
   <category slug="events/event-object"/>
   <category slug="version/1.0"/>
