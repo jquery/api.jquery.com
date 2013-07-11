@@ -51,7 +51,7 @@ $( "#other" ).click(function() {
   $( "#target" ).click();
 });
     </code></pre>
-    <p>After this code executes, clicks on <samp>Trigger the handler</samp> will also alert the message.</p>
+    <p>After this code executes, clicking on <samp>Trigger the handler</samp> will also alert the message.</p>
     <p>The <code>click</code> event is only triggered after this exact series of events:</p>
     <ul>
       <li>The mouse button is depressed while the pointer is inside the element.</li>
