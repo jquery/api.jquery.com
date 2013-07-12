@@ -74,7 +74,7 @@ $( "li" ).add( "&lt;p id='new'&gt;new paragraph&lt;/p&gt;" )
     </code></pre>
     <p>Although the new paragraph has been created and its background color changed, it still does not appear on the page. To place it on the page, we could add one of the insertion methods to the chain.</p>
     <p>As of jQuery 1.4 the results from .add() will always be returned in document order (rather than a simple concatenation).</p>
-    <p><strong>Note:</strong> To reverse the <code>.add()</code> you can use <a href="http://api.jquery.com/not"><code>.not( elements | selector )</code></a> to remove elements from the jQuery results, or <a href="http://api.jquery.com/end"><code>.end()</code></a> to return to the selection before you added.</p>
+    <p><strong>Note:</strong> To reverse the <code>.add()</code> you can use <a href="/not/"><code>.not( elements | selector )</code></a> to remove elements from the jQuery results, or <a href="/end/"><code>.end()</code></a> to return to the selection before you added.</p>
   </longdesc>
   <example>
     <desc>Finds all divs and makes a border.  Then adds all paragraphs to the jQuery object to set their backgrounds yellow.</desc>

@@ -33,10 +33,10 @@
   </signature>
   <desc>Attach a handler to an event for the elements.</desc>
   <longdesc>
-    <p>As of jQuery 1.7, the <a href="http://api.jquery.com/on"><code>.on()</code></a> method is the preferred method for attaching event handlers to a document. For earlier versions, the <code>.bind()</code> method is used for attaching an event handler directly to elements. Handlers are attached to the currently selected elements in the jQuery object, so those elements <em>must exist</em> at the point the call to <code>.bind()</code> occurs. For more flexible event binding, see the discussion of event delegation in <a href="http://api.jquery.com/on"><code>.on()</code></a> or <a href="http://api.jquery.com/delegate"><code>.delegate()</code></a>.</p>
+    <p>As of jQuery 1.7, the <a href="/on/"><code>.on()</code></a> method is the preferred method for attaching event handlers to a document. For earlier versions, the <code>.bind()</code> method is used for attaching an event handler directly to elements. Handlers are attached to the currently selected elements in the jQuery object, so those elements <em>must exist</em> at the point the call to <code>.bind()</code> occurs. For more flexible event binding, see the discussion of event delegation in <a href="/on/"><code>.on()</code></a> or <a href="/delegate/"><code>.delegate()</code></a>.</p>
     <p>Any string is legal for <code>eventType</code>; if the string is not the name of a native DOM event, then the handler is bound to a custom event. These events are never called by the browser, but may be triggered manually from other JavaScript code using <code>.trigger()</code> or <code>.triggerHandler()</code>.</p>
     <p>If the <code>eventType</code> string contains a period (<code>.</code>) character, then the event is namespaced. The period character separates the event from its namespace. For example, in the call <code>.bind( "click.name", handler )</code>, the string <code>click</code> is the event type, and the string <code>name</code> is the namespace. Namespacing allows us to unbind or trigger some events of a type without affecting others. See the discussion of <code>.unbind()</code> for more information.</p>
-    <p>There are shorthand methods for some standard browser events such as <a href="/click"><code>.click()</code></a> that can be used to attach or trigger event handlers. For a complete list of shorthand methods, see the <a href="http://api.jquery.com/category/events/">events category</a>.</p>
+    <p>There are shorthand methods for some standard browser events such as <a href="/click/"><code>.click()</code></a> that can be used to attach or trigger event handlers. For a complete list of shorthand methods, see the <a href="/category/events/">events category</a>.</p>
     <p>When an event reaches an element, all handlers bound to that event type for the element are fired. If there are multiple handlers registered, they will always execute in the order in which they were bound. After all handlers have executed, the event continues along the normal event propagation path.</p>
     <p>A basic usage of <code>.bind()</code> is:</p>
     <pre><code>
@@ -76,10 +76,10 @@ $( "#foo" ).bind( "click", function() {
     <p>As of jQuery 1.4.2 duplicate event handlers can be bound to an element instead of being discarded. This is useful when the event data feature is being used, or when other unique data resides in a closure around the event handler function.</p>
     <p>In jQuery 1.4.3 you can now pass in <code>false</code> in place of an event handler. This will bind an event handler equivalent to: <code>function(){ return false; }</code>. This function can be removed at a later time by calling: <code>.unbind( eventName, false )</code>.</p>
     <h4 id="event-object">
-      <a href="http://api.jquery.com/category/events/event-object/">The Event object</a>
+      <a href="/category/events/event-object/">The Event object</a>
     </h4>
     <p>The <code>handler</code> callback function can also take parameters. When the function is called, the event object will be passed to the first parameter.</p>
-    <p>The event object is often unnecessary and the parameter omitted, as sufficient context is usually available when the handler is bound to know exactly what needs to be done when the handler is triggered. However, at times it becomes necessary to gather more information about the user's environment at the time the event was initiated. <a href="http://api.jquery.com/category/events/event-object/">View the full Event Object</a>.</p>
+    <p>The event object is often unnecessary and the parameter omitted, as sufficient context is usually available when the handler is bound to know exactly what needs to be done when the handler is triggered. However, at times it becomes necessary to gather more information about the user's environment at the time the event was initiated. <a href="/category/events/event-object/">View the full Event Object</a>.</p>
     <p>Returning <code>false</code> from a handler is equivalent to calling both <code>.preventDefault()</code> and <code>.stopPropagation()</code> on the event object.</p>
     <p>Using the event object in a handler looks like this:</p>
     <pre><code>
@@ -231,7 +231,7 @@ $( "button" ).click(function() {
   span {
     color: blue;
   }
-  ]]></css>
+]]></css>
     <html><![CDATA[
 <p>Has an attached custom event.</p>
 <button>Trigger custom event</button>

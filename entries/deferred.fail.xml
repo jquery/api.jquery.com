@@ -16,10 +16,10 @@
   </signature>
   <desc> Add handlers to be called when the Deferred object is rejected. </desc>
   <longdesc>
-    <p>The <code>deferred.fail()</code> method accepts one or more arguments, all of which can be either a single function or an array of functions. When the Deferred is rejected, the failCallbacks are called. Callbacks are executed in the order they were added. Since <code>deferred.fail()</code> returns the deferred object, other methods of the deferred object can be chained to this one, including additional <code>deferred.fail()</code> methods. The failCallbacks are executed using the arguments provided to the <a href="deferred.reject"><code>deferred.reject()</code></a> or <a href="deferred.rejectWith"><code>deferred.rejectWith()</code></a> method call in the order they were added. For more information, see the documentation for <a href="/category/deferred-object/">Deferred object</a>.</p>
+    <p>The <code>deferred.fail()</code> method accepts one or more arguments, all of which can be either a single function or an array of functions. When the Deferred is rejected, the failCallbacks are called. Callbacks are executed in the order they were added. Since <code>deferred.fail()</code> returns the deferred object, other methods of the deferred object can be chained to this one, including additional <code>deferred.fail()</code> methods. The failCallbacks are executed using the arguments provided to the <a href="/deferred.reject/"><code>deferred.reject()</code></a> or <a href="/deferred.rejectWith/"><code>deferred.rejectWith()</code></a> method call in the order they were added. For more information, see the documentation for <a href="/category/deferred-object/">Deferred object</a>.</p>
   </longdesc>
   <example>
-    <desc>Since the <a href="http://api.jquery.com/jQuery.get/"><code>jQuery.get</code></a> method returns a jqXHR object, which is derived from a Deferred, you can attach a success and failure callback using the <code>deferred.done()</code> and <code>deferred.fail()</code> methods.</desc>
+    <desc>Since the <a href="/jQuery.get/"><code>jQuery.get</code></a> method returns a jqXHR object, which is derived from a Deferred, you can attach a success and failure callback using the <code>deferred.done()</code> and <code>deferred.fail()</code> methods.</desc>
     <code><![CDATA[
 $.get( "test.php" )
   .done(function() {

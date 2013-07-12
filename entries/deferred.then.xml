@@ -67,7 +67,7 @@
     </p>
   </longdesc>
   <example>
-    <desc>Since the <a href="/jQuery.get"><code>jQuery.get</code></a> method returns a jqXHR object, which is derived from a Deferred object, we can attach handlers using the <code>.then</code> method.</desc>
+    <desc>Since the <a href="/jQuery.get/"><code>jQuery.get</code></a> method returns a jqXHR object, which is derived from a Deferred object, we can attach handlers using the <code>.then</code> method.</desc>
     <code><![CDATA[
 $.get( "test.php" ).then(
   function() {

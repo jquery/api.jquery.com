@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <entry type="method" name="ajaxStop" return="jQuery">
   <title>.ajaxStop()</title>
-  <desc>Register a handler to be called when all Ajax requests have completed. This is an <a href="/Ajax_Events">Ajax Event</a>.</desc>
+  <desc>Register a handler to be called when all Ajax requests have completed. This is an <a href="/Ajax_Events/">Ajax Event</a>.</desc>
   <signature>
     <added>1.0</added>
     <argument name="handler()" type="Function">

@@ -6,7 +6,7 @@
   </signature>
   <desc> If this method is called, the default action of the event will not be triggered. </desc>
   <longdesc>
-    <p>For example, clicked anchors will not take the browser to a new URL. We can use <a href="/event.isDefaultPrevented"><code>event.isDefaultPrevented()</code></a> to determine if this method has been called by an event handler that was triggered by this event.</p>
+    <p>For example, clicked anchors will not take the browser to a new URL. We can use <a href="/event.isDefaultPrevented/"><code>event.isDefaultPrevented()</code></a> to determine if this method has been called by an event handler that was triggered by this event.</p>
   </longdesc>
   <example>
     <desc>Cancel the default action (navigation) of the click.</desc>

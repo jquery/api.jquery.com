@@ -6,8 +6,8 @@
   </signature>
   <desc> Keeps the rest of the handlers from being executed and prevents the event from bubbling up the DOM tree.</desc>
   <longdesc>
-    <p>In addition to keeping any additional handlers on an element from being executed, this method also stops the bubbling by implicitly calling <code>event.stopPropagation()</code>. To simply prevent the event from bubbling to ancestor elements but allow other event handlers to execute on the same element, we can use <code><a href="/event.stopPropagation">event.stopPropagation()</a></code> instead.</p>
-    <p>Use <code><a href="/event.isImmediatePropagationStopped">event.isImmediatePropagationStopped()</a></code> to know whether this method was ever called (on that event object).</p>
+    <p>In addition to keeping any additional handlers on an element from being executed, this method also stops the bubbling by implicitly calling <code>event.stopPropagation()</code>. To simply prevent the event from bubbling to ancestor elements but allow other event handlers to execute on the same element, we can use <code><a href="/event.stopPropagation/">event.stopPropagation()</a></code> instead.</p>
+    <p>Use <code><a href="/event.isImmediatePropagationStopped/">event.isImmediatePropagationStopped()</a></code> to know whether this method was ever called (on that event object).</p>
   </longdesc>
   <note id="propagation-for-live-or-delegate" type="additional"/>
   <example>

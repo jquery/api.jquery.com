@@ -7,7 +7,7 @@
       <desc>The function to be invoked.</desc>
     </argument>
   </signature>
-  <desc>Register a handler to be called when Ajax requests complete with an error. This is an <a href='/Ajax_Events'>Ajax Event</a>.</desc>
+  <desc>Register a handler to be called when Ajax requests complete with an error. This is an <a href="/Ajax_Events/">Ajax Event</a>.</desc>
   <longdesc>
     <p>Whenever an Ajax request completes with an error, jQuery triggers the <code>ajaxError</code> event. Any and all handlers that have been registered with the <code>.ajaxError()</code> method are executed at this time. <strong>Note:</strong> <em>This handler is not called for cross-domain script and cross-domain JSONP requests.</em></p>
     <p>To observe this method in action, set up a basic Ajax load request.</p>

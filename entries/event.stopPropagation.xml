@@ -6,8 +6,8 @@
   </signature>
   <desc>Prevents the event from bubbling up the DOM tree, preventing any parent handlers from being notified of the event.   </desc>
   <longdesc>
-    <p>We can use <code><a href="/event.isPropagationStopped">event.isPropagationStopped()</a></code> to determine if this method was ever called (on that event object). </p>
-    <p>This method works for custom events triggered with <a href="/trigger">trigger()</a>, as well.</p>
+    <p>We can use <code><a href="/event.isPropagationStopped/">event.isPropagationStopped()</a></code> to determine if this method was ever called (on that event object). </p>
+    <p>This method works for custom events triggered with <a href="/trigger/">trigger()</a>, as well.</p>
     <p>Note that this will not prevent other handlers <em>on the same element</em> from running. </p>
   </longdesc>
   <note id="propagation-for-live-or-delegate" type="additional"/>

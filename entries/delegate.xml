@@ -39,7 +39,7 @@
     </argument>
   </signature>
   <longdesc>
-    <p>As of jQuery 1.7, <code>.delegate()</code> has been superseded by the <a href="http://api.jquery.com/on">.on()</a> method. For earlier versions, however, it remains the most effective means to use event delegation. More information on event binding and delegation is in the <a href="http://api.jquery.com/on">.on()</a> method. In general, these are the equivalent templates for the two methods:</p>
+    <p>As of jQuery 1.7, <code>.delegate()</code> has been superseded by the <a href="/on/">.on()</a> method. For earlier versions, however, it remains the most effective means to use event delegation. More information on event binding and delegation is in the <a href="/on/">.on()</a> method. In general, these are the equivalent templates for the two methods:</p>
     <pre><code>
 // jQuery 1.4.3+
 $( elements ).delegate( selector, events, data, handler );
@@ -58,7 +58,7 @@ $( "table" ).on( "click", "td", function() {
   $( this ).toggleClass( "chosen" );
 });
     </code></pre>
-    <p>To remove events attached with <code>delegate()</code>, see  the <a href="http://api.jquery.com/undelegate">.undelegate()</a> method.</p>
+    <p>To remove events attached with <code>delegate()</code>, see  the <a href="/undelegate/">.undelegate()</a> method.</p>
     <p>Passing and handling event data works the same way as it does for <code>.on()</code>.</p>
   </longdesc>
   <note id="propagation-for-live-or-delegate" type="additional"/>

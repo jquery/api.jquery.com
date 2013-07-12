@@ -17,7 +17,7 @@
   <desc> Call the progressCallbacks on a Deferred object with the given context and <code>args</code>. </desc>
   <longdesc>
     <p>Normally, only the creator of a Deferred should call this method; you can prevent other code from changing the Deferred's state or reporting status by returning a restricted Promise object through deferred.promise().</p>
-    <p>When <code>deferred.notifyWith</code> is called, any progressCallbacks added by <a href="http://api.jquery.com/deferred.then/"><code>deferred.then</code></a> or <a href="http://api.jquery.com/deferred.progress/"><code>deferred.progress</code></a> are called. Callbacks are executed in the order they were added. Each callback is passed the <code>args</code> from the <code>.notifyWith()</code>. Any calls to <code>.notifyWith()</code> after a Deferred is resolved or rejected (or any progressCallbacks added after that) are ignored. For more information, see the documentation for <a href="http://api.jquery.com/category/deferred-object/">Deferred object</a>.</p>
+    <p>When <code>deferred.notifyWith</code> is called, any progressCallbacks added by <a href="/deferred.then/"><code>deferred.then</code></a> or <a href="/deferred.progress/"><code>deferred.progress</code></a> are called. Callbacks are executed in the order they were added. Each callback is passed the <code>args</code> from the <code>.notifyWith()</code>. Any calls to <code>.notifyWith()</code> after a Deferred is resolved or rejected (or any progressCallbacks added after that) are ignored. For more information, see the documentation for <a href="/category/deferred-object/">Deferred object</a>.</p>
   </longdesc>
   <category slug="deferred-object"/>
   <category slug="version/1.7"/>

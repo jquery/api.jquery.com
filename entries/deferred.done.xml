@@ -19,7 +19,7 @@
     <p>The <code>deferred.done()</code> method accepts one or more arguments, all of which can be either a single function or an array of functions. When the Deferred is resolved, the doneCallbacks are called. Callbacks are executed in the order they were added. Since <code>deferred.done()</code> returns the deferred object, other methods of the deferred object can be chained to this one, including additional <code>.done()</code> methods. When the Deferred is resolved, doneCallbacks are executed using the arguments provided to the <a href="/deferred.resolve/"><code>resolve</code></a> or <a href="/deferred.resolveWith/"><code>resolveWith</code></a> method call in the order they were added. For more information, see the documentation for <a href="/category/deferred-object/">Deferred object</a>.</p>
   </longdesc>
   <example>
-    <desc>Since the <a href="/jQuery.get"><code>jQuery.get</code></a> method returns a jqXHR object, which is derived from a Deferred object, we can attach a success callback using the <code>.done()</code> method.</desc>
+    <desc>Since the <a href="/jQuery.get/"><code>jQuery.get</code></a> method returns a jqXHR object, which is derived from a Deferred object, we can attach a success callback using the <code>.done()</code> method.</desc>
     <code><![CDATA[
 $.get( "test.php" ).done(function() {
   alert( "$.get succeeded" );

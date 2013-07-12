@@ -8,7 +8,7 @@
   <longdesc>
     <p>This property will typically be equal to the <code>this</code> of the function.</p>
     <p>
-      <em>If you are using <a href="/jQuery.proxy">jQuery.proxy</a> or another form of scope manipulation, <code>this</code> will be equal to whatever context you have provided, not <code>event.currentTarget</code></em>
+      <em>If you are using <a href="/jQuery.proxy/">jQuery.proxy</a> or another form of scope manipulation, <code>this</code> will be equal to whatever context you have provided, not <code>event.currentTarget</code></em>
     </p>
   </longdesc>
   <example>

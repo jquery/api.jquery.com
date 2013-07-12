@@ -48,7 +48,7 @@ $( "#other" ).click(function() {
 });
     </code></pre>
     <p>After this code executes, clicks on <samp>Trigger the handler</samp> will also alert the message.</p>
-    <p>The <code>blur</code> event does not bubble in Internet Explorer. Therefore, scripts that rely on event delegation with the <code>blur</code> event will not work consistently across browsers. As of version 1.4.2, however, jQuery works around this limitation by mapping <code>blur</code> to the <code>focusout</code> event in its event delegation methods, <a href="http://api.jquery.com/live/"><code>.live()</code></a> and <a href="http://api.jquery.com/delegate/"><code>.delegate()</code></a>.</p>
+    <p>The <code>blur</code> event does not bubble in Internet Explorer. Therefore, scripts that rely on event delegation with the <code>blur</code> event will not work consistently across browsers. As of version 1.4.2, however, jQuery works around this limitation by mapping <code>blur</code> to the <code>focusout</code> event in its event delegation methods, <a href="/live/"><code>.live()</code></a> and <a href="/delegate/"><code>.delegate()</code></a>.</p>
   </longdesc>
   <example>
     <desc>To trigger the blur event on all paragraphs:</desc>

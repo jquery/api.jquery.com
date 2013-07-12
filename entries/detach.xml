@@ -9,7 +9,7 @@
   </signature>
   <desc>Remove the set of matched elements from the DOM.</desc>
   <longdesc>
-    <p>The <code>.detach()</code> method is the same as <code><a href="/remove">.remove()</a></code>, except that <code>.detach()</code> keeps all jQuery data associated with the removed elements. This method is useful when removed elements are to be reinserted into the DOM at a later time.</p>
+    <p>The <code>.detach()</code> method is the same as <code><a href="/remove/">.remove()</a></code>, except that <code>.detach()</code> keeps all jQuery data associated with the removed elements. This method is useful when removed elements are to be reinserted into the DOM at a later time.</p>
   </longdesc>
   <example>
     <desc>Detach all paragraphs from the DOM</desc>

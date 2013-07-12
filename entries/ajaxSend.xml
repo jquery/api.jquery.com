@@ -7,7 +7,7 @@
       <desc>The function to be invoked.</desc>
     </argument>
   </signature>
-  <desc>Attach a function to be executed before an Ajax request is sent. This is an <a href='/Ajax_Events'>Ajax Event</a>.</desc>
+  <desc>Attach a function to be executed before an Ajax request is sent. This is an <a href="/Ajax_Events">Ajax Event</a>.</desc>
   <longdesc>
     <p>Whenever an Ajax request is about to be sent, jQuery triggers the <code>ajaxSend</code> event. Any and all handlers that have been registered with the <code>.ajaxSend()</code> method are executed at this time.</p>
     <p>To observe this method in action, set up a basic Ajax load request:</p>
@@ -30,7 +30,7 @@ $( ".trigger" ).click(function() {
     </code></pre>
     <p>When the user clicks the element with class <code>trigger</code> and the Ajax request is about to begin, the log message is displayed.</p>
     <p><strong>As of jQuery 1.8, the <code>.ajaxSend()</code> method should only be attached to <code>document</code>.</strong></p>
-    <p>All <code>ajaxSend</code> handlers are invoked, regardless of what Ajax request is to be sent. If you must differentiate between the requests, use the parameters passed to the handler. Each time an <code>ajaxSend</code> handler is executed, it is passed the event object, the <code>jqXHR</code> object (in version 1.4, <code>XMLHttpRequest</code>object), and the <a href="http://api.jquery.com/jQuery.ajax/">settings object</a> that was used in the creation of the Ajax request. For example, you can restrict the callback to only handling events dealing with a particular URL:</p>
+    <p>All <code>ajaxSend</code> handlers are invoked, regardless of what Ajax request is to be sent. If you must differentiate between the requests, use the parameters passed to the handler. Each time an <code>ajaxSend</code> handler is executed, it is passed the event object, the <code>jqXHR</code> object (in version 1.4, <code>XMLHttpRequest</code>object), and the <a href="/jQuery.ajax/">settings object</a> that was used in the creation of the Ajax request. For example, you can restrict the callback to only handling events dealing with a particular URL:</p>
     <pre><code>
 $( document ).ajaxSend(function( event, jqxhr, settings ) {
   if ( settings.url == "ajax/test.html" ) {

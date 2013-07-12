@@ -6,9 +6,9 @@
   </signature>
   <desc> Determine whether a Deferred object has been resolved. </desc>
   <longdesc>
-    <p>This API is <code>deprecated</code> as of jQuery 1.7 and <code>removed</code> as of jQuery 1.8; please use <a href="http://api.jquery.com/deferred.state"><code>deferred.state()</code></a> instead.</p>
-    <p>Returns <code>true</code> if the Deferred object is in the resolved state, meaning that either <a href="http://api.jquery.com/deferred.resolve/"><code>deferred.resolve()</code></a> or <a href="http://api.jquery.com/deferred.resolveWith/"><code>deferred.resolveWith()</code></a> has been called for the object and the doneCallbacks have been called (or are in the process of being called).</p>
-    <p>Note that a Deferred object can be in one of three states: pending, resolved, or rejected; use <a href="http://api.jquery.com/deferred.isRejected/"><code>deferred.isRejected()</code></a> to determine whether the Deferred object is in the rejected state. These methods are primarily useful for debugging, for example to determine whether a Deferred has already been resolved even though you are inside code that intended to reject it.</p>
+    <p>This API is <code>deprecated</code> as of jQuery 1.7 and <code>removed</code> as of jQuery 1.8; please use <a href="/deferred.state/"><code>deferred.state()</code></a> instead.</p>
+    <p>Returns <code>true</code> if the Deferred object is in the resolved state, meaning that either <a href="/deferred.resolve/"><code>deferred.resolve()</code></a> or <a href="/deferred.resolveWith/"><code>deferred.resolveWith()</code></a> has been called for the object and the doneCallbacks have been called (or are in the process of being called).</p>
+    <p>Note that a Deferred object can be in one of three states: pending, resolved, or rejected; use <a href="/deferred.isRejected/"><code>deferred.isRejected()</code></a> to determine whether the Deferred object is in the rejected state. These methods are primarily useful for debugging, for example to determine whether a Deferred has already been resolved even though you are inside code that intended to reject it.</p>
   </longdesc>
   <category slug="deferred-object"/>
   <category slug="version/1.5"/>

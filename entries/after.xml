@@ -26,7 +26,7 @@
   </signature>
   <desc>Insert content, specified by the parameter, after each element in the set of matched elements.</desc>
   <longdesc>
-    <p>The <code>.after()</code> and <code><a href="/insertAfter">.insertAfter()</a></code> methods perform the same task. The major difference is in the syntax&#x2014;specifically, in the placement of the content and target. With <code>.after()</code>, the selector expression preceding the method is the container after which the content is inserted. With <code>.insertAfter()</code>, on the other hand, the content precedes the method, either as a selector expression or as markup created on the fly, and it is inserted after the target container.</p>
+    <p>The <code>.after()</code> and <code><a href="/insertAfter/">.insertAfter()</a></code> methods perform the same task. The major difference is in the syntax&#x2014;specifically, in the placement of the content and target. With <code>.after()</code>, the selector expression preceding the method is the container after which the content is inserted. With <code>.insertAfter()</code>, on the other hand, the content precedes the method, either as a selector expression or as markup created on the fly, and it is inserted after the target container.</p>
     <p>Using the following HTML:</p>
     <pre><code>
 &lt;div class="container"&gt;
@@ -89,7 +89,7 @@ $( "p" ).after(function() {
     </code></pre>
     <p>This example inserts a <code>&lt;div&gt;</code> after each paragraph, with each new <code>&lt;div&gt;</code> containing the class name(s) of its preceding paragraph.</p>
     <h4 id="additional-arguments">Additional Arguments</h4>
-    <p>Similar to other content-adding methods such as <code><a href="http://api.jquery.com/prepend/">.prepend()</a></code> and <code><a href="http://api.jquery.com/before/">.before()</a></code>, <code>.after()</code> also supports passing in multiple arguments as input. Supported input includes DOM elements, jQuery objects, HTML strings, and arrays of DOM elements.</p>
+    <p>Similar to other content-adding methods such as <code><a href="/prepend/">.prepend()</a></code> and <code><a href="/before/">.before()</a></code>, <code>.after()</code> also supports passing in multiple arguments as input. Supported input includes DOM elements, jQuery objects, HTML strings, and arrays of DOM elements.</p>
     <p>For example, the following will insert two new <code>&lt;div&gt;</code>s and an existing <code>&lt;div&gt;</code> after the first paragraph:</p>
     <pre><code>
 var $newdiv1 = $( "&lt;div id='object1'/&gt;" ),

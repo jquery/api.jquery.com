@@ -7,7 +7,7 @@
   <desc>Add the previous set of elements on the stack to the current set.</desc>
   <longdesc>
     <p><strong>Note:</strong> This function has been deprecated and is now an alias for <a href="/addBack/"><code>.addBack()</code></a>, which should be used with jQuery 1.8 and later.</p>
-    <p>As described in the discussion for <code><a href="http://api.jquery.com/end/">.end()</a></code>, jQuery objects maintain an internal stack that keeps track of changes to the matched set of elements. When one of the DOM traversal methods is called, the new set of elements is pushed onto the stack. If the previous set of elements is desired as well, <code>.andSelf()</code> can help.</p>
+    <p>As described in the discussion for <code><a href="/end/">.end()</a></code>, jQuery objects maintain an internal stack that keeps track of changes to the matched set of elements. When one of the DOM traversal methods is called, the new set of elements is pushed onto the stack. If the previous set of elements is desired as well, <code>.andSelf()</code> can help.</p>
     <p>Consider a page with a simple list on it:</p>
     <pre><code>
 &lt;ul&gt;

@@ -7,7 +7,7 @@
       <desc>The function to be invoked.</desc>
     </argument>
   </signature>
-  <desc>Register a handler to be called when the first Ajax request begins. This is an <a href="/Ajax_Events">Ajax Event</a>.</desc>
+  <desc>Register a handler to be called when the first Ajax request begins. This is an <a href="/Ajax_Events/">Ajax Event</a>.</desc>
   <longdesc>
     <p>Whenever an Ajax request is about to be sent, jQuery checks whether there are any other outstanding Ajax requests. If none are in progress, jQuery triggers the <code>ajaxStart</code> event. Any and all handlers that have been registered with the <code>.ajaxStart()</code> method are executed at this time.</p>
     <p>To observe this method in action, set up a basic Ajax load request:</p>

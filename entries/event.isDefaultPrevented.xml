@@ -4,7 +4,7 @@
   <signature>
     <added>1.3</added>
   </signature>
-  <desc>Returns whether <a href="/event.preventDefault">event.preventDefault()</a> was ever called on this event object. </desc>
+  <desc>Returns whether <a href="/event.preventDefault/">event.preventDefault()</a> was ever called on this event object. </desc>
   <longdesc>   </longdesc>
   <example>
     <desc>Checks whether event.preventDefault() was called.</desc>

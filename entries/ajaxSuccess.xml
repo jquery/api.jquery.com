@@ -7,7 +7,7 @@
       <desc>The function to be invoked.</desc>
     </argument>
   </signature>
-  <desc>Attach a function to be executed whenever an Ajax request completes successfully. This is an <a href="/Ajax_Events">Ajax Event</a>.</desc>
+  <desc>Attach a function to be executed whenever an Ajax request completes successfully. This is an <a href="/Ajax_Events/">Ajax Event</a>.</desc>
   <longdesc>
     <p>Whenever an Ajax request completes successfully, jQuery triggers the <code>ajaxSuccess</code> event. Any and all handlers that have been registered with the <code>.ajaxSuccess()</code> method are executed at this time.</p>
     <p>To observe this method in action, set up a basic Ajax load request:</p>

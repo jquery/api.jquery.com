@@ -6,7 +6,7 @@
   </signature>
   <desc>End the most recent filtering operation in the current chain and return the set of matched elements to its previous state.</desc>
   <longdesc>
-    <p>Most of jQuery's <a href="http://api.jquery.com/category/traversing">DOM traversal</a> methods operate on a jQuery object instance and produce a new one, matching a different set of DOM elements. When this happens, it is as if the new set of elements is pushed onto a stack that is maintained inside the object. Each successive filtering method pushes a new element set onto the stack. If we need an older element set, we can use <code>end()</code> to pop the sets back off of the stack.</p>
+    <p>Most of jQuery's <a href="/category/traversing/">DOM traversal</a> methods operate on a jQuery object instance and produce a new one, matching a different set of DOM elements. When this happens, it is as if the new set of elements is pushed onto a stack that is maintained inside the object. Each successive filtering method pushes a new element set onto the stack. If we need an older element set, we can use <code>end()</code> to pop the sets back off of the stack.</p>
     <p>Suppose we have a couple short lists on a page:</p>
     <pre><code>
 &lt;ul class="first"&gt;

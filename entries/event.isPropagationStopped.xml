@@ -4,7 +4,7 @@
   <signature>
     <added>1.3</added>
   </signature>
-  <desc>  Returns whether <a href="/event.stopPropagation">event.stopPropagation()</a> was ever called on this event object. </desc>
+  <desc>  Returns whether <a href="/event.stopPropagation/">event.stopPropagation()</a> was ever called on this event object. </desc>
   <longdesc>
     <p>This event method is described in the <a href="http://www.w3.org/TR/2003/WD-DOM-Level-3-Events-20030331/events.html#Events-Event-isPropagationStopped">W3C DOM Level 3 specification</a>.</p>
   </longdesc>

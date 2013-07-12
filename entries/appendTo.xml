@@ -14,7 +14,7 @@
   </signature>
   <desc>Insert every element in the set of matched elements to the end of the target.</desc>
   <longdesc>
-    <p>The <code><a href="/append">.append()</a></code> and <code>.appendTo()</code> methods perform the same task. The major difference is in the syntax-specifically, in the placement of the content and target. With <code>.append()</code>, the selector expression preceding the method is the container into which the content is inserted. With <code>.appendTo()</code>, on the other hand, the content precedes the method, either as a selector expression or as markup created on the fly, and it is inserted into the target container.</p>
+    <p>The <code><a href="/append/">.append()</a></code> and <code>.appendTo()</code> methods perform the same task. The major difference is in the syntax-specifically, in the placement of the content and target. With <code>.append()</code>, the selector expression preceding the method is the container into which the content is inserted. With <code>.appendTo()</code>, on the other hand, the content precedes the method, either as a selector expression or as markup created on the fly, and it is inserted into the target container.</p>
     <p>Consider the following HTML:</p>
     <pre><code>
 &lt;h2&gt;Greetings&lt;/h2&gt;

@@ -6,7 +6,7 @@
   </signature>
   <desc>The element where the currently-called jQuery event handler was attached.</desc>
   <longdesc>
-    <p>This property is most often useful in delegated events attached by <a href="/delegate"><code>.delegate()</code></a> or <a href="/on"><code>.on()</code></a>, where the event handler is attached at an ancestor of the element being processed. It can be used, for example, to identify and remove event handlers at the delegation point.</p>
+    <p>This property is most often useful in delegated events attached by <a href="/delegate/"><code>.delegate()</code></a> or <a href="/on/"><code>.on()</code></a>, where the event handler is attached at an ancestor of the element being processed. It can be used, for example, to identify and remove event handlers at the delegation point.</p>
     <p>For non-delegated event handlers attached directly to an element, <code>event.delegateTarget</code> will always be equal to <code>event.currentTarget</code>.</p>
   </longdesc>
   <example>

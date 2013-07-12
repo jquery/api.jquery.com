@@ -6,9 +6,9 @@
   </signature>
   <desc> Determine whether a Deferred object has been rejected. </desc>
   <longdesc>
-    <p>As of jQuery 1.7 this API has been deprecated; please use <a href="http://api.jquery.com/deferred.state"><code>deferred.state()</code></a> instead.</p>
-    <p>Returns <code>true</code> if the Deferred object is in the rejected state, meaning that either <a href="http://api.jquery.com/deferred.reject/"><code>deferred.reject()</code></a> or <a href="http://api.jquery.com/deferred.rejectWith/"><code>deferred.rejectWith()</code></a> has been called for the object and the failCallbacks have been called (or are in the process of being called).</p>
-    <p>Note that a Deferred object can be in one of three states: pending, resolved, or rejected; use <a href="http://api.jquery.com/deferred.isResolved/"><code>deferred.isResolved()</code></a> to determine whether the Deferred object is in the resolved state. These methods are primarily useful for debugging, for example to determine whether a Deferred has already been resolved even though you are inside code that intended to reject it.</p>
+    <p>As of jQuery 1.7 this API has been deprecated; please use <a href="/deferred.state/"><code>deferred.state()</code></a> instead.</p>
+    <p>Returns <code>true</code> if the Deferred object is in the rejected state, meaning that either <a href="h/deferred.reject/"><code>deferred.reject()</code></a> or <a href="/deferred.rejectWith/"><code>deferred.rejectWith()</code></a> has been called for the object and the failCallbacks have been called (or are in the process of being called).</p>
+    <p>Note that a Deferred object can be in one of three states: pending, resolved, or rejected; use <a href="/deferred.isResolved/"><code>deferred.isResolved()</code></a> to determine whether the Deferred object is in the resolved state. These methods are primarily useful for debugging, for example to determine whether a Deferred has already been resolved even though you are inside code that intended to reject it.</p>
   </longdesc>
   <category slug="deferred-object"/>
   <category slug="version/1.5"/>

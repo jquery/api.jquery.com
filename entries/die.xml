@@ -24,7 +24,7 @@
     <p>Any handler that has been attached with <code>.live()</code> can be removed with <code>.die()</code>. This method is analogous to calling <code>.off()</code> with no arguments, which is used to remove all handlers attached with <code>.on()</code>.
   See the discussions of <code>.live()</code> and <code>.off()</code> for further details.</p>
     <p>If used without an argument, .die() removes <em>all</em> event handlers previously attached using <code>.live()</code> from the elements.</p>
-    <p><strong>As of jQuery 1.7</strong>, use of <code>.die()</code> (and its complementary method, <code>.live()</code>) is not recommended. Instead, use <a href="http://api.jquery.com/off/"><code>.off()</code></a> to remove event handlers bound with <a href="http://api.jquery.com/on/"><code>.on()</code></a></p>
+    <p><strong>As of jQuery 1.7</strong>, use of <code>.die()</code> (and its complementary method, <code>.live()</code>) is not recommended. Instead, use <a href="/off/"><code>.off()</code></a> to remove event handlers bound with <a href="/on/"><code>.on()</code></a></p>
     <p><strong>Note:</strong> In order for .die() to function correctly, the selector used with it must match exactly the selector initially used with .live().</p>
   </longdesc>
   <example>
