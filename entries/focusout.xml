@@ -18,37 +18,42 @@
     </argument>
   </signature>
   <longdesc>
-    <p>This method is a shortcut for <code>.on('focusout', handler)</code> when passed arguments, and <code>.trigger('focusout')</code> when no arguments are passed.</p>
-    <p>The <code>focusout</code> event is sent to an element when it, or any element inside of it, loses focus. This is distinct from the <a href="/blur">blur</a> event in that it supports detecting the loss of focus on descendant elements (in other words, it supports event bubbling).</p>
-    <p>This event will likely be used together with the <a href="/focusin">focusin</a> event.</p>
+    <p>This method is a shortcut for <code>.on( "focusout", handler )</code> when passed arguments, and <code>.trigger( "focusout" )</code> when no arguments are passed.</p>
+    <p>The <code>focusout</code> event is sent to an element when it, or any element inside of it, loses focus. This is distinct from the <a href="/blur/">blur</a> event in that it supports detecting the loss of focus on descendant elements (in other words, it supports event bubbling).</p>
+    <p>This event will likely be used together with the <a href="/focusin/">focusin</a> event.</p>
   </longdesc>
   <example>
     <desc>Watch for a loss of focus to occur inside paragraphs and note the difference between the <code>focusout</code> count and the <code>blur</code> count. (The <code>blur</code> count does not change because those events do not bubble.)</desc>
     <css><![CDATA[
-.inputs { float: left; margin-right: 1em; }
-.inputs p { margin-top: 0; }
+  .inputs {
+    float: left;
+    margin-right: 1em;
+  }
+  .inputs p {
+    margin-top: 0;
+  }
 ]]></css>
     <code><![CDATA[
 var fo = 0, b = 0;
-$("p").focusout(function() {
+$( "p" ).focusout(function() {
   fo++;
-  $("#fo")
-    .text("focusout fired: " + fo + "x");
-}).blur(function() {
-  b++;
-  $("#b")
-    .text("blur fired: " + b + "x");
-
+  $( "#fo" )
+    .text( "focusout fired: " + fo + "x" );
+})
+  .blur(function() {
+    b++;
+    $("#b")
+      .text("blur fired: " + b + "x");
 });
 ]]></code>
     <html><![CDATA[
 <div class="inputs">
   <p>
-    <input type="text" /><br />
-    <input type="text" />
+    <input type="text"><br>
+    <input type="text">
   </p>
   <p>
-    <input type="password" />
+    <input type="password">
   </p>
 </div>
 <div id="fo">focusout fire</div>

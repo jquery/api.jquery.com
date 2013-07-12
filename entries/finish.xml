@@ -19,43 +19,42 @@
   <example>
     <desc>Click the Go button once to start the animation, and then click the other buttons to see how they affect the current and queued animations.</desc>
     <code><![CDATA[
-var horiz = $("#path").width() - 20,
-    vert = $("#path").height() - 20;
+var horiz = $( "#path" ).width() - 20,
+  vert = $( "#path" ).height() - 20;
 
 var btns = {
-  bstt: function () {
-    $("div.box").stop(true, true);
+  bstt: function() {
+    $( "div.box" ).stop( true, true );
   },
-  bs: function () {
-    $("div.box").stop();
+  bs: function() {
+    $( "div.box" ).stop();
   },
-  bsft: function () {
-    $("div.box").stop(false, true);
+  bsft: function() {
+    $( "div.box" ).stop( false, true );
   },
-  bf: function () {
-    $("div.box").finish();
+  bf: function() {
+    $( "div.box" ).finish();
   },
-  bcf: function () {
-    $("div.box").clearQueue().finish();
+  bcf: function() {
+    $( "div.box" ).clearQueue().finish();
   },
-  bsff: function () {
-    $("div.box").stop(false, false);
+  bsff: function() {
+    $( "div.box" ).stop( false, false );
   },
-  bstf: function () {
-    $("div.box").stop(true, false);
+  bstf: function() {
+    $( "div.box" ).stop( true, false );
   },
-  bcs: function () {
-    $("div.box").clearQueue().stop();
+  bcs: function() {
+    $( "div.box" ).clearQueue().stop();
   }
 };
 
-
-$("button.b").on("click", function () {
-  btns[this.id]();
+$( "button.b" ).on( "click", function() {
+  btns[ this.id ]();
 });
 
-$("#go").on("click", function () {
-  $(".box")
+$( "#go" ).on( "click", function() {
+  $( ".box" )
     .clearQueue()
     .stop()
     .css({
@@ -64,29 +63,30 @@ $("#go").on("click", function () {
   })
     .animate({
     top: vert
-  }, 3000)
+  }, 3000 )
     .animate({
     left: horiz
-  }, 3000)
+  }, 3000 )
     .animate({
     top: 10
-  }, 3000);
+  }, 3000 );
 });
 ]]></code>
-    <html><![CDATA[<div class="box"></div>
+    <html><![CDATA[
+<div class="box"></div>
 <div id="path">
   <button id="go">Go</button>
   <br>
-  <button id="bstt" class="b">.stop(true,true)</button>
+  <button id="bstt" class="b">.stop( true,true )</button>
   <button id="bcf" class="b">.clearQueue().finish()</button>
   <br>
-  <button id="bstf" class="b">.stop(true, false)</button>
+  <button id="bstf" class="b">.stop( true, false )</button>
   <button id="bcs" class="b">.clearQueue().stop()</button>
   <br>
-  <button id="bsff" class="b">.stop(false, false)</button>
+  <button id="bsff" class="b">.stop( false, false )</button>
   <button id="bs" class="b">.stop()</button>
   <br>
-  <button id="bsft" class="b">.stop(false, true)</button>
+  <button id="bsft" class="b">.stop( false, true )</button>
   <br>
   <button id="bf" class="b">.finish()</button>
 </div>

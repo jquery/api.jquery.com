@@ -38,100 +38,140 @@
     <p>Durations are given in milliseconds; higher values indicate slower animations, not faster ones. The strings <code>'fast'</code> and <code>'slow'</code> can be supplied to indicate durations of <code>200</code> and <code>600</code> milliseconds, respectively. If any other string is supplied, the default duration of  <code>400</code> milliseconds is used. Unlike the other effect methods, <code>.fadeTo()</code> requires that <code>duration</code> be explicitly specified.</p>
     <p>If supplied, the callback is fired once the animation is complete. This can be useful for stringing different animations together in sequence. The callback is not sent any arguments, but <code>this</code> is set to the DOM element being animated. If multiple elements are animated, it is important to note that the callback is executed once per matched element, not once for the animation as a whole.</p>
     <p>We can animate any element, such as a simple image:</p>
-    <pre><code>&lt;div id="clickme"&gt;
-    Click here
-  &lt;/div&gt;
-  &lt;img id="book" src="book.png" alt="" width="100" height="123" /&gt;
-  With the element initially shown, we can dim it slowly:
-  $('#clickme').click(function() {
-    $('#book').fadeTo('slow', 0.5, function() {
+    <pre><code>
+&lt;div id="clickme"&gt;
+  Click here
+&lt;/div&gt;
+&lt;img id="book" src="book.png" alt="" width="100" height="123"&gt;
+With the element initially shown, we can dim it slowly:
+$( "#clickme" ).click(function() {
+  $( "#book" ).fadeTo( "slow" , 0.5, function() {
       // Animation complete.
     });
   });
-  </code></pre>
+    </code></pre>
     <p class="image four-across">
       <img src="/resources/0042_06_41.png" alt=""/>
       <img src="/resources/0042_06_42.png" alt=""/>
       <img src="/resources/0042_06_43.png" alt=""/>
       <img src="/resources/0042_06_44.png" alt=""/>
     </p>
-    <p>With <code>duration</code> set to <code>0</code>, this method just changes the <code>opacity</code> CSS property, so <code>.fadeTo(0, opacity)</code> is the same as <code>.css('opacity', opacity)</code>.</p>
+    <p>With <code>duration</code> set to <code>0</code>, this method just changes the <code>opacity</code> CSS property, so <code>.fadeTo( 0, opacity )</code> is the same as <code>.css( "opacity", opacity )</code>.</p>
   </longdesc>
   <note id="jquery.fx.off" type="additional" data-title=".fadeTo()"/>
   <example>
     <desc>Animates first paragraph to fade to an opacity of 0.33 (33%, about one third visible), completing the animation within 600 milliseconds.</desc>
     <code><![CDATA[
-$("p:first").click(function () {
-$(this).fadeTo("slow", 0.33);
+$( "p:first" ).click(function() {
+  $( this ).fadeTo( "slow", 0.33 );
 });
 ]]></code>
-    <html><![CDATA[<p>
+    <html><![CDATA[
+<p>
 Click this paragraph to see it fade.
 </p>
 
 <p>
 Compare to this one that won't fade.
-</p>]]></html>
+</p>
+]]></html>
   </example>
   <example>
     <desc>Fade div to a random opacity on each click, completing the animation within 200 milliseconds.</desc>
     <code><![CDATA[
-$("div").click(function () {
-$(this).fadeTo("fast", Math.random());
+$( "div" ).click(function() {
+  $( this ).fadeTo( "fast", Math.random() );
 });
 ]]></code>
     <css><![CDATA[
-p { width:80px; margin:0; padding:5px; }
-div { width:40px; height:40px; position:absolute; }
-div#one { top:0; left:0; background:#f00; }
-div#two { top:20px; left:20px; background:#0f0; }
-div#three { top:40px; left:40px; background:#00f; }
+  p {
+    width: 80px;
+    margin: 0;
+    padding: 5px;
+  }
+  div {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+  }
+  div#one {
+    top: 0;
+    left: 0;
+    background: #f00;
+  }
+  div#two {
+    top: 20px;
+    left: 20px;
+    background: #0f0;
+  }
+  div#three {
+    top: 40px;
+    left:40px;
+    background:#00f;
+  }
 ]]></css>
-    <html><![CDATA[<p>And this is the library that John built...</p>
+    <html><![CDATA[
+<p>And this is the library that John built...</p>
 
 <div id="one"></div>
 <div id="two"></div>
-<div id="three"></div>]]></html>
+<div id="three"></div>
+]]></html>
   </example>
   <example>
     <desc>Find the right answer!  The fade will take 250 milliseconds and change various styles when it completes.</desc>
     <code><![CDATA[
-var getPos = function (n) {
-  return (Math.floor(n) * 90) + "px";
+var getPos = function( n ) {
+  return ( Math.floor( n ) * 90) + "px";
 };
-$("p").each(function (n) {
-  var r = Math.floor(Math.random() * 3);
-  var tmp = $(this).text();
-  $(this).text($("p:eq(" + r + ")").text());
-  $("p:eq(" + r + ")").text(tmp);
-  $(this).css("left", getPos(n));
+$( "p" ).each(function( n ) {
+  var r = Math.floor( Math.random() * 3 );
+  var tmp = $( this ).text();
+  $( this ).text( $( "p:eq(" + r + ")" ).text() );
+  $( "p:eq(" + r + ")" ).text( tmp );
+  $( this ).css( "left", getPos( n ) );
 });
-$("div").each(function (n) {
-  $(this).css("left", getPos(n));
+$( "div" ).each(function( n ) {
+  $( this ).css( "left", getPos( n ) );
 })
-.css("cursor", "pointer")
-.click(function () {
-    $(this).fadeTo(250, 0.25, function () {
-      $(this).css("cursor", "")
-        .prev().css({"font-weight": "bolder",
-                     "font-style": "italic"});
+  .css( "cursor", "pointer" )
+  .click( function() {
+    $( this ).fadeTo( 250, 0.25, function() {
+      $( this )
+        .css( "cursor", "" )
+        .prev()
+        .css({
+          "font-weight": "bolder",
+          "font-style": "italic"
+          });
         });
     });
-
 ]]></code>
     <css><![CDATA[
-div, p { width:80px; height:40px; top:0; margin:0;
-position:absolute; padding-top:8px; }
-p { background:#fcc; text-align:center; }
-div { background:blue; }
+  div, p {
+    width: 80px;
+    height: 40px;
+    top:0;
+    margin: 0;
+    position: absolute;
+    padding-top:8px;
+  }
+  p {
+    background: #fcc;
+    text-align: center;
+  }
+  div {
+    background: blue;
+  }
 ]]></css>
-    <html><![CDATA[<p>Wrong</p>
+    <html><![CDATA[
+<p>Wrong</p>
 <div></div>
 <p>Wrong</p>
 <div></div>
-
 <p>Right!</p>
-<div></div>]]></html>
+<div></div>
+]]></html>
   </example>
   <category slug="effects/fading"/>
   <category slug="version/1.0"/>

@@ -10,66 +10,76 @@
   <desc>Relinquish jQuery's control of the <code>$</code> variable.</desc>
   <longdesc>
     <p>Many JavaScript libraries use <code>$</code> as a function or variable name, just as jQuery does. In jQuery's case, <code>$</code> is just an alias for <code>jQuery</code>, so all functionality is available without using <code>$</code>. If you need to use another JavaScript library alongside jQuery, return control of <code>$</code> back to the other library with a call to <code>$.noConflict()</code>. Old references of <code>$</code> are saved during jQuery initialization; <code>noConflict()</code> simply restores them.</p>
-    <p>If for some reason two versions of jQuery are loaded (which is not recommended), calling <code>$.noConflict(true)</code> from the second version will return the globally scoped jQuery variables to those of the first version.</p>
+    <p>If for some reason two versions of jQuery are loaded (which is not recommended), calling <code>$.noConflict( true )</code> from the second version will return the globally scoped jQuery variables to those of the first version.</p>
     <pre><code>
 &lt;script type="text/javascript" src="other_lib.js"&gt;&lt;/script&gt;
 &lt;script type="text/javascript" src="jquery.js"&gt;&lt;/script&gt;
 &lt;script type="text/javascript"&gt;
-  $.noConflict();
-  // Code that uses other library's $ can follow here.
+$.noConflict();
+// Code that uses other library's $ can follow here.
 &lt;/script&gt;
-</code></pre>
+    </code></pre>
     <p>This technique is especially effective in conjunction with the <code>.ready()</code> method's ability to alias the jQuery object, as within callback passed to <code>.ready()</code> you can use <code>$</code> if you wish without fear of conflicts later:</p>
     <pre><code>
 &lt;script type="text/javascript" src="other_lib.js"&gt;&lt;/script&gt;
 &lt;script type="text/javascript" src="jquery.js"&gt;&lt;/script&gt;
 &lt;script type="text/javascript"&gt;
-  $.noConflict();
-  jQuery(document).ready(function($) {
-    // Code that uses jQuery's $ can follow here.
-  });
-  // Code that uses other library's $ can follow here.
+$.noConflict();
+jQuery( document ).ready(function( $ ) {
+  // Code that uses jQuery's $ can follow here.
+});
+// Code that uses other library's $ can follow here.
 &lt;/script&gt;
-</code></pre>
+    </code></pre>
     <p>If necessary, you can free up the <code>jQuery</code> name as well by passing <code>true</code> as an argument to the method. This is rarely necessary, and if you must do this (for example, if you need to use multiple versions of the jQuery library on the same page), you need to consider that most plug-ins rely on the presence of the <code>jQuery</code> variable and may not operate correctly in this situation.</p>
   </longdesc>
   <example>
     <desc>Map the original object that was referenced by $ back to $.</desc>
-    <code><![CDATA[jQuery.noConflict();
+    <code><![CDATA[
+jQuery.noConflict();
 // Do something with jQuery
-jQuery("div p").hide();
+jQuery( "div p" ).hide();
 // Do something with another library's $()
-$("content").style.display = 'none';]]></code>
+$( "content" ).style.display = "none";
+]]></code>
   </example>
   <example>
     <desc>Revert the $ alias and then create and execute a function to provide the $ as a jQuery alias inside the function's scope. Inside the function the original $ object is not available. This works well for most plugins that don't rely on any other library.
   </desc>
-    <code><![CDATA[jQuery.noConflict();
-(function($) {
+    <code><![CDATA[
+jQuery.noConflict();
+(function( $ ) {
   $(function() {
-    // more code using $ as alias to jQuery
+    // More code using $ as alias to jQuery
   });
 })(jQuery);
-// other code using $ as an alias to the other library]]></code>
+// Other code using $ as an alias to the other library
+]]></code>
   </example>
   <example>
     <desc>Create a different alias instead of jQuery to use in the rest of the script.</desc>
-    <code><![CDATA[var j = jQuery.noConflict();
+    <code><![CDATA[
+var j = jQuery.noConflict();
 // Do something with jQuery
-j("div p").hide();
+j( "div p" ).hide();
 // Do something with another library's $()
-$("content").style.display = 'none';]]></code>
+$( "content" ).style.display = "none";
+]]></code>
   </example>
   <example>
     <desc>Completely move jQuery to a new namespace in another object.</desc>
-    <code><![CDATA[var dom = {};
-dom.query = jQuery.noConflict(true);]]></code>
-    <results><![CDATA[// Do something with the new jQuery
-dom.query("div p").hide();
+    <code><![CDATA[
+var dom = {};
+dom.query = jQuery.noConflict( true );
+]]></code>
+    <results><![CDATA[
+// Do something with the new jQuery
+dom.query( "div p" ).hide();
 // Do something with another library's $()
-$("content").style.display = 'none';
+$( "content" ).style.display = "none";
 // Do something with another version of jQuery
-jQuery("div > p").hide();]]></results>
+jQuery( "div > p" ).hide();
+]]></results>
   </example>
   <example>
     <desc>Load two versions of jQuery (not recommended). Then, restore jQuery's globally scoped variables to the first loaded jQuery.</desc>
@@ -84,11 +94,10 @@ var $log = $( "#log" );
 
 $log.append( "2nd loaded jQuery version ($): " + $.fn.jquery + "<br>" );
 
-/*
-Restore globally scoped jQuery variables to the first version loaded
-(the newer version)
-*/
-jq162 = jQuery.noConflict(true);
+// Restore globally scoped jQuery variables to the first version loaded
+// (the newer version)
+
+jq162 = jQuery.noConflict( true );
 
 $log.append( "<h3>After $.noConflict(true)</h3>" );
 $log.append( "1st loaded jQuery version ($): " + $.fn.jquery + "<br>" );

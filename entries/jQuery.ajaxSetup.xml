@@ -9,31 +9,36 @@
   </signature>
   <desc>Set default values for future Ajax requests. Its use is not recommended.</desc>
   <longdesc>
-    <p>For details on the settings available for <code>$.ajaxSetup()</code>, see <code><a href="/jQuery.ajax">$.ajax()</a></code>. </p>
+    <p>For details on the settings available for <code>$.ajaxSetup()</code>, see <code><a href="/jQuery.ajax/">$.ajax()</a></code>. </p>
     <p>All subsequent Ajax calls using any function will use the new settings, unless overridden by the individual calls, until the next invocation of <code>$.ajaxSetup()</code>.</p>
-	<p><strong>Note:</strong> The settings specified here will affect <em>all</em> calls to <code>$.ajax</code> or AJAX-based derivatives such as <code>$.get()</code>. This can cause undesirable behavior since other callers (for example, plugins) may be expecting the normal default settings. For that reason we <em>strongly recommend against using this API</em>. Instead, set the options explicitly in the call or define a simple plugin to do so.</p>
+    <p><strong>Note:</strong> The settings specified here will affect <em>all</em> calls to <code>$.ajax</code> or AJAX-based derivatives such as <code>$.get()</code>. This can cause undesirable behavior since other callers (for example, plugins) may be expecting the normal default settings. For that reason we <em>strongly recommend against using this API</em>. Instead, set the options explicitly in the call or define a simple plugin to do so.</p>
     <p>For example, the following sets a default for the <code>url</code> parameter before pinging the server repeatedly:</p>
-    <pre><code>$.ajaxSetup({
-  url: 'ping.php'
-});</code></pre>
+    <pre><code>
+$.ajaxSetup({
+  url: "ping.php"
+});
+    </code></pre>
     <p>Now each time an Ajax request is made, the "ping.php" URL will be used automatically:</p>
-    <pre><code>$.ajax({
+    <pre><code>
+$.ajax({
   // url not set here; uses ping.php
-  data: {'name': 'Dan'}
-});</code></pre>
+  data: { "name": "Dan" }
+});
+    </code></pre>
     <div class="warning">
-      <p>Note: Global callback functions should be set with their respective global Ajax event handler methods&#x2014;<code><a href="/ajaxStart">.ajaxStart()</a></code>, <code><a href="/ajaxStop">.ajaxStop()</a></code>, <code><a href="/ajaxComplete">.ajaxComplete()</a></code>, <code><a href="/ajaxError">.ajaxError()</a></code>, <code><a href="/ajaxSuccess">.ajaxSuccess()</a></code>, <code><a href="/ajaxSend">.ajaxSend()</a></code>&#x2014;rather than within the <code>options</code> object for <code>$.ajaxSetup()</code>.</p>
+      <p>Note: Global callback functions should be set with their respective global Ajax event handler methods&#x2014;<code><a href="/ajaxStart/">.ajaxStart()</a></code>, <code><a href="/ajaxStop/">.ajaxStop()</a></code>, <code><a href="/ajaxComplete/">.ajaxComplete()</a></code>, <code><a href="/ajaxError/">.ajaxError()</a></code>, <code><a href="/ajaxSuccess/">.ajaxSuccess()</a></code>, <code><a href="/ajaxSend/">.ajaxSend()</a></code>&#x2014;rather than within the <code>options</code> object for <code>$.ajaxSetup()</code>.</p>
     </div>
   </longdesc>
   <example>
     <desc>Sets the defaults for Ajax requests to the url "/xmlhttp/", disables global handlers and uses POST instead of GET. The following Ajax requests then sends some data without having to set anything else.</desc>
-    <code><![CDATA[$.ajaxSetup({
-   url: "/xmlhttp/",
-   global: false,
-   type: "POST"
-
- });
- $.ajax({ data: myData });]]></code>
+    <code><![CDATA[
+$.ajaxSetup({
+  url: "/xmlhttp/",
+  global: false,
+  type: "POST"
+});
+$.ajax({ data: myData });
+]]></code>
   </example>
   <category slug="ajax/low-level-interface"/>
   <category slug="version/1.1"/>

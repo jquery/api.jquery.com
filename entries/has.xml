@@ -31,17 +31,21 @@
 &lt;/ul&gt;
 </code></pre>
     <p>We can apply this method to the set of list items as follows:</p>
-    <pre><code>$('li').has('ul').css('background-color', 'red');</code></pre>
+    <pre><code>
+$( "li" ).has( "ul" ).css( "background-color", "red" );
+    </code></pre>
     <p>The result of this call is a red background for item 2, as it is the only <code>&lt;li&gt;</code> that has a <code>&lt;ul&gt;</code> among its descendants.</p>
   </longdesc>
   <example>
     <desc>Check if an element is inside another.</desc>
     <code><![CDATA[
-  $("ul").append("<li>" + ($("ul").has("li").length ? "Yes" : "No") + "</li>");
-  $("ul").has("li").addClass("full");
+$( "ul" ).append( "<li>" + ( $( "ul" ).has( "li" ).length ? "Yes" : "No" ) + "</li>" );
+$( "ul" ).has( "li" ).addClass( "full" );
 ]]></code>
     <css><![CDATA[
-  .full { border: 1px solid red; }
+  .full {
+    border: 1px solid red;
+  }
 ]]></css>
     <html><![CDATA[
 <ul><li>Does the UL contain an LI?</li></ul>

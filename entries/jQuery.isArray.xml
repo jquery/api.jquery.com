@@ -13,8 +13,12 @@
   </longdesc>
   <example>
     <desc>Finds out if the parameter is an array.</desc>
-    <code><![CDATA[$("b").append( "" + $.isArray([]) );]]></code>
-    <html><![CDATA[Is [] an Array? <b></b>]]></html>
+    <code><![CDATA[
+$( "b" ).append( "" + $.isArray([]) );
+]]></code>
+    <html><![CDATA[
+Is [] an Array? <b></b>
+]]></html>
   </example>
   <category slug="utilities"/>
   <category slug="version/1.3"/>

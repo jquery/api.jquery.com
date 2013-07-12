@@ -17,30 +17,41 @@
     </signature>
     <desc>Store arbitrary data associated with the specified element. Returns the value that was set.</desc>
     <longdesc>
-      <p><strong>Note:</strong> This is a low-level method; a more convenient <code><a href="/data">.data()</a></code> is also available.</p>
+      <p><strong>Note:</strong> This is a low-level method; a more convenient <code><a href="/data/">.data()</a></code> is also available.</p>
       <p>The <code>jQuery.data()</code> method allows us to attach data of any type to DOM elements in a way that is safe from circular references and therefore free from memory leaks. jQuery ensures that the data is removed when DOM elements are removed via jQuery methods, and when the user leaves the page. We can set several distinct values for a single element and retrieve them later:</p>
       <pre><code>
-jQuery.data(document.body, 'foo', 52);
-jQuery.data(document.body, 'bar', 'test');
-</code></pre>
+jQuery.data( document.body, "foo", 52 );
+jQuery.data( document.body, "bar", "test" );
+      </code></pre>
       <p><em>Note:</em> this method currently does not provide cross-platform support for setting data on XML documents, as Internet Explorer does not allow data to be attached via expando properties.</p>
     </longdesc>
     <example>
       <desc>Store then retrieve a value from the div element.</desc>
-      <code><![CDATA[var div = $("div")[0];
-    jQuery.data(div, "test", { first: 16, last: "pizza!" });
-    $("span:first").text(jQuery.data(div, "test").first);
-    $("span:last").text(jQuery.data(div, "test").last);]]></code>
+      <code><![CDATA[
+var div = $( "div" )[ 0 ];
+jQuery.data( div, "test", {
+  first: 16,
+  last: "pizza!"
+});
+$( "span:first" ).text( jQuery.data( div, "test" ).first );
+$( "span:last" ).text( jQuery.data( div, "test" ).last );
+]]></code>
       <css><![CDATA[
-  div { color:blue; }
-  span { color:red; }
-  ]]></css>
-      <html><![CDATA[<div>
+  div {
+    color: blue;
+  }
+  span {
+    color: red;
+  }
+]]></css>
+      <html><![CDATA[
+<div>
   The values stored were
   <span></span>
   and
   <span></span>
-</div>]]></html>
+</div>
+]]></html>
     </example>
     <category slug="data"/>
     <category slug="utilities"/>
@@ -66,56 +77,67 @@ jQuery.data(document.body, 'bar', 'test');
     </signature>
     <desc>Returns value at named data store for the element, as set by <code>jQuery.data(element, name, value)</code>, or the full data store for the element.</desc>
     <longdesc>
-      <p><strong>Note:</strong> This is a low-level method; a more convenient <code><a href="/data">.data()</a></code> is also available.</p>
-      <p><strong>Regarding HTML5 data-* attributes:</strong> This low-level method does NOT retrieve the <code>data-*</code> attributes unless the more convenient <code><a href="/data">.data()</a></code> method has already retrieved them.</p>
+      <p><strong>Note:</strong> This is a low-level method; a more convenient <code><a href="/data/">.data()</a></code> is also available.</p>
+      <p><strong>Regarding HTML5 data-* attributes:</strong> This low-level method does NOT retrieve the <code>data-*</code> attributes unless the more convenient <code><a href="/data/">.data()</a></code> method has already retrieved them.</p>
       <p>The <code>jQuery.data()</code> method allows us to attach data of any type to DOM elements in a way that is safe from circular references and therefore from memory leaks. We can retrieve several distinct values for a single element one at a time, or as a set:</p>
-      <pre><code>alert(jQuery.data( document.body, 'foo' ));
-alert(jQuery.data( document.body ));</code></pre>
+      <pre><code>
+alert( jQuery.data( document.body, "foo" ) );
+alert( jQuery.data( document.body ) );
+      </code></pre>
       <p>The above lines alert the data values that were set on the <code>body</code> element. If nothing was set on that element, an empty string is returned.</p>
-      <p>Calling <code>jQuery.data(element)</code> retrieves all of the element's associated values as a JavaScript object. Note that jQuery itself uses this method to store data for internal use, such as event handlers, so do not assume that it contains only data that your own code has stored.</p>
+      <p>Calling <code>jQuery.data( element )</code> retrieves all of the element's associated values as a JavaScript object. Note that jQuery itself uses this method to store data for internal use, such as event handlers, so do not assume that it contains only data that your own code has stored.</p>
       <p><em>Note:</em> this method currently does not provide cross-platform support for setting data on XML documents, as Internet Explorer does not allow data to be attached via expando properties.</p>
     </longdesc>
     <example>
       <desc>Get the data named "blah" stored at for an element.</desc>
       <code><![CDATA[
-$("button").click(function(e) {
-  var value, div = $("div")[0];
-
-  switch ($("button").index(this)) {
+$( "button" ).click( function( e ) {
+  var value, div = $( "div" )[ 0 ];
+  switch ( $( "button" ).index( this ) ) {
     case 0 :
-      value = jQuery.data(div, "blah");
+      value = jQuery.data( div, "blah" );
       break;
     case 1 :
-      jQuery.data(div, "blah", "hello");
+      jQuery.data( div, "blah", "hello" );
       value = "Stored!";
       break;
     case 2 :
-      jQuery.data(div, "blah", 86);
+      jQuery.data( div, "blah", 86 );
       value = "Stored!";
       break;
     case 3 :
-      jQuery.removeData(div, "blah");
+      jQuery.removeData( div, "blah" );
       value = "Removed!";
       break;
   }
-
-  $("span").text("" + value);
+  $( "span" ).text( "" + value );
 });
-
 ]]></code>
       <css><![CDATA[
-div { margin:5px; background:yellow; }
-button { margin:5px; font-size:14px; }
-p { margin:5px; color:blue; }
-span { color:red; }
-  ]]></css>
-      <html><![CDATA[<div>A div</div>
+  div {
+    margin: 5px;
+    background: yellow;
+  }
+  button {
+    margin: 5px;
+    font-size: 14px;
+  }
+  p {
+    margin: 5px;
+    color: blue;
+  }
+  span {
+    color: red;
+  }
+]]></css>
+      <html><![CDATA[
+<div>A div</div>
 <button>Get "blah" from the div</button>
 <button>Set "blah" to "hello"</button>
-
 <button>Set "blah" to 86</button>
 <button>Remove "blah" from the div</button>
-<p>The "blah" value of this div is <span>?</span></p>]]></html>
+<p>The "blah" value of this div is <span>?</span></p>
+]]></html>
     </example>
     <category slug="data"/>
     <category slug="utilities"/>

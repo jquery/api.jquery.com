@@ -15,53 +15,67 @@
     </signature>
     <longdesc>
       <p>The <code>.hover()</code> method binds handlers for both <code>mouseenter</code> and <code>mouseleave</code> events. You can use it to simply apply behavior to an element during the time the mouse is within the element.</p>
-      <p>Calling <code>$(selector).hover(handlerIn, handlerOut)</code> is shorthand for:</p>
-      <pre><code>$(selector).mouseenter(handlerIn).mouseleave(handlerOut);</code></pre>
-      <p>See the discussions for <code><a href="/mouseenter">.mouseenter()</a></code> and <code><a href="/mouseleave">.mouseleave()</a></code> for more details.</p>
+      <p>Calling <code>$( selector ).hover( handlerIn, handlerOut )</code> is shorthand for:</p>
+      <pre><code>
+$( selector ).mouseenter( handlerIn ).mouseleave( handlerOut );
+      </code></pre>
+      <p>See the discussions for <code><a href="/mouseenter/">.mouseenter()</a></code> and <code><a href="/mouseleave/">.mouseleave()</a></code> for more details.</p>
     </longdesc>
     <example>
       <desc>To add a special style to list items that are being hovered over, try:</desc>
       <code><![CDATA[
-$("li").hover(
-  function () {
-    $(this).append($("<span> ***</span>"));
-  },
-  function () {
-    $(this).find("span:last").remove();
+$( "li" ).hover(
+  function() {
+    $( this ).append( $( "<span> ***</span>" ) );
+  }, function() {
+    $( this ).find( "span:last" ).remove();
   }
 );
 
 //li with fade class
-$("li.fade").hover(function(){$(this).fadeOut(100);$(this).fadeIn(500);});
-
+$( "li.fade" ).hover(function() {
+  $( this ).fadeOut( 100 );
+  $( this ).fadeIn( 500 );
+});
 ]]></code>
       <css><![CDATA[
-  ul { margin-left:20px; color:blue; }
-  li { cursor:default; }
-  span { color:red; }
+  ul {
+    margin-left: 20px;
+    color: blue;
+  }
+  li {
+    cursor: default;
+  }
+  span {
+    color: red;
+  }
 ]]></css>
-      <html><![CDATA[<ul>
-    <li>Milk</li>
-    <li>Bread</li>
-    <li class='fade'>Chips</li>
-
-    <li class='fade'>Socks</li>
-  </ul>]]></html>
+      <html><![CDATA[
+<ul>
+  <li>Milk</li>
+  <li>Bread</li>
+  <li class="fade">Chips</li>
+  <li class="fade">Socks</li>
+</ul>
+]]></html>
     </example>
     <example>
       <desc>To add a special style to table cells that are being hovered over, try:</desc>
-      <code><![CDATA[$("td").hover(
-  function () {
-    $(this).addClass("hover");
-  },
-  function () {
-    $(this).removeClass("hover");
+      <code><![CDATA[
+$( "td" ).hover(
+  function() {
+    $( this ).addClass( "hover" );
+  }, function() {
+    $( this ).removeClass( "hover" );
   }
-);]]></code>
+);
+]]></code>
     </example>
     <example>
       <desc>To unbind the above example use:</desc>
-      <code><![CDATA[$("td").off('mouseenter mouseleave');]]></code>
+      <code><![CDATA[
+$( "td" ).off( "mouseenter mouseleave" );
+]]></code>
     </example>
     <category slug="events/mouse-events"/>
     <category slug="version/1.0"/>
@@ -77,38 +91,51 @@ $("li.fade").hover(function(){$(this).fadeOut(100);$(this).fadeIn(500);});
     <longdesc>
       <p>The <code>.hover()</code> method, when passed a single function, will execute that handler for both <code>mouseenter</code> and <code>mouseleave</code> events. This allows the user to use jQuery's various toggle methods within the handler or to respond differently within the handler depending on the <code>event.type</code>.</p>
       <p>Calling <code>$(selector).hover(handlerInOut)</code> is shorthand for:</p>
-      <pre><code>$(selector).on("mouseenter mouseleave", handlerInOut);</code></pre>
-      <p>See the discussions for <code><a href="/mouseenter">.mouseenter()</a></code> and <code><a href="/mouseleave">.mouseleave()</a></code> for more details.</p>
+      <pre><code>
+$( selector ).on( "mouseenter mouseleave", handlerInOut );
+      </code></pre>
+      <p>See the discussions for <code><a href="/mouseenter/">.mouseenter()</a></code> and <code><a href="/mouseleave/">.mouseleave()</a></code> for more details.</p>
     </longdesc>
     <example>
       <desc>Slide the next sibling LI up or down on hover, and toggle a class.</desc>
       <code><![CDATA[
-$("li")
-.filter(":odd")
-.hide()
- .end()
-.filter(":even")
-.hover(
-  function () {
-    $(this).toggleClass("active")
-      .next().stop(true, true).slideToggle();
-  }
-);
+$( "li" )
+  .filter( ":odd" )
+    .hide()
+  .end()
+  .filter( ":even" )
+    .hover(
+      function() {
+        $( this ).toggleClass( "active" ).next().stop( true, true ).slideToggle();
+      }
+    );
 ]]></code>
       <css><![CDATA[
-  ul { margin-left:20px; color:blue; }
-  li { cursor:default; }
-  li.active { background:black;color:white; }
-  span { color:red; }
-  ]]></css>
-      <html><![CDATA[<ul>
-    <li>Milk</li>
-    <li>White</li>
-    <li>Carrots</li>
-    <li>Orange</li>
-    <li>Broccoli</li>
-    <li>Green</li>
-  </ul>]]></html>
+  ul {
+    margin-left: 20px;
+    color: blue;
+  }
+  li {
+    cursor: default;
+  }
+  li.active {
+    background: black;
+    color: white;
+  }
+  span {
+    color:red;
+  }
+]]></css>
+      <html><![CDATA[
+<ul>
+  <li>Milk</li>
+  <li>White</li>
+  <li>Carrots</li>
+  <li>Orange</li>
+  <li>Broccoli</li>
+  <li>Green</li>
+</ul>
+]]></html>
     </example>
     <category slug="events/mouse-events"/>
     <category slug="version/1.0"/>

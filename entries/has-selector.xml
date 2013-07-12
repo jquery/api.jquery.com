@@ -10,18 +10,23 @@
   </signature>
   <desc>Selects elements which contain at least one element that matches the specified selector.</desc>
   <longdesc>
-    <p>The expression <code>$('div:has(p)')</code> matches a <code>&lt;div&gt;</code> if a <code>&lt;p&gt;</code> exists anywhere among its descendants, not just as a direct child.</p>
+    <p>The expression <code>$( "div:has(p)" )</code> matches a <code>&lt;div&gt;</code> if a <code>&lt;p&gt;</code> exists anywhere among its descendants, not just as a direct child.</p>
   </longdesc>
-  <note id="jquery-selector-extension-alt" type="additional" data-selector=":has()" data-alt="$(&quot;your-pure-css-selector&quot;).has(selector/DOMElement)"/>
+  <note id="jquery-selector-extension-alt" type="additional" data-selector=":has()" data-alt="$( &quot;your-pure-css-selector&quot; ).has( selector/DOMElement )"/>
   <example>
     <desc>Adds the class "test" to all divs that have a paragraph inside of them.</desc>
-    <code><![CDATA[$("div:has(p)").addClass("test");]]></code>
-    <html><![CDATA[<div><p>Hello in a paragraph</p></div>
-
-  <div>Hello again! (with no paragraph)</div>]]></html>
+    <code><![CDATA[
+$( "div:has(p)" ).addClass( "test" );
+]]></code>
+    <html><![CDATA[
+<div><p>Hello in a paragraph</p></div>
+<div>Hello again! (with no paragraph)</div>
+]]></html>
     <css><![CDATA[
-  .test{ border: 3px inset red; }
-  ]]></css>
+  .test {
+    border: 3px inset red;
+  }
+]]></css>
   </example>
   <category slug="selectors/content-filter-selector"/>
   <category slug="selectors/jquery-selector-extensions"/>

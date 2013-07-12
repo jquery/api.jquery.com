@@ -13,12 +13,13 @@
   </longdesc>
   <example>
     <desc>Execute a script in the global context.</desc>
-    <code><![CDATA[function test(){
-    jQuery.globalEval("var newVar = true;")
-    }
-    test();
-    // newVar === true
-  ]]></code>
+    <code><![CDATA[
+function test() {
+  jQuery.globalEval( "var newVar = true;" )
+}
+test();
+// newVar === true
+]]></code>
   </example>
   <category slug="utilities"/>
   <category slug="version/1.0.4"/>

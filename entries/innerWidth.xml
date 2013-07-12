@@ -7,17 +7,28 @@
   <desc>Get the current computed width for the first element in the set of matched elements, including padding but not border.</desc>
   <longdesc>
     <p>This method returns the width of the element, including left and right padding, in pixels.</p>
-    <p>This method is not applicable to <code>window</code> and <code>document</code> objects; for these, use <code><a href="/width">.width()</a></code> instead.</p>
+    <p>This method is not applicable to <code>window</code> and <code>document</code> objects; for these, use <code><a href="/width/">.width()</a></code> instead.</p>
     <p class="image">
       <img src="/resources/0042_04_05.png"/>
     </p>
   </longdesc>
   <example>
     <desc>Get the innerWidth of a paragraph.</desc>
-    <code><![CDATA[var p = $("p:first");
-$("p:last").text( "innerWidth:" + p.innerWidth() );]]></code>
-    <css><![CDATA[p { margin:10px;padding:5px;border:2px solid #666; } ]]></css>
-    <html><![CDATA[<p>Hello</p><p></p>]]></html>
+    <code><![CDATA[
+var p = $( "p:first" );
+$( "p:last" ).text( "innerWidth:" + p.innerWidth() );
+]]></code>
+    <css><![CDATA[
+  p {
+    margin: 10px;
+    padding: 5px;
+    border: 2px solid #666;
+  }
+]]></css>
+    <html><![CDATA[
+<p>Hello</p>
+<p></p>
+]]></html>
   </example>
   <category slug="css"/>
   <category slug="dimensions"/>

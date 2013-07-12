@@ -20,19 +20,25 @@ var toggleFx = function() {
   $.fx.off = !$.fx.off;
 };
 toggleFx();
-
-$("button").click(toggleFx)
-
-$("input").click(function(){
-  $("div").toggle("slow");
+$( "button" ).click( toggleFx );
+$( "input" ).click(function() {
+  $( "div" ).toggle( "slow" );
 });
-  ]]></code>
+]]></code>
     <css><![CDATA[
-    div { width:50px; height:30px; margin:5px; float:left;
-          background:green; }
-  ]]></css>
-    <html><![CDATA[<p><input type="button" value="Run"/> <button>Toggle fx</button></p>
-<div></div>]]></html>
+  div {
+    width: 50px;
+    height: 30px;
+    margin: 5px;
+    float: left;
+    background: green;
+  }
+]]></css>
+    <html><![CDATA[
+<p><input type="button" value="Run">
+<button>Toggle fx</button></p>
+<div></div>
+]]></html>
   </example>
   <category slug="effects/custom-effects"/>
   <category slug="properties/global-jquery-object-properties"/>

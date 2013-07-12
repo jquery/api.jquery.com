@@ -44,8 +44,8 @@ $( "li" ).addClass( "bar" );
   <example>
     <desc>Iterate over three divs and sets their color property.</desc>
     <code><![CDATA[
-$( document.body ).click(function () {
-  $( "div" ).each(function ( i ) {
+$( document.body ).click(function() {
+  $( "div" ).each(function( i ) {
     if ( this.style.color != "blue" ) {
       this.style.color = "blue";
     } else {

@@ -18,26 +18,27 @@
       </ul>
       <p>This property is available immediately. It is therefore safe to use it to determine whether or not to call <code>$(document).ready()</code>.
     The <code>$.browser</code> property is deprecated in jQuery 1.3, and its functionality may be moved to a team-supported plugin in a future release of jQuery.</p>
-      <p>Because <code>$.browser</code> uses <code>navigator.userAgent</code> to determine the platform, it is vulnerable to spoofing by the user or misrepresentation by the browser itself. It is always best to avoid browser-specific code entirely where possible. The <code><a href="http://api.jquery.com/jQuery.support/">$.support</a></code> property is available for detection of support for particular features rather than relying on <code>$.browser</code>. </p>
+      <p>Because <code>$.browser</code> uses <code>navigator.userAgent</code> to determine the platform, it is vulnerable to spoofing by the user or misrepresentation by the browser itself. It is always best to avoid browser-specific code entirely where possible. The <code><a href="/jQuery.support/">$.support</a></code> property is available for detection of support for particular features rather than relying on <code>$.browser</code>. </p>
     </longdesc>
     <example>
       <desc>Show the browser info.</desc>
       <code><![CDATA[
-jQuery.each(jQuery.browser, function(i, val) {
-  $("<div>" + i + " : <span>" + val + "</span>")
+jQuery.each(jQuery.browser, function( i, val ) {
+  $( "<div>" + i + " : <span>" + val + "</span>" )
   .appendTo( document.body );
-});]]></code>
+});
+]]></code>
     </example>
     <example>
       <desc>Return true if the current useragent is some version of Microsoft's Internet Explorer. <strong>Will not work in jQuery 1.9 or later</strong> unless the <a href="https://github.com/jquery/jquery-migrate/#readme">jQuery Migrate</a> plugin is included.</desc>
       <code><![CDATA[
-  $.browser.msie;
+$.browser.msie;
 ]]></code>
     </example>
     <example>
       <desc>Alert "this is WebKit!" only for WebKit browsers. <strong>Will not work in jQuery 1.9 or later</strong> unless the <a href="https://github.com/jquery/jquery-migrate/#readme">jQuery Migrate</a> plugin is included.</desc>
       <code><![CDATA[
-  if ($.browser.webkit) {
+  if ( $.browser.webkit ) {
     alert( "this is webkit!" );
   }
 ]]></code>
@@ -66,8 +67,8 @@ jQuery.each(jQuery.browser, function(i, val) {
     <example>
       <desc>Return the version number of the rendering engine used by the user's current browser. For example, FireFox 4 returns 2.0 (the version of the Gecko rendering engine it utilizes). <strong>Will not work in jQuery 1.9 or later</strong> unless the <a href="https://github.com/jquery/jquery-migrate/#readme">jQuery Migrate</a> plugin is included.</desc>
       <code><![CDATA[
-$("p").html( "The version # of the browser's rendering engine is: <span>" +
-                $.browser.version + "</span>" );
+$( "p" ).html( "The version # of the browser's rendering engine is: <span>" +
+  $.browser.version + "</span>" );
 ]]></code>
     </example>
     <example>

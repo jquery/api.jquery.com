@@ -7,23 +7,28 @@
   </signature>
   <desc>Selects the first matched element.</desc>
   <longdesc>
-    <p>The <code>:first</code> pseudo-class is equivalent to <code>:eq(0)</code>. It could also be written as <code>:lt(1)</code>. While this matches only a single element, <a href="first-child-selector">:first-child</a> can match more than one: One for each parent.</p>
+    <p>The <code>:first</code> pseudo-class is equivalent to <code>:eq( 0 )</code>. It could also be written as <code>:lt( 1 )</code>. While this matches only a single element, <a href="/first-child-selector/">:first-child</a> can match more than one: One for each parent.</p>
   </longdesc>
   <note id="jquery-selector-extension" type="additional" data-selector=":first"/>
   <note id="document-order" type="additional"/>
   <example>
     <desc>Finds the first table row.</desc>
-    <code><![CDATA[$("tr:first").css("font-style", "italic");]]></code>
+    <code><![CDATA[
+$( "tr:first" ).css( "font-style", "italic" );
+]]></code>
     <css><![CDATA[
-
-  td { color:blue; font-weight:bold; }
-  ]]></css>
-    <html><![CDATA[<table>
-    <tr><td>Row 1</td></tr>
-    <tr><td>Row 2</td></tr>
-
-    <tr><td>Row 3</td></tr>
-  </table>]]></html>
+  td {
+    color: blue;
+    font-weight: bold;
+  }
+]]></css>
+    <html><![CDATA[
+<table>
+  <tr><td>Row 1</td></tr>
+  <tr><td>Row 2</td></tr>
+  <tr><td>Row 3</td></tr>
+</table>
+]]></html>
   </example>
   <category slug="selectors/basic-filter-selectors"/>
   <category slug="selectors/jquery-selector-extensions"/>

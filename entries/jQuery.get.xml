@@ -21,39 +21,50 @@
   <desc>Load data from the server using a HTTP GET request.</desc>
   <longdesc>
     <p>This is a shorthand Ajax function, which is equivalent to:</p>
-    <pre><code>$.ajax({
+    <pre><code>
+$.ajax({
   url: url,
   data: data,
   success: success,
   dataType: dataType
 });
-</code></pre>
+    </code></pre>
     <p>The <code>success</code> callback function is passed the returned data, which will be an XML root element, text string, JavaScript file, or JSON object, depending on the MIME type of the response. It is also passed the text status of the response. </p>
     <p><strong>As of jQuery 1.5</strong>, the <code>success</code> callback function is also passed a <a href="#jqxhr-object">"jqXHR" object</a> (in <strong>jQuery 1.4</strong>, it was passed the <code>XMLHttpRequest</code> object). However, since JSONP and cross-domain GET requests do not use <abbr title="XMLHTTPRequest">XHR</abbr>,  in those cases the <code>jqXHR</code> and <code>textStatus</code> parameters passed to the success callback are undefined.</p>
     <p>Most implementations will specify a success handler:</p>
-    <pre><code>$.get('ajax/test.html', function(data) {
-  $('.result').html(data);
-  alert('Load was performed.');
+    <pre><code>
+$.get( "ajax/test.html", function( data ) {
+  $( ".result" ).html( data );
+  alert( "Load was performed." );
 });
-</code></pre>
+    </code></pre>
     <p>This example fetches the requested HTML snippet and inserts it on the page.</p>
     <h4 id="jqxhr-object">The jqXHR Object</h4>
     <p><strong>As of jQuery 1.5</strong>, all of jQuery's Ajax methods return  a superset of the <code>XMLHTTPRequest</code> object. This jQuery XHR object, or "jqXHR," returned by <code>$.get()</code> implements the Promise interface, giving it all the properties, methods, and behavior of a Promise (see <a href="/category/deferred-object/">Deferred object</a> for more information). The <code>jqXHR.done()</code> (for success), <code>jqXHR.fail()</code> (for error), and <code>jqXHR.always()</code> (for completion, whether success or error) methods take a function argument that is called when the request terminates. For information about the arguments this function receives, see the <a href="/jQuery.ajax/#jqXHR">jqXHR Object</a> section of the $.ajax() documentation.</p>
     <p>The Promise interface also allows jQuery's Ajax methods, including <code>$.get()</code>, to chain multiple <code>.done()</code>, <code>.fail()</code>, and <code>.always()</code> callbacks on a single request, and even to assign these callbacks after the request may have completed. If the request is already complete, the callback is fired immediately.</p>
-    <pre><code>// Assign handlers immediately after making the request,
+    <pre><code>
+// Assign handlers immediately after making the request,
 // and remember the jqxhr object for this request
-var jqxhr = $.get("example.php", function() {
-  alert("success");
+var jqxhr = $.get( "example.php", function() {
+  alert( "success" );
 })
-.done(function() { alert("second success"); })
-.fail(function() { alert("error"); })
-.always(function() { alert("finished"); });
+  .done(function() {
+    alert( "second success" );
+  })
+  .fail(function() {
+    alert( "error" );
+  })
+  .always(function() {
+    alert( "finished" );
+  });
 
-// perform other work here ...
+// Perform other work here ...
 
 // Set another completion function for the request above
-jqxhr.always(function(){ alert("second finished"); });
-</code></pre>
+jqxhr.always(function(){
+  alert( "second finished" );
+});
+    </code></pre>
     <h4>Deprecation Notice</h4>
     <p>The <code>jqXHR.success()</code>, <code>jqXHR.error()</code>, and <code>jqXHR.complete()</code> callback methods introduced in jQuery 1.5 are <strong>deprecated as of jQuery 1.8</strong>. To prepare your code for their eventual removal, use <code>jqXHR.done()</code>, <code>jqXHR.fail()</code>, and <code>jqXHR.always()</code> instead.</p>
   </longdesc>
@@ -62,36 +73,47 @@ jqxhr.always(function(){ alert("second finished"); });
   <note id="same-origin-policy-exceptions" type="additional"/>
   <example>
     <desc>Request the test.php page, but ignore the return results.</desc>
-    <code><![CDATA[$.get("test.php");]]></code>
+    <code><![CDATA[
+$.get( "test.php" );
+]]></code>
   </example>
   <example>
     <desc>Request the test.php page and send some additional data along (while still ignoring the return results).</desc>
-    <code><![CDATA[$.get("test.php", { name: "John", time: "2pm" } );]]></code>
+    <code><![CDATA[
+$.get( "test.php", { name: "John", time: "2pm" } );
+]]></code>
   </example>
   <example>
     <desc>Pass arrays of data to the server (while still ignoring the return results).</desc>
-    <code><![CDATA[$.get("test.php", { 'choices[]': ["Jon", "Susan"]} );]]></code>
+    <code><![CDATA[
+$.get( "test.php", { "choices[]": ["Jon", "Susan"]} );
+]]></code>
   </example>
   <example>
     <desc>Alert the results from requesting test.php (HTML or XML, depending on what was returned).</desc>
-    <code><![CDATA[$.get("test.php", function(data) {
-  alert("Data Loaded: " + data);
-});]]></code>
+    <code><![CDATA[
+$.get( "test.php", function( data ) {
+  alert( "Data Loaded: " + data );
+});
+]]></code>
   </example>
   <example>
     <desc>Alert the results from requesting test.cgi with an additional payload of data (HTML or XML, depending on what was returned).</desc>
-    <code><![CDATA[$.get("test.cgi", { name: "John", time: "2pm" })
-.done(function(data) {
-  alert("Data Loaded: " + data);
-});]]></code>
+    <code><![CDATA[
+$.get( "test.cgi", { name: "John", time: "2pm" })
+  .done(function( data ) {
+    alert( "Data Loaded: " + data );
+});
+]]></code>
   </example>
   <example>
-    <desc> Get the test.php page contents, which has been returned in json format (&lt;?php echo json_encode(array("name"=&gt;"John","time"=&gt;"2pm")); ?&gt;), and add it to the page.</desc>
-    <code><![CDATA[$.get("test.php",
-   function(data) {
-     $('body').append( "Name: " + data.name ) // John
-              .append( "Time: " + data.time ); //  2pm
-   }, "json");]]></code>
+    <desc> Get the test.php page contents, which has been returned in json format (&lt;?php echo json_encode( array( "name"=&gt;"John","time"=&gt;"2pm" ) ); ?&gt;), and add it to the page.</desc>
+    <code><![CDATA[
+$.get( "test.php", function( data ) {
+  $( "body" ).append( "Name: " + data.name ) // John
+    .append( "Time: " + data.time ); //  2pm
+}, "json" );
+]]></code>
   </example>
   <category slug="ajax/shorthand-methods"/>
   <category slug="version/1.0"/>

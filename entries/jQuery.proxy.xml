@@ -61,45 +61,43 @@
     <code><![CDATA[
 var me = {
   type: "zombie",
-  test: function(event) {
-    /* Without proxy, `this` would refer to the event target */
-    /* use event.target to reference that element. */
+  test: function( event ) {
+    // Without proxy, `this` would refer to the event target
+    // use event.target to reference that element.
     var element = event.target;
-    $(element).css("background-color", "red");
+    $( element ).css( "background-color", "red" );
 
-    /* With proxy, `this` refers to the me object encapsulating */
-    /* this function. */
-    $("#log").append( "Hello " + this.type + "<br>" );
-    $("#test").off("click", this.test);
+    // With proxy, `this` refers to the me object encapsulating
+    // this function.
+    $( "#log" ).append( "Hello " + this.type + "<br>" );
+    $( "#test" ).off( "click", this.test );
   }
 };
 
 var you = {
   type: "person",
-  test: function(event) {
-    $("#log").append( this.type + " " );
+  test: function( event ) {
+    $( "#log" ).append( this.type + " " );
   }
 };
 
-/* execute you.test() in the context of the `you` object */
-/* no matter where it is called */
-/* i.e. the `this` keyword will refer to `you` */
+// Execute you.test() in the context of the `you` object
+// no matter where it is called
+// i.e. the `this` keyword will refer to `you`
 var youClick = $.proxy( you.test, you );
 
-
-/* attach click handlers to #test */
-$("#test")
-
-  /* this === "zombie"; handler unbound after first click */
+// attach click handlers to #test
+$( "#test" )
+  // this === "zombie"; handler unbound after first click
   .on( "click", $.proxy( me.test, me ) )
 
-  /* this === "person" */
+  // this === "person"
   .on( "click", youClick )
 
-  /* this === "zombie" */
+  // this === "zombie"
   .on( "click", $.proxy( you.test, me ) )
 
-  /* this === "<button> element" */
+  // this === "<button> element"
   .on( "click", you.test );
 ]]></code>
   </example>
@@ -110,15 +108,14 @@ $("#test")
   <p id="log"></p>
 ]]></html>
     <code><![CDATA[
-  var obj = {
-    name: "John",
-    test: function() {
-      $("#log").append( this.name );
-      $("#test").off("click", obj.test);
-    }
-  };
-
-  $("#test").on( "click", jQuery.proxy( obj, "test" ) );
+var obj = {
+  name: "John",
+  test: function() {
+    $( "#log" ).append( this.name );
+    $( "#test" ).off( "click", obj.test );
+  }
+};
+$( "#test" ).on( "click", jQuery.proxy( obj, "test" ) );
 ]]></code>
   </example>
 
@@ -131,30 +128,30 @@ $("#test")
 ]]></html>
     <code><![CDATA[
 var me = {
-  /* I'm a dog */
+  // I'm a dog
   type: "dog",
 
-  /* Note that event comes *after* one and two */
+  // Note that event comes *after* one and two
   test: function(one, two, event) {
-    $("#log")
+    $( "#log" )
 
-      /* `one` maps to `you`, the 1st additional */
-      /* argument in the $.proxy function call */
+      // `one` maps to `you`, the 1st additional
+      // argument in the $.proxy function call
       .append( "<h3>Hello " + one.type + ":</h3>" )
 
-      /* the `this` keyword refers to `me` */
-      /*(the 2nd, context, argument of $.proxy) */
+      // The `this` keyword refers to `me`
+      // (the 2nd, context, argument of $.proxy)
       .append( "I am a " + this.type + ", " )
 
-      /* `two` maps to `they`, the 2nd additional */
-      /* argument in the $.proxy function call */
+      // `two` maps to `they`, the 2nd additional
+      // argument in the $.proxy function call
       .append( "and they are " + two.type + ".<br>" )
 
-      /* the event type is "click" */
+      // the event type is "click"
       .append( "Thanks for " + event.type + "ing " )
 
-      /* the clicked element is `event.target`, */
-      /* and its type is "button" */
+      // the clicked element is `event.target`,
+      // and its type is "button"
       .append( "the " + event.target.type + "." );
   }
 };
@@ -162,14 +159,13 @@ var me = {
 var you = { type: "cat" };
 var they = { type: "fish" };
 
-
-/* Set up handler to execute me.test() in the context */
-/* of `me`, with `you` and `they` as additional arguments */
+// Set up handler to execute me.test() in the context
+// of `me`, with `you` and `they` as additional arguments
 var proxy = $.proxy( me.test, me, you, they );
 
-$("#test")
-.on( "click", proxy );
-    ]]></code>
+$( "#test" )
+  .on( "click", proxy );
+]]></code>
   </example>
   <category slug="events/event-handler-attachment"/>
   <category slug="utilities"/>

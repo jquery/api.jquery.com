@@ -8,14 +8,16 @@
     </signature>
     <desc>Get the current computed height for the first element in the set of matched elements.</desc>
     <longdesc>
-      <p>The difference between <code>.css('height')</code> and <code>.height()</code> is that the latter returns a unit-less pixel value (for example, <code>400</code>) while the former returns a value with units intact (for example, <code>400px</code>). The <code>.height()</code> method is recommended when an element's height needs to be used in a mathematical calculation.</p>
+      <p>The difference between <code>.css( "height" )</code> and <code>.height()</code> is that the latter returns a unit-less pixel value (for example, <code>400</code>) while the former returns a value with units intact (for example, <code>400px</code>). The <code>.height()</code> method is recommended when an element's height needs to be used in a mathematical calculation.</p>
       <p class="image">
         <img src="/resources/0042_04_01.png"/>
       </p>
       <p>This method is also able to find the height of the window and document.</p>
-      <pre><code>$(window).height();   // returns height of browser viewport
-$(document).height(); // returns height of HTML document</code></pre>
-      <p>Note that <code>.height()</code> will always return the content height, regardless of the value of the CSS <code>box-sizing</code> property. As of jQuery 1.8, this may require retrieving the CSS height plus <code>box-sizing</code> property and then subtracting any potential border and padding on each element when the element has <code>box-sizing: border-box</code>. To avoid this penalty, use <code>.css("height")</code> rather than <code>.height()</code>.</p>
+      <pre><code>
+$( window ).height();   // returns height of browser viewport
+$( document ).height(); // returns height of HTML document
+      </code></pre>
+      <p>Note that <code>.height()</code> will always return the content height, regardless of the value of the CSS <code>box-sizing</code> property. As of jQuery 1.8, this may require retrieving the CSS height plus <code>box-sizing</code> property and then subtracting any potential border and padding on each element when the element has <code>box-sizing: border-box</code>. To avoid this penalty, use <code>.css( "height" )</code> rather than <code>.height()</code>.</p>
       <div class="warning">
         <p><strong>Note:</strong> Although <code>style</code> and <code>script</code> tags will report a value for <code>.width()</code> or <code>height()</code> when absolutely positioned and given <code>display:block</code>, it is strongly discouraged to call those methods on these tags. In addition to being a bad practice, the results may also prove unreliable.</p>
       </div>
@@ -23,35 +25,46 @@ $(document).height(); // returns height of HTML document</code></pre>
     <example>
       <desc>Show various heights.  Note the values are from the iframe so might be smaller than you expected.  The yellow highlight shows the iframe body.</desc>
       <code><![CDATA[
-    function showHeight(ele, h) {
-      $("div").text("The height for the " + ele +
-                    " is " + h + "px.");
-    }
-    $("#getp").click(function () {
-      showHeight("paragraph", $("p").height());
-    });
-    $("#getd").click(function () {
-      showHeight("document", $(document).height());
-    });
-    $("#getw").click(function () {
-      showHeight("window", $(window).height());
-    });
-
+function showHeight( ele, h ) {
+  $( "div" ).text( "The height for the " + ele + " is " + h + "px." );
+}
+$( "#getp" ).click(function() {
+  showHeight( "paragraph", $( "p" ).height() );
+});
+$( "#getd" ).click(function() {
+  showHeight( "document", $( document ).height() );
+});
+$( "#getw" ).click(function() {
+  showHeight( "window", $( window ).height() );
+});
 ]]></code>
       <css><![CDATA[
-  body { background:yellow; }
-  button { font-size:12px; margin:2px; }
-  p { width:150px; border:1px red solid; }
-  div { color:red; font-weight:bold; }
-  ]]></css>
-      <html><![CDATA[<button id="getp">Get Paragraph Height</button>
-  <button id="getd">Get Document Height</button>
-  <button id="getw">Get Window Height</button>
+  body {
+    background: yellow;
+  }
+  button {
+    font-size: 12px;
+    margin: 2px;
+  }
+  p {
+    width: 150px;
+    border: 1px red solid;
+  }
+  div {
+    color: red;
+    font-weight: bold;
+    }
+]]></css>
+      <html><![CDATA[
+<button id="getp">Get Paragraph Height</button>
+<button id="getd">Get Document Height</button>
+<button id="getw">Get Window Height</button>
 
-  <div>&nbsp;</div>
-  <p>
-    Sample paragraph to test height
-  </p>]]></html>
+<div>&nbsp;</div>
+<p>
+  Sample paragraph to test height
+</p>
+]]></html>
     </example>
     <category slug="css"/>
     <category slug="dimensions"/>
@@ -82,18 +95,31 @@ $(document).height(); // returns height of HTML document</code></pre>
     </longdesc>
     <example>
       <desc>To set the height of each div on click to 30px plus a color change.</desc>
-      <code><![CDATA[$("div").one('click', function () {
-      $(this).height(30)
-             .css({cursor:"auto", backgroundColor:"green"});
-    });]]></code>
-      <css><![CDATA[div { width:50px; height:70px; float:left; margin:5px;
-        background:rgb(255,140,0); cursor:pointer; }  ]]></css>
-      <html><![CDATA[<div></div>
-  <div></div>
-
-  <div></div>
-  <div></div>
-  <div></div>]]></html>
+      <code><![CDATA[
+$( "div" ).one( "click", function() {
+  $( this ).height( 30 ).css({
+    cursor: "auto",
+    backgroundColor: "green"
+  });
+});
+]]></code>
+      <css><![CDATA[
+  div {
+    width: 50px;
+    height: 70px;
+    float: left;
+    margin: 5px;
+    background: rgb(255,140,0);
+    cursor: pointer;
+  }
+]]></css>
+      <html><![CDATA[
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+]]></html>
     </example>
     <category slug="css"/>
     <category slug="dimensions"/>

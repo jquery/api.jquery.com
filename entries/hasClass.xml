@@ -12,30 +12,41 @@
     <p>Elements may have more than one class assigned to them. In HTML, this is represented by separating the class names with a space:</p>
     <pre><code>&lt;div id="mydiv" class="foo bar"&gt;&lt;/div&gt;</code></pre>
     <p>The <code>.hasClass()</code> method will return <code>true</code> if the class is assigned to an element, even if other classes also are. For example, given the HTML above, the following will return <code>true</code>:</p>
-    <pre><code>$('#mydiv').hasClass('foo')</code></pre>
+    <pre><code>
+$( "#mydiv" ).hasClass( "foo" )
+    </code></pre>
     <p>As would:</p>
-    <pre><code>$('#mydiv').hasClass('bar')</code></pre>
+    <pre><code>
+$( "#mydiv" ).hasClass( "bar" )
+    </code></pre>
     <p>While this would return <code>false</code>:</p>
-    <pre><code>$('#mydiv').hasClass('quux')</code></pre>
+    <pre><code>
+$( "#mydiv" ).hasClass( "quux" )
+    </code></pre>
   </longdesc>
   <example>
     <desc>Looks for the paragraph that contains 'selected' as a class.</desc>
     <code><![CDATA[
-$("div#result1").append($("p:first").hasClass("selected").toString());
-$("div#result2").append($("p:last").hasClass("selected").toString());
-$("div#result3").append($("p").hasClass("selected").toString());
+$( "div#result1" ).append( $( "p:first" ).hasClass( "selected" ).toString() );
+$( "div#result2" ).append( $( "p:last" ).hasClass( "selected" ).toString() );
+$( "div#result3" ).append( $( "p" ).hasClass( "selected" ).toString() ) ;
 ]]></code>
     <css><![CDATA[
-  p { margin: 8px; font-size:16px; }
-  .selected { color:red; }
-  ]]></css>
+  p {
+    margin: 8px;
+    font-size:16px;
+  }
+  .selected {
+    color:red;
+  }
+]]></css>
     <html><![CDATA[
-  <p>This paragraph is black and is the first paragraph.</p>
-  <p class="selected">This paragraph is red and is the second paragraph.</p>
-
-  <div id="result1">First paragraph has selected class: </div>
-  <div id="result2">Second paragraph has selected class: </div>
-  <div id="result3">At least one paragraph has selected class: </div>]]></html>
+<p>This paragraph is black and is the first paragraph.</p>
+<p class="selected">This paragraph is red and is the second paragraph.</p>
+<div id="result1">First paragraph has selected class: </div>
+<div id="result2">Second paragraph has selected class: </div>
+<div id="result3">At least one paragraph has selected class: </div>
+]]></html>
   </example>
   <category slug="attributes"/>
   <category slug="manipulation/class-attribute"/>

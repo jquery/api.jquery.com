@@ -17,7 +17,7 @@
 $.ajaxPrefilter( function( options, originalOptions, jqXHR ) {
   // Modify options, control originalOptions, store jqXHR, etc
 });
-</code></pre>
+    </code></pre>
     <p>where:</p>
     <ul>
       <li><code>options</code> are the request options</li>
@@ -36,7 +36,7 @@ $.ajaxPrefilter(function( options, originalOptions, jqXHR ) {
     currentRequests[ options.url ] = jqXHR;
   }
 });
-</code></pre>
+    </code></pre>
     <p>Prefilters can also be used to modify existing options. For example, the following proxies cross-domain requests through http://mydomain.net/proxy/:</p>
     <pre><code>
 $.ajaxPrefilter( function( options ) {
@@ -45,13 +45,13 @@ $.ajaxPrefilter( function( options ) {
     options.crossDomain = false;
   }
 });
-</code></pre>
+    </code></pre>
     <p>If the optional <code>dataTypes</code> argument is supplied, the prefilter will be only be applied to requests with the indicated dataTypes. For example, the following only applies the given prefilter to JSON and script requests:</p>
     <pre><code>
 $.ajaxPrefilter( "json script", function( options, originalOptions, jqXHR ) {
   // Modify options, control originalOptions, store jqXHR, etc
 });
-</code></pre>
+    </code></pre>
     <p>The <code>$.ajaxPrefilter()</code> method can also redirect a request to another dataType by returning that dataType. For example, the following sets a request as "script" if the URL has some specific properties defined in a custom <code>isActuallyScript()</code> function:</p>
     <pre><code>
 $.ajaxPrefilter(function( options ) {
@@ -59,7 +59,7 @@ $.ajaxPrefilter(function( options ) {
     return "script";
   }
 });
-</code></pre>
+    </code></pre>
     <p>This would ensure not only that the request is considered "script" but also that all the prefilters specifically attached to the script dataType would be applied to it.</p>
   </longdesc>
   <category slug="ajax/low-level-interface"/>

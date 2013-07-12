@@ -9,7 +9,7 @@
   </signature>
   <desc>Determine whether an element has any jQuery data associated with it.</desc>
   <longdesc>
-    <p>The <code>jQuery.hasData()</code> method provides a way to determine if an element currently has any values that were set using <code><a href="/jQuery.data">jQuery.data()</a></code>. If no data is associated with an element (there is no data object at all or the data object is empty), the method returns <code>false</code>; otherwise it returns <code>true</code>.</p>
+    <p>The <code>jQuery.hasData()</code> method provides a way to determine if an element currently has any values that were set using <code><a href="/jQuery.data/">jQuery.data()</a></code>. If no data is associated with an element (there is no data object at all or the data object is empty), the method returns <code>false</code>; otherwise it returns <code>true</code>.</p>
     <p>The primary advantage of <code>jQuery.hasData(element)</code> is that it does not create and associate a data object with the element if none currently exists. In contrast, <code>jQuery.data(element)</code> always returns a data object to the caller, creating one if no data object previously existed.
 </p>
     <p>Note that jQuery's event system uses the jQuery data API to store event handlers. Therefore, binding an event to an element using <code>.on()</code>, <code>.bind()</code>, <code>.live()</code>, <code>.delegate()</code>, or one of the shorthand event methods also associates a data object with that element.
@@ -18,23 +18,24 @@
   <example>
     <desc>Set data on an element and see the results of hasData.</desc>
     <code><![CDATA[
-var $p = jQuery("p"), p = $p[0];
-$p.append(jQuery.hasData(p)+" "); /* false */
+var $p = jQuery( "p" ), p = $p[ 0 ];
+$p.append( jQuery.hasData( p ) + " " ); // false
 
-$.data(p, "testing", 123);
-$p.append(jQuery.hasData(p)+" "); /* true*/
+$.data( p, "testing", 123 );
+$p.append( jQuery.hasData( p ) + " " ); // true
 
-$.removeData(p, "testing");
-$p.append(jQuery.hasData(p)+" "); /* false */
+$.removeData( p, "testing" );
+$p.append( jQuery.hasData( p ) + " " ); // false
 
-$p.on('click', function() {});
-$p.append(jQuery.hasData(p)+" "); /* true */
+$p.on( "click", function() {} );
+$p.append( jQuery.hasData( p ) + " " ); // true
 
-$p.off('click');
-$p.append(jQuery.hasData(p)+" "); /* false */
-
+$p.off( "click" );
+$p.append( jQuery.hasData( p ) + " " ); // false
 ]]></code>
-    <html><![CDATA[<p>Results: </p>]]></html>
+    <html><![CDATA[
+<p>Results: </p>
+]]></html>
   </example>
   <category slug="data"/>
   <category slug="version/1.5"/>

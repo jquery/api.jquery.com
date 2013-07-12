@@ -13,16 +13,17 @@
   <example>
     <desc>Bind a single click that adds the div id to its text.</desc>
     <code><![CDATA[
-$('div[id]').one('click', function(){
-  var idString = $(this).text() + ' = ' + $(this).attr('id');
-  $(this).text(idString);
+$( "div[id]" ).one( "click", function() {
+  var idString = $( this ).text() + " = " + $( this ).attr( "id" );
+  $( this ).text( idString );
 });
 ]]></code>
-    <html><![CDATA[<div>no id</div>
-  <div id="hey">with id</div>
-
-  <div id="there">has an id</div>
-  <div>nope</div>]]></html>
+    <html><![CDATA[
+<div>no id</div>
+<div id="hey">with id</div>
+<div id="there">has an id</div>
+<div>nope</div>
+]]></html>
   </example>
   <category slug="selectors/attribute-selectors"/>
   <category slug="version/1.0"/>

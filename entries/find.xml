@@ -42,75 +42,99 @@
   &lt;/li&gt;
   &lt;li class="item-iii"&gt;III&lt;/li&gt;
 &lt;/ul&gt;
-</code></pre>
+    </code></pre>
     <p>If we begin at item II, we can find list items within it:</p>
-    <pre><code>$('li.item-ii').find('li').css('background-color', 'red');</code></pre>
+    <pre><code>
+$( "li.item-ii" ).find( "li" ).css( "background-color", "red" );
+    </code></pre>
     <p>The result of this call is a red background on items A, B, 1, 2, 3, and C. Even though item II matches the selector expression, it is not included in the results; only descendants are considered candidates for the match.</p>
     <div class="warning">
       <p>Unlike in the rest of the tree traversal methods, the selector expression is required in a call to <code>.find()</code>. If we need to retrieve all of the descendant elements, we can pass in the universal selector <code>'*'</code> to accomplish this.</p>
     </div>
-    <p><a href="http://api.jquery.com/jquery/#selector-context">Selector context</a> is implemented with the <code>.find()</code> <code>method;</code> therefore, <code>$('li.item-ii').find('li')</code> is equivalent to <code>$('li', 'li.item-ii')</code>.</p>
+    <p><a href="/jquery/#selector-context">Selector context</a> is implemented with the <code>.find()</code> <code>method;</code> therefore, <code>$( "li.item-ii" ).find( "li" )</code> is equivalent to <code>$( "li", "li.item-ii" )</code>.</p>
     <p><strong>As of jQuery 1.6</strong>, we can also filter the selection with a given jQuery collection or element. With the same nested list as above, if we start with:</p>
-    <pre><code>var $allListElements = $('li');</code></pre>
+    <pre><code>
+var $allListElements = $( "li" );
+    </code></pre>
     <p>And then pass this jQuery object to find:</p>
-    <pre><code>$('li.item-ii').find( $allListElements );</code></pre>
+    <pre><code>
+$( "li.item-ii" ).find( $allListElements );
+    </code></pre>
     <p>This will return a jQuery collection which contains only the list elements that are descendants of item II.</p>
     <p>Similarly, an element may also be passed to find:</p>
     <pre><code>
-var item1 = $('li.item-1')[0];
-$('li.item-ii').find( item1 ).css('background-color', 'red');
-</code></pre>
+var item1 = $( "li.item-1" )[ 0 ];
+$( "li.item-ii" ).find( item1 ).css( "background-color", "red" );
+    </code></pre>
     <p>The result of this call would be a red background on item 1.</p>
   </longdesc>
   <example>
     <desc>Starts with all paragraphs and searches for descendant span elements, same as $("p span")</desc>
     <code><![CDATA[
-  $("p").find("span").css('color','red');
+$( "p" ).find( "span" ).css( "color", "red" );
 ]]></code>
-    <html><![CDATA[<p><span>Hello</span>, how are you?</p>
-<p>Me? I'm <span>good</span>.</p>]]></html>
+    <html><![CDATA[
+<p><span>Hello</span>, how are you?</p>
+<p>Me? I'm <span>good</span>.</p>
+]]></html>
   </example>
   <example>
     <desc>A selection using a jQuery collection of all span tags. Only spans within p tags are changed to red while others are left blue.</desc>
     <css><![CDATA[
-    span { color: blue; }
-  ]]></css>
+  span {
+    color: blue;
+  }
+]]></css>
     <code><![CDATA[
-  var $spans = $('span');
-  $("p").find( $spans ).css('color','red');
+var $spans = $( "span" );
+$( "p" ).find( $spans ).css( "color", "red" );
 ]]></code>
-    <html><![CDATA[<p><span>Hello</span>, how are you?</p>
-  <p>Me? I'm <span>good</span>.</p>
-  <div>Did you <span>eat</span> yet?</div>]]></html>
+    <html><![CDATA[
+<p><span>Hello</span>, how are you?</p>
+<p>Me? I'm <span>good</span>.</p>
+<div>Did you <span>eat</span> yet?</div>
+]]></html>
   </example>
   <example>
     <desc>Add spans around each word then add a hover and italicize words with the letter <strong>t</strong>.</desc>
     <code><![CDATA[
-  var newText = $("p").text().split(" ").join("</span> <span>");
-  newText = "<span>" + newText + "</span>";
+var newText = $( "p" ).text().split( " " ).join( "</span> <span>" );
+newText = "<span>" + newText + "</span>";
 
-  $("p").html( newText )
-    .find('span')
-    .hover(function() { 
-      $(this).addClass("hilite"); 
-    },
-      function() { $(this).removeClass("hilite"); 
+$( "p" ).html( newText )
+  .find( "span" )
+    .hover(function() {
+      $( this ).addClass( "hilite" );
+    }, function() {
+      $( this ).removeClass( "hilite" );
     })
   .end()
-    .find(":contains('t')")
-    .css({"font-style":"italic", "font-weight":"bolder"});
-
+  .find( ":contains('t')" )
+    .css({
+      "font-style":"italic",
+      "font-weight":"bolder"
+    });
 ]]></code>
     <css><![CDATA[
-  p { font-size:20px; width:200px; cursor:default; 
-      color:blue; font-weight:bold; margin:0 10px; }
-  .hilite { background:yellow; }
-  ]]></css>
-    <html><![CDATA[<p>
+  p {
+    font-size: 20px;
+    width: 200px;
+    cursor: default;
+    color: blue;
+    font-weight: bold;
+    margin: 0 10px;
+  }
+  .hilite {
+    background: yellow;
+  }
+]]></css>
+    <html><![CDATA[
+<p>
   When the day is short
   find that which matters to you
   or stop believing
-  </p>]]></html>
+</p>
+]]></html>
   </example>
   <category slug="traversing/tree-traversal"/>
   <category slug="version/1.0"/>

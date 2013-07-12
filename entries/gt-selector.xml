@@ -21,7 +21,7 @@
       <strong>index-related selectors</strong>
     </p>
     <p>The index-related selector expressions (including this "greater than" selector) filter the set of elements that have matched the expressions that precede them. They narrow the set down based on the order of the elements within this matched set. For example, if elements are first selected with a class selector (<code>.myclass</code>) and four elements are returned, these elements are given indices 0 through 3 for the purposes of these selectors.</p>
-    <p>Note that since JavaScript arrays use <em>0-based indexing</em>, these selectors reflect that fact. This is why <code>$('.myclass:gt(1)')</code> selects elements after the second element in the document with the class <code>myclass</code>, rather than after the first. In contrast, <code>:nth-child(n)</code> uses <em>1-based indexing</em> to conform to the CSS specification.</p>
+    <p>Note that since JavaScript arrays use <em>0-based indexing</em>, these selectors reflect that fact. This is why <code>$( ".myclass:gt(1)" )</code> selects elements after the second element in the document with the class <code>myclass</code>, rather than after the first. In contrast, <code>:nth-child(n)</code> uses <em>1-based indexing</em> to conform to the CSS specification.</p>
     <p>Prior to jQuery 1.8, the <code>:gt(index)</code> selector did <em>not</em> accept a negative value for <code>index</code></p>
   </longdesc>
   <note id="jquery-selector-extension-alt" type="additional" data-selector=":gt()" data-alt="$(&quot;your-pure-css-selector&quot;).slice(index)"/>
@@ -36,7 +36,8 @@ $( "td:gt(-2)" ).css( "color", "red" );
   <tr><td>TD #0</td><td>TD #1</td><td>TD #2</td></tr>
   <tr><td>TD #3</td><td>TD #4</td><td>TD #5</td></tr>
   <tr><td>TD #6</td><td>TD #7</td><td>TD #8</td></tr>
-</table>]]></html>
+</table>
+]]></html>
   </example>
   <category slug="selectors/basic-filter-selectors"/>
   <category slug="selectors/jquery-selector-extensions"/>

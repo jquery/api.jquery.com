@@ -7,7 +7,7 @@
   </signature>
   <desc>Selects element if it is currently focused.</desc>
   <longdesc>
-    <p>As with other pseudo-class selectors (those that begin with a ":"), it is recommended to precede <code>:focus</code> with a tag name or some other selector; otherwise, the universal selector ("*") is implied. In other words, the bare <code>$(':focus')</code> is equivalent to <code>$('*:focus')</code>.  If you are looking for the currently focused element, <code>$( document.activeElement )</code> will retrieve it without having to search the whole DOM tree.</p>
+    <p>As with other pseudo-class selectors (those that begin with a ":"), it is recommended to precede <code>:focus</code> with a tag name or some other selector; otherwise, the universal selector ( "*" ) is implied. In other words, the bare <code>$( ":focus" )</code> is equivalent to <code>$( "*:focus" )</code>.  If you are looking for the currently focused element, <code>$( document.activeElement )</code> will retrieve it without having to search the whole DOM tree.</p>
   </longdesc>
   <example>
     <desc>Adds the focused class to whatever element has focus</desc>
@@ -16,7 +16,7 @@ $( "#content" ).delegate( "*", "focus blur", function( event ) {
     var elem = $( this );
     setTimeout(function() {
        elem.toggleClass( "focused", elem.is( ":focus" ) );
-    }, 0);
+    }, 0 );
 });
 ]]></code>
     <css><![CDATA[
@@ -26,14 +26,14 @@ $( "#content" ).delegate( "*", "focus blur", function( event ) {
 ]]></css>
     <html><![CDATA[
 <div id="content">
-    <input tabIndex="1">
-    <input tabIndex="2">
-    <select tabIndex="3">
-        <option>select menu</option>
-    </select>
-    <div tabIndex="4">
-        a div
-    </div>
+  <input tabIndex="1">
+  <input tabIndex="2">
+  <select tabIndex="3">
+    <option>select menu</option>
+  </select>
+  <div tabIndex="4">
+    a div
+  </div>
 </div>
 ]]></html>
   </example>

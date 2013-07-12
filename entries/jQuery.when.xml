@@ -9,35 +9,43 @@
   </signature>
   <desc>Provides a way to execute callback functions based on one or more objects, usually <a href="/category/deferred-object/">Deferred</a> objects that represent asynchronous events.</desc>
   <longdesc>
-    <p>If a single Deferred is passed to <code>jQuery.when</code>, its Promise object (a subset of the Deferred methods) is returned by the method. Additional methods of the Promise object can be called to attach callbacks, such as <a href="/deferred.then"><code>deferred.then</code></a>. When the Deferred is resolved or rejected, usually by the code that created the Deferred originally, the appropriate callbacks will be called. For example, the jqXHR object returned by <code>jQuery.ajax()</code> is a Promise and can be used this way:</p>
-    <pre><code>$.when( $.ajax("test.aspx") ).then(function(data, textStatus, jqXHR){
-     alert( jqXHR.status ); // alerts 200
-});</code></pre>
+    <p>If a single Deferred is passed to <code>jQuery.when</code>, its Promise object (a subset of the Deferred methods) is returned by the method. Additional methods of the Promise object can be called to attach callbacks, such as <a href="/deferred.then/"><code>deferred.then</code></a>. When the Deferred is resolved or rejected, usually by the code that created the Deferred originally, the appropriate callbacks will be called. For example, the jqXHR object returned by <code>jQuery.ajax()</code> is a Promise and can be used this way:</p>
+    <pre><code>
+$.when( $.ajax( "test.aspx" ) ).then(function( data, textStatus, jqXHR ) {
+  alert( jqXHR.status ); // Alerts 200
+});
+    </code></pre>
     <p>If a single argument is passed to <code>jQuery.when</code> and it is not a Deferred or a Promise, it will be treated as a resolved Deferred and any doneCallbacks attached will be executed immediately. The doneCallbacks are passed the original argument. In this case any failCallbacks you might set are never called since the Deferred is never rejected. For example:</p>
-    <pre><code>$.when( { testing: 123 } ).done(
-    function(x) { alert(x.testing); } /* alerts "123" */
-    );</code></pre>
+    <pre><code>
+$.when( { testing: 123 } ).done(function( x ) {
+  alert( x.testing ); // Alerts "123"
+});
+    </code></pre>
     <p>In the case where multiple Deferred objects are passed to <code>jQuery.when</code>, the method returns the Promise from a new "master" Deferred object that tracks the aggregate state of all the Deferreds it has been passed. The method will resolve its master Deferred as soon as all the Deferreds resolve, or reject the master Deferred as soon as one of the Deferreds is rejected. If the master Deferred is resolved, it is passed the resolved values of all the Deferreds that were passed to <code>jQuery.when</code>. For example, when the Deferreds are <code>jQuery.ajax()</code> requests, the arguments will be the jqXHR objects for the requests, in the order they were given in the argument list.</p>
     <p>In the multiple-Deferreds case where one of the Deferreds is rejected, <code>jQuery.when</code> immediately fires the failCallbacks for its master Deferred. Note that some of the Deferreds may still be unresolved at that point. If you need to perform additional processing for this case, such as canceling any unfinished ajax requests, you can keep references to the underlying jqXHR objects in a closure and inspect/cancel them in the failCallback.</p>
   </longdesc>
   <example>
     <desc>Execute a function after two ajax requests are successful. (See the jQuery.ajax() documentation for a complete description of success and error cases for an ajax request).</desc>
-    <code><![CDATA[$.when($.ajax("/page1.php"), $.ajax("/page2.php")).done(function(a1, a2){
-  /* a1 and a2 are arguments resolved for the
-      page1 and page2 ajax requests, respectively. 
-      each argument is an array with the following 
-      structure: [ data, statusText, jqXHR ] */
-  var data = a1[0] + a2[0]; /* a1[0] = "Whip", a2[0] = " It" */
+    <code><![CDATA[
+$.when( $.ajax( "/page1.php" ), $.ajax( "/page2.php" ) ).done(function( a1, a2 ) {
+  /*
+  a1 and a2 are arguments resolved for the
+  page1 and page2 ajax requests, respectively.
+  each argument is an array with the following
+  structure: [ data, statusText, jqXHR ]
+  */
+  var data = a1[ 0 ] + a2[ 0 ]; // a1[ 0 ] = "Whip", a2[ 0 ] = " It"
   if ( /Whip It/.test(data) ) {
-    alert("We got what we came for!");
+    alert( "We got what we came for!" );
   }
 });
 ]]></code>
   </example>
   <example>
     <desc>Execute the function <code>myFunc</code> when both ajax requests are successful, or <code>myFailure</code> if either one has an error.</desc>
-    <code><![CDATA[$.when($.ajax("/page1.php"), $.ajax("/page2.php"))
-  .then(myFunc, myFailure);
+    <code><![CDATA[
+$.when( $.ajax( "/page1.php" ), $.ajax( "/page2.php" ) )
+  .then( myFunc, myFailure );
 ]]></code>
   </example>
   <category slug="core"/>

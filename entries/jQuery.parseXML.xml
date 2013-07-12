@@ -19,9 +19,9 @@
 ]]></html>
     <code><![CDATA[
 var xml = "<rss version='2.0'><channel><title>RSS Title</title></channel></rss>",
-    xmlDoc = $.parseXML( xml ),
-    $xml = $( xmlDoc ),
-    $title = $xml.find( "title" );
+  xmlDoc = $.parseXML( xml ),
+  $xml = $( xmlDoc ),
+  $title = $xml.find( "title" );
 
 /* append "RSS Title" to #someElement */
 $( "#someElement" ).append( $title.text() );

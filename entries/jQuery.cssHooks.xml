@@ -10,11 +10,11 @@
     <p>For example, some versions of Webkit-based browsers require <code>-webkit-border-radius</code> to set the <code>border-radius</code> on an element, while earlier Firefox versions require <code>-moz-border-radius</code>. A css hook can normalize these vendor-prefixed properties to let <code>.css()</code> accept a single, standard property name (<code>border-radius</code>, or with DOM property syntax, <code>borderRadius</code>).</p>
     <p>In addition to providing fine-grained control over how specific style properties are handled, <code>$.cssHooks</code> also extends the set of properties available to the <code>.animate()</code> method.</p>
     <p>Defining a new css hook is straight-forward. The skeleton template below can serve as a guide to creating your own. </p>
-    <pre>
-      <code>(function($) {
-  // first, check to see if cssHooks are supported
+    <pre><code>
+(function( $ ) {
+  // First, check to see if cssHooks are supported
   if ( !$.cssHooks ) {
-    // if not, output an error message
+    // If not, output an error message
     throw("jQuery 1.4.3 or above is required for this plugin to work");
     return;
   }
@@ -23,80 +23,71 @@
   // cssHooks at this time and will blow away your functions
   // if they exist.
   $(function () {
-    $.cssHooks["someCSSProp"] = {
+    $.cssHooks[ "someCSSProp" ] = {
       get: function( elem, computed, extra ) {
-        // handle getting the CSS property
+        // Handle getting the CSS property
       },
       set: function( elem, value ) {
-        // handle setting the CSS value
+        // Handle setting the CSS value
       }
     };
   });
-})(jQuery);
-</code>
-    </pre>
+})( jQuery );
+    </code></pre>
     <h4 id="feature-testing">Feature Testing</h4>
     <p>Before normalizing a vendor-specific CSS property, first determine whether the browser supports the standard property or a vendor-prefixed variation. For example, to check for support of the <code>border-radius</code> property, see if any variation is a member of a temporary element's <code>style</code> object.</p>
-    <pre>
-      <code>(function($) {
+    <pre><code>
+(function( $ ) {
   function styleSupport( prop ) {
     var vendorProp, supportedProp,
-
-        // capitalize first character of the prop to test vendor prefix
-        capProp = prop.charAt(0).toUpperCase() + prop.slice(1),
-        prefixes = [ "Moz", "Webkit", "O", "ms" ],
-        div = document.createElement( "div" );
+      // Capitalize first character of the prop to test vendor prefix
+      capProp = prop.charAt( 0 ).toUpperCase() + prop.slice( 1 ),
+      prefixes = [ "Moz", "Webkit", "O", "ms" ],
+      div = document.createElement( "div" );
 
     if ( prop in div.style ) {
-
-      // browser supports standard CSS property name
+      // Browser supports standard CSS property name
       supportedProp = prop;
     } else {
-
-      // otherwise test support for vendor-prefixed property names
+      // Otherwise test support for vendor-prefixed property names
       for ( var i = 0; i &lt; prefixes.length; i++ ) {
-        vendorProp = prefixes[i] + capProp;
+        vendorProp = prefixes[ i ] + capProp;
         if ( vendorProp in div.style ) {
           supportedProp = vendorProp;
           break;
         }
       }
     }
-
-    // avoid memory leak in IE
+    // Avoid memory leak in IE
     div = null;
-
-    // add property to $.support so it can be accessed elsewhere
+    // Add property to $.support so it can be accessed elsewhere
     $.support[ prop ] = supportedProp;
-
     return supportedProp;
   }
-
-  // call the function, e.g. testing for "border-radius" support:
+  // Call the function, e.g. testing for "border-radius" support:
   styleSupport( "borderRadius" );
-})(jQuery);
-</code>
-    </pre>
+})( jQuery );
+    </code></pre>
     <h4 id="defining-complete-csshook">Defining a complete css hook</h4>
     <p>To define a complete css hook, combine the support test with a filled-out version of the skeleton template provided in the first example:</p>
-    <pre>
-      <code>(function($) {
+    <pre><code>
+(function( $ ) {
   if ( !$.cssHooks ) {
-    throw("jQuery 1.4.3+ is needed for this plugin to work");
+    throw( "jQuery 1.4.3+ is needed for this plugin to work" );
     return;
   }
 
   function styleSupport( prop ) {
     var vendorProp, supportedProp,
-        capProp = prop.charAt(0).toUpperCase() + prop.slice(1),
-        prefixes = [ "Moz", "Webkit", "O", "ms" ],
-        div = document.createElement( "div" );
+      capProp = prop.charAt( 0 ).toUpperCase() + prop.slice( 1 ),
+      prefixes = [ "Moz", "Webkit", "O", "ms" ],
+      div = document.createElement( "div" );
 
     if ( prop in div.style ) {
       supportedProp = prop;
     } else {
       for ( var i = 0; i &lt; prefixes.length; i++ ) {
-        vendorProp = prefixes[i] + capProp;
+        vendorProp = prefixes[ i ] + capProp;
         if ( vendorProp in div.style ) {
           supportedProp = vendorProp;
           break;
@@ -105,12 +96,10 @@
     }
 
     div = null;
-    $.support[ prop ] = supportedProp
+    $.support[ prop ] = supportedProp;
     return supportedProp;
   }
-
   var borderRadius = styleSupport( "borderRadius" );
-
   // Set cssHooks only for browsers that
   // support a vendor-prefixed border radius
   if ( borderRadius &amp;&amp; borderRadius !== "borderRadius" ) {
@@ -123,27 +112,20 @@
       }
     };
   }
-})(jQuery);
-</code>
-    </pre>
+})( jQuery );
+    </code></pre>
     <p>You can then set the border radius in a supported browser using either the DOM (camelCased) style or the CSS (hyphenated) style:</p>
-    <pre>
-      <code>
-$("#element").css("borderRadius", "10px");
-$("#another").css("border-radius", "20px");
-</code>
-    </pre>
+    <pre><code>
+$( "#element" ).css( "borderRadius", "10px" );
+$( "#another" ).css( "border-radius", "20px" );
+    </code></pre>
     <p>If the browser lacks support for any form of the CSS property, vendor-prefixed or not, the style is not applied to the element. However, if the browser supports a proprietary alternative, it can be applied to the cssHooks instead. </p>
-    <pre>
-      <code>
- (function($) {
-  // feature test for support of a CSS property
+    <pre><code>
+ (function( $ ) {
+  // Feature test for support of a CSS property
   // and a proprietary alternative
   // ...
-
-
  if ( $.support.someCSSProp &amp;&amp; $.support.someCSSProp !== "someCSSProp" ) {
-
     // Set cssHooks for browsers that
     // support only a vendor-prefixed someCSSProp
     $.cssHooks.someCSSProp = {
@@ -164,23 +146,20 @@ $("#another").css("border-radius", "20px");
       }
     }
   }
-
-})(jQuery);
-</code>
-    </pre>
+})( jQuery );
+    </code></pre>
     <h4 id="special-units">Special units</h4>
     <p>By default, jQuery adds a "px" unit to the values passed to the <code>.css()</code> method. This behavior can be prevented by adding the property to the <code>jQuery.cssNumber</code> object</p>
-    <pre>
-      <code>$.cssNumber["someCSSProp"] = true;</code>
-    </pre>
+    <pre><code>
+$.cssNumber[ "someCSSProp" ] = true;
+    </code></pre>
     <h4 id="animating">Animating with cssHooks</h4>
     <p>A css hook can also hook into jQuery's animation mechanism by adding a property to the <code>jQuery.fx.step</code> object:</p>
-    <pre>
-      <code>$.fx.step["someCSSProp"] = function(fx){
-  $.cssHooks["someCSSProp"].set( fx.elem, fx.now + fx.unit );
+    <pre><code>
+  $.fx.step[ "someCSSProp" ] = function( fx ) {
+  $.cssHooks[ "someCSSProp" ].set( fx.elem, fx.now + fx.unit );
 };
-</code>
-    </pre>
+    </code></pre>
     <p>Note that this works best for simple numeric-value animations. More custom code may be required depending on the CSS property, the type of value it returns, and the animation's complexity.</p>
   </longdesc>
   <category slug="css"/>

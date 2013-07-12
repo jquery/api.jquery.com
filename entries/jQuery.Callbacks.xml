@@ -15,27 +15,27 @@
     <p>The following are two sample methods named <code>fn1</code> and <code>fn2</code>:</p>
     <pre><code>
 function fn1( value ) {
-    console.log( value );
+  console.log( value );
 }
 
 function fn2( value ) {
-    console.log("fn2 says: " + value);
-    return false;
+  console.log( "fn2 says: " + value );
+  return false;
 }
-</code></pre>
+    </code></pre>
     <p>These can be added as callbacks to a <code>$.Callbacks</code> list and invoked as follows:</p>
     <pre><code>
 var callbacks = $.Callbacks();
 callbacks.add( fn1 );
 
-// outputs: foo!
+// Outputs: foo!
 callbacks.fire( "foo!" );
 
 callbacks.add( fn2 );
 
-// outputs: bar!, fn2 says: bar!
+// Outputs: bar!, fn2 says: bar!
 callbacks.fire( "bar!" );
-</code></pre>
+    </code></pre>
     <p>The result of this is that it becomes simple to construct complex lists of callbacks where input values can be passed through to as many functions as needed with ease.</p>
     <p>Two specific methods were being used above: <code>.add()</code> and <code>.fire()</code>. The <code>.add()</code> method supports adding new callbacks to the callback list, while the <code>.fire()</code> method executes the added functions and provides a way to pass arguments to be processed by the callbacks in the same list.</p>
     <p>Another method supported by <code>$.Callbacks</code> is <code>.remove()</code>, which has the ability to remove a particular callback from the callback list. Here"s a practical example of <code>.remove()</code> being used:</p>
@@ -43,19 +43,19 @@ callbacks.fire( "bar!" );
 var callbacks = $.Callbacks();
 callbacks.add( fn1 );
 
-// outputs: foo!
+// Outputs: foo!
 callbacks.fire( "foo!" );
 
 callbacks.add( fn2 );
 
-// outputs: bar!, fn2 says: bar!
+// Outputs: bar!, fn2 says: bar!
 callbacks.fire( "bar!" );
 
 callbacks.remove( fn2 );
 
-// only outputs foobar, as fn2 has been removed.
+// Only outputs foobar, as fn2 has been removed.
 callbacks.fire( "foobar" );
-</code></pre>
+    </code></pre>
     <h3 id="supported-flags">Supported Flags</h3>
     <p>The <code>flags</code> argument is an optional argument to <code>$.Callbacks()</code>, structured as a list of space-separated strings that change how the callback list behaves (eg. <code>$.Callbacks( "unique stopOnFalse" )</code>).</p>
     <h2>Possible flags:</h2>
@@ -81,9 +81,10 @@ callbacks.fire( "foobar" );
 output:
 foo
 */
-</code></pre>
+    </code></pre>
     <h2 id="memory"><code>$.Callbacks( "memory" )</code>:</h2>
-    <pre><code>var callbacks = $.Callbacks( "memory" );
+    <pre><code>
+var callbacks = $.Callbacks( "memory" );
 callbacks.add( fn1 );
 callbacks.fire( "foo" );
 callbacks.add( fn2 );
@@ -99,9 +100,10 @@ bar
 fn2 says:bar
 foobar
 */
-</code></pre>
+    </code></pre>
     <h2 id="unique"><code>$.Callbacks( "unique" )</code>:</h2>
-    <pre><code>var callbacks = $.Callbacks( "unique" );
+    <pre><code>
+var callbacks = $.Callbacks( "unique" );
 callbacks.add( fn1 );
 callbacks.fire( "foo" );
 callbacks.add( fn1 ); // repeat addition
@@ -117,17 +119,17 @@ bar
 fn2 says:bar
 foobar
 */
-</code></pre>
+    </code></pre>
     <h2 id="stopOnFalse"><code>$.Callbacks( "stopOnFalse" )</code>:</h2>
     <pre><code>
 function fn1( value ){
-    console.log( value );
-    return false;
+  console.log( value );
+  return false;
 }
 
 function fn2( value ){
-    fn1( "fn2 says: " + value );
-    return false;
+  fn1( "fn2 says: " + value );
+  return false;
 }
 
 var callbacks = $.Callbacks( "stopOnFalse" );
@@ -144,18 +146,18 @@ foo
 bar
 foobar
 */
-</code></pre>
+    </code></pre>
     <p>Because <code>$.Callbacks()</code> supports a list of flags rather than just one, setting several flags has a cumulative effect similar to "&amp;&amp;". This means it's possible to combine flags to create callback lists that, say, both are <i>unique</i> and <i>ensure if list was already fired, adding more callbacks will have it called with the latest fired value</i> (i.e. <code>$.Callbacks("unique memory")</code>).</p>
     <h2 id="unique-memory"><code>$.Callbacks( 'unique memory' )</code>:</h2>
     <pre><code>
 function fn1( value ) {
-    console.log( value );
-    return false;
+  console.log( value );
+  return false;
 }
 
 function fn2( value ) {
-    fn1( "fn2 says: " + value );
-    return false;
+  fn1( "fn2 says: " + value );
+  return false;
 }
 
 var callbacks = $.Callbacks( "unique memory" );
@@ -184,40 +186,42 @@ foobar
     <p>The methods of <code>$.Callbacks</code> can also be detached, should there be a need to define short-hand versions for convenience:</p>
     <pre><code>
 var callbacks = $.Callbacks(),
-    add = callbacks.add,
-    remove = callbacks.remove,
-    fire = callbacks.fire;
+  add = callbacks.add,
+  remove = callbacks.remove,
+  fire = callbacks.fire;
 
 add( fn1 );
 fire( "hello world" );
 remove( fn1 );
-</code></pre>
+    </code></pre>
     <h3 id="pubsub">$.Callbacks, $.Deferred and Pub/Sub</h3>
     <p>The general idea behind pub/sub (Publish/Subscribe, or, the Observer pattern) is the promotion of loose coupling in applications. Rather than single objects calling on the methods of other objects, an object instead subscribes to a specific task or activity of another object and is notified when it occurs. Observers are also called Subscribers, and we refer to the object being observed as the Publisher (or the subject). Publishers notify subscribers when events occur.</p>
     <p>To demonstrate the component-creation capabilities of <code>$.Callbacks()</code>, it's possible to implement a Pub/Sub system using only callback lists. Using <code>$.Callbacks</code> as a topics queue, a system for publishing and subscribing to topics can be implemented as follows:</p>
-    <pre><code>var topics = {};
+    <pre><code>
+var topics = {};
 
 jQuery.Topic = function( id ) {
-    var callbacks,
-        method,
-        topic = id &amp;&amp; topics[ id ];
+  var callbacks,
+    method,
+    topic = id &amp;&amp; topics[ id ];
 
-    if ( !topic ) {
-        callbacks = jQuery.Callbacks();
-        topic = {
-            publish: callbacks.fire,
-            subscribe: callbacks.add,
-            unsubscribe: callbacks.remove
-        };
-        if ( id ) {
-            topics[ id ] = topic;
-        }
+  if ( !topic ) {
+    callbacks = jQuery.Callbacks();
+    topic = {
+      publish: callbacks.fire,
+      subscribe: callbacks.add,
+      unsubscribe: callbacks.remove
+    };
+    if ( id ) {
+      topics[ id ] = topic;
     }
-    return topic;
+  }
+  return topic;
 };
-</code></pre>
+    </code></pre>
     <p>This can then be used by parts of your application to publish and subscribe to events of interest quite easily:</p>
-    <pre><code>// Subscribers
+    <pre><code>
+// Subscribers
 $.Topic( "mailArrived" ).subscribe( fn1 );
 $.Topic( "mailArrived" ).subscribe( fn2 );
 $.Topic( "mailSent" ).subscribe( fn1 );
@@ -237,18 +241,19 @@ hello world!
 fn2 says: hello world!
 woo! mail!
 */
-</code></pre>
+    </code></pre>
     <p>While this is useful, the implementation can be taken further. Using <code>$.Deferreds</code>,  it's possible to ensure publishers only publish notifications for subscribers once particular tasks have been completed (resolved). See the below code sample for some further comments on how this could be used in practice:</p>
-    <pre><code>// subscribe to the mailArrived notification
+    <pre><code>
+// Subscribe to the mailArrived notification
 $.Topic( "mailArrived" ).subscribe( fn1 );
 
-// create a new instance of Deferreds
+// Create a new instance of Deferreds
 var dfd = $.Deferred();
 
-// define a new topic (without directly publishing)
+// Define a new topic (without directly publishing)
 var topic = $.Topic( "mailArrived" );
 
-// when the deferred has been resolved, publish a
+// When the deferred has been resolved, publish a
 // notification to subscribers
 dfd.done( topic.publish );
 
@@ -259,7 +264,7 @@ dfd.done( topic.publish );
 // messages are only published once the task has actually
 // finished.
 dfd.resolve( "it's been published!" );
-</code></pre>
+    </code></pre>
   </longdesc>
   <category slug="callbacks-object"/>
   <category slug="version/1.7"/>

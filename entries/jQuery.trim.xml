@@ -15,18 +15,22 @@
     <desc>Remove the white spaces at the start and at the end of the string.</desc>
     <code><![CDATA[
   var str = "         lots of spaces before and after         ";
-  $("#original").html("Original String: '" + str + "'");
-  $("#trimmed").html("$.trim()'ed: '" + $.trim(str) + "'");
+  $( "#original" ).html( "Original String: '" + str + "'" );
+  $( "#trimmed" ).html( "$.trim()'ed: '" + $.trim(str) + "'" );
 ]]></code>
     <html><![CDATA[
-      <pre id="original"></pre>
-      <pre id="trimmed"></pre>
-    ]]></html>
+<pre id="original"></pre>
+<pre id="trimmed"></pre>
+]]></html>
   </example>
   <example>
     <desc>Remove the white spaces at the start and at the end of the string.</desc>
-    <code><![CDATA[$.trim("    hello, how are you?    ");]]></code>
-    <results><![CDATA["hello, how are you?"]]></results>
+    <code><![CDATA[
+$.trim("    hello, how are you?    ");
+]]></code>
+    <results><![CDATA[
+"hello, how are you?"
+]]></results>
   </example>
   <category slug="utilities"/>
   <category slug="version/1.0"/>

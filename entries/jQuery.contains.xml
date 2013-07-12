@@ -19,8 +19,10 @@
   </longdesc>
   <example>
     <desc>Check if an element is a descendant of another.</desc>
-    <code><![CDATA[$.contains( document.documentElement, document.body ); // true
-$.contains( document.body, document.documentElement ); // false]]></code>
+    <code><![CDATA[
+$.contains( document.documentElement, document.body ); // true
+$.contains( document.body, document.documentElement ); // false
+]]></code>
   </example>
   <category slug="utilities"/>
   <category slug="version/1.4"/>

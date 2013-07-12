@@ -22,40 +22,58 @@
     <desc>Filters the original array of numbers leaving that are not 5 and have an index greater than 4.  Then it removes all 9s.</desc>
     <code><![CDATA[
 var arr = [ 1, 9, 3, 8, 6, 1, 5, 9, 4, 7, 3, 8, 6, 9, 1 ];
-$("div").text(arr.join(", "));
+$( "div" ).text( arr.join(", ") );
 
-arr = jQuery.grep(arr, function(n, i){
-  return (n != 5 && i > 4);
+arr = jQuery.grep(arr, function( n, i ) {
+  return ( n != 5 && i > 4 );
 });
-$("p").text(arr.join(", "));
+$( "p" ).text( arr.join(", ") );
 
-arr = jQuery.grep(arr, function (a) { return a != 9; });
-$("span").text(arr.join(", "));
+arr = jQuery.grep(arr, function( a ) {
+  return a != 9;
+});
 
+$( "span" ).text( arr.join( ", " ) );
 ]]></code>
     <css><![CDATA[
-  div { color:blue; }
-  p { color:green; margin:0; }
-  span { color:red; }
-  ]]></css>
-    <html><![CDATA[<div></div>
-  <p></p>
-  <span></span>
-  ]]></html>
+  div {
+    color: blue;
+  }
+  p {
+    color: green;
+    margin: 0;
+  }
+  span {
+    color: red;
+  }
+]]></css>
+    <html><![CDATA[
+<div></div>
+<p></p>
+<span></span>
+]]></html>
   </example>
   <example>
     <desc>Filter an array of numbers to include only numbers bigger then zero.</desc>
-    <code><![CDATA[$.grep( [0,1,2], function(n,i){
-   return n > 0;
- });]]></code>
-    <results><![CDATA[[1, 2] ]]></results>
+    <code><![CDATA[
+$.grep( [ 0, 1, 2 ], function( n, i ) {
+  return n > 0;
+});
+]]></code>
+    <results><![CDATA[
+[ 1, 2 ]
+]]></results>
   </example>
   <example>
     <desc>Filter an array of numbers to include numbers that are not bigger than zero.</desc>
-    <code><![CDATA[$.grep( [0,1,2], function(n,i){
+    <code><![CDATA[
+$.grep( [0, 1, 2 ], function( n, i ) {
     return n > 0;
-},true);]]></code>
-    <results><![CDATA[[0] ]]></results>
+}, true );
+]]></code>
+    <results><![CDATA[
+[ 0 ]
+]]></results>
   </example>
   <category slug="utilities"/>
   <category slug="version/1.0"/>

@@ -20,15 +20,15 @@ $.ajaxTransport( function( options, originalOptions, jqXHR ) {
   if( /* transportCanHandleRequest */ ) {
     return {
       send: function( headers, completeCallback ) {
-        /* send code */
+        // Send code
       },
       abort: function() {
-        /* abort code */
+        // Abort code
       }
     };
   }
 });
-</code></pre>
+    </code></pre>
     <p>where:</p>
     <ul>
       <li><code>options</code> are the request options</li>
@@ -40,7 +40,7 @@ $.ajaxTransport( function( options, originalOptions, jqXHR ) {
     <p><code>completeCallback</code> has the following signature:</p>
     <pre><code>
 function( status, statusText, responses, headers ) {}
-</code></pre>
+    </code></pre>
     <p>where:</p>
     <ul>
       <li><code>status</code> is the HTTP status code of the response, like  200 for a typical success, or 404 for when the resource is not found.</li>
@@ -51,23 +51,17 @@ function( status, statusText, responses, headers ) {}
     <p>Just like prefilters, a transport's factory function can be attached to a specific dataType:</p>
     <pre><code>
 $.ajaxTransport( "script", function( options, originalOptions, jqXHR ) {
-    /* Will only be called for script requests */
+    // Will only be called for script requests
 });
-</code></pre>
+    </code></pre>
     <p>The following example shows how a minimal image transport could be implemented:</p>
     <pre><code>
 $.ajaxTransport( "image", function( s ) {
-
   if ( s.type === "GET" &amp;&amp; s.async ) {
-
     var image;
-
     return {
-
       send: function( _ , callback ) {
-
         image = new Image();
-
         function done( status ) {
           if ( image ) {
             var statusText = ( status == 200 ) ? "success" : "error",
@@ -76,17 +70,14 @@ $.ajaxTransport( "image", function( s ) {
             callback( status, statusText, { image: tmp } );
           }
         }
-
         image.onreadystatechange = image.onload = function() {
           done( 200 );
         };
         image.onerror = function() {
           done( 404 );
         };
-
         image.src = s.url;
       },
-
       abort: function() {
         if ( image ) {
           image = image.onreadystatechange = image.onerror = image.onload = null;
@@ -95,10 +86,10 @@ $.ajaxTransport( "image", function( s ) {
     };
   }
 });
-</code></pre>
+    </code></pre>
     <h4 id="handling-custom-data-types">Handling Custom Data Types</h4>
     <p>The jQuery Ajax implementation comes with a set of standard dataTypes, such as text, json, xml, and html.</p>
-    <p>Use the <code>converters</code> option in <code><a href="/jQuery.ajaxSetup">$.ajaxSetup()</a></code> to augment or modify the data type conversion strategies used by <code>$.ajax()</code>.</p>
+    <p>Use the <code>converters</code> option in <code><a href="/jQuery.ajaxSetup/">$.ajaxSetup()</a></code> to augment or modify the data type conversion strategies used by <code>$.ajax()</code>.</p>
     <p> The unminified jQuery source itself includes a list of default converters, which effectively illustrates how they can be used: </p>
     <pre><code>
 // List of data converters
@@ -106,23 +97,20 @@ $.ajaxTransport( "image", function( s ) {
 //    (a single space in-between)
 // 2) the catchall symbol "*" can be used for source_type
 converters: {
-
   // Convert anything to text
   "* text": window.String,
-
   // Text to html (true = no transformation)
   "text html": true,
-
   // Evaluate text as a json expression
   "text json": jQuery.parseJSON,
-
   // Parse text as xml
   "text xml": jQuery.parseXML
 }
-</code></pre>
+    </code></pre>
     <p>When you specify a <code>converters</code> option globally in <code>$.ajaxSetup()</code> or per call in <code>$.ajax()</code>, the object will map onto the default converters, overwriting those you specify and leaving the others intact.</p>
     <p>For example, the jQuery source uses <code>$.ajaxSetup()</code> to  add a converter for "text script":</p>
-    <pre><code>jQuery.ajaxSetup({
+    <pre><code>
+jQuery.ajaxSetup({
   accepts: {
     script: "text/javascript, application/javascript"
   },
@@ -132,7 +120,8 @@ converters: {
   converters: {
     "text script": jQuery.globalEval
   }
-});</code></pre>
+});
+    </code></pre>
   </longdesc>
   <category slug="ajax/low-level-interface"/>
   <category slug="version/1.5"/>

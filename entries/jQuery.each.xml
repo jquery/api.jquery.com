@@ -13,10 +13,11 @@
   <desc>A generic iterator function, which can be used to seamlessly iterate over both objects and arrays. Arrays and array-like objects with a length property (such as a function's arguments object) are iterated by numeric index, from 0 to length-1. Other objects are iterated via their named properties.</desc>
   <longdesc>
     <p>The <code>$.each()</code> function is not the same as <a href="/each/">$(selector).each()</a>, which is used to iterate, exclusively, over a jQuery object. The <code>$.each()</code> function can be used to iterate over any collection, whether it is an object or an array. In the case of an array, the callback is passed an array index and a corresponding array value each time. (The value can also be accessed through the <code>this</code> keyword, but Javascript will always wrap the <code>this</code> value as an <code>Object</code> even if it is a simple string or number value.) The method returns its first argument, the object that was iterated.</p>
-    <pre><code>$.each([52, 97], function(index, value) {
-  alert(index + ': ' + value);
+    <pre><code>
+$.each([ 52, 97 ], function( index, value ) {
+  alert( index + ": " + value );
 });
-</code></pre>
+    </code></pre>
     <p>This produces two messages:</p>
     <p>
       <samp>0: 52</samp>
@@ -24,13 +25,15 @@
       <samp>1: 97</samp>
     </p>
     <p>If an object is used as the collection, the callback is passed a key-value pair each time:</p>
-    <pre><code>var obj = {
+    <pre><code>
+var obj = {
   "flammable": "inflammable",
   "duh": "no duh"
 };
 $.each( obj, function( key, value ) {
   alert( key + ": " + value );
-});</code></pre>
+});
+    </code></pre>
     <p>Once again, this produces two messages:</p>
     <p>
       <samp>flammable: inflammable</samp>
@@ -42,40 +45,49 @@ $.each( obj, function( key, value ) {
   <example>
     <desc>Iterates through the array displaying each number as both a word and numeral</desc>
     <code><![CDATA[
-    var arr = [ "one", "two", "three", "four", "five" ];
-    var obj = { one:1, two:2, three:3, four:4, five:5 };
+var arr = [ "one", "two", "three", "four", "five" ];
+var obj = { one:1, two:2, three:3, four:4, five:5 };
 
-    jQuery.each(arr, function() {
-      $("#" + this).text("Mine is " + this + ".");
-       return (this != "three"); // will stop running after "three"
-   });
+jQuery.each( arr, function() {
+  $( "#" + this ).text( "Mine is " + this + "." );
+  return ( this != "three" ); // Will stop running after "three"
+});
 
-    jQuery.each(obj, function(i, val) {
-      $("#" + i).append(document.createTextNode(" - " + val));
-    });
+jQuery.each( obj, function( i, val ) {
+  $( "#" + i ).append( document.createTextNode( " - " + val ) );
+});
 ]]></code>
     <css><![CDATA[
-  div { color:blue; }
-  div#five { color:red; }
-  ]]></css>
+  div {
+    color: blue;
+  }
+  div#five {
+    color: red;
+  }
+]]></css>
     <html><![CDATA[
-  <div id="one"></div>
-  <div id="two"></div>
-  <div id="three"></div>
-  <div id="four"></div>
-  <div id="five"></div>]]></html>
+<div id="one"></div>
+<div id="two"></div>
+<div id="three"></div>
+<div id="four"></div>
+<div id="five"></div>
+]]></html>
   </example>
   <example>
     <desc>Iterates over items in an array, accessing both the current item and its index.</desc>
-    <code><![CDATA[$.each( ['a','b','c'], function(i, l){
-   alert( "Index #" + i + ": " + l );
- });]]></code>
+    <code><![CDATA[
+$.each( [ 'a', 'b', 'c' ], function( i, l ){
+  alert( "Index #" + i + ": " + l );
+});
+]]></code>
   </example>
   <example>
     <desc>Iterates over the properties in an object, accessing both the current item and its key.</desc>
-    <code><![CDATA[$.each( { name: "John", lang: "JS" }, function(k, v){
-   alert( "Key: " + k + ", Value: " + v );
- });]]></code>
+    <code><![CDATA[
+$.each({ name: "John", lang: "JS" }, function( k, v ){
+  alert( "Key: " + k + ", Value: " + v );
+});
+]]></code>
   </example>
   <category slug="utilities"/>
   <category slug="version/1.0"/>

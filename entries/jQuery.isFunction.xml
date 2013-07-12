@@ -17,36 +17,44 @@
 function stub() {
 }
 var objs = [
-      function () {},
-      { x:15, y:20 },
-      null,
-      stub,
-      "function"
-    ];
+  function() {},
+  { x:15, y:20 },
+  null,
+  stub,
+  "function"
+];
 
-jQuery.each(objs, function (i) {
-  var isFunc = jQuery.isFunction(objs[i]);
-  $("span").eq(i).text(isFunc);
+jQuery.each( objs, function( i ) {
+  var isFunc = jQuery.isFunction( objs[ i ]);
+  $( "span" ).eq( i ).text( isFunc );
 });
 ]]></code>
     <css><![CDATA[
-  div { color:blue; margin:2px; font-size:14px; }
-  span { color:red; }
-  ]]></css>
+  div {
+    color: blue;
+    margin: 2px;
+    font-size: 14px;
+  }
+  span {
+    color: red;
+  }
+]]></css>
     <html><![CDATA[
-  <div>jQuery.isFunction(objs[0]) = <span></span></div>
-
-  <div>jQuery.isFunction(objs[1]) = <span></span></div>
-  <div>jQuery.isFunction(objs[2]) = <span></span></div>
-  <div>jQuery.isFunction(objs[3]) = <span></span></div>
-
-  <div>jQuery.isFunction(objs[4]) = <span></span></div>
-  ]]></html>
+<div>jQuery.isFunction( objs[ 0 ] ) = <span></span></div>
+<div>jQuery.isFunction( objs[ 1 ] ) = <span></span></div>
+<div>jQuery.isFunction( objs[ 2 ] ) = <span></span></div>
+<div>jQuery.isFunction( objs[ 3 ] ) = <span></span></div>
+<div>jQuery.isFunction( objs[ 4 ] ) = <span></span></div>
+]]></html>
   </example>
   <example>
     <desc>Finds out if the parameter is a function.</desc>
-    <code><![CDATA[$.isFunction(function(){});]]></code>
-    <results><![CDATA[true]]></results>
+    <code><![CDATA[
+$.isFunction(function(){});
+]]></code>
+    <results><![CDATA[
+true
+]]></results>
   </example>
   <category slug="utilities"/>
   <category slug="version/1.2"/>

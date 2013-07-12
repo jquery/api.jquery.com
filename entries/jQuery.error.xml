@@ -13,7 +13,9 @@
   </longdesc>
   <example>
     <desc>Override jQuery.error for display in Firebug.</desc>
-    <code><![CDATA[jQuery.error = console.error;]]></code>
+    <code><![CDATA[
+jQuery.error = console.error;
+]]></code>
   </example>
   <category slug="internals"/>
   <category slug="version/1.4.1"/>

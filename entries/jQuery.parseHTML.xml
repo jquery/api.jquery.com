@@ -16,7 +16,7 @@
   </signature>
   <longdesc>
     <p><code>jQuery.parseHTML</code> uses a native DOM element creation function to convert the string to a set of DOM elements, which can then be inserted into the document.</p>
-	<p>By default, the <code>context</code> is the current <code>document</code> if not specified or given as <code>null</code> or <code>undefined</code>. If the HTML was to be used in another document such as an iframe, that frame's document could be used.</p>
+    <p>By default, the <code>context</code> is the current <code>document</code> if not specified or given as <code>null</code> or <code>undefined</code>. If the HTML was to be used in another document such as an iframe, that frame's document could be used.</p>
   </longdesc>
   <example>
     <desc>Create an array of Dom nodes using an HTML string and insert it into a div.</desc>
@@ -27,16 +27,16 @@
 ]]></html>
     <code><![CDATA[
 var $log = $( "#log" ),
-    str = "hello, <b>my name is</b> jQuery.",
-    html = $.parseHTML( str ),
-    nodeNames = [];
+  str = "hello, <b>my name is</b> jQuery.",
+  html = $.parseHTML( str ),
+  nodeNames = [];
 
 // Append the parsed HTML
 $log.append( html );
 
 // Gather the parsed HTML's node names
 $.each( html, function( i, el ) {
-    nodeNames[i] = "<li>" + el.nodeName + "</li>";
+  nodeNames[i] = "<li>" + el.nodeName + "</li>";
 });
 
 // Insert the node names
@@ -44,7 +44,6 @@ $log.append( "<h3>Node Names:</h3>" );
 $( "<ol></ol>" )
   .append( nodeNames.join( "" ) )
   .appendTo( $log );
-
 ]]></code>
   </example>
   <category slug="utilities"/>

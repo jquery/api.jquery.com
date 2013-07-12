@@ -31,7 +31,7 @@ $( ".hello" ).empty();
   <example>
     <desc>Removes all child nodes (including text nodes) from all paragraphs</desc>
     <code><![CDATA[
-$( "button" ).click(function () {
+$( "button" ).click(function() {
   $( "p" ).empty();
 });
 ]]></code>

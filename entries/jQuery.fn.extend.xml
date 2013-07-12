@@ -16,10 +16,14 @@
     <code><![CDATA[
 jQuery.fn.extend({
   check: function() {
-    return this.each(function() { this.checked = true; });
+    return this.each(function() {
+      this.checked = true;
+    });
   },
   uncheck: function() {
-    return this.each(function() { this.checked = false; });
+    return this.each(function() {
+      this.checked = false;
+    });
   }
 });
 
@@ -27,8 +31,11 @@ jQuery.fn.extend({
 $( "input[type='checkbox']" ).check();
 ]]></code>
     <css>
-label { display: block; margin: .5em; }
-    </css>
+  label {
+    display: block;
+    margin: .5em;
+  }
+</css>
     <html><![CDATA[
 <label><input type="checkbox" name="foo"> Foo</label>
 <label><input type="checkbox" name="bar"> Bar</label>

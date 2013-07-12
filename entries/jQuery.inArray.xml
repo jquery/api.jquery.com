@@ -20,22 +20,28 @@
   </longdesc>
   <example>
     <desc>Report the index of some elements in the array.</desc>
-    <code><![CDATA[var arr = [ 4, "Pete", 8, "John" ];
-var $spans = $("span");
-$spans.eq(0).text(jQuery.inArray("John", arr));
-$spans.eq(1).text(jQuery.inArray(4, arr));
-$spans.eq(2).text(jQuery.inArray("Karl", arr));
-$spans.eq(3).text(jQuery.inArray("Pete", arr, 2));
+    <code><![CDATA[
+var arr = [ 4, "Pete", 8, "John" ];
+var $spans = $( "span" );
+$spans.eq( 0 ).text( jQuery.inArray( "John", arr ) );
+$spans.eq( 1 ).text( jQuery.inArray( 4, arr ) );
+$spans.eq( 2 ).text( jQuery.inArray( "Karl", arr ) );
+$spans.eq( 3 ).text( jQuery.inArray( "Pete", arr, 2 ) );
 ]]></code>
     <css><![CDATA[
-  div { color:blue; }
-  span { color:red; }
+  div {
+    color: blue;
+  }
+  span {
+    color: red;
+  }
 ]]></css>
     <html><![CDATA[
 <div>"John" found at <span></span></div>
 <div>4 found at <span></span></div>
 <div>"Karl" not found, so <span></span></div>
-<div>"Pete" is in the array, but not at or after index 2, so <span></span></div>]]></html>
+<div>"Pete" is in the array, but not at or after index 2, so <span></span></div>
+]]></html>
   </example>
   <category slug="utilities"/>
   <category slug="version/1.2"/>

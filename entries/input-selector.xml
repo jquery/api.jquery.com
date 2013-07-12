@@ -13,39 +13,41 @@
   <example>
     <desc>Finds all input elements.</desc>
     <code><![CDATA[
-var allInputs = $(":input");
-var formChildren = $("form > *");
-$("#messages").text("Found " + allInputs.length + " inputs and the form has " +
-                         formChildren.length + " children.");
+var allInputs = $( ":input" );
+var formChildren = $( "form > *" );
+$( "#messages" ).text( "Found " + allInputs.length + " inputs and the form has " +
+  formChildren.length + " children." );
 
 // so it won't submit
-$("form").submit(function () { return false; });
-
+$( "form" ).submit(function() {
+  return false;
+});
 ]]></code>
     <css><![CDATA[
-  textarea { height:25px; }
+  textarea {
+    height: 25px;
+  }
   ]]></css>
-    <html><![CDATA[<form>
-    <input type="button" value="Input Button"/>
-    <input type="checkbox" />
-
-    <input type="file" />
-    <input type="hidden" />
-    <input type="image" />
-
-    <input type="password" />
-    <input type="radio" />
-    <input type="reset" />
-
-    <input type="submit" />
-    <input type="text" />
-    <select><option>Option</option></select>
-
-    <textarea></textarea>
-    <button>Button</button>
-  </form>
-  <div id="messages">
-  </div>]]></html>
+    <html><![CDATA[
+<form>
+  <input type="button" value="Input Button">
+  <input type="checkbox">
+  <input type="file">
+  <input type="hidden">
+  <input type="image">
+  <input type="password">
+  <input type="radio">
+  <input type="reset">
+  <input type="submit">
+  <input type="text">
+  <select>
+    <option>Option</option>
+  </select>
+  <textarea></textarea>
+  <button>Button</button>
+</form>
+<div id="messages"></div>
+]]></html>
   </example>
   <category slug="selectors/form-selectors"/>
   <category slug="selectors/jquery-selector-extensions"/>

@@ -18,22 +18,30 @@
   <example>
     <desc>Set a data store for 2 names then remove one of them.</desc>
     <code><![CDATA[
-var div = $("div")[0];
-$("span:eq(0)").text("" + $("div").data("test1"));
-jQuery.data(div, "test1", "VALUE-1");
-jQuery.data(div, "test2", "VALUE-2");
-$("span:eq(1)").text("" + jQuery.data(div, "test1"));
-jQuery.removeData(div, "test1");
-$("span:eq(2)").text("" + jQuery.data(div, "test1"));
-$("span:eq(3)").text("" + jQuery.data(div, "test2"));]]></code>
+var div = $( "div" )[ 0 ];
+$( "span:eq(0)" ).text( "" + $( "div" ).data( "test1" ) );
+jQuery.data( div, "test1", "VALUE-1" );
+jQuery.data( div, "test2", "VALUE-2" );
+$( "span:eq(1)" ).text( "" + jQuery.data( div, "test1" ) );
+jQuery.removeData( div, "test1" );
+$( "span:eq(2)" ).text( "" + jQuery.data( div, "test1" ) );
+$( "span:eq(3)" ).text( "" + jQuery.data( div, "test2" ) );
+]]></code>
     <css><![CDATA[
-    div { margin:2px; color:blue; }
-    span { color:red; }
-    ]]></css>
-    <html><![CDATA[<div>value1 before creation: <span></span></div>
-    <div>value1 after creation: <span></span></div>
-    <div>value1 after removal: <span></span></div>
-    <div>value2 after removal: <span></span></div>]]></html>
+  div {
+    margin: 2px;
+    color: blue;
+  }
+  span {
+    color: red;
+  }
+]]></css>
+    <html><![CDATA[
+<div>value1 before creation: <span></span></div>
+<div>value1 after creation: <span></span></div>
+<div>value1 after removal: <span></span></div>
+<div>value2 after removal: <span></span></div>
+]]></html>
   </example>
   <category slug="data"/>
   <category slug="utilities"/>

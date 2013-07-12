@@ -15,28 +15,33 @@
   <example>
     <desc>Turn a collection of HTMLElements into an Array of them.</desc>
     <code><![CDATA[
-    var elems = document.getElementsByTagName("div"); // returns a nodeList
-    var arr = jQuery.makeArray(elems);
-    arr.reverse(); // use an Array method on list of dom elements
-    $(arr).appendTo(document.body);
+var elems = document.getElementsByTagName( "div" ); // Returns a nodeList
+var arr = jQuery.makeArray( elems );
+arr.reverse(); // Use an Array method on list of dom elements
+$( arr ).appendTo( document.body );
 ]]></code>
     <css><![CDATA[
-  div { color:red; }
-  ]]></css>
-    <html><![CDATA[<div>First</div>
-  <div>Second</div>
-  <div>Third</div>
-
-  <div>Fourth</div>]]></html>
+  div {
+    color: red;
+  }
+]]></css>
+    <html><![CDATA[
+<div>First</div>
+<div>Second</div>
+<div>Third</div>
+<div>Fourth</div>
+]]></html>
   </example>
   <example>
     <desc>Turn a jQuery object into an array</desc>
     <code><![CDATA[
-    var obj = $('li');
-    var arr = $.makeArray(obj);
+var obj = $( "li" );
+var arr = $.makeArray( obj );
 ]]></code>
-    <results><![CDATA[(typeof obj === 'object' && obj.jquery) === true;
-jQuery.isArray(arr) === true;]]></results>
+    <results><![CDATA[
+( typeof obj === "object" && obj.jquery ) === true;
+jQuery.isArray( arr ) === true;
+]]></results>
   </example>
   <category slug="utilities"/>
   <category slug="version/1.2"/>

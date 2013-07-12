@@ -14,17 +14,23 @@
     <desc>Cause all animations to run with less frames.</desc>
     <code><![CDATA[
 jQuery.fx.interval = 100;
-
-$("input").click(function(){
-  $("div").toggle( 3000 );
+$( "input" ).click(function() {
+  $( "div" ).toggle( 3000 );
 });
-  ]]></code>
+]]></code>
     <css><![CDATA[
-div { width:50px; height:30px; margin:5px; float:left;
-      background:green; }
+  div {
+    width: 50px;
+    height: 30px;
+    margin: 5px;
+    float: left;
+    background: green;
+  }
 ]]></css>
-    <html><![CDATA[<p><input type="button" value="Run"/></p>
-<div></div>]]></html>
+    <html><![CDATA[
+<p><input type="button" value="Run"/></p>
+<div></div>
+]]></html>
   </example>
   <category slug="effects/custom-effects"/>
   <category slug="properties/global-jquery-object-properties"/>

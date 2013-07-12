@@ -9,13 +9,14 @@
   </signature>
   <desc>Check to see if an object is empty (contains no enumerable properties).</desc>
   <longdesc>
-    <p>As of jQuery 1.4 this method checks both properties on the object itself and properties inherited from prototypes (in that it doesn't use hasOwnProperty). The argument should always be a plain JavaScript <code>Object</code> as other types of object (DOM elements, primitive strings/numbers, host objects) may not give consistent results across browsers. To determine if an object is a plain JavaScript object, use <a href="http://api.jquery.com/jQuery.isPlainObject"><code>$.isPlainObject()</code></a></p>
+    <p>As of jQuery 1.4 this method checks both properties on the object itself and properties inherited from prototypes (in that it doesn't use hasOwnProperty). The argument should always be a plain JavaScript <code>Object</code> as other types of object (DOM elements, primitive strings/numbers, host objects) may not give consistent results across browsers. To determine if an object is a plain JavaScript object, use <a href="/jQuery.isPlainObject/"><code>$.isPlainObject()</code></a></p>
   </longdesc>
   <example>
     <desc>Check an object to see if it's empty.</desc>
-    <code><![CDATA[jQuery.isEmptyObject({}) // true
-      jQuery.isEmptyObject({ foo: "bar" }) // false
-    ]]></code>
+    <code><![CDATA[
+jQuery.isEmptyObject({}); // true
+jQuery.isEmptyObject({ foo: "bar" }); // false
+]]></code>
   </example>
   <category slug="utilities"/>
   <category slug="version/1.4"/>

@@ -9,21 +9,30 @@
   <example>
     <desc>Returns the box model for the iframe.</desc>
     <code><![CDATA[
-$("p").html("The box model for this iframe is: <span>" +
-            jQuery.boxModel + "</span>");
+$( "p" ).html( "The box model for this iframe is: <span>" +
+  jQuery.boxModel + "</span>" );
 ]]></code>
     <css><![CDATA[
-
-  p { color:blue; margin:20px; }
-  span { color:red; }
-  ]]></css>
-    <html><![CDATA[<p>
-  </p>]]></html>
+  p {
+    color: blue;
+    margin: 20px;
+  }
+  span {
+    color: red;
+  }
+]]></css>
+    <html><![CDATA[
+<p></p>
+]]></html>
   </example>
   <example>
     <desc>Returns false if the page is in Quirks Mode in Internet Explorer</desc>
-    <code><![CDATA[$.boxModel]]></code>
-    <results><![CDATA[false]]></results>
+    <code><![CDATA[
+$.boxModel
+]]></code>
+    <results><![CDATA[
+false
+]]></results>
   </example>
   <category slug="utilities"/>
   <category slug="version/1.0"/>

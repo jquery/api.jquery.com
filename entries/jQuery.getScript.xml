@@ -13,59 +13,65 @@
   <desc>Load a JavaScript file from the server using a GET HTTP request, then execute it.</desc>
   <longdesc>
     <p>This is a shorthand Ajax function, which is equivalent to:</p>
-    <pre><code>$.ajax({
+    <pre><code>
+$.ajax({
   url: url,
   dataType: "script",
   success: success
 });
-</code></pre>
+    </code></pre>
     <p>The script is executed in the global context, so it can refer to other variables and use jQuery functions. Included scripts can have some impact on the current page.</p>
     <h4 id="success-callback">
         Success Callback
       </h4>
     <p>The callback is fired once the script has been loaded but not necessarily executed.</p>
-    <pre><code>$(".result").html("&lt;p&gt;Lorem ipsum dolor sit amet.&lt;/p&gt;");</code></pre>
+    <pre><code>
+$( ".result" ).html( "&lt;p&gt;Lorem ipsum dolor sit amet.&lt;/p&gt;" );
+    </code></pre>
     <p>Scripts are included and run by referencing the file name:</p>
-    <pre><code>$.getScript("ajax/test.js", function(data, textStatus, jqxhr) {
-   console.log(data); //data returned
-   console.log(textStatus); //success
-   console.log(jqxhr.status); //200
-   console.log('Load was performed.');
-});</code></pre>
+    <pre><code>
+$.getScript( "ajax/test.js", function( data, textStatus, jqxhr ) {
+  console.log( data ); //Data returned
+  console.log( textStatus ); //Success
+  console.log( jqxhr.status ); //200
+  console.log( "Load was performed." );
+});
+    </code></pre>
     <h4 id="handling-errors">Handling Errors</h4>
     <p>As of jQuery 1.5, you may use <a href="http://api.jquery.com/deferred.fail/"><code>.fail()</code></a> to account for errors:</p>
     <pre><code>
-$.getScript("ajax/test.js")
-.done(function(script, textStatus) {
-  console.log( textStatus );
-})
-.fail(function(jqxhr, settings, exception) {
-  $( "div.log" ).text( "Triggered ajaxError handler." );
+$.getScript( "ajax/test.js" )
+  .done( function(script, textStatus ) {
+    console.log( textStatus );
+  })
+  .fail(function( jqxhr, settings, exception ) {
+    $( "div.log" ).text( "Triggered ajaxError handler." );
 });
-</code></pre>
+    </code></pre>
     <p>Prior to jQuery 1.5, the global <code>.ajaxError()</code> callback event had to be used in order to handle <code>$.getScript()</code> errors:</p>
     <pre><code>
 $( "div.log" ).ajaxError(function(e, jqxhr, settings, exception) {
-  if (settings.dataType=='script') {
-    $(this).text( "Triggered ajaxError handler." );
+  if (settings.dataType == "script" ) {
+    $( this ).text( "Triggered ajaxError handler." );
   }
 });
-</code></pre>
+    </code></pre>
     <h4 id="caching-requests">Caching Responses</h4>
-    <p>By default, <code>$.getScript()</code> sets the cache setting to <code>false</code>. This appends a timestamped query parameter to the request URL to ensure that the browser downloads the script each time it is requested. You can override this feature by setting the cache property globally using <a href="http://api.jquery.com/jquery.ajaxsetup/"><code>$.ajaxSetup()</code></a>: </p>
+    <p>By default, <code>$.getScript()</code> sets the cache setting to <code>false</code>. This appends a timestamped query parameter to the request URL to ensure that the browser downloads the script each time it is requested. You can override this feature by setting the cache property globally using <a href="/jquery.ajaxsetup/"><code>$.ajaxSetup()</code></a>: </p>
     <pre><code>
 $.ajaxSetup({
   cache: true
 });
-</code></pre>
+    </code></pre>
     <p>Alternatively, you could define a new method that uses the more flexible <code>$.ajax()</code> method.</p>
   </longdesc>
   <example>
     <desc>Define a $.cachedScript() method that allows fetching a cached script:</desc>
-    <code>jQuery.cachedScript = function(url, options) {
+    <code><![CDATA[
+jQuery.cachedScript = function( url, options ) {
 
-  // allow user to set any option except for dataType, cache, and url
-  options = $.extend(options || {}, {
+  // Allow user to set any option except for dataType, cache, and url
+  options = $.extend( options || {}, {
     dataType: "script",
     cache: true,
     url: url
@@ -73,14 +79,14 @@ $.ajaxSetup({
 
   // Use $.ajax() since it is more flexible than $.getScript
   // Return the jqXHR object so we can chain callbacks
-  return jQuery.ajax(options);
+  return jQuery.ajax( options );
 };
 
 // Usage
-$.cachedScript("ajax/test.js").done(function(script, textStatus) {
+$.cachedScript( "ajax/test.js" ).done(function( script, textStatus ) {
   console.log( textStatus );
 });
-</code>
+]]></code>
   </example>
   <example>
     <desc>Load the <a href="http://github.com/jquery/jquery-color">official jQuery Color Animation plugin</a> dynamically and bind some color animations to occur once the new functionality is loaded.</desc>
@@ -89,7 +95,7 @@ $.cachedScript("ajax/test.js").done(function(script, textStatus) {
   var url = "https://raw.github.com/jquery/jquery-color/master/jquery.color.js";
   $.getScript(url, function() {
     $("#go").click(function(){
-      $(".block")
+      $( ".block" )
         .animate( { backgroundColor: "rgb(255, 180, 180)" }, 1000 )
         .delay(500)
         .animate( { backgroundColor: "olive" }, 1000 )
@@ -101,16 +107,16 @@ $.cachedScript("ajax/test.js").done(function(script, textStatus) {
 ]]></code>
     <html><![CDATA[
 <button id="go">&raquo; Run</button>
-
 <div class="block"></div>
 ]]></html>
     <css><![CDATA[
-.block {
-   background-color: blue;
-   width: 150px;
-   height: 70px;
-   margin: 10px;
-}]]></css>
+  .block {
+     background-color: blue;
+     width: 150px;
+     height: 70px;
+     margin: 10px;
+  }
+]]></css>
   </example>
   <category slug="ajax/shorthand-methods"/>
   <category slug="version/1.0"/>

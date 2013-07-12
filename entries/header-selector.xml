@@ -10,15 +10,23 @@
   <note id="jquery-selector-extension" type="additional" data-selector=":header"/>
   <example>
     <desc>Adds a background and text color to all the headers on the page.</desc>
-    <code><![CDATA[$(":header").css({ background:'#CCC', color:'blue' });]]></code>
-    <html><![CDATA[<h1>Header 1</h1>
-
-  <p>Contents 1</p>
-  <h2>Header 2</h2>
-  <p>Contents 2</p>]]></html>
+    <code><![CDATA[
+$( ":header" ).css({ background: "#ccc", color: "blue" });
+]]></code>
+    <html><![CDATA[
+<h1>Header 1</h1>
+<p>Contents 1</p>
+<h2>Header 2</h2>
+<p>Contents 2</p>
+]]></html>
     <css><![CDATA[
-  body { font-size: 10px; font-family: Arial; }
-  h1, h2 { margin: 3px 0; }
+  body {
+    font-size: 10px;
+    font-family: Arial;
+  }
+  h1, h2 {
+    margin: 3px 0;
+  }
   ]]></css>
   </example>
   <category slug="selectors/basic-filter-selectors"/>

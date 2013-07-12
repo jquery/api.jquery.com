@@ -40,8 +40,12 @@
   </longdesc>
   <example>
     <desc>Find out if the parameter is a RegExp.</desc>
-    <code><![CDATA[$("b").append( "" + jQuery.type(/test/) );]]></code>
-    <html><![CDATA[Is it a RegExp? <b></b>]]></html>
+    <code><![CDATA[
+$( "b" ).append( "" + jQuery.type(/test/) );
+]]></code>
+    <html><![CDATA[
+Is it a RegExp? <b></b>
+]]></html>
   </example>
   <category slug="utilities"/>
   <category slug="version/1.4.3"/>

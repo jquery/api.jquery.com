@@ -19,30 +19,46 @@
     <example>
       <desc>Show the length of the queue.</desc>
       <code><![CDATA[
-  $("#show").click(function () {
-    var n = jQuery.queue( $("div")[0], "fx" );
-    $("span").text("Queue length is: " + n.length);
-  });
-  function runIt() {
-    $("div").show("slow");
-    $("div").animate({left:'+=200'},2000);
-    $("div").slideToggle(1000);
-    $("div").slideToggle("fast");
-    $("div").animate({left:'-=200'},1500);
-    $("div").hide("slow");
-    $("div").show(1200);
-    $("div").slideUp("normal", runIt);
+$( "#show" ).click(function() {
+  var n = jQuery.queue( $( "div" )[ 0 ], "fx" );
+  $( "span" ).text( "Queue length is: " + n.length );
+});
+
+function runIt() {
+  $( "div" ).show( "slow" );
+  $( "div" ).animate({ left: "+=200" }, 2000 );
+  $( "div" ).slideToggle( 1000 );
+  $( "div" ).slideToggle( "fast" );
+  $( "div" ).animate({ left: "-=200" }, 1500 );
+  $( "div" ).hide( "slow" );
+  $( "div" ).show( 1200 );
+  $( "div" ).slideUp( "normal", runIt );
+}
+
+runIt();
+]]></code>
+      <css><![CDATA[
+  div {
+    margin: 3px;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 0px;
+    top: 30px;
+    background: green;
+    display: none;
   }
-  runIt();
-  ]]></code>
-      <css><![CDATA[div { margin:3px; width:40px; height:40px;
-        position:absolute; left:0px; top:30px;
-        background:green; display:none; }
-  div.newcolor { background:blue; }
-  span { color:red; }  ]]></css>
-      <html><![CDATA[<button id="show">Show Length of Queue</button>
-  <span></span>
-  <div></div>
+  div.newcolor {
+    background: blue;
+  }
+  span {
+    color: red;
+  }
+]]></css>
+      <html><![CDATA[
+<button id="show">Show Length of Queue</button>
+<span></span>
+<div></div>
   ]]></html>
     </example>
     <category slug="data"/>
@@ -76,7 +92,7 @@
     </signature>
     <desc>Manipulate the queue of functions to be executed on the matched element.</desc>
     <longdesc>
-      <p><strong>Note:</strong> This is a low-level method, you should probably use <code><a href="/queue">.queue()</a></code> instead.</p>
+      <p><strong>Note:</strong> This is a low-level method, you should probably use <code><a href="/queue/">.queue()</a></code> instead.</p>
       <p>Every element can have one or more queues of functions attached to it by jQuery. In most applications, only one queue (called <code>fx</code>) is used. Queues allow a sequence of actions to be called on an element asynchronously, without halting program execution.</p>
       <p>The <code>jQuery.queue()</code> method allows us to directly manipulate this queue of functions. Calling <code>jQuery.queue()</code> with a callback is particularly useful; it allows us to place a new function at the end of the queue.</p>
       <p>Note that when adding a function with <code>jQuery.queue()</code>, we should ensure that <code>jQuery.dequeue()</code> is eventually called so that the next function in line executes.</p>
@@ -84,62 +100,83 @@
     <example>
       <desc>Queue a custom function.</desc>
       <code><![CDATA[
- $(document.body).click(function () {
-    $("div").show("slow");
-    $("div").animate({left:'+=200'},2000);
-    jQuery.queue( $("div")[0], "fx", function () {
-      $(this).addClass("newcolor");
-      jQuery.dequeue( this );
-    });
-    $("div").animate({left:'-=200'},500);
-    jQuery.queue( $("div")[0], "fx", function () {
-      $(this).removeClass("newcolor");
-      jQuery.dequeue( this );
-    });
-    $("div").slideUp();
-  });]]></code>
+$( document.body ).click(function() {
+  $( "div" ).show( "slow" );
+  $( "div" ).animate({ left: "+=200" }, 2000 );
+  jQuery.queue( $( "div" )[ 0 ], "fx", function() {
+    $(this).addClass( "newcolor" );
+    jQuery.dequeue( this );
+  });
+  $( "div" ).animate({ left: "-=200" }, 500 );
+  jQuery.queue( $( "div" )[ 0 ], "fx", function() {
+    $( this ).removeClass( "newcolor" );
+    jQuery.dequeue( this );
+  });
+  $( "div" ).slideUp();
+});
+]]></code>
       <css><![CDATA[
-div { margin:3px; width:40px; height:40px;
-      position:absolute; left:0px; top:30px;
-      background:green; display:none; }
-div.newcolor { background:blue; }
+  div {
+    margin: 3px;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 0px;
+    top: 30px;
+    background: green;
+    display: none;
+  }
+  div.newcolor {
+    background: blue;
+  }
 ]]></css>
-      <html><![CDATA[Click here...
-  <div></div>
-  ]]></html>
+      <html><![CDATA[
+Click here...
+<div></div>
+]]></html>
     </example>
     <example>
       <desc>Set a queue array to delete the queue.</desc>
       <code><![CDATA[
-   $("#start").click(function () {
-      $("div").show("slow");
-      $("div").animate({left:'+=200'},5000);
-      jQuery.queue( $("div")[0], "fx", function () {
-        $(this).addClass("newcolor");
-        jQuery.dequeue( this );
-      });
-      $("div").animate({left:'-=200'},1500);
-      jQuery.queue( $("div")[0], "fx", function () {
-        $(this).removeClass("newcolor");
-        jQuery.dequeue( this );
-      });
-      $("div").slideUp();
-    });
-    $("#stop").click(function () {
-      jQuery.queue( $("div")[0], "fx", [] );
-      $("div").stop();
-    });
+$( "#start" ).click(function() {
+  $( "div" ).show( "slow" );
+  $( "div" ).animate({ left: "+=200" }, 5000 );
+  jQuery.queue( $( "div" )[ 0 ], "fx", function() {
+    $( this ).addClass( "newcolor" );
+    jQuery.dequeue( this );
+  });
+  $( "div" ).animate({ left: "-=200" }, 1500 );
+  jQuery.queue( $("div")[0], "fx", function() {
+    $( this ).removeClass( "newcolor" );
+    jQuery.dequeue( this );
+  });
+  $( "div" ).slideUp();
+});
+$( "#stop" ).click(function() {
+  jQuery.queue( $( "div" )[ 0 ], "fx", [] );
+  $( "div" ).stop();
+});
 ]]></code>
       <css><![CDATA[
-  div { margin:3px; width:40px; height:40px;
-        position:absolute; left:0px; top:30px;
-        background:green; display:none; }
-  div.newcolor { background:blue; }
-  ]]></css>
+  div {
+    margin: 3px;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 0px;
+    top: 30px;
+    background: green;
+    display: none;
+  }
+  div.newcolor {
+    background: blue;
+  }
+]]></css>
       <html><![CDATA[
-  <button id="start">Start</button>
-  <button id="stop">Stop</button>
-  <div></div>]]></html>
+<button id="start">Start</button>
+<button id="stop">Stop</button>
+<div></div>
+]]></html>
     </example>
     <category slug="data"/>
     <category slug="utilities"/>

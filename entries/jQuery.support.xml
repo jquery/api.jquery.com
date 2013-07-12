@@ -55,20 +55,30 @@
   <example>
     <desc>Returns the box model for the iframe.</desc>
     <code><![CDATA[
-$("p").html("This frame uses the W3C box model: <span>" +
-            jQuery.support.boxModel + "</span>");
+$( "p" ).html( "This frame uses the W3C box model: <span>" +
+  jQuery.support.boxModel + "</span>");
 ]]></code>
     <css><![CDATA[
-  p { color:blue; margin:20px; }
-  span { color:red; }
-  ]]></css>
-    <html><![CDATA[<p>
-  </p>]]></html>
+  p {
+    color: blue;
+    margin: 20px;
+  }
+  span {
+    color: red;
+  }
+]]></css>
+    <html><![CDATA[
+<p></p>
+]]></html>
   </example>
   <example>
     <desc>Returns false if the page is in QuirksMode in Internet Explorer</desc>
-    <code><![CDATA[jQuery.support.boxModel]]></code>
-    <results><![CDATA[false]]></results>
+    <code><![CDATA[
+jQuery.support.boxModel
+]]></code>
+    <results><![CDATA[
+false
+]]></results>
   </example>
   <category slug="properties/global-jquery-object-properties"/>
   <category slug="utilities"/>

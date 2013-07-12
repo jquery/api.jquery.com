@@ -25,11 +25,13 @@
     <p>This function is used internally to convert form element values into a serialized string representation (See <a href="/serialize/">.serialize()</a> for more information).</p>
     <p>As of jQuery 1.3, the return value of a function is used instead of the function as a String.</p>
     <p>As of jQuery 1.4, the <code>$.param()</code> method serializes deep objects recursively to accommodate modern scripting languages and frameworks such as PHP and Ruby on Rails. You can disable this functionality globally by setting <code>jQuery.ajaxSettings.traditional = true;</code>.</p>
-	<p>As of jQuery 1.8, the <code>$.param()</code> method no longer uses <code>jQuery.ajaxSettings.traditional</code> as its default setting and will default to <code>false</code>. For best compatibility across versions, call <code>$.param()</code> with an explicit value for the second argument and do not use defaults.</p>
+    <p>As of jQuery 1.8, the <code>$.param()</code> method no longer uses <code>jQuery.ajaxSettings.traditional</code> as its default setting and will default to <code>false</code>. For best compatibility across versions, call <code>$.param()</code> with an explicit value for the second argument and do not use defaults.</p>
     <p>If the object passed is in an Array, it must be an array of objects in the format returned by <a href="/serializeArray/">.serializeArray()</a></p>
-    <pre><code>[{name:"first",value:"Rick"},
-{name:"last",value:"Astley"},
-{name:"job",value:"Rock Star"}]</code></pre>
+    <pre><code>
+[{ name:"first", value:"Rick" },
+{ name:"last", value:"Astley" },
+{ name:"job", value:"Rock Star" }]
+    </code></pre>
     <div class="warning">
       <p><strong>Note:</strong> Because some frameworks have limited ability to parse serialized arrays, developers should exercise caution when passing an <code>obj</code> argument that contains objects or arrays nested within another array.</p>
     </div>
@@ -46,12 +48,12 @@
   },
   b: [1,2,3]
 };
-var recursiveEncoded = $.param(myObject);
-var recursiveDecoded = decodeURIComponent($.param(myObject));
+var recursiveEncoded = $.param( myObject );
+var recursiveDecoded = decodeURIComponent( $.param( myObject ) );
 
-alert(recursiveEncoded);
-alert(recursiveDecoded);
-</code></pre>
+alert( recursiveEncoded );
+alert( recursiveDecoded );
+    </code></pre>
     <p>The values of <code>recursiveEncoded</code> and <code>recursiveDecoded</code> are alerted as follows:</p>
     <p>
       <samp>a%5Bone%5D=1&amp;a%5Btwo%5D=2&amp;a%5Bthree%5D=3&amp;b%5B%5D=1&amp;b%5B%5D=2&amp;b%5B%5D=3</samp>
@@ -65,13 +67,13 @@ alert(recursiveDecoded);
     two: 2,
     three: 3
   },
-  b: [1,2,3]
+  b: [ 1, 2, 3 ]
 };
-var shallowEncoded = $.param(myObject, true);
-var shallowDecoded = decodeURIComponent(shallowEncoded);
+var shallowEncoded = $.param( myObject, true );
+var shallowDecoded = decodeURIComponent( shallowEncoded );
 
-alert(shallowEncoded);
-alert(shallowDecoded);
+alert( shallowEncoded );
+alert( shallowDecoded );
 </code></pre>
     <p>The values of <code>shallowEncoded</code> and <code>shallowDecoded</code> are alerted as follows:</p>
     <p>
@@ -83,29 +85,37 @@ alert(shallowDecoded);
   <example>
     <desc>Serialize a key/value object.</desc>
     <code><![CDATA[
-
-    var params = { width:1680, height:1050 };
-    var str = jQuery.param(params);
-    $("#results").text(str);
+var params = { width:1680, height:1050 };
+var str = jQuery.param( params );
+$( "#results" ).text( str );
 ]]></code>
-    <css><![CDATA[div { color:red; }]]></css>
-    <html><![CDATA[<div id="results"></div>]]></html>
+    <css><![CDATA[
+  div {
+    color: red;
+  }
+]]></css>
+    <html><![CDATA[
+<div id="results"></div>
+]]></html>
   </example>
   <example>
     <desc>Serialize a few complex objects</desc>
     <code><![CDATA[
 // <=1.3.2:
-$.param({ a: [2,3,4] }) // "a=2&a=3&a=4"
+$.param({ a: [2, 3, 4] }); // "a=2&a=3&a=4"
 // >=1.4:
-$.param({ a: [2,3,4] }) // "a[]=2&a[]=3&a[]=4"
+$.param({ a: [2, 3, 4] }); // "a[]=2&a[]=3&a[]=4"
 
 // <=1.3.2:
-$.param({ a: { b:1,c:2 }, d: [3,4,{ e:5 }] }) // "a=[object+Object]&d=3&d=4&d=[object+Object]"
+$.param({ a: { b:1, c:2 }, d: [ 3, 4, { e:5 } ] }); // "a=[object+Object]&d=3&d=4&d=[object+Object]"
 // >=1.4:
-$.param({ a: { b:1,c:2 }, d: [3,4,{ e:5 }] }) // "a[b]=1&a[c]=2&d[]=3&d[]=4&d[2][e]=5"
-
+$.param({ a: { b:1, c:2 }, d: [ 3, 4, { e:5 } ] }); // "a[b]=1&a[c]=2&d[]=3&d[]=4&d[2][e]=5"
 ]]></code>
-    <css><![CDATA[div { color:red; }]]></css>
+    <css><![CDATA[
+  div {
+    color: red;
+  }
+]]></css>
   </example>
   <category slug="miscellaneous/collection-manipulation"/>
   <category slug="forms"/>

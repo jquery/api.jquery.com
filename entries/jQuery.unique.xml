@@ -15,27 +15,29 @@
   <example>
     <desc>Removes any duplicate elements from the array of divs.</desc>
     <code><![CDATA[
+var divs = $( "div" ).get(); // unique() must take a native array
 
-  var divs = $("div").get(); // unique() must take a native array
+// Add 3 elements of class dup too (they are divs)
+divs = divs.concat( $( ".dup" ).get() );
+$( "div:eq(1)" ).text( "Pre-unique there are " + divs.length + " elements." );
 
-  // add 3 elements of class dup too (they are divs)
-  divs = divs.concat($(".dup").get());
-  $("div:eq(1)").text("Pre-unique there are " + divs.length + " elements.");
-
-  divs = jQuery.unique(divs);
-  $("div:eq(2)").text("Post-unique there are " + divs.length + " elements.")
-                .css("color", "red");
+divs = jQuery.unique( divs );
+$( "div:eq(2)" ).text( "Post-unique there are " + divs.length + " elements." )
+  .css( "color", "red" );
 ]]></code>
     <css><![CDATA[
-  div { color:blue; }
-  ]]></css>
-    <html><![CDATA[<div>There are 6 divs in this document.</div>
-  <div></div>
-  <div class="dup"></div>
-  <div class="dup"></div>
-
-  <div class="dup"></div>
-  <div></div>]]></html>
+  div {
+    color: blue;
+  }
+]]></css>
+    <html><![CDATA[
+<div>There are 6 divs in this document.</div>
+<div></div>
+<div class="dup"></div>
+<div class="dup"></div>
+<div class="dup"></div>
+<div></div>
+]]></html>
   </example>
   <category slug="utilities"/>
   <category slug="version/1.1.3"/>

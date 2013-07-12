@@ -18,7 +18,7 @@
     &lt;li id="bar"&gt;bar&lt;/li&gt;
   &lt;/ul&gt;
       </code></pre>
-      <p>With an index specified, <code>.get(index)</code> retrieves a single element:</p>
+      <p>With an index specified, <code>.get( index )</code> retrieves a single element:</p>
       <pre><code>console.log( $( "li" ).get( 0 ) );</code></pre>
       <p>Since the index is zero-based, the first list item is returned:</p>
       <p>
@@ -26,9 +26,9 @@
       </p>
 
       <p>Each jQuery object also masquerades as an array, so we can use the array dereferencing operator to get at the list item instead:</p>
-      <pre><code>console.log( $( "li" )[0] );</code></pre>
+      <pre><code>console.log( $( "li" )[ 0 ] );</code></pre>
       <p>However, this syntax lacks some of the additional capabilities of .get(), such as specifying a negative index:</p>
-      <pre><code>console.log( $( "li" ).get(-1) );</code></pre>
+      <pre><code>console.log( $( "li" ).get( -1 ) );</code></pre>
       <p>A negative index is counted from the end of the matched set, so this example returns the last item in the list:</p>
       <p>
         <samp>&lt;li id="bar"&gt;</samp>
@@ -37,20 +37,25 @@
     <example>
       <desc>Display the tag name of the click element.</desc>
       <code><![CDATA[
-  $( "*", document.body).click(function( e ) {
+  $( "*", document.body ).click(function( e ) {
     e.stopPropagation();
     var domEl = $( this ).get( 0 );
     $( "span:first" ).text( "Clicked on - " + domEl.nodeName );
   });
-  ]]></code>
+]]></code>
       <css><![CDATA[
-    span { color:red; }
-    div { background:yellow; }
-    ]]></css>
-      <html><![CDATA[<span>&nbsp;</span>
-    <p>In this paragraph is an <span>important</span> section</p>
-
-    <div><input type="text" /></div>]]></html>
+  span {
+    color: red;
+  }
+  div {
+    background: yellow;
+  }
+]]></css>
+      <html><![CDATA[
+<span>&nbsp;</span>
+<p>In this paragraph is an <span>important</span> section</p>
+<div><input type="text" /></div>
+]]></html>
     </example>
     <category slug="miscellaneous/dom-element-methods"/>
     <category slug="version/1.0"/>
@@ -64,10 +69,10 @@
     <longdesc>
       <p>Consider a simple unordered list:</p>
       <pre><code>
-  &lt;ul&gt;
-    &lt;li id="foo"&gt;foo&lt;/li&gt;
-    &lt;li id="bar"&gt;bar&lt;/li&gt;
-  &lt;/ul&gt;
+&lt;ul&gt;
+  &lt;li id="foo"&gt;foo&lt;/li&gt;
+  &lt;li id="bar"&gt;bar&lt;/li&gt;
+&lt;/ul&gt;
       </code></pre>
       <p>Without a parameter, <code>.get()</code> returns an array of all of the elements:</p>
       <pre><code>console.log( $( "li" ).get() );</code></pre>
@@ -79,23 +84,27 @@
     <example>
       <desc>Select all divs in the document and return the DOM Elements as an Array; then use the built-in reverse() method to reverse that array.</desc>
       <code><![CDATA[
-  function disp(divs) {
-    var a = [];
-    for ( var i = 0; i < divs.length; i++) {
-      a.push( divs[i].innerHTML );
-    }
-    $( "span" ).text( a.join(" ") );
+function disp(divs) {
+  var a = [];
+  for ( var i = 0; i < divs.length; i++ ) {
+    a.push( divs[ i ].innerHTML );
   }
-  disp( $( "div" ).get().reverse() );
-  ]]></code>
+  $( "span" ).text( a.join(" ") );
+}
+disp( $( "div" ).get().reverse() );
+]]></code>
       <css><![CDATA[
-    span { color:red; }
-    ]]></css>
-      <html><![CDATA[Reversed - <span></span>
+  span {
+    color: red;
+  }
+]]></css>
+      <html><![CDATA[
+Reversed - <span></span>
 
-    <div>One</div>
-    <div>Two</div>
-    <div>Three</div>]]></html>
+<div>One</div>
+<div>Two</div>
+<div>Three</div>
+]]></html>
     </example>
     <category slug="miscellaneous/dom-element-methods"/>
     <category slug="version/1.0"/>

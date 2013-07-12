@@ -11,8 +11,10 @@
   <longdesc/>
   <example>
     <desc>Check an object to see if it's in an XML document.</desc>
-    <code><![CDATA[jQuery.isXMLDoc(document) // false
-    jQuery.isXMLDoc(document.body) // false]]></code>
+    <code><![CDATA[
+jQuery.isXMLDoc( document ) // false
+jQuery.isXMLDoc( document.body ) // false
+]]></code>
   </example>
   <category slug="utilities"/>
   <category slug="version/1.1.4"/>

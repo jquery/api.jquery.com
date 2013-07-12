@@ -32,45 +32,47 @@
   &lt;li id="bar"&gt;bar&lt;/li&gt;
   &lt;li id="baz"&gt;baz&lt;/li&gt;
 &lt;/ul&gt;
-</code></pre>
+    </code></pre>
     <p>If we retrieve one of the three list items (for example, through a DOM function or as the context to an event handler), <code>.index()</code> can search for this list item within the set of matched elements:</p>
     <pre><code>
-var listItem = document.getElementById('bar');
-alert('Index: ' + $('li').index(listItem));
-We get back the zero-based position of the list item:
-</code></pre>
+var listItem = document.getElementById( "bar" );
+alert( "Index: " + $( "li" ).index( listItem ) );
+    </code></pre>
+    <p>We get back the zero-based position of the list item:</p>
     <p>
       <samp>Index: 1</samp>
     </p>
     <p>Similarly, if we retrieve a jQuery object consisting of one of the three list items, <code>.index()</code> will search for that list item:</p>
     <pre><code>
-var listItem = $('#bar');
-alert('Index: ' + $('li').index(listItem));
-</code></pre>
+var listItem = $( "#bar" );
+alert( "Index: " + $( "li" ).index( listItem ) );
+    </code></pre>
     <p>We get back the zero-based position of the list item:</p>
     <p>
       <samp>Index: 1</samp>
     </p>
     <p>Note that if the jQuery collection used as the <code>.index()</code> method's argument contains more than one element, the first element within the matched set of elements will be used.</p>
     <pre><code>
-var listItems = $('li:gt(0)');
-alert('Index: ' + $('li').index(listItems));
-</code></pre>
+var listItems = $( "li:gt(0)" );
+alert( "Index: " + $( "li" ).index( listItems ) );
+    </code></pre>
     <p>We get back the zero-based position of the first list item within the matched set:</p>
     <p>
       <samp>Index: 1</samp>
     </p>
     <p>If we use a string as the <code>.index()</code> method's argument, it is interpreted as a jQuery selector string. The first element among the object's matched elements which also matches this selector is located.</p>
     <pre><code>
-var listItem = $('#bar');
-alert('Index: ' + listItem.index('li'));
-</code></pre>
+var listItem = $( "#bar" );
+alert( "Index: " + listItem.index( "li" ) );
+    </code></pre>
     <p>We get back the zero-based position of the list item:</p>
     <p>
       <samp>Index: 1</samp>
     </p>
     <p>If we omit the argument, <code>.index()</code> will return the position of the first element within the set of matched elements in relation to its siblings:</p>
-    <pre><code>alert('Index: ' + $('#bar').index());</code></pre>
+    <pre><code>
+alert( "Index: " + $( "#bar" ).index() );
+    </code></pre>
     <p>Again, we get back the zero-based position of the list item:</p>
     <p>
       <samp>Index: 1</samp>
@@ -79,80 +81,131 @@ alert('Index: ' + listItem.index('li'));
   <example>
     <desc>On click, returns the index (based zero) of that div in the page.</desc>
     <code><![CDATA[
-$("div").click(function () {
+$( "div" ).click(function() {
   // this is the dom element clicked
-  var index = $("div").index(this);
-  $("span").text("That was div index #" + index);
+  var index = $( "div" ).index( this );
+  $( "span" ).text( "That was div index #" + index );
 });
 ]]></code>
     <css><![CDATA[
-div { background:yellow; margin:5px; }
-span { color:red; }
+  div {
+    background: yellow;
+    margin: 5px;
+  }
+  span {
+    color: red;
+  }
 ]]></css>
-    <html><![CDATA[<span>Click a div!</span>
+    <html><![CDATA[
+<span>Click a div!</span>
 <div>First div</div>
 <div>Second div</div>
-<div>Third div</div>]]></html>
+<div>Third div</div>
+]]></html>
   </example>
   <example>
     <desc>Returns the index for the element with ID bar.</desc>
-    <css>div { font-weight: bold; color: #090; }</css>
-    <code><![CDATA[var listItem = $('#bar');
-    $('div').html( 'Index: ' + $('li').index(listItem) );]]></code>
-    <html><![CDATA[<ul>
+    <css><![CDATA[
+  div {
+    font-weight: bold;
+    color: #090;
+  }
+]]></css>
+    <code><![CDATA[
+var listItem = $( "#bar" );
+$( "div" ).html( "Index: " + $( "li" ).index( listItem ) );
+]]></code>
+    <html><![CDATA[
+<ul>
   <li id="foo">foo</li>
   <li id="bar">bar</li>
   <li id="baz">baz</li>
 </ul>
-<div></div>]]></html>
+<div></div>
+]]></html>
   </example>
   <example>
     <desc>Returns the index for the first item in the jQuery collection.</desc>
-    <css>div { font-weight: bold; color: #090; }</css>
-    <code><![CDATA[var listItems = $('li:gt(0)');
-$('div').html( 'Index: ' + $('li').index(listItems) );
+    <css><![CDATA[
+  div {
+    font-weight: bold;
+    color: #090;
+  }
+]]></css>
+    <code><![CDATA[
+var listItems = $( "li:gt(0)" ");
+$( "div" ).html( "Index: " + $( "li" ).index( listItems ) );
 ]]></code>
-    <html><![CDATA[<ul>
+    <html><![CDATA[
+<ul>
   <li id="foo">foo</li>
   <li id="bar">bar</li>
   <li id="baz">baz</li>
 </ul>
-<div></div>]]></html>
+<div></div>
+]]></html>
   </example>
   <example>
     <desc>Returns the index for the element with ID bar in relation to all &lt;li&gt; elements.</desc>
-    <css>div { font-weight: bold; color: #090; }</css>
-    <code><![CDATA[$('div').html('Index: ' +  $('#bar').index('li') );]]></code>
-    <html><![CDATA[<ul>
+    <css><![CDATA[
+  div {
+    font-weight: bold;
+    color: #090;
+  }
+]]></css>
+    <code><![CDATA[
+$( "div" ).html( "Index: " +  $( "#bar" ).index( "li" ) );
+]]></code>
+    <html><![CDATA[
+<ul>
   <li id="foo">foo</li>
   <li id="bar">bar</li>
   <li id="baz">baz</li>
 </ul>
-<div></div>]]></html>
+<div></div>
+]]></html>
   </example>
   <example>
     <desc>Returns the index for the element with ID bar in relation to its siblings.</desc>
-    <css>div { font-weight: bold; color: #090; }</css>
-    <code><![CDATA[var barIndex = $('#bar').index();
-$('div').html( 'Index: ' +  barIndex );]]></code>
-    <html><![CDATA[<ul>
+    <css><![CDATA[
+  div {
+    font-weight: bold;
+    color: #090;
+  }
+]]></css>
+    <code><![CDATA[
+var barIndex = $( "#bar" ).index();
+$( "div" ).html( "Index: " +  barIndex );
+]]></code>
+    <html><![CDATA[
+<ul>
   <li id="foo">foo</li>
   <li id="bar">bar</li>
   <li id="baz">baz</li>
 </ul>
-<div></div>]]></html>
+<div></div>
+]]></html>
   </example>
   <example>
     <desc>Returns -1, as there is no element with ID foobar.</desc>
-    <css>div { font-weight: bold; color: #090; }</css>
-    <code><![CDATA[var foobar = $("li").index( $('#foobar') );
-$('div').html('Index: ' + foobar);]]></code>
-    <html><![CDATA[<ul>
+    <css><![CDATA[
+  div {
+    font-weight: bold;
+    color: #090;
+  }
+]]></css>
+    <code><![CDATA[
+var foobar = $( "li" ).index( $( "#foobar" ) );
+$( "div" ).html( "Index: " + foobar );
+]]></code>
+    <html><![CDATA[
+<ul>
   <li id="foo">foo</li>
   <li id="bar">bar</li>
   <li id="baz">baz</li>
 </ul>
-<div></div>]]></html>
+<div></div>
+]]></html>
   </example>
   <category slug="miscellaneous/dom-element-methods"/>
   <category slug="version/1.0"/>

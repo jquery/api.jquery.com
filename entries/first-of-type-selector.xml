@@ -12,23 +12,29 @@
   <example>
     <desc>Find the first span in each matched div and add a class to it.</desc>
     <code><![CDATA[
-$("span:first-of-type").addClass("fot");
+$( "span:first-of-type" ).addClass( "fot" );
 ]]></code>
     <css><![CDATA[
-span.fot { color: red; font-size: 120%; font-style: italic; }
-  ]]></css>
-    <html><![CDATA[<div>
-    <span>Corey,</span>
-    <span>Yehuda,</span>
-    <span>Adam,</span>
-    <span>Todd</span>
-  </div>
-  <div>
-    <b>Nobody,</b>
-    <span>Jörn,</span>
-    <span>Scott,</span>
-    <span>Timo</span>
-  </div>]]></html>
+  span.fot {
+    color: red;
+    font-size: 120%;
+    font-style: italic;
+  }
+]]></css>
+    <html><![CDATA[
+<div>
+  <span>Corey,</span>
+  <span>Yehuda,</span>
+  <span>Adam,</span>
+  <span>Todd</span>
+</div>
+<div>
+  <b>Nobody,</b>
+  <span>Jörn,</span>
+  <span>Scott,</span>
+  <span>Timo</span>
+</div>
+]]></html>
   </example>
   <category slug="selectors/child-filter-selectors"/>
   <category slug="version/1.9"/>

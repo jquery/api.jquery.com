@@ -12,21 +12,21 @@
     <desc>Determine if an object is a jQuery object</desc>
     <code><![CDATA[
 var a = { what: "A regular JS object" },
-    b = $('body');
+  b = $( "body" );
 
-if ( a.jquery ) { // falsy, since it's undefined
-    alert(' a is a jQuery object! ');
+if ( a.jquery ) { // Falsy, since it's undefined
+  alert( " a is a jQuery object! " );
 }
 
-if ( b.jquery ) { // truthy, since it's a string
-    alert(' b is a jQuery object! ');
+if ( b.jquery ) { // Truthy, since it's a string
+    alert( " b is a jQuery object! " );
 }
 ]]></code>
   </example>
   <example>
     <desc>Get the current version of jQuery running on the page</desc>
     <code><![CDATA[
-alert( 'You are running jQuery version: ' + $.fn.jquery );
+alert( "You are running jQuery version: " + $.fn.jquery );
 ]]></code>
   </example>
   <category slug="internals"/>

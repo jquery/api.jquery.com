@@ -24,14 +24,20 @@
   </longdesc>
   <example>
     <desc>Watch for a focus to occur within the paragraphs on the page.</desc>
-    <css><![CDATA[span {display:none;}]]></css>
+    <css><![CDATA[
+  span {
+    display: none;
+  }
+]]></css>
     <code><![CDATA[
-$("p").focusin(function() {
-  $(this).find("span").css('display','inline').fadeOut(1000);
+$( "p" ).focusin(function() {
+  $( this ).find( "span" ).css( "display", "inline" ).fadeOut( 1000 );
 });
 ]]></code>
-    <html><![CDATA[<p><input type="text" /> <span>focusin fire</span></p>
-<p><input type="password" /> <span>focusin fire</span></p>]]></html>
+    <html><![CDATA[
+<p><input type="text"> <span>focusin fire</span></p>
+<p><input type="password"> <span>focusin fire</span></p>
+]]></html>
   </example>
   <category slug="events/form-events"/>
   <category slug="version/1.4"/>

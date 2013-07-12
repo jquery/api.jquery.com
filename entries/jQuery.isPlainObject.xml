@@ -12,14 +12,16 @@
     <p><strong>Note:</strong> Host objects (or objects used by browser host environments to complete the execution environment of ECMAScript) have a number of inconsistencies which are difficult to robustly feature detect cross-platform. As a result of this,  <code>$.isPlainObject()</code> may evaluate inconsistently across browsers in certain instances.</p>
     <p>An example of this is a test against <code>document.location</code> using <code>$.isPlainObject()</code> as follows:</p>
     <pre><code>
-  console.log($.isPlainObject(document.location));
-</code></pre>
+console.log( $.isPlainObject( document.location ) );
+    </code></pre>
     <p>which throws an invalid pointer exception in IE8. With this in mind, it's important to be aware of any of the gotchas involved in using <code>$.isPlainObject()</code> against older browsers. A couple basic examples that do function correctly cross-browser can be found below.</p>
   </longdesc>
   <example>
     <desc>Check an object to see if it's a plain object.</desc>
-    <code><![CDATA[jQuery.isPlainObject({}) // true
-jQuery.isPlainObject("test") // false]]></code>
+    <code><![CDATA[
+jQuery.isPlainObject({}) // true
+jQuery.isPlainObject( "test" ) // false
+]]></code>
   </example>
   <category slug="utilities"/>
   <category slug="version/1.4"/>
