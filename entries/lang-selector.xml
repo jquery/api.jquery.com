@@ -35,16 +35,41 @@ $( "div:lang(es-es)" ).addClass( "spain" );
 </div>
 ]]></html>
 <css><![CDATA[
-body { background-color: #ccc; }
-h3 { margin: .25em 0; }
-div { line-height: 1.5em}
-.usa { background-color: #f00; color: #fff; }
-.usa .usa { background-color: #fff; color: #000; }
-.usa .usa .usa { background-color: #00f; color: #fff; }
-
-.spain { background-color: #f00; color: #ff0; }
-.spain .spain { background-color: #ff0; color: #f00; line-height: 3em; }
-.spain .spain .spain { background-color: #f00; color: #ff0; line-height: 1.5em; }
+  body {
+    background-color: #ccc;
+  }
+  h3 {
+    margin: .25em 0;
+  }
+  div {
+    line-height: 1.5em
+  }
+  .usa {
+    background-color: #f00;
+    color: #fff;
+  }
+  .usa .usa {
+    background-color: #fff;
+    color: #000;
+  }
+  .usa .usa .usa {
+    background-color: #00f;
+    color: #fff;
+  }
+  .spain {
+    background-color: #f00;
+    color: #ff0;
+  }
+  .spain .spain {
+    background-color: #ff0;
+    color: #f00;
+    line-height: 3em;
+  }
+  .spain .spain .spain {
+    background-color: #f00;
+    color: #ff0;
+    line-height: 1.5em;
+  }
 ]]></css>
   </example>
   <category slug="selectors/basic-filter-selectors"/>

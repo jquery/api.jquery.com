@@ -34,26 +34,32 @@
     <p>This method provides a means to attach delegated event handlers to the <code>document</code> element of a page, which simplifies the use of event handlers when content is dynamically added to a page. See the discussion of direct versus delegated events in the <a href="http://api.jquery.com/on/"><code>.on()</code></a> method for more information. </p>
     <p>Rewriting the <code>.live()</code> method in terms of its successors is straightforward; these are templates for equivalent calls for all three event attachment methods:</p>
     <pre><code>
-$(selector).live(events, data, handler);                // jQuery 1.3+
-$(document).delegate(selector, events, data, handler);  // jQuery 1.4.3+
-$(document).on(events, selector, data, handler);        // jQuery 1.7+
-</code></pre>
+$( selector ).live( events, data, handler );                // jQuery 1.3+
+$( document ).delegate( selector, events, data, handler );  // jQuery 1.4.3+
+$( document ).on( events, selector, data, handler );        // jQuery 1.7+
+    </code></pre>
     <p>The <code>events</code> argument can either be a space-separated list of event type names and optional namespaces, or an object of event name strings and handlers. The <code>data</code> argument is optional and can be omitted. For example, the following three method calls are functionally equivalent (but see below for more effective and performant ways to attach delegated event handlers):</p>
     <pre><code>
-$("a.offsite").live("click", function(){ alert("Goodbye!"); });                // jQuery 1.3+
-$(document).delegate("a.offsite", "click", function(){ alert("Goodbye!"); });  // jQuery 1.4.3+
-$(document).on("click", "a.offsite", function(){ alert("Goodbye!"); });        // jQuery 1.7+
+$( "a.offsite" ).live( "click", function() {
+  alert( "Goodbye!" ); // jQuery 1.3+
+});
+$( document ).delegate( "a.offsite", "click", function() {
+  alert( "Goodbye!" ); // jQuery 1.4.3+
+});
+$( document ).on( "click", "a.offsite", function() {
+  alert( "Goodbye!" );  // jQuery 1.7+
+});
 </code></pre>
     <p>Use of the <code>.live()</code> method is no longer recommended since later versions of jQuery offer better methods that do not have its drawbacks. In particular, the following issues arise with the use of <code>.live()</code>:</p>
     <ul>
       <li>jQuery attempts to retrieve the elements specified by the selector before calling the <code>.live()</code> method, which may be time-consuming on large documents.</li>
-      <li>Chaining methods is not supported. For example, <code>$("a").find(".offsite, .external").live( ... ); </code> is <em>not</em> valid and does not work as expected.</li>
+      <li>Chaining methods is not supported. For example, <code>$( "a" ).find( ".offsite, .external" ).live( ... ); </code> is <em>not</em> valid and does not work as expected.</li>
       <li>Since all <code>.live()</code> events are attached at the <code>document</code> element, events take the longest and slowest possible path before they are handled.</li>
       <li>On mobile iOS (iPhone, iPad and iPod Touch) the <code>click</code> event does not bubble to the document body for most elements and cannot be used with <code>.live()</code> without applying one of the following workarounds:
 <ol><li>Use natively clickable elements such as <code>a</code> or <code>button</code>, as both of these do bubble to <code>document</code>.</li><li>Use <code>.on()</code> or <code>.delegate()</code> attached to an element below the level of <code>document.body</code>, since mobile iOS does bubble within the body.</li><li>Apply the CSS style <code>cursor:pointer</code> to the element that needs to bubble clicks (or a parent including <code>document.documentElement</code>). Note however, this will disable copy\paste on the element and cause it to be highlighted when touched.</li></ol>
 </li>
-      <li>Calling <a href="http://api.jquery.com/event.stopPropagation"><code>event.stopPropagation()</code></a> in the event handler is ineffective in stopping event handlers attached lower in the document; the event has already propagated to <code>document</code>.</li>
-      <li>The <code>.live()</code> method interacts with other event methods in ways that can be surprising, e.g., <code>$(document).off("click")</code> removes all click handlers attached by any call to <code>.live()</code>!</li>
+      <li>Calling <a href="/event.stopPropagation/"><code>event.stopPropagation()</code></a> in the event handler is ineffective in stopping event handlers attached lower in the document; the event has already propagated to <code>document</code>.</li>
+      <li>The <code>.live()</code> method interacts with other event methods in ways that can be surprising, e.g., <code>$( document ).off( "click" )</code> removes all click handlers attached by any call to <code>.live()</code>!</li>
     </ul>
     <p>For pages still using <code>.live()</code>, this list of version-specific differences may be helpful:</p>
     <ul>
@@ -64,40 +70,48 @@ $(document).on("click", "a.offsite", function(){ alert("Goodbye!"); });        /
   </longdesc>
   <example>
     <desc>Cancel a default action and prevent it from bubbling up by returning false.</desc>
-    <code><![CDATA[$("a").live("click", function() { return false; })]]></code>
+    <code><![CDATA[
+$( "a" ).live( "click", function() {
+  return false;
+});
+]]></code>
   </example>
   <example>
     <desc>Cancel only the default action by using the preventDefault method.</desc>
-    <code><![CDATA[$("a").live("click", function(event){
+    <code><![CDATA[
+$( "a" ).live( "click", function( event ){
   event.preventDefault();
-});]]></code>
+});
+]]></code>
   </example>
   <example>
     <desc>Bind custom events with .live().</desc>
     <code><![CDATA[
-$("p").live("myCustomEvent", function(e, myName, myValue) {
-  $(this).text("Hi there!");
-  $("span").stop().css("opacity", 1)
-           .text("myName = " + myName)
-           .fadeIn(30).fadeOut(1000);
-});
-$("button").click(function () {
-  $("p").trigger("myCustomEvent");
+$( "p" ).live( "myCustomEvent", function( e, myName, myValue ) {
+  $( this ).text( "Hi there!" );
+  $( "span" )
+    .stop()
+    .css( "opacity", 1 )
+    .text( "myName = " + myName )
+    .fadeIn( 30 ).fadeOut( 1000 );
+  });
+$( "button" ).click(function() {
+  $( "p" ).trigger( "myCustomEvent" );
 });
 ]]></code>
   </example>
   <example>
     <desc>Use an object to bind multiple live event handlers. Note that .live() calls the click, mouseover, and mouseout event handlers for all paragraphs--even new ones.</desc>
     <code><![CDATA[
-$("p").live({
+$( "p" ).live({
   click: function() {
-    $(this).after("<p>Another paragraph!</p>");
+    $( this ).after( "<p>Another paragraph!</p>" );
   },
   mouseover: function() {
-    $(this).addClass("over");
+    $( this ).addClass( "over" );
   },
   mouseout: function() {
-    $(this).removeClass("over");
+    $( this ).removeClass( "over" );
   }
 });
 ]]></code>

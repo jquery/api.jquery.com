@@ -12,29 +12,33 @@
   <example>
     <desc>Find the last span in each matched div and add some css plus a hover state.</desc>
     <code><![CDATA[
-$("span:last-of-type")
-    .css({color:"red", fontSize:"80%"})
-    .hover(function () {
-          $(this).addClass("solast");
-        }, function () {
-          $(this).removeClass("solast");
-        });
+$( "span:last-of-type" )
+  .css({ color:"red", fontSize:"80%" })
+  .hover(function() {
+    $( this ).addClass( "solast" );
+  }, function() {
+    $( this ).removeClass( "solast" );
+  });
 ]]></code>
     <css><![CDATA[
-span.solast { text-decoration:line-through; }
-  ]]></css>
-    <html><![CDATA[<div>
-    <span>Corey,</span>
-    <span>Yehuda,</span>
-    <span>Adam,</span>
-    <span>Todd</span>
-  </div>
-  <div>
-    <span>Jörn,</span>
-    <span>Scott,</span>
-    <span>Timo,</span>
-    <b>Nobody</b>
-  </div>]]></html>
+  span.solast {
+    text-decoration: line-through;
+  }
+]]></css>
+    <html><![CDATA[
+<div>
+  <span>Corey,</span>
+  <span>Yehuda,</span>
+  <span>Adam,</span>
+  <span>Todd</span>
+</div>
+<div>
+  <span>Jörn,</span>
+  <span>Scott,</span>
+  <span>Timo,</span>
+  <b>Nobody</b>
+</div>
+]]></html>
   </example>
   <category slug="selectors/child-filter-selectors"/>
   <category slug="version/1.9"/>

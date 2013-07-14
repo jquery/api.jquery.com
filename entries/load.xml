@@ -18,23 +18,29 @@
   <desc>Load data from the server and place the returned HTML into the matched element.</desc>
   <longdesc>
     <div class="warning">
-      <p>Note: The event handling suite also has a method named <code><a href="/load-event">.load()</a></code>. jQuery determines which method to fire based on the set of arguments passed to it.</p>
+      <p>Note: The event handling suite also has a method named <code><a href="/load-event/">.load()</a></code>. jQuery determines which method to fire based on the set of arguments passed to it.</p>
     </div>
     <p>This method is the simplest way to fetch data from the server. It is roughly equivalent to <code>$.get(url, data, success)</code> except that it is a method rather than global function and it has an implicit callback function.  When a successful response is detected (i.e. when <code>textStatus</code> is "success" or "notmodified"), <code>.load()</code> sets the HTML contents of the matched element to the returned data. This means that most uses of the method can be quite simple:</p>
-    <pre><code>$('#result').load('ajax/test.html');</code></pre>
+    <pre><code>
+$( "#result" ).load( "ajax/test.html" );
+    </code></pre>
     <p>If no element is matched by the selector — in this case, if the document does not contain an element with id="result" — the Ajax request will <em>not</em> be sent.</p>
     <h4 id="callback-function">Callback Function</h4>
     <p>If a "complete" callback is provided, it is executed after post-processing and HTML insertion has been performed. The callback is fired once for each element in the jQuery collection, and <code>this</code> is set to each DOM element in turn.</p>
-    <pre><code>$('#result').load('ajax/test.html', function() {
-  alert('Load was performed.');
-});</code></pre>
+    <pre><code>
+$( "#result" ).load( "ajax/test.html", function() {
+  alert( "Load was performed." );
+});
+    </code></pre>
     <p>In the two examples above, if the current document does not contain an element with an ID of "result," the <code>.load()</code> method is not executed.</p>
     <h4 id="request-method">Request Method</h4>
     <p>The POST method is used if data is provided as an object; otherwise, GET is assumed.</p>
     <h4 id="loading-page-fragments">Loading Page Fragments</h4>
-    <p>The <code>.load()</code> method, unlike <code><a href="/jQuery.get">$.get()</a></code>, allows us to specify a portion of the remote document to be inserted. This is achieved with a special syntax for the <code>url</code> parameter. If one or more space characters are included in the string, the portion of the string following the first space is assumed to be a jQuery selector that determines the content to be loaded.   </p>
+    <p>The <code>.load()</code> method, unlike <code><a href="/jQuery.get/">$.get()</a></code>, allows us to specify a portion of the remote document to be inserted. This is achieved with a special syntax for the <code>url</code> parameter. If one or more space characters are included in the string, the portion of the string following the first space is assumed to be a jQuery selector that determines the content to be loaded.   </p>
     <p>We could modify the example above to use only part of the document that is fetched:</p>
-    <pre><code>$('#result').load('ajax/test.html #container');</code></pre>
+    <pre><code>
+$( "#result" ).load( "ajax/test.html #container" );
+    </code></pre>
     <p>When this method executes, it retrieves the content of <code>ajax/test.html</code>, but then jQuery parses the returned document to find the element with an ID of <code>container</code>. This element, along with its contents, is inserted into the element with an ID of <code>result</code>, and the rest of the retrieved document is discarded.</p>
     <p>jQuery uses the browser's <code>.innerHTML</code> property to parse the retrieved document and insert it into the current document. During this process, browsers often filter elements from the document such as <code>&lt;html&gt;</code>, <code>&lt;title&gt;</code>, or <code>&lt;head&gt;</code> elements. As a result, the elements retrieved by <code>.load()</code> may not be exactly the same as if the document were retrieved directly by the browser.</p>
     <h4 id="script-execution">Script Execution</h4>
@@ -42,22 +48,25 @@
 </p>
     <p>Here, any JavaScript loaded into <code>#a</code> as a part of the document will successfully execute.</p>
     <pre><code>
-$('#a').load('article.html');
-</code></pre>
+$( "#a" ).load( "article.html" );
+    </code></pre>
     <p>However, in the following case, script blocks in the document being loaded into <code>#b</code> are stripped out and not executed:</p>
     <pre><code>
-$('#b').load('article.html #target');
+$( "#b" ).load( "article.html #target" );
 </code></pre>
   </longdesc>
   <note id="same-origin-policy" type="additional"/>
   <example>
     <desc>Load the main page's footer navigation into an ordered list.</desc>
     <code><![CDATA[
-  $("#new-nav").load("/ #jq-footerNavigation li");
+$( "#new-nav" ).load( "/ #jq-footerNavigation li" );
 ]]></code>
     <css><![CDATA[
- body{ font-size: 12px; font-family: Arial; }
- ]]></css>
+  body {
+    font-size: 12px;
+    font-family: Arial;
+  }
+]]></css>
     <html><![CDATA[
 <b>Footer navigation:</b>
 <ol id="new-nav"></ol>
@@ -66,37 +75,48 @@ $('#b').load('article.html #target');
   <example>
     <desc>Display a notice if the Ajax request encounters an error.</desc>
     <code><![CDATA[
-$("#success").load("/not-here.php", function(response, status, xhr) {
-  if (status == "error") {
+$( "#success" ).load( "/not-here.php", function( response, status, xhr ) {
+  if ( status == "error" ) {
     var msg = "Sorry but there was an error: ";
-    $("#error").html(msg + xhr.status + " " + xhr.statusText);
+    $( "#error" ).html( msg + xhr.status + " " + xhr.statusText );
   }
 });
-  ]]></code>
+]]></code>
     <css><![CDATA[
-  body{ font-size: 12px; font-family: Arial; }
-  ]]></css>
+  body {
+    font-size: 12px;
+    font-family: Arial;
+  }
+]]></css>
     <html><![CDATA[
 <b>Successful Response (should be blank):</b>
 <div id="success"></div>
 <b>Error Response:</b>
 <div id="error"></div>
-  ]]></html>
+]]></html>
   </example>
   <example>
     <desc>Load the feeds.html file into the div with the ID of feeds.</desc>
-    <code><![CDATA[$("#feeds").load("feeds.html");]]></code>
-    <results><![CDATA[<div id="feeds"><b>45</b> feeds found.</div>]]></results>
+    <code><![CDATA[
+$( "#feeds" ).load( "feeds.html" );
+]]></code>
+    <results><![CDATA[
+<div id="feeds"><b>45</b> feeds found.</div>
+]]></results>
   </example>
   <example>
     <desc>pass arrays of data to the server.</desc>
-    <code><![CDATA[$("#objectID").load("test.php", { 'choices[]': ["Jon", "Susan"] } );]]></code>
+    <code><![CDATA[
+$( "#objectID" ).load( "test.php", { "choices[]": [ "Jon", "Susan" ] } );
+]]></code>
   </example>
   <example>
     <desc>Same as above, but will POST the additional parameters to the server and a callback that is executed when the server is finished responding.</desc>
-    <code><![CDATA[$("#feeds").load("feeds.php", {limit: 25}, function(){
-alert("The last 25 entries in the feed have been loaded");
-});]]></code>
+    <code><![CDATA[
+$( "#feeds" ).load( "feeds.php", {limit: 25}, function() {
+  alert( "The last 25 entries in the feed have been loaded" );
+});
+]]></code>
   </example>
   <category slug="ajax/shorthand-methods"/>
   <category slug="version/1.0"/>

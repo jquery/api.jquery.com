@@ -12,14 +12,16 @@
   <note id="jquery-selector-extension" type="additional" data-selector=":last"/>
   <example>
     <desc>Finds the last table row.</desc>
-    <code><![CDATA[$("tr:last").css({backgroundColor: 'yellow', fontWeight: 'bolder'});]]></code>
-    <html><![CDATA[<table>
-
+    <code><![CDATA[
+$( "tr:last" ).css({ backgroundColor: "yellow", fontWeight: "bolder" });
+]]></code>
+    <html><![CDATA[
+<table>
   <tr><td>First Row</td></tr>
   <tr><td>Middle Row</td></tr>
   <tr><td>Last Row</td></tr>
-
-</table>]]></html>
+</table>
+]]></html>
   </example>
   <category slug="selectors/basic-filter-selectors"/>
   <category slug="selectors/jquery-selector-extensions"/>

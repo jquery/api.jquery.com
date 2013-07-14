@@ -22,30 +22,36 @@
   </signature>
   <longdesc>
     <p><strong>Note:</strong> as the <code>keypress</code> event isn't covered by any official specification, the actual behavior encountered when using it may differ across browsers, browser versions, and platforms.</p>
-    <p>This method is a shortcut for <code>.on('keypress', handler)</code> in the first two variations, and <code>.trigger('keypress')</code> in the third.</p>
+    <p>This method is a shortcut for <code>.on( "keypress", handler )</code> in the first two variations, and <code>.trigger( "keypress" )</code> in the third.</p>
     <p>The <code>keypress</code> event is sent to an element when the browser registers keyboard input. This is similar to the <code>keydown</code> event, except that modifier and non-printing keys such as <kbd>Shift</kbd>, <kbd>Esc</kbd>, and <kbd>delete</kbd> trigger <code>keydown</code> events but not <code>keypress</code> events. Other differences between the two events may arise depending on platform and browser.</p>
     <p>A <code>keypress</code> event handler can be attached to any element, but the event is only sent to the element that has the focus. Focusable elements can vary between browsers, but form controls can always get focus so are reasonable candidates for this event type.</p>
     <p>For example, consider the HTML:</p>
-    <pre><code>&lt;form&gt;
+    <pre><code>
+&lt;form&gt;
   &lt;fieldset&gt;
-    &lt;input id="target" type="text" value="Hello there" /&gt;
+    &lt;input id="target" type="text" value="Hello there"&gt;
   &lt;/fieldset&gt;
 &lt;/form&gt;
 &lt;div id="other"&gt;
   Trigger the handler
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;
+    </code></pre>
     <p>The event handler can be bound to the input field:</p>
-    <pre><code>$("#target").keypress(function() {
-  console.log("Handler for .keypress() called.");
-});</code></pre>
+    <pre><code>
+$( "#target" ).keypress(function() {
+  console.log( "Handler for .keypress() called." );
+});
+    </code></pre>
     <p>Now when the insertion point is inside the field, pressing a key displays the log:</p>
     <p>
       <samp>Handler for .keypress() called.</samp>
     </p>
     <p>To trigger the event manually, apply <code>.keypress()</code> without an argument:</p>
-    <pre><code>$('#other').click(function() {
-  $("#target").keypress();
-});</code></pre>
+    <pre><code>
+$( "#other" ).click(function() {
+  $( "#target" ).keypress();
+});
+    </code></pre>
     <p>After this code executes, clicks on the <samp>Trigger the handler</samp> div will also log the message.</p>
     <p>If key presses anywhere need to be caught (for example, to implement global shortcut keys on a page), it is useful to attach this behavior to the <code>document</code> object. Because of event bubbling, all key presses will make their way up the DOM to the <code>document</code> object unless explicitly stopped.</p>
     <p>To determine which character was entered, examine the <code>event</code> object that is passed to the handler function. While browsers use differing properties to store this information, jQuery normalizes the <code>.which</code> property so you can reliably use it to retrieve the character code.</p>
@@ -55,7 +61,7 @@
     <desc>Show the event object when a key is pressed in the input. Note: This demo relies on a simple $.print() plugin (http://api.jquery.com/resources/events.js) for the event object's output.</desc>
     <code><![CDATA[
 var xTriggered = 0;
-$("#target").keypress(function(event) {
+$( "#target" ).keypress(function( event ) {
   if ( event.which == 13 ) {
      event.preventDefault();
    }
@@ -65,35 +71,41 @@ $("#target").keypress(function(event) {
   $.print( event );
 });
 
-$("#other").click(function() {
-  $("#target").keypress();
-});]]></code>
+$( "#other" ).click(function() {
+  $( "#target" ).keypress();
+});
+]]></code>
     <css><![CDATA[
-fieldset { margin-bottom: 1em; }
-input { display: block; margin-bottom: .25em; }
-#print-output {
-  width: 100%;
-}
-.print-output-line {
-  white-space: pre;
-  padding: 5px;
-  font-family: monaco, monospace;
-  font-size: .7em;
-}
-
+  fieldset {
+    margin-bottom: 1em;
+  }
+  input {
+    display: block;
+    margin-bottom: .25em;
+  }
+  #print-output {
+    width: 100%;
+  }
+  .print-output-line {
+    white-space: pre;
+    padding: 5px;
+    font-family: monaco, monospace;
+    font-size: .7em;
+  }
 ]]></css>
     <height>460</height>
-    <html><![CDATA[<form>
+    <html><![CDATA[
+<form>
   <fieldset>
     <label for="target">Type Something:</label>
-    <input id="target" type="text" />
+    <input id="target" type="text">
   </fieldset>
 </form>
 <button id="other">
   Trigger the handler
 </button>
 <script src="http://api.jquery.com/resources/events.js"></script>
-  ]]></html>
+]]></html>
   </example>
   <category slug="events/keyboard-events"/>
   <category slug="version/1.0"/>

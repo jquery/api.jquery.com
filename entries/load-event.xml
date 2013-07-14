@@ -18,19 +18,23 @@
     </argument>
   </signature>
   <longdesc>
-    <p>This method is a shortcut for <code>.on('load', handler)</code>.</p>
+    <p>This method is a shortcut for <code>.on( "load", handler )</code>.</p>
     <p>The <code>load</code> event is sent to an element when it and all sub-elements have been completely loaded. This event can be sent to any element associated with a URL: images, scripts, frames, iframes, and the <code>window</code> object.</p>
     <p>For example, consider a page with a simple image:</p>
-    <pre><code>&lt;img src="book.png" alt="Book" id="book" /&gt;</code></pre>
+    <pre><code>
+&lt;img src="book.png" alt="Book" id="book"&gt;
+    </code></pre>
     <p>The event handler can be bound to the image:</p>
-    <pre><code>$('#book').load(function() {
+    <pre><code>
+$( "#book" ).load(function() {
   // Handler for .load() called.
-});</code></pre>
+});
+    </code></pre>
     <p>As soon as the image has been loaded, the handler is called.</p>
     <p>In general, it is not necessary to wait for all images to be fully loaded. If code can be executed earlier, it is usually best to place it in a handler sent to the <code>.ready()</code> method.
     </p>
     <div class="warning">
-      <p>The Ajax module also has a method named <code><a href="/load">.load()</a></code>. Which one is fired depends on the set of arguments passed.</p>
+      <p>The Ajax module also has a method named <code><a href="/load/">.load()</a></code>. Which one is fired depends on the set of arguments passed.</p>
     </div>
     <div class="warning">
       <p>
@@ -50,17 +54,21 @@
   </longdesc>
   <example>
     <desc>Run a function when the page is fully loaded including graphics.</desc>
-    <code><![CDATA[$(window).load(function () {
-  // run code
-});]]></code>
+    <code><![CDATA[
+$( window ).load(function() {
+  // Run code
+});
+]]></code>
   </example>
   <example>
     <desc>Add the class bigImg to all images with height greater then 100 upon each image load.</desc>
-    <code><![CDATA[$('img.userIcon').load(function(){
-  if($(this).height() > 100) {
-    $(this).addClass('bigImg');
+    <code><![CDATA[
+$( "img.userIcon" ).load(function(){
+  if( $( this ).height() > 100) {
+    $( this ).addClass( "bigImg" );
   }
-});]]></code>
+});
+]]></code>
   </example>
   <category slug="events/document-loading"/>
   <category slug="version/1.0"/>

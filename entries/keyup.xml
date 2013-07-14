@@ -21,28 +21,33 @@
     <added>1.0</added>
   </signature>
   <longdesc>
-    <p>This method is a shortcut for <code>.on('keyup', handler)</code> in the first two variations, and <code>.trigger('keyup')</code> in the third.</p>
+    <p>This method is a shortcut for <code>.on( "keyup", handler )</code> in the first two variations, and <code>.trigger( "keyup" )</code> in the third.</p>
     <p>The <code>keyup</code> event is sent to an element when the user releases a key on the keyboard. It can be attached to any element, but the event is only sent to the element that has the focus. Focusable elements can vary between browsers, but form elements can always get focus so are reasonable candidates for this event type.</p>
     <p>For example, consider the HTML:</p>
-    <pre><code>&lt;form&gt;
-  &lt;input id="target" type="text" value="Hello there" /&gt;
+    <pre><code>
+&lt;form&gt;
+  &lt;input id="target" type="text" value="Hello there"&gt;
 &lt;/form&gt;
 &lt;div id="other"&gt;
   Trigger the handler
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;
+    </code></pre>
     <p>The event handler can be bound to the input field:</p>
-    <pre><code>$('#target').keyup(function() {
-  alert('Handler for .keyup() called.');
+    <pre><code>
+$( "#target" ).keyup(function() {
+  alert( "Handler for .keyup() called." );
 });
-</code></pre>
+    </code></pre>
     <p>Now when the insertion point is inside the field and a key is pressed and released, the alert is displayed:</p>
     <p>
       <samp>Handler for .keyup() called.</samp>
     </p>
     <p>To trigger the event manually, apply <code>.keyup()</code> without arguments:</p>
-    <pre><code>$('#other').click(function() {
-  $('#target').keyup();
-});</code></pre>
+    <pre><code>
+$( "#other" ).click(function() {
+  $( "#target" ).keyup();
+});
+    </code></pre>
     <p>After this code executes, clicks on <samp>Trigger the handler</samp> will also alert the message.</p>
     <p>If key presses anywhere need to be caught (for example, to implement global shortcut keys on a page), it is useful to attach this behavior to the <code>document</code> object. Because of event bubbling, all key presses will make their way up the DOM to the <code>document</code> object unless explicitly stopped.</p>
     <p>To determine which key was pressed, examine the event object that is passed to the handler function. While browsers use differing properties to store this information, jQuery normalizes the <code>.which</code> property so you can reliably use it to retrieve the key code. This code corresponds to a key on the keyboard, including codes for special keys such as arrows. For catching actual text entry, <code>.keypress()</code> may be a better choice.</p>
@@ -51,45 +56,52 @@
     <desc>Show the event object for the keyup handler (using a simple $.print plugin) when a key is released in the input.</desc>
     <code><![CDATA[
 var xTriggered = 0;
-$('#target').keyup(function(event) {
+$( "#target" ).keyup(function( event ) {
    xTriggered++;
-   var msg = 'Handler for .keyup() called ' + xTriggered + ' time(s).';
-  $.print(msg, 'html');
-  $.print(event);
-}).keydown(function(event) {
-  if (event.which == 13) {
+   var msg = "Handler for .keyup() called " + xTriggered + " time(s).";
+  $.print( msg, "html" );
+  $.print( event );
+}).keydown(function( event ) {
+  if ( event.which == 13 ) {
     event.preventDefault();
   }
 });
 
-$('#other').click(function() {
-  $('#target').keyup();
-});]]></code>
+$( "#other").click(function() {
+  $( "#target" ).keyup();
+});
+]]></code>
     <css><![CDATA[
-fieldset { margin-bottom: 1em; }
-input { display: block; margin-bottom: .25em; }
-#print-output {
-  width: 100%;
-}
-.print-output-line {
-  white-space: pre;
-  padding: 5px;
-  font-family: monaco, monospace;
-  font-size: .7em;
-}
-
+  fieldset {
+    margin-bottom: 1em;
+  }
+  input {
+    display: block;
+    margin-bottom: .25em;
+  }
+  #print-output {
+    width: 100%;
+  }
+  .print-output-line {
+    white-space: pre;
+    padding: 5px;
+    font-family: monaco, monospace;
+    font-size: .7em;
+  }
 ]]></css>
     <height>460</height>
-    <html><![CDATA[<form>
+    <html><![CDATA[
+<form>
   <fieldset>
     <label for="target">Type Something:</label>
-    <input id="target" type="text" />
+    <input id="target" type="text">
   </fieldset>
 </form>
 <button id="other">
   Trigger the handler
 </button>
-<script type="text/javascript" src="/resources/events.js"></script>]]></html>
+<script type="text/javascript" src="/resources/events.js"></script>
+]]></html>
   </example>
   <category slug="events/keyboard-events"/>
   <category slug="version/1.0"/>
