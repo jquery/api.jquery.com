@@ -228,8 +228,8 @@ $( "p" )
       backgroundColor : "#ddd",
       fontWeight: ""
     };
-  $( this ).css( styles );
-});
+    $( this ).css( styles );
+  });
 ]]></code>
       <css><![CDATA[
   p {
