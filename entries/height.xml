@@ -14,7 +14,7 @@
       </p>
       <p>This method is also able to find the height of the window and document.</p>
       <pre><code>
-$( window ).height();   // returns height of browser viewport
+$( window ).height(); // returns height of browser viewport
 $( document ).height(); // returns height of HTML document
       </code></pre>
       <p>Note that <code>.height()</code> will always return the content height, regardless of the value of the CSS <code>box-sizing</code> property. As of jQuery 1.8, this may require retrieving the CSS height plus <code>box-sizing</code> property and then subtracting any potential border and padding on each element when the element has <code>box-sizing: border-box</code>. To avoid this penalty, use <code>.css( "height" )</code> rather than <code>.height()</code>.</p>
@@ -25,8 +25,8 @@ $( document ).height(); // returns height of HTML document
     <example>
       <desc>Show various heights.  Note the values are from the iframe so might be smaller than you expected.  The yellow highlight shows the iframe body.</desc>
       <code><![CDATA[
-function showHeight( ele, h ) {
-  $( "div" ).text( "The height for the " + ele + " is " + h + "px." );
+function showHeight( element, height ) {
+  $( "div" ).text( "The height for the " + element + " is " + height + "px." );
 }
 $( "#getp" ).click(function() {
   showHeight( "paragraph", $( "p" ).height() );
@@ -53,7 +53,7 @@ $( "#getw" ).click(function() {
   div {
     color: red;
     font-weight: bold;
-    }
+  }
 ]]></css>
       <html><![CDATA[
 <button id="getp">Get Paragraph Height</button>

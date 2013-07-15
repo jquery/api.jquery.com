@@ -24,7 +24,7 @@ $( ".hello" ).empty();
   &lt;div class="goodbye"&gt;Goodbye&lt;/div&gt;
 &lt;/div&gt;
     </code></pre>
-    <p>If we had any number of nested elements inside <code>&lt;div class="hello"&gt;</code>, they would be removed, too. </p>
+    <p>If we had any number of nested elements inside <code>&lt;div class="hello"&gt;</code>, they would be removed, too.</p>
     <p>To avoid memory leaks, jQuery removes other constructs such as data and event handlers from the child elements before removing the elements themselves.</p>
     <p>If you want to remove elements without destroying their data or event handlers (so they can be re-added later), use <a href="/detach/"><code>.detach()</code></a> instead.</p>
   </longdesc>
@@ -42,7 +42,7 @@ $( "button" ).click(function() {
 ]]></css>
     <html><![CDATA[
 <p>
-  Hello, <span>Person</span> <a href="javascript:;">and person</a>
+  Hello, <span>Person</span> <em>and person</em>.
 </p>
 
 <button>Call empty() on above paragraph</button>

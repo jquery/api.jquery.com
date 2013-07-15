@@ -4,7 +4,7 @@
   <signature>
     <added>1.1.4</added>
   </signature>
-  <desc>The other DOM element involved in the event, if any. </desc>
+  <desc>The other DOM element involved in the event, if any.</desc>
   <longdesc>
     <p>For <code>mouseout</code>, indicates the element being entered; for <code>mouseover</code>, indicates the element being exited. </p>
   </longdesc>

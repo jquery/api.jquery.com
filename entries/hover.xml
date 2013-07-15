@@ -32,7 +32,6 @@ $( "li" ).hover(
   }
 );
 
-//li with fade class
 $( "li.fade" ).hover(function() {
   $( this ).fadeOut( 100 );
   $( this ).fadeIn( 500 );
@@ -104,11 +103,13 @@ $( "li" )
     .hide()
   .end()
   .filter( ":even" )
-    .hover(
-      function() {
-        $( this ).toggleClass( "active" ).next().stop( true, true ).slideToggle();
-      }
-    );
+    .hover(function() {
+      $( this )
+        .toggleClass( "active" )
+        .next()
+          .stop( true, true )
+          .slideToggle();
+    });
 ]]></code>
       <css><![CDATA[
   ul {

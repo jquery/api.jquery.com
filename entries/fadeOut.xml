@@ -35,7 +35,7 @@ $( "#clickme" ).click(function() {
     // Animation complete.
   });
 });
-</code></pre>
+    </code></pre>
     <p class="image four-across">
       <img src="/resources/0042_06_37.png" alt=""/>
       <img src="/resources/0042_06_38.png" alt=""/>
@@ -114,7 +114,7 @@ $( "span" ).hover(function() {
     <code><![CDATA[
 $( "#btn1" ).click(function() {
   function complete() {
-    $( "<div/>" ).text( this.id ).appendTo( "#log" );
+    $( "<div>" ).text( this.id ).appendTo( "#log" );
   }
   $( "#box1" ).fadeOut( 1600, "linear", complete );
   $( "#box2" ).fadeOut( 1600, complete );

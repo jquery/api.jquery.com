@@ -20,15 +20,14 @@
     <code><![CDATA[
 var logDiv = $( "#log" );
 
-// Note: This code is for demonstration purposes only.
-for (var i = 0; i < 5; i++) {
-  $( "button" ).eq( i ).on( "click", {value: i}, function( event ) {
+for ( var i = 0; i < 5; i++ ) {
+  $( "button" ).eq( i ).on( "click", { value: i }, function( event ) {
     var msgs = [
       "button = " + $( this ).index(),
       "event.data.value = " + event.data.value,
       "i = " + i
     ];
-    logDiv.append( msgs.join(", ") + "<br>" );
+    logDiv.append( msgs.join( ", " ) + "<br>" );
   });
 }
 ]]></code>

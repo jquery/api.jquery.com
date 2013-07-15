@@ -34,17 +34,17 @@
   }
 ]]></css>
     <code><![CDATA[
-var fo = 0, b = 0;
-$( "p" ).focusout(function() {
-  fo++;
-  $( "#fo" )
-    .text( "focusout fired: " + fo + "x" );
-})
+var focus = 0,
+  blur = 0;
+$( "p" )
+  .focusout(function() {
+    focus++;
+    $( "#focus-count" ).text( "focusout fired: " + focus + "x" );
+  })
   .blur(function() {
-    b++;
-    $("#b")
-      .text("blur fired: " + b + "x");
-});
+    blur++;
+    $( "#blur-count" ).text( "blur fired: " + blur + "x" );
+  });
 ]]></code>
     <html><![CDATA[
 <div class="inputs">
@@ -56,8 +56,8 @@ $( "p" ).focusout(function() {
     <input type="password">
   </p>
 </div>
-<div id="fo">focusout fire</div>
-<div id="b">blur fire</div>
+<div id="focus-count">focusout fire</div>
+<div id="blur-count">blur fire</div>
 ]]></html>
   </example>
   <category slug="events/keyboard-events"/>

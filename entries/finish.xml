@@ -58,18 +58,18 @@ $( "#go" ).on( "click", function() {
     .clearQueue()
     .stop()
     .css({
-    left: 10,
-    top: 10
-  })
+      left: 10,
+      top: 10
+    })
     .animate({
-    top: vert
-  }, 3000 )
+      top: vert
+    }, 3000 )
     .animate({
-    left: horiz
-  }, 3000 )
+      left: horiz
+    }, 3000 )
     .animate({
-    top: 10
-  }, 3000 );
+      top: 10
+    }, 3000 );
 });
 ]]></code>
     <html><![CDATA[
@@ -91,27 +91,28 @@ $( "#go" ).on( "click", function() {
   <button id="bf" class="b">.finish()</button>
 </div>
 ]]></html>
-    <css><![CDATA[.box {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  width: 15px;
-  height: 15px;
-  background: black;
-}
-#path {
-  height: 244px;
-  font-size: 70%;
-  border-left: 2px dashed red;
-  border-bottom: 2px dashed green;
-  border-right: 2px dashed blue;
-}
-button {
-  width: 12em;
-  display: block;
-  text-align: left;
-  margin: 0 auto;
-}
+    <css><![CDATA[
+  .box {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 15px;
+    height: 15px;
+    background: black;
+  }
+  #path {
+    height: 244px;
+    font-size: 70%;
+    border-left: 2px dashed red;
+    border-bottom: 2px dashed green;
+    border-right: 2px dashed blue;
+  }
+  button {
+    width: 12em;
+    display: block;
+    text-align: left;
+    margin: 0 auto;
+  }
 ]]></css>
   </example>
   <category slug="effects/custom-effects"/>

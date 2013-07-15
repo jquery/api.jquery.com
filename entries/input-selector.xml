@@ -18,9 +18,8 @@ var formChildren = $( "form > *" );
 $( "#messages" ).text( "Found " + allInputs.length + " inputs and the form has " +
   formChildren.length + " children." );
 
-// so it won't submit
-$( "form" ).submit(function() {
-  return false;
+$( "form" ).submit(function( event ) {
+  event.preventDefault();
 });
 ]]></code>
     <css><![CDATA[

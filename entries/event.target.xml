@@ -35,9 +35,9 @@ $( "body" ).click(function( event ) {
     <desc>Implements a simple event delegation: The click handler is added to an unordered list, and the children of its li children are hidden. Clicking one of the li children toggles (see toggle()) their children.</desc>
     <code><![CDATA[
 function handler( event ) {
-  var $target = $( event.target );
-  if( $target.is( "li" ) ) {
-    $target.children().toggle();
+  var target = $( event.target );
+  if ( target.is( "li" ) ) {
+    target.children().toggle();
   }
 }
 $( "ul" ).click( handler ).find( "ul" ).hide();

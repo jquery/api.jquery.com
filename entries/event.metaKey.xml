@@ -12,20 +12,20 @@
   <example>
     <desc>Determine whether the META key was pressed when the event fired.</desc>
     <css><![CDATA[
-    body {
-      background-color: #eef;
-    }
-    div {
-      padding: 20px;
-    }
+  body {
+    background-color: #eef;
+  }
+  div {
+    padding: 20px;
+  }
 ]]></css>
     <html><![CDATA[
 <button value="Test" name="Test" id="checkMetaKey">Click me!</button>
 <div id="display"></div>
 ]]></html>
     <code><![CDATA[
-$( "#checkMetaKey" ).click(function( e ) {
-  $( "#display" ).text( e.metaKey );
+$( "#checkMetaKey" ).click(function( event ) {
+  $( "#display" ).text( event.metaKey );
 });
 ]]></code>
   </example>

@@ -11,10 +11,10 @@
   <example>
     <desc>Checks whether event.stopImmediatePropagation() was called.</desc>
     <code><![CDATA[
-function immediatePropStopped( e ) {
+function immediatePropStopped( event ) {
   var msg = "";
-  if ( e.isImmediatePropagationStopped() ) {
-    msg =  "called"
+  if ( event.isImmediatePropagationStopped() ) {
+    msg = "called";
   } else {
     msg = "not called";
   }

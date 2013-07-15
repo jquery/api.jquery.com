@@ -39,9 +39,9 @@
     <p>You can attach a click handler to the &lt;ul&gt; element, and then limit the code to be triggered only when a list item itself, not one of its children, is clicked:</p>
     <pre><code>
 $( "ul" ).click(function( event ) {
-  var $target = $( event.target );
-  if ( $target.is( "li" ) ) {
-    $target.css( "background-color", "red" );
+  var target = $( event.target );
+  if ( target.is( "li" ) ) {
+    target.css( "background-color", "red" );
   }
 });
     </code></pre>
@@ -63,14 +63,14 @@ $( "ul" ).click(function( event ) {
     <p>You can attach a click handler to every <code>&lt;li&gt;</code> that evaluates the number of <code>&lt;strong&gt;</code> elements within the clicked <code>&lt;li&gt;</code> at that time like so:</p>
     <pre><code>
 $( "li" ).click(function() {
-  var $li = $( this ),
-    isWithTwo = $li.is(function() {
+  var li = $( this ),
+    isWithTwo = li.is(function() {
       return $( "strong", this ).length === 2;
     });
   if ( isWithTwo ) {
-    $li.css( "background-color", "green" );
+    li.css( "background-color", "green" );
   } else {
-    $li.css( "background-color", "red" );
+    li.css( "background-color", "red" );
   }
 });
     </code></pre>
@@ -175,13 +175,13 @@ $( "div" ).text( "isFormParent = " + isFormParent );
   <example>
     <desc>Checks against an existing collection of alternating list elements. Blue, alternating list elements slide up while others turn red.</desc>
     <code><![CDATA[
-var $alt = $( "#browsers li:nth-child(2n)" ).css( "background", "#0ff" );
+var alt = $( "#browsers li:nth-child(2n)" ).css( "background", "#0ff" );
 $( "li" ).click(function() {
-  var $li = $(this);
-  if ( $li.is( $alt ) ) {
-    $li.slideUp();
+  var li = $( this );
+  if ( li.is( alt ) ) {
+    li.slideUp();
   } else {
-    $li.css( "background", "red" );
+    li.css( "background", "red" );
   }
 });
 ]]></code>
@@ -202,9 +202,9 @@ $( "li" ).click(function() {
   <example>
     <desc>An alternate way to achieve the above example using an element rather than a jQuery object. Checks against an existing collection of alternating list elements. Blue, alternating list elements slide up while others turn red.</desc>
     <code><![CDATA[
-var $alt = $( "#browsers li:nth-child(2n)" ).css( "background", "#0ff" );
+var alt = $( "#browsers li:nth-child(2n)" ).css( "background", "#0ff" );
 $( "li" ).click(function() {
-  if ( $alt.is( this ) ) {
+  if ( alt.is( this ) ) {
     $( this ).slideUp();
   } else {
     $( this ).css( "background", "red" );

@@ -29,7 +29,7 @@
   &lt;li&gt;list item 3&lt;/li&gt;
   &lt;li&gt;list item 4&lt;/li&gt;
 &lt;/ul&gt;
-</code></pre>
+    </code></pre>
     <p>We can apply this method to the set of list items as follows:</p>
     <pre><code>
 $( "li" ).has( "ul" ).css( "background-color", "red" );
@@ -39,7 +39,9 @@ $( "li" ).has( "ul" ).css( "background-color", "red" );
   <example>
     <desc>Check if an element is inside another.</desc>
     <code><![CDATA[
-$( "ul" ).append( "<li>" + ( $( "ul" ).has( "li" ).length ? "Yes" : "No" ) + "</li>" );
+$( "ul" ).append( "<li>" +
+  ( $( "ul" ).has( "li" ).length ? "Yes" : "No" ) +
+  "</li>" );
 $( "ul" ).has( "li" ).addClass( "full" );
 ]]></code>
     <css><![CDATA[

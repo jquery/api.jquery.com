@@ -28,7 +28,8 @@
 
   <longdesc>
     <p>With no parameters, the <code>.hide()</code> method is the simplest way to hide an element:</p>
-    <pre><code>$('.target').hide();
+    <pre><code>
+$( ".target" ).hide();
     </code></pre>
     <p>The matched elements will be hidden immediately, with no animation. This is roughly equivalent to calling <code>.css( "display", "none" )</code>, except that the value of the <code>display</code> property is saved in jQuery's data cache so that <code>display</code> can later be restored to its initial value. If an element has a <code>display</code> value of <code>inline</code> and is hidden then shown, it will once again be displayed <code>inline</code>.</p>
     <p>When a duration, a plain object, or a "complete" function is provided, <code>.hide()</code> becomes an animation method. The <code>.hide()</code> method animates the width, height, and opacity of the matched elements simultaneously. When these properties reach 0, the <code>display</code> style property is set to <code>none</code> to ensure that the element no longer affects the layout of the page.</p>
@@ -42,7 +43,9 @@
   Click here
 &lt;/div&gt;
 &lt;img id="book" src="book.png" alt="" width="100" height="123"&gt;
-With the element initially shown, we can hide it slowly:
+    </code></pre>
+    <pre><code>
+// With the element initially shown, we can hide it slowly:
 $( "#clickme" ).click(function() {
   $( "#book" ).hide( "slow", function() {
     alert( "Animation complete." );
@@ -82,7 +85,7 @@ $( "button" ).click(function() {
     <css><![CDATA[
   p {
     background: #dad;
-    font-weight:bold;
+    font-weight: bold;
   }
 ]]></css>
     <html><![CDATA[
@@ -94,13 +97,13 @@ $( "button" ).click(function() {
   <example>
     <desc>Animates all spans (words in this case) to hide fastly, completing each animation within 200 milliseconds. Once each animation is done, it starts the next one.</desc>
     <code><![CDATA[
-$( "#hidr" ).click(function() {
+$( "#hider" ).click(function() {
   $( "span:last-child" ).hide( "fast", function() {
-    // use callee so don't have to name the function
+    // Use arguments.callee so we don't need a named function
     $( this ).prev().hide( "fast", arguments.callee );
   });
 });
-$( "#showr" ).click(function() {
+$( "#shower" ).click(function() {
   $( "span" ).show( 2000 );
 });
 ]]></code>
@@ -108,12 +111,12 @@ $( "#showr" ).click(function() {
   span {
     background: #def3ca;
     padding: 3px;
-    float:left;
+    float: left;
   }
 ]]></css>
     <html><![CDATA[
-<button id="hidr">Hide</button>
-<button id="showr">Show</button>
+<button id="hider">Hide</button>
+<button id="shower">Show</button>
 <div>
   <span>Once</span> <span>upon</span> <span>a</span>
   <span>time</span> <span>there</span> <span>were</span>
@@ -140,7 +143,7 @@ $( "div" ).click(function() {
     height: 40px;
     margin: 2px;
     float: left;
-    }
+  }
 ]]></css>
     <html><![CDATA[
 <div></div>

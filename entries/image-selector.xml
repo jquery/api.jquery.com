@@ -17,12 +17,12 @@ var input = $( "input:image" ).css({
   background:"yellow",
   border:"3px red solid"
 });
-$(" div ")
+$( "div" )
   .text( "For this type jQuery found " + input.length + "." )
   .css( "color", "red" );
-$( "form" ).submit(function() {
-  return false;
-}); // so it won't submit
+$( "form" ).submit(function( event ) {
+  event.preventDefault();
+});
 ]]></code>
     <css><![CDATA[
   textarea {

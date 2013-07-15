@@ -54,11 +54,11 @@ $( "li.item-ii" ).find( "li" ).css( "background-color", "red" );
     <p><a href="/jquery/#selector-context">Selector context</a> is implemented with the <code>.find()</code> <code>method;</code> therefore, <code>$( "li.item-ii" ).find( "li" )</code> is equivalent to <code>$( "li", "li.item-ii" )</code>.</p>
     <p><strong>As of jQuery 1.6</strong>, we can also filter the selection with a given jQuery collection or element. With the same nested list as above, if we start with:</p>
     <pre><code>
-var $allListElements = $( "li" );
+var allListElements = $( "li" );
     </code></pre>
     <p>And then pass this jQuery object to find:</p>
     <pre><code>
-$( "li.item-ii" ).find( $allListElements );
+$( "li.item-ii" ).find( allListElements );
     </code></pre>
     <p>This will return a jQuery collection which contains only the list elements that are descendants of item II.</p>
     <p>Similarly, an element may also be passed to find:</p>
@@ -69,7 +69,7 @@ $( "li.item-ii" ).find( item1 ).css( "background-color", "red" );
     <p>The result of this call would be a red background on item 1.</p>
   </longdesc>
   <example>
-    <desc>Starts with all paragraphs and searches for descendant span elements, same as $("p span")</desc>
+    <desc>Starts with all paragraphs and searches for descendant span elements, same as <code>$( "p span" )</code></desc>
     <code><![CDATA[
 $( "p" ).find( "span" ).css( "color", "red" );
 ]]></code>
@@ -86,8 +86,8 @@ $( "p" ).find( "span" ).css( "color", "red" );
   }
 ]]></css>
     <code><![CDATA[
-var $spans = $( "span" );
-$( "p" ).find( $spans ).css( "color", "red" );
+var spans = $( "span" );
+$( "p" ).find( spans ).css( "color", "red" );
 ]]></code>
     <html><![CDATA[
 <p><span>Hello</span>, how are you?</p>
@@ -101,7 +101,8 @@ $( "p" ).find( $spans ).css( "color", "red" );
 var newText = $( "p" ).text().split( " " ).join( "</span> <span>" );
 newText = "<span>" + newText + "</span>";
 
-$( "p" ).html( newText )
+$( "p" )
+  .html( newText )
   .find( "span" )
     .hover(function() {
       $( this ).addClass( "hilite" );
@@ -111,15 +112,14 @@ $( "p" ).html( newText )
   .end()
   .find( ":contains('t')" )
     .css({
-      "font-style":"italic",
-      "font-weight":"bolder"
+      "font-style": "italic",
+      "font-weight": "bolder"
     });
 ]]></code>
     <css><![CDATA[
   p {
     font-size: 20px;
     width: 200px;
-    cursor: default;
     color: blue;
     font-weight: bold;
     margin: 0 10px;

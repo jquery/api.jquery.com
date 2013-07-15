@@ -12,17 +12,17 @@
   <example>
     <desc>Adds the focused class to whatever element has focus</desc>
     <code><![CDATA[
-$( "#content" ).delegate( "*", "focus blur", function( event ) {
-    var elem = $( this );
-    setTimeout(function() {
-       elem.toggleClass( "focused", elem.is( ":focus" ) );
-    }, 0 );
+$( "#content" ).delegate( "*", "focus blur", function() {
+  var elem = $( this );
+  setTimeout(function() {
+    elem.toggleClass( "focused", elem.is( ":focus" ) );
+  }, 0 );
 });
 ]]></code>
     <css><![CDATA[
-.focused {
+  .focused {
     background: #abcdef;
-}
+  }
 ]]></css>
     <html><![CDATA[
 <div id="content">

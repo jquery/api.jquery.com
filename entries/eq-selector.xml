@@ -40,16 +40,16 @@ $( "td:eq( 2 )" ).css( "color", "red" );
     <desc>Apply three different styles to list items to demonstrate that <code>:eq()</code> is designed to select a single element while <code>:nth-child()</code> or <code>:eq()</code> within a looping construct such as <code>.each()</code> can select multiple elements.</desc>
     <code><![CDATA[
 // Applies yellow background color to a single <li>
-$( "ul.nav li:eq( 1 )" ).css( "backgroundColor", "#ff0" );
+$( "ul.nav li:eq(1)" ).css( "backgroundColor", "#ff0" );
 
 // Applies italics to text of the second <li> within each <ul class="nav">
 $( "ul.nav" ).each(function( index ) {
-  $( this ).find( "li:eq( 1 )" ).css( "fontStyle", "italic" );
+  $( this ).find( "li:eq(1)" ).css( "fontStyle", "italic" );
 });
 
 // Applies red text color to descendants of <ul class="nav">
 // for each <li> that is the second child of its parent
-$( "ul.nav li:nth-child( 2 )" ).css( "color", "red" );
+$( "ul.nav li:nth-child(2)" ).css( "color", "red" );
 ]]></code>
     <html><![CDATA[
 <ul class="nav">
@@ -73,7 +73,7 @@ $( "ul.nav li:nth-child( 2 )" ).css( "color", "red" );
   }
 ]]></css>
     <code><![CDATA[
-$( "li:eq( -2 )" ).addClass( "foo" )
+$( "li:eq(-2)" ).addClass( "foo" )
 ]]></code>
     <html><![CDATA[
 <ul class="nav">

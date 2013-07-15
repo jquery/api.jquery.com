@@ -46,8 +46,7 @@ $( "li" ).filter( ":even" ).css( "background-color", "red" );
     <p>The second form of this method allows us to filter elements against a function rather than a selector. For each element, if the function returns <code>true</code> (or a "truthy" value), the element will be included in the filtered set; otherwise, it will be excluded. Suppose we have a somewhat more involved HTML snippet:</p>
     <pre><code>
 &lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;list&lt;/strong&gt; item 1 -
-    one strong tag&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;list&lt;/strong&gt; item 1 - one strong tag&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;list&lt;/strong&gt; item &lt;strong&gt;2&lt;/strong&gt; -
     two &lt;span&gt;strong tags&lt;/span&gt;&lt;/li&gt;
   &lt;li&gt;list item 3&lt;/li&gt;
@@ -60,27 +59,27 @@ $( "li" ).filter( ":even" ).css( "background-color", "red" );
     <pre><code>
 $( "li" )
   .filter(function( index ) {
-    return $( "strong", this ).length == 1;
+    return $( "strong", this ).length === 1;
   })
-  .css( "background-color", "red" );
+    .css( "background-color", "red" );
     </code></pre>
     <p>This code will alter the first list item only, as it contains exactly one <code>&lt;strong&gt;</code> tag. Within the filter function, <code>this</code> refers to each DOM element in turn. The parameter passed to the function tells us the index of that DOM element within the set matched by the jQuery object.</p>
     <p>We can also take advantage of the <code>index</code> passed through the function, which indicates the 0-based position of the element within the unfiltered set of matched elements:</p>
     <pre><code>
 $( "li" )
   .filter(function( index ) {
-    return index % 3 == 2;
+    return index % 3 === 2;
   })
-  .css( "background-color", "red" );
+    .css( "background-color", "red" );
     </code></pre>
     <p>This alteration to the code will cause the third and sixth list items to be highlighted, as it uses the modulus operator (<code>%</code>) to select every item with an <code>index</code> value that, when divided by 3, has a remainder of <code>2</code>.</p>
   </longdesc>
   <example>
     <desc>Change the color of all divs; then add a border to those with a "middle" class.</desc>
     <code><![CDATA[
-  $( "div" )
-    .css( "background", "#c8ebcc" )
-    .filter( ".middle" )
+$( "div" )
+  .css( "background", "#c8ebcc" )
+  .filter( ".middle" )
     .css( "border-color", "red" );
 ]]></code>
     <css><![CDATA[
@@ -107,9 +106,9 @@ $( "li" )
 $( "div" )
   .css( "background", "#b4b0da" )
   .filter(function( index ) {
-    return index == 1 || $( this ).attr( "id" ) == "fourth";
+    return index === 1 || $( this ).attr( "id" ) === "fourth";
   })
-  .css( "border", "3px double red" );
+    .css( "border", "3px double red" );
 ]]></code>
     <css><![CDATA[
   div {

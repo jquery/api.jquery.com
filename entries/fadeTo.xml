@@ -43,12 +43,12 @@
   Click here
 &lt;/div&gt;
 &lt;img id="book" src="book.png" alt="" width="100" height="123"&gt;
-With the element initially shown, we can dim it slowly:
+// With the element initially shown, we can dim it slowly:
 $( "#clickme" ).click(function() {
   $( "#book" ).fadeTo( "slow" , 0.5, function() {
-      // Animation complete.
-    });
+    // Animation complete.
   });
+});
     </code></pre>
     <p class="image four-across">
       <img src="/resources/0042_06_41.png" alt=""/>
@@ -94,17 +94,17 @@ $( "div" ).click(function() {
     height: 40px;
     position: absolute;
   }
-  div#one {
+  #one {
     top: 0;
     left: 0;
     background: #f00;
   }
-  div#two {
+  #two {
     top: 20px;
     left: 20px;
     background: #0f0;
   }
-  div#three {
+  #three {
     top: 40px;
     left:40px;
     background:#00f;
@@ -119,10 +119,10 @@ $( "div" ).click(function() {
 ]]></html>
   </example>
   <example>
-    <desc>Find the right answer!  The fade will take 250 milliseconds and change various styles when it completes.</desc>
+    <desc>Find the right answer! The fade will take 250 milliseconds and change various styles when it completes.</desc>
     <code><![CDATA[
 var getPos = function( n ) {
-  return ( Math.floor( n ) * 90) + "px";
+  return (Math.floor( n ) * 90) + "px";
 };
 $( "p" ).each(function( n ) {
   var r = Math.floor( Math.random() * 3 );
@@ -131,30 +131,31 @@ $( "p" ).each(function( n ) {
   $( "p:eq(" + r + ")" ).text( tmp );
   $( this ).css( "left", getPos( n ) );
 });
-$( "div" ).each(function( n ) {
-  $( this ).css( "left", getPos( n ) );
-})
+$( "div" )
+  .each(function( n ) {
+    $( this ).css( "left", getPos( n ) );
+  })
   .css( "cursor", "pointer" )
   .click( function() {
     $( this ).fadeTo( 250, 0.25, function() {
       $( this )
         .css( "cursor", "" )
         .prev()
-        .css({
-          "font-weight": "bolder",
-          "font-style": "italic"
+          .css({
+            "font-weight": "bolder",
+            "font-style": "italic"
           });
-        });
     });
+  });
 ]]></code>
     <css><![CDATA[
   div, p {
     width: 80px;
     height: 40px;
-    top:0;
+    top: 0;
     margin: 0;
     position: absolute;
-    padding-top:8px;
+    padding-top: 8px;
   }
   p {
     background: #fcc;

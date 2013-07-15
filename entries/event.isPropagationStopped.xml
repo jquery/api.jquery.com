@@ -11,10 +11,10 @@
   <example>
     <desc>Checks whether event.stopPropagation() was called</desc>
     <code><![CDATA[
-function propStopped( e ) {
+function propStopped( event ) {
   var msg = "";
-  if ( e.isPropagationStopped() ) {
-    msg =  "called"
+  if ( event.isPropagationStopped() ) {
+    msg = "called";
   } else {
     msg = "not called";
   }

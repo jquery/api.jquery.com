@@ -31,7 +31,7 @@ $( "li" ).each(function( index ) {
     </p>
     <p>You can stop the loop from within the callback function by returning <code>false</code>.</p>
     <p>Note: most jQuery methods that return a jQuery object also loop through the set of elements in the jQuery collection — a process known as <i>implicit iteration</i>. When this occurs, it is often unnecessary to <i>explicitly</i> iterate with the <code>.each()</code> method:</p>
-<pre><code>
+    <pre><code>
 // The .each() method is unnecessary here:
 $( "li" ).each(function() {
   $( this ).addClass( "foo" );
@@ -39,14 +39,14 @@ $( "li" ).each(function() {
 
 // Instead, you should rely on implicit iteration:
 $( "li" ).addClass( "bar" );
-</code></pre>
+    </code></pre>
   </longdesc>
   <example>
     <desc>Iterate over three divs and sets their color property.</desc>
     <code><![CDATA[
 $( document.body ).click(function() {
   $( "div" ).each(function( i ) {
-    if ( this.style.color != "blue" ) {
+    if ( this.style.color !== "blue" ) {
       this.style.color = "blue";
     } else {
       this.style.color = "";
@@ -102,12 +102,12 @@ To do list: <span>(click here to change)</span>
 ]]></html>
   </example>
   <example>
-    <desc>Use "return" to break out of each() loops early.</desc>
+    <desc>Use <code>return false</code> to break out of each() loops early.</desc>
     <code><![CDATA[
 $( "button" ).click(function() {
-  $( "div" ).each(function( index, domEle ) {
-    // domEle == this
-    $( domEle ).css( "backgroundColor", "yellow" );
+  $( "div" ).each(function( index, element ) {
+    // element == this
+    $( element ).css( "backgroundColor", "yellow" );
     if ( $( this ).is( "#stop" ) ) {
       $( "span" ).text( "Stopped at div index #" + index );
       return false;

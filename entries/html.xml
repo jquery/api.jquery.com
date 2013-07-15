@@ -29,8 +29,8 @@ $( "div.demo-container" ).html();
       <desc>Click a paragraph to convert it from html to text.</desc>
       <code><![CDATA[
 $( "p" ).click(function() {
-  var htmlStr = $( this ).html();
-  $( this ).text( htmlStr );
+  var htmlString = $( this ).html();
+  $( this ).text( htmlString );
 });
 ]]></code>
       <css><![CDATA[
@@ -109,8 +109,8 @@ $( "div.demo-container" )
       <p>As of jQuery 1.4, the <code>.html()</code> method allows the HTML content to be set by passing in a function.</p>
       <pre><code>
 $( "div.demo-container" ).html(function() {
-  var emph = "&lt;em&gt;" + $( "p" ).length + " paragraphs!&lt;/em&gt;";
-  return "&lt;p&gt;All new content for " + emph + "&lt;/p&gt;";
+  var emphasis = "&lt;em&gt;" + $( "p" ).length + " paragraphs!&lt;/em&gt;";
+  return "&lt;p&gt;All new content for " + emphasis + "&lt;/p&gt;";
 });
       </code></pre>
       <p>Given a document with six paragraphs, this example will set the HTML of <code>&lt;div class="demo-container"&gt;</code> to <code>&lt;p&gt;All new content for &lt;em&gt;6 paragraphs!&lt;/em&gt;&lt;/p&gt;</code>.</p>
