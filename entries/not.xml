@@ -37,9 +37,11 @@
   &lt;li&gt;list item 4&lt;/li&gt;
   &lt;li&gt;list item 5&lt;/li&gt;
 &lt;/ul&gt;
-</code></pre>
+    </code></pre>
     <p>We can apply this method to the set of list items:</p>
-    <pre><code>$('li').not(':even').css('background-color', 'red');</code></pre>
+    <pre><code>
+$( "li" ).not( ":even" ).css( "background-color", "red" );
+    </code></pre>
     <p>The result of this call is a red background for items 2 and 4, as they do not match the selector (recall that :even and :odd use 0-based indexing).</p>
     <h4>Removing Specific Elements</h4>
     <p>The second version of the <code>.not()</code> method allows us to remove elements from the matched set, assuming we have found those elements previously by some other means. For example, suppose our list had an id applied to one of its items:</p>
@@ -51,34 +53,45 @@
   &lt;li&gt;list item 4&lt;/li&gt;
   &lt;li&gt;list item 5&lt;/li&gt;
 &lt;/ul&gt;
-</code></pre>
+    </code></pre>
     <p>We can fetch the third list item using the native JavaScript <code>getElementById()</code> function, then remove it from a jQuery object:</p>
     <pre><code>
-$('li').not(document.getElementById('notli'))
-  .css('background-color', 'red');
-</code></pre>
+$( "li" ).not( document.getElementById( "notli" ) )
+  .css( "background-color", "red" );
+    </code></pre>
     <p>This statement changes the color of items 1, 2, 4, and 5. We could have accomplished the same thing with a simpler jQuery expression, but this technique can be useful when, for example, other libraries provide references to plain DOM nodes.</p>
     <p>As of jQuery 1.4, the <code>.not()</code> method can take a function as its argument in the same way that <code>.filter()</code> does. Elements for which the function returns <code>true</code> are excluded from the filtered set; all other elements are included.</p>
   </longdesc>
   <example>
     <desc>Adds a border to divs that are not green or blue.</desc>
     <code><![CDATA[
-$("div").not(".green, #blueone")
-        .css("border-color", "red");
-
+$( "div" ).not( ".green, #blueone" )
+  .css( "border-color", "red" );
 ]]></code>
     <css><![CDATA[
-div { width:50px; height:50px; margin:10px; float:left;
-      background:yellow; border:2px solid white; }
-.green { background:#8f8; }
-.gray { background:#ccc; }
-#blueone { background:#99f; }
+  div {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    float: left;
+    background: yellow;
+    border: 2px solid white;
+  }
+  .green {
+    background: #8f8;
+  }
+  .gray {
+    background: #ccc;
+  }
+  #blueone {
+    background: #99f;
+  }
 ]]></css>
-    <html><![CDATA[<div></div>
+    <html><![CDATA[
+<div></div>
 <div id="blueone"></div>
 <div></div>
 <div class="green"></div>
-
 <div class="green"></div>
 <div class="gray"></div>
 <div></div>
@@ -86,15 +99,21 @@ div { width:50px; height:50px; margin:10px; float:left;
   </example>
   <example>
     <desc>Removes the element with the ID "selected" from the set of all paragraphs.</desc>
-    <code><![CDATA[$("p").not( $("#selected")[0] )]]></code>
+    <code><![CDATA[
+$( "p" ).not( $( "#selected" )[ 0 ] );
+]]></code>
   </example>
   <example>
     <desc>Removes the element with the ID "selected" from the set of all paragraphs.</desc>
-    <code><![CDATA[$("p").not("#selected")]]></code>
+    <code><![CDATA[
+$( "p" ).not( "#selected" );
+]]></code>
   </example>
   <example>
     <desc>Removes all elements that match "div p.selected" from the total set of all paragraphs.</desc>
-    <code><![CDATA[$("p").not($("div p.selected"))]]></code>
+    <code><![CDATA[
+$( "p" ).not( $( "div p.selected" ) );
+]]></code>
   </example>
   <category slug="traversing/filtering"/>
   <category slug="traversing/miscellaneous-traversal"/>

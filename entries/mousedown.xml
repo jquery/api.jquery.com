@@ -21,7 +21,7 @@
     <added>1.0</added>
   </signature>
   <longdesc>
-    <p>This method is a shortcut for <code>.on('mousedown', handler)</code> in the first variation, and <code>.trigger('mousedown')</code> in the second.</p>
+    <p>This method is a shortcut for <code>.on( "mousedown", handler)</code> in the first variation, and <code>.trigger( "mousedown" )</code> in the second.</p>
     <p>The <code>mousedown</code> event is sent to an element when the mouse pointer is over the element, and the mouse button is pressed. Any HTML element can receive this event.</p>
     <p>For example, consider the HTML:</p>
     <pre><code>&lt;div id="target"&gt;
@@ -29,22 +29,27 @@
 &lt;/div&gt;
 &lt;div id="other"&gt;
   Trigger the handler
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;
+    </code></pre>
     <p class="image">
       <img src="/resources/0042_05_01.png" alt=""/>
     </p>
     <p>The event handler can be bound to any <code>&lt;div&gt;</code>:</p>
-    <pre><code>$('#target').mousedown(function() {
-  alert('Handler for .mousedown() called.');
-});</code></pre>
+    <pre><code>
+$( "#target" ).mousedown(function() {
+  alert( "Handler for .mousedown() called." );
+});
+    </code></pre>
     <p>Now if we click on this element, the alert is displayed:</p>
     <p>
       <samp>Handler for .mousedown() called.</samp>
     </p>
     <p>We can also trigger the event when a different element is clicked:</p>
-    <pre><code>$('#other').click(function() {
-  $('#target').mousedown();
-});</code></pre>
+    <pre><code>
+$( "#other" ).click(function() {
+  $( "#target" ).mousedown();
+});
+    </code></pre>
     <p>After this code executes, clicks on <samp>Trigger the handler</samp> will also alert the message.</p>
     <p>The <code>mousedown</code> event is sent when any mouse button is clicked. To act only on specific buttons, we can use the event object's <code>which </code>property. Not all browsers support this property (Internet Explorer uses button instead), but jQuery normalizes the property so that it is safe to use in any browser. The value of <code>which</code> will be 1 for the left button, 2 for the middle button, or 3 for the right button.</p>
     <p>This event is primarily useful for ensuring that the primary button was used to begin a drag operation; if ignored, strange results can occur when the user attempts to use a context menu. While the middle and right buttons can be detected with these properties, this is not reliable. In Opera and Safari, for example, right mouse button clicks are not detectable by default.</p>
@@ -53,14 +58,16 @@
   <example>
     <desc>Show texts when mouseup and mousedown event triggering.</desc>
     <code><![CDATA[
-    $("p").mouseup(function(){
-      $(this).append('<span style="color:#F00;">Mouse up.</span>');
-    }).mousedown(function(){
-      $(this).append('<span style="color:#00F;">Mouse down.</span>');
-    });
-
+$( "p" )
+  .mouseup(function() {
+    $( this ).append( "<span style='color:#f00;'>Mouse up.</span>" );
+  })
+  .mousedown(function() {
+    $( this ).append( "<span style='color:#00f;'>Mouse down.</span>" );
+  });
 ]]></code>
-    <html><![CDATA[<p>Press mouse and release here.</p>
+    <html><![CDATA[
+<p>Press mouse and release here.</p>
 ]]></html>
   </example>
   <category slug="events/mouse-events"/>

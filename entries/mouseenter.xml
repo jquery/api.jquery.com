@@ -21,7 +21,7 @@
     <added>1.0</added>
   </signature>
   <longdesc>
-    <p>This method is a shortcut for <code>.on('mouseenter', handler)</code> in the first two variations, and <code>.trigger('mouseenter')</code> in the third.</p>
+    <p>This method is a shortcut for <code>.on( "mouseenter", handler )</code> in the first two variations, and <code>.trigger( "mouseenter" )</code> in the third.</p>
     <p>The <code>mouseenter</code> JavaScript event is proprietary to Internet Explorer. Because of the event's general utility, jQuery simulates this event so that it can be used regardless of browser. This event is sent to an element when the mouse pointer enters the element. Any HTML element can receive this event.</p>
     <p>For example, consider the HTML:</p>
     <pre><code>&lt;div id="outer"&gt;
@@ -38,13 +38,17 @@
       <img src="/resources/0042_05_08.png" alt=""/>
     </p>
     <p>The event handler can be bound to any element:</p>
-    <pre><code>$('#outer').mouseenter(function() {
-  $('#log').append('&lt;div&gt;Handler for .mouseenter() called.&lt;/div&gt;');
-});</code></pre>
+    <pre><code>
+$( "#outer" ).mouseenter(function() {
+  $( "#log" ).append( "&lt;div&gt;Handler for .mouseenter() called.&lt;/div&gt;" );
+});
+    </code></pre>
     <p>Now when the mouse pointer moves over the <samp>Outer</samp> <code>&lt;div&gt;</code>, the message is appended to <code>&lt;div id="log"&gt;</code>. You can also trigger the event when another element is clicked:</p>
-    <pre><code>$('#other').click(function() {
-      $('#outer').mouseenter();
-    });</code></pre>
+    <pre><code>
+$( "#other" ).click(function() {
+  $( "#outer" ).mouseenter();
+});
+    </code></pre>
     <p>After this code executes, clicks on <samp>Trigger the handler</samp> will also append the message.</p>
     <p>The <code>mouseenter</code> event differs from <code>mouseover</code> in the way it handles event bubbling. If <code>mouseover</code> were used in this example, then when the mouse pointer moved over the <samp>Inner</samp> element, the handler would be triggered. This is usually undesirable behavior. The <code>mouseenter</code> event, on the other hand, only triggers its handler when the mouse enters the element it is bound to, not a descendant. So in this example, the handler is triggered when the mouse enters the <samp>Outer</samp> element, but not the <samp>Inner</samp> element.</p>
   </longdesc>
@@ -52,48 +56,58 @@
     <desc>Show texts when mouseenter and mouseout event triggering.
     <code>mouseover</code> fires when the pointer moves into the child element as well, while <code>mouseenter</code> fires only when the pointer moves into the bound element.</desc>
     <css><![CDATA[
-div.out {
-width:40%;
-height:120px;
-margin:0 15px;
-background-color:#D6EDFC;
-float:left;
-}
-div.in {
-width:60%;
-height:60%;
-background-color:#FFCC00;
-margin:10px auto;
-}
-p {
-line-height:1em;
-margin:0;
-padding:0;
-}
+  div.out {
+    width: 40%;
+    height: 120px;
+    margin: 0 15px;
+    background-color: #d6edfc;
+    float: left;
+  }
+  div.in {
+    width: 60%;
+    height: 60%;
+    background-color: #fc0;
+    margin: 10px auto;
+  }
+  p {
+    line-height: 1em;
+    margin: 0;
+    padding: 0;
+  }
 ]]></css>
     <code><![CDATA[
-    var i = 0;
-    $("div.overout").mouseover(function(){
-      $("p:first",this).text("mouse over");
-      $("p:last",this).text(++i);
-    }).mouseout(function(){
-      $("p:first",this).text("mouse out");
-    });
+var i = 0;
+$( "div.overout" )
+  .mouseover(function() {
+    $( "p:first", this ).text( "mouse over" );
+    $( "p:last", this ).text( ++i );
+  })
+  .mouseout(function() {
+    $( "p:first", this ).text( "mouse out" );
+  });
 
-    var n = 0;
-    $("div.enterleave").mouseenter(function(){
-      $("p:first",this).text("mouse enter");
-      $("p:last",this).text(++n);
-    }).mouseleave(function(){
-      $("p:first",this).text("mouse leave");
-    });
-
+var n = 0;
+$( "div.enterleave" )
+  .mouseenter(function() {
+    $( "p:first", this ).text( "mouse enter" );
+    $( "p:last", this ).text( ++n );
+  })
+  .mouseleave(function() {
+    $( "p:first", this ).text( "mouse leave" );
+  });
 ]]></code>
     <html><![CDATA[
-<div class="out overout"><p>move your mouse</p><div class="in overout"><p>move your mouse</p><p>0</p></div><p>0</p></div>
+<div class="out overout">
+  <p>move your mouse</p>
+  <div class="in overout"><p>move your mouse</p><p>0</p></div>
+  <p>0</p>
+</div>
 
-<div class="out enterleave"><p>move your mouse</p><div class="in enterleave"><p>move your mouse</p><p>0</p></div><p>0</p></div>
-
+<div class="out enterleave">
+  <p>move your mouse</p>
+  <div class="in enterleave"><p>move your mouse</p><p>0</p></div>
+  <p>0</p>
+</div>
 ]]></html>
   </example>
   <category slug="events/mouse-events"/>

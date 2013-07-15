@@ -17,18 +17,20 @@
   </longdesc>
   <example>
     <desc>Finds all inputs that are next to a label.</desc>
-    <code><![CDATA[$("label + input").css("color", "blue").val("Labeled!")]]></code>
-    <html><![CDATA[<form>
-
+    <code><![CDATA[
+$( "label + input" ).css( "color", "blue" ).val( "Labeled!" );
+]]></code>
+    <html><![CDATA[
+<form>
   <label>Name:</label>
-  <input name="name" />
+  <input name="name">
   <fieldset>
     <label>Newsletter:</label>
-
-    <input name="newsletter" />
+    <input name="newsletter">
   </fieldset>
 </form>
-<input name="none" />]]></html>
+<input name="none">
+]]></html>
   </example>
   <category slug="selectors/hierarchy-selectors"/>
   <category slug="version/1.0"/>

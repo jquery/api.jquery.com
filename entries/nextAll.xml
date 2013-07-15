@@ -14,51 +14,72 @@
     <p>Consider a page with a simple list on it:</p>
     <pre><code>
 &lt;ul&gt;
-   &lt;li&gt;list item 1&lt;/li&gt;
-   &lt;li&gt;list item 2&lt;/li&gt;
-   &lt;li class="third-item"&gt;list item 3&lt;/li&gt;
-   &lt;li&gt;list item 4&lt;/li&gt;
-   &lt;li&gt;list item 5&lt;/li&gt;
+  &lt;li&gt;list item 1&lt;/li&gt;
+  &lt;li&gt;list item 2&lt;/li&gt;
+  &lt;li class="third-item"&gt;list item 3&lt;/li&gt;
+  &lt;li&gt;list item 4&lt;/li&gt;
+  &lt;li&gt;list item 5&lt;/li&gt;
 &lt;/ul&gt;
-</code></pre>
+    </code></pre>
     <p>If we begin at the third item, we can find the elements which come after it:</p>
-    <pre><code>$('li.third-item').nextAll().css('background-color', 'red');</code></pre>
+    <pre><code>
+$( "li.third-item" ).nextAll().css( "background-color", "red" );
+    </code></pre>
     <p>The result of this call is a red background behind items 4 and 5. Since we do not supply a selector expression, these following elements are unequivocally included as part of the object. If we had supplied one, the elements would be tested for a match before they were included.</p>
   </longdesc>
   <example>
     <desc>Locate all the divs after the first and give them a class.</desc>
-    <code><![CDATA[$("div:first").nextAll().addClass("after");]]></code>
+    <code><![CDATA[
+$( "div:first" ).nextAll().addClass( "after" );
+]]></code>
     <css><![CDATA[
-  div { width: 80px; height: 80px; background: #abc;
-        border: 2px solid black; margin: 10px; float: left; }
-  div.after { border-color: red; }
-  ]]></css>
+  div {
+    width: 80px;
+    height: 80px;
+    background: #abc;
+    border: 2px solid black;
+    margin: 10px;
+    float: left;
+  }
+  div.after {
+    border-color: red;
+  }
+]]></css>
     <height>150</height>
-    <html><![CDATA[<div>first</div>
-  <div>sibling<div>child</div></div>
-  <div>sibling</div>
-
-  <div>sibling</div>]]></html>
+    <html><![CDATA[
+<div>first</div>
+<div>sibling<div>child</div></div>
+<div>sibling</div>
+<div>sibling</div>]]></html>
   </example>
   <example>
     <desc>Locate all the paragraphs after the second child in the body and give them a class.</desc>
     <code><![CDATA[
-    $(":nth-child(1)").nextAll("p").addClass("after");
+$( ":nth-child(1)" ).nextAll( "p" ).addClass( "after" );
 ]]></code>
     <css><![CDATA[
-div, p { width: 60px; height: 60px; background: #abc;
-         border: 2px solid black; margin: 10px; float: left; }
-.after { border-color: red; }
+  div, p {
+    width: 60px;
+    height: 60px;
+    background: #abc;
+    border: 2px solid black;
+    margin: 10px;
+    float: left;
+  }
+  .after {
+    border-color: red;
+  }
 ]]></css>
     <height>200</height>
-    <html><![CDATA[<p>p</p>
-<div>div</div>
-<p>p</p>
+    <html><![CDATA[
 <p>p</p>
 <div>div</div>
-
 <p>p</p>
-<div>div</div>]]></html>
+<p>p</p>
+<div>div</div>
+<p>p</p>
+<div>div</div>
+]]></html>
   </example>
   <category slug="traversing/tree-traversal"/>
   <category slug="version/1.2"/>

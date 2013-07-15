@@ -16,54 +16,68 @@
   </signature>
   <desc>Selects the combined results of all the specified selectors.</desc>
   <longdesc>
-    <p>You can specify any number of selectors to combine into a single result.  This multiple expression combinator is an efficient way to select disparate elements. The order of the DOM elements in the returned jQuery object may not be identical, as they will be in document order. An alternative to this combinator is the .<a href="/add">add()</a> method.</p>
+    <p>You can specify any number of selectors to combine into a single result.  This multiple expression combinator is an efficient way to select disparate elements. The order of the DOM elements in the returned jQuery object may not be identical, as they will be in document order. An alternative to this combinator is the .<a href="/add/">add()</a> method.</p>
   </longdesc>
   <example>
     <desc>Finds the elements that match any of these three selectors.</desc>
-    <code><![CDATA[$("div,span,p.myClass").css("border","3px solid red");]]></code>
-    <html><![CDATA[<div>div</div>
-
-  <p class="myClass">p class="myClass"</p>
-  <p class="notMyClass">p class="notMyClass"</p>
-  <span>span</span>]]></html>
+    <code><![CDATA[
+$( "div, span, p.myClass" ).css( "border", "3px solid red" );
+]]></code>
+    <html><![CDATA[
+<div>div</div>
+<p class="myClass">p class="myClass"</p>
+<p class="notMyClass">p class="notMyClass"</p>
+<span>span</span>
+]]></html>
     <css><![CDATA[
-
-  div,span,p {
+  div, span, p {
     width: 126px;
     height: 60px;
-    float:left;
+    float: left;
     padding: 3px;
     margin: 2px;
-    background-color: #EEEEEE;
-    font-size:14px;
+    background-color: #eee;
+    font-size: 14px;
   }
-  ]]></css>
+]]></css>
   </example>
   <example>
     <desc>Show the order in the jQuery object.</desc>
     <code><![CDATA[
-    var list = $("div,p,span").map(function () {
-      return this.tagName;
-    }).get().join(", ");
-    $("b").append(document.createTextNode(list));
+var list = $( "div, p, span")
+  .map( function() {
+    return this.tagName;
+  })
+  .get().join( ", " );
+$( "b" ).append( document.createTextNode( list ) );
 ]]></code>
     <css><![CDATA[
-  b { color:red; font-size:16px; display:block; clear:left; }
-  div,span,p { width: 40px; height: 40px; float:left;
-               margin: 10px; background-color: blue;
-               padding:3px; color:white;
-             }
-  ]]></css>
-    <html><![CDATA[<span>span</span>
-
-  <p>p</p>
-  <p>p</p>
-  <div>div</div>
-  <span>span</span>
-
-  <p>p</p>
-  <div>div</div>
-  <b></b>]]></html>
+  b {
+    color: red;
+    font-size: 16px;
+    display: block;
+    clear:left;
+  }
+  div, span, p {
+    width: 40px;
+    height: 40px;
+    float: left;
+    margin: 10px;
+    background-color: blue;
+    padding: 3px;
+    color: white;
+  }
+]]></css>
+    <html><![CDATA[
+<span>span</span>
+<p>p</p>
+<p>p</p>
+<div>div</div>
+<span>span</span>
+<p>p</p>
+<div>div</div>
+<b></b>
+]]></html>
   </example>
   <category slug="selectors/basic-css-selectors"/>
   <category slug="version/1.0"/>

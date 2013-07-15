@@ -17,25 +17,23 @@
   <example>
     <desc>Finds all inputs that are not checked and highlights the next sibling span.  Notice there is no change when clicking the checkboxes since no click events have been linked.</desc>
     <code><![CDATA[
-  $("input:not(:checked) + span").css("background-color", "yellow");
-  $("input").attr("disabled", "disabled");
-
+$( "input:not(:checked) + span" ).css( "background-color", "yellow" );
+$( "input").attr("disabled", "disabled" );
 ]]></code>
-    <html><![CDATA[<div>
-  <input type="checkbox" name="a" />
+    <html><![CDATA[
+<div>
+  <input type="checkbox" name="a">
   <span>Mary</span>
 </div>
-
 <div>
-  <input type="checkbox" name="b" />
+  <input type="checkbox" name="b">
   <span>lcm</span>
-
 </div>
 <div>
-  <input type="checkbox" name="c" checked="checked" />
-
+  <input type="checkbox" name="c" checked="checked">
   <span>Peter</span>
-</div>]]></html>
+</div>
+]]></html>
   </example>
   <category slug="selectors/basic-filter-selectors"/>
   <category slug="version/1.0"/>

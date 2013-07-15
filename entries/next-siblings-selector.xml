@@ -17,32 +17,34 @@
   </longdesc>
   <example>
     <desc>Finds all divs that are siblings after the element with #prev as its id.  Notice the span isn't selected since it is not a div and the "niece" isn't selected since it is a child of a sibling, not an actual sibling.</desc>
-    <code><![CDATA[$("#prev ~ div").css("border", "3px groove blue");]]></code>
+    <code><![CDATA[
+$( "#prev ~ div" ).css( "border", "3px groove blue" );
+]]></code>
     <css><![CDATA[
-
-  div,span {
-    display:block;
-    width:80px;
-    height:80px;
-    margin:5px;
-    background:#bbffaa;
-    float:left;
-    font-size:14px;
+  div, span {
+    display: block;
+    width: 80px;
+    height: 80px;
+    margin: 5px;
+    background: #bfa;
+    float: left;
+    font-size: 14px;
   }
   div#small {
-    width:60px;
-    height:25px;
-    font-size:12px;
-    background:#fab;
+    width: 60px;
+    height: 25px;
+    font-size: 12px;
+    background: #fab;
   }
-  ]]></css>
-    <html><![CDATA[<div>div (doesn't match since before #prev)</div>
-  <span id="prev">span#prev</span>
-  <div>div sibling</div>
-
-  <div>div sibling <div id="small">div niece</div></div>
-  <span>span sibling (not div)</span>
-  <div>div sibling</div>]]></html>
+]]></css>
+    <html><![CDATA[
+<div>div (doesn't match since before #prev)</div>
+<span id="prev">span#prev</span>
+<div>div sibling</div>
+<div>div sibling <div id="small">div niece</div></div>
+<span>span sibling (not div)</span>
+<div>div sibling</div>
+]]></html>
   </example>
   <category slug="selectors/hierarchy-selectors"/>
   <category slug="version/1.0"/>

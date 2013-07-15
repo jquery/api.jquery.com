@@ -21,9 +21,12 @@ $( "span:nth-of-type(2)" )
   .addClass( "nth" );
 ]]></code>
   <css><![CDATA[
-.nth { color: red; }
+  .nth {
+    color: red;
+  }
 ]]></css>
-    <html><![CDATA[<div>
+    <html><![CDATA[
+<div>
   <span>John</span>,
   <b>Kim</b>,
   <span>Adam</span>,
@@ -39,7 +42,8 @@ $( "span:nth-of-type(2)" )
   <span>Richard</span>,
   <span>Ralph</span>,
   <span>Jason</span>
-</div>]]></html>
+</div>
+]]></html>
     </example>
   <category slug="selectors/child-filter-selectors"/>
   <category slug="version/1.9"/>

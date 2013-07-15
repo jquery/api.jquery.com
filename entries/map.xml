@@ -33,103 +33,120 @@
     &lt;/div&gt;
   &lt;/fieldset&gt;
 &lt;/form&gt;
-</code></pre>
+    </code></pre>
     <p>To get a comma-separated list of checkbox <code>ID</code>s:</p>
-    <pre><code>$(':checkbox').map(function() {
-      return this.id;
-    }).get().join();</code></pre>
+    <pre><code>
+$( ":checkbox" )
+  .map(function() {
+    return this.id;
+  })
+  .get()
+  .join();
+    </code></pre>
     <p>The result of this call is the string, <code>"two,four,six,eight"</code>.</p>
     <p>Within the callback function, <code>this</code> refers to the current DOM element for each iteration. The function can return an individual data item or an array of data items to be inserted into the resulting set. If an array is returned, the elements inside the array are inserted into the set. If the function returns <code>null</code> or <code>undefined</code>, no element will be inserted.</p>
   </longdesc>
   <example>
     <desc>Build a list of all the values within a form.</desc>
     <code><![CDATA[
-    $("p").append( $("input").map(function(){
-      return $(this).val();
-    }).get().join(", ") );
+$( "p" )
+  .append( $( "input" ).map(function() {
+    return $( this ).val();
+  })
+  .get()
+  .join( ", " ) );
 ]]></code>
     <css><![CDATA[
-  p { color:red; }
-  ]]></css>
-    <html><![CDATA[<p><b>Values: </b></p>
-  <form>
-    <input type="text" name="name" value="John"/>
-
-    <input type="text" name="password" value="password"/>
-    <input type="text" name="url" value="http://ejohn.org/"/>
-
-  </form>]]></html>
+  p {
+    color: red;
+  }
+]]></css>
+    <html><![CDATA[
+<p><b>Values: </b></p>
+<form>
+  <input type="text" name="name" value="John">
+  <input type="text" name="password" value="password">
+  <input type="text" name="url" value="http://ejohn.org/">
+</form>
+]]></html>
   </example>
   <example>
     <desc>A contrived example to show some functionality.</desc>
     <code><![CDATA[
-var mappedItems = $("li").map(function (index) {
-  var replacement = $("<li>").text($(this).text()).get(0);
+var mappedItems = $( "li" ).map(function( index ) {
+  var replacement = $( "<li>" ).text( $( this ).text() ).get( 0 );
   if (index == 0) {
-    /* make the first item all caps */
-    $(replacement).text($(replacement).text().toUpperCase());
-  } else if (index == 1 || index == 3) {
-    /* delete the second and fourth items */
+    // Make the first item all caps
+    $( replacement ).text( $( replacement ).text().toUpperCase() );
+  } else if ( index == 1 || index == 3 ) {
+    // Delete the second and fourth items
     replacement = null;
-  } else if (index == 2) {
-    /* make two of the third item and add some text */
-    replacement = [replacement,$("<li>").get(0)];
-    $(replacement[0]).append("<b> - A</b>");
-    $(replacement[1]).append("Extra <b> - B</b>");
+  } else if ( index == 2 ) {
+    // Make two of the third item and add some text
+    replacement = [ replacement, $( "<li>" ).get( 0 ) ];
+    $( replacement[ 0 ] ).append( "<b> - A</b>" );
+    $( replacement[ 1 ] ).append( "Extra <b> - B</b>" );
   }
 
-  /* replacement will be a dom element, null,
-     or an array of dom elements */
+  // Replacement will be a dom element, null,
+  // or an array of dom elements
   return replacement;
 });
-$("#results").append(mappedItems);
-
+$( "#results" ).append( mappedItems );
 ]]></code>
     <css><![CDATA[
-  body { font-size:16px; }
-  ul { float:left; margin:0 30px; color:blue; }
-  #results { color:red; }
-  ]]></css>
-    <html><![CDATA[<ul>
-    <li>First</li>
-    <li>Second</li>
-    <li>Third</li>
-
-    <li>Fourth</li>
-    <li>Fifth</li>
-  </ul>
-  <ul id="results">
-
-  </ul>]]></html>
+  body {
+    font-size: 16px;
+  }
+  ul {
+    float: left;
+    margin: 0 30px;
+    color: blue;
+  }
+  #results {
+    color: red;
+  }
+]]></css>
+    <html><![CDATA[
+<ul>
+  <li>First</li>
+  <li>Second</li>
+  <li>Third</li>
+  <li>Fourth</li>
+  <li>Fifth</li>
+</ul>
+<ul id="results">
+</ul>
+]]></html>
   </example>
   <example>
     <desc>Equalize the heights of the divs.</desc>
     <code><![CDATA[
 $.fn.equalizeHeights = function() {
-  var maxHeight = this.map(function(i,e) {
-    return $(e).height();
+  var maxHeight = this.map(function( i, e ) {
+    return $( e ).height();
   }).get();
-
   return this.height( Math.max.apply(this, maxHeight) );
 };
 
-$('input').click(function(){
-  $('div').equalizeHeights();
+$( "input" ).click(function() {
+  $( "div" ).equalizeHeights();
 });
-
 ]]></code>
     <css><![CDATA[
-div { width: 40px; float:left; }
-input { clear:left}
-  ]]></css>
+  div {
+    width: 40px;
+    float: left;
+  }
+  input {
+    clear: left;
+  }
+]]></css>
     <html><![CDATA[
-
 <input type="button" value="equalize div heights">
-
 <div style="background:red; height: 40px; "></div>
 <div style="background:green; height: 70px;"></div>
 <div style="background:blue; height: 50px; "></div>
-
 ]]></html>
   </example>
   <category slug="traversing/filtering"/>

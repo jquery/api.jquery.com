@@ -21,7 +21,7 @@
     <added>1.0</added>
   </signature>
   <longdesc>
-    <p>This method is a shortcut for <code>.on('mousemove', handler)</code> in the first two variations, and <code>.trigger('mousemove')</code> in the third.</p>
+    <p>This method is a shortcut for <code>.on( "mousemove", handler )</code> in the first two variations, and <code>.trigger( "mousemove" )</code> in the third.</p>
     <p>The <code>mousemove</code> event is sent to an element when the mouse pointer moves inside the element. Any HTML element can receive this event.</p>
     <p>For example, consider the HTML:</p>
     <pre><code>&lt;div id="target"&gt;
@@ -32,11 +32,13 @@
 &lt;/div&gt;
 &lt;div id="log"&gt;&lt;/div&gt;</code></pre>
     <p>The event handler can be bound to the target:</p>
-    <pre><code>$("#target").mousemove(function(event) {
+    <pre><code>
+$( "#target" ).mousemove(function( event ) {
   var msg = "Handler for .mousemove() called at ";
   msg += event.pageX + ", " + event.pageY;
-  $("#log").append("&lt;div&gt;" + msg + "&lt;/div&gt;");
-});</code></pre>
+  $( "#log" ).append( "&lt;div&gt;" + msg + "&lt;/div&gt;" );
+});
+    </code></pre>
     <p>Now when the mouse pointer moves within the target button, the messages are appended to &lt;div id="log"&gt;:</p>
     <p>
       <samp>Handler for .mousemove() called at (399, 48)</samp>
@@ -49,9 +51,11 @@
       <br/>
     </p>
     <p>To trigger the event manually, apply <code>.mousemove()</code> without an argument:</p>
-    <pre><code>$("#other").click(function() {
-  $("#target").mousemove();
-});</code></pre>
+    <pre><code>
+$( "#other" ).click(function() {
+  $( "#target" ).mousemove();
+});
+    </code></pre>
     <p>After this code executes, clicks on the Trigger button will also append the message:</p>
     <p>
       <samp>Handler for .mousemove() called at (undefined, undefined)</samp>
@@ -63,29 +67,44 @@
   <example>
     <desc>Show the mouse coordinates when the mouse is moved over the yellow div.  Coordinates are relative to the window, which in this case is the iframe.</desc>
     <code><![CDATA[
-$("div").mousemove(function(e){
+$( "div" ).mousemove(function( e ) {
   var pageCoords = "( " + e.pageX + ", " + e.pageY + " )";
   var clientCoords = "( " + e.clientX + ", " + e.clientY + " )";
-  $("span:first").text("( e.pageX, e.pageY ) : " + pageCoords);
-  $("span:last").text("( e.clientX, e.clientY ) : " + clientCoords);
+  $( "span:first" ).text( "( e.pageX, e.pageY ) : " + pageCoords );
+  $( "span:last" ).text( "( e.clientX, e.clientY ) : " + clientCoords );
 });
-
 ]]></code>
     <height>300</height>
     <css><![CDATA[
-div { width:220px; height:170px; margin: 10px 50px 10px 10px;
-      background:yellow; border:2px groove; float:right; }
-p { margin:0; margin-left:10px; color:red; width:220px;
-    height:120px; padding-top:70px;
-    float:left; font-size:14px; }
-span { display:block; }
+  div {
+    width: 220px;
+    height: 170px;
+    margin: 10px 50px 10px 10px;
+    background: yellow;
+    border: 2px groove;
+    float: right;
+  }
+  p {
+    margin: 0;
+    margin-left: 10px;
+    color: red;
+    width: 220px;
+    height: 120px;
+    padding-top: 70px;
+    float: left;
+    font-size: 14px;
+  }
+  span {
+    display: block;
+  }
 ]]></css>
-    <html><![CDATA[<p>
+    <html><![CDATA[
+<p>
   <span>Move the mouse over the div.</span>
   <span>&nbsp;</span>
 </p>
-
-<div></div>]]></html>
+<div></div>
+]]></html>
   </example>
   <category slug="events/mouse-events"/>
   <category slug="version/1.0"/>

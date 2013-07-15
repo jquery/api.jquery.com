@@ -35,32 +35,37 @@
       <img src="/resources/0042_05_02.png" alt=""/>
     </p>
     <p>The event handler can be bound to any <code>&lt;div&gt;</code>:</p>
-    <pre><code>$('#target').mouseup(function() {
-  alert('Handler for .mouseup() called.');
+    <pre><code>
+$( "#target" ).mouseup(function() {
+  alert( "Handler for .mouseup() called." );
 });
-</code></pre>
+    </code></pre>
     <p>Now if we click on this element, the alert is displayed:</p>
     <p>
       <samp>Handler for .mouseup() called.</samp>
     </p>
     <p>We can also trigger the event when a different element is clicked:</p>
-    <pre><code>$('#other').click(function() {
-  $('#target').mouseup();
-});</code></pre>
+    <pre><code>
+$( "#other" ).click(function() {
+  $( "#target" ).mouseup();
+});
+    </code></pre>
     <p>After this code executes, clicks on <samp>Trigger the handler</samp> will also alert the message.</p>
     <p>If the user clicks outside an element, drags onto it, and releases the button, this is still counted as a <code>mouseup</code> event. This sequence of actions is not treated as a button press in most user interfaces, so it is usually better to use the <code>click</code> event unless we know that the <code>mouseup</code> event is preferable for a particular situation.</p>
   </longdesc>
   <example>
     <desc>Show texts when mouseup and mousedown event triggering.</desc>
     <code><![CDATA[
-    $("p").mouseup(function(){
-      $(this).append('<span style="color:#F00;">Mouse up.</span>');
-    }).mousedown(function(){
-      $(this).append('<span style="color:#00F;">Mouse down.</span>');
-    });
-
+$( "p" )
+  .mouseup(function() {
+    $( this ).append( "<span style='color:#f00;'>Mouse up.</span>" );
+  })
+  .mousedown(function() {
+    $( this ).append( "<span style='color:#00f;'>Mouse down.</span>" );
+  });
 ]]></code>
-    <html><![CDATA[<p>Press mouse and release here.</p>
+    <html><![CDATA[
+<p>Press mouse and release here.</p>
 ]]></html>
   </example>
   <category slug="events/mouse-events"/>

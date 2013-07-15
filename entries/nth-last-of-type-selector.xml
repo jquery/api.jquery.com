@@ -15,12 +15,19 @@
   </longdesc>
   <example>
     <desc>Find the second to last li in each matched ul and note it.</desc>
-    <code><![CDATA[$("ul li:nth-last-of-type(2)").append("<span> - 2nd to last!</span>");]]></code>
+    <code><![CDATA[
+$( "ul li:nth-last-of-type(2)" ).append( "<span> - 2nd to last!</span>" );
+]]></code>
     <css><![CDATA[
-  div { float:left; }
-  span { color:blue; }
-  ]]></css>
-    <html><![CDATA[<div>
+  div {
+    float: left;
+  }
+  span {
+    color: blue;
+  }
+]]></css>
+    <html><![CDATA[
+<div>
   <ul>
     <li>John</li>
     <li>Karl</li>
@@ -39,27 +46,45 @@
     <li>Timmy</li>
     <li>Gibson</li>
   </ul>
-</div>]]></html>
+</div>
+]]></html>
   </example>
   <example>
     <desc>This is a playground to see how the selector works with different strings. </desc>
     <code><![CDATA[
-$("button").click(function () {
-  var str = $(this).text();
-  $("tr").css("background", "white");
-  $("tr" + str).css("background", "#ff0000");
-  $("#inner").text(str);
+$( "button" ).click(function() {
+  var str = $( this ).text();
+  $( "tr" ).css( "background", "white" );
+  $( "tr" + str ).css( "background", "#ff0000" );
+  $( "#inner" ).text( str );
 });
 ]]></code>
     <css><![CDATA[
-button { display:block; font-size:12px; width:100px; }
-div { float:left; margin:10px; font-size:10px;
-      border:1px solid black; }
-span { color:blue; font-size:18px; }
-#inner { color:red; }
-td { width:50px; text-align:center; }
+  button {
+    display: block;
+    font-size: 12px;
+    width: 100px;
+  }
+  div {
+    float: left;
+    margin: 10px;
+    font-size: 10px;
+    border: 1px solid black;
+  }
+  span {
+    color: blue;
+    font-size: 18px;
+  }
+  #inner {
+    color: red;
+  }
+  td {
+    width: 50px;
+    text-align: center;
+  }
 ]]></css>
-    <html><![CDATA[<div>
+    <html><![CDATA[
+<div>
   <button>:nth-last-of-type(even)</button>
   <button>:nth-last-of-type(odd)</button>
   <button>:nth-last-of-type(3n)</button>

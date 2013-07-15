@@ -18,12 +18,14 @@
   <longdesc/>
   <example>
     <desc>Finds all inputs that have an id attribute and whose name attribute ends with man and sets the value.</desc>
-    <code><![CDATA[$('input[id][name$="man"]').val('only this one');]]></code>
-    <html><![CDATA[<input id="man-news" name="man-news" />
-
-<input name="milkman" />
-<input id="letterman" name="new-letterman" />
-<input name="newmilk" />
+    <code><![CDATA[
+$( "input[id][name$='man']" ).val( "only this one" );
+]]></code>
+    <html><![CDATA[
+<input id="man-news" name="man-news">
+<input name="milkman">
+<input id="letterman" name="new-letterman">
+<input name="newmilk">
 ]]></html>
   </example>
   <category slug="selectors/attribute-selectors"/>
