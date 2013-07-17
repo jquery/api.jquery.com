@@ -5,7 +5,7 @@
   <signature>
     <added>1.0</added>
   </signature>
-  <desc>Selects odd elements, zero-indexed.  See also <a href="/Selectors/even">even</a>.</desc>
+  <desc>Selects odd elements, zero-indexed.  See also <a href="/Selectors/even/">even</a>.</desc>
   <longdesc>
     <p>In particular, note that the <em>0-based indexing</em> means that, counter-intuitively, <code>:odd</code> selects the second element, fourth element, and so on within the matched set.</p>
   </longdesc>
@@ -13,19 +13,22 @@
   <note id="document-order" type="additional"/>
   <example>
     <desc>Finds odd table rows, matching the second, fourth and so on (index 1, 3, 5 etc.).</desc>
-    <code><![CDATA[$("tr:odd").css("background-color", "#bbbbff");]]></code>
+    <code><![CDATA[
+$( "tr:odd" ).css( "background-color", "#bbbbff" );
+]]></code>
     <css><![CDATA[
-table {
-  background:#f3f7f5;
-}
+  table {
+    background: #f3f7f5;
+  }
 ]]></css>
-    <html><![CDATA[<table border="1">
+    <html><![CDATA[
+<table border="1">
   <tr><td>Row with Index #0</td></tr>
   <tr><td>Row with Index #1</td></tr>
-
   <tr><td>Row with Index #2</td></tr>
   <tr><td>Row with Index #3</td></tr>
-</table>]]></html>
+</table>
+]]></html>
   </example>
   <category slug="selectors/basic-filter-selectors"/>
   <category slug="selectors/jquery-selector-extensions"/>

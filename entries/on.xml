@@ -11,7 +11,7 @@
       <desc>A selector string to filter the descendants of the selected elements that trigger the event. If the selector is <code>null</code> or omitted, the event is always triggered when it reaches the selected element.</desc>
     </argument>
     <argument name="data" type="Anything" optional="true">
-      <desc>Data to be passed to the handler in <a href="http://api.jquery.com/event.data/"><code>event.data</code></a> when an event is triggered.</desc>
+      <desc>Data to be passed to the handler in <a href="/event.data/"><code>event.data</code></a> when an event is triggered.</desc>
     </argument>
     <argument name="handler(eventObject)" type="Function">
       <desc>A function to execute when the event is triggered. The value <code>false</code> is also allowed as a shorthand for a function that simply does <code>return false</code>.</desc>
@@ -26,13 +26,13 @@
       <desc>A selector string to filter the descendants of the selected elements that will call the handler. If the selector is null or omitted, the handler is always called when it reaches the selected element.</desc>
     </argument>
     <argument name="data" type="Anything" optional="true">
-      <desc>Data to be passed to the handler in <a href="http://api.jquery.com/event.data/"><code>event.data</code></a> when an event occurs.</desc>
+      <desc>Data to be passed to the handler in <a href="/event.data/"><code>event.data</code></a> when an event occurs.</desc>
     </argument>
   </signature>
   <longdesc>
-    <p>The <code>.on()</code> method attaches event handlers to the currently selected set of elements in the jQuery object. As of jQuery 1.7, the <code>.on()</code> method provides all functionality required for attaching event handlers. For help in converting from older jQuery event methods, see <a href="http://api.jquery.com/bind/"><code>.bind()</code></a>,  <a href="http://api.jquery.com/delegate/"><code>.delegate()</code></a>, and <a href="http://api.jquery.com/live/"><code>.live()</code></a>. To remove events bound with <code>.on()</code>, see <a href="http://api.jquery.com/off/"><code>.off()</code></a>. To attach an event that runs only once and then removes itself, see <a href="http://api.jquery.com/one/"><code>.one()</code></a></p>
+    <p>The <code>.on()</code> method attaches event handlers to the currently selected set of elements in the jQuery object. As of jQuery 1.7, the <code>.on()</code> method provides all functionality required for attaching event handlers. For help in converting from older jQuery event methods, see <a href="/bind/"><code>.bind()</code></a>,  <a href="/delegate/"><code>.delegate()</code></a>, and <a href="/live/"><code>.live()</code></a>. To remove events bound with <code>.on()</code>, see <a href="/off/"><code>.off()</code></a>. To attach an event that runs only once and then removes itself, see <a href="/one/"><code>.one()</code></a></p>
     <h2 id="event-names">Event names and namespaces</h2>
-    <p>Any event names can be used for the <code>events</code> argument. jQuery will pass through the browser's standard JavaScript event types, calling the <code>handler</code> function when the browser generates events due to user actions such as <code>click</code>. In addition, the <a href="http://api.jquery.com/trigger/"><code>.trigger()</code></a> method can trigger both standard browser event names and custom event names to call attached handlers. Event names should only contain alphanumerics, underscore, and colon chraracters.</p>
+    <p>Any event names can be used for the <code>events</code> argument. jQuery will pass through the browser's standard JavaScript event types, calling the <code>handler</code> function when the browser generates events due to user actions such as <code>click</code>. In addition, the <a href="/trigger/"><code>.trigger()</code></a> method can trigger both standard browser event names and custom event names to call attached handlers. Event names should only contain alphanumerics, underscore, and colon chraracters.</p>
     <p>An event name can be qualified by <em>event namespaces</em> that simplify removing or triggering the event. For example, <code>"click.myPlugin.simple"</code> defines both the myPlugin and simple namespaces for this particular click event. A click event handler attached via that string could be removed with <code>.off("click.myPlugin")</code> or <code>.off("click.simple")</code> without disturbing other click handlers attached to the elements. Namespaces are similar to CSS classes in that they are not hierarchical; only one name needs to match. Namespaces beginning with an underscore are reserved for jQuery's use.</p>
     <p>In the second form of <code>.on()</code>, the <code>events</code> argument is a plain object. The keys are strings in the same form as the <code>events</code> argument with space-separated event type names and optional namespaces. The value for each key is a function (or <code>false</code> value) that is used as the <code>handler</code> instead of the final argument to the method. In other respects, the two forms are identical in their behavior as described below.</p>
     <h2 id="direct-and-delegated-events">Direct and delegated events</h2>
@@ -43,45 +43,53 @@
     <p>Delegated events have the advantage that they can process events from <em>descendant elements</em> that are added to the document at a later time. By picking an element that is guaranteed to be present at the time the delegated event handler is attached, you can use delegated events to avoid the need to frequently attach and remove event handlers. This element could be the container element of a view in a Model-View-Controller design, for example, or <code>document</code> if the event handler wants to monitor all bubbling events in the document. The <code>document</code> element is available in the <code>head</code> of the document before loading any other HTML, so it is safe to attach events there without waiting for the document to be ready.</p>
     <p>In addition to their ability to handle events on descendant elements not yet created, another advantage of delegated events is their potential for much lower overhead when many elements must be monitored. On a data table with 1,000 rows in its <code>tbody</code>, this example attaches a handler to 1,000 elements:</p>
     <pre><code>
-$("#dataTable tbody tr").on("click", function(event){
-  alert($(this).text());
+$( "#dataTable tbody tr" ).on( "click", function( event ) {
+  alert( $( this ).text() );
 });
-</code></pre>
+    </code></pre>
     <p>A delegated-events approach attaches an event handler to only one element, the tbody, and the event only needs to bubble up one level (from the clicked <code>tr</code> to <code>tbody</code>):</p>
     <pre><code>
-$("#dataTable tbody").on("click", "tr", function(event){
-  alert($(this).text());
+$( "#dataTable tbody" ).on( "click", "tr", function( event ) {
+  alert( $( this ).text() );
 });
-</code></pre>
+    </code></pre>
     <p><strong>Note:</strong> Delegated events do not work for SVG.</p>
     <h2 id="event-handler">The event handler and its environment</h2>
     <p>The <code>handler</code> argument is a function (or the value <code>false</code>, see below), and is required unless you pass an object for the <code>events</code> argument. You can provide an anonymous handler function at the point of the <code>.on()</code> call, as the examples have done above, or declare a named function and pass its name:</p>
     <pre><code>
-function notify() { alert("clicked"); }
-$("button").on("click", notify);
-</code></pre>
-    <p>When the browser triggers an event or other JavaScript calls jQuery's <code>.trigger()</code> method, jQuery passes the handler an <a href="http://api.jquery.com/category/event-object/"><code>event object</code></a> it can use to analyze and change the status of the event. This object is a <em>normalized subset</em> of data provided by the browser; the browser's unmodified native event object is available in <code>event.originalEvent</code>. For example, <a href="http://api.jquery.com/event.type"><code>event.type</code></a> contains the event name (e.g., "resize") and <a href="http://api.jquery.com/event.target"><code>event.target</code></a> indicates the deepest (innermost) element where the event occurred.</p>
+function notify() {
+  alert( "clicked" );
+}
+$( "button" ).on( "click", notify );
+    </code></pre>
+    <p>When the browser triggers an event or other JavaScript calls jQuery's <code>.trigger()</code> method, jQuery passes the handler an <a href="/event-object/"><code>event object</code></a> it can use to analyze and change the status of the event. This object is a <em>normalized subset</em> of data provided by the browser; the browser's unmodified native event object is available in <code>event.originalEvent</code>. For example, <a href="/event.type/"><code>event.type</code></a> contains the event name (e.g., "resize") and <a href="/event.target/"><code>event.target</code></a> indicates the deepest (innermost) element where the event occurred.</p>
     <p>By default, most events bubble up from the original event target to the <code>document</code> element. At each element along the way, jQuery calls any matching event handlers that have been attached. A handler can prevent the event from bubbling further up the document tree (and thus prevent handlers on those elements from running) by calling <code>event.stopPropagation()</code>. Any other handlers attached on the current element <em>will</em> run however. To prevent that, call <code>event.stopImmediatePropagation()</code>. (Event handlers bound to an element are called in the same order that they were bound.)</p>
     <p>Similarly, a handler can call <code>event.preventDefault()</code> to cancel any default action that the browser may have for this event; for example, the default action on a <code>click</code> event is to follow the link. Not all browser events have default actions, and not all default actions can be canceled. See the <a href="http://www.w3.org/TR/DOM-Level-3-Events/#event-types-list">W3C Events Specification</a> for details.</p>
-    <p>Returning <code>false</code> from an event handler will automatically call <code>event.stopPropagation()</code> and <code>event.preventDefault()</code>. A <code>false</code> value can also be passed for the <code>handler</code> as a shorthand for <code>function(){ return false; }</code>. So, <code>$("a.disabled").on("click", false);</code> attaches an event handler to all links with class "disabled" that prevents them from being followed when they are clicked and also stops the event from bubbling. </p>
-    <p>When jQuery calls a handler, the <code>this</code> keyword is a reference to the element where the event is being delivered; for directly bound events this is the element where the event was attached and for delegated events this is an element matching <code>selector</code>. (Note that <code>this</code> may not be equal to <code>event.target</code> if the event has bubbled from a descendant element.) To create a jQuery object from the element so that it can be used with jQuery methods, use <code>$(this)</code>.</p>
+    <p>Returning <code>false</code> from an event handler will automatically call <code>event.stopPropagation()</code> and <code>event.preventDefault()</code>. A <code>false</code> value can also be passed for the <code>handler</code> as a shorthand for <code>function(){ return false; }</code>. So, <code>$( "a.disabled" ).on( "click", false );</code> attaches an event handler to all links with class "disabled" that prevents them from being followed when they are clicked and also stops the event from bubbling. </p>
+    <p>When jQuery calls a handler, the <code>this</code> keyword is a reference to the element where the event is being delivered; for directly bound events this is the element where the event was attached and for delegated events this is an element matching <code>selector</code>. (Note that <code>this</code> may not be equal to <code>event.target</code> if the event has bubbled from a descendant element.) To create a jQuery object from the element so that it can be used with jQuery methods, use <code>$( this )</code>.</p>
     <h2 id="passing-data">Passing data to the handler</h2>
-    <p>If a <code>data</code> argument is provided to <code>.on()</code> and is not <code>null</code> or <code>undefined</code>, it is passed to the handler in the <a href="http://api.jquery.com/event.data/"><code>event.data</code></a> property each time an event is triggered. The <code>data</code> argument can be any type, but if a string is used the <code>selector</code> must either be provided or explicitly passed as <code>null</code> so that the data is not mistaken for a selector. Best practice is to use a plain object so that multiple values can be passed as properties.</p>
+    <p>If a <code>data</code> argument is provided to <code>.on()</code> and is not <code>null</code> or <code>undefined</code>, it is passed to the handler in the <a href="/event.data/"><code>event.data</code></a> property each time an event is triggered. The <code>data</code> argument can be any type, but if a string is used the <code>selector</code> must either be provided or explicitly passed as <code>null</code> so that the data is not mistaken for a selector. Best practice is to use a plain object so that multiple values can be passed as properties.</p>
     <p>As of jQuery 1.4, the same event handler can be bound to an element multiple times. This is especially useful when the <code>event.data</code> feature is being used, or when other unique data resides in a closure around the event handler function. For example:</p>
     <pre><code>
-function greet(event) { alert("Hello "+event.data.name); }
-$("button").on("click", { name: "Karl" }, greet);
-$("button").on("click", { name: "Addy" }, greet);
-</code></pre>
+function greet( event ) {
+  alert( "Hello "+event.data.name );
+}
+$( "button" ).on( "click", {
+  name: "Karl"
+}, greet );
+$( "button" ).on( "click", {
+  name: "Addy"
+}, greet );
+    </code></pre>
     <p>The above code will generate two different alerts when the button is clicked.</p>
-    <p>As an alternative or in addition to the <code>data</code> argument provided to the <code>.on()</code> method, you can also pass data to an event handler using a second argument to <a href="http://api.jquery.com/trigger/">.trigger()</a> or <a href="http://api.jquery.com/triggerHandler/">.triggerHandler()</a>.</p>
+    <p>As an alternative or in addition to the <code>data</code> argument provided to the <code>.on()</code> method, you can also pass data to an event handler using a second argument to <a href="/trigger/">.trigger()</a> or <a href="/triggerHandler/">.triggerHandler()</a>.</p>
     <h2 id="event-performance">Event performance</h2>
     <p>In most cases, an event such as <code>click</code> occurs infrequently and performance is not a significant concern. However, high frequency events such as <code>mousemove</code> or <code>scroll</code> can fire dozens of times per second, and in those cases it becomes more important to use events judiciously. Performance can be increased by reducing the amount of work done in the handler itself, caching information needed by the handler rather than recalculating it, or by rate-limiting the number of actual page updates using <code>setTimeout</code>.</p>
     <p>Attaching many delegated event handlers near the top of the document tree can degrade performance. Each time the event occurs, jQuery must compare all selectors of all attached events of that type to every element in the path from the event target up to the top of the document. For best performance, attach delegated events at a document location as close as possible to the target elements. Avoid excessive use of <code>document</code> or <code>document.body</code> for delegated events on large documents.</p>
-    <p>jQuery can process simple selectors of the form <code>tag#id.class</code> very quickly when they are used to filter delegated events. So, <code>"#myForm"</code>, <code>"a.external"</code>, and <code>"button"</code> are all fast selectors. Delegated events that use more complex selectors, particularly hierarchical ones, can be several times slower--although they are still fast enough for most applications. Hierarchical selectors can often be avoided simply by attaching the handler to a more appropriate point in the document. For example, instead of <code>$("body").on("click", "#commentForm .addNew", addComment)</code> use <code>$("#commentForm").on("click", ".addNew", addComment)</code>.</p>
+    <p>jQuery can process simple selectors of the form <code>tag#id.class</code> very quickly when they are used to filter delegated events. So, <code>"#myForm"</code>, <code>"a.external"</code>, and <code>"button"</code> are all fast selectors. Delegated events that use more complex selectors, particularly hierarchical ones, can be several times slower--although they are still fast enough for most applications. Hierarchical selectors can often be avoided simply by attaching the handler to a more appropriate point in the document. For example, instead of <code>$( "body" ).on( "click", "#commentForm .addNew", addComment )</code> use <code>$( "#commentForm" ).on( "click", ".addNew", addComment )</code>.</p>
     <h2 id="additional-notes">Additional notes</h2>
-    <p>There are shorthand methods for some events such as <a href="http://api.jquery.com/click/"><code>.click()</code></a> that can be used to attach or trigger event handlers. For a complete list of shorthand methods, see the <a href="http://api.jquery.com/category/events/">events category</a>.</p>
-    <p><em>Deprecated in jQuery 1.8, removed in 1.9:</em> The name <code>"hover"</code> used as a shorthand for the string <code>"mouseenter mouseleave"</code>. It attaches a <em>single event handler</em> for those two events, and the handler must examine <code>event.type</code> to determine whether the event is <code>mouseenter</code> or <code>mouseleave</code>. Do not confuse the "hover" pseudo-event-name with the <a href="http://api.jquery.com/hover/"><code>.hover()</code></a> method, which accepts <em>one or two</em> functions.</p>
+    <p>There are shorthand methods for some events such as <a href="/click/"><code>.click()</code></a> that can be used to attach or trigger event handlers. For a complete list of shorthand methods, see the <a href="/category/events/">events category</a>.</p>
+    <p><em>Deprecated in jQuery 1.8, removed in 1.9:</em> The name <code>"hover"</code> used as a shorthand for the string <code>"mouseenter mouseleave"</code>. It attaches a <em>single event handler</em> for those two events, and the handler must examine <code>event.type</code> to determine whether the event is <code>mouseenter</code> or <code>mouseleave</code>. Do not confuse the "hover" pseudo-event-name with the <a href="/hover/"><code>.hover()</code></a> method, which accepts <em>one or two</em> functions.</p>
     <p>jQuery's event system requires that a DOM element allow attaching data via a property on the element, so that events can be tracked and delivered. The <code>object</code>, <code>embed</code>, and <code>applet</code> elements cannot attach data, and therefore cannot have jQuery events bound to them.</p>
     <p>The <code>focus</code> and <code>blur</code> events are specified by the W3C to not bubble, but jQuery defines cross-browser <code>focusin</code> and <code>focusout</code> events that do bubble. When <code>focus</code> and <code>blur</code> are used to attach delegated event handlers, jQuery maps the names and delivers them as <code>focusin</code> and <code>focusout</code> respectively. For consistency and clarity, use the bubbling event type names.</p>
     <p>In all browsers, the <code>load</code>, <code>scroll</code>, and <code>error</code> events (e.g., on an <code>&lt;img&gt;</code> element) do not bubble. In Internet Explorer 8 and lower, the <code>paste</code> and <code>reset</code> events do not bubble. Such events are not supported for use with delegation, but they <em>can</em> be used when the event handler is directly attached to the element generating the event.</p>
@@ -89,102 +97,145 @@ $("button").on("click", { name: "Addy" }, greet);
   </longdesc>
   <example>
     <desc>Display a paragraph's text in an alert when it is clicked:</desc>
-    <code><![CDATA[$("p").on("click", function(){
-alert( $(this).text() );
-});]]></code>
+    <code><![CDATA[
+$( "p" ).on( "click", function() {
+  alert( $( this ).text() );
+});
+]]></code>
   </example>
   <example>
     <desc>Pass data to the event handler, which is specified here by name:</desc>
-    <code><![CDATA[function myHandler(event) {
-  alert(event.data.foo);
+    <code><![CDATA[
+function myHandler( event ) {
+  alert( event.data.foo );
 }
-$("p").on("click", {foo: "bar"}, myHandler)]]></code>
+$( "p" ).on( "click", { foo: "bar" }, myHandler );
+]]></code>
   </example>
   <example>
     <desc>Cancel a form submit action and prevent the event from bubbling up by returning <code>false</code>:</desc>
-    <code><![CDATA[$("form").on("submit", false)]]></code>
+    <code><![CDATA[
+$( "form" ).on( "submit", false );
+]]></code>
   </example>
   <example>
     <desc>Cancel only the default action by using .preventDefault().</desc>
-    <code><![CDATA[$("form").on("submit", function(event) {
+    <code><![CDATA[
+$( "form" ).on( "submit", function( event ) {
   event.preventDefault();
-});]]></code>
+});
+]]></code>
   </example>
   <example>
     <desc>Stop submit events from bubbling without preventing form submit, using .stopPropagation().</desc>
-    <code><![CDATA[$("form").on("submit", function(event) {
+    <code><![CDATA[
+$( "form" ).on( "submit", function( event ) {
   event.stopPropagation();
-});]]></code>
+});
+]]></code>
   </example>
   <example>
     <desc>Attach and trigger custom (non-browser) events.</desc>
     <code><![CDATA[
-$("p").on("myCustomEvent", function(e, myName){
-  $(this).text(myName + ", hi there!");
-  $("span").stop().css("opacity", 1)
-    .text("myName = " + myName)
-    .fadeIn(30).fadeOut(1000);
+$( "p" ).on( "myCustomEvent", function( e, myName ) {
+  $( this ).text( myName + ", hi there!" );
+  $( "span" )
+    .stop()
+    .css( "opacity", 1 )
+    .text( "myName = " + myName )
+    .fadeIn( 30 )
+    .fadeOut( 1000 );
 });
-$("button").click(function () {
-  $("p").trigger("myCustomEvent", [ "John" ]);
+$( "button" ).click(function () {
+  $( "p" ).trigger( "myCustomEvent", [ "John" ] );
 });
 ]]></code>
     <css><![CDATA[
-p { color:red; }
-span { color:blue; }
+  p {
+    color: red;
+  }
+  span {
+    color: blue;
+  }
 ]]></css>
-    <html><![CDATA[<p>Has an attached custom event.</p>
+    <html><![CDATA[
+<p>Has an attached custom event.</p>
 <button>Trigger custom event</button>
-<span style="display:none;"></span>]]></html>
+<span style="display:none;"></span>
+]]></html>
   </example>
   <example>
     <desc>Attach multiple event handlers simultaneously using a plain object.</desc>
-    <html><![CDATA[<div class="test">test div</div>]]></html>
+    <html><![CDATA[
+<div class="test">test div</div>
+]]></html>
     <css><![CDATA[
-.test { color: #000; padding: .5em; border: 1px solid #444; }
-.active { color: #900;}
-.inside { background-color: aqua; }
-]]></css>
-    <code><![CDATA[$("div.test").on({
-  click: function(){
-    $(this).toggleClass("active");
-  },
-  mouseenter: function(){
-    $(this).addClass("inside");
-  },
-  mouseleave: function(){
-    $(this).removeClass("inside");
+  .test {
+    color: #000;
+    padding: .5em;
+    border: 1px solid #444;
   }
-});]]></code>
+  .active {
+    color: #900;
+  }
+  .inside {
+    background-color: aqua;
+  }
+]]></css>
+    <code><![CDATA[
+$( "div.test" ).on({
+  click: function() {
+    $( this ).toggleClass( "active" );
+  }, mouseenter: function() {
+    $( this ).addClass( "inside" );
+  }, mouseleave: function() {
+    $( this ).removeClass( "inside" );
+  }
+});
+]]></code>
   </example>
   <example>
     <desc>Click any paragraph to add another after it. Note that .on() allows a click event on any paragraph--even new ones--since the event is handled by the ever-present body element after it bubbles to there.</desc>
     <code><![CDATA[
 var count = 0;
-$("body").on("click", "p", function(){
-  $(this).after("<p>Another paragraph! "+(++count)+"</p>");
+$( "body" ).on( "click", "p", function() {
+  $( this ).after( "<p>Another paragraph! " + ( ++count ) + "</p>" );
 });
 ]]></code>
     <css><![CDATA[
-p { background:yellow; font-weight:bold; cursor:pointer;
-    padding:5px; }
-p.over { background: #ccc; }
-span { color:red; }
+  p {
+    background: yellow;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px;
+  }
+  p.over {
+    background: #ccc;
+  }
+  span {
+    color: red;
+  }
 ]]></css>
-    <html><![CDATA[<p>Click me!</p>
-<span></span>]]></html>
+    <html><![CDATA[
+<p>Click me!</p>
+<span></span>
+]]></html>
   </example>
   <example>
     <desc>Display each paragraph's text in an alert box whenever it is clicked:</desc>
-    <code><![CDATA[$("body").on("click", "p", function(){
-  alert( $(this).text() );
-});]]></code>
+    <code><![CDATA[
+$( "body" ).on( "click", "p", function() {
+  alert( $( this ).text() );
+});
+]]></code>
   </example>
   <example>
     <desc>Cancel a link's default action using the preventDefault method.</desc>
-    <code><![CDATA[$("body").on("click", "a", function(event){
+    <code><![CDATA[
+$( "body" ).on( "click", "a", function( event ) {
   event.preventDefault();
-});]]></code>
+});
+]]></code>
   </example>
   <category slug="events/event-handler-attachment"/>
   <category slug="version/1.7"/>

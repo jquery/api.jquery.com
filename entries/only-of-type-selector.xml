@@ -12,13 +12,25 @@
   <example>
     <desc>Change the text and add a border for each button that is the only child button of its parent.</desc>
     <code><![CDATA[
-  $("button:only-of-type").text("Alone").css("border", "2px blue solid");
+  $( "button:only-of-type" ).text( "Alone" ).css( "border", "2px blue solid" );
 ]]></code>
     <css><![CDATA[
-  div { width:100px; height:80px; margin:5px; float:left; background:#b9e; }
-  span { padding: 2px; margin: 3px; line-height: 1.4; border: 1px solid #000; }
+  div {
+    width: 100px;
+    height: 80px;
+    margin: 5px;
+    float: left;
+    background: #b9e;
+  }
+  span {
+    padding: 2px;
+    margin: 3px;
+    line-height: 1.4;
+    border: 1px solid #000;
+  }
 ]]></css>
-    <html><![CDATA[<div>
+    <html><![CDATA[
+<div>
   <button>Sibling!</button>
   <button>Sibling!</button>
 </div>
@@ -34,11 +46,12 @@
   <button>Sibling!</button>
   <span>Sibling!</span>
   <span>Sibling!</span>
-
 </div>
+
 <div>
   <button>Sibling!</button>
-</div>]]></html>
+</div>
+]]></html>
   </example>
   <category slug="selectors/child-filter-selectors"/>
   <category slug="version/1.9"/>

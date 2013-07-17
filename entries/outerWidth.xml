@@ -11,20 +11,27 @@
   <longdesc>
     <p>Returns the width of the element, along with left and right padding, border, and optionally margin, in pixels.</p>
     <p>If <code>includeMargin</code> is omitted or <code>false</code>, the padding and border are included in the calculation; if <code>true</code>, the margin is also included.</p>
-    <p>This method is not applicable to <code>window</code> and <code>document</code> objects; for these, use <code><a href="/width">.width()</a></code> instead. Although <code>.outerWidth()</code> can be used on table elements, it may give unexpected results on tables using the <code>border-collapse: collapse</code> CSS property.</p>
+    <p>This method is not applicable to <code>window</code> and <code>document</code> objects; for these, use <code><a href="/width/">.width()</a></code> instead. Although <code>.outerWidth()</code> can be used on table elements, it may give unexpected results on tables using the <code>border-collapse: collapse</code> CSS property.</p>
     <p class="image">
       <img src="/resources/0042_04_06.png"/>
     </p>
   </longdesc>
   <example>
     <desc>Get the outerWidth of a paragraph.</desc>
-    <code><![CDATA[var p = $("p:first");
-$("p:last").text( "outerWidth:" + p.outerWidth()+ " , outerWidth(true):" + p.outerWidth(true) );
+    <code><![CDATA[
+var p = $( "p:first" );
+$( "p:last" ).text( "outerWidth:" + p.outerWidth()+ " , outerWidth( true ):" + p.outerWidth( true ) );
 ]]></code>
     <css><![CDATA[
-  p { margin:10px;padding:5px;border:2px solid #666; }
+  p {
+    margin: 10px;
+    padding: 5px;
+    border: 2px solid #666;
+  }
 ]]></css>
-    <html><![CDATA[<p>Hello</p><p></p>]]></html>
+    <html><![CDATA[
+<p>Hello</p><p></p>
+]]></html>
   </example>
   <category slug="css"/>
   <category slug="dimensions"/>

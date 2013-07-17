@@ -38,24 +38,26 @@
       <desc>A selector string to filter the descendants of the selected elements that will call the handler. If the selector is null or omitted, the handler is always called when it reaches the selected element.</desc>
     </argument>
     <argument name="data" type="Anything" optional="true">
-      <desc>Data to be passed to the handler in <a href="http://api.jquery.com/event.data"><code>event.data</code></a> when an event occurs.</desc>
+      <desc>Data to be passed to the handler in <a href="/event.data/"><code>event.data</code></a> when an event occurs.</desc>
     </argument>
   </signature>
   <longdesc>
     <p>The first form of this method is identical to <code>.bind()</code>, except that the handler is unbound after its first invocation. The second two forms, introduced in jQuery 1.7, are identical to <code>.on()</code> except that the handler is removed after the first time the event occurs at the delegated element, whether the selector matched anything or not. For example:</p>
-    <pre><code>$("#foo").one("click", function() {
-  alert("This will be displayed only once.");
+    <pre><code>
+$( "#foo" ).one( "click", function() {
+  alert( "This will be displayed only once." );
 });
-$("body").one("click", "#foo", function() {
-  alert("This displays if #foo is the first thing clicked in the body.");
+$( "body" ).one( "click", "#foo", function() {
+  alert( "This displays if #foo is the first thing clicked in the body." );
 });
-</code></pre>
+    </code></pre>
     <p>After the code is executed, a click on the element with ID <code>foo</code> will display the alert. Subsequent clicks will do nothing. This code is equivalent to:</p>
-    <pre><code>$("#foo").on("click", function( event ) {
-  alert("This will be displayed only once.");
-  $(this).off( event );
+    <pre><code>
+$( "#foo" ).on( "click", function( event ) {
+  alert( "This will be displayed only once." );
+  $( this ).off( event );
 });
-</code></pre>
+    </code></pre>
     <p>In other words, explicitly calling <code>.off()</code> from within a regularly-bound handler has exactly the same effect.</p>
     <p>If the first argument contains more than one space-separated event types, the event handler is called <em>once for each event type</em>.</p>
   </longdesc>
@@ -63,22 +65,31 @@ $("body").one("click", "#foo", function() {
     <desc>Tie a one-time click to each div.</desc>
     <code><![CDATA[
 var n = 0;
-$("div").one("click", function() {
-  var index = $("div").index(this);
-  $(this).css({
-    borderStyle:"inset",
-    cursor:"auto"
+$( "div" ).one( "click", function() {
+  var index = $( "div" ).index( this );
+  $( this ).css({
+    borderStyle: "inset",
+    cursor: "auto"
   });
-  $("p").text("Div at index #" + index + " clicked." +
-      "  That's " + ++n + " total clicks.");
+  $( "p" ).text( "Div at index #" + index + " clicked." +
+    "  That's " + ++n + " total clicks." );
 });
-
 ]]></code>
     <css><![CDATA[
-div { width:60px; height:60px; margin:5px; float:left;
-background:green; border:10px outset;
-cursor:pointer; }
-p { color:red; margin:0; clear:left; }
+  div {
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+    float: left;
+    background: green;
+    border: 10px outset;
+    cursor:pointer;
+  }
+  p {
+    color: red;
+    margin: 0;
+    clear: left;
+  }
 ]]></css>
     <html><![CDATA[
 <div></div>
@@ -86,15 +97,16 @@ p { color:red; margin:0; clear:left; }
 <div></div>
 <div></div>
 <div></div>
-
 <p>Click a green square...</p>
 ]]></html>
   </example>
   <example>
     <desc>To display the text of all paragraphs in an alert box the first time each of them is clicked:</desc>
-    <code><![CDATA[$("p").one("click", function(){
-alert( $(this).text() );
-});]]></code>
+    <code><![CDATA[
+$( "p" ).one( "click", function() {
+  alert( $( this ).text() );
+});
+]]></code>
   </example>
   <category slug="events/event-handler-attachment"/>
   <category slug="version/1.1"/>

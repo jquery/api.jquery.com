@@ -28,13 +28,15 @@
 &lt;/ul&gt;
     </code></pre>
     <p>If we begin at item A, we can find its positioned ancestor:</p>
-    <pre><code>$('li.item-a').offsetParent().css('background-color', 'red');</code></pre>
+    <pre><code>
+$( "li.item-a" ).offsetParent().css( "background-color", "red" );
+    </code></pre>
     <p>This will change the color of list item II, which is positioned.</p>
   </longdesc>
   <example>
     <desc>Find the offsetParent of item "A."</desc>
     <height>250</height>
-    <code>$('li.item-a').offsetParent().css('background-color', 'red');</code>
+    <code>$( "li.item-a" ).offsetParent().css( "background-color", "red" );</code>
     <html><![CDATA[
 <ul class="level-1">
   <li class="item-i">I</li>
@@ -52,7 +54,8 @@
     </ul>
   </li>
   <li class="item-iii">III</li>
-</ul>]]></html>
+</ul>
+]]></html>
   </example>
   <category slug="offset"/>
   <category slug="traversing/tree-traversal"/>

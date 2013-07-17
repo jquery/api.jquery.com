@@ -10,17 +10,27 @@
   <desc>Get the current computed height for the first element in the set of matched elements, including padding, border, and optionally margin. Returns an integer (without "px") representation of the value or null if called on an empty set of elements.</desc>
   <longdesc>
     <p>The top and bottom padding and border are always included in the <code>.outerHeight()</code> calculation; if the <code>includeMargin</code> argument is set to <code>true</code>, the margin (top and bottom) is also included.</p>
-    <p>This method is not applicable to <code>window</code> and <code>document</code> objects; for these, use <code><a href="/height">.height()</a></code> instead.</p>
+    <p>This method is not applicable to <code>window</code> and <code>document</code> objects; for these, use <code><a href="/height/">.height()</a></code> instead.</p>
     <p class="image">
       <img src="/resources/0042_04_03.png"/>
     </p>
   </longdesc>
   <example>
     <desc>Get the outerHeight of a paragraph.</desc>
-    <code><![CDATA[var p = $("p:first");
-$("p:last").text( "outerHeight:" + p.outerHeight() + " , outerHeight(true):" + p.outerHeight(true) );]]></code>
-    <css><![CDATA[p { margin:10px;padding:5px;border:2px solid #666; } ]]></css>
-    <html><![CDATA[<p>Hello</p><p></p>]]></html>
+    <code><![CDATA[
+var p = $( "p:first" );
+$( "p:last" ).text( "outerHeight:" + p.outerHeight() + " , outerHeight( true ):" + p.outerHeight( true ) );
+]]></code>
+    <css><![CDATA[
+  p {
+    margin: 10px;
+    padding: 5px;
+    border: 2px solid #666;
+  }
+]]></css>
+    <html><![CDATA[
+<p>Hello</p><p></p>
+]]></html>
   </example>
   <category slug="css"/>
   <category slug="dimensions"/>

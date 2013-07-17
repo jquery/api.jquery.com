@@ -24,70 +24,86 @@
     </argument>
   </signature>
   <longdesc>
-    <p>The <code>off()</code> method removes event handlers that were attached with <a href="http://api.jquery.com/on"><code>.on()</code></a>. See the discussion of delegated and directly bound events on that page for more information. Specific event handlers can be removed on elements by providing combinations of event names, namespaces, selectors, or handler function names. <strong>When multiple filtering arguments are given, all of the arguments provided must match for the event handler to be removed.</strong></p>
+    <p>The <code>off()</code> method removes event handlers that were attached with <a href="/on/"><code>.on()</code></a>. See the discussion of delegated and directly bound events on that page for more information. Specific event handlers can be removed on elements by providing combinations of event names, namespaces, selectors, or handler function names. <strong>When multiple filtering arguments are given, all of the arguments provided must match for the event handler to be removed.</strong></p>
     <p>If a simple event name such as <code>"click"</code> is provided, <em>all</em> events of that type (both direct and delegated) are removed from the elements in the jQuery set. When writing code that will be used as a plugin, or simply when working with a large code base, best practice is to attach and remove events using namespaces so that the code will not inadvertently remove event handlers attached by other code. All events of all types in a specific namespace can be removed from an element by providing just a namespace, such as <code>".myPlugin"</code>. At minimum, either a namespace or event name must be provided.</p>
     <p>To remove specific delegated event handlers, provide a <code>selector</code> argument. The selector string must exactly match the one passed to <code>.on()</code> when the event handler was attached. To remove all delegated events from an element without removing non-delegated events, use the special value <code>"**"</code>.</p>
-    <p>A handler can also be removed by specifying the function name in the <code>handler</code> argument. When jQuery attaches an event handler, it assigns a unique id to the handler function. Handlers proxied by <a href="http://api.jquery.com/jQuery.proxy"><code>jQuery.proxy()</code></a> or a similar mechanism will all have the same unique id (the proxy function), so passing proxied handlers to <code>.off</code> may remove more handlers than intended. In those situations it is better to attach and remove event handlers using namespaces.</p>
+    <p>A handler can also be removed by specifying the function name in the <code>handler</code> argument. When jQuery attaches an event handler, it assigns a unique id to the handler function. Handlers proxied by <a href="/jQuery.proxy/"><code>jQuery.proxy()</code></a> or a similar mechanism will all have the same unique id (the proxy function), so passing proxied handlers to <code>.off</code> may remove more handlers than intended. In those situations it is better to attach and remove event handlers using namespaces.</p>
     <p>As with <code>.on()</code>, you can pass <code>events</code> as an object instead of specifying an <code>events</code> string and <code>handler</code> function as separate arguments. The keys for the <code>events</code> object are events and/or namespaces; the values are handler functions or the special value <code>false</code>.</p>
   </longdesc>
   <example>
     <desc>Add and remove event handlers on the colored button.</desc>
     <code><![CDATA[
 function aClick() {
-  $("div").show().fadeOut("slow");
+  $( "div" ).show().fadeOut( "slow" );
 }
-$("#bind").click(function () {
-  $("body").on("click", "#theone", aClick)
-    .find("#theone").text("Can Click!");
+$( "#bind" ).click(function() {
+  $( "body" ).on( "click", "#theone", aClick )
+    .find( "#theone" )
+    .text( "Can Click!" );
 });
-$("#unbind").click(function () {
-  $("body").off("click", "#theone", aClick)
-    .find("#theone").text("Does nothing...");
+$( "#unbind" ).click(function() {
+  $( "body" ).off( "click", "#theone", aClick )
+    .find( "#theone" )
+    .text( "Does nothing..." );
 });
 ]]></code>
     <css><![CDATA[
-button { margin:5px; }
-button#theone { color:red; background:yellow; }
+  button {
+    margin: 5px;
+  }
+  button#theone {
+    color: red;
+    background: yellow;
+  }
 ]]></css>
-    <html><![CDATA[<button id="theone">Does nothing...</button>
+    <html><![CDATA[
+<button id="theone">Does nothing...</button>
 <button id="bind">Add Click</button>
 <button id="unbind">Remove Click</button>
-<div style="display:none;">Click!</div>]]></html>
+<div style="display:none;">Click!</div>
+]]></html>
   </example>
   <example>
     <desc>Remove all event handlers from all paragraphs:</desc>
-    <code><![CDATA[$("p").off()]]></code>
+    <code><![CDATA[
+$( "p" ).off();
+]]></code>
   </example>
   <example>
     <desc>Remove all delegated click handlers from all paragraphs:</desc>
-    <code><![CDATA[$("p").off( "click", "**" )]]></code>
+    <code><![CDATA[
+$( "p" ).off( "click", "**" );
+]]></code>
   </example>
   <example>
     <desc>Remove just one previously bound handler by passing it as the third argument:</desc>
-    <code><![CDATA[var foo = function () {
-  // code to handle some kind of event
+    <code><![CDATA[
+var foo = function() {
+  // Code to handle some kind of event
 };
 
-// ... now foo will be called when paragraphs are clicked ...
-$("body").on("click", "p", foo);
+// ... Now foo will be called when paragraphs are clicked ...
+$( "body" ).on( "click", "p", foo );
 
-// ... foo will no longer be called.
-$("body").off("click", "p", foo); ]]></code>
+// ... Foo will no longer be called.
+$( "body" ).off( "click", "p", foo );
+]]></code>
   </example>
   <example>
     <desc>Unbind all delegated event handlers by their namespace:</desc>
-    <code><![CDATA[var validate = function () {
-  // code to validate form entries
+    <code><![CDATA[
+var validate = function() {
+  // Code to validate form entries
 };
 
-// delegate events under the ".validator" namespace
-$("form").on("click.validator", "button", validate);
+// Delegate events under the ".validator" namespace
+$( "form" ).on( "click.validator", "button", validate );
 
-$("form").on("keypress.validator", "input[type='text']", validate);
+$( "form" ).on( "keypress.validator", "input[type='text']", validate );
 
-// remove event handlers in the ".validator" namespace
-
-$("form").off(".validator");]]></code>
+// Remove event handlers in the ".validator" namespace
+$( "form" ).off( ".validator" );
+]]></code>
   </example>
   <category slug="events/event-handler-attachment"/>
   <category slug="version/1.7"/>

@@ -17,41 +17,59 @@
     </longdesc>
     <example>
       <desc>Access the offset of the second paragraph:</desc>
-      <code><![CDATA[var p = $("p:last");
+      <code><![CDATA[
+var p = $( "p:last" );
 var offset = p.offset();
-p.html( "left: " + offset.left + ", top: " + offset.top );]]></code>
+p.html( "left: " + offset.left + ", top: " + offset.top );
+]]></code>
       <css><![CDATA[
-p { margin-left:10px; }
-  ]]></css>
-      <html><![CDATA[<p>Hello</p><p>2nd Paragraph</p>]]></html>
+  p {
+    margin-left: 10px;
+  }
+]]></css>
+      <html><![CDATA[
+<p>Hello</p><p>2nd Paragraph</p>
+]]></html>
     </example>
     <example>
       <desc>Click to see the offset.</desc>
       <code><![CDATA[
-$("*", document.body).click(function (e) {
-  var offset = $(this).offset();
+$( "*", document.body ).click(function( e ) {
+  var offset = $( this ).offset();
   e.stopPropagation();
-  $("#result").text(this.tagName + " coords ( " + offset.left + ", " +
-                                  offset.top + " )");
+  $( "#result" ).text( this.tagName + " coords ( " + offset.left + ", " +
+                                  offset.top + " )" );
 });
-
 ]]></code>
       <css><![CDATA[
-p { margin-left:10px; color:blue; width:200px;
-    cursor:pointer; }
-span { color:red; cursor:pointer; }
-div.abs { width:50px; height:50px; position:absolute;
-          left:220px; top:35px; background-color:green;
-          cursor:pointer; }
-  ]]></css>
-      <html><![CDATA[<div id="result">Click an element.</div>
+  p {
+    margin-left: 10px;
+    color: blue;
+    width: 200px;
+    cursor: pointer;
+  }
+  span {
+    color: red;
+    cursor: pointer;
+  }
+  div.abs {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 220px;
+    top: 35px;
+    background-color: green;
+    cursor: pointer;
+  }
+]]></css>
+      <html><![CDATA[
+<div id="result">Click an element.</div>
 <p>
   This is the best way to <span>find</span> an offset.
 </p>
-
 <div class="abs">
 </div>
-  ]]></html>
+]]></html>
     </example>
     <category slug="css"/>
     <category slug="offset"/>
@@ -78,9 +96,17 @@ div.abs { width:50px; height:50px; position:absolute;
     </longdesc>
     <example>
       <desc>Set the offset of the second paragraph:</desc>
-      <code><![CDATA[$("p:last").offset({ top: 10, left: 30 });]]></code>
-      <css><![CDATA[p { margin-left:10px; } ]]></css>
-      <html><![CDATA[<p>Hello</p><p>2nd Paragraph</p>]]></html>
+      <code><![CDATA[
+$( "p:last" ).offset({ top: 10, left: 30 });
+]]></code>
+      <css><![CDATA[
+  p {
+    margin-left: 10px;
+  }
+]]></css>
+      <html><![CDATA[
+<p>Hello</p><p>2nd Paragraph</p>
+]]></html>
     </example>
     <category slug="css"/>
     <category slug="offset"/>
