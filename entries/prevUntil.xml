@@ -22,7 +22,7 @@
   <desc>Get all preceding siblings of each element up to but not including the element matched by the selector, DOM node, or jQuery object.</desc>
   <longdesc>
     <p>Given a selector expression that represents a set of DOM elements, the <code>.prevUntil()</code> method searches through the predecessors of these elements in the DOM tree, stopping when it reaches an element matched by the method's argument. The new jQuery object that is returned contains all previous siblings up to but not including the one matched by the <code>.prevUntil()</code> selector; the elements are returned in order from the closest sibling to the farthest.</p>
-    <p>If the selector is not matched or is not supplied, all previous siblings will be selected; in these cases it selects the same elements as the <code>.prevAll()</code> method does when no filter selector is provided.</p>
+    <p>If the selector is not matched or is not supplied, all previous siblings will be selected; in these cases it selects the same elements as the <code><a href="/prevAll/">.prevAll()</a></code> method does when no filter selector is provided.</p>
     <p><strong>As of jQuery 1.6</strong>, A DOM node or jQuery object, instead of a selector, may be used for the first <strong>.prevUntil()</strong> argument.</p>
     <p>The method optionally accepts a selector expression for its second argument. If this argument is supplied, the elements will be filtered by testing whether they match it.</p>
   </longdesc>
@@ -30,14 +30,15 @@
     <height>250px</height>
     <desc>Find the siblings that precede &lt;dt id="term-2"&gt; up to the preceding &lt;dt&gt; and give them a red background color. Also, find previous &lt;dd&gt; siblings of &lt;dt id="term-3"&gt; up to &lt;dt id="term-1"&gt; and give them a green text color.</desc>
     <code><![CDATA[
-$("#term-2").prevUntil("dt")
-  .css("background-color", "red");
+$( "#term-2" ).prevUntil( "dt" )
+  .css( "background-color", "red" );
 
-var term1 = document.getElementById('term-1');
-$("#term-3").prevUntil(term1, "dd")
-  .css("color", "green");
+var term1 = document.getElementById( "term-1" );
+$( "#term-3" ).prevUntil( term1, "dd" )
+  .css( "color", "green" );
 ]]></code>
-    <html><![CDATA[<dl>
+    <html><![CDATA[
+<dl>
   <dt id="term-1">term 1</dt>
   <dd>definition 1-a</dd>
   <dd>definition 1-b</dd>
@@ -52,7 +53,8 @@ $("#term-3").prevUntil(term1, "dd")
   <dt id="term-3">term 3</dt>
   <dd>definition 3-a</dd>
   <dd>definition 3-b</dd>
-</dl>]]></html>
+</dl>
+]]></html>
   </example>
   <category slug="traversing/tree-traversal"/>
   <category slug="version/1.4"/>

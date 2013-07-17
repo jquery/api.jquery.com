@@ -30,12 +30,13 @@
     <height>220px</height>
     <desc>Find the ancestors of &lt;li class="item-a"&gt; up to &lt;ul class="level-1"&gt; and give them a red background color. Also, find ancestors of &lt;li class="item-2"&gt; that have a class of "yes" up to &lt;ul class="level-1"&gt; and give them a green border.</desc>
     <code><![CDATA[
-$("li.item-a").parentsUntil(".level-1")
-  .css("background-color", "red");
+$( "li.item-a" )
+  .parentsUntil( ".level-1" )
+  .css( "background-color", "red" );
 
-$("li.item-2").parentsUntil( $("ul.level-1"), ".yes" )
-  .css("border", "3px solid green");
-
+$( "li.item-2" )
+  .parentsUntil( $( "ul.level-1" ), ".yes" )
+  .css( "border", "3px solid green" );
 ]]></code>
     <html><![CDATA[
 <ul class="level-1 yes">
@@ -54,7 +55,8 @@ $("li.item-2").parentsUntil( $("ul.level-1"), ".yes" )
     </ul>
   </li>
   <li class="item-iii">III</li>
-</ul>]]></html>
+</ul>
+]]></html>
   </example>
   <category slug="traversing/tree-traversal"/>
   <category slug="version/1.4"/>

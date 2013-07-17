@@ -23,10 +23,12 @@
   <longdesc/>
   <example>
     <desc>Add some elements onto the jQuery stack, then pop back off again.</desc>
-    <code><![CDATA[jQuery([])
-    .pushStack( document.getElementsByTagName("div") )
-        .remove()
-    .end();]]></code>
+    <code><![CDATA[
+jQuery([])
+  .pushStack( document.getElementsByTagName( "div" ) )
+  .remove()
+  .end();
+]]></code>
   </example>
   <category slug="internals"/>
   <category slug="version/1.0"/>

@@ -26,7 +26,7 @@
 var div = $( "<div />" );
 
 div.promise().done(function( arg1 ) {
-  // will fire right away and alert "true"
+  // Will fire right away and alert "true"
   alert( this === div && arg1 === div );
 });
 ]]></code>
@@ -34,11 +34,14 @@ div.promise().done(function( arg1 ) {
   <example>
     <desc>Resolve the returned Promise when all animations have ended (including those initiated in the animation callback or added later on):</desc>
     <css><![CDATA[
-div {
-  height: 50px; width: 50px;
-  float: left; margin-right: 10px;
-  display: none; background-color: #090;
-}
+  div {
+    height: 50px;
+    width: 50px;
+    float: left;
+    margin-right: 10px;
+    display: none;
+    background-color: #090;
+  }
 ]]></css>
     <html><![CDATA[
 <button>Go</button>
@@ -47,14 +50,13 @@ div {
 <div></div>
 <div></div>
 <div></div>
-
 ]]></html>
     <code><![CDATA[
-$("button").on( "click", function() {
-  $("p").append( "Started...");
+$( "button" ).on( "click", function() {
+  $( "p" ).append( "Started...");
 
-  $("div").each(function( i ) {
-    $( this ).fadeIn().fadeOut( 1000 * (i+1) );
+  $( "div" ).each(function( i ) {
+    $( this ).fadeIn().fadeOut( 1000 * ( i+1 ) );
   });
 
   $( "div" ).promise().done(function() {
@@ -66,11 +68,14 @@ $("button").on( "click", function() {
   <example>
     <desc>Resolve the returned Promise using a <code>$.when()</code> statement (the <code>.promise()</code> method makes it possible to do this with jQuery collections):</desc>
     <css><![CDATA[
-div {
-  height: 50px; width: 50px;
-  float: left; margin-right: 10px;
-  display: none; background-color: #090;
-}
+  div {
+    height: 50px;
+    width: 50px;
+    float: left;
+    margin-right: 10px;
+    display: none;
+    background-color: #090;
+  }
 ]]></css>
     <html><![CDATA[
 <button>Go</button>
@@ -79,21 +84,19 @@ div {
 <div></div>
 <div></div>
 <div></div>
-
 ]]></html>
     <code><![CDATA[
 var effect = function() {
-  return $("div").fadeIn(800).delay(1200).fadeOut();
+  return $( "div" ).fadeIn( 800 ).delay( 1200 ).fadeOut();
 };
 
-$("button").on( "click", function() {
-  $("p").append( " Started... ");
+$( "button" ).on( "click", function() {
+  $( "p" ).append( " Started... " );
 
   $.when( effect() ).done(function() {
-    $("p").append(" Finished! ");
+    $( "p" ).append( " Finished! " );
   });
 });
-
 ]]></code>
   </example>
   <category slug="deferred-object"/>

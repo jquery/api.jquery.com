@@ -15,15 +15,18 @@
   <example>
     <desc>Access the position of the second paragraph:</desc>
     <code><![CDATA[
-var p = $("p:first");
+var p = $( "p:first" );
 var position = p.position();
-$("p:last").text( "left: " + position.left + ", top: " + position.top );
+$( "p:last" ).text( "left: " + position.left + ", top: " + position.top );
 ]]></code>
     <css><![CDATA[
-
-  div { padding: 15px;}
-  p { margin-left:10px; }
-  ]]></css>
+  div {
+    padding: 15px;
+  }
+  p {
+    margin-left: 10px;
+  }
+]]></css>
     <html><![CDATA[
 <div>
   <p>Hello</p>

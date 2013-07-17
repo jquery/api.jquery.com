@@ -10,19 +10,26 @@
     <p>This is the inverse of <code>:empty</code>. </p>
     <p>One important thing to note regarding the use of <code>:parent</code> (and <code>:empty</code>) is that child nodes include text nodes.</p>
     <p>The W3C recommends that the <code>&lt;p&gt;</code> element have at least one child node, even if that child is merely text (see <a href="http://www.w3.org/TR/html401/struct/text.html#edef-P">http://www.w3.org/TR/html401/struct/text.html#edef-P</a>). Some other elements, on the other hand, are empty (i.e. have no children) by definition:<code> &lt;input&gt;</code>, <code>&lt;img&gt;</code>, <code>&lt;br&gt;</code>, and <code>&lt;hr&gt;</code>, for example.</p>
-	<p>To obtain the parents or ancestors of an existing jQuery set, see the <code><a href="http://api.jquery.com/parent/">.parent()</a></code> and <code><a href="http://api.jquery.com/parents/">.parents()</a></code> methods.</p>
+    <p>To obtain the parents or ancestors of an existing jQuery set, see the <code><a href="/parent/">.parent()</a></code> and <code><a href="/parents/">.parents()</a></code> methods.</p>
   </longdesc>
   <note id="jquery-selector-extension" type="additional" data-selector=":parent"/>
   <example>
     <desc>Finds all tds with children, including text.</desc>
-    <code><![CDATA[$("td:parent").fadeTo(1500, 0.3);]]></code>
+    <code><![CDATA[
+$( "td:parent" ).fadeTo( 1500, 0.3 );
+]]></code>
     <css><![CDATA[
-  td { width:40px; background:green; }
-  ]]></css>
-    <html><![CDATA[<table border="1">
+  td {
+    width: 40px;
+    background: green;
+  }
+]]></css>
+    <html><![CDATA[
+<table border="1">
   <tr><td>Value 1</td><td></td></tr>
   <tr><td>Value 2</td><td></td></tr>
-</table>]]></html>
+</table>
+]]></html>
   </example>
   <category slug="selectors/content-filter-selector"/>
   <category slug="selectors/jquery-selector-extensions"/>

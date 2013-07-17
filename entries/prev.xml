@@ -14,57 +14,71 @@
     <p>Consider a page with a simple list on it:</p>
     <pre><code>
 &lt;ul&gt;
-   &lt;li&gt;list item 1&lt;/li&gt;
-   &lt;li&gt;list item 2&lt;/li&gt;
-   &lt;li class="third-item"&gt;list item 3&lt;/li&gt;
-   &lt;li&gt;list item 4&lt;/li&gt;
-   &lt;li&gt;list item 5&lt;/li&gt;
+  &lt;li&gt;list item 1&lt;/li&gt;
+  &lt;li&gt;list item 2&lt;/li&gt;
+  &lt;li class="third-item"&gt;list item 3&lt;/li&gt;
+  &lt;li&gt;list item 4&lt;/li&gt;
+  &lt;li&gt;list item 5&lt;/li&gt;
 &lt;/ul&gt;
     </code></pre>
     <p>To select the element that comes immediately before item three:</p>
-    <pre><code>$('li.third-item').prev().css('background-color', 'red');</code></pre>
+    <pre><code>
+$( "li.third-item" ).prev().css( "background-color", "red" );
+    </code></pre>
     <p>The result of this call is a red background behind item 2. Since no selector expression is supplied, this preceding element is unequivocally included as part of the object. If one had been supplied, the element would be tested for a match before it was included.</p>
     <p>If no previous sibling exists, or if the previous sibling element does not match a supplied selector, an empty jQuery object is returned.</p>
-    <p>To select <em>all</em> preceding sibling elements, rather than just the preceding <em>adjacent</em> sibling, use the <a href="http://api.jquery.com/prevAll/">.prevAll()</a> method.</p>
+    <p>To select <em>all</em> preceding sibling elements, rather than just the preceding <em>adjacent</em> sibling, use the <a href="/prevAll/">.prevAll()</a> method.</p>
   </longdesc>
   <example>
     <desc>Find the very previous sibling of each div.</desc>
     <code><![CDATA[
-    var $curr = $("#start");
-    $curr.css("background", "#f99");
-    $("button").click(function () {
-      $curr = $curr.prev();
-      $("div").css("background", "");
-      $curr.css("background", "#f99");
-    });
-
+var $curr = $( "#start" );
+$curr.css( "background", "#f99" );
+$( "button" ).click(function() {
+  $curr = $curr.prev();
+  $( "div" ).css( "background", "" );
+  $curr.css( "background", "#f99" );
+});
 ]]></code>
     <css><![CDATA[
-  div { width:40px; height:40px; margin:10px;
-        float:left; border:2px blue solid; 
-        padding:2px; }
-  span { font-size:14px; }
-  p { clear:left; margin:10px; }
-  ]]></css>
-    <html><![CDATA[<div></div>
-  <div></div>
-  <div><span>has child</span></div>
-
-  <div></div>
-  <div></div>
-  <div></div>
-  <div id="start"></div>
-
-  <div></div>
-  <p><button>Go to Prev</button></p>]]></html>
+  div {
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+    float: left;
+    border: 2px blue solid;
+    padding: 2px;
+  }
+  span {
+    font-size: 14px;
+  }
+  p {
+    clear: left;
+    margin: 10px;
+  }
+]]></css>
+    <html><![CDATA[
+<div></div>
+<div></div>
+<div><span>has child</span></div>
+<div></div>
+<div></div>
+<div></div>
+<div id="start"></div>
+<div></div>
+<p><button>Go to Prev</button></p>
+]]></html>
   </example>
   <example>
     <desc>For each paragraph, find the very previous sibling that has a class "selected".</desc>
-    <code><![CDATA[$("p").prev(".selected").css("background", "yellow");]]></code>
-    <html><![CDATA[<div><span>Hello</span></div>
-
-  <p class="selected">Hello Again</p>
-  <p>And Again</p>]]></html>
+    <code><![CDATA[
+$( "p" ).prev( ".selected" ).css( "background", "yellow" );
+]]></code>
+    <html><![CDATA[
+<div><span>Hello</span></div>
+<p class="selected">Hello Again</p>
+<p>And Again</p>
+]]></html>
   </example>
   <category slug="traversing/tree-traversal"/>
   <category slug="version/1.0"/>

@@ -14,30 +14,43 @@
     <p>Consider a page with a simple list on it:</p>
     <pre><code>
 &lt;ul&gt;
-   &lt;li&gt;list item 1&lt;/li&gt;
-   &lt;li&gt;list item 2&lt;/li&gt;
-   &lt;li class="third-item"&gt;list item 3&lt;/li&gt;
-   &lt;li&gt;list item 4&lt;/li&gt;
-   &lt;li&gt;list item 5&lt;/li&gt;
+  &lt;li&gt;list item 1&lt;/li&gt;
+  &lt;li&gt;list item 2&lt;/li&gt;
+  &lt;li class="third-item"&gt;list item 3&lt;/li&gt;
+  &lt;li&gt;list item 4&lt;/li&gt;
+  &lt;li&gt;list item 5&lt;/li&gt;
 &lt;/ul&gt;
-</code></pre>
+    </code></pre>
     <p>If we begin at the third item, we can find the elements which come before it:</p>
-    <pre><code>$('li.third-item').prevAll().css('background-color', 'red');</code></pre>
+    <pre><code>
+$( "li.third-item" ).prevAll().css( "background-color", "red" );
+    </code></pre>
     <p>The result of this call is a red background behind items 1 and 2. Since we do not supply a selector expression, these preceding elements are unequivocally included as part of the object. If we had supplied one, the elements would be tested for a match before they were included.</p>
   </longdesc>
   <example>
     <desc>Locate all the divs preceding the last div and give them a class.</desc>
-    <code><![CDATA[$("div:last").prevAll().addClass("before");]]></code>
+    <code><![CDATA[
+$( "div:last" ).prevAll().addClass( "before" );
+]]></code>
     <css><![CDATA[
-
-  div { width:70px; height:70px; background:#abc;
-        border:2px solid black; margin:10px; float:left; }
-  div.before { border-color: red; }
-  ]]></css>
-    <html><![CDATA[<div></div>
-  <div></div>
-  <div></div>
-  <div></div>]]></html>
+  div {
+    width: 70px;
+    height: 70px;
+    background: #abc;
+    border: 2px solid black;
+    margin: 10px;
+    float: left;
+  }
+  div.before {
+    border-color: red;
+  }
+]]></css>
+    <html><![CDATA[
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+]]></html>
   </example>
   <category slug="traversing/tree-traversal"/>
   <category slug="version/1.2"/>
