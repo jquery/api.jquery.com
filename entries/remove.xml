@@ -9,52 +9,75 @@
   </signature>
   <desc>Remove the set of matched elements from the DOM.</desc>
   <longdesc>
-    <p>Similar to <code><a href="/empty">.empty()</a></code>, the <code>.remove()</code> method takes elements out of the DOM. Use <code>.remove()</code> when you want to remove the element itself, as well as everything inside it. In addition to the elements themselves, all bound events and jQuery data  associated with the elements are removed. To remove the elements without removing data and events, use <code><a href="http://api.jquery.com/detach/">.detach()</a></code> instead.</p>
+    <p>Similar to <code><a href="/empty/">.empty()</a></code>, the <code>.remove()</code> method takes elements out of the DOM. Use <code>.remove()</code> when you want to remove the element itself, as well as everything inside it. In addition to the elements themselves, all bound events and jQuery data  associated with the elements are removed. To remove the elements without removing data and events, use <code><a href="/detach/">.detach()</a></code> instead.</p>
     <p>Consider the following HTML:</p>
-    <pre><code>&lt;div class="container"&gt;
+    <pre><code>
+&lt;div class="container"&gt;
   &lt;div class="hello"&gt;Hello&lt;/div&gt;
   &lt;div class="goodbye"&gt;Goodbye&lt;/div&gt;
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;
+    </code></pre>
     <p>We can target any element for removal:</p>
-    <pre><code>$('.hello').remove();</code></pre>
+    <pre><code>
+$( ".hello" ).remove();
+    </code></pre>
     <p>This will result in a DOM structure with the <code>&lt;div&gt;</code> element deleted:</p>
-    <pre><code>&lt;div class="container"&gt;
+    <pre><code>
+&lt;div class="container"&gt;
   &lt;div class="goodbye"&gt;Goodbye&lt;/div&gt;
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;
+    </code></pre>
     <p>If we had any number of nested elements inside <code>&lt;div class="hello"&gt;</code>, they would be removed, too. Other jQuery constructs such as data or event handlers are erased as well.</p>
     <p>We can also include a selector as an optional parameter. For example, we could rewrite the previous DOM removal code as follows:</p>
-    <pre><code>$('div').remove('.hello');</code></pre>
+    <pre><code>
+$( "div" ).remove( ".hello" );
+    </code></pre>
     <p>This would result in the same DOM structure:</p>
-    <pre><code>&lt;div class="container"&gt;
+    <pre><code>
+&lt;div class="container"&gt;
   &lt;div class="goodbye"&gt;Goodbye&lt;/div&gt;
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;
+    </code></pre>
   </longdesc>
   <example>
     <desc>Removes all paragraphs from the DOM</desc>
     <code><![CDATA[
-$("button").click(function () {
-  $("p").remove();
+$( "button" ).click(function() {
+  $( "p" ).remove();
 });
 ]]></code>
-    <css><![CDATA[p { background:yellow; margin:6px 0; }]]></css>
-    <html><![CDATA[<p>Hello</p>
-  how are
-  <p>you?</p>
-  <button>Call remove() on paragraphs</button>]]></html>
+    <css><![CDATA[
+  p {
+    background: yellow;
+    margin: 6px 0;
+  }
+]]></css>
+    <html><![CDATA[
+<p>Hello</p>
+how are
+<p>you?</p>
+<button>Call remove() on paragraphs</button>
+]]></html>
   </example>
   <example>
     <desc>Removes all paragraphs that contain "Hello" from the DOM.  Analogous to doing <code>$("p").filter(":contains('Hello')").remove()</code>.</desc>
     <code><![CDATA[
-$("button").click(function () {
-  $("p").remove(":contains('Hello')");
+$( "button" ).click(function() {
+  $( "p" ).remove( ":contains('Hello')" );
 });
 ]]></code>
-    <css><![CDATA[p { background:yellow; margin:6px 0; }]]></css>
-    <html><![CDATA[<p class="hello">Hello</p>
-  how are
-  <p>you?</p>
-
-  <button>Call remove(":contains('Hello')") on paragraphs</button>]]></html>
+    <css><![CDATA[
+  p {
+    background: yellow;
+    margin: 6px 0;
+  }
+]]></css>
+    <html><![CDATA[
+<p class="hello">Hello</p>
+how are
+<p>you?</p>
+<button>Call remove( ":contains('Hello')" ) on paragraphs</button>
+]]></html>
   </example>
   <category slug="manipulation/dom-removal"/>
   <category slug="version/1.0"/>

@@ -12,30 +12,31 @@
     <p>The <code>.removeAttr()</code> method uses the JavaScript <code>removeAttribute()</code> function, but it has the advantage of being able to be called directly on a jQuery object and it accounts for different attribute naming across browsers.</p>
     <p><strong>Note:</strong> Removing an inline <code>onclick</code> event handler using <code>.removeAttr()</code> doesn't achieve the desired effect in Internet Explorer 6, 7, or 8. To avoid potential problems, use <code>.prop()</code> instead:</p>
     <pre><code>
-$element.prop("onclick", null);
-console.log("onclick property: ", $element[0].onclick);
+$element.prop( "onclick", null );
+console.log( "onclick property: ", $element[ 0 ].onclick );
     </code></pre>
   </longdesc>
   <example>
     <desc>Clicking the button changes the title of the input next to it. Move the mouse pointer over the text input to see the effect of adding and removing the title attribute.</desc>
     <code><![CDATA[
 (function() {
-  var inputTitle = $("input").attr("title");
-  $("button").click(function () {
-    var input = $(this).next();
+  var inputTitle = $( "input" ).attr( "title" );
+  $( "button" ).click(function() {
+    var input = $( this ).next();
 
-    if ( input.attr("title") == inputTitle ) {
-      input.removeAttr("title")
+    if ( input.attr( "title" ) == inputTitle ) {
+      input.removeAttr( "title" )
     } else {
-      input.attr("title", inputTitle);
+      input.attr( "title", inputTitle );
     }
 
-    $("#log").html( "input title is now " + input.attr("title") );
+    $( "#log" ).html( "input title is now " + input.attr( "title" ) );
   });
 })();
 ]]></code>
-    <html><![CDATA[<button>Change title</button>
-<input type="text" title="hello there" />
+    <html><![CDATA[
+<button>Change title</button>
+<input type="text" title="hello there">
 <div id="log"></div>
 ]]></html>
   </example>

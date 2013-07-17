@@ -17,63 +17,106 @@
   <longdesc>
     <p>If a class name is included as a parameter, then only that class will be removed from the set of matched elements. If no class names are specified in the parameter, all classes will be removed.</p>
     <p>More than one class may be removed at a time, separated by a space, from the set of matched elements, like so:</p>
-    <pre><code>$('p').removeClass('myClass yourClass')</code></pre>
+    <pre><code>
+$( "p" ).removeClass( "myClass yourClass" )
+    </code></pre>
     <p>This method is often used with <code>.addClass()</code> to switch elements' classes from one to another, like so:</p>
-    <pre><code>$('p').removeClass('myClass noClass').addClass('yourClass');</code></pre>
+    <pre><code>
+$( "p" ).removeClass( "myClass noClass" ).addClass( "yourClass" );
+    </code></pre>
     <p>Here, the <code>myClass</code> and <code>noClass</code> classes are removed from all paragraphs, while <code>yourClass</code> is added.</p>
-    <p>To replace all existing classes with another class, we can use <code>.attr('class', 'newClass')</code> instead.</p>
+    <p>To replace all existing classes with another class, we can use <code>.attr( "class", "newClass" )</code> instead.</p>
     <p>As of jQuery 1.4, the <code>.removeClass()</code> method allows us to indicate the class to be removed by passing in a function.</p>
-    <pre><code>$('li:last').removeClass(function() {
-  return $(this).prev().attr('class');
-});</code></pre>
+    <pre><code>
+$( "li:last" ).removeClass(function() {
+  return $( this ).prev().attr( "class" );
+});
+    </code></pre>
     <p>This example removes the class name of the penultimate <code>&lt;li&gt;</code> from the last <code>&lt;li&gt;</code>.</p>
   </longdesc>
   <example>
     <desc>Remove the class 'blue' from the matched elements.</desc>
-    <code><![CDATA[$("p:even").removeClass("blue");]]></code>
+    <code><![CDATA[
+$( "p:even" ).removeClass( "blue" );
+]]></code>
     <css><![CDATA[
-
-  p { margin: 4px; font-size:16px; font-weight:bolder; }
-  .blue { color:blue; }
-  .under { text-decoration:underline; }
-  .highlight { background:yellow; }
-  ]]></css>
-    <html><![CDATA[<p class="blue under">Hello</p>
-  <p class="blue under highlight">and</p>
-  <p class="blue under">then</p>
-
-  <p class="blue under">Goodbye</p>]]></html>
+  p {
+    margin: 4px;
+    font-size: 16px;
+    font-weight: bolder;
+  }
+  .blue {
+    color: blue;
+  }
+  .under {
+    text-decoration: underline;
+  }
+  .highlight {
+    background: yellow;
+  }
+]]></css>
+    <html><![CDATA[
+<p class="blue under">Hello</p>
+<p class="blue under highlight">and</p>
+<p class="blue under">then</p>
+<p class="blue under">Goodbye</p>
+]]></html>
   </example>
   <example>
     <desc>Remove the class 'blue' and 'under' from the matched elements.</desc>
-    <code><![CDATA[$("p:odd").removeClass("blue under");]]></code>
+    <code><![CDATA[
+$( "p:odd" ).removeClass( "blue under" );
+]]></code>
     <css><![CDATA[
-  p { margin: 4px; font-size:16px; font-weight:bolder; }
-  .blue { color:blue; }
-  .under { text-decoration:underline; }
-  .highlight { background:yellow; }
-  ]]></css>
-    <html><![CDATA[<p class="blue under">Hello</p>
-
-  <p class="blue under highlight">and</p>
-  <p class="blue under">then</p>
-  <p class="blue under">Goodbye</p>]]></html>
+  p {
+    margin: 4px;
+    font-size: 16px;
+    font-weight: bolder;
+  }
+  .blue {
+    color: blue;
+  }
+  .under {
+    text-decoration: underline;
+  }
+  .highlight {
+    background: yellow;
+  }
+]]></css>
+    <html><![CDATA[
+<p class="blue under">Hello</p>
+<p class="blue under highlight">and</p>
+<p class="blue under">then</p>
+<p class="blue under">Goodbye</p>
+]]></html>
   </example>
   <example>
     <desc>Remove all the classes from the matched elements.</desc>
-    <code><![CDATA[$("p:eq(1)").removeClass();]]></code>
+    <code><![CDATA[
+$( "p:eq(1)" ).removeClass();
+]]></code>
     <css><![CDATA[
-
-  p { margin: 4px; font-size:16px; font-weight:bolder; }
-  .blue { color:blue; }
-  .under { text-decoration:underline; }
-  .highlight { background:yellow; }
-  ]]></css>
-    <html><![CDATA[<p class="blue under">Hello</p>
-  <p class="blue under highlight">and</p>
-  <p class="blue under">then</p>
-
-  <p class="blue under">Goodbye</p>]]></html>
+  p {
+    margin: 4px;
+    font-size: 16px;
+    font-weight: bolder;
+  }
+  .blue {
+    color: blue;
+  }
+  .under {
+    text-decoration: underline;
+  }
+  .highlight {
+    background: yellow;
+  }
+]]></css>
+    <html><![CDATA[
+<p class="blue under">Hello</p>
+<p class="blue under highlight">and</p>
+<p class="blue under">then</p>
+<p class="blue under">Goodbye</p>
+]]></html>
   </example>
   <category slug="attributes"/>
   <category slug="manipulation/class-attribute"/>

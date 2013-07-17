@@ -12,15 +12,19 @@
   <example>
     <desc>Display the tag name of the root element.</desc>
     <code><![CDATA[
-$( "<b></b>" ).html( $( ":root" )[0].nodeName ).appendTo( "#log" );
+$( "<b></b>" ).html( $( ":root" )[ 0 ].nodeName ).appendTo( "#log" );
 ]]></code>
     <css><![CDATA[
-span.fot { color: red; font-size: 120%; font-style: italic; }
-  ]]></css>
-    <html><![CDATA[<div id="log">The root of this document is: </div>]]></html>
+  span.fot {
+    color: red;
+    font-size: 120%;
+    font-style: italic;
+  }
+]]></css>
+    <html><![CDATA[
+<div id="log">The root of this document is: </div>
+]]></html>
   </example>
-
   <category slug="selectors/basic-filter-selectors"/>
   <category slug="version/1.9"/>
-
 </entry>
