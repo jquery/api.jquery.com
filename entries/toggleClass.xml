@@ -36,87 +36,120 @@
     <p>This method takes one or more class names as its parameter. In the first version, if an element in the matched set of elements already has the class, then it is removed; if an element does not have the class, then it is added. For example, we can apply <code>.toggleClass()</code> to a simple <code>&lt;div&gt;</code>: </p>
     <pre><code>&lt;div class="tumble"&gt;Some text.&lt;/div&gt;
     </code></pre>
-    <p>The first time we apply <code>$('div.tumble').toggleClass('bounce')</code>, we get the following:</p>
-    <pre><code>&lt;div class="tumble bounce"&gt;Some text.&lt;/div&gt;
+    <p>The first time we apply <code>$( "div.tumble" ).toggleClass( "bounce" )</code>, we get the following:</p>
+    <pre><code>
+&lt;div class="tumble bounce"&gt;Some text.&lt;/div&gt;
     </code></pre>
-    <p>The second time we apply <code>$('div.tumble').toggleClass('bounce')</code>, the <code>&lt;div&gt;</code> class is returned to the single <code>tumble</code> value:</p>
+    <p>The second time we apply <code>$( "div.tumble" ).toggleClass( "bounce" )</code>, the <code>&lt;div&gt;</code> class is returned to the single <code>tumble</code> value:</p>
     <pre><code>&lt;div class="tumble"&gt;Some text.&lt;/div&gt;</code></pre>
-    <p>Applying <code>.toggleClass('bounce spin')</code> to the same <code>&lt;div&gt;</code> alternates between <code>&lt;div class="tumble bounce spin"&gt;</code> and <code>&lt;div class="tumble"&gt;</code>.</p>
+    <p>Applying <code>.toggleClass( "bounce spin" )</code> to the same <code>&lt;div&gt;</code> alternates between <code>&lt;div class="tumble bounce spin"&gt;</code> and <code>&lt;div class="tumble"&gt;</code>.</p>
     <p>The second version of <code>.toggleClass()</code> uses the second parameter for determining whether the class should be added or removed. If this parameter's value is <code>true</code>, then the class is added; if <code>false</code>, the class is removed. In essence, the statement:</p>
-    <pre><code>$('#foo').toggleClass(className, addOrRemove);</code></pre>
+    <pre><code>
+$( "#foo" ).toggleClass(className, addOrRemove);
+    </code></pre>
     <p>is equivalent to:</p>
-    <pre><code>if (addOrRemove) {
-    $('#foo').addClass(className);
-  }
-  else {
-    $('#foo').removeClass(className);
-  }
-  </code></pre>
+    <pre><code>
+if (addOrRemove) {
+  $( "#foo" ).addClass( className );
+} else {
+  $( "#foo" ).removeClass( className );
+}
+    </code></pre>
     <p><strong>As of jQuery 1.4</strong>, if no arguments are passed to <code>.toggleClass()</code>, all class names on the element the first time <code>.toggleClass()</code> is called will be toggled. Also as of jQuery 1.4, the class name to be toggled can be determined by passing in a function.</p>
-    <pre><code>$('div.foo').toggleClass(function() {
-  if ($(this).parent().is('.bar')) {
-    return 'happy';
+    <pre><code>
+$( "div.foo" ).toggleClass(function() {
+  if ( $( this ).parent().is( ".bar" ) ) {
+    return "happy";
   } else {
-    return 'sad';
+    return "sad";
   }
-});</code></pre>
+});
+</code></pre>
     <p>This example will toggle the <code>happy</code> class for <code>&lt;div class="foo"&gt;</code> elements if their parent element has a class of <code>bar</code>; otherwise, it will toggle the <code>sad</code> class.</p>
   </longdesc>
   <example>
     <desc>Toggle the class 'highlight' when a paragraph is clicked.</desc>
     <code><![CDATA[
-    $("p").click(function () {
-      $(this).toggleClass("highlight");
-    });
+$( "p" ).click(function() {
+  $( this ).toggleClass( "highlight" );
+});
 ]]></code>
     <css><![CDATA[
-
-  p { margin: 4px; font-size:16px; font-weight:bolder;
-      cursor:pointer; }
-  .blue { color:blue; }
-  .highlight { background:yellow; }
-  ]]></css>
-    <html><![CDATA[<p class="blue">Click to toggle</p>
-  <p class="blue highlight">highlight</p>
-  <p class="blue">on these</p>
-  <p class="blue">paragraphs</p>]]></html>
+  p {
+    margin: 4px;
+    font-size: 16px;
+    font-weight: bolder;
+    cursor: pointer;
+  }
+  .blue {
+    color: blue;
+  }
+  .highlight {
+    background: yellow;
+  }
+]]></css>
+    <html><![CDATA[
+<p class="blue">Click to toggle</p>
+<p class="blue highlight">highlight</p>
+<p class="blue">on these</p>
+<p class="blue">paragraphs</p>
+]]></html>
   </example>
   <example>
     <desc>Add the "highlight" class to the clicked paragraph on every third click of that paragraph, remove it every first and second click.</desc>
     <code><![CDATA[
 var count = 0;
-$("p").each(function() {
-  var $thisParagraph = $(this);
+$( "p" ).each(function() {
+  var $thisParagraph = $( this );
   var count = 0;
   $thisParagraph.click(function() {
     count++;
-    $thisParagraph.find("span").text('clicks: ' + count);
-    $thisParagraph.toggleClass("highlight", count % 3 == 0);
+    $thisParagraph.find( "span" ).text( "clicks: " + count );
+    $thisParagraph.toggleClass( "highlight", count % 3 == 0 );
   });
 });
-
 ]]></code>
     <css><![CDATA[
-  p { margin: 4px; font-size:16px; font-weight:bolder;
-      cursor:pointer; }
-  .blue { color:blue; }
-  .highlight { background:red; }
-  ]]></css>
-    <html><![CDATA[<p class="blue">Click to toggle (<span>clicks: 0</span>)</p>
-  <p class="blue highlight">highlight (<span>clicks: 0</span>)</p>
-  <p class="blue">on these (<span>clicks: 0</span>)</p>
-
-  <p class="blue">paragraphs (<span>clicks: 0</span>)</p>]]></html>
+  p {
+    margin: 4px;
+    font-size: 16px;
+    font-weight: bolder;
+    cursor: pointer;
+  }
+  .blue {
+    color: blue;
+  }
+  .highlight {
+    background: red;
+  }
+]]></css>
+    <html><![CDATA[
+<p class="blue">Click to toggle (<span>clicks: 0</span>)</p>
+<p class="blue highlight">highlight (<span>clicks: 0</span>)</p>
+<p class="blue">on these (<span>clicks: 0</span>)</p>
+<p class="blue">paragraphs (<span>clicks: 0</span>)</p>
+]]></html>
   </example>
   <example>
     <desc>Toggle the class name(s) indicated on the buttons for each div.
   </desc>
     <css><![CDATA[
-.wrap > div { float: left; width: 100px; margin: 1em 1em 0 0;
-              padding=left: 3px; border: 1px solid #abc; }
-div.a { background-color: aqua; }
-div.b { background-color: burlywood; }
-div.c { background-color: cornsilk; }
+  .wrap > div {
+    float: left;
+    width: 100px;
+    margin: 1em 1em 0 0;
+    padding=left: 3px;
+    border: 1px solid #abc;
+  }
+  div.a {
+    background-color: aqua;
+  }
+  div.b {
+    background-color: burlywood;
+  }
+  div.c {
+    background-color: cornsilk;
+  }
 ]]></css>
     <html><![CDATA[
 <div class="buttons">
@@ -134,26 +167,26 @@ div.c { background-color: cornsilk; }
 </div>
 ]]></html>
     <code><![CDATA[
-var cls = ['', 'a', 'a b', 'a b c'];
-var divs = $('div.wrap').children();
+var cls = [ '', 'a', 'a b', 'a b c' ];
+var divs = $( "div.wrap" ).children();
 var appendClass = function() {
   divs.append(function() {
-    return '<div>' + (this.className || 'none') + '</div>';
+    return "<div>" + ( this.className || "none" ) + "</div>";
   });
 };
 
 appendClass();
 
-$('button').on('click', function() {
+$( "button" ).on( "click", function() {
   var tc = this.className || undefined;
   divs.toggleClass(tc);
   appendClass();
 });
 
-$('a').on('click', function(event) {
+$( "a" ).on( "click", function( event ) {
   event.preventDefault();
-  divs.empty().each(function(i) {
-    this.className = cls[i];
+  divs.empty().each(function( i ) {
+    this.className = cls[ i ];
   });
   appendClass();
 });

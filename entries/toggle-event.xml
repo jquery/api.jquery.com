@@ -16,19 +16,23 @@
   </signature>
   <longdesc>
     <div class="warning">
-      <p>Note: This method signature was deprecated in jQuery 1.8 and removed in jQuery 1.9. jQuery also provides an animation method named <a href="http://api.jquery.com/toggle/">.toggle()</a> that toggles the visibility of elements. Whether the animation or the event method is fired depends on the set of arguments passed.</p>
+      <p>Note: This method signature was deprecated in jQuery 1.8 and removed in jQuery 1.9. jQuery also provides an animation method named <a href="/toggle/">.toggle()</a> that toggles the visibility of elements. Whether the animation or the event method is fired depends on the set of arguments passed.</p>
     </div>
     <p>The <code>.toggle()</code> method binds a handler for the <code>click</code> event, so the rules outlined for the triggering of <code>click</code> apply here as well.</p>
-    <pre><code>For example, consider the HTML:
+    <p>For example, consider the HTML:</p>
+    <pre><code>
 &lt;div id="target"&gt;
   Click here
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;
+    </code></pre>
     <p>Event handlers can then be bound to the <code>&lt;div&gt;</code>:</p>
-    <pre><code>$('#target').toggle(function() {
-  alert('First handler for .toggle() called.');
+    <pre><code>
+$( "#target" ).toggle(function() {
+  alert( "First handler for .toggle() called." );
 }, function() {
-  alert('Second handler for .toggle() called.');
-});</code></pre>
+  alert( "Second handler for .toggle() called." );
+});
+    </code></pre>
     <p>As the element is clicked repeatedly, the messages alternate:</p>
     <p>
       <samp>First handler for .toggle() called.</samp>
@@ -46,14 +50,15 @@
   </longdesc>
   <example>
     <desc>Toggle a style on table cells. (Not recommended. Use .toggleClass() instead.):</desc>
-    <code><![CDATA[$("td").toggle(
-  function () {
-    $(this).addClass("selected");
-  },
-  function () {
-    $(this).removeClass("selected");
+    <code><![CDATA[
+$( "td" ).toggle(
+  function() {
+    $( this ).addClass( "selected" );
+  }, function() {
+    $( this ).removeClass( "selected" );
   }
-);]]></code>
+);
+]]></code>
   </example>
   <category slug="events/mouse-events"/>
   <category slug="version/1.0"/>

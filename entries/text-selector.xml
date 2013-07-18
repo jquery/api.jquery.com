@@ -7,46 +7,53 @@
   </signature>
   <desc>Selects all elements of type text.</desc>
   <longdesc>
-    <p><code>$(':text')</code> allows us to select all <code>&lt;input type="text"&gt;</code> elements. As with other pseudo-class selectors (those that begin with a ":") it is recommended to precede it with a tag name or some other selector; otherwise, the universal selector ("*") is implied. In other words, the bare <code>$(':text')</code> is equivalent to <code>$('*:text')</code>, so <code>$('input:text')</code> should be used instead. </p>
+    <p><code>$( ":text" )</code> allows us to select all <code>&lt;input type="text"&gt;</code> elements. As with other pseudo-class selectors (those that begin with a ":") it is recommended to precede it with a tag name or some other selector; otherwise, the universal selector ( "*" ) is implied. In other words, the bare <code>$( ":text" )</code> is equivalent to <code>$( "*:text" )</code>, so <code>$( "input:text" )</code> should be used instead. </p>
     <p><strong>Note:</strong> As of jQuery 1.5.2, <code>:text</code> selects <code>input</code> elements that have no specified <code>type</code> attribute (in which case <code>type="text"</code> is implied).  </p>
-    <p>This difference in behavior between <code>$(':text')</code> and <code>$('[type=text]')</code>, can be seen below:</p>
-    <pre><code>$('&lt;input&gt;').is('[type=text]'); // false
-$('&lt;input&gt;').is(':text'); // true
-</code></pre>
+    <p>This difference in behavior between <code>$( ":text" )</code> and <code>$( "[type=text]" )</code>, can be seen below:</p>
+    <pre><code>
+$( "&lt;input&gt;" ).is( "[type=text]"); // false
+$( "&lt;input&gt;" ).is( ":text" ); // true
+    </code></pre>
   </longdesc>
   <note id="jquery-selector-extension-alt" type="additional" data-selector=":text" data-alt="[type=&quot;text&quot;]"/>
   <example>
     <desc>Finds all text inputs.</desc>
     <code><![CDATA[
-var input = $("form input:text").css({background:"yellow", border:"3px red solid"});
-$("div").text("For this type jQuery found " + input.length + ".")
-        .css("color", "red");
-$("form").submit(function () { return false; }); // so it won't submit
+var input = $( "form input:text" ).css({
+  background: "yellow",
+  border: "3px red solid"
+  });
+$( "div" ).text( "For this type jQuery found " + input.length + "." )
+  .css( "color", "red" );
+$( "form" ).submit(function() {
+  return false;
+}); // So it won't submit
 ]]></code>
     <css><![CDATA[
-  textarea { height:25px; }
-  ]]></css>
-    <html><![CDATA[<form>
-    <input type="button" value="Input Button"/>
-    <input type="checkbox" />
-
-    <input type="file" />
-    <input type="hidden" />
-    <input type="image" />
-
-    <input type="password" />
-    <input type="radio" />
-    <input type="reset" />
-
-    <input type="submit" />
-    <input type="text" />
-    <select><option>Option</option></select>
-
-    <textarea></textarea>
-    <button>Button</button>
-  </form>
-  <div>
-  </div>]]></html>
+  textarea {
+    height: 25px;
+  }
+]]></css>
+    <html><![CDATA[
+<form>
+  <input type="button" value="Input Button">
+  <input type="checkbox">
+  <input type="file">
+  <input type="hidden">
+  <input type="image">
+  <input type="password">
+  <input type="radio">
+  <input type="reset">
+  <input type="submit">
+  <input type="text">
+  <select>
+    <option>Option</option>
+  </select>
+  <textarea></textarea>
+  <button>Button</button>
+</form>
+<div></div>
+]]></html>
   </example>
   <category slug="selectors/form-selectors"/>
   <category slug="selectors/jquery-selector-extensions"/>

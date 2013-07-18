@@ -16,7 +16,7 @@
   <signature>
     <added>1.3</added>
     <argument name="event" type="Event">
-      <desc>A <a href="http://api.jquery.com/category/events/event-object/"><code>jQuery.Event</code></a> object.</desc>
+      <desc>A <a href="/category/events/event-object/"><code>jQuery.Event</code></a> object.</desc>
     </argument>
     <argument name="extraParameters" optional="true">
       <type name="Array"/>
@@ -26,18 +26,21 @@
   </signature>
   <longdesc>
     <p>Any event handlers attached with <code>.on()</code> or one of its shortcut methods are triggered when the corresponding event occurs. They can be fired manually, however, with the <code>.trigger()</code> method. A call to <code>.trigger()</code> executes the handlers in the same order they would be if the event were triggered naturally by the user:</p>
-    <pre><code>$('#foo').on('click', function() {
-      alert($(this).text());
-    });
-    $('#foo').trigger('click');</code></pre>
-    <p>As of jQuery 1.3, <code>.trigger()</code>ed events bubble up the DOM tree; an event handler can stop the bubbling by returning <code>false</code> from the handler or calling the <a href="http://api.jquery.com/event.stopPropagation/"><code>.stopPropagation()</code></a> method on the event object passed into the event. Although <code>.trigger()</code> simulates an event activation, complete with a synthesized event object, it does not perfectly replicate a naturally-occurring event.</p>
-    <p>To trigger handlers bound via jQuery without also triggering the native event, use <a href="http://api.jquery.com/triggerHandler/"><code>.triggerHandler()</code></a> instead. </p>
-    <p>When we define a custom event type using the <code>.on()</code> method, the second argument to <code>.trigger()</code> can become useful. For example, suppose we have bound a handler for the <code>custom</code> event to our element instead of the built-in <code>click</code> event as we did above:</p>
-    <pre><code>$('#foo').on('custom', function(event, param1, param2) {
-  alert(param1 + "\n" + param2);
+    <pre><code>
+$( "#foo" ).on( "click", function() {
+  alert( $( this ).text() );
 });
-$('#foo').trigger('custom', ['Custom', 'Event']);
-</code></pre>
+$( "#foo" ).trigger( "click" );
+   </code></pre>
+    <p>As of jQuery 1.3, <code>.trigger()</code>ed events bubble up the DOM tree; an event handler can stop the bubbling by returning <code>false</code> from the handler or calling the <a href="/event.stopPropagation/"><code>.stopPropagation()</code></a> method on the event object passed into the event. Although <code>.trigger()</code> simulates an event activation, complete with a synthesized event object, it does not perfectly replicate a naturally-occurring event.</p>
+    <p>To trigger handlers bound via jQuery without also triggering the native event, use <a href="/triggerHandler/"><code>.triggerHandler()</code></a> instead. </p>
+    <p>When we define a custom event type using the <code>.on()</code> method, the second argument to <code>.trigger()</code> can become useful. For example, suppose we have bound a handler for the <code>custom</code> event to our element instead of the built-in <code>click</code> event as we did above:</p>
+    <pre><code>
+$( "#foo" ).on( "custom", function(event, param1, param2) {
+  alert( param1 + "\n" + param2 );
+});
+$( "#foo").trigger( "custom", [ "Custom", "Event" ] );
+    </code></pre>
     <p>The event object is always passed as the first parameter to an event handler. An array of arguments can also be passed to the .trigger() call, and these parameters will be passed along to the handler as well following the event object. As of jQuery 1.6.2, single string or numeric argument can be passed without being wrapped in an array.</p>
     <p>Note the difference between the extra parameters passed here and the <code>eventData</code> parameter to the <a href="/on/">.on()</a> method. Both are mechanisms for passing information to an event handler, but the <code>extraParameters</code> argument to <code>.trigger()</code> allows information to be determined at the time the event is triggered, while the <code>eventData</code> argument to <code>.on()</code> requires the information to be already computed at the time the handler is bound.</p>
     <p>The <code>.trigger()</code> method can be used on jQuery collections that wrap plain JavaScript objects similar to a pub/sub mechanism; any event handlers bound to the object will be called when the event is triggered. </p>
@@ -46,67 +49,84 @@ $('#foo').trigger('custom', ['Custom', 'Event']);
   <example>
     <desc>Clicks to button #2 also trigger a click for button #1.</desc>
     <code><![CDATA[
-$("button:first").click(function () {
-update($("span:first"));
-});
-$("button:last").click(function () {
-$("button:first").trigger('click');
-
-update($("span:last"));
+$( "button:first" ).click(function() {
+update( $( "span:first" ) );
 });
 
-function update(j) {
-var n = parseInt(j.text(), 10);
-j.text(n + 1);
+$( "button:last" ).click(function() {
+  $( "button:first" ).trigger( "click" );
+  update( $( "span:last" ) );
+});
+
+function update( j ) {
+  var n = parseInt( j.text(), 10 );
+  j.text( n + 1 );
 }
 ]]></code>
     <css><![CDATA[
-
-button { margin:10px; }
-div { color:blue; font-weight:bold; }
-span { color:red; }
+  button {
+    margin: 10px;
+  }
+  div {
+    color: blue;
+    font-weight: bold;
+  }
+  span {
+    color: red;
+  }
 ]]></css>
-    <html><![CDATA[<button>Button #1</button>
+    <html><![CDATA[
+<button>Button #1</button>
 <button>Button #2</button>
 <div><span>0</span> button #1 clicks.</div>
-
-<div><span>0</span> button #2 clicks.</div>]]></html>
+<div><span>0</span> button #2 clicks.</div>
+]]></html>
   </example>
   <example>
     <desc>To submit the first form without using the submit() function, try:</desc>
-    <code><![CDATA[$("form:first").trigger("submit")]]></code>
+    <code><![CDATA[
+$( "form:first" ).trigger( "submit" );
+]]></code>
   </example>
   <example>
     <desc>To submit the first form without using the submit() function, try:</desc>
-    <code><![CDATA[var event = jQuery.Event("submit");
-$("form:first").trigger(event);
+    <code><![CDATA[
+var event = jQuery.Event( "submit" );
+$( "form:first" ).trigger( event );
 if ( event.isDefaultPrevented() ) {
-// Perform an action...
-}]]></code>
+  // Perform an action...
+}
+]]></code>
   </example>
   <example>
     <desc>To pass arbitrary data to an event:</desc>
-    <code><![CDATA[$("p").click( function (event, a, b) {
-// when a normal click fires, a and b are undefined
-// for a trigger like below a refers to "foo" and b refers to "bar"
-
-} ).trigger("click", ["foo", "bar"]);]]></code>
+    <code><![CDATA[
+$( "p" )
+  .click(function ( event, a, b ) {
+    // When a normal click fires, a and b are undefined
+    // for a trigger like below a refers to "foo" and b refers to "bar"
+  })
+  .trigger( "click", [ "foo", "bar" ] );
+]]></code>
   </example>
   <example>
     <desc>To pass arbitrary data through an event object:</desc>
-    <code><![CDATA[var event = jQuery.Event("logged");
+    <code><![CDATA[
+var event = jQuery.Event( "logged" );
 event.user = "foo";
 event.pass = "bar";
-$("body").trigger(event);]]></code>
+$( "body" ).trigger( event );
+]]></code>
   </example>
   <example>
     <desc>Alternative way to pass data through an event object:</desc>
-    <code><![CDATA[$("body").trigger({
-type:"logged",
-user:"foo",
-pass:"bar"
-
-});]]></code>
+    <code><![CDATA[
+$( "body" ).trigger({
+  type:"logged",
+  user:"foo",
+  pass:"bar"
+});
+]]></code>
   </example>
   <category slug="events/event-handler-attachment"/>
   <category slug="version/1.0"/>

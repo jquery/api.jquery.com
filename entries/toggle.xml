@@ -31,28 +31,32 @@
 
   <longdesc>
     <div class="warning">
-      <p>Note: The event handling suite also has a method named <a href="http://api.jquery.com/toggle-event/">.toggle()</a>. Which one is fired depends on the set of arguments passed.</p>
+      <p>Note: The event handling suite also has a method named <a href="/toggle-event/">.toggle()</a>. Which one is fired depends on the set of arguments passed.</p>
     </div>
     <p>With no parameters, the <code>.toggle()</code> method simply toggles the visibility of elements:</p>
-    <pre><code>$('.target').toggle();</code></pre>
+    <pre><code>
+$( ".target" ).toggle();
+    </code></pre>
     <p>The matched elements will be revealed or hidden immediately, with no animation, by changing the CSS <code>display</code> property. If the element is initially displayed, it will be hidden; if hidden, it will be shown. The <code>display</code> property is saved and restored as needed. If an element has a <code>display</code> value of <code>inline</code>, then is hidden and shown, it will once again be displayed <code>inline</code>.</p>
     <p>When a duration, a plain object, or a <em>single</em> "complete" function is provided, <code>.toggle()</code> becomes an animation method. The <code>.toggle()</code> method animates the width, height, and opacity of the matched elements simultaneously. When these properties reach 0 after a hiding animation, the <code>display</code> style property is set to <code>none</code> to ensure that the element no longer affects the layout of the page.</p>
     <p>Durations are given in milliseconds; higher values indicate slower animations, not faster ones. The strings <code>'fast'</code> and <code>'slow'</code> can be supplied to indicate durations of <code>200</code> and <code>600</code> milliseconds, respectively.</p>
     <p>As of jQuery 1.4.3, an optional string naming an easing function may be used. Easing functions specify the speed at which the animation progresses at different points within the animation. The only easing implementations in the jQuery library are the default, called <code>swing</code>, and one that progresses at a constant pace, called <code>linear</code>. More easing functions are available with the use of plug-ins, most notably the <a href="http://jqueryui.com">jQuery UI suite</a>.</p>
     <p>If supplied, the callback is fired once the animation is complete. This can be useful for stringing different animations together in sequence. The callback is not sent any arguments, but <code>this</code> is set to the DOM element being animated. If multiple elements are animated, it is important to note that the callback is executed once per matched element, not once for the animation as a whole.</p>
     <p>We can animate any element, such as a simple image:</p>
-    <pre><code>&lt;div id="clickme"&gt;
+    <pre><code>
+&lt;div id="clickme"&gt;
   Click here
 &lt;/div&gt;
-&lt;img id="book" src="book.png" alt="" width="100" height="123" /&gt;
-</code></pre>
+&lt;img id="book" src="book.png" alt="" width="100" height="123"&gt;
+    </code></pre>
     <p>We will cause <code>.toggle()</code> to be called when another element is clicked:</p>
-    <pre><code>$('#clickme').click(function() {
-  $('#book').toggle('slow', function() {
+    <pre><code>
+$( "#clickme" ).click(function() {
+  $( "#book" ).toggle( "slow", function() {
     // Animation complete.
   });
 });
-</code></pre>
+    </code></pre>
     <p>With the element initially shown, we can hide it slowly with the first click:
     </p>
     <p class="image four-across">
@@ -70,56 +74,65 @@
     </p>
     <p>The second version of the method accepts a Boolean parameter. If this parameter is <code>true</code>, then the matched elements are shown; if <code>false</code>, the elements are hidden. In essence, the statement:
     </p>
-    <pre><code>$('#foo').toggle(showOrHide);</code></pre>
+    <pre><code>
+$( "#foo" ).toggle( showOrHide );
+    </code></pre>
     <p>is equivalent to:</p>
-    <pre><code>if ( showOrHide == true ) {
-  $('#foo').show();
+    <pre><code>
+if ( showOrHide == true ) {
+  $( "#foo" ).show();
 } else if ( showOrHide == false ) {
-  $('#foo').hide();
+  $( "#foo" ).hide();
 }
-</code></pre>
+    </code></pre>
   </longdesc>
   <note id="jquery.fx.off" type="additional" data-title=".toggle()"/>
   <example>
     <desc>Toggles all paragraphs.</desc>
     <code><![CDATA[
-
-$("button").click(function () {
-$("p").toggle();
+$( "button" ).click(function() {
+  $( "p" ).toggle();
 });
 ]]></code>
-    <html><![CDATA[<button>Toggle</button>
+    <html><![CDATA[
+<button>Toggle</button>
 <p>Hello</p>
-<p style="display: none">Good Bye</p>]]></html>
+<p style="display: none">Good Bye</p>
+]]></html>
   </example>
   <example>
     <desc>Animates all paragraphs to be shown if they are hidden and hidden if they are visible, completing the animation within 600 milliseconds.</desc>
     <code><![CDATA[
-$("button").click(function () {
-$("p").toggle("slow");
+$( "button" ).click(function() {
+  $( "p" ).toggle( "slow" );
 });
 ]]></code>
     <css><![CDATA[
-p { background:#dad;
-font-weight:bold;
-font-size:16px; }
+  p {
+    background: #dad;
+    font-weight: bold;
+    font-size: 16px;
+  }
 ]]></css>
-    <html><![CDATA[<button>Toggle 'em</button>
-
+    <html><![CDATA[
+<button>Toggle 'em</button>
 <p>Hiya</p>
-<p>Such interesting text, eh?</p>]]></html>
+<p>Such interesting text, eh?</p>
+]]></html>
   </example>
   <example>
     <desc>Shows all paragraphs, then hides them all, back and forth.</desc>
     <code><![CDATA[
 var flip = 0;
-$("button").click(function () {
-$("p").toggle( flip++ % 2 == 0 );
+$( "button" ).click(function() {
+  $( "p" ).toggle( flip++ % 2 == 0 );
 });
 ]]></code>
-    <html><![CDATA[<button>Toggle</button>
+    <html><![CDATA[
+<button>Toggle</button>
 <p>Hello</p>
-<p style="display: none">Good Bye</p>]]></html>
+<p style="display: none">Good Bye</p>
+]]></html>
   </example>
   <category slug="effects/basics"/>
   <category slug="version/1.0"/>

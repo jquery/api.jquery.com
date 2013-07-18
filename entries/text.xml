@@ -9,33 +9,41 @@
     <desc>Get the combined text contents of each element in the set of matched elements, including their descendants.</desc>
     <longdesc>
       <p>Unlike the <code>.html()</code> method, <code>.text()</code> can be used in both XML and HTML documents. The result of the <code>.text()</code> method is a string containing the combined text of all matched elements. (Due to variations in the HTML parsers in different browsers, the text returned may vary in newlines and other white space.) Consider the following HTML:</p>
-      <pre><code>&lt;div class="demo-container"&gt;
-      &lt;div class="demo-box"&gt;Demonstration Box&lt;/div&gt;
+      <pre><code>
+&lt;div class="demo-container"&gt;
+  &lt;div class="demo-box"&gt;Demonstration Box&lt;/div&gt;
   &lt;ul&gt;
-  &lt;li&gt;list item 1&lt;/li&gt;
-  &lt;li&gt;list &lt;strong&gt;item&lt;/strong&gt; 2&lt;/li&gt;
+    &lt;li&gt;list item 1&lt;/li&gt;
+    &lt;li&gt;list &lt;strong&gt;item&lt;/strong&gt; 2&lt;/li&gt;
   &lt;/ul&gt;
-  &lt;/div&gt;
-</code></pre>
-      <p>The code <code>$('div.demo-container').text()</code> would produce the following result:</p>
+&lt;/div&gt;
+      </code></pre>
+      <p>The code <code>$( "div.demo-container" ).text()</code> would produce the following result:</p>
       <p>
         <code>Demonstration Box list item 1 list item 2</code>
       </p>
-      <p>The <code>.text()</code> method cannot be used on form inputs or scripts.  To set or get the text value of <code>input</code> or <code>textarea</code> elements, use the <a href="/val"><code>.val()</code></a> method. To get the value of a script element, use the <a href="/html"><code>.html()</code></a> method.</p>
+      <p>The <code>.text()</code> method cannot be used on form inputs or scripts.  To set or get the text value of <code>input</code> or <code>textarea</code> elements, use the <a href="/val/"><code>.val()</code></a> method. To get the value of a script element, use the <a href="/html/"><code>.html()</code></a> method.</p>
       <p>As of jQuery 1.4, the <code>.text()</code> method returns the value of text and CDATA nodes as well as element nodes.</p>
     </longdesc>
     <example>
       <desc>Find the text in the first paragraph (stripping out the html), then set the html of the last paragraph to show it is just text (the red bold is gone).</desc>
       <code><![CDATA[
-var str = $("p:first").text();
-$("p:last").html(str);
+var str = $( "p:first" ).text();
+$( "p:last" ).html( str );
 ]]></code>
       <css><![CDATA[
-  p { color:blue; margin:8px; }
-  b { color:red; }
-  ]]></css>
-      <html><![CDATA[<p><b>Test</b> Paragraph.</p>
-  <p></p>]]></html>
+  p {
+    color: blue;
+    margin: 8px;
+  }
+  b {
+    color: red;
+  }
+]]></css>
+      <html><![CDATA[
+<p><b>Test</b> Paragraph.</p>
+<p></p>
+]]></html>
     </example>
     <category slug="manipulation/dom-insertion-inside"/>
     <category slug="version/1.0"/>
@@ -58,41 +66,55 @@ $("p:last").html(str);
     <longdesc>
       <p>Unlike the <code>.html()</code> method, <code>.text()</code> can be used in both XML and HTML documents. </p>
       <p>We need to be aware that this method escapes the string provided as necessary so that it will render correctly in HTML. To do so, it calls the DOM method <code>.createTextNode()</code>, does not interpret the string as HTML.  Consider the following HTML:</p>
-      <pre><code>&lt;div class="demo-container"&gt;
+      <pre><code>
+&lt;div class="demo-container"&gt;
   &lt;div class="demo-box"&gt;Demonstration Box&lt;/div&gt;
   &lt;ul&gt;
     &lt;li&gt;list item 1&lt;/li&gt;
     &lt;li&gt;list &lt;strong&gt;item&lt;/strong&gt; 2&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/div&gt;
-</code></pre>
-      <p>The code <code>$('div.demo-container').text('&lt;p&gt;This is a test.&lt;/p&gt;');</code> will produce the following DOM output:</p>
-      <pre><code>&lt;div class="demo-container"&gt;
+      </code></pre>
+      <p>The code <code>$( "div.demo-container" ).text( "&lt;p&gt;This is a test.&lt;/p&gt;" );</code> will produce the following DOM output:</p>
+      <pre><code>
+&lt;div class="demo-container"&gt;
 &amp;lt;p&amp;gt;This is a test.&amp;lt;/p&amp;gt;
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;
+      </code></pre>
       <p>It will appear on a rendered page as though the tags were exposed, like this:</p>
-      <pre><code>&lt;p&gt;This is a test&lt;/p&gt;</code></pre>
-      <p>The <code>.text()</code> method cannot be used on input elements.  For input field text, use the <a href="/val">.val()</a> method.</p>
+      <pre><code>
+&lt;p&gt;This is a test&lt;/p&gt;
+      </code></pre>
+      <p>The <code>.text()</code> method cannot be used on input elements.  For input field text, use the <a href="/val/">.val()</a> method.</p>
       <p>As of jQuery 1.4, the <code>.text()</code> method allows us to set the text content by passing in a function.</p>
-      <pre><code>$('ul li').text(function(index) {
-  return 'item number ' + (index + 1);
-});</code></pre>
+      <pre><code>
+$( "ul li" ).text(function( index ) {
+  return "item number " + ( index + 1 );
+});
+      </code></pre>
       <p>Given an unordered list with three <code>&lt;li&gt;</code> elements, this example will produce the following DOM output:</p>
-      <pre><code>&lt;ul&gt;
+      <pre><code>
+&lt;ul&gt;
   &lt;li&gt;item number 1&lt;/li&gt;
   &lt;li&gt;item number 2&lt;/li&gt;
   &lt;li&gt;item number 3&lt;/li&gt;
 &lt;/ul&gt;
-</code></pre>
+      </code></pre>
     </longdesc>
     <example>
       <desc>Add text to the paragraph (notice the bold tag is escaped).</desc>
-      <code><![CDATA[$("p").text("<b>Some</b> new text.");]]></code>
+      <code><![CDATA[
+$( "p" ).text( "<b>Some</b> new text." );
+]]></code>
       <css><![CDATA[
-
-  p { color:blue; margin:8px; }
-  ]]></css>
-      <html><![CDATA[<p>Test Paragraph.</p>]]></html>
+  p {
+    color: blue;
+    margin: 8px;
+  }
+]]></css>
+      <html><![CDATA[
+<p>Test Paragraph.</p>
+]]></html>
     </example>
     <category slug="manipulation/dom-insertion-inside"/>
     <category slug="version/1.0"/>

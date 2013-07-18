@@ -19,27 +19,27 @@
       <li>Events created with <code>.triggerHandler()</code> do not bubble up the DOM hierarchy; if they are not handled by the target element directly, they do nothing.</li>
       <li>Instead of returning the jQuery object (to allow chaining), <code>.triggerHandler()</code> returns whatever value was returned by the last handler it caused to be executed. If no handlers are triggered, it returns <code>undefined</code></li>
     </ul>
-    <p>For more information on this method, see the discussion for <code><a href="/trigger">.trigger()</a></code>.</p>
+    <p>For more information on this method, see the discussion for <code><a href="/trigger/">.trigger()</a></code>.</p>
   </longdesc>
   <example>
     <desc>If you called .triggerHandler() on a focus event - the browser's default focus action would not be triggered, only the event handlers bound to the focus event.</desc>
     <code><![CDATA[
-
-$("#old").click(function(){
-$("input").trigger("focus");
+$( "#old" ).click(function() {
+  $( "input" ).trigger( "focus" );
 });
-$("#new").click(function(){
-$("input").triggerHandler("focus");
+$( "#new" ).click(function() {
+  $( "input" ).triggerHandler( "focus" );
 });
-$("input").focus(function(){
-$("<span>Focused!</span>").appendTo("body").fadeOut(1000);
+$( "input" ).focus(function() {
+  $( "<span>Focused!</span>" ).appendTo( "body" ).fadeOut( 1000 );
 });
-
 ]]></code>
-    <html><![CDATA[<button id="old">.trigger("focus")</button>
-<button id="new">.triggerHandler("focus")</button><br/><br/>
+    <html><![CDATA[
+<button id="old">.trigger( "focus" )</button>
+<button id="new">.triggerHandler( "focus" )</button><br><br>
 
-<input type="text" value="To Be Focused"/>]]></html>
+<input type="text" value="To Be Focused">
+]]></html>
   </example>
   <category slug="events/event-handler-attachment"/>
   <category slug="version/1.2"/>
