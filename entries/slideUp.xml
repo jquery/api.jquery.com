@@ -22,17 +22,20 @@
     <p>The <code>.slideUp()</code> method animates the height of the matched elements. This causes lower parts of the page to slide up, appearing to conceal the items. Once the height reaches 0 (or, if set, to whatever the CSS min-height property is), the <code>display</code> style property is set to <code>none</code> to ensure that the element no longer affects the layout of the page.</p>
     <p>Durations are given in milliseconds; higher values indicate slower animations, not faster ones. The strings <code>'fast'</code> and <code>'slow'</code> can be supplied to indicate durations of <code>200</code> and <code>600</code> milliseconds, respectively. If any other string is supplied, or if the <code>duration</code> parameter is omitted, the default duration of  <code>400</code> milliseconds is used.</p>
     <p>We can animate any element, such as a simple image:</p>
-    <pre><code>&lt;div id="clickme"&gt;
+    <pre><code>
+&lt;div id="clickme"&gt;
   Click here
 &lt;/div&gt;
-&lt;img id="book" src="book.png" alt="" width="100" height="123" /&gt;</code></pre>
+&lt;img id="book" src="book.png" alt="" width="100" height="123"&gt;
+    </code></pre>
     <p>With the element initially shown, we can hide it slowly:</p>
-    <pre><code>$('#clickme').click(function() {
-  $('#book').slideUp('slow', function() {
+    <pre><code>
+$( "#clickme" ).click(function() {
+  $( "#book" ).slideUp( "slow", function() {
     // Animation complete.
   });
 });
-  </code></pre>
+    </code></pre>
     <p class="image four-across">
       <img src="/resources/0042_06_21.png" alt=""/>
       <img src="/resources/0042_06_22.png" alt=""/>
@@ -43,63 +46,71 @@
     <p><strong>As of jQuery 1.4.3</strong>, an optional string naming an easing function may be used. Easing functions specify the speed at which the animation progresses at different points within the animation. The only easing implementations in the jQuery library are the default, called <code>swing</code>, and one that progresses at a constant pace, called <code>linear</code>. More easing functions are available with the use of plug-ins, most notably the <a href="http://jqueryui.com">jQuery UI suite</a>.</p>
     <h4 id="callback-function">Callback Function</h4>
     <p>If supplied, the callback is fired once the animation is complete. This can be useful for stringing different animations together in sequence. The callback is not sent any arguments, but <code>this</code> is set to the DOM element being animated. If multiple elements are animated, it is important to note that the callback is executed once per matched element, not once for the animation as a whole.</p>
-    <p><strong>As of jQuery 1.6</strong>, the <code><a href="http://api.jquery.com/promise/">.promise()</a></code> method can be used in conjunction with the <code><a href="http://api.jquery.com/deferred.done/">deferred.done()</a></code> method to execute a single callback for the animation as a whole when <em>all</em> matching elements have completed their animations ( See the <a href="http://api.jquery.com/promise/#example-1">example for .promise()</a> ).  </p>
+    <p><strong>As of jQuery 1.6</strong>, the <code><a href="/promise/">.promise()</a></code> method can be used in conjunction with the <code><a href="/deferred.done/">deferred.done()</a></code> method to execute a single callback for the animation as a whole when <em>all</em> matching elements have completed their animations ( See the <a href="/promise/#example-1">example for .promise()</a> ).  </p>
   </longdesc>
   <note id="jquery.fx.off" type="additional" data-title=".slideUp()"/>
   <note id="slide-in-ie" type="additional" data-title=".slideDown()"/>
   <example>
     <desc>Animates all divs to slide up, completing the animation within 400 milliseconds.</desc>
     <code><![CDATA[
-  $(document.body).click(function () {
-    if ($("div:first").is(":hidden")) {
-      $("div").show("slow");
-    } else {
-      $("div").slideUp();
-    }
-  });
-
-  ]]></code>
+$( document.body ).click(function() {
+  if ( $( "div:first" ).is( ":hidden" ) ) {
+    $( "div" ).show( "slow" );
+  } else {
+    $( "div" ).slideUp();
+  }
+});
+]]></code>
     <css><![CDATA[
-  div { background:#3d9a44; margin:3px; width:80px;
-    height:40px; float:left; }
-  ]]></css>
-    <html><![CDATA[Click me!
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-
-  <div></div>]]></html>
+  div {
+    background: #3d9a44;
+    margin: 3px;
+    width: 80px;
+    height: 40px;
+    float: left;
+  }
+]]></css>
+    <html><![CDATA[
+Click me!
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+]]></html>
   </example>
   <example>
     <desc>Animates the parent paragraph to slide up, completing the animation within 200 milliseconds. Once the animation is done, it displays an alert.</desc>
     <code><![CDATA[
-  $("button").click(function () {
-    $(this).parent().slideUp("slow", function () {
-      $("#msg").text($("button", this).text() + " has completed.");
-    });
+$( "button" ).click(function() {
+  $( this ).parent().slideUp( "slow", function() {
+    $( "#msg" ).text( $( "button", this ).text() + " has completed." );
   });
-
+});
 ]]></code>
     <css><![CDATA[
- div { margin:2px; }
+ div {
+   margin: 2px;
+  }
 ]]></css>
-    <html><![CDATA[<div>
+    <html><![CDATA[
+<div>
   <button>Hide One</button>
-  <input type="text" value="One" />
-
+  <input type="text" value="One">
 </div>
+
 <div>
   <button>Hide Two</button>
-  <input type="text" value="Two" />
-
+  <input type="text" value="Two">
 </div>
+
 <div>
   <button>Hide Three</button>
-  <input type="text" value="Three" />
-
+  <input type="text" value="Three">
 </div>
-<div id="msg"></div>]]></html>
+
+<div id="msg"></div>
+]]></html>
   </example>
   <category slug="effects/sliding"/>
   <category slug="version/1.0"/>

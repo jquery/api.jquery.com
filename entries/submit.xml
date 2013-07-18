@@ -21,7 +21,7 @@
     <added>1.0</added>
   </signature>
   <longdesc>
-    <p>This method is a shortcut for <code>.on('submit', handler)</code> in the first variation, and <code>.trigger('submit')</code> in the third.</p>
+    <p>This method is a shortcut for <code>.on( "submit", handler )</code> in the first variation, and <code>.trigger( "submit" )</code> in the third.</p>
     <p>The <code>submit</code> event is sent to an element when the user is attempting to submit a form. It can only be attached to <code>&lt;form&gt;</code> elements. Forms can be submitted either by clicking an explicit <code>&lt;input type="submit"&gt;</code>, <code>&lt;input type="image"&gt;</code>, or <code>&lt;button type="submit"&gt;</code>, or by pressing <kbd>Enter</kbd> when certain form elements have focus.</p>
     <div class="warning">
       <p>Depending on the browser, the Enter key may only cause a form submission if the form has exactly one text field, or only when there is a submit button present. The interface should not rely on a particular behavior for this key unless the issue is forced by observing the keypress event for presses of the Enter key.</p>
@@ -35,14 +35,18 @@
   Trigger the handler
 &lt;/div&gt;</code></pre>
     <p>The event handler can be bound to the form:</p>
-    <pre><code>$('#target').submit(function() {
-  alert('Handler for .submit() called.');
+    <pre><code>
+$( "#target" ).submit(function() {
+  alert( "Handler for .submit() called." );
   return false;
-});</code></pre>
+});
+    </code></pre>
     <p>Now when the form is submitted, the message is alerted. This happens prior to the actual submission, so we can cancel the submit action by calling <code>.preventDefault()</code> on the event object or by returning <code>false</code> from our handler. We can trigger the event manually when another element is clicked:</p>
-    <pre><code>$('#other').click(function() {
-  $('#target').submit();
-});</code></pre>
+    <pre><code>
+$( "#other" ).click(function() {
+  $( "#target" ).submit();
+});
+    </code></pre>
     <p>After this code executes, clicks on <samp>Trigger the handler</samp> will also display the message. In addition, the default <code>submit</code> action on the form will be fired, so the form will be submitted.</p>
     <p>The JavaScript <code>submit</code> event does not bubble in Internet Explorer. However, scripts that rely on event delegation with the <code>submit</code> event will work consistently across browsers as of jQuery 1.4, which has normalized the event's behavior. </p>
   </longdesc>
@@ -50,41 +54,51 @@
   <example>
     <desc>If you'd like to prevent forms from being submitted unless a flag variable is set, try:</desc>
     <code><![CDATA[
-
-$("form").submit(function() {
-  if ($("input:first").val() == "correct") {
-    $("span").text("Validated...").show();
+$( "form" ).submit(function() {
+  if ( $( "input:first" ).val() == "correct" ) {
+    $( "span" ).text( "Validated..." ).show();
     return true;
   }
-  $("span").text("Not valid!").show().fadeOut(1000);
+  $( "span" ).text( "Not valid!" ).show().fadeOut( 1000 );
   return false;
 });
 ]]></code>
     <css><![CDATA[
-
-  p { margin:0; color:blue; }
-  div,p { margin-left:10px; }
-  span { color:red; }
-  ]]></css>
-    <html><![CDATA[<p>Type 'correct' to validate.</p>
-  <form action="javascript:alert('success!');">
-    <div>
-      <input type="text" />
-
-      <input type="submit" />
-    </div>
-  </form>
-  <span></span>]]></html>
+  p {
+    margin: 0;
+    color: blue;
+  }
+  div,p {
+    margin-left: 10px;
+  }
+  span {
+    color: red;
+  }
+]]></css>
+    <html><![CDATA[
+<p>Type 'correct' to validate.</p>
+<form action="javascript:alert( 'success!' );">
+  <div>
+    <input type="text">
+    <input type="submit">
+  </div>
+</form>
+<span></span>
+]]></html>
   </example>
   <example>
     <desc>If you'd like to prevent forms from being submitted unless a flag variable is set, try:</desc>
-    <code><![CDATA[$("form").submit( function () {
+    <code><![CDATA[
+$( "form" ).submit(function() {
   return this.some_flag_variable;
-} );]]></code>
+});
+]]></code>
   </example>
   <example>
     <desc>To trigger the submit event on the first form on the page, try:</desc>
-    <code><![CDATA[$("form:first").submit();]]></code>
+    <code><![CDATA[
+$( "form:first" ).submit();
+]]></code>
   </example>
   <category slug="events/form-events"/>
   <category slug="forms"/>

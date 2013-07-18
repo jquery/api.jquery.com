@@ -15,13 +15,20 @@
     </longdesc>
     <example>
       <desc>Get the scrollLeft of a paragraph.</desc>
-      <code><![CDATA[var p = $("p:first");
-$("p:last").text( "scrollLeft:" + p.scrollLeft() );
+      <code><![CDATA[
+var p = $( "p:first" );
+$( "p:last" ).text( "scrollLeft:" + p.scrollLeft() );
 ]]></code>
       <css><![CDATA[
-    p { margin:10px;padding:5px;border:2px solid #666; }
+  p {
+    margin: 10px;
+    padding: 5px;
+    border: 2px solid #666;
+  }
 ]]></css>
-      <html><![CDATA[<p>Hello</p><p></p>]]></html>
+      <html><![CDATA[
+<p>Hello</p><p></p>
+]]></html>
     </example>
     <category slug="css"/>
     <category slug="offset"/>
@@ -41,22 +48,31 @@ $("p:last").text( "scrollLeft:" + p.scrollLeft() );
     </longdesc>
     <example>
       <desc>Set the scrollLeft of a div.</desc>
-      <code><![CDATA[$("div.demo").scrollLeft(300);
+      <code><![CDATA[
+$( "div.demo" ).scrollLeft( 300 );
 ]]></code>
       <css><![CDATA[
   div.demo {
-  background:#CCCCCC none repeat scroll 0 0;
-  border:3px solid #666666;
-  margin:5px;
-  padding:5px;
-  position:relative;
-  width:200px;
-  height:100px;
-  overflow:auto;
+    background: #ccc none repeat scroll 0 0;
+    border: 3px solid #666;
+    margin: 5px;
+    padding: 5px;
+    position: relative;
+    width: 200px;
+    height: 100px;
+    overflow: auto;
   }
-  p { margin:10px;padding:5px;border:2px solid #666;width:1000px;height:1000px; }
-  ]]></css>
-      <html><![CDATA[<div class="demo"><h1>lalala</h1><p>Hello</p></div>]]></html>
+  p {
+    margin: 10px;
+    padding: 5px;
+    border: 2px solid #666;
+    width: 1000px;
+    height: 1000px;
+  }
+]]></css>
+      <html><![CDATA[
+<div class="demo"><h1>lalala</h1><p>Hello</p></div>
+]]></html>
     </example>
     <category slug="css"/>
     <category slug="offset"/>

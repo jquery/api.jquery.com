@@ -8,7 +8,7 @@
   <longdesc>
     <p>The <code>.size()</code> method is deprecated as of jQuery 1.8. Use the <code><a href="/length/">.length</a></code> property instead.</p>
 
-    <p>The <code>.size()</code> method is functionally equivalent to the <code><a href="http://api.jquery.com/length/">.length</a></code> property; however, <strong>the <code>.length</code> property is preferred</strong> because it does not have the overhead of a function call.</p>
+    <p>The <code>.size()</code> method is functionally equivalent to the <code><a href="/length/">.length</a></code> property; however, <strong>the <code>.length</code> property is preferred</strong> because it does not have the overhead of a function call.</p>
     <p>Given a simple unordered list on the page:</p>
     <pre><code>
 &lt;ul&gt;
@@ -17,8 +17,10 @@
 &lt;/ul&gt;
     </code></pre>
     <p>Both <code>.size()</code> and <code>.length</code> identify the number of items:</p>
-    <pre><code>alert( "Size: " + $("li").size() );
-alert( "Size: " + $("li").length );</code></pre>
+    <pre><code>
+alert( "Size: " + $( "li" ).size() );
+alert( "Size: " + $( "li" ).length );
+    </code></pre>
     <p>This results in two alerts:</p>
     <p>
       <samp>Size: 2</samp>
@@ -30,24 +32,34 @@ alert( "Size: " + $("li").length );</code></pre>
   <example>
     <desc>Count the divs. Click to add more.</desc>
     <code><![CDATA[
-$(document.body)
-.click(function() {
-  $(this).append( $("<div>") );
-  var n = $("div").size();
-  $("span").text("There are " + n + " divs. Click to add more.");
-})
-// trigger the click to start
-.click();
+$( document.body )
+  .click(function() {
+    $( this ).append( $("<div>") );
+    var n = $( "div" ).size();
+    $( "span" ).text( "There are " + n + " divs. Click to add more." );
+  })
+  // Trigger the click to start
+  .click();
 ]]></code>
     <css><![CDATA[
-  body { cursor:pointer; min-height: 100px; }
-  div { width:50px; height:30px; margin:5px;
-        float:left; background:blue; }
-  span { color:red; }
- ]]></css>
+  body {
+    cursor: pointer;
+    min-height: 100px;
+  }
+  div {
+    width: 50px;
+    height: 30px;
+    margin: 5px;
+    float: left;
+    background: blue;
+  }
+  span {
+    color: red;
+  }
+]]></css>
     <html><![CDATA[
 <span></span>
- <div></div>
+<div></div>
 ]]></html>
   </example>
   <category slug="miscellaneous/dom-element-methods"/>

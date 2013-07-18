@@ -29,27 +29,30 @@
   <longdesc>
     <p>With no parameters, the <code>.show()</code> method is the simplest way to display an element:
     </p>
-    <pre><code>$('.target').show();
+    <pre><code>
+$( ".target" ).show();
     </code></pre>
-    <p>The matched elements will be revealed immediately, with no animation. This is roughly equivalent to calling <code>.css('display', 'block')</code>, except that the <code>display</code> property is restored to whatever it was initially. If an element has a <code>display</code> value of <code>inline</code>, then is hidden and shown, it will once again be displayed <code>inline</code>.</p>
+    <p>The matched elements will be revealed immediately, with no animation. This is roughly equivalent to calling <code>.css( "display", "block")</code>, except that the <code>display</code> property is restored to whatever it was initially. If an element has a <code>display</code> value of <code>inline</code>, then is hidden and shown, it will once again be displayed <code>inline</code>.</p>
     <p><strong>Note: </strong> If using !important in your styles, such as
     <code>display: none !important</code>,
-    it is necessary to override the style using <code>.css('display', 'block !important')</code> should you wish for <code>.show()</code> to function correctly.</p>
+    it is necessary to override the style using <code>.css( "display", "block !important")</code> should you wish for <code>.show()</code> to function correctly.</p>
     <p>When a duration, a plain object, or a "complete" function is provided, <code>.show()</code> becomes an animation method. The <code>.show()</code> method animates the width, height, and opacity of the matched elements simultaneously.</p>
     <p>Durations are given in milliseconds; higher values indicate slower animations, not faster ones. The strings <code>'fast'</code> and <code>'slow'</code> can be supplied to indicate durations of <code>200</code> and <code>600</code> milliseconds, respectively.</p>
     <p>As of jQuery 1.4.3, an optional string naming an easing function may be used. Easing functions specify the speed at which the animation progresses at different points within the animation. The only easing implementations in the jQuery library are the default, called <code>swing</code>, and one that progresses at a constant pace, called <code>linear</code>. More easing functions are available with the use of plug-ins, most notably the <a href="http://jqueryui.com">jQuery UI suite</a>.</p>
     <p>If supplied, the callback is fired once the animation is complete. This can be useful for stringing different animations together in sequence. The callback is not sent any arguments, but <code>this</code> is set to the DOM element being animated. If multiple elements are animated, it is important to note that the callback is executed once per matched element, not once for the animation as a whole.</p>
     <p>We can animate any element, such as a simple image:</p>
-    <pre><code>&lt;div id="clickme"&gt;
+    <pre><code>
+&lt;div id="clickme"&gt;
   Click here
 &lt;/div&gt;
-&lt;img id="book" src="book.png" alt="" width="100" height="123" /&gt;
+&lt;img id="book" src="book.png" alt="" width="100" height="123"&gt;
 With the element initially hidden, we can show it slowly:
-$('#clickme').click(function() {
-  $('#book').show('slow', function() {
+$( "#clickme" ).click(function() {
+  $( "#book" ).show( "slow", function() {
     // Animation complete.
   });
-});</code></pre>
+});
+    </code></pre>
     <p class="image four-across">
       <img src="/resources/0042_06_01.png" alt=""/>
       <img src="/resources/0042_06_02.png" alt=""/>
@@ -61,73 +64,90 @@ $('#clickme').click(function() {
   <example>
     <desc>Animates all hidden paragraphs to show slowly, completing the animation within 600 milliseconds.</desc>
     <code><![CDATA[
-$("button").click(function () {
-  $("p").show("slow");
+$( "button" ).click(function() {
+  $( "p" ).show( "slow" );
 });
 ]]></code>
     <css><![CDATA[
-p { background:yellow; }
+  p {
+    background: yellow;
+  }
 ]]></css>
-    <html><![CDATA[<button>Show it</button>
-      <p style="display: none">Hello  2</p>]]></html>
+    <html><![CDATA[
+<button>Show it</button>
+<p style="display: none">Hello  2</p>
+]]></html>
   </example>
   <example>
     <desc>Show the first div, followed by each next adjacent sibling div in order, with a 200ms animation. Each animation starts when the previous sibling div's animation ends.</desc>
     <code><![CDATA[
-$("#showr").click(function () {
-  $("div").first().show("fast", function showNext() {
-    $(this).next("div").show("fast", showNext);
+$( "#showr" ).click(function() {
+  $( "div" ).first().show( "fast", function showNext() {
+    $( this ).next( "div" ).show( "fast", showNext );
   });
 });
 
-$("#hidr").click(function () {
-  $("div").hide(1000);
+$( "#hidr" ).click(function() {
+  $( "div" ).hide( 1000 );
 });
 ]]></code>
     <css><![CDATA[
-  div { background:#def3ca; margin:3px; width:80px;
-  display:none; float:left; text-align:center; }
-  ]]></css>
+  div {
+    background: #def3ca;
+    margin: 3px;
+    width: 80px;
+    display: none;
+    float: left;
+    text-align: center;
+  }
+]]></css>
     <html><![CDATA[
-  <button id="showr">Show</button>
-  <button id="hidr">Hide</button>
-  <div>Hello 3,</div>
-
-  <div>how</div>
-  <div>are</div>
-  <div>you?</div>]]></html>
+<button id="showr">Show</button>
+<button id="hidr">Hide</button>
+<div>Hello 3,</div>
+<div>how</div>
+<div>are</div>
+<div>you?</div>
+]]></html>
   </example>
   <example>
     <desc>Show all span and input elements with an animation. Change the text once the animation is done.</desc>
     <code><![CDATA[
 function doIt() {
-  $("span,div").show("slow");
+  $( "span,div" ).show( "slow" );
 }
-/* can pass in function name */
-$("button").click(doIt);
+// Can pass in function name
+$( "button" ).click( doIt );
 
-$("form").submit(function () {
-  if ($("input").val() == "yes") {
-    $("p").show(4000, function () {
-      $(this).text("Ok, DONE! (now showing)");
+$( "form" ).submit(function() {
+  if ( $( "input" ).val() == "yes" ) {
+    $( "p" ).show( 4000, function() {
+      $( this ).text( "Ok, DONE! (now showing)" );
     });
   }
-  $("span,div").hide("fast");
-  /* to stop the submit */
+  $( "span,div" ).hide( "fast" );
+  // To stop the submit
   return false;
 });
 ]]></code>
     <css><![CDATA[
-  span { display:none; }
-  div { display:none; }
-  p { font-weight:bold; background-color:#fcd; }
-  ]]></css>
+  span {
+    display: none;
+  }
+  div {
+    display: none;
+  }
+  p {
+    font-weight: bold;
+    background-color: #fcd;
+  }
+]]></css>
     <html><![CDATA[
 <button>Do it!</button>
 <span>Are you sure? (type 'yes' if you are) </span>
 <div>
   <form>
-    <input type="text"  value="as;ldkfjalsdf"/>
+    <input type="text"  value="as;ldkfjalsdf">
   </form>
 </div>
 <p style="display:none;">I'm hidden...</p>

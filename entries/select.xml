@@ -21,23 +21,28 @@
     <added>1.0</added>
   </signature>
   <longdesc>
-    <p>This method is a shortcut for <code>.on('select', handler)</code> in the first two variations, and <code>.trigger('select')</code> in the third.</p>
+    <p>This method is a shortcut for <code>.on( "select", handler )</code> in the first two variations, and <code>.trigger( "select" )</code> in the third.</p>
     <p>The <code>select</code> event is sent to an element when the user makes a text selection inside it. This event is limited to <code>&lt;input type="text"&gt;</code> fields and <code>&lt;textarea&gt;</code> boxes.</p>
     <p>For example, consider the HTML:</p>
-    <pre><code>&lt;form&gt;
-  &lt;input id="target" type="text" value="Hello there" /&gt;
+    <pre><code>
+&lt;form&gt;
+  &lt;input id="target" type="text" value="Hello there"&gt;
 &lt;/form&gt;
 &lt;div id="other"&gt;
   Trigger the handler
 &lt;/div&gt;</code></pre>
     <p>The event handler can be bound to the text input:</p>
-    <pre><code>$('#target').select(function() {
-  alert('Handler for .select() called.');
-});</code></pre>
+    <pre><code>
+$( "#target" ).select(function() {
+  alert( "Handler for .select() called." );
+});
+    </code></pre>
     <p>Now when any portion of the text is selected, the alert is displayed. Merely setting the location of the insertion point will not trigger the event. To trigger the event manually, apply <code>.select()</code> without an argument:</p>
-    <pre><code>$('#other').click(function() {
-  $('#target').select();
-});</code></pre>
+    <pre><code>
+$( "#other").click(function() {
+  $( "#target" ).select();
+});
+    </code></pre>
     <p>After this code executes, clicks on the Trigger button will also alert the message:</p>
     <p>
       <samp>Handler for .select() called.</samp>
@@ -50,26 +55,30 @@
   <example>
     <desc>To do something when text in input boxes is selected:</desc>
     <code><![CDATA[
-$(":input").select( function () {
-  $("div").text("Something was selected").show().fadeOut(1000);
+$( ":input" ).select(function() {
+  $( "div" ).text( "Something was selected" ).show().fadeOut( 1000 );
 });
 ]]></code>
     <css><![CDATA[
-  p { color:blue; }
-  div { color:red; }
-  ]]></css>
+  p {
+    color: blue;
+  }
+  div {
+    color: red;
+  }
+]]></css>
     <html><![CDATA[
-  <p>
-    Click and drag the mouse to select text in the inputs.
-  </p>
-  <input type="text" value="Some text" />
-  <input type="text" value="to test on" />
-
-  <div></div>]]></html>
+  <p>Click and drag the mouse to select text in the inputs.</p>
+  <input type="text" value="Some text">
+  <input type="text" value="to test on">
+  <div></div>
+  ]]></html>
   </example>
   <example>
     <desc>To trigger the select event on all input elements, try:</desc>
-    <code><![CDATA[$("input").select();]]></code>
+    <code><![CDATA[
+$( "input" ).select();
+]]></code>
   </example>
   <category slug="events/form-events"/>
   <category slug="forms"/>

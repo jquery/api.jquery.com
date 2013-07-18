@@ -8,9 +8,9 @@
   <longdesc>
     <p>The <code>.serializeArray()</code> method creates a JavaScript array of objects, ready to be encoded as a JSON string. It operates on a jQuery object representing a set of form elements. The form elements can be of several types:</p>
     <pre><code>&lt;form&gt;
-  &lt;div&gt;&lt;input type="text" name="a" value="1" id="a" /&gt;&lt;/div&gt;
-  &lt;div&gt;&lt;input type="text" name="b" value="2" id="b" /&gt;&lt;/div&gt;
-  &lt;div&gt;&lt;input type="hidden" name="c" value="3" id="c" /&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;input type="text" name="a" value="1" id="a"&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;input type="text" name="b" value="2" id="b"&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;input type="hidden" name="c" value="3" id="c"&gt;&lt;/div&gt;
   &lt;div&gt;
     &lt;textarea name="d" rows="8" cols="40"&gt;4&lt;/textarea&gt;
   &lt;/div&gt;
@@ -20,20 +20,23 @@
     &lt;option value="7"&gt;7&lt;/option&gt;
   &lt;/select&gt;&lt;/div&gt;
   &lt;div&gt;
-    &lt;input type="checkbox" name="f" value="8" id="f" /&gt;
+    &lt;input type="checkbox" name="f" value="8" id="f"&gt;
   &lt;/div&gt;
   &lt;div&gt;
-    &lt;input type="submit" name="g" value="Submit" id="g" /&gt;
+    &lt;input type="submit" name="g" value="Submit" id="g"&gt;
   &lt;/div&gt;
 &lt;/form&gt;</code></pre>
     <p>The <code>.serializeArray()</code> method uses the standard W3C rules for <a href="http://www.w3.org/TR/html401/interact/forms.html#h-17.13.2">successful controls</a> to determine which elements it should include; in particular the element cannot be disabled and must contain a <code>name</code> attribute. No submit button value is serialized since the form was not submitted using a button. Data from file select elements is not serialized.</p>
     <p>This method can act on a jQuery object that has selected individual form elements, such as <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, and <code>&lt;select&gt;</code>. However, it is typically easier to select the <code>&lt;form&gt;</code> tag itself for serialization:</p>
-    <pre><code>$('form').submit(function() {
-  console.log($(this).serializeArray());
+    <pre><code>
+$( "form" ).submit(function() {
+  console.log( $( this ).serializeArray() );
   return false;
-});</code></pre>
+});
+    </code></pre>
     <p>This produces the following data structure (provided that the browser supports <code>console.log</code>):</p>
-    <pre><code>[
+    <pre><code>
+[
   {
     name: "a",
     value: "1"
@@ -54,56 +57,62 @@
     name: "e",
     value: "5"
   }
-]</code></pre>
+]
+    </code></pre>
   </longdesc>
   <example>
     <desc>Get the values from a form, iterate through them, and append them to a results display.</desc>
     <code><![CDATA[
   function showValues() {
-    var fields = $(":input").serializeArray();
-    $("#results").empty();
-    jQuery.each(fields, function(i, field){
-      $("#results").append(field.value + " ");
+    var fields = $( ":input" ).serializeArray();
+    $( "#results" ).empty();
+    jQuery.each( fields, function( i, field ) {
+      $( "#results" ).append( field.value + " " );
     });
   }
 
-  $(":checkbox, :radio").click(showValues);
-  $("select").change(showValues);
+  $( ":checkbox, :radio" ).click( showValues );
+  $( "select" ).change( showValues );
   showValues();
 ]]></code>
     <css><![CDATA[
-  body, select { font-size:14px; }
-  form { margin:5px; }
-  p { color:red; margin:5px; }
-  b { color:blue; }
-  ]]></css>
-    <html><![CDATA[<p><b>Results:</b> <span id="results"></span></p>
-
-  <form>
-    <select name="single">
-      <option>Single</option>
-      <option>Single2</option>
-
-    </select>
-    <select name="multiple" multiple="multiple">
-      <option selected="selected">Multiple</option>
-      <option>Multiple2</option>
-
-      <option selected="selected">Multiple3</option>
-    </select><br/>
-    <input type="checkbox" name="check" value="check1" id="ch1"/>
-
-    <label for="ch1">check1</label>
-    <input type="checkbox" name="check" value="check2" checked="checked" id="ch2"/>
-
-    <label for="ch2">check2</label>
-    <input type="radio" name="radio" value="radio1" checked="checked" id="r1"/>
-
-    <label for="r1">radio1</label>
-    <input type="radio" name="radio" value="radio2" id="r2"/>
-
-    <label for="r2">radio2</label>
-  </form>]]></html>
+  body, select {
+    font-size: 14px;
+  }
+  form {
+    margin: 5px;
+  }
+  p {
+    color: red;
+    margin: 5px;
+  }
+  b {
+    color: blue;
+  }
+]]></css>
+    <html><![CDATA[
+<p><b>Results:</b> <span id="results"></span></p>
+<form>
+  <select name="single">
+    <option>Single</option>
+    <option>Single2</option>
+  </select>
+  <select name="multiple" multiple="multiple">
+    <option selected="selected">Multiple</option>
+    <option>Multiple2</option>
+    <option selected="selected">Multiple3</option>
+  </select>
+  <br>
+  <input type="checkbox" name="check" value="check1" id="ch1">
+  <label for="ch1">check1</label>
+  <input type="checkbox" name="check" value="check2" checked="checked" id="ch2">
+  <label for="ch2">check2</label>
+  <input type="radio" name="radio" value="radio1" checked="checked" id="r1">
+  <label for="r1">radio1</label>
+  <input type="radio" name="radio" value="radio2" id="r2">
+  <label for="r2">radio2</label>
+</form>
+]]></html>
   </example>
   <category slug="forms"/>
   <category slug="ajax/helper-functions"/>

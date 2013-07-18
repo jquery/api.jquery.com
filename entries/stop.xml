@@ -29,16 +29,20 @@
     <p>If the <code>jumpToEnd</code> argument is provided with a value of <code>true</code>, the current animation stops, but the element is immediately given its target values for each CSS property. In our above <code>.slideUp()</code> example, the element would be immediately hidden. The callback function is then immediately called, if provided.</p>
     <p><strong>As of jQuery 1.7</strong>, if the first argument is provided as a string, only the animations in the queue represented by that string will be stopped.</p>
     <p>The usefulness of the <code>.stop()</code> method is evident when we need to animate an element on <code>mouseenter</code> and <code>mouseleave</code>:</p>
-    <pre><code>&lt;div id="hoverme"&gt;
+    <pre><code>
+&lt;div id="hoverme"&gt;
   Hover me
-  &lt;img id="hoverme" src="book.png" alt="" width="100" height="123" /&gt;
-&lt;/div&gt;</code></pre>
+  &lt;img id="hoverme" src="book.png" alt="" width="100" height="123"&gt;
+&lt;/div&gt;
+    </code></pre>
     <p>We can create a nice fade effect without the common problem of multiple queued animations by adding <code>.stop(true, true)</code> to the chain:</p>
-    <pre><code>$('#hoverme-stop-2').hover(function() {
-  $(this).find('img').stop(true, true).fadeOut();
+    <pre><code>
+$( "#hoverme-stop-2" ).hover(function() {
+  $( this ).find( "img" ).stop( true, true ).fadeOut();
 }, function() {
-  $(this).find('img').stop(true, true).fadeIn();
-});</code></pre>
+  $( this ).find( "img" ).stop( true, true ).fadeIn();
+});
+    </code></pre>
     <h2>Toggling Animations</h2>
     <p><strong>As of jQuery 1.7,</strong> stopping a toggled animation prematurely with <code>.stop()</code> will trigger jQuery's internal effects tracking. In previous versions, calling the <code>.stop()</code> method before a toggled animation was completed would cause the animation to lose track of its state (if jumpToEnd was false). Any subsequent animations would start at a new "half-way" state, sometimes resulting in the element disappearing. To observe the new behavior, see the final example below.</p>
     <div class="warning">
@@ -48,55 +52,60 @@
   <example>
     <desc>Click the Go button once to start the animation, then click the STOP button to stop it where it's currently positioned.  Another option is to click several buttons to queue them up and see that stop just kills the currently playing one.</desc>
     <code><![CDATA[
-/* Start animation */
-$("#go").click(function(){
-$(".block").animate({left: '+=100px'}, 2000);
+// Start animation
+$( "#go" ).click(function() {
+$( ".block" ).animate({ left: "+=100px" }, 2000 );
 });
 
-/* Stop animation when button is clicked */
-$("#stop").click(function(){
-$(".block").stop();
+// Stop animation when button is clicked
+$( "#stop" ).click(function() {
+$( ".block" ).stop();
 });
 
-/* Start animation in the opposite direction */
-$("#back").click(function(){
-$(".block").animate({left: '-=100px'}, 2000);
+// Start animation in the opposite direction
+$( "#back" ).click(function() {
+$( ".block" ).animate({ left: "-=100px" }, 2000 );
 });
-
 ]]></code>
-    <html><![CDATA[<button id="go">Go</button>
+    <html><![CDATA[
+<button id="go">Go</button>
 <button id="stop">STOP!</button>
 <button id="back">Back</button>
-<div class="block"></div>]]></html>
-    <css><![CDATA[div {
-position: absolute;
-background-color: #abc;
-left: 0px;
-top:30px;
-width: 60px;
-height: 60px;
-margin: 5px;
-}
+<div class="block"></div>
+]]></html>
+    <css><![CDATA[
+  div {
+    position: absolute;
+    background-color: #abc;
+    left: 0px;
+    top: 30px;
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+  }
 ]]></css>
   </example>
   <example>
     <desc>Click the slideToggle button to start the animation, then click again before the animation is completed. The animation will toggle the other direction from the saved starting point.</desc>
     <code><![CDATA[
-var $block = $('.block');
-/* Toggle a sliding animation animation */
-$('#toggle').on('click', function() {
-    $block.stop().slideToggle(1000);
+var $block = $( ".block" );
+// Toggle a sliding animation animation
+$( "#toggle" ).on( "click", function() {
+  $block.stop().slideToggle( 1000 );
 });
 ]]></code>
-    <html><![CDATA[<button id="toggle">slideToggle</button>
-<div class="block"></div>]]></html>
-    <css><![CDATA[.block {
-background-color: #abc;
-border: 2px solid black;
-width: 200px;
-height: 80px;
-margin: 10px;
-}
+    <html><![CDATA[
+<button id="toggle">slideToggle</button>
+<div class="block"></div>
+]]></html>
+    <css><![CDATA[
+  .block {
+    background-color: #abc;
+    border: 2px solid black;
+    width: 200px;
+    height: 80px;
+    margin: 10px;
+  }
 ]]></css>
   </example>
   <category slug="effects/custom-effects"/>

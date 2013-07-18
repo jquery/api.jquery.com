@@ -13,25 +13,32 @@
   <example>
     <desc>Finds all submit elements that are descendants of a td element.</desc>
     <code><![CDATA[
-var submitEl = $("td :submit")
-  .parent('td')
-  .css({background:"yellow", border:"3px red solid"})
-.end();
+var submitEl = $( "td :submit" )
+  .parent( "td" )
+    .css({
+      background: "yellow",
+      border: "3px red solid"
+    })
+  .end();
 
-$('#result').text('jQuery matched ' + submitEl.length + ' elements.');
+$( "#result" ).text( "jQuery matched " + submitEl.length + " elements." );
 
-// so it won't submit
-$("form").submit(function () { return false; });
+// So it won't submit
+$( "form" ).submit(function() {
+  return false;
+});
 
-// Extra JS to make the HTML easier to edit (None of this is relevant to the ':submit' selector
-$('#exampleTable').find('td').each(function(i, el) {
-    var inputEl = $(el).children(),
-        inputType = inputEl.attr('type') ? ' type="' + inputEl.attr('type') + '"' : '';
-    $(el).before('<td>' + inputEl[0].nodeName + inputType + '</td>');
+// Extra JS to make the HTML easier to edit (None of this is relevant to the ':submit' selector)
+$( "#exampleTable" ).find( "td" ).each(function( i, el ) {
+  var inputEl = $( el ).children(),
+    inputType = inputEl.attr( "type" ) ? " type='" + inputEl.attr( "type" ) + "'" : "" ;
+  $( el ).before( "<td>" + inputEl[ 0 ].nodeName + inputType + "</td>" );
 })
 ]]></code>
     <css><![CDATA[
-  textarea { height:45px; }
+  textarea {
+    height: 45px;
+  }
   ]]></css>
     <html><![CDATA[
 <form>
@@ -46,53 +53,52 @@ $('#exampleTable').find('td').each(function(i, el) {
   </tr>
   <tr>
     <td>
-      <input type="button" value="Input Button"/>
+      <input type="button" value="Input Button">
     </td>
   </tr>
   <tr>
     <td>
-      <input type="checkbox" />
+      <input type="checkbox">
     </td>
   </tr>
   <tr>
     <td>
-      <input type="file" />
+      <input type="file">
     </td>
   </tr>
   <tr>
     <td>
-      <input type="hidden" />
+      <input type="hidden">
     </td>
   </tr>
   <tr>
     <td>
-      <input type="image" />
+      <input type="image">
     </td>
   </tr>
   <tr>
     <td>
-      <input type="password" />
+      <input type="password">
     </td>
   </tr>
   <tr>
     <td>
-      <input type="radio" />
-    </td>
-
-  </tr>
-  <tr>
-    <td>
-      <input type="reset" />
+      <input type="radio">
     </td>
   </tr>
   <tr>
     <td>
-      <input type="submit" />
+      <input type="reset">
     </td>
   </tr>
   <tr>
     <td>
-      <input type="text" />
+      <input type="submit">
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <input type="text">
     </td>
   </tr>
   <tr>
@@ -115,7 +121,6 @@ $('#exampleTable').find('td').each(function(i, el) {
       <button type="submit">Button type="submit"</button>
     </td>
   </tr>
-
 </table>
 </form>
 <div id="result"></div>

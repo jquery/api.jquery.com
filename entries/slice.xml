@@ -24,80 +24,106 @@
 &lt;/ul&gt;
     </code></pre>
     <p>We can apply this method to the set of list items:</p>
-    <pre><code>$('li').slice(2).css('background-color', 'red');</code></pre>
+    <pre><code>
+$( "li" ).slice( 2 ).css( "background-color", "red" );
+    </code></pre>
     <p>The result of this call is a red background for items 3, 4, and 5. Note that the supplied index is zero-based, and refers to the position of elements within the jQuery object, not within the DOM tree.</p>
     <p>The end parameter allows us to limit the selected range even further. For example:</p>
-    <pre><code>$('li').slice(2, 4).css('background-color', 'red');</code></pre>
+    <pre><code>
+$( "li" ).slice( 2, 4 ).css( "background-color", "red" );
+    </code></pre>
     <p>Now only items 3 and 4 are selected. The index is once again zero-based; the range extends up to but not including the specified index.</p>
     <h4>Negative Indices</h4>
     <p>The jQuery <code>.slice()</code> method is patterned after the JavaScript .slice() method for arrays. One of the features that it mimics is the ability for negative numbers to be passed as either the <code>start</code> or <code>end</code> parameter. If a negative number is provided, this indicates a position starting from the end of the set, rather than the beginning. For example:</p>
-    <pre><code>$('li').slice(-2, -1).css('background-color', 'red');</code></pre>
+    <pre><code>
+$( "li" ).slice( -2, -1 ).css( "background-color", "red" );
+    </code></pre>
     <p>This time only list item 4 is turned red, since it is the only item in the range between two from the end (<code>-2</code>) and one from the end (<code>-1</code>).</p>
   </longdesc>
   <example>
     <desc>Turns divs yellow based on a random slice.</desc>
     <code><![CDATA[
 function colorEm() {
-  var $div = $("div");
-  var start = Math.floor(Math.random() *
-                         $div.length);
-  var end = Math.floor(Math.random() *
-                       ($div.length - start)) +
-                       start + 1;
-  if (end == $div.length) end = undefined;
-  $div.css("background", "");
-  if (end)
-    $div.slice(start, end).css("background", "yellow");
-   else
-    $div.slice(start).css("background", "yellow");
-
-  $("span").text('$("div").slice(' + start +
-                 (end ? ', ' + end : '') +
-                 ').css("background", "yellow");');
+  var $div = $( "div" );
+  var start = Math.floor( Math.random() * $div.length );
+  var end = Math.floor( Math.random() * ( $div.length - start ) ) +
+    start + 1;
+  if ( end == $div.length ) {
+    end = undefined;
+  }
+  $div.css( "background", "" );
+  if ( end ) {
+    $div.slice( start, end ).css( "background", "yellow" );
+  } else {
+    $div.slice( start ).css( "background", "yellow" );
+  }
+  $( "span" ).text( "$( 'div' ).slice( "+ start +
+    (end ? ", " + end : "" ) +
+    ").css( 'background', 'yellow' );" );
 }
 
-$("button").click(colorEm);
+$( "button" ).click( colorEm );
 ]]></code>
     <css><![CDATA[
-  div { width:40px; height:40px; margin:10px; float:left;
-        border:2px solid blue; }
-  span { color:red; font-weight:bold; }
-  button { margin:5px; }
-  ]]></css>
+  div {
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+    float: left;
+    border: 2px solid blue;
+  }
+  span {
+    color: red;
+    font-weight: bold;
+  }
+  button {
+    margin: 5px;
+  }
+]]></css>
     <height>240</height>
-    <html><![CDATA[<p><button>Turn slice yellow</button>
+    <html><![CDATA[
+<p><button>Turn slice yellow</button>
   <span>Click the button!</span></p>
   <div></div>
   <div></div>
-
   <div></div>
   <div></div>
   <div></div>
   <div></div>
   <div></div>
-
   <div></div>
-  <div></div>]]></html>
+  <div></div>
+  ]]></html>
   </example>
   <example>
     <desc>Selects all paragraphs, then slices the selection to include only the first element.</desc>
-    <code><![CDATA[$("p").slice(0, 1).wrapInner("<b></b>");]]></code>
+    <code><![CDATA[
+$( "p" ).slice( 0, 1 ).wrapInner( "<b></b>" );
+]]></code>
   </example>
   <example>
     <desc>Selects all paragraphs, then slices the selection to include only the first and second element.</desc>
-    <code><![CDATA[$("p").slice(0, 2).wrapInner("<b></b>");]]></code>
+    <code><![CDATA[
+$( "p" ).slice( 0, 2 ).wrapInner( "<b></b>" );
+]]></code>
   </example>
   <example>
     <desc>Selects all paragraphs, then slices the selection to include only the second element.</desc>
-    <code><![CDATA[$("p").slice(1, 2).wrapInner("<b></b>");]]></code>
+    <code><![CDATA[
+$( "p" ).slice( 1, 2 ).wrapInner( "<b></b>" );
+]]></code>
   </example>
   <example>
     <desc>Selects all paragraphs, then slices the selection to include only the second and third element.</desc>
-    <code><![CDATA[$("p").slice(1).wrapInner("<b></b>");]]></code>
+    <code><![CDATA[
+$( "p" ).slice( 1 ).wrapInner( "<b></b>" );
+]]></code>
   </example>
   <example>
     <desc>Selects all paragraphs, then slices the selection to include only the third element.</desc>
-    <code><![CDATA[$("p").slice(-1).wrapInner("<b></b>");]]></code>
+    <code><![CDATA[
+$( "p" ).slice( -1 ).wrapInner( "<b></b>" );
+]]></code>
   </example>
   <category slug="traversing/filtering"/>
   <category slug="version/1.1.4"/>

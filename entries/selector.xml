@@ -6,7 +6,7 @@
   </signature>
   <desc>A selector representing selector passed to jQuery(), if any, when creating the original set.</desc>
   <longdesc>
-    <p>The <code>.selector</code> property was deprecated in jQuery 1.7 and is only maintained to the extent needed for supporting <code>.live()</code> in the jQuery Migrate plugin. It may be removed without notice in a future version. The property was never a reliable indicator of the selector that could be used to obtain the set of elements currently contained in the jQuery set where it was a property, since subsequent traversal methods may have changed the set. Plugins that need to use a selector should have the caller pass in the selector as part of the plugin's arguments during initialization.</p>
+    <p>The <code>.selector</code> property was deprecated in jQuery 1.7 and is only maintained to the extent needed for supporting <code>.live()</code> in the jQuery Migrate plugin. It may be removed without notice in a future version. The property was never a reliable indicator of the selector that could be used to obtain the set of elements currently contained in the jQuery set where it was a property, since subsequent traversal methods may have changed the set. Plugins that need to use a selector string within their plugin can require it as a parameter of the method. For example, a "foo" plugin could be written as <code>$.fn.foo = function( selector, options ) { /* plugin code goes here */ };</code>, and the person using the plugin would write <code>$( "div.bar" ).foo( "div.bar", {dog: "bark"} );</code> with the <code>"div.bar"</code> selector repeated as the first argument of <code>.foo()</code>.</p>
   </longdesc>
   <category slug="internals"/>
   <category slug="properties/global-jquery-object-properties"/>

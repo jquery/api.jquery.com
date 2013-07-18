@@ -13,29 +13,31 @@
   <example>
     <desc>Attaches a change event to the select that gets the text for each selected option and writes them in the div.  It then triggers the event for the initial text draw.</desc>
     <code><![CDATA[
-$("select").change(function () {
+$( "select" ).change(function() {
   var str = "";
-  $("select option:selected").each(function () {
-        str += $(this).text() + " ";
-      });
-  $("div").text(str);
+  $( "select option:selected" ).each(function() {
+    str += $( this ).text() + " ";
+  });
+  $( "div" ).text( str );
 })
-.trigger('change');
+  .trigger( "change" );
 ]]></code>
     <css><![CDATA[
-  div { color:red; }
-  ]]></css>
-    <html><![CDATA[<select name="garden" multiple="multiple">
-
-    <option>Flowers</option>
-    <option selected="selected">Shrubs</option>
-    <option>Trees</option>
-    <option selected="selected">Bushes</option>
-
-    <option>Grass</option>
-    <option>Dirt</option>
-  </select>
-  <div></div>]]></html>
+  div {
+    color: red;
+  }
+]]></css>
+    <html><![CDATA[
+<select name="garden" multiple="multiple">
+  <option>Flowers</option>
+  <option selected="selected">Shrubs</option>
+  <option>Trees</option>
+  <option selected="selected">Bushes</option>
+  <option>Grass</option>
+  <option>Dirt</option>
+</select>
+<div></div>
+]]></html>
   </example>
   <category slug="selectors/form-selectors"/>
   <category slug="selectors/jquery-selector-extensions"/>

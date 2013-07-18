@@ -22,17 +22,20 @@
     <p>The <code>.slideToggle()</code> method animates the height of the matched elements. This causes lower parts of the page to slide up or down, appearing to reveal or conceal the items. If the element is initially displayed, it will be hidden; if hidden, it will be shown. The <code>display</code> property is saved and restored as needed. If an element has a <code>display</code> value of <code>inline</code>, then is hidden and shown, it will once again be displayed <code>inline</code>. When the height reaches 0 after a hiding animation, the <code>display</code> style property is set to <code>none</code> to ensure that the element no longer affects the layout of the page.</p>
     <p>Durations are given in milliseconds; higher values indicate slower animations, not faster ones. The strings <code>'fast'</code> and <code>'slow'</code> can be supplied to indicate durations of <code>200</code> and <code>600</code> milliseconds, respectively.</p>
     <p>We can animate any element, such as a simple image:</p>
-    <pre><code>&lt;div id="clickme"&gt;
+    <pre><code>
+&lt;div id="clickme"&gt;
   Click here
 &lt;/div&gt;
-&lt;img id="book" src="book.png" alt="" width="100" height="123" /&gt;</code></pre>
+&lt;img id="book" src="book.png" alt="" width="100" height="123"&gt;
+    </code></pre>
     <p>We will cause <code>.slideToggle()</code> to be called when another element is clicked:</p>
-    <pre><code>$('#clickme').click(function() {
-  $('#book').slideToggle('slow', function() {
+    <pre><code>
+$( "#clickme" ).click(function() {
+  $( "#book" ).slideToggle( "slow", function() {
     // Animation complete.
   });
-});</code>
-</pre>
+});
+    </code></pre>
     <p>With the element initially shown, we can hide it slowly with the first click:</p>
     <p class="image four-across">
       <img src="/resources/0042_06_25.png" alt=""/>
@@ -51,47 +54,65 @@
     <p><strong>As of jQuery 1.4.3</strong>, an optional string naming an easing function may be used. Easing functions specify the speed at which the animation progresses at different points within the animation. The only easing implementations in the jQuery library are the default, called <code>swing</code>, and one that progresses at a constant pace, called <code>linear</code>. More easing functions are available with the use of plug-ins, most notably the <a href="http://jqueryui.com">jQuery UI suite</a>.</p>
     <h4 id="callback-function">Callback Function</h4>
     <p>If supplied, the callback is fired once the animation is complete. This can be useful for stringing different animations together in sequence. The callback is not sent any arguments, but <code>this</code> is set to the DOM element being animated. If multiple elements are animated, it is important to note that the callback is executed once per matched element, not once for the animation as a whole.</p>
-    <p><strong>As of jQuery 1.6</strong>, the <code><a href="http://api.jquery.com/promise/">.promise()</a></code> method can be used in conjunction with the <code><a href="http://api.jquery.com/deferred.done/">deferred.done()</a></code> method to execute a single callback for the animation as a whole when <em>all</em> matching elements have completed their animations ( See the <a href="http://api.jquery.com/promise/#example-1">example for .promise()</a> ).  </p>
+    <p><strong>As of jQuery 1.6</strong>, the <code><a href="/promise/">.promise()</a></code> method can be used in conjunction with the <code><a href="/deferred.done/">deferred.done()</a></code> method to execute a single callback for the animation as a whole when <em>all</em> matching elements have completed their animations ( See the <a href="/promise/#example-1">example for .promise()</a> ).  </p>
   </longdesc>
   <note id="jquery.fx.off" type="additional" data-title=".slideToggle()"/>
   <note id="slide-in-ie" type="additional" data-title=".slideDown()"/>
   <example>
     <desc>Animates all paragraphs to slide up or down, completing the animation within 600 milliseconds.</desc>
     <code><![CDATA[
-    $("button").click(function () {
-      $("p").slideToggle("slow");
-    });
+$( "button" ).click(function() {
+  $( "p" ).slideToggle( "slow" );
+});
 ]]></code>
     <css><![CDATA[
-  p { width:400px; }
-  ]]></css>
-    <html><![CDATA[<button>Toggle</button>
-
-  <p>
-    This is the paragraph to end all paragraphs.  You
-    should feel <em>lucky</em> to have seen such a paragraph in
-    your life.  Congratulations!
-  </p>]]></html>
+  p {
+    width: 400px;
+  }
+]]></css>
+    <html><![CDATA[
+<button>Toggle</button>
+<p>
+  This is the paragraph to end all paragraphs.  You
+  should feel <em>lucky</em> to have seen such a paragraph in
+  your life.  Congratulations!
+</p>
+]]></html>
   </example>
   <example>
     <desc>Animates divs between dividers with a toggle that makes some appear and some disappear.</desc>
     <code><![CDATA[
-  $("#aa").click(function () {
-    $("div:not(.still)").slideToggle("slow", function () {
-      var n = parseInt($("span").text(), 10);
-      $("span").text(n + 1);
-    });
+$( "#aa" ).click(function() {
+  $( "div:not(.still)" ).slideToggle( "slow", function() {
+    var n = parseInt( $( "span" ).text(), 10 );
+    $( "span" ).text( n + 1 );
   });
-
+});
 ]]></code>
     <css><![CDATA[
-  div { background:#b977d1; margin:3px; width:60px;
-        height:60px; float:left; }
-  div.still { background:#345; width:5px; }
-  div.hider { display:none; }
-  span { color:red; }
-  p { clear: left; }]]></css>
-    <html><![CDATA[<div></div>
+  div {
+    background: #b977d1;
+    margin: 3px;
+    width: 60px;
+    height: 60px;
+    float: left;
+  }
+  div.still {
+    background: #345;
+    width: 5px;
+  }
+  div.hider {
+    display: none;
+  }
+  span {
+    color: red;
+  }
+  p {
+    clear: left;
+  }
+]]></css>
+    <html><![CDATA[
+<div></div>
 <div class="still"></div>
 <div style="display:none;">
 </div><div class="still"></div>
@@ -102,7 +123,8 @@
 <div class="hider"></div>
 <div class="still"></div>
 <div></div>
-<p><button id="aa">Toggle</button> There have been <span>0</span> toggled divs.</p>]]></html>
+<p><button id="aa">Toggle</button> There have been <span>0</span> toggled divs.</p>
+]]></html>
   </example>
   <category slug="effects/sliding"/>
   <category slug="version/1.0"/>
