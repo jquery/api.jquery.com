@@ -17,80 +17,122 @@
   <longdesc>
     <p>The <code>.wrapInner()</code> function can take any string or object that could be passed to the <code>$()</code> factory function to specify a DOM structure. This structure may be nested several levels deep, but should contain only one inmost element. The structure will be wrapped around the content of each of the elements in the set of matched elements.</p>
     <p>Consider the following HTML:</p>
-    <pre><code>&lt;div class="container"&gt;
+    <pre><code>
+&lt;div class="container"&gt;
   &lt;div class="inner"&gt;Hello&lt;/div&gt;
   &lt;div class="inner"&gt;Goodbye&lt;/div&gt;
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;
+    </code></pre>
     <p>Using <code>.wrapInner()</code>, we can insert an HTML structure around the content of each inner <code>&lt;div&gt;</code> elements like so:</p>
-    <pre><code>$('.inner').wrapInner('&lt;div class="new" /&gt;');</code></pre>
+    <pre><code>
+$( ".inner" ).wrapInner( "&lt;div class='new' /&gt;");
+    </code></pre>
     <p>The new <code>&lt;div&gt;</code> element is created on the fly and added to the DOM. The result is a new <code>&lt;div&gt;</code> wrapped around the content of each matched element:</p>
-    <pre><code>&lt;div class="container"&gt;
+    <pre><code>
+&lt;div class="container"&gt;
   &lt;div class="inner"&gt;
     &lt;div class="new"&gt;Hello&lt;/div&gt;
   &lt;/div&gt;
   &lt;div class="inner"&gt;
     &lt;div class="new"&gt;Goodbye&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;
+    </code></pre>
     <p>The second version of this method allows us to instead specify a callback function. This callback function will be called once for every matched element; it should return a DOM element, jQuery object, or HTML snippet in which to wrap the content of the corresponding element. For example:</p>
-    <pre><code>$('.inner').wrapInner(function() {
-  return '&lt;div class="' + this.nodeValue + '" /&gt;';
-});</code></pre>
+    <pre><code>
+$( ".inner" ).wrapInner(function() {
+  return "&lt;div class='" + this.nodeValue + "' /&gt;";
+});
+    </code></pre>
     <p>This will cause each <code>&lt;div&gt;</code> to have a class corresponding to the text it wraps:</p>
-    <pre><code>&lt;div class="container"&gt;
+    <pre><code>
+&lt;div class="container"&gt;
   &lt;div class="inner"&gt;
     &lt;div class="Hello"&gt;Hello&lt;/div&gt;
   &lt;/div&gt;
   &lt;div class="inner"&gt;
     &lt;div class="Goodbye"&gt;Goodbye&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;
+    </code></pre>
     <p><strong>Note:</strong> When passing a selector string to the <code>.wrapInner()</code> function, the expected input is well formed HTML with correctly closed tags. Examples of valid input include:</p>
     <pre><code>
-$(elem).wrapInner("&lt;div class='test' /&gt;");
-$(elem).wrapInner("&lt;div class='test'&gt;&lt;/div&gt;");
-$(elem).wrapInner("&lt;div class=\"test\"&gt;&lt;/div&gt;");
+$( elem ).wrapInner( "&lt;div class='test' /&gt;" );
+$( elem ).wrapInner( "&lt;div class='test'&gt;&lt;/div&gt;" );
+$( elem ).wrapInner( "&lt;div class=\"test\"&gt;&lt;/div&gt;" );
     </code></pre>
   </longdesc>
   <example>
     <desc>Selects all paragraphs and wraps a bold tag around each of its contents.</desc>
-    <code><![CDATA[$("p").wrapInner("<b></b>");]]></code>
-    <css><![CDATA[p { background:#bbf; }]]></css>
-    <html><![CDATA[<p>Hello</p>
-
-  <p>cruel</p>
-  <p>World</p>]]></html>
+    <code><![CDATA[
+$( "p" ).wrapInner( "<b></b>" );
+]]></code>
+    <css><![CDATA[
+  p {
+    background: #bbf;
+  }
+]]></css>
+    <html><![CDATA[
+<p>Hello</p>
+<p>cruel</p>
+<p>World</p>
+]]></html>
   </example>
   <example>
     <desc>Wraps a newly created tree of objects around the inside of the body.</desc>
-    <code><![CDATA[$("body").wrapInner("<div><div><p><em><b></b></em></p></div></div>");]]></code>
+    <code><![CDATA[
+$( "body" ).wrapInner( "<div><div><p><em><b></b></em></p></div></div>" );
+]]></code>
     <css><![CDATA[
-
-  div { border:2px green solid; margin:2px; padding:2px; }
-  p { background:yellow; margin:2px; padding:2px; }
-  ]]></css>
-    <html><![CDATA[Plain old text, or is it?]]></html>
+  div {
+    border: 2px green solid;
+    margin: 2px;
+    padding: 2px;
+  }
+  p {
+    background: yellow;
+    margin: 2px;
+    padding: 2px;
+  }
+]]></css>
+    <html><![CDATA[
+Plain old text, or is it?
+]]></html>
   </example>
   <example>
     <desc>Selects all paragraphs and wraps a bold tag around each of its contents.</desc>
-    <code><![CDATA[$("p").wrapInner(document.createElement("b"));]]></code>
-    <css><![CDATA[p { background:#9f9; }]]></css>
-    <html><![CDATA[<p>Hello</p>
-
-  <p>cruel</p>
-  <p>World</p>]]></html>
+    <code><![CDATA[
+$( "p" ).wrapInner( document.createElement( "b" ) );
+]]></code>
+    <css><![CDATA[
+  p {
+    background: #9f9;
+  }
+]]></css>
+    <html><![CDATA[
+<p>Hello</p>
+<p>cruel</p>
+<p>World</p>
+]]></html>
   </example>
   <example>
     <desc>Selects all paragraphs and wraps a jQuery object around each of its contents.</desc>
-    <code><![CDATA[$("p").wrapInner($("<span class='red'></span>"));]]></code>
+    <code><![CDATA[
+$( "p" ).wrapInner( $( "<span class='red'></span>" ) );
+]]></code>
     <css><![CDATA[
-
-  p { background:#9f9; }
-  .red { color:red; }
-  ]]></css>
-    <html><![CDATA[<p>Hello</p>
-  <p>cruel</p>
-  <p>World</p>]]></html>
+  p {
+    background: #9f9;
+  }
+  .red {
+    color: red;
+  }
+]]></css>
+    <html><![CDATA[
+<p>Hello</p>
+<p>cruel</p>
+<p>World</p>
+]]></html>
   </example>
   <category slug="manipulation/dom-insertion-around"/>
   <category slug="version/1.2"/>

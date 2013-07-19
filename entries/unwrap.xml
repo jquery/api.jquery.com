@@ -11,18 +11,24 @@
   <example>
     <desc>Wrap/unwrap a div around each of the paragraphs.</desc>
     <code><![CDATA[
-var pTags = $("p");
-$("button").click( function(){
-  if ( pTags.parent().is("div") ) {
+var pTags = $( "p" );
+$( "button" ).click(function() {
+  if ( pTags.parent().is( "div" ) ) {
     pTags.unwrap();
   } else {
-    pTags.wrap("<div></div>");
+    pTags.wrap( "<div></div>" );
   }
-});]]></code>
+});
+]]></code>
     <css><![CDATA[
-  div { border: 2px solid blue; }
-  p { background:yellow; margin:4px; }
-  ]]></css>
+  div {
+    border: 2px solid blue;
+  }
+  p {
+    background: yellow;
+    margin: 4px;
+  }
+]]></css>
     <html><![CDATA[<button>wrap/unwrap</button>
 <p>Hello</p>
 <p>cruel</p>

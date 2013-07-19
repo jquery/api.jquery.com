@@ -12,11 +12,13 @@
     <desc>Get the current value of the first element in the set of matched elements.</desc>
     <longdesc>
       <p>The <code>.val()</code> method is primarily used to get the values of form elements such as <code>input</code>, <code>select</code> and <code>textarea</code>. In the case of <code>&lt;select multiple="multiple"&gt;</code> elements, the <code>.val()</code> method returns an array containing each selected option; if no option is selected, it returns <code>null</code>. </p>
-      <p>For selects and checkboxes, you can also use the <a href="/selected">:selected</a> and <a href="/checked">:checked</a> selectors to get at values, for example:</p>
-      <pre><code>$('select.foo option:selected').val();    // get the value from a dropdown select
-$('select.foo').val();                    // get the value from a dropdown select even easier
-$('input:checkbox:checked').val();        // get the value from a checked checkbox
-$('input:radio[name=bar]:checked').val(); // get the value from a set of radio buttons</code></pre>
+      <p>For selects and checkboxes, you can also use the <a href="/selected/">:selected</a> and <a href="/checked/">:checked</a> selectors to get at values, for example:</p>
+      <pre><code>
+$( "select.foo option:selected").val();    // Get the value from a dropdown select
+$( "select.foo" ).val();                    // Get the value from a dropdown select even easier
+$( "input:checkbox:checked" ).val();        // Get the value from a checked checkbox
+$( "input:radio[name=bar]:checked" ).val(); // Get the value from a set of radio buttons
+      </code></pre>
       <div class="warning">
         <p><strong>Note: </strong> At present, using <code>.val()</code> on textarea elements strips carriage return characters from the browser-reported value. When this value is sent to the server via XHR however, carriage returns are preserved (or added by browsers which do not include them in the raw value). A workaround for this issue can be achieved using a valHook as follows:</p>
       </div>
@@ -26,56 +28,65 @@ $.valHooks.textarea = {
     return elem.value.replace( /\r?\n/g, "\r\n" );
   }
 };
-</code></pre>
+    </code></pre>
     </longdesc>
     <example>
       <desc>Get the single value from a single select and an array of values from a multiple select and display their values.</desc>
       <code><![CDATA[
-    function displayVals() {
-      var singleValues = $("#single").val();
-      var multipleValues = $("#multiple").val() || [];
-      $("p").html("<b>Single:</b> " +
-                  singleValues +
-                  " <b>Multiple:</b> " +
-                  multipleValues.join(", "));
-    }
+function displayVals() {
+  var singleValues = $( "#single" ).val();
+  var multipleValues = $( "#multiple" ).val() || [];
+  $( "p" ).html( "<b>Single:</b> " + singleValues +
+    " <b>Multiple:</b> " + multipleValues.join( ", " ) );
+}
 
-    $("select").change(displayVals);
-    displayVals();
-
+$("select").change(displayVals);
+displayVals();
 ]]></code>
       <css><![CDATA[
-  p { color:red; margin:4px; }
-  b { color:blue; }
-  ]]></css>
-      <html><![CDATA[<p></p>
+  p {
+    color: red;
+    margin: 4px;
+  }
+  b {
+    color: blue;
+  }
+]]></css>
+      <html><![CDATA[
+<p></p>
 
-  <select id="single">
-    <option>Single</option>
-    <option>Single2</option>
-  </select>
+<select id="single">
+  <option>Single</option>
+  <option>Single2</option>
+</select>
 
-  <select id="multiple" multiple="multiple">
-    <option selected="selected">Multiple</option>
-    <option>Multiple2</option>
-    <option selected="selected">Multiple3</option>
-  </select>
+<select id="multiple" multiple="multiple">
+  <option selected="selected">Multiple</option>
+  <option>Multiple2</option>
+  <option selected="selected">Multiple3</option>
+</select>
 ]]></html>
     </example>
     <example>
       <desc>Find the value of an input box.</desc>
       <code><![CDATA[
-    $("input").keyup(function () {
-      var value = $(this).val();
-      $("p").text(value);
-    }).keyup();
+$( "input" )
+  .keyup(function () {
+    var value = $( this ).val();
+    $( "p" ).text( value );
+  })
+  .keyup();
 ]]></code>
       <css><![CDATA[
-
-  p { color:blue; margin:8px; }
-  ]]></css>
-      <html><![CDATA[<input type="text" value="some text"/>
-  <p></p>]]></html>
+  p {
+    color: blue;
+    margin: 8px;
+  }
+]]></css>
+      <html><![CDATA[
+<input type="text" value="some text">
+<p></p>
+]]></html>
     </example>
     <category slug="attributes"/>
     <category slug="forms"/>
@@ -103,71 +114,84 @@ $.valHooks.textarea = {
       <p>This method is typically used to set the values of form fields. </p>
       <p>Passing an array of element values allows matching  <code>&lt;input type="checkbox"&gt;</code>, <code>&lt;input type="radio"&gt;</code> and <code>&lt;option&gt;</code>s inside of n <code>&lt;select multiple="multiple"&gt;</code> to be selected. In the case of <code>&lt;input type="radio"&gt;</code>s that are part of a radio group and <code>&lt;select multiple="multiple"&gt;</code> the other elements will be deselected.</p>
       <p>The <code>.val()</code> method allows us to set the value by passing in a function. As of jQuery 1.4, the function is passed two arguments, the current element's index and its current value: </p>
-      <pre><code>$('input:text.items').val(function( index, value ) {
-  return value + ' ' + this.className;
+      <pre><code>
+$( "input:text.items" ).val(function( index, value ) {
+  return value + " " + this.className;
 });
-</code></pre>
+      </code></pre>
       <p>This example appends the string " items" to the text inputs' values.</p>
     </longdesc>
     <example>
       <desc>Set the value of an input box.</desc>
       <code><![CDATA[
-    $("button").click(function () {
-      var text = $(this).text();
-      $("input").val(text);
-    });
+$( "button" ).click(function() {
+  var text = $( this ).text();
+  $( "input" ).val( text );
+});
 ]]></code>
       <css><![CDATA[
-  button { margin:4px; cursor:pointer; }
-  input { margin:4px; color:blue; }
-  ]]></css>
-      <html><![CDATA[<div>
-    <button>Feed</button>
-    <button>the</button>
-    <button>Input</button>
-  </div>
-  <input type="text" value="click a button" />]]></html>
+  button {
+    margin: 4px;
+    cursor: pointer;
+  }
+  input {
+    margin: 4px;
+    color: blue;
+  }
+]]></css>
+      <html><![CDATA[
+<div>
+  <button>Feed</button>
+  <button>the</button>
+  <button>Input</button>
+</div>
+<input type="text" value="click a button">
+]]></html>
     </example>
     <example>
       <desc>Use the function argument to modify the value of an input box.</desc>
       <code><![CDATA[
-  $('input').on('blur', function() {
-    $(this).val(function( i, val ) {
-      return val.toUpperCase();
-    });
+$( "input" ).on( "blur", function() {
+  $( this ).val(function( i, val ) {
+    return val.toUpperCase();
   });
-  ]]></code>
+});
+]]></code>
       <html><![CDATA[
-  <p>Type something and then click or tab out of the input.</p>
-  <input type="text" value="type something" />
+<p>Type something and then click or tab out of the input.</p>
+<input type="text" value="type something">
 ]]></html>
     </example>
     <example>
       <desc>Set a single select, a multiple select, checkboxes and a radio button .</desc>
       <code><![CDATA[
-
-    $("#single").val("Single2");
-    $("#multiple").val(["Multiple2", "Multiple3"]);
-    $("input").val(["check1","check2", "radio1" ]);
-
+$( "#single" ).val( "Single2" );
+$( "#multiple" ).val([ "Multiple2", "Multiple3" ]);
+$( "input").val([ "check1", "check2", "radio1" ]);
 ]]></code>
       <css><![CDATA[
-  body { color:blue; }
-  ]]></css>
-      <html><![CDATA[<select id="single">
-    <option>Single</option>
-    <option>Single2</option>
-  </select>
+  body {
+    color: blue;
+  }
+]]></css>
+      <html><![CDATA[
+<select id="single">
+  <option>Single</option>
+  <option>Single2</option>
+</select>
 
-  <select id="multiple" multiple="multiple">
-    <option selected="selected">Multiple</option>
-    <option>Multiple2</option>
-    <option selected="selected">Multiple3</option>
-  </select><br/>
-  <input type="checkbox" name="checkboxname" value="check1"/> check1
-  <input type="checkbox" name="checkboxname" value="check2"/> check2
-  <input type="radio"  name="r" value="radio1"/> radio1
-  <input type="radio"  name="r" value="radio2"/> radio2]]></html>
+<select id="multiple" multiple="multiple">
+  <option selected="selected">Multiple</option>
+  <option>Multiple2</option>
+  <option selected="selected">Multiple3</option>
+</select>
+
+<br>
+<input type="checkbox" name="checkboxname" value="check1"> check1
+<input type="checkbox" name="checkboxname" value="check2"> check2
+<input type="radio"  name="r" value="radio1"> radio1
+<input type="radio"  name="r" value="radio2"> radio2
+]]></html>
     </example>
     <category slug="attributes"/>
     <category slug="forms"/>

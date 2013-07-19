@@ -18,23 +18,28 @@
   </signature>
   <desc>Bind an event handler to the "unload" JavaScript event.</desc>
   <longdesc>
-    <p>This method is a shortcut for <code>.on('unload', handler)</code>.</p>
+    <p>This method is a shortcut for <code>.on( "unload", handler )</code>.</p>
     <p>The <code>unload</code> event is sent to the <code>window</code> element when the user navigates away from the page. This could mean one of many things. The user could have clicked on a link to leave the page, or typed in a new URL in the address bar. The forward and back buttons will trigger the event. Closing the browser window will cause the event to be triggered. Even a page reload will first create an <code>unload</code> event.</p>
     <div class="warning">
       <p>The exact handling of the <code>unload</code> event has varied from version to version of browsers. For example, some versions of Firefox trigger the event when a link is followed, but not when the window is closed. In practical usage, behavior should be tested on all supported browsers, and contrasted with the proprietary <code>beforeunload</code> event.</p>
     </div>
     <p>Any <code>unload</code> event handler should be bound to the <code>window</code> object:</p>
-    <pre><code>$(window).unload(function() {
-  alert('Handler for .unload() called.');
+    <pre><code>
+$( window ).unload(function() {
+  alert( "Handler for .unload() called." );
 });
-</code></pre>
+    </code></pre>
     <p>After this code executes, the alert will be displayed whenever the browser leaves the current page.
 It is not possible to cancel the <code>unload</code> event with <code>.preventDefault()</code>. This event is available so that scripts can perform cleanup when the user leaves the page.
     </p>
   </longdesc>
   <example>
     <desc>To display an alert when a page is unloaded:</desc>
-    <code><![CDATA[$(window).unload( function () { alert("Bye now!"); } );]]></code>
+    <code><![CDATA[
+$( window ).unload(function() {
+  alert( "Bye now!" );
+  });
+  ]]></code>
   </example>
   <category slug="events/document-loading"/>
   <category slug="version/1.0"/>

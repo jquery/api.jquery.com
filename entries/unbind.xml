@@ -27,51 +27,67 @@
     </argument>
   </signature>
   <longdesc>
-    <p>Event handlers attached with <code>.bind()</code> can be removed with <code>.unbind()</code>. (As of jQuery 1.7, the <a href="http://api.jquery.com/on"><code>.on()</code></a> and <a href="http://api.jquery.com/off"><code>.off()</code></a> methods are preferred to attach and remove event handlers on elements.) In the simplest case, with no arguments, <code>.unbind()</code> removes all handlers attached to the elements:</p>
-    <pre><code>$('#foo').unbind();</code></pre>
+    <p>Event handlers attached with <code>.bind()</code> can be removed with <code>.unbind()</code>. (As of jQuery 1.7, the <a href="/on/"><code>.on()</code></a> and <a href="/off/"><code>.off()</code></a> methods are preferred to attach and remove event handlers on elements.) In the simplest case, with no arguments, <code>.unbind()</code> removes all handlers attached to the elements:</p>
+    <pre><code>
+$( "#foo" ).unbind();
+    </code></pre>
     <p>This version removes the handlers regardless of type. To be more precise, we can pass an event type:</p>
-    <pre><code>$('#foo').unbind('click');</code></pre>
+    <pre><code>
+$( "#foo").unbind( "click" );
+    </code></pre>
     <p>By specifying the <code>click</code> event type, only handlers for that event type will be unbound. This approach can still have negative ramifications if other scripts might be attaching behaviors to the same element, however. Robust and extensible applications typically demand the two-argument version for this reason:</p>
-    <pre><code>var handler = function() {
-  alert('The quick brown fox jumps over the lazy dog.');
+    <pre><code>
+var handler = function() {
+  alert( "The quick brown fox jumps over the lazy dog." );
 };
-$('#foo').bind('click', handler);
-$('#foo').unbind('click', handler);
-</code></pre>
+$( "#foo" ).bind( "click", handler );
+$( "#foo" ).unbind( "click", handler );
+    </code></pre>
     <p>By naming the handler, we can be assured that no other functions are accidentally removed. Note that the following will <em>not</em> work:</p>
-    <pre><code>$('#foo').bind('click', function() {
-  alert('The quick brown fox jumps over the lazy dog.');
+    <pre><code>
+$( "#foo" ).bind( "click", function() {
+  alert( "The quick brown fox jumps over the lazy dog." );
 });
 
-// will NOT work
-$('#foo').unbind('click', function() {
-  alert('The quick brown fox jumps over the lazy dog.');
-});</code></pre>
+// Will NOT work
+$( "#foo" ).unbind( "click", function() {
+  alert( "The quick brown fox jumps over the lazy dog." );
+});
+    </code></pre>
     <p>Even though the two functions are identical in content, they are created separately and so JavaScript is free to keep them as distinct function objects. To unbind a particular handler, we need a reference to that function and not a different one that happens to do the same thing.</p>
     <div class="warning">
       <p><strong>Note:</strong> Using a proxied function to unbind an event on an element will unbind all proxied functions on that element, as the same proxy function is used for all proxied events. To allow unbinding a specific event, use unique class names on the event (e.g. <code>click.proxy1</code>, <code>click.proxy2</code>) when attaching them.</p>
     </div>
     <h4>Using Namespaces</h4>
     <p>Instead of maintaining references to handlers in order to unbind them, we can namespace the events and use this capability to narrow the scope of our unbinding actions. As shown in the discussion for the <code>.bind()</code> method, namespaces are defined by using a period (<code>.</code>) character when binding a handler:</p>
-    <pre><code>$('#foo').bind('click.myEvents', handler);</code></pre>
+    <pre><code>
+$( "#foo" ).bind( "click.myEvents", handler);
+    </code></pre>
     <p>When a handler is bound in this fashion, we can still unbind it the normal way:</p>
-    <pre><code>$('#foo').unbind('click');</code></pre>
+    <pre><code>
+$( "#foo" ).unbind( "click" );
+    </code></pre>
     <p>However, if we want to avoid affecting other handlers, we can be more specific:</p>
-    <pre><code>$('#foo').unbind('click.myEvents');</code></pre>
+    <pre><code>
+$( "#foo" ).unbind( "click.myEvents" );
+    </code></pre>
     <p>We can also unbind all of the handlers in a namespace, regardless of event type:</p>
-    <pre><code>$('#foo').unbind('.myEvents');</code></pre>
+    <pre><code>
+$( "#foo" ).unbind( ".myEvents" );
+    </code></pre>
     <p>It is particularly useful to attach namespaces to event bindings when we are developing plug-ins or otherwise writing code that may interact with other event-handling code in the future.</p>
     <h4>Using the Event Object</h4>
     <p>The third form of the <code>.unbind()</code> method is used when we wish to unbind a handler from within itself. For example, suppose we wish to trigger an event handler only three times:</p>
-    <pre><code>var timesClicked = 0;
-$('#foo').bind('click', function(event) {
-  alert('The quick brown fox jumps over the lazy dog.');
+    <pre><code>
+var timesClicked = 0;
+$( "#foo" ).bind( "click", function( event ) {
+  alert( "The quick brown fox jumps over the lazy dog." );
   timesClicked++;
-  if (timesClicked &gt;= 3) {
-    $(this).unbind(event);
+  if ( timesClicked &gt;= 3 ) {
+    $( this ).unbind( event );
   }
 });
-</code></pre>
+    </code></pre>
     <p>The handler in this case must take a parameter, so that we can capture the event object and use it to unbind the handler after the third click. The event object contains the context necessary for <code>.unbind()</code> to know which handler to remove.
 This example is also an illustration of a closure. Since the handler refers to the <code>timesClicked</code> variable, which is defined outside the function, incrementing the variable has an effect even between invocations of the handler.</p>
   </longdesc>
@@ -79,46 +95,57 @@ This example is also an illustration of a closure. Since the handler refers to t
     <desc>Can bind and unbind events to the colored button.</desc>
     <code><![CDATA[
 function aClick() {
-$("div").show().fadeOut("slow");
+  $("div").show().fadeOut("slow");
 }
-$("#bind").click(function () {
-// could use .bind('click', aClick) instead but for variety...
-$("#theone").click(aClick)
-  .text("Can Click!");
+$( "#bind" ).click(function() {
+  // Could use .bind( "click", aClick ) instead but for variety...
+$( "#theone" ).click( aClick )
+  .text( "Can Click!" );
 });
-$("#unbind").click(function () {
-$("#theone").unbind('click', aClick)
-  .text("Does nothing...");
+$( "#unbind" ).click(function() {
+  $( "#theone" ).unbind( "click", aClick )
+    .text( "Does nothing..." );
 });
-
 ]]></code>
     <css><![CDATA[
-button { margin:5px; }
-button#theone { color:red; background:yellow; }
+  button {
+    margin: 5px;
+  }
+  button#theone {
+    color: red;
+    background: yellow;
+  }
 ]]></css>
-    <html><![CDATA[<button id="theone">Does nothing...</button>
+    <html><![CDATA[
+<button id="theone">Does nothing...</button>
 <button id="bind">Bind Click</button>
 <button id="unbind">Unbind Click</button>
-
-<div style="display:none;">Click!</div>]]></html>
+<div style="display:none;">Click!</div>
+]]></html>
   </example>
   <example>
     <desc>To unbind all events from all paragraphs, write:</desc>
-    <code><![CDATA[$("p").unbind()]]></code>
+    <code><![CDATA[
+$( "p" ).unbind();
+]]></code>
   </example>
   <example>
     <desc>To unbind all click events from all paragraphs, write:</desc>
-    <code><![CDATA[$("p").unbind( "click" )]]></code>
+    <code><![CDATA[
+$( "p" ).unbind( "click" );
+]]></code>
   </example>
   <example>
     <desc>To unbind just one previously bound handler, pass the function in as the second argument:</desc>
-    <code><![CDATA[var foo = function () {
-// code to handle some kind of event
+    <code><![CDATA[
+var foo = function() {
+  // Code to handle some kind of event
 };
 
-$("p").bind("click", foo); // ... now foo will be called when paragraphs are clicked ...
+$( "p" ).bind( "click", foo ); // ... Now foo will be called when paragraphs are clicked ...
 
-$("p").unbind("click", foo); // ... foo will no longer be called.]]></code>
+$( "p" ).unbind( "click", foo ); // ... foo will no longer be called.
+]]></code>
   </example>
   <category slug="events/event-handler-attachment"/>
   <category slug="version/1.0"/>

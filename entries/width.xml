@@ -13,42 +13,54 @@
         <img src="/resources/0042_04_04.png"/>
       </p>
       <p>This method is also able to find the width of the window and document.</p>
-      <pre><code>$(window).width();   // returns width of browser viewport
-      $(document).width(); // returns width of HTML document</code></pre>
-      <p>Note that <code>.width()</code> will always return the content width, regardless of the value of the CSS <code>box-sizing</code> property. As of jQuery 1.8, this may require retrieving the CSS width plus <code>box-sizing</code> property and then subtracting any potential border and padding on each element when the element has <code>box-sizing: border-box</code>. To avoid this penalty, use <code>.css("width")</code> rather than <code>.width()</code>.</p>
+      <pre><code>
+$( window ).width();   // Returns width of browser viewport
+$( document ).width(); // Returns width of HTML document
+      </code></pre>
+      <p>Note that <code>.width()</code> will always return the content width, regardless of the value of the CSS <code>box-sizing</code> property. As of jQuery 1.8, this may require retrieving the CSS width plus <code>box-sizing</code> property and then subtracting any potential border and padding on each element when the element has <code>box-sizing: border-box</code>. To avoid this penalty, use <code>.css( "width" )</code> rather than <code>.width()</code>.</p>
     </longdesc>
     <example>
       <desc>Show various widths.  Note the values are from the iframe so might be smaller than you expected.  The yellow highlight shows the iframe body.</desc>
       <code><![CDATA[
-function showWidth(ele, w) {
-  $("div").text("The width for the " + ele +
-                " is " + w + "px.");
+function showWidth( ele, w ) {
+  $( "div" ).text( "The width for the " + ele + " is " + w + "px.");
 }
-$("#getp").click(function () {
-  showWidth("paragraph", $("p").width());
+$( "#getp" ).click(function() {
+  showWidth( "paragraph", $( "p" ).width() );
 });
-$("#getd").click(function () {
+$( "#getd" ).click(function() {
   showWidth("document", $(document).width());
 });
-$("#getw").click(function () {
-  showWidth("window", $(window).width());
+$("#getw").click(function() {
+  showWidth( "window", $( window ).width() );
 });
-
 ]]></code>
       <css><![CDATA[
-  body { background:yellow; }
-  button { font-size:12px; margin:2px; }
-  p { width:150px; border:1px red solid; }
-  div { color:red; font-weight:bold;  }
-  ]]></css>
-      <html><![CDATA[<button id="getp">Get Paragraph Width</button>
-  <button id="getd">Get Document Width</button>
-  <button id="getw">Get Window Width</button>
-
-  <div>&nbsp;</div>
-  <p>
-    Sample paragraph to test width
-  </p>]]></html>
+  body {
+    background: yellow;
+  }
+  button {
+    font-size: 12px;
+    margin: 2px;
+  }
+  p {
+    width: 150px;
+    border: 1px red solid;
+  }
+  div {
+    color: red;
+    font-weight: bold;
+  }
+]]></css>
+      <html><![CDATA[
+<button id="getp">Get Paragraph Width</button>
+<button id="getd">Get Document Width</button>
+<button id="getw">Get Window Width</button>
+<div>&nbsp;</div>
+<p>
+  Sample paragraph to test width
+</p>
+]]></html>
     </example>
     <category slug="css"/>
     <category slug="dimensions"/>
@@ -82,23 +94,32 @@ $("#getw").click(function () {
       <code><![CDATA[
 (function() {
   var modWidth = 50;
-  $("div").one('click', function () {
-    $(this).width(modWidth).addClass("mod");
-  modWidth -= 8;
+  $( "div" ).one( "click", function() {
+    $( this ).width( modWidth ).addClass( "mod" );
+    modWidth -= 8;
   });
 })();
 ]]></code>
       <css><![CDATA[
-div { width: 70px; height: 50px; float:left; margin: 5px;
-        background: red; cursor: pointer; }
-.mod { background: blue; cursor: default; }
-  ]]></css>
+  div {
+    width: 70px;
+    height: 50px;
+    float: left;
+    margin: 5px;
+    background: red;
+    cursor: pointer;
+  }
+  .mod {
+    background: blue;
+    cursor: default;
+  }
+]]></css>
       <html><![CDATA[
-  <div>d</div>
-  <div>d</div>
-  <div>d</div>
-  <div>d</div>
-  <div>d</div>
+<div>d</div>
+<div>d</div>
+<div>d</div>
+<div>d</div>
+<div>d</div>
 ]]></html>
     </example>
     <category slug="css"/>

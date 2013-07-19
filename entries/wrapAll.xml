@@ -15,12 +15,16 @@
   <longdesc>
     <p>The <code>.wrapAll()</code> function can take any string or object that could be passed to the <code>$()</code> function to specify a DOM structure. This structure may be nested several levels deep, but should contain only one inmost element. The structure will be wrapped around all of the elements in the set of matched elements, as a single group.</p>
     <p>Consider the following HTML:</p>
-    <pre><code>&lt;div class="container"&gt;
+    <pre><code>
+&lt;div class="container"&gt;
   &lt;div class="inner"&gt;Hello&lt;/div&gt;
   &lt;div class="inner"&gt;Goodbye&lt;/div&gt;
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;
+    </code></pre>
     <p>Using <code>.wrapAll()</code>, we can insert an HTML structure around the inner <code>&lt;div&gt;</code> elements like so:</p>
-    <pre><code>$('.inner').wrapAll('&lt;div class="new" /&gt;');</code></pre>
+    <pre><code>
+$( ".inner" ).wrapAll( "&lt;div class='new' /&gt;");
+    </code></pre>
     <p>The new <code>&lt;div&gt;</code> element is created on the fly and added to the DOM. The result is a new <code>&lt;div&gt;</code> wrapped around all matched elements:</p>
     <pre><code>&lt;div class="container"&gt;
   &lt;div class="new"&gt;
@@ -31,54 +35,96 @@
   </longdesc>
   <example>
     <desc>Wrap a new div around all of the paragraphs.</desc>
-    <code><![CDATA[$("p").wrapAll("<div></div>");]]></code>
+    <code><![CDATA[
+$( "p" ).wrapAll( "<div></div>" );
+]]></code>
     <css><![CDATA[
-
-  div { border: 2px solid blue; }
-  p { background:yellow; margin:4px; }
-  ]]></css>
-    <html><![CDATA[<p>Hello</p>
-  <p>cruel</p>
-  <p>World</p>]]></html>
+  div {
+    border: 2px solid blue;
+  }
+  p {
+    background: yellow;
+    margin: 4px;
+  }
+]]></css>
+    <html><![CDATA[
+<p>Hello</p>
+<p>cruel</p>
+<p>World</p>
+]]></html>
   </example>
   <example>
     <desc>Wraps a newly created tree of objects around the spans.  Notice anything in between the spans gets left out like the &lt;strong&gt; (red text) in this example.  Even the white space between spans is left out.  Click View Source to see the original html.</desc>
-    <code><![CDATA[$("span").wrapAll("<div><div><p><em><b></b></em></p></div></div>");]]></code>
+    <code><![CDATA[
+$( "span").wrapAll("<div><div><p><em><b></b></em></p></div></div>" );
+]]></code>
     <css><![CDATA[
-
-  div { border:2px blue solid; margin:2px; padding:2px; }
-  p { background:yellow; margin:2px; padding:2px; }
-  strong { color:red; }
-  ]]></css>
-    <html><![CDATA[<span>Span Text</span>
-  <strong>What about me?</strong>
-  <span>Another One</span>]]></html>
+  div {
+    border: 2px blue solid;
+    margin: 2px;
+    padding: 2px;
+  }
+  p {
+    background: yellow;
+    margin: 2px;
+    padding: 2px;
+  }
+  strong {
+    color: red;
+  }
+]]></css>
+    <html><![CDATA[
+<span>Span Text</span>
+<strong>What about me?</strong>
+<span>Another One</span>
+]]></html>
   </example>
   <example>
     <desc>Wrap a new div around all of the paragraphs.</desc>
-    <code><![CDATA[$("p").wrapAll(document.createElement("div"));]]></code>
+    <code><![CDATA[
+$( "p" ).wrapAll( document.createElement( "div" ) );
+]]></code>
     <css><![CDATA[
-
-  div { border: 2px solid blue; }
-  p { background:yellow; margin:4px; }
-  ]]></css>
-    <html><![CDATA[<p>Hello</p>
-  <p>cruel</p>
-  <p>World</p>]]></html>
+  div {
+    border: 2px solid blue;
+  }
+  p {
+    background: yellow;
+    margin: 4px;
+  }
+]]></css>
+    <html><![CDATA[
+<p>Hello</p>
+<p>cruel</p>
+<p>World</p>
+]]></html>
   </example>
   <example>
     <desc>Wrap a jQuery object double depth div around all of the paragraphs.  Notice it doesn't move the object but just clones it to wrap around its target.</desc>
-    <code><![CDATA[$("p").wrapAll($(".doublediv"));]]></code>
+    <code><![CDATA[
+$( "p" ).wrapAll( $( ".doublediv" ) );
+]]></code>
     <css><![CDATA[
-
-  div { border: 2px solid blue; margin:2px; padding:2px; }
-  .doublediv { border-color:red; }
-  p { background:yellow; margin:4px; font-size:14px; }
-  ]]></css>
-    <html><![CDATA[<p>Hello</p>
-  <p>cruel</p>
-  <p>World</p>
-  <div class="doublediv"><div></div></div>]]></html>
+  div {
+    border: 2px solid blue;
+    margin: 2px;
+    padding: 2px;
+  }
+  .doublediv {
+    border-color: red;
+  }
+  p {
+    background: yellow;
+    margin: 4px;
+    font-size: 14px;
+  }
+]]></css>
+    <html><![CDATA[
+<p>Hello</p>
+<p>cruel</p>
+<p>World</p>
+<div class="doublediv"><div></div></div>
+]]></html>
   </example>
   <category slug="manipulation/dom-insertion-around"/>
   <category slug="version/1.2"/>

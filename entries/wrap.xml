@@ -21,85 +21,137 @@
   <longdesc>
     <p>The <code>.wrap()</code> function can take any string or object that could be passed to the <code>$()</code> factory function to specify a DOM structure. This structure may be nested several levels deep, but should contain only one inmost element. A copy of this structure will be wrapped around each of the elements in the set of matched elements. This method returns the original set of elements for chaining purposes.</p>
     <p>Consider the following HTML:</p>
-    <pre><code>&lt;div class="container"&gt;
+    <pre><code>
+&lt;div class="container"&gt;
   &lt;div class="inner"&gt;Hello&lt;/div&gt;
   &lt;div class="inner"&gt;Goodbye&lt;/div&gt;
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;
+    </code></pre>
     <p>Using <code>.wrap()</code>, we can insert an HTML structure around the inner <code>&lt;div&gt;</code> elements like so:</p>
-    <pre><code>$('.inner').wrap('&lt;div class="new" /&gt;');</code></pre>
+    <pre><code>
+$( ".inner" ).wrap( "&lt;div class='new' /&gt;" );
+    </code></pre>
     <p>The new <code>&lt;div&gt;</code> element is created on the fly and added to the DOM. The result is a new <code>&lt;div&gt;</code> wrapped around each matched element:</p>
-    <pre><code>&lt;div class="container"&gt;
+    <pre><code>
+&lt;div class="container"&gt;
   &lt;div class="new"&gt;
     &lt;div class="inner"&gt;Hello&lt;/div&gt;
   &lt;/div&gt;
   &lt;div class="new"&gt;
     &lt;div class="inner"&gt;Goodbye&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;
+    </code></pre>
     <p>The second version of this method allows us to instead specify a callback function. This callback function will be called once for every matched element; it should return a DOM element, jQuery object, or HTML snippet in which to wrap the corresponding element. For example:</p>
-    <pre><code>$('.inner').wrap(function() {
-  return '&lt;div class="' + $(this).text() + '" /&gt;';
-});</code></pre>
+    <pre><code>
+$( ".inner" ).wrap(function() {
+  return "&lt;div class='" + $( this ).text() + "' /&gt;";
+});
+    </code></pre>
     <p>This will cause each <code>&lt;div&gt;</code> to have a class corresponding to the text it wraps:</p>
-    <pre><code>&lt;div class="container"&gt;
+    <pre><code>
+&lt;div class="container"&gt;
   &lt;div class="Hello"&gt;
     &lt;div class="inner"&gt;Hello&lt;/div&gt;
   &lt;/div&gt;
   &lt;div class="Goodbye"&gt;
     &lt;div class="inner"&gt;Goodbye&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;
+    </code></pre>
   </longdesc>
   <example>
     <desc>Wrap a new div around all of the paragraphs.</desc>
-    <code><![CDATA[$("p").wrap("<div></div>");]]></code>
+    <code><![CDATA[
+$( "p" ).wrap( "<div></div>" );
+]]></code>
     <css><![CDATA[
-
-  div { border: 2px solid blue; }
-  p { background:yellow; margin:4px; }
-  ]]></css>
-    <html><![CDATA[<p>Hello</p>
-  <p>cruel</p>
-  <p>World</p>]]></html>
+  div {
+    border: 2px solid blue;
+  }
+  p {
+    background: yellow;
+    margin: 4px;
+  }
+]]></css>
+    <html><![CDATA[
+<p>Hello</p>
+<p>cruel</p>
+<p>World</p>
+]]></html>
   </example>
   <example>
-    <desc><![CDATA[Wraps a newly created tree of objects around the spans.  Notice anything in between the spans gets left out like the <strong> (red text) in this example.  Even the white space between spans is left out.  Click View Source to see the original html.]]></desc>
-    <code><![CDATA[$("span").wrap("<div><div><p><em><b></b></em></p></div></div>");]]></code>
+    <desc>Wraps a newly created tree of objects around the spans.  Notice anything in between the spans gets left out like the &lt;strong&gt; (red text) in this example.  Even the white space between spans is left out.  Click View Source to see the original html.></desc>
+    <code><![CDATA[
+$( "span" ).wrap( "<div><div><p><em><b></b></em></p></div></div>" );
+]]></code>
     <css><![CDATA[
-
-  div { border:2px blue solid; margin:2px; padding:2px; }
-  p { background:yellow; margin:2px; padding:2px; }
-  strong { color:red; }
-  ]]></css>
-    <html><![CDATA[<span>Span Text</span>
-  <strong>What about me?</strong>
-  <span>Another One</span>]]></html>
+  div {
+    border: 2px blue solid;
+    margin: 2px;
+    padding: 2px;
+  }
+  p {
+    background: yellow;
+    margin: 2px;
+    padding: 2px;
+  }
+  strong {
+    color: red;
+  }
+]]></css>
+    <html><![CDATA[
+<span>Span Text</span>
+<strong>What about me?</strong>
+<span>Another One</span>
+]]></html>
   </example>
   <example>
     <desc>Wrap a new div around all of the paragraphs.</desc>
-    <code><![CDATA[$("p").wrap(document.createElement("div"));]]></code>
+    <code><![CDATA[
+$( "p" ).wrap( document.createElement( "div" ) );
+]]></code>
     <css><![CDATA[
-
-  div { border: 2px solid blue; }
-  p { background:yellow; margin:4px; }
-  ]]></css>
-    <html><![CDATA[<p>Hello</p>
-  <p>cruel</p>
-  <p>World</p>]]></html>
+  div {
+    border: 2px solid blue;
+  }
+  p {
+    background: yellow;
+    margin: 4px;
+  }
+]]></css>
+    <html><![CDATA[
+<p>Hello</p>
+<p>cruel</p>
+<p>World</p>
+]]></html>
   </example>
   <example>
     <desc>Wrap a jQuery object double depth div around all of the paragraphs.  Notice it doesn't move the object but just clones it to wrap around its target.</desc>
-    <code><![CDATA[$("p").wrap($(".doublediv"));]]></code>
+    <code><![CDATA[
+$( "p" ).wrap( $( ".doublediv" ) );
+]]></code>
     <css><![CDATA[
-
-  div { border: 2px solid blue; margin:2px; padding:2px; }
-  .doublediv { border-color:red; }
-  p { background:yellow; margin:4px; font-size:14px; }
-  ]]></css>
-    <html><![CDATA[<p>Hello</p>
-  <p>cruel</p>
-  <p>World</p>
-  <div class="doublediv"><div></div></div>]]></html>
+  div {
+    border: 2px solid blue;
+    margin: 2px;
+    padding: 2px;
+  }
+  .doublediv {
+    border-color: red;
+  }
+  p {
+    background: yellow;
+    margin: 4px;
+    font-size: 14px;
+  }
+]]></css>
+    <html><![CDATA[
+<p>Hello</p>
+<p>cruel</p>
+<p>World</p>
+<div class="doublediv"><div></div></div>
+]]></html>
   </example>
   <category slug="manipulation/dom-insertion-around"/>
   <category slug="version/1.0"/>

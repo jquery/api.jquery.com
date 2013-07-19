@@ -9,33 +9,41 @@
   <longdesc>
     <p>Elements are considered visible if they consume space in the document. Visible elements have a width or height that is greater than zero.</p>
     <p>Elements with <code>visibility: hidden</code> or <code>opacity: 0</code> are considered visible, since they still consume space in the layout.</p>
-	<p>Elements that are not in a document are considered to be hidden; jQuery does not have a way to know if they will be visible when appended to a document since it depends on the applicable styles.</p>
-	<p>During animations that hide an element, the element is considered to be visible until the end of the animation. During animations to show an element, the element is considered to be visible at the start at the animation.</p>
+    <p>Elements that are not in a document are considered to be hidden; jQuery does not have a way to know if they will be visible when appended to a document since it depends on the applicable styles.</p>
+    <p>During animations that hide an element, the element is considered to be visible until the end of the animation. During animations to show an element, the element is considered to be visible at the start at the animation.</p>
     <p>How <code>:visible</code> is calculated was changed in jQuery 1.3.2. The <a href="http://docs.jquery.com/Release:jQuery_1.3.2#:visible.2F:hidden_Overhauled">release notes</a> outline the changes in more detail.</p>
   </longdesc>
   <note id="jquery-selector-extension" type="additional" data-selector=":visible"/>
   <example>
     <desc>Make all visible divs turn yellow on click.</desc>
     <code><![CDATA[
-    $("div:visible").click(function () {
-      $(this).css("background", "yellow");
-    });
-    $("button").click(function () {
-      $("div:hidden").show("fast");
-    });
-
+$( "div:visible" ).click(function() {
+  $( this ).css( "background", "yellow" );
+});
+$( "button" ).click(function() {
+  $( "div:hidden" ).show( "fast" );
+});
 ]]></code>
     <css><![CDATA[
-  div { width:50px; height:40px; margin:5px; border:3px outset green; float:left; }
-  .starthidden { display:none; }
-  ]]></css>
-    <html><![CDATA[<button>Show hidden to see they don't change</button>
-  <div></div>
-  <div class="starthidden"></div>
-  <div></div>
-
-  <div></div>
-  <div style="display:none;"></div>]]></html>
+  div {
+    width: 50px;
+    height: 40px;
+    margin: 5px;
+    border: 3px outset green;
+    float: left;
+  }
+  .starthidden {
+    display: none;
+  }
+]]></css>
+    <html><![CDATA[
+<button>Show hidden to see they don't change</button>
+<div></div>
+<div class="starthidden"></div>
+<div></div>
+<div></div>
+<div style="display:none;"></div>
+]]></html>
   </example>
   <category slug="selectors/jquery-selector-extensions"/>
   <category slug="version/1.0"/>

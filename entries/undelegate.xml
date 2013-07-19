@@ -42,67 +42,79 @@
     </argument>
   </signature>
   <longdesc>
-    <p>The <code>.undelegate()</code> method is a way of removing event handlers that have been bound using <a href="/delegate"><code>.delegate()</code></a>. <strong>As of jQuery 1.7</strong>, the <a href="http://api.jquery.com/on"><code>.on()</code></a> and <a href="http://api.jquery.com/off"><code>.off()</code></a> methods are preferred for attaching and removing event handlers.</p>
+    <p>The <code>.undelegate()</code> method is a way of removing event handlers that have been bound using <a href="/delegate/"><code>.delegate()</code></a>. <strong>As of jQuery 1.7</strong>, the <a href="/on/"><code>.on()</code></a> and <a href="/off/"><code>.off()</code></a> methods are preferred for attaching and removing event handlers.</p>
   </longdesc>
   <example>
     <desc>Can bind and unbind events to the colored button.</desc>
     <code><![CDATA[
 function aClick() {
-  $("div").show().fadeOut("slow");
+  $( "div" ).show().fadeOut( "slow" );
 }
-$("#bind").click(function () {
-  $("body").delegate("#theone", "click", aClick)
-    .find("#theone").text("Can Click!");
+$( "#bind" ).click(function() {
+  $( "body" ).delegate( "#theone", "click", aClick )
+    .find( "#theone" ).text( "Can Click!" );
 });
-$("#unbind").click(function () {
-  $("body").undelegate("#theone", "click", aClick)
-    .find("#theone").text("Does nothing...");
+$( "#unbind" ).click(function() {
+  $( "body" ).undelegate( "#theone", "click", aClick )
+    .find( "#theone" ).text( "Does nothing..." );
 });
 ]]></code>
     <css><![CDATA[
-button { margin:5px; }
-button#theone { color:red; background:yellow; }
+  button {
+    margin: 5px;
+  }
+  button#theone {
+    color: red;
+    background: yellow;
+  }
 ]]></css>
-    <html><![CDATA[<button id="theone">Does nothing...</button>
+    <html><![CDATA[
+<button id="theone">Does nothing...</button>
 <button id="bind">Bind Click</button>
 <button id="unbind">Unbind Click</button>
-<div style="display:none;">Click!</div>]]></html>
+<div style="display:none;">Click!</div>
+]]></html>
   </example>
   <example>
     <desc>To unbind all delegated events from all paragraphs, write:</desc>
-    <code><![CDATA[$("p").undelegate()]]></code>
+    <code><![CDATA[
+$( "p" ).undelegate();
+]]></code>
   </example>
   <example>
     <desc>To unbind all delegated click events from all paragraphs, write:</desc>
-    <code><![CDATA[$("p").undelegate( "click" )]]></code>
+    <code><![CDATA[
+$( "p" ).undelegate( "click" );
+]]></code>
   </example>
   <example>
     <desc>To undelegate just one previously bound handler, pass the function in as the third argument:</desc>
-    <code><![CDATA[var foo = function () {
-  // code to handle some kind of event
+    <code><![CDATA[
+var foo = function () {
+  // Code to handle some kind of event
 };
-
-// ... now foo will be called when paragraphs are clicked ...
-$("body").delegate("p", "click", foo);
-
+// ... Now foo will be called when paragraphs are clicked ...
+$( "body" ).delegate( "p", "click", foo );
 
 // ... foo will no longer be called.
-$("body").undelegate("p", "click", foo); ]]></code>
+$( "body" ).undelegate( "p", "click", foo );
+]]></code>
   </example>
   <example>
     <desc>To unbind all delegated events by their namespace:</desc>
-    <code><![CDATA[var foo = function () {
-  // code to handle some kind of event
+    <code><![CDATA[
+var foo = function() {
+  // Code to handle some kind of event
 };
 
-// delegate events under the ".whatever" namespace
-$("form").delegate(":button", "click.whatever", foo);
+// Delegate events under the ".whatever" namespace
+$( "form" ).delegate( ":button", "click.whatever", foo );
 
-$("form").delegate("input[type='text']", "keypress.whatever", foo);
+$( "form" ).delegate( "input[type='text'] ", "keypress.whatever", foo );
 
-// unbind all events delegated under the ".whatever" namespace
-
-$("form").undelegate(".whatever");]]></code>
+// Unbind all events delegated under the ".whatever" namespace
+$("form").undelegate(".whatever");
+]]></code>
   </example>
   <category slug="events/event-handler-attachment"/>
   <category slug="version/1.4.2"/>
