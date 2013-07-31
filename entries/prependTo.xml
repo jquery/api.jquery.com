@@ -7,8 +7,9 @@
       <type name="Selector"/>
       <type name="htmlString"/>
       <type name="Element"/>
+      <type name="Array"/>
       <type name="jQuery"/>
-      <desc>A selector, element, HTML string, or jQuery object; the matched set of elements will be inserted at the beginning of the element(s) specified by this parameter.</desc>
+      <desc>A selector, element, HTML string, array of elements, or jQuery object; the matched set of elements will be inserted at the beginning of the element(s) specified by this parameter.</desc>
     </argument>
   </signature>
   <desc>Insert every element in the set of matched elements to the beginning of the target.</desc>

@@ -4,9 +4,10 @@
   <signature>
     <added>1.2</added>
     <argument name="target">
-      <desc>A selector string, jQuery object, or DOM element reference indicating which element(s) to replace.</desc>
+      <desc>A selector string, jQuery object, DOM element, or array of elements indicating which element(s) to replace.</desc>
 	  <type name="Selector"/>
       <type name="jQuery"/>
+      <type name="Array"/>
       <type name="Element"/>
     </argument>
   </signature>
