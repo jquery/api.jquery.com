@@ -12,7 +12,7 @@
       <p class="image">
         <img src="/resources/0042_04_01.png"/>
       </p>
-      <p>This method is also able to find the height of the window and document.</p>
+      <p>This method is also able to find the height of the window and document. (For the window height, the document must use a doctype tag like <code><[CDATA[<!DOCTYPE html>]]></code>, otherwise the document height is returned.)</p>
       <pre><code>$(window).height();   // returns height of browser viewport
 $(document).height(); // returns height of HTML document</code></pre>
       <p>Note that <code>.height()</code> will always return the content height, regardless of the value of the CSS <code>box-sizing</code> property. As of jQuery 1.8, this may require retrieving the CSS height plus <code>box-sizing</code> property and then subtracting any potential border and padding on each element when the element has <code>box-sizing: border-box</code>. To avoid this penalty, use <code>.css("height")</code> rather than <code>.height()</code>.</p>
