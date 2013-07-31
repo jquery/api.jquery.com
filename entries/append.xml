@@ -4,9 +4,10 @@
   <signature>
     <added>1.0</added>
     <argument name="content">
-      <desc>DOM element, HTML string, or jQuery object to insert at the end of each element in the set of matched elements.</desc>
+      <desc>DOM element, array of elements, HTML string, or jQuery object to insert at the end of each element in the set of matched elements.</desc>
       <type name="htmlString"/>
       <type name="Element"/>
+      <type name="Array"/>
       <type name="jQuery"/>
     </argument>
     <argument name="content" optional="true">

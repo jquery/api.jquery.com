@@ -4,10 +4,11 @@
   <signature>
     <added>1.0</added>
     <argument name="target">
-      <desc>A selector, element, HTML string, or jQuery object; the matched set of elements will be inserted at the end of the element(s) specified by this parameter.</desc>
+      <desc>A selector, element, HTML string, array of elements, or jQuery object; the matched set of elements will be inserted at the end of the element(s) specified by this parameter.</desc>
       <type name="Selector"/>
       <type name="htmlString"/>
       <type name="Element"/>
+      <type name="Array"/>
       <type name="jQuery"/>
     </argument>
   </signature>

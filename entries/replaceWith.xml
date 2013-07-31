@@ -4,9 +4,10 @@
   <signature>
     <added>1.2</added>
     <argument name="newContent">
-      <desc>The content to insert. May be an HTML string, DOM element, or jQuery object.</desc>
+      <desc>The content to insert. May be an HTML string, DOM element, array of DOM elements, or jQuery object.</desc>
       <type name="htmlString"/>
       <type name="Element"/>
+      <type name="Array"/>
       <type name="jQuery"/>
     </argument>
   </signature>
