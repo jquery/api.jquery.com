@@ -10,7 +10,7 @@
   <desc>Get the parent of each element in the current set of matched elements, optionally filtered by a selector.</desc>
   <longdesc>
     <p>Given a jQuery object that represents a set of DOM elements, the <code>.parent()</code> method allows us to search through the parents of these elements in the DOM tree and construct a new jQuery object from the matching elements.</p>
-	<p>The <code>.parents()</code> and <code><a href="http://api.jquery.com/parent/">.parent()</a></code> methods are similar, except that the latter only travels a single level up the DOM tree. Also, <code>$("html").parent()</code> method returns a set containing <code>document</code> whereas <code>$("html").parents()</code> returns an empty set.</p>
+	<p>The <code><a href="http://api.jquery.com/parents/">.parents()</a></code> and <code>.parent()</code> methods are similar, except that the latter only travels a single level up the DOM tree. Also, <code>$("html").parent()</code> method returns a set containing <code>document</code> whereas <code>$("html").parents()</code> returns an empty set.</p>
     <p>The method optionally accepts a selector expression of the same type that we can pass to the <code>$()</code> function. If the selector is supplied, the elements will be filtered by testing whether they match it.</p>
     <p>Consider a page with a basic nested list on it:</p>
     <pre><code>
