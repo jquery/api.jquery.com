@@ -40,6 +40,10 @@
 			<desc>A number indicating the remaining number of milliseconds until the scheduled end of the animation</desc>
 		</argument>
 	</property>
+	<property name="start" type="Function">
+		<desc>A function to call when animation begin.</desc>
+		<!-- no parameters -->
+	</property>
 	<property name="complete" type="Function">
 		<desc>A function to call once the animation is complete.</desc>
 		<!-- no parameters -->
