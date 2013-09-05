@@ -40,13 +40,15 @@
 			<desc>A number indicating the remaining number of milliseconds until the scheduled end of the animation</desc>
 		</argument>
 	</property>
-	<property name="start" type="Function">
-		<desc>A function to call when animation begin.</desc>
-		<!-- no parameters -->
-	</property>
 	<property name="complete" type="Function">
 		<desc>A function to call once the animation is complete.</desc>
 		<!-- no parameters -->
+	</property>
+	<property name="start" type="Function" added="1.8">
+		<desc>A function to call when the animation begins.</desc>
+		<argument name="animation" type="Promise">
+			<desc>An enhanced Promise object with additional properties for the animation</desc>
+		</argument>
 	</property>
 	<property name="done" type="Function" added="1.8">
 		<desc>A function to be called when the animation completes (its Promise object is resolved).</desc>
