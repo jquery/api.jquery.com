@@ -22,11 +22,11 @@ $( "label + input" ).css( "color", "blue" ).val( "Labeled!" );
 ]]></code>
     <html><![CDATA[
 <form>
-  <label>Name:</label>
-  <input name="name">
+  <label for="name">Name:</label>
+  <input name="name" id="name">
   <fieldset>
-    <label>Newsletter:</label>
-    <input name="newsletter">
+    <label for="newsletter">Newsletter:</label>
+    <input name="newsletter" id="newsletter">
   </fieldset>
 </form>
 <input name="none">

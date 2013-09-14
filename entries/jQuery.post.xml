@@ -39,7 +39,7 @@ $.post( "ajax/test.html", function( data ) {
 });
     </code></pre>
     <p>This example fetches the requested HTML snippet and inserts it on the page.</p>
-    <p>Pages fetched with <code>POST</code> are never cached, so the <code>cache</code> and <code>ifModified</code> options in <code><a href="/jQuery.ajaxSetup">jQuery.ajaxSetup()</a></code> have no effect on these requests.</p>
+    <p>Pages fetched with <code>POST</code> are never cached, so the <code>cache</code> and <code>ifModified</code> options in <code><a href="/jQuery.ajaxSetup/">jQuery.ajaxSetup()</a></code> have no effect on these requests.</p>
     <h4 id="jqxhr-object">The jqXHR Object</h4>
     <p><strong>As of jQuery 1.5</strong>, all of jQuery's Ajax methods return  a superset of the <code>XMLHTTPRequest</code> object. This jQuery XHR object, or "jqXHR," returned by <code>$.get()</code> implements the Promise interface, giving it all the properties, methods, and behavior of a Promise (see <a href="/category/deferred-object/">Deferred object</a> for more information). The <code>jqXHR.done()</code> (for success), <code>jqXHR.fail()</code> (for error), and <code>jqXHR.always()</code> (for completion, whether success or error) methods take a function argument that is called when the request terminates. For information about the arguments this function receives, see the <a href="/jQuery.ajax/#jqXHR">jqXHR Object</a> section of the $.ajax() documentation.</p>
         <p>The Promise interface also allows jQuery's Ajax methods, including <code>$.get()</code>, to chain multiple <code>.done()</code>, <code>.fail()</code>, and <code>.always()</code> callbacks on a single request, and even to assign these callbacks after the request may have completed. If the request is already complete, the callback is fired immediately.</p>
@@ -59,11 +59,11 @@ var jqxhr = $.post( "example.php", function() {
     alert( "finished" );
 });
 
-// perform other work here ...
+// Perform other work here ...
 
 // Set another completion function for the request above
-jqxhr.always(function(){
-  alert("second finished");
+jqxhr.always(function() {
+  alert( "second finished" );
 });
     </code></pre>
 
@@ -107,20 +107,19 @@ $.post( "test.php", function( data ) {
   <example>
     <desc>Alert the results from requesting test.php with an additional payload of data (HTML or XML, depending on what was returned).</desc>
     <code><![CDATA[
-$.post("test.php", { name: "John", time: "2pm" })
+$.post( "test.php", { name: "John", time: "2pm" })
   .done(function( data ) {
     alert( "Data Loaded: " + data );
-});
+  });
 ]]></code>
   </example>
   <example>
     <desc>Post to the test.php page and get content which has been returned in json format (&lt;?php echo json_encode(array("name"=&gt;"John","time"=&gt;"2pm")); ?&gt;).</desc>
     <code><![CDATA[
-$.post("test.php", { "func": "getNameAndTime" },
-  function( data ){
-    console.log( data.name ); // John
-    console.log( data.time ); //  2pm
-  }, "json");
+$.post( "test.php", { func: "getNameAndTime" }, function( data ) {
+  console.log( data.name ); // John
+  console.log( data.time ); // 2pm
+}, "json");
 ]]></code>
   </example>
   <example>

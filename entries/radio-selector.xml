@@ -22,11 +22,14 @@ var input = $( "form input:radio" )
       border: "3px red solid"
     });
 
-$("div").text( "For this type jQuery found " + input.length + "." )
-  .css("color", "red");
-$( "form" ).submit(function() {
-  return false;
-}); // So it won't submit
+$( "div" )
+  .text( "For this type jQuery found " + input.length + "." )
+  .css( "color", "red" );
+
+// Prevent form submission
+$( "form" ).submit(function( event ) {
+  event.preventDefault();
+});
 ]]></code>
     <css><![CDATA[
   textarea {

@@ -24,13 +24,15 @@
     <p>This method is a shortcut for <code>.on( "mousemove", handler )</code> in the first two variations, and <code>.trigger( "mousemove" )</code> in the third.</p>
     <p>The <code>mousemove</code> event is sent to an element when the mouse pointer moves inside the element. Any HTML element can receive this event.</p>
     <p>For example, consider the HTML:</p>
-    <pre><code>&lt;div id="target"&gt;
+    <pre><code>
+&lt;div id="target"&gt;
   Move here
 &lt;/div&gt;
 &lt;div id="other"&gt;
   Trigger the handler
 &lt;/div&gt;
-&lt;div id="log"&gt;&lt;/div&gt;</code></pre>
+&lt;div id="log"&gt;&lt;/div&gt;
+    </code></pre>
     <p>The event handler can be bound to the target:</p>
     <pre><code>
 $( "#target" ).mousemove(function( event ) {
@@ -67,11 +69,11 @@ $( "#other" ).click(function() {
   <example>
     <desc>Show the mouse coordinates when the mouse is moved over the yellow div.  Coordinates are relative to the window, which in this case is the iframe.</desc>
     <code><![CDATA[
-$( "div" ).mousemove(function( e ) {
-  var pageCoords = "( " + e.pageX + ", " + e.pageY + " )";
-  var clientCoords = "( " + e.clientX + ", " + e.clientY + " )";
-  $( "span:first" ).text( "( e.pageX, e.pageY ) : " + pageCoords );
-  $( "span:last" ).text( "( e.clientX, e.clientY ) : " + clientCoords );
+$( "div" ).mousemove(function( event ) {
+  var pageCoords = "( " + event.pageX + ", " + event.pageY + " )";
+  var clientCoords = "( " + event.clientX + ", " + event.clientY + " )";
+  $( "span:first" ).text( "( event.pageX, event.pageY ) : " + pageCoords );
+  $( "span:last" ).text( "( event.clientX, event.clientY ) : " + clientCoords );
 });
 ]]></code>
     <height>300</height>

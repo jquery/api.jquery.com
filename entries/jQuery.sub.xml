@@ -38,6 +38,7 @@ typeof jQuery( "body" ).myCustomMethod // undefined
   var myjQuery = jQuery.sub();
 
   myjQuery.fn.remove = function() {
+
     // New functionality: Trigger a remove event
     this.trigger( "remove" );
 
@@ -51,19 +52,21 @@ typeof jQuery( "body" ).myCustomMethod // undefined
     });
 
     // A new remove event is now triggered from this copy of jQuery
-    $( document ).on( "remove", function( e ) {
-      $( e.target ).parent().hide();
+    $( document ).on( "remove", function( event ) {
+      $( event.target ).parent().hide();
     });
   });
 })();
 
 // Regular jQuery doesn't trigger a remove event when removing an element
-// This functionality is only contained within the modified 'myjQuery'.]]></code>
+// This functionality is only contained within the modified 'myjQuery'.
+]]></code>
   </example>
   <example>
     <desc>Create a plugin that returns plugin-specific methods.</desc>
     <code><![CDATA[
 (function() {
+
   // Create a new copy of jQuery using sub()
   var plugin = jQuery.sub();
 
@@ -87,6 +90,7 @@ typeof jQuery( "body" ).myCustomMethod // undefined
 })();
 
 $( document ).ready(function() {
+
   // Call the plugin, open method now exists
   $( "#main" ).myplugin().open();
 

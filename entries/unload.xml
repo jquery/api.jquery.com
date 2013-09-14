@@ -38,7 +38,7 @@ It is not possible to cancel the <code>unload</code> event with <code>.preventDe
     <code><![CDATA[
 $( window ).unload(function() {
   alert( "Bye now!" );
-  });
+});
   ]]></code>
   </example>
   <category slug="events/document-loading"/>

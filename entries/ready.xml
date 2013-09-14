@@ -22,7 +22,7 @@
       </li>
       <li><code>$().ready( handler )</code> (this is not recommended)</li>
       <li>
-        <code>$(handler)</code>
+        <code>$( handler )</code>
       </li>
     </ul>
     <p>There is also <code>$(document).on( "ready", handler )</code>, <em>deprecated as of jQuery 1.8</em>. This behaves similarly to the ready method but if the ready event has already fired and you try to <code>.on( "ready" )</code> the bound handler will not be executed. Ready handlers bound this way are executed <em>after</em> any bound by the other three methods above.</p>

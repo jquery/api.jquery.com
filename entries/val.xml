@@ -14,10 +14,17 @@
       <p>The <code>.val()</code> method is primarily used to get the values of form elements such as <code>input</code>, <code>select</code> and <code>textarea</code>. In the case of <code>&lt;select multiple="multiple"&gt;</code> elements, the <code>.val()</code> method returns an array containing each selected option; if no option is selected, it returns <code>null</code>. </p>
       <p>For selects and checkboxes, you can also use the <a href="/selected/">:selected</a> and <a href="/checked/">:checked</a> selectors to get at values, for example:</p>
       <pre><code>
-$( "select.foo option:selected").val();    // Get the value from a dropdown select
-$( "select.foo" ).val();                    // Get the value from a dropdown select even easier
-$( "input:checkbox:checked" ).val();        // Get the value from a checked checkbox
-$( "input:radio[name=bar]:checked" ).val(); // Get the value from a set of radio buttons
+// Get the value from a dropdown select
+$( "select.foo option:selected").val();
+
+// Get the value from a dropdown select even easier
+$( "select.foo" ).val();
+
+// Get the value from a checked checkbox
+$( "input:checkbox:checked" ).val();
+
+// Get the value from a set of radio buttons
+$( "input:radio[name=bar]:checked" ).val();
       </code></pre>
       <div class="warning">
         <p><strong>Note: </strong> At present, using <code>.val()</code> on textarea elements strips carriage return characters from the browser-reported value. When this value is sent to the server via XHR however, carriage returns are preserved (or added by browsers which do not include them in the raw value). A workaround for this issue can be achieved using a valHook as follows:</p>
@@ -40,7 +47,7 @@ function displayVals() {
     " <b>Multiple:</b> " + multipleValues.join( ", " ) );
 }
 
-$("select").change(displayVals);
+$( "select" ).change( displayVals );
 displayVals();
 ]]></code>
       <css><![CDATA[
@@ -71,7 +78,7 @@ displayVals();
       <desc>Find the value of an input box.</desc>
       <code><![CDATA[
 $( "input" )
-  .keyup(function () {
+  .keyup(function() {
     var value = $( this ).val();
     $( "p" ).text( value );
   })
@@ -189,8 +196,8 @@ $( "input").val([ "check1", "check2", "radio1" ]);
 <br>
 <input type="checkbox" name="checkboxname" value="check1"> check1
 <input type="checkbox" name="checkboxname" value="check2"> check2
-<input type="radio"  name="r" value="radio1"> radio1
-<input type="radio"  name="r" value="radio2"> radio2
+<input type="radio" name="r" value="radio1"> radio1
+<input type="radio" name="r" value="radio2"> radio2
 ]]></html>
     </example>
     <category slug="attributes"/>

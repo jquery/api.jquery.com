@@ -54,17 +54,17 @@ $( "#hoverme-stop-2" ).hover(function() {
     <code><![CDATA[
 // Start animation
 $( "#go" ).click(function() {
-$( ".block" ).animate({ left: "+=100px" }, 2000 );
+  $( ".block" ).animate({ left: "+=100px" }, 2000 );
 });
 
 // Stop animation when button is clicked
 $( "#stop" ).click(function() {
-$( ".block" ).stop();
+  $( ".block" ).stop();
 });
 
 // Start animation in the opposite direction
 $( "#back" ).click(function() {
-$( ".block" ).animate({ left: "-=100px" }, 2000 );
+  $( ".block" ).animate({ left: "-=100px" }, 2000 );
 });
 ]]></code>
     <html><![CDATA[
@@ -89,6 +89,7 @@ $( ".block" ).animate({ left: "-=100px" }, 2000 );
     <desc>Click the slideToggle button to start the animation, then click again before the animation is completed. The animation will toggle the other direction from the saved starting point.</desc>
     <code><![CDATA[
 var $block = $( ".block" );
+
 // Toggle a sliding animation animation
 $( "#toggle" ).on( "click", function() {
   $block.stop().slideToggle( 1000 );

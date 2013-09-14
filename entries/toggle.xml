@@ -79,9 +79,9 @@ $( "#foo" ).toggle( showOrHide );
     </code></pre>
     <p>is equivalent to:</p>
     <pre><code>
-if ( showOrHide == true ) {
+if ( showOrHide === true ) {
   $( "#foo" ).show();
-} else if ( showOrHide == false ) {
+} else if ( showOrHide === false ) {
   $( "#foo" ).hide();
 }
     </code></pre>
@@ -125,7 +125,7 @@ $( "button" ).click(function() {
     <code><![CDATA[
 var flip = 0;
 $( "button" ).click(function() {
-  $( "p" ).toggle( flip++ % 2 == 0 );
+  $( "p" ).toggle( flip++ % 2 === 0 );
 });
 ]]></code>
     <html><![CDATA[

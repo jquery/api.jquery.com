@@ -63,8 +63,8 @@ $( window ).load(function() {
   <example>
     <desc>Add the class bigImg to all images with height greater then 100 upon each image load.</desc>
     <code><![CDATA[
-$( "img.userIcon" ).load(function(){
-  if( $( this ).height() > 100) {
+$( "img.userIcon" ).load(function() {
+  if ( $( this ).height() > 100) {
     $( this ).addClass( "bigImg" );
   }
 });

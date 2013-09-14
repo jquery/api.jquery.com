@@ -23,7 +23,7 @@
   <example>
     <desc>Using <code>.promise()</code> on a collection with no active animation returns a resolved Promise:</desc>
     <code><![CDATA[
-var div = $( "<div />" );
+var div = $( "<div>" );
 
 div.promise().done(function( arg1 ) {
   // Will fire right away and alert "true"
@@ -53,10 +53,10 @@ div.promise().done(function( arg1 ) {
 ]]></html>
     <code><![CDATA[
 $( "button" ).on( "click", function() {
-  $( "p" ).append( "Started...");
+  $( "p" ).append( "Started..." );
 
   $( "div" ).each(function( i ) {
-    $( this ).fadeIn().fadeOut( 1000 * ( i+1 ) );
+    $( this ).fadeIn().fadeOut( 1000 * ( i + 1 ) );
   });
 
   $( "div" ).promise().done(function() {

@@ -40,7 +40,8 @@ $.getJSON( "ajax/test.json", function( data ) {
 });
 </code></pre>
     <p>This example, of course, relies on the structure of the JSON file:</p>
-    <pre><code>{
+    <pre><code>
+{
   "one": "Singular sensation",
   "two": "Beady little eyes",
   "three": "Little birds pitch by my doorstep"
@@ -63,11 +64,17 @@ $.getJSON( "ajax/test.json", function( data ) {
 var jqxhr = $.getJSON( "example.json", function() {
   console.log( "success" );
 })
-  .done(function() { console.log( "second success" ); })
-  .fail(function() { console.log( "error" ); })
-  .always(function() { console.log( "complete" ); });
+  .done(function() {
+    console.log( "second success" );
+  })
+  .fail(function() {
+    console.log( "error" );
+  })
+  .always(function() {
+    console.log( "complete" );
+  });
 
-// perform other work here ...
+// Perform other work here ...
 
 // Set another completion function for the request above
 jqxhr.complete(function() {
@@ -91,7 +98,7 @@ jqxhr.complete(function() {
   })
     .done(function( data ) {
       $.each( data.items, function( i, item ) {
-        $( "<img/>" ).attr( "src", item.media.m ).appendTo( "#images" );
+        $( "<img>" ).attr( "src", item.media.m ).appendTo( "#images" );
         if ( i === 3 ) {
           return false;
         }
@@ -127,7 +134,7 @@ $.getJSON( "test.js", { name: "John", time: "2pm" } )
   })
   .fail(function( jqxhr, textStatus, error ) {
     var err = textStatus + ", " + error;
-    console.log( "Request Failed: " + err);
+    console.log( "Request Failed: " + err );
 });
 ]]></code>
   </example>

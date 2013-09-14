@@ -57,8 +57,8 @@ $( "#other" ).click(function() {
     <code><![CDATA[
 var xTriggered = 0;
 $( "#target" ).keyup(function( event ) {
-   xTriggered++;
-   var msg = "Handler for .keyup() called " + xTriggered + " time(s).";
+  xTriggered++;
+  var msg = "Handler for .keyup() called " + xTriggered + " time(s).";
   $.print( msg, "html" );
   $.print( event );
 }).keydown(function( event ) {

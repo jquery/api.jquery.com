@@ -14,8 +14,7 @@
   <example>
     <desc>Test a few parameter examples.</desc>
     <code><![CDATA[
-function stub() {
-}
+function stub() {}
 var objs = [
   function() {},
   { x:15, y:20 },
@@ -50,7 +49,7 @@ jQuery.each( objs, function( i ) {
   <example>
     <desc>Finds out if the parameter is a function.</desc>
     <code><![CDATA[
-$.isFunction(function(){});
+$.isFunction(function() {});
 ]]></code>
     <results><![CDATA[
 true

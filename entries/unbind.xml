@@ -61,7 +61,7 @@ $( "#foo" ).unbind( "click", function() {
     <h4>Using Namespaces</h4>
     <p>Instead of maintaining references to handlers in order to unbind them, we can namespace the events and use this capability to narrow the scope of our unbinding actions. As shown in the discussion for the <code>.bind()</code> method, namespaces are defined by using a period (<code>.</code>) character when binding a handler:</p>
     <pre><code>
-$( "#foo" ).bind( "click.myEvents", handler);
+$( "#foo" ).bind( "click.myEvents", handler );
     </code></pre>
     <p>When a handler is bound in this fashion, we can still unbind it the normal way:</p>
     <pre><code>
@@ -95,15 +95,16 @@ This example is also an illustration of a closure. Since the handler refers to t
     <desc>Can bind and unbind events to the colored button.</desc>
     <code><![CDATA[
 function aClick() {
-  $("div").show().fadeOut("slow");
+  $( "div" ).show().fadeOut( "slow" );
 }
 $( "#bind" ).click(function() {
-  // Could use .bind( "click", aClick ) instead but for variety...
-$( "#theone" ).click( aClick )
-  .text( "Can Click!" );
+  $( "#theone" )
+    .bind( "click", aClick )
+    .text( "Can Click!" );
 });
 $( "#unbind" ).click(function() {
-  $( "#theone" ).unbind( "click", aClick )
+  $( "#theone" )
+    .unbind( "click", aClick )
     .text( "Does nothing..." );
 });
 ]]></code>

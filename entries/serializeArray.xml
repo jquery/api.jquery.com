@@ -7,7 +7,8 @@
   <desc>Encode a set of form elements as an array of names and values.</desc>
   <longdesc>
     <p>The <code>.serializeArray()</code> method creates a JavaScript array of objects, ready to be encoded as a JSON string. It operates on a jQuery object representing a set of form elements. The form elements can be of several types:</p>
-    <pre><code>&lt;form&gt;
+    <pre><code>
+&lt;form&gt;
   &lt;div&gt;&lt;input type="text" name="a" value="1" id="a"&gt;&lt;/div&gt;
   &lt;div&gt;&lt;input type="text" name="b" value="2" id="b"&gt;&lt;/div&gt;
   &lt;div&gt;&lt;input type="hidden" name="c" value="3" id="c"&gt;&lt;/div&gt;
@@ -25,13 +26,14 @@
   &lt;div&gt;
     &lt;input type="submit" name="g" value="Submit" id="g"&gt;
   &lt;/div&gt;
-&lt;/form&gt;</code></pre>
+&lt;/form&gt;
+    </code></pre>
     <p>The <code>.serializeArray()</code> method uses the standard W3C rules for <a href="http://www.w3.org/TR/html401/interact/forms.html#h-17.13.2">successful controls</a> to determine which elements it should include; in particular the element cannot be disabled and must contain a <code>name</code> attribute. No submit button value is serialized since the form was not submitted using a button. Data from file select elements is not serialized.</p>
     <p>This method can act on a jQuery object that has selected individual form elements, such as <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, and <code>&lt;select&gt;</code>. However, it is typically easier to select the <code>&lt;form&gt;</code> tag itself for serialization:</p>
     <pre><code>
-$( "form" ).submit(function() {
+$( "form" ).submit(function( event ) {
   console.log( $( this ).serializeArray() );
-  return false;
+  event.preventDefault();
 });
     </code></pre>
     <p>This produces the following data structure (provided that the browser supports <code>console.log</code>):</p>

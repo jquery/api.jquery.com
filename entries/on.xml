@@ -43,13 +43,13 @@
     <p>Delegated events have the advantage that they can process events from <em>descendant elements</em> that are added to the document at a later time. By picking an element that is guaranteed to be present at the time the delegated event handler is attached, you can use delegated events to avoid the need to frequently attach and remove event handlers. This element could be the container element of a view in a Model-View-Controller design, for example, or <code>document</code> if the event handler wants to monitor all bubbling events in the document. The <code>document</code> element is available in the <code>head</code> of the document before loading any other HTML, so it is safe to attach events there without waiting for the document to be ready.</p>
     <p>In addition to their ability to handle events on descendant elements not yet created, another advantage of delegated events is their potential for much lower overhead when many elements must be monitored. On a data table with 1,000 rows in its <code>tbody</code>, this example attaches a handler to 1,000 elements:</p>
     <pre><code>
-$( "#dataTable tbody tr" ).on( "click", function( event ) {
+$( "#dataTable tbody tr" ).on( "click", function() {
   alert( $( this ).text() );
 });
     </code></pre>
     <p>A delegated-events approach attaches an event handler to only one element, the tbody, and the event only needs to bubble up one level (from the clicked <code>tr</code> to <code>tbody</code>):</p>
     <pre><code>
-$( "#dataTable tbody" ).on( "click", "tr", function( event ) {
+$( "#dataTable tbody" ).on( "click", "tr", function() {
   alert( $( this ).text() );
 });
     </code></pre>
@@ -72,7 +72,7 @@ $( "button" ).on( "click", notify );
     <p>As of jQuery 1.4, the same event handler can be bound to an element multiple times. This is especially useful when the <code>event.data</code> feature is being used, or when other unique data resides in a closure around the event handler function. For example:</p>
     <pre><code>
 function greet( event ) {
-  alert( "Hello "+event.data.name );
+  alert( "Hello " + event.data.name );
 }
 $( "button" ).on( "click", {
   name: "Karl"
@@ -137,7 +137,7 @@ $( "form" ).on( "submit", function( event ) {
   <example>
     <desc>Attach and trigger custom (non-browser) events.</desc>
     <code><![CDATA[
-$( "p" ).on( "myCustomEvent", function( e, myName ) {
+$( "p" ).on( "myCustomEvent", function( event, myName ) {
   $( this ).text( myName + ", hi there!" );
   $( "span" )
     .stop()
@@ -199,7 +199,7 @@ $( "div.test" ).on({
     <code><![CDATA[
 var count = 0;
 $( "body" ).on( "click", "p", function() {
-  $( this ).after( "<p>Another paragraph! " + ( ++count ) + "</p>" );
+  $( this ).after( "<p>Another paragraph! " + (++count) + "</p>" );
 });
 ]]></code>
     <css><![CDATA[

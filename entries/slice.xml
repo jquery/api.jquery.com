@@ -48,7 +48,7 @@ function colorEm() {
   var start = Math.floor( Math.random() * $div.length );
   var end = Math.floor( Math.random() * ( $div.length - start ) ) +
     start + 1;
-  if ( end == $div.length ) {
+  if ( end === $div.length ) {
     end = undefined;
   }
   $div.css( "background", "" );
@@ -57,8 +57,8 @@ function colorEm() {
   } else {
     $div.slice( start ).css( "background", "yellow" );
   }
-  $( "span" ).text( "$( 'div' ).slice( "+ start +
-    (end ? ", " + end : "" ) +
+  $( "span" ).text( "$( 'div' ).slice( " + start +
+    (end ? ", " + end : "") +
     ").css( 'background', 'yellow' );" );
 }
 

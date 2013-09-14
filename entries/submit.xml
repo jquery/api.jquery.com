@@ -27,18 +27,19 @@
       <p>Depending on the browser, the Enter key may only cause a form submission if the form has exactly one text field, or only when there is a submit button present. The interface should not rely on a particular behavior for this key unless the issue is forced by observing the keypress event for presses of the Enter key.</p>
     </div>
     <p>For example, consider the HTML:</p>
-    <pre><code>&lt;form id="target" action="destination.html"&gt;
-  &lt;input type="text" value="Hello there" /&gt;
-  &lt;input type="submit" value="Go" /&gt;
+    <pre><code>
+&lt;form id="target" action="destination.html"&gt;
+  &lt;input type="text" value="Hello there"&gt;
+  &lt;input type="submit" value="Go"&gt;
 &lt;/form&gt;
 &lt;div id="other"&gt;
   Trigger the handler
 &lt;/div&gt;</code></pre>
     <p>The event handler can be bound to the form:</p>
     <pre><code>
-$( "#target" ).submit(function() {
+$( "#target" ).submit(function( event ) {
   alert( "Handler for .submit() called." );
-  return false;
+  event.preventDefault();
 });
     </code></pre>
     <p>Now when the form is submitted, the message is alerted. This happens prior to the actual submission, so we can cancel the submit action by calling <code>.preventDefault()</code> on the event object or by returning <code>false</code> from our handler. We can trigger the event manually when another element is clicked:</p>
@@ -54,13 +55,14 @@ $( "#other" ).click(function() {
   <example>
     <desc>If you'd like to prevent forms from being submitted unless a flag variable is set, try:</desc>
     <code><![CDATA[
-$( "form" ).submit(function() {
-  if ( $( "input:first" ).val() == "correct" ) {
+$( "form" ).submit(function( event ) {
+  if ( $( "input:first" ).val() === "correct" ) {
     $( "span" ).text( "Validated..." ).show();
-    return true;
+    return;
   }
+
   $( "span" ).text( "Not valid!" ).show().fadeOut( 1000 );
-  return false;
+  event.preventDefault();
 });
 ]]></code>
     <css><![CDATA[

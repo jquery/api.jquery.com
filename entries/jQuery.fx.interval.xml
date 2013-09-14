@@ -28,7 +28,7 @@ $( "input" ).click(function() {
   }
 ]]></css>
     <html><![CDATA[
-<p><input type="button" value="Run"/></p>
+<p><input type="button" value="Run"></p>
 <div></div>
 ]]></html>
   </example>

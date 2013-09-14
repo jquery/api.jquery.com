@@ -20,7 +20,7 @@
   &lt;li&gt;list item 4&lt;/li&gt;
   &lt;li&gt;list item 5&lt;/li&gt;
 &lt;/ul&gt;
-</code></pre>
+    </code></pre>
     <p>If we begin at the third item, we can find the element which comes just after it:</p>
     <pre><code>
 $( "li.third-item" ).next().css( "background-color", "red" );

@@ -12,18 +12,18 @@
     <p>Many JavaScript libraries use <code>$</code> as a function or variable name, just as jQuery does. In jQuery's case, <code>$</code> is just an alias for <code>jQuery</code>, so all functionality is available without using <code>$</code>. If you need to use another JavaScript library alongside jQuery, return control of <code>$</code> back to the other library with a call to <code>$.noConflict()</code>. Old references of <code>$</code> are saved during jQuery initialization; <code>noConflict()</code> simply restores them.</p>
     <p>If for some reason two versions of jQuery are loaded (which is not recommended), calling <code>$.noConflict( true )</code> from the second version will return the globally scoped jQuery variables to those of the first version.</p>
     <pre><code>
-&lt;script type="text/javascript" src="other_lib.js"&gt;&lt;/script&gt;
-&lt;script type="text/javascript" src="jquery.js"&gt;&lt;/script&gt;
-&lt;script type="text/javascript"&gt;
+&lt;script src="other_lib.js"&gt;&lt;/script&gt;
+&lt;script src="jquery.js"&gt;&lt;/script&gt;
+&lt;script&gt;
 $.noConflict();
 // Code that uses other library's $ can follow here.
 &lt;/script&gt;
     </code></pre>
     <p>This technique is especially effective in conjunction with the <code>.ready()</code> method's ability to alias the jQuery object, as within callback passed to <code>.ready()</code> you can use <code>$</code> if you wish without fear of conflicts later:</p>
     <pre><code>
-&lt;script type="text/javascript" src="other_lib.js"&gt;&lt;/script&gt;
-&lt;script type="text/javascript" src="jquery.js"&gt;&lt;/script&gt;
-&lt;script type="text/javascript"&gt;
+&lt;script src="other_lib.js"&gt;&lt;/script&gt;
+&lt;script src="jquery.js"&gt;&lt;/script&gt;
+&lt;script&gt;
 $.noConflict();
 jQuery( document ).ready(function( $ ) {
   // Code that uses jQuery's $ can follow here.
@@ -53,6 +53,7 @@ jQuery.noConflict();
     // More code using $ as alias to jQuery
   });
 })(jQuery);
+
 // Other code using $ as an alias to the other library
 ]]></code>
   </example>
@@ -60,8 +61,10 @@ jQuery.noConflict();
     <desc>Create a different alias instead of jQuery to use in the rest of the script.</desc>
     <code><![CDATA[
 var j = jQuery.noConflict();
+
 // Do something with jQuery
 j( "div p" ).hide();
+
 // Do something with another library's $()
 $( "content" ).style.display = "none";
 ]]></code>
@@ -75,8 +78,10 @@ dom.query = jQuery.noConflict( true );
     <results><![CDATA[
 // Do something with the new jQuery
 dom.query( "div p" ).hide();
+
 // Do something with another library's $()
 $( "content" ).style.display = "none";
+
 // Do something with another version of jQuery
 jQuery( "div > p" ).hide();
 ]]></results>

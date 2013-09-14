@@ -44,8 +44,7 @@ $( "#result" ).load( "ajax/test.html #container" );
     <p>When this method executes, it retrieves the content of <code>ajax/test.html</code>, but then jQuery parses the returned document to find the element with an ID of <code>container</code>. This element, along with its contents, is inserted into the element with an ID of <code>result</code>, and the rest of the retrieved document is discarded.</p>
     <p>jQuery uses the browser's <code>.innerHTML</code> property to parse the retrieved document and insert it into the current document. During this process, browsers often filter elements from the document such as <code>&lt;html&gt;</code>, <code>&lt;title&gt;</code>, or <code>&lt;head&gt;</code> elements. As a result, the elements retrieved by <code>.load()</code> may not be exactly the same as if the document were retrieved directly by the browser.</p>
     <h4 id="script-execution">Script Execution</h4>
-    <p> When calling <code>.load()</code> using a URL without a suffixed selector expression, the content is passed to <code>.html()</code> prior to scripts being removed. This executes the script blocks before they are discarded. If <code>.load()</code> is called with a selector expression appended to the URL, however, the scripts are stripped out prior to the DOM being updated, and thus are <em>not</em> executed. An example of both cases can be seen below:
-</p>
+    <p> When calling <code>.load()</code> using a URL without a suffixed selector expression, the content is passed to <code>.html()</code> prior to scripts being removed. This executes the script blocks before they are discarded. If <code>.load()</code> is called with a selector expression appended to the URL, however, the scripts are stripped out prior to the DOM being updated, and thus are <em>not</em> executed. An example of both cases can be seen below:</p>
     <p>Here, any JavaScript loaded into <code>#a</code> as a part of the document will successfully execute.</p>
     <pre><code>
 $( "#a" ).load( "article.html" );
@@ -53,7 +52,7 @@ $( "#a" ).load( "article.html" );
     <p>However, in the following case, script blocks in the document being loaded into <code>#b</code> are stripped out and not executed:</p>
     <pre><code>
 $( "#b" ).load( "article.html #target" );
-</code></pre>
+    </code></pre>
   </longdesc>
   <note id="same-origin-policy" type="additional"/>
   <example>
@@ -113,7 +112,7 @@ $( "#objectID" ).load( "test.php", { "choices[]": [ "Jon", "Susan" ] } );
   <example>
     <desc>Same as above, but will POST the additional parameters to the server and a callback that is executed when the server is finished responding.</desc>
     <code><![CDATA[
-$( "#feeds" ).load( "feeds.php", {limit: 25}, function() {
+$( "#feeds" ).load( "feeds.php", { limit: 25 }, function() {
   alert( "The last 25 entries in the feed have been loaded" );
 });
 ]]></code>

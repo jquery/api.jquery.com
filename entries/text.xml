@@ -78,7 +78,7 @@ $( "p:last" ).html( str );
       <p>The code <code>$( "div.demo-container" ).text( "&lt;p&gt;This is a test.&lt;/p&gt;" );</code> will produce the following DOM output:</p>
       <pre><code>
 &lt;div class="demo-container"&gt;
-&amp;lt;p&amp;gt;This is a test.&amp;lt;/p&amp;gt;
+  &amp;lt;p&amp;gt;This is a test.&amp;lt;/p&amp;gt;
 &lt;/div&gt;
       </code></pre>
       <p>It will appear on a rendered page as though the tags were exposed, like this:</p>

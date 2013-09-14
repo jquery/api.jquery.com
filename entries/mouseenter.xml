@@ -24,7 +24,8 @@
     <p>This method is a shortcut for <code>.on( "mouseenter", handler )</code> in the first two variations, and <code>.trigger( "mouseenter" )</code> in the third.</p>
     <p>The <code>mouseenter</code> JavaScript event is proprietary to Internet Explorer. Because of the event's general utility, jQuery simulates this event so that it can be used regardless of browser. This event is sent to an element when the mouse pointer enters the element. Any HTML element can receive this event.</p>
     <p>For example, consider the HTML:</p>
-    <pre><code>&lt;div id="outer"&gt;
+    <pre><code>
+&lt;div id="outer"&gt;
   Outer
   &lt;div id="inner"&gt;
     Inner

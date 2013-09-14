@@ -75,13 +75,16 @@ $( "p" )
     <code><![CDATA[
 var mappedItems = $( "li" ).map(function( index ) {
   var replacement = $( "<li>" ).text( $( this ).text() ).get( 0 );
-  if (index == 0) {
+  if ( index === 0 ) {
+
     // Make the first item all caps
     $( replacement ).text( $( replacement ).text().toUpperCase() );
-  } else if ( index == 1 || index == 3 ) {
+  } else if ( index === 1 || index === 3 ) {
+
     // Delete the second and fourth items
     replacement = null;
-  } else if ( index == 2 ) {
+  } else if ( index === 2 ) {
+
     // Make two of the third item and add some text
     replacement = [ replacement, $( "<li>" ).get( 0 ) ];
     $( replacement[ 0 ] ).append( "<b> - A</b>" );
@@ -126,7 +129,7 @@ $.fn.equalizeHeights = function() {
   var maxHeight = this.map(function( i, e ) {
     return $( e ).height();
   }).get();
-  return this.height( Math.max.apply(this, maxHeight) );
+  return this.height( Math.max.apply( this, maxHeight ) );
 };
 
 $( "input" ).click(function() {
@@ -144,9 +147,9 @@ $( "input" ).click(function() {
 ]]></css>
     <html><![CDATA[
 <input type="button" value="equalize div heights">
-<div style="background:red; height: 40px; "></div>
-<div style="background:green; height: 70px;"></div>
-<div style="background:blue; height: 50px; "></div>
+<div style="background: red; height: 40px; "></div>
+<div style="background: green; height: 70px;"></div>
+<div style="background: blue; height: 50px; "></div>
 ]]></html>
   </example>
   <category slug="traversing/filtering"/>

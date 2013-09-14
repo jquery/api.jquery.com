@@ -28,14 +28,14 @@
     <p>Array-like objects &#x2014; those with a <code>.length</code> property <em>and</em> a value on the <code>.length - 1</code> index &#x2014; must be converted to actual arrays before being passed to <code>$.map()</code>. The jQuery library provides <a href="/jQuery.makeArray/">$.makeArray()</a> for such conversions.</p>
     <pre><code>
 // The following object masquerades as an array.
-var fakeArray = { "length": 1, 0: "Addy", 1: "Subtracty" };
+var fakeArray = { "length": 2, 0: "Addy", 1: "Subtracty" };
 
 // Therefore, convert it to a real array
 var realArray = $.makeArray( fakeArray )
 
 // Now it can be used reliably with $.map()
 $.map( realArray, function( val, i ) {
-  // do something
+  // Do something
 });
     </code></pre>
     <p>The translation function that is provided to this method is called for each top-level element in the array or object and is passed two arguments: The element's value and its index or key within the array or object.</p>
@@ -94,12 +94,12 @@ $.map( [ 0, 1, 2 ], function( n ) {
   <example>
     <desc>Map the original array to a new one, adding 1 to each value if it is bigger then zero and removing it if not.</desc>
     <code><![CDATA[
-$.map( [0,1,2], function( n ) {
+$.map( [ 0, 1, 2 ], function( n ) {
   return n > 0 ? n + 1 : null;
 });
 ]]></code>
     <results><![CDATA[
-[2, 3]
+[ 2, 3 ]
 ]]></results>
   </example>
   <example>

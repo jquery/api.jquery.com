@@ -64,9 +64,9 @@ var xTriggered = 0;
 $( "#target" ).keypress(function( event ) {
   if ( event.which == 13 ) {
      event.preventDefault();
-   }
-   xTriggered++;
-   var msg = "Handler for .keypress() called " + xTriggered + " time(s).";
+  }
+  xTriggered++;
+  var msg = "Handler for .keypress() called " + xTriggered + " time(s).";
   $.print( msg, "html" );
   $.print( event );
 });

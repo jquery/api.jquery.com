@@ -23,7 +23,7 @@
     <example>
       <desc>Show the browser info.</desc>
       <code><![CDATA[
-jQuery.each(jQuery.browser, function( i, val ) {
+jQuery.each( jQuery.browser, function( i, val ) {
   $( "<div>" + i + " : <span>" + val + "</span>" )
   .appendTo( document.body );
 });
@@ -39,7 +39,7 @@ $.browser.msie;
       <desc>Alert "this is WebKit!" only for WebKit browsers. <strong>Will not work in jQuery 1.9 or later</strong> unless the <a href="https://github.com/jquery/jquery-migrate/#readme">jQuery Migrate</a> plugin is included.</desc>
       <code><![CDATA[
   if ( $.browser.webkit ) {
-    alert( "this is webkit!" );
+    alert( "This is WebKit!" );
   }
 ]]></code>
     </example>

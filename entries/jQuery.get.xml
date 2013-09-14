@@ -61,7 +61,7 @@ var jqxhr = $.get( "example.php", function() {
 // Perform other work here ...
 
 // Set another completion function for the request above
-jqxhr.always(function(){
+jqxhr.always(function() {
   alert( "second finished" );
 });
     </code></pre>
@@ -86,7 +86,7 @@ $.get( "test.php", { name: "John", time: "2pm" } );
   <example>
     <desc>Pass arrays of data to the server (while still ignoring the return results).</desc>
     <code><![CDATA[
-$.get( "test.php", { "choices[]": ["Jon", "Susan"]} );
+$.get( "test.php", { "choices[]": ["Jon", "Susan"] } );
 ]]></code>
   </example>
   <example>
@@ -100,17 +100,18 @@ $.get( "test.php", function( data ) {
   <example>
     <desc>Alert the results from requesting test.cgi with an additional payload of data (HTML or XML, depending on what was returned).</desc>
     <code><![CDATA[
-$.get( "test.cgi", { name: "John", time: "2pm" })
+$.get( "test.cgi", { name: "John", time: "2pm" } )
   .done(function( data ) {
     alert( "Data Loaded: " + data );
-});
+  });
 ]]></code>
   </example>
   <example>
     <desc> Get the test.php page contents, which has been returned in json format (&lt;?php echo json_encode( array( "name"=&gt;"John","time"=&gt;"2pm" ) ); ?&gt;), and add it to the page.</desc>
     <code><![CDATA[
 $.get( "test.php", function( data ) {
-  $( "body" ).append( "Name: " + data.name ) // John
+  $( "body" )
+    .append( "Name: " + data.name ) // John
     .append( "Time: " + data.time ); //  2pm
 }, "json" );
 ]]></code>

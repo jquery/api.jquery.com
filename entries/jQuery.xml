@@ -50,7 +50,7 @@
       <p>By default, selectors perform their searches within the DOM starting at the document root. However, an alternate context can be given for the search by using the optional second parameter to the <code>$()</code> function. For example, to do a search within an event handler, the search can be restricted like so:</p>
       <pre><code>
 $( "div.foo" ).click(function() {
-  $(  "span", this ).addClass( "bar" );
+  $( "span", this ).addClass( "bar" );
 });
       </code></pre>
       <p>When the search for the span selector is restricted to the context of <code>this</code>, only spans within the clicked element will get the additional class.</p>
@@ -70,7 +70,7 @@ $( "div.foo" ).click(function() {
       <pre><code>
 $.post( "url.xml", function( data ) {
   var $child = $( data ).find( "child" );
-})
+});
       </code></pre>
 
       <h4 id="cloning-jquery-objects">Cloning jQuery Objects</h4>
@@ -95,7 +95,7 @@ $foo.prop( "foo", "foobar" );
 var test2 = $foo.prop( "foo" ); // foobar
 
 // Test using .data() as summarized above
-$foo.data( "keyName", "someValue");
+$foo.data( "keyName", "someValue" );
 console.log( $foo ); // will now contain a jQuery{randomNumber} property
 
 // Test binding an event name and triggering
@@ -124,7 +124,7 @@ $( "div > p" ).css( "border", "1px solid gray" );
     <example>
       <desc>Find all inputs of type radio within the first form in the document.</desc>
       <code><![CDATA[
-$( "input:radio", document.forms[ 0 ]);
+$( "input:radio", document.forms[ 0 ] );
 ]]></code>
     </example>
     <example>
@@ -187,12 +187,12 @@ $( "&lt;input&gt;" );
       </code></pre>
       <p>When passing HTML to <code>jQuery()</code>, please also note that text nodes are not treated as DOM elements. With the exception of a few methods (such as <code>.content()</code>), they are generally otherwise ignored or removed. E.g:</p>
       <pre><code>
-var el = $( "1&lt;br/&gt;2&lt;br/&gt;3" ); // returns [&lt;br&gt;, "2", &lt;br&gt;]
-el  = $( "1&lt;br/&gt;2&lt;br/&gt;3 &gt;" ); // returns [&lt;br&gt;, "2", &lt;br&gt;, "3 &amp;gt;"]
+var el = $( "1&lt;br&gt;2&lt;br&gt;3" ); // returns [&lt;br&gt;, "2", &lt;br&gt;]
+el = $( "1&lt;br&gt;2&lt;br&gt;3 &gt;" ); // returns [&lt;br&gt;, "2", &lt;br&gt;, "3 &amp;gt;"]
       </code></pre>
       <p>This behavior is expected. </p>
-      <p>As of jQuery 1.4, the second argument to <code>jQuery()</code> can accept a plain object consisting of a superset of the properties that can be passed to the <a href="/attr">.attr()</a> method.</p>
-      <p><strong>Important:</strong> If the second argument is passed, the HTML string in the first argument must represent a a simple element with no attributes. <strong>As of jQuery 1.4</strong>, any <a href="/category/events/">event type</a> can be passed in, and the following jQuery methods can be called: <a href="/val">val</a>, <a href="/css">css</a>, <a href="/html">html</a>, <a href="/text">text</a>, <a href="/data">data</a>, <a href="/width">width</a>, <a href="/height">height</a>, or <a href="/offset">offset</a>.</p>
+      <p>As of jQuery 1.4, the second argument to <code>jQuery()</code> can accept a plain object consisting of a superset of the properties that can be passed to the <a href="/attr/">.attr()</a> method.</p>
+      <p><strong>Important:</strong> If the second argument is passed, the HTML string in the first argument must represent a a simple element with no attributes. <strong>As of jQuery 1.4</strong>, any <a href="/category/events/">event type</a> can be passed in, and the following jQuery methods can be called: <a href="/val/">val</a>, <a href="/css/">css</a>, <a href="/html/">html</a>, <a href="/text/">text</a>, <a href="/data/">data</a>, <a href="/width/">width</a>, <a href="/height/">height</a>, or <a href="/offset/">offset</a>.</p>
       <p><strong>As of jQuery 1.8</strong>, any jQuery instance method (a method of <code>jQuery.fn</code>) can be used as a property of the object passed to the second parameter:</p>
       <pre><code>
 $( "<div></div>", {

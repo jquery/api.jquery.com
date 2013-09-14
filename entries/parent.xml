@@ -34,14 +34,14 @@
     </code></pre>
     <p>If we begin at item A, we can find its parents:</p>
     <pre><code>
-$( "li.item-a" ).parent().css( "background-color", "red");
+$( "li.item-a" ).parent().css( "background-color", "red" );
     </code></pre>
     <p>The result of this call is a red background for the level-2 list. Since we do not supply a selector expression, the parent element is unequivocally included as part of the object. If we had supplied one, the element would be tested for a match before it was included.</p>
   </longdesc>
   <example>
     <desc>Shows the parent of each element as (parent &gt; child).  Check the View Source to see the raw html.</desc>
     <code><![CDATA[
-$( "*", document.body ).each(function () {
+$( "*", document.body ).each(function() {
   var parentTag = $( this ).parent().get( 0 ).tagName;
   $( this ).prepend( document.createTextNode( parentTag + " > " ) );
 });

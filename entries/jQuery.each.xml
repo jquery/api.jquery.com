@@ -46,11 +46,12 @@ $.each( obj, function( key, value ) {
     <desc>Iterates through the array displaying each number as both a word and numeral</desc>
     <code><![CDATA[
 var arr = [ "one", "two", "three", "four", "five" ];
-var obj = { one:1, two:2, three:3, four:4, five:5 };
+var obj = { one: 1, two: 2, three: 3, four: 4, five: 5 };
 
 jQuery.each( arr, function() {
   $( "#" + this ).text( "Mine is " + this + "." );
-  return ( this != "three" ); // Will stop running after "three"
+  // Will stop running after "three"
+  return ( this !== "three" );
 });
 
 jQuery.each( obj, function( i, val ) {
@@ -76,7 +77,7 @@ jQuery.each( obj, function( i, val ) {
   <example>
     <desc>Iterates over items in an array, accessing both the current item and its index.</desc>
     <code><![CDATA[
-$.each( [ 'a', 'b', 'c' ], function( i, l ){
+$.each( [ "a", "b", "c" ], function( i, l ){
   alert( "Index #" + i + ": " + l );
 });
 ]]></code>
@@ -84,7 +85,7 @@ $.each( [ 'a', 'b', 'c' ], function( i, l ){
   <example>
     <desc>Iterates over the properties in an object, accessing both the current item and its key.</desc>
     <code><![CDATA[
-$.each({ name: "John", lang: "JS" }, function( k, v ){
+$.each({ name: "John", lang: "JS" }, function( k, v ) {
   alert( "Key: " + k + ", Value: " + v );
 });
 ]]></code>

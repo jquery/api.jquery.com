@@ -15,7 +15,8 @@
   <example>
     <desc>Removes any duplicate elements from the array of divs.</desc>
     <code><![CDATA[
-var divs = $( "div" ).get(); // unique() must take a native array
+// unique() must take a native array
+var divs = $( "div" ).get();
 
 // Add 3 elements of class dup too (they are divs)
 divs = divs.concat( $( ".dup" ).get() );

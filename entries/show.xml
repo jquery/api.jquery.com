@@ -119,15 +119,16 @@ function doIt() {
 // Can pass in function name
 $( "button" ).click( doIt );
 
-$( "form" ).submit(function() {
-  if ( $( "input" ).val() == "yes" ) {
+$( "form" ).submit(function( event ) {
+  if ( $( "input" ).val() === "yes" ) {
     $( "p" ).show( 4000, function() {
       $( this ).text( "Ok, DONE! (now showing)" );
     });
   }
   $( "span,div" ).hide( "fast" );
-  // To stop the submit
-  return false;
+
+  // Prevent form submission
+  event.preventDefault();
 });
 ]]></code>
     <css><![CDATA[

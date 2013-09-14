@@ -51,11 +51,13 @@ function aClick() {
   $( "div" ).show().fadeOut( "slow" );
 }
 $( "#bind" ).click(function() {
-  $( "body" ).delegate( "#theone", "click", aClick )
+  $( "body" )
+    .delegate( "#theone", "click", aClick )
     .find( "#theone" ).text( "Can Click!" );
 });
 $( "#unbind" ).click(function() {
-  $( "body" ).undelegate( "#theone", "click", aClick )
+  $( "body" )
+    .undelegate( "#theone", "click", aClick )
     .find( "#theone" ).text( "Does nothing..." );
 });
 ]]></code>
@@ -93,6 +95,7 @@ $( "p" ).undelegate( "click" );
 var foo = function () {
   // Code to handle some kind of event
 };
+
 // ... Now foo will be called when paragraphs are clicked ...
 $( "body" ).delegate( "p", "click", foo );
 
@@ -113,7 +116,7 @@ $( "form" ).delegate( ":button", "click.whatever", foo );
 $( "form" ).delegate( "input[type='text'] ", "keypress.whatever", foo );
 
 // Unbind all events delegated under the ".whatever" namespace
-$("form").undelegate(".whatever");
+$( "form" ).undelegate( ".whatever" );
 ]]></code>
   </example>
   <category slug="events/event-handler-attachment"/>

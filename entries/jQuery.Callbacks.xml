@@ -106,7 +106,7 @@ foobar
 var callbacks = $.Callbacks( "unique" );
 callbacks.add( fn1 );
 callbacks.fire( "foo" );
-callbacks.add( fn1 ); // repeat addition
+callbacks.add( fn1 ); // Repeat addition
 callbacks.add( fn2 );
 callbacks.fire( "bar" );
 callbacks.remove( fn2 );
@@ -122,12 +122,12 @@ foobar
     </code></pre>
     <h2 id="stopOnFalse"><code>$.Callbacks( "stopOnFalse" )</code>:</h2>
     <pre><code>
-function fn1( value ){
+function fn1( value ) {
   console.log( value );
   return false;
 }
 
-function fn2( value ){
+function fn2( value ) {
   fn1( "fn2 says: " + value );
   return false;
 }
@@ -163,7 +163,7 @@ function fn2( value ) {
 var callbacks = $.Callbacks( "unique memory" );
 callbacks.add( fn1 );
 callbacks.fire( "foo" );
-callbacks.add( fn1 ); // repeat addition
+callbacks.add( fn1 ); // Repeat addition
 callbacks.add( fn2 );
 callbacks.fire( "bar" );
 callbacks.add( fn2 );
@@ -201,8 +201,7 @@ remove( fn1 );
 var topics = {};
 
 jQuery.Topic = function( id ) {
-  var callbacks,
-    method,
+  var callbacks, method,
     topic = id &amp;&amp; topics[ id ];
 
   if ( !topic ) {

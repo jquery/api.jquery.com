@@ -14,9 +14,9 @@
   <example>
     <desc>Remove the white spaces at the start and at the end of the string.</desc>
     <code><![CDATA[
-  var str = "         lots of spaces before and after         ";
-  $( "#original" ).html( "Original String: '" + str + "'" );
-  $( "#trimmed" ).html( "$.trim()'ed: '" + $.trim(str) + "'" );
+var str = "         lots of spaces before and after         ";
+$( "#original" ).html( "Original String: '" + str + "'" );
+$( "#trimmed" ).html( "$.trim()'ed: '" + $.trim(str) + "'" );
 ]]></code>
     <html><![CDATA[
 <pre id="original"></pre>

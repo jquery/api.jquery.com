@@ -41,7 +41,7 @@
   <example>
     <desc>Find out if the parameter is a RegExp.</desc>
     <code><![CDATA[
-$( "b" ).append( "" + jQuery.type(/test/) );
+$( "b" ).append( "" + jQuery.type( /test/ ) );
 ]]></code>
     <html><![CDATA[
 Is it a RegExp? <b></b>

@@ -23,7 +23,7 @@
       <desc>A selector string to filter the descendants of the selected elements that trigger the event. If the selector is <code>null</code> or omitted, the event is always triggered when it reaches the selected element.</desc>
     </argument>
     <argument name="data" type="Anything" optional="true">
-      <desc>Data to be passed to the handler in <a href="/event.data"><code>event.data</code></a> when an event is triggered.</desc>
+      <desc>Data to be passed to the handler in <a href="/event.data/"><code>event.data</code></a> when an event is triggered.</desc>
     </argument>
     <argument name="handler(eventObject)" type="Function">
       <desc>A function to execute when the event is triggered. The value <code>false</code> is also allowed as a shorthand for a function that simply does <code>return false</code>.</desc>
@@ -72,7 +72,7 @@ $( "div" ).one( "click", function() {
     cursor: "auto"
   });
   $( "p" ).text( "Div at index #" + index + " clicked." +
-    "  That's " + ++n + " total clicks." );
+    " That's " + (++n) + " total clicks." );
 });
 ]]></code>
     <css><![CDATA[

@@ -31,9 +31,9 @@ $( ".result" ).html( "&lt;p&gt;Lorem ipsum dolor sit amet.&lt;/p&gt;" );
     <p>Scripts are included and run by referencing the file name:</p>
     <pre><code>
 $.getScript( "ajax/test.js", function( data, textStatus, jqxhr ) {
-  console.log( data ); //Data returned
-  console.log( textStatus ); //Success
-  console.log( jqxhr.status ); //200
+  console.log( data ); // Data returned
+  console.log( textStatus ); // Success
+  console.log( jqxhr.status ); // 200
   console.log( "Load was performed." );
 });
     </code></pre>
@@ -41,7 +41,7 @@ $.getScript( "ajax/test.js", function( data, textStatus, jqxhr ) {
     <p>As of jQuery 1.5, you may use <a href="http://api.jquery.com/deferred.fail/"><code>.fail()</code></a> to account for errors:</p>
     <pre><code>
 $.getScript( "ajax/test.js" )
-  .done( function(script, textStatus ) {
+  .done(function( script, textStatus ) {
     console.log( textStatus );
   })
   .fail(function( jqxhr, settings, exception ) {
@@ -50,8 +50,8 @@ $.getScript( "ajax/test.js" )
     </code></pre>
     <p>Prior to jQuery 1.5, the global <code>.ajaxError()</code> callback event had to be used in order to handle <code>$.getScript()</code> errors:</p>
     <pre><code>
-$( "div.log" ).ajaxError(function(e, jqxhr, settings, exception) {
-  if (settings.dataType == "script" ) {
+$( "div.log" ).ajaxError(function( e, jqxhr, settings, exception ) {
+  if ( settings.dataType == "script" ) {
     $( this ).text( "Triggered ajaxError handler." );
   }
 });
@@ -91,19 +91,23 @@ $.cachedScript( "ajax/test.js" ).done(function( script, textStatus ) {
   <example>
     <desc>Load the <a href="http://github.com/jquery/jquery-color">official jQuery Color Animation plugin</a> dynamically and bind some color animations to occur once the new functionality is loaded.</desc>
     <code><![CDATA[
-(function() {
-  var url = "https://raw.github.com/jquery/jquery-color/master/jquery.color.js";
-  $.getScript(url, function() {
-    $("#go").click(function(){
-      $( ".block" )
-        .animate( { backgroundColor: "rgb(255, 180, 180)" }, 1000 )
-        .delay(500)
-        .animate( { backgroundColor: "olive" }, 1000 )
-        .delay(500)
-        .animate( { backgroundColor: "#00f" }, 1000 );
-    });
+var url = "https://raw.github.com/jquery/jquery-color/master/jquery.color.js";
+$.getScript( url, function() {
+  $( "#go" ).click(function() {
+    $( ".block" )
+      .animate({
+        backgroundColor: "rgb(255, 180, 180)"
+      }, 1000 )
+      .delay( 500 )
+      .animate({
+        backgroundColor: "olive"
+      }, 1000 )
+      .delay( 500 )
+      .animate({
+        backgroundColor: "#00f"
+      }, 1000 );
   });
-})();
+});
 ]]></code>
     <html><![CDATA[
 <button id="go">&raquo; Run</button>

@@ -15,9 +15,12 @@
   <example>
     <desc>Turn a collection of HTMLElements into an Array of them.</desc>
     <code><![CDATA[
-var elems = document.getElementsByTagName( "div" ); // Returns a nodeList
+// Returns a NodeList
+var elems = document.getElementsByTagName( "div" );
+// Convert the NodeList to an Array
 var arr = jQuery.makeArray( elems );
-arr.reverse(); // Use an Array method on list of dom elements
+// Use an Array method on list of dom elements
+arr.reverse();
 $( arr ).appendTo( document.body );
 ]]></code>
     <css><![CDATA[

@@ -14,7 +14,7 @@
   <signature>
     <added>1.0</added>
     <argument name="settings" type="PlainObject" optional="true">
-      <desc>A set of key/value pairs that configure the Ajax request. All settings are optional. A default can be set for any option with <a href="/jQuery.ajaxSetup">$.ajaxSetup()</a>.</desc>
+      <desc>A set of key/value pairs that configure the Ajax request. All settings are optional. A default can be set for any option with <a href="/jQuery.ajaxSetup/">$.ajaxSetup()</a>.</desc>
       <property default="depends on DataType" name="accepts" type="PlainObject">
         <desc>The content type sent in the request header that tells the server what kind of response it will accept in return. If the <code>accepts</code> setting needs modification, it is recommended to do so once in the <code>$.ajaxSetup()</code> method.</desc>
       </property>
@@ -79,10 +79,10 @@ $.ajax({
         <argument name="jqXHR" type="jqXHR"/>
         <argument name="textStatus" type="String"/>
         <argument name="errorThrown" type="String"/>
-        <desc>A function to be called if the request fails. The function receives three arguments: The jqXHR (in jQuery 1.4.x, XMLHttpRequest) object, a string describing the type of error that occurred and an optional exception object, if one occurred. Possible values for the second argument (besides <code>null</code>) are <code>"timeout"</code>, <code>"error"</code>, <code>"abort"</code>, and <code>"parsererror"</code>. When an HTTP error occurs, <code>errorThrown</code> receives the textual portion of the HTTP status, such as "Not Found" or "Internal Server Error."  <strong>As of jQuery 1.5</strong>, the <code>error</code> setting can accept an array of functions. Each function will be called in turn.  <strong>Note:</strong> <em>This handler is not called for cross-domain script and cross-domain JSONP requests.</em> This is an <a href="/Ajax_Events">Ajax Event</a>. </desc>
+        <desc>A function to be called if the request fails. The function receives three arguments: The jqXHR (in jQuery 1.4.x, XMLHttpRequest) object, a string describing the type of error that occurred and an optional exception object, if one occurred. Possible values for the second argument (besides <code>null</code>) are <code>"timeout"</code>, <code>"error"</code>, <code>"abort"</code>, and <code>"parsererror"</code>. When an HTTP error occurs, <code>errorThrown</code> receives the textual portion of the HTTP status, such as "Not Found" or "Internal Server Error."  <strong>As of jQuery 1.5</strong>, the <code>error</code> setting can accept an array of functions. Each function will be called in turn.  <strong>Note:</strong> <em>This handler is not called for cross-domain script and cross-domain JSONP requests.</em> This is an <a href="/Ajax_Events/">Ajax Event</a>. </desc>
       </property>
       <property default="true" name="global" type="Boolean">
-        <desc>Whether to trigger global Ajax event handlers for this request. The default is <code>true</code>. Set to <code>false</code> to prevent the global handlers like <code>ajaxStart</code> or <code>ajaxStop</code> from being triggered. This can be used to control various <a href="/Ajax_Events">Ajax Events</a>.</desc>
+        <desc>Whether to trigger global Ajax event handlers for this request. The default is <code>true</code>. Set to <code>false</code> to prevent the global handlers like <code>ajaxStart</code> or <code>ajaxStop</code> from being triggered. This can be used to control various <a href="/Ajax_Events/">Ajax Events</a>.</desc>
       </property>
       <property name="headers" type="PlainObject" default="{}" added="1.5">
         <desc>An object of additional header key/value pairs to send along with requests using the XMLHttpRequest transport. The header <code>X-Requested-With: XMLHttpRequest</code> is always added, but its default <code>XMLHttpRequest</code> value can be changed here.  Values in the <code>headers</code> setting can also be overwritten from within the <code>beforeSend</code> function.</desc>
@@ -154,18 +154,16 @@ $.ajax({
       </property>
       <property name="xhrFields" type="PlainObject" added="1.5.1">
         <desc>
-          <p>An object of fieldName-fieldValue pairs to set on the native <code><abbr title="XMLHttpRequest">XHR</abbr></code> object. For example, you can use it to set <code>withCredentials</code> to <code>true</code> for cross-domain requests if needed.
-            <pre><code>
+          <p>An object of fieldName-fieldValue pairs to set on the native <code><abbr title="XMLHttpRequest">XHR</abbr></code> object. For example, you can use it to set <code>withCredentials</code> to <code>true</code> for cross-domain requests if needed.</p>
+          <pre><code>
 $.ajax({
    url: a_cross_domain_url,
    xhrFields: {
       withCredentials: true
    }
 });
-            </code></pre>
-            <p><strong>In jQuery 1.5</strong>, the <code>withCredentials</code> property was not propagated to the native <code>XHR</code> and thus CORS requests requiring it would ignore this flag. For this reason, we recommend using jQuery 1.5.1+ should you require the use of it.
-            </p>
-          </p>
+          </code></pre>
+          <p><strong>In jQuery 1.5</strong>, the <code>withCredentials</code> property was not propagated to the native <code>XHR</code> and thus CORS requests requiring it would ignore this flag. For this reason, we recommend using jQuery 1.5.1+ should you require the use of it.</p>
         </desc>
       </property>
     </argument>
@@ -190,11 +188,11 @@ $.ajax({
   }
 })
   .done(function( data ) {
-    if( console &amp;&amp; console.log ) {
+    if ( console &amp;&amp; console.log ) {
       console.log( "Sample of data:", data.slice( 0, 100 ) );
     }
   });
-</code></pre>
+    </code></pre>
     <p>The jqXHR objects returned by <code>$.ajax()</code> as of jQuery 1.5 implement the Promise interface, giving them all the properties, methods, and behavior of a Promise (see <a href="/category/deferred-object/">Deferred object</a> for more information). These methods take one or more function arguments that are called when the <code>$.ajax()</code> request terminates. This allows you to assign multiple callbacks on a single request, and even to assign callbacks after the request may have completed. (If the request is already complete, the callback is fired immediately.) Available Promise methods of the jqXHR object include: </p>
     <ul>
       <li>
@@ -222,22 +220,22 @@ $.ajax({
     </div>
     <pre><code>
 // Assign handlers immediately after making the request,
-// and remember the jqxhr object for this request
+// and remember the jqXHR object for this request
 var jqxhr = $.ajax( "example.php" )
   .done(function() {
     alert( "success" );
-})
+  })
   .fail(function() {
     alert( "error" );
-})
+  })
   .always(function() {
     alert( "complete" );
-});
+  });
 
-// perform other work here ...
+// Perform other work here ...
 
 // Set another completion function for the request above
- jqxhr.always(function() {
+jqxhr.always(function() {
   alert( "second complete" );
 });
     </code></pre>
@@ -308,7 +306,8 @@ var jqxhr = $.ajax( "example.php" )
     <pre><code>
 (function() {
   var _super = jQuery.ajaxSettings.xhr,
-    xhrCorsHeaders = [ "Cache-Control", "Content-Language", "Content-Type", "Expires", "Last-Modified", "Pragma" ];
+    xhrCorsHeaders = [ "Cache-Control", "Content-Language", "Content-Type",
+      "Expires", "Last-Modified", "Pragma" ];
 
   jQuery.ajaxSettings.xhr = function() {
     var xhr = _super(),
@@ -321,8 +320,7 @@ var jqxhr = $.ajax( "example.php" )
         if ( allHeaders ) {
           return allHeaders;
         }
-      } catch ( e ) {
-      }
+      } catch ( e ) {}
 
       $.each( xhrCorsHeaders, function( i, headerName ) {
         if ( xhr.getResponseHeader( headerName ) ) {
@@ -349,7 +347,7 @@ $.ajaxSetup({
   },
   converters: {
     "mycustomtype json": function( result ) {
-      // do stuff
+      // Do stuff
       return newresult;
     }
   }
@@ -365,7 +363,7 @@ $.ajaxSetup({
   converters: {
     "text mycustomtype": true,
     "mycustomtype json": function( result ) {
-      // do stuff
+      // Do stuff
       return newresult;
     }
   }
@@ -382,9 +380,10 @@ $.ajax({
   type: "POST",
   url: "some.php",
   data: { name: "John", location: "Boston" }
-}).done(function( msg ) {
-  alert( "Data Saved: " + msg );
-});
+})
+  .done(function( msg ) {
+    alert( "Data Saved: " + msg );
+  });
 ]]></code>
   </example>
   <example>
@@ -393,9 +392,10 @@ $.ajax({
 $.ajax({
   url: "test.html",
   cache: false
-}).done(function( html ) {
-  $( "#results" ).append( html );
-});
+})
+  .done(function( html ) {
+    $( "#results" ).append( html );
+  });
 ]]></code>
   </example>
   <example>
@@ -409,7 +409,7 @@ var xmlRequest = $.ajax({
   data: xmlDocument
 });
 
-xmlRequest.done(handleResponse);
+xmlRequest.done( handleResponse );
 ]]></code>
   </example>
   <example>

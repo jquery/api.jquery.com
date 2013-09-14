@@ -17,14 +17,15 @@
 var div = $( "div" );
 
 function runIt() {
-  div.show( "slow" );
-  div.animate({ left: "+=200" }, 2000 );
-  div.slideToggle( 1000 );
-  div.slideToggle( "fast" );
-  div.animate({ left: "-=200" }, 1500 );
-  div.hide( "slow" );
-  div.show( 1200 );
-  div.slideUp( "normal", runIt );
+  div
+    .show( "slow" )
+    .animate({ left: "+=200" }, 2000 )
+    .slideToggle( 1000 )
+    .slideToggle( "fast" )
+    .animate({ left: "-=200" }, 1500 )
+    .hide( "slow" )
+    .show( 1200 )
+    .slideUp( "normal", runIt );
 }
 
 function showIt() {
@@ -118,18 +119,17 @@ $( "#test" ).queue(function( next ) {
       <desc>Queue a custom function.</desc>
       <code><![CDATA[
 $( document.body ).click(function() {
-  $( "div" ).show( "slow" );
-  $( "div" ).animate({ left: "+=200" }, 2000 );
-  $( "div" ).queue(function() {
-    $( this ).addClass( "newcolor" );
-      $( this ).dequeue();
-    });
-  $ ( "div" ).animate({ left: "-=200" }, 500 );
-  $( "div" ).queue(function() {
-    $( this ).removeClass( "newcolor" );
-    $( this ).dequeue();
-  });
-  $( "div" ).slideUp();
+  $( "div" )
+    .show( "slow" )
+    .animate({ left: "+=200" }, 2000 )
+    .queue(function() {
+      $( this ).addClass( "newcolor" ).dequeue();
+    })
+    .animate({ left: "-=200" }, 500 )
+    .queue(function() {
+      $( this ).removeClass( "newcolor" ).dequeue();
+    })
+    .slideUp();
 });
 ]]></code>
       <css><![CDATA[
@@ -156,22 +156,22 @@ Click here...
       <desc>Set a queue array to delete the queue.</desc>
       <code><![CDATA[
 $( "#start" ).click(function() {
-  $( "div" ).show( "slow ");
-  $( "div" ).animate({ left: "+=200" }, 5000 );
-  $( "div" ).queue(function() {
-    $( this ).addClass( "newcolor" );
-    $( this ).dequeue();
-  });
-  $( "div" ).animate({ left: '-=200' }, 1500 );
-  $( "div" ).queue(function() {
-    $( this ).removeClass( "newcolor" );
-    $( this ).dequeue();
-  });
-  $( "div" ).slideUp();
+  $( "div" )
+    .show( "slow" )
+    .animate({ left: "+=200" }, 5000 )
+    .queue(function() {
+      $( this ).addClass( "newcolor" ).dequeue();
+    })
+    .animate({ left: '-=200' }, 1500 )
+    .queue(function() {
+      $( this ).removeClass( "newcolor" ).dequeue();
+    })
+    .slideUp();
 });
 $( "#stop" ).click(function() {
-  $( "div" ).queue( "fx", [] );
-  $( "div" ).stop();
+  $( "div" )
+    .queue( "fx", [] )
+    .stop();
 });
 ]]></code>
       <css><![CDATA[

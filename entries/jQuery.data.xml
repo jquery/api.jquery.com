@@ -91,24 +91,25 @@ alert( jQuery.data( document.body ) );
     <example>
       <desc>Get the data named "blah" stored at for an element.</desc>
       <code><![CDATA[
-$( "button" ).click( function( e ) {
-  var value, div = $( "div" )[ 0 ];
+$( "button" ).click( function() {
+  var value,
+    div = $( "div" )[ 0 ];
   switch ( $( "button" ).index( this ) ) {
-    case 0 :
-      value = jQuery.data( div, "blah" );
-      break;
-    case 1 :
-      jQuery.data( div, "blah", "hello" );
-      value = "Stored!";
-      break;
-    case 2 :
-      jQuery.data( div, "blah", 86 );
-      value = "Stored!";
-      break;
-    case 3 :
-      jQuery.removeData( div, "blah" );
-      value = "Removed!";
-      break;
+  case 0 :
+    value = jQuery.data( div, "blah" );
+    break;
+  case 1 :
+    jQuery.data( div, "blah", "hello" );
+    value = "Stored!";
+    break;
+  case 2 :
+    jQuery.data( div, "blah", 86 );
+    value = "Stored!";
+    break;
+  case 3 :
+    jQuery.removeData( div, "blah" );
+    value = "Removed!";
+    break;
   }
   $( "span" ).text( "" + value );
 });

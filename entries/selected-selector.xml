@@ -13,13 +13,14 @@
   <example>
     <desc>Attaches a change event to the select that gets the text for each selected option and writes them in the div.  It then triggers the event for the initial text draw.</desc>
     <code><![CDATA[
-$( "select" ).change(function() {
-  var str = "";
-  $( "select option:selected" ).each(function() {
-    str += $( this ).text() + " ";
-  });
-  $( "div" ).text( str );
-})
+$( "select" )
+  .change(function() {
+    var str = "";
+    $( "select option:selected" ).each(function() {
+      str += $( this ).text() + " ";
+    });
+    $( "div" ).text( str );
+  })
   .trigger( "change" );
 ]]></code>
     <css><![CDATA[

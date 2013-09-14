@@ -26,12 +26,14 @@
 $( ".inner" ).wrapAll( "&lt;div class='new' /&gt;");
     </code></pre>
     <p>The new <code>&lt;div&gt;</code> element is created on the fly and added to the DOM. The result is a new <code>&lt;div&gt;</code> wrapped around all matched elements:</p>
-    <pre><code>&lt;div class="container"&gt;
+    <pre><code>
+&lt;div class="container"&gt;
   &lt;div class="new"&gt;
     &lt;div class="inner"&gt;Hello&lt;/div&gt;
     &lt;div class="inner"&gt;Goodbye&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;
+    </code></pre>
   </longdesc>
   <example>
     <desc>Wrap a new div around all of the paragraphs.</desc>
@@ -56,7 +58,7 @@ $( "p" ).wrapAll( "<div></div>" );
   <example>
     <desc>Wraps a newly created tree of objects around the spans.  Notice anything in between the spans gets left out like the &lt;strong&gt; (red text) in this example.  Even the white space between spans is left out.  Click View Source to see the original html.</desc>
     <code><![CDATA[
-$( "span").wrapAll("<div><div><p><em><b></b></em></p></div></div>" );
+$( "span").wrapAll( "<div><div><p><em><b></b></em></p></div></div>" );
 ]]></code>
     <css><![CDATA[
   div {

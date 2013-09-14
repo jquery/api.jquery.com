@@ -23,9 +23,9 @@ var submitEl = $( "td :submit" )
 
 $( "#result" ).text( "jQuery matched " + submitEl.length + " elements." );
 
-// So it won't submit
-$( "form" ).submit(function() {
-  return false;
+// Prevent form submission
+$( "form" ).submit(function( event ) {
+  event.preventDefault();
 });
 
 // Extra JS to make the HTML easier to edit (None of this is relevant to the ':submit' selector)

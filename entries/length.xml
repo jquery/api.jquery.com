@@ -6,18 +6,20 @@
   </signature>
   <desc>The number of elements in the jQuery object.</desc>
   <longdesc>
-    <p>The number of elements currently matched. The .<a href="/size">size()</a> method will return the same value.</p>
+    <p>The number of elements currently matched. The .<a href="/size/">size()</a> method will return the same value.</p>
   </longdesc>
   <example>
     <desc>Count the divs.  Click to add more.</desc>
     <code><![CDATA[
-$( document.body ).click(function() {
-  $( document.body ).append( $( "<div>" ) );
-  var n = $( "div" ).length;
-  $( "span" ).text( "There are " + n + " divs." +
-    "Click to add more.");
-})
-  .trigger( "click" ); // Trigger the click to start
+$( document.body )
+  .click(function() {
+    $( document.body ).append( $( "<div>" ) );
+    var n = $( "div" ).length;
+    $( "span" ).text( "There are " + n + " divs." +
+      "Click to add more.");
+  })
+  // Trigger the click to start
+  .trigger( "click" );
 ]]></code>
     <css><![CDATA[
   body {

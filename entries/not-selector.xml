@@ -18,7 +18,7 @@
     <desc>Finds all inputs that are not checked and highlights the next sibling span.  Notice there is no change when clicking the checkboxes since no click events have been linked.</desc>
     <code><![CDATA[
 $( "input:not(:checked) + span" ).css( "background-color", "yellow" );
-$( "input").attr("disabled", "disabled" );
+$( "input").attr( "disabled", "disabled" );
 ]]></code>
     <html><![CDATA[
 <div>

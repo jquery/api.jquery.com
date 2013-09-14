@@ -28,9 +28,11 @@
     <p>As of jQuery 1.8, the <code>$.param()</code> method no longer uses <code>jQuery.ajaxSettings.traditional</code> as its default setting and will default to <code>false</code>. For best compatibility across versions, call <code>$.param()</code> with an explicit value for the second argument and do not use defaults.</p>
     <p>If the object passed is in an Array, it must be an array of objects in the format returned by <a href="/serializeArray/">.serializeArray()</a></p>
     <pre><code>
-[{ name:"first", value:"Rick" },
-{ name:"last", value:"Astley" },
-{ name:"job", value:"Rock Star" }]
+[
+  { name: "first", value: "Rick" },
+  { name: "last", value: "Astley" },
+  { name: "job", value: "Rock Star" }
+]
     </code></pre>
     <div class="warning">
       <p><strong>Note:</strong> Because some frameworks have limited ability to parse serialized arrays, developers should exercise caution when passing an <code>obj</code> argument that contains objects or arrays nested within another array.</p>
@@ -40,13 +42,14 @@
     </div>
     <p>In jQuery 1.4, HTML5 input elements are also serialized.</p>
     <p>We can display a query string representation of an object and a URI-decoded version of the same as follows:</p>
-    <pre><code>var myObject = {
+    <pre><code>
+var myObject = {
   a: {
     one: 1,
     two: 2,
     three: 3
   },
-  b: [1,2,3]
+  b: [ 1, 2, 3 ]
 };
 var recursiveEncoded = $.param( myObject );
 var recursiveDecoded = decodeURIComponent( $.param( myObject ) );
@@ -61,7 +64,8 @@ alert( recursiveDecoded );
       <samp>a[one]=1&amp;a[two]=2&amp;a[three]=3&amp;b[]=1&amp;b[]=2&amp;b[]=3</samp>
     </p>
     <p>To emulate the behavior of <code>$.param()</code> prior to jQuery 1.4, we can set the <code>traditional</code> argument to <code>true</code>:</p>
-    <pre><code>var myObject = {
+    <pre><code>
+var myObject = {
   a: {
     one: 1,
     two: 2,
@@ -102,14 +106,17 @@ $( "#results" ).text( str );
     <desc>Serialize a few complex objects</desc>
     <code><![CDATA[
 // <=1.3.2:
-$.param({ a: [2, 3, 4] }); // "a=2&a=3&a=4"
+$.param({ a: [ 2, 3, 4 ] }); // "a=2&a=3&a=4"
 // >=1.4:
-$.param({ a: [2, 3, 4] }); // "a[]=2&a[]=3&a[]=4"
+$.param({ a: [ 2, 3, 4 ] }); // "a[]=2&a[]=3&a[]=4"
 
 // <=1.3.2:
-$.param({ a: { b:1, c:2 }, d: [ 3, 4, { e:5 } ] }); // "a=[object+Object]&d=3&d=4&d=[object+Object]"
+$.param({ a: { b: 1, c: 2 }, d: [ 3, 4, { e: 5 } ] });
+// "a=[object+Object]&d=3&d=4&d=[object+Object]"
+
 // >=1.4:
-$.param({ a: { b:1, c:2 }, d: [ 3, 4, { e:5 } ] }); // "a[b]=1&a[c]=2&d[]=3&d[]=4&d[2][e]=5"
+$.param({ a: { b: 1, c: 2 }, d: [ 3, 4, { e: 5 } ] });
+// "a[b]=1&a[c]=2&d[]=3&d[]=4&d[2][e]=5"
 ]]></code>
     <css><![CDATA[
   div {

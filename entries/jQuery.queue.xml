@@ -14,7 +14,7 @@
     </signature>
     <desc>Show the queue of functions to be executed on the matched element.</desc>
     <longdesc>
-      <p><strong>Note:</strong> This is a low-level method, you should probably use <code><a href="/queue">.queue()</a></code> instead.</p>
+      <p><strong>Note:</strong> This is a low-level method, you should probably use <code><a href="/queue/">.queue()</a></code> instead.</p>
     </longdesc>
     <example>
       <desc>Show the length of the queue.</desc>
@@ -25,14 +25,19 @@ $( "#show" ).click(function() {
 });
 
 function runIt() {
-  $( "div" ).show( "slow" );
-  $( "div" ).animate({ left: "+=200" }, 2000 );
-  $( "div" ).slideToggle( 1000 );
-  $( "div" ).slideToggle( "fast" );
-  $( "div" ).animate({ left: "-=200" }, 1500 );
-  $( "div" ).hide( "slow" );
-  $( "div" ).show( 1200 );
-  $( "div" ).slideUp( "normal", runIt );
+  $( "div" )
+    .show( "slow" )
+    .animate({
+      left: "+=200"
+    }, 2000 )
+    .slideToggle( 1000 )
+    .slideToggle( "fast" )
+    .animate({
+      left: "-=200"
+    }, 1500 )
+    .hide( "slow" )
+    .show( 1200 )
+    .slideUp( "normal", runIt );
 }
 
 runIt();
@@ -101,18 +106,19 @@ runIt();
       <desc>Queue a custom function.</desc>
       <code><![CDATA[
 $( document.body ).click(function() {
-  $( "div" ).show( "slow" );
-  $( "div" ).animate({ left: "+=200" }, 2000 );
-  jQuery.queue( $( "div" )[ 0 ], "fx", function() {
-    $(this).addClass( "newcolor" );
+  var divs = $( "div" )
+    .show( "slow" )
+    .animate({ left: "+=200" }, 2000 );
+  jQuery.queue( divs[ 0 ], "fx", function() {
+    $( this ).addClass( "newcolor" );
     jQuery.dequeue( this );
   });
-  $( "div" ).animate({ left: "-=200" }, 500 );
-  jQuery.queue( $( "div" )[ 0 ], "fx", function() {
+  divs.animate({ left: "-=200" }, 500 );
+  jQuery.queue( divs[ 0 ], "fx", function() {
     $( this ).removeClass( "newcolor" );
     jQuery.dequeue( this );
   });
-  $( "div" ).slideUp();
+  divs.slideUp();
 });
 ]]></code>
       <css><![CDATA[
@@ -139,18 +145,19 @@ Click here...
       <desc>Set a queue array to delete the queue.</desc>
       <code><![CDATA[
 $( "#start" ).click(function() {
-  $( "div" ).show( "slow" );
-  $( "div" ).animate({ left: "+=200" }, 5000 );
-  jQuery.queue( $( "div" )[ 0 ], "fx", function() {
+  var divs = $( "div" )
+    .show( "slow" )
+    .animate({ left: "+=200" }, 5000 );
+  jQuery.queue( divs[ 0 ], "fx", function() {
     $( this ).addClass( "newcolor" );
     jQuery.dequeue( this );
   });
-  $( "div" ).animate({ left: "-=200" }, 1500 );
-  jQuery.queue( $("div")[0], "fx", function() {
+  divs.animate({ left: "-=200" }, 1500 );
+  jQuery.queue( divs[ 0 ], "fx", function() {
     $( this ).removeClass( "newcolor" );
     jQuery.dequeue( this );
   });
-  $( "div" ).slideUp();
+  divs.slideUp();
 });
 $( "#stop" ).click(function() {
   jQuery.queue( $( "div" )[ 0 ], "fx", [] );

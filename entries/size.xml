@@ -34,10 +34,11 @@ alert( "Size: " + $( "li" ).length );
     <code><![CDATA[
 $( document.body )
   .click(function() {
-    $( this ).append( $("<div>") );
+    $( this ).append( $( "<div>" ) );
     var n = $( "div" ).size();
     $( "span" ).text( "There are " + n + " divs. Click to add more." );
   })
+
   // Trigger the click to start
   .click();
 ]]></code>

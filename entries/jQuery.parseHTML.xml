@@ -36,7 +36,7 @@ $log.append( html );
 
 // Gather the parsed HTML's node names
 $.each( html, function( i, el ) {
-  nodeNames[i] = "<li>" + el.nodeName + "</li>";
+  nodeNames[ i ] = "<li>" + el.nodeName + "</li>";
 });
 
 // Insert the node names

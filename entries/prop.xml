@@ -84,9 +84,10 @@
       <code><![CDATA[
 $( "input" ).change(function() {
   var $input = $( this );
-  $( "p" ).html( ".attr( 'checked' ): <b>" + $input.attr( 'checked' ) + "</b><br>" +
-    ".prop('checked'): <b>" + $input.prop('checked') + "</b><br>" +
-    ".is(':checked'): <b>" + $input.is(':checked') ) + "</b>";
+  $( "p" ).html(
+    ".attr( \"checked\" ): <b>" + $input.attr( "checked" ) + "</b><br>" +
+    ".prop( \"checked\" ): <b>" + $input.prop( "checked" ) + "</b><br>" +
+    ".is( \":checked\" ): <b>" + $input.is( ":checked" ) ) + "</b>";
 }).change();
 ]]></code>
       <css><![CDATA[
@@ -172,10 +173,10 @@ $( "input[type='checkbox']" ).prop({
   }
 ]]></css>
       <html><![CDATA[
-  <input type="checkbox" checked="checked" />
-  <input type="checkbox" />
-  <input type="checkbox" />
-  <input type="checkbox"  checked="checked" />
+  <input type="checkbox" checked="checked">
+  <input type="checkbox">
+  <input type="checkbox">
+  <input type="checkbox" checked="checked">
 ]]></html>
     </example>
     <category slug="attributes"/>

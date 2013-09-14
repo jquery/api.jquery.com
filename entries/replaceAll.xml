@@ -22,13 +22,15 @@
 &lt;/div&gt;
     </code></pre>
     <p>We can create an element, then replace other elements with it:</p>
-    <pre><code>$('&lt;h2&gt;New heading&lt;/h2&gt;').replaceAll('.inner');</code></pre>
+    <pre><code>$( "&lt;h2&gt;New heading&lt;/h2&gt;" ).replaceAll( ".inner" );</code></pre>
     <p>This causes all of them to be replaced:</p>
-    <pre><code>&lt;div class="container"&gt;
+    <pre><code>
+&lt;div class="container"&gt;
   &lt;h2&gt;New heading&lt;/h2&gt;
   &lt;h2&gt;New heading&lt;/h2&gt;
   &lt;h2&gt;New heading&lt;/h2&gt;
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;
+    </code></pre>
     <p>Or, we could select an element to use as the replacement:</p>
     <pre><code>
 $( ".first" ).replaceAll( ".third" );

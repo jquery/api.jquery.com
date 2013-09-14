@@ -41,12 +41,12 @@ $( "li.item-a" ).parents().css( "background-color", "red" );
   <example>
     <desc>Find all parent elements of each b.</desc>
     <code><![CDATA[
-var parentEls = $("b").parents()
-  .map(function () {
+var parentEls = $( "b" ).parents()
+  .map(function() {
     return this.tagName;
   })
   .get()
-  .join(", ");
+  .join( ", " );
 $( "b" ).append( "<strong>" + parentEls + "</strong>" );
 ]]></code>
     <css><![CDATA[
@@ -78,11 +78,11 @@ function showParents() {
   $( "div" ).css( "border-color", "white" );
   var len = $( "span.selected" )
     .parents( "div" )
-    .css( "border", "2px red solid" )
-    .length;
+      .css( "border", "2px red solid" )
+      .length;
   $( "b" ).text( "Unique div parents: " + len );
 }
-$( "span" ).click(function () {
+$( "span" ).click(function() {
   $( this ).toggleClass( "selected" );
   showParents();
 });

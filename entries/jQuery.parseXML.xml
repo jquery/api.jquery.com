@@ -23,13 +23,13 @@ var xml = "<rss version='2.0'><channel><title>RSS Title</title></channel></rss>"
   $xml = $( xmlDoc ),
   $title = $xml.find( "title" );
 
-/* append "RSS Title" to #someElement */
+// Append "RSS Title" to #someElement
 $( "#someElement" ).append( $title.text() );
 
-/* change the title to "XML Title" */
+// Change the title to "XML Title"
 $title.text( "XML Title" );
 
-/* append "XML Title" to #anotherElement */
+// Append "XML Title" to #anotherElement
 $( "#anotherElement" ).append( $title.text() );
 ]]></code>
   </example>

@@ -32,11 +32,11 @@
     <code><![CDATA[
 $( "#term-2" )
   .nextUntil( "dt" )
-  .css( "background-color", "red" );
+    .css( "background-color", "red" );
 var term3 = document.getElementById( "term-3" );
 $( "#term-1" )
   .nextUntil( term3, "dd" )
-  .css( "color", "green" );
+    .css( "color", "green" );
 ]]></code>
     <html><![CDATA[
 <dl>

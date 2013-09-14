@@ -11,7 +11,7 @@
     <p><strong>Note:</strong> As of jQuery 1.5.2, <code>:text</code> selects <code>input</code> elements that have no specified <code>type</code> attribute (in which case <code>type="text"</code> is implied).  </p>
     <p>This difference in behavior between <code>$( ":text" )</code> and <code>$( "[type=text]" )</code>, can be seen below:</p>
     <pre><code>
-$( "&lt;input&gt;" ).is( "[type=text]"); // false
+$( "&lt;input&gt;" ).is( "[type=text]" ); // false
 $( "&lt;input&gt;" ).is( ":text" ); // true
     </code></pre>
   </longdesc>
@@ -22,12 +22,16 @@ $( "&lt;input&gt;" ).is( ":text" ); // true
 var input = $( "form input:text" ).css({
   background: "yellow",
   border: "3px red solid"
-  });
-$( "div" ).text( "For this type jQuery found " + input.length + "." )
+});
+
+$( "div" )
+  .text( "For this type jQuery found " + input.length + "." )
   .css( "color", "red" );
-$( "form" ).submit(function() {
-  return false;
-}); // So it won't submit
+
+// Prevent form submission
+$( "form" ).submit(function( event ) {
+  event.preventDefault();
+});
 ]]></code>
     <css><![CDATA[
   textarea {

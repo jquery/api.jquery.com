@@ -24,7 +24,7 @@ console.log( "onclick property: ", $element[ 0 ].onclick );
   $( "button" ).click(function() {
     var input = $( this ).next();
 
-    if ( input.attr( "title" ) == inputTitle ) {
+    if ( input.attr( "title" ) === inputTitle ) {
       input.removeAttr( "title" )
     } else {
       input.attr( "title", inputTitle );

@@ -22,15 +22,15 @@
     <desc>Filters the original array of numbers leaving that are not 5 and have an index greater than 4.  Then it removes all 9s.</desc>
     <code><![CDATA[
 var arr = [ 1, 9, 3, 8, 6, 1, 5, 9, 4, 7, 3, 8, 6, 9, 1 ];
-$( "div" ).text( arr.join(", ") );
+$( "div" ).text( arr.join( ", " ) );
 
 arr = jQuery.grep(arr, function( n, i ) {
-  return ( n != 5 && i > 4 );
+  return ( n !== 5 && i > 4 );
 });
-$( "p" ).text( arr.join(", ") );
+$( "p" ).text( arr.join( ", " ) );
 
 arr = jQuery.grep(arr, function( a ) {
-  return a != 9;
+  return a !== 9;
 });
 
 $( "span" ).text( arr.join( ", " ) );
@@ -67,7 +67,7 @@ $.grep( [ 0, 1, 2 ], function( n, i ) {
   <example>
     <desc>Filter an array of numbers to include numbers that are not bigger than zero.</desc>
     <code><![CDATA[
-$.grep( [0, 1, 2 ], function( n, i ) {
+$.grep( [ 0, 1, 2 ], function( n, i ) {
     return n > 0;
 }, true );
 ]]></code>
