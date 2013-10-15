@@ -301,39 +301,6 @@ jqxhr.always(function() {
     <p>The <code>scriptCharset</code> allows the character set to be explicitly specified for requests that use a <code>&lt;script&gt;</code> tag (that is, a type of <code>script</code> or <code>jsonp</code>). This is useful if the script and host page have differing character sets.</p>
     <p>The first letter in Ajax stands for "asynchronous," meaning that the operation occurs in parallel and the order of completion is not guaranteed. The <code>async</code> option to <code>$.ajax()</code> defaults to <code>true</code>, indicating that code execution can continue after the request is made. Setting this option to <code>false</code> (and thus making the call no longer asynchronous) is strongly discouraged, as it can cause the browser to become unresponsive.</p>
     <p>The <code>$.ajax()</code> function returns the <code>XMLHttpRequest</code> object that it creates. Normally jQuery handles the creation of this object internally, but a custom function for manufacturing one can be specified using the <code>xhr</code> option. The returned object can generally be discarded, but does provide a lower-level interface for observing and manipulating the request. In particular, calling <code>.abort()</code> on the object will halt the request before it completes.</p>
-    <p><strong>At present</strong>, due to a bug in Firefox where <code>.getAllResponseHeaders()</code> returns the empty string although <code>.getResponseHeader('Content-Type')</code> returns a non-empty string, automatically decoding JSON CORS responses in Firefox with jQuery is not supported.</p>
-    <p>A workaround to this is possible by overriding <code>jQuery.ajaxSettings.xhr</code> as follows:</p>
-    <pre><code>
-(function() {
-  var _super = jQuery.ajaxSettings.xhr,
-    xhrCorsHeaders = [ "Cache-Control", "Content-Language", "Content-Type",
-      "Expires", "Last-Modified", "Pragma" ];
-
-  jQuery.ajaxSettings.xhr = function() {
-    var xhr = _super(),
-      getAllResponseHeaders = xhr.getAllResponseHeaders;
-
-    xhr.getAllResponseHeaders = function() {
-      var allHeaders = "";
-      try {
-        allHeaders = getAllResponseHeaders.apply( xhr );
-        if ( allHeaders ) {
-          return allHeaders;
-        }
-      } catch ( e ) {}
-
-      $.each( xhrCorsHeaders, function( i, headerName ) {
-        if ( xhr.getResponseHeader( headerName ) ) {
-          allHeaders += headerName + ": " + xhr.getResponseHeader( headerName ) + "\n";
-        }
-      });
-      return allHeaders;
-    };
-
-    return xhr;
-  };
-})();
-    </code></pre>
 
     <h4 id="extending-ajax">Extending Ajax</h4>
     <p><strong>As of jQuery 1.5</strong>, jQuery's Ajax implementation includes <a href="/jQuery.ajaxPrefilter/">prefilters</a>, <a href="/jQuery.ajaxTransport/">transports</a>, and converters that allow you to extend Ajax with a great deal of flexibility.</p>
