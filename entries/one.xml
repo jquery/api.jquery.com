@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <entry type="method" name="one" return="jQuery">
   <title>.one()</title>
-  <desc>Attach a handler to an event for the elements. The handler is executed at most once per element.</desc>
+  <desc>Attach a handler to an event for the elements. The handler is executed at most once per element per event type.</desc>
   <signature>
     <added>1.1</added>
     <argument name="events" type="String">
@@ -107,6 +107,19 @@ $( "p" ).one( "click", function() {
   alert( $( this ).text() );
 });
 ]]></code>
+  </example>
+  <example>
+    <desc>Event handlers will trigger once per element per event type</desc>
+    <code><![CDATA[
+var n = 0;
+$(".target").one("click mouseenter", function() {
+  $(".count").html(++n);
+});
+]]></code>
+    <html><![CDATA[
+<div class="count">0</div>
+<div class="target">Hover/click me</div>
+]]></html>
   </example>
   <category slug="events/event-handler-attachment"/>
   <category slug="version/1.1"/>
