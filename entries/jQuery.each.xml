@@ -48,10 +48,11 @@ $.each( obj, function( key, value ) {
 var arr = [ "one", "two", "three", "four", "five" ];
 var obj = { one: 1, two: 2, three: 3, four: 4, five: 5 };
 
-jQuery.each( arr, function() {
-  $( "#" + this ).text( "Mine is " + this + "." );
+jQuery.each( arr, function( i, val ) {
+  $( "#" + val ).text( "Mine is " + val + "." );
+
   // Will stop running after "three"
-  return ( this !== "three" );
+  return ( val !== "three" );
 });
 
 jQuery.each( obj, function( i, val ) {
