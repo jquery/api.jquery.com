@@ -26,6 +26,9 @@
       <desc>A JavaScript event object as passed to an event handler.</desc>
     </argument>
   </signature>
+  <signature>
+    <added>1.0</added>
+  </signature>
   <longdesc>
     <p>Event handlers attached with <code>.bind()</code> can be removed with <code>.unbind()</code>. (As of jQuery 1.7, the <a href="http://api.jquery.com/on"><code>.on()</code></a> and <a href="http://api.jquery.com/off"><code>.off()</code></a> methods are preferred to attach and remove event handlers on elements.) In the simplest case, with no arguments, <code>.unbind()</code> removes all handlers attached to the elements:</p>
     <pre><code>$('#foo').unbind();</code></pre>
