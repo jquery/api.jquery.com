@@ -8,7 +8,6 @@
   <longdesc>
     <p>This property can be manipulated to adjust the number of frames per second at which animations will run. The default is 13 milliseconds. Making this a lower number could make the animations run smoother in faster browsers (such as Chrome) but there may be performance and CPU implications of doing so.</p>
     <p>Since jQuery uses one global interval, no animation should be running or all animations should stop for the change of this property to take effect.</p>
-    <p><strong>Note:</strong><code>jQuery.fx.interval</code> currently has no effect in browsers that support the <code>requestAnimationFrame</code> property, such as Google Chrome 11. This behavior is subject to change in a future release.</p>
   </longdesc>
   <example>
     <desc>Cause all animations to run with less frames.</desc>
