@@ -19,6 +19,9 @@
   <desc>Create a deep copy of the set of matched elements.</desc>
   <longdesc>
     <p>The <code>.clone()</code> method performs a <em>deep</em> copy of the set of matched elements, meaning that it copies the matched elements as well as all of their descendant elements and text nodes.</p>
+    <div class="warning">
+      <p><strong>Note:</strong> For performance reasons, the dynamic state of certain form elements (e.g., user data typed into <code>textarea</code> and user selections made to a <code>select</code>) is not copied to the cloned elements. When cloning <code>input</code> elements, the dynamic state of the element (e.g., user data typed into text inputs and user selections made to a checkbox) is retained in the cloned elements.</p>
+    </div>
     <p>When used in conjunction with one of the insertion methods, <code>.clone()</code> is a convenient way to duplicate elements on a page. Consider the following HTML:</p>
     <pre><code>
 &lt;div class="container"&gt;
