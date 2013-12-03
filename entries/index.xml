@@ -79,7 +79,7 @@ alert( "Index: " + $( "#bar" ).index() );
     </p>
   </longdesc>
   <example>
-    <desc>On click, returns the index (based zero) of that div in the page.</desc>
+    <desc>On click, returns the index (zero-based) of that div in the page.</desc>
     <code><![CDATA[
 $( "div" ).click(function() {
   // `this` is the DOM element that was clicked
