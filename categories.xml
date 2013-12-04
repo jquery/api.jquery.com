@@ -3,7 +3,7 @@
   <category name="Ajax" slug="ajax">
     <desc><![CDATA[The jQuery library has a full suite of AJAX capabilities. The functions and methods therein allow us to load data from the server without a browser page refresh. ]]></desc>
     <category name="Global Ajax Event Handlers" slug="global-ajax-event-handlers">
-      <desc><![CDATA[These methods register handlers to be called when certain events, such as initialization or completion, take place for any AJAX request on the page. The global events are fired on each AJAX request if the <code>global</code> property in <a href="http://api.jquery.com/jQuery.ajaxSetup/"><code>jQuery.ajaxSetup()</code></a> is <code>true</code>, which it is by default. <em>Note: Global events are never fired for cross-domain script or JSONP requests, regardless of the value of <code>global</code>.</em>]]></desc>
+      <desc><![CDATA[These methods register handlers to be called when certain events, such as initialization or completion, take place for any AJAX request on the page. The global events are fired on each AJAX request if the <code>global</code> property in <a href="/jQuery.ajaxSetup/"><code>jQuery.ajaxSetup()</code></a> is <code>true</code>, which it is by default. <em>Note: Global events are never fired for cross-domain script or JSONP requests, regardless of the value of <code>global</code>.</em>]]></desc>
     </category>
     <category name="Helper Functions" slug="helper-functions">
       <desc><![CDATA[These functions assist with common idioms encountered when performing AJAX tasks.]]></desc>

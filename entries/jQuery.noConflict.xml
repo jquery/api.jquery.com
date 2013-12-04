@@ -92,7 +92,7 @@ jQuery( "div > p" ).hide();
 <div id="log">
   <h3>Before $.noConflict(true)</h3>
 </div>
-<script src="http://code.jquery.com/jquery-1.6.2.js"></script>
+<script src="//code.jquery.com/jquery-1.6.2.js"></script>
 ]]></html>
     <code><![CDATA[
 var $log = $( "#log" );

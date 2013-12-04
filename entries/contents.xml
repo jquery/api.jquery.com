@@ -55,7 +55,7 @@ $( "p" )
 $( "#frameDemo" ).contents().find( "a" ).css( "background-color", "#BADA55" );
 ]]></code>
     <html><![CDATA[
-<iframe src="http://api.jquery.com/" width="80%" height="600" id="frameDemo"></iframe>
+<iframe src="//api.jquery.com/" width="80%" height="600" id="frameDemo"></iframe>
 ]]></html>
   </example>
   <category slug="traversing/miscellaneous-traversal"/>

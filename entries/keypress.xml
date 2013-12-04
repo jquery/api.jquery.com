@@ -104,7 +104,7 @@ $( "#other" ).click(function() {
 <button id="other">
   Trigger the handler
 </button>
-<script src="http://api.jquery.com/resources/events.js"></script>
+<script src="/resources/events.js"></script>
 ]]></html>
   </example>
   <category slug="events/keyboard-events"/>
