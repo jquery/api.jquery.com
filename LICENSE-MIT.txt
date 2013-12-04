@@ -1,5 +1,5 @@
 Copyright (c) 2009 Packt Publishing, http://packtpub.com/
-Copyright (c) 2013 jQuery Foundation, http://jquery.org/
+Copyright (c) 2013 jQuery Foundation, https://jquery.org/
 
 This software consists of voluntary contributions made by many
 individuals. For exact contribution history, see the revision history
