@@ -12,7 +12,7 @@
 	&lt;meta charset="utf-8"&gt;
 	&lt;title&gt;<xsl:value-of select="//entry/@name"/> demo&lt;/title&gt;<xsl:if test="css">
 	&lt;style&gt;<xsl:value-of select="css/text()"/>	&lt;/style&gt;</xsl:if>
-	&lt;script src="//code.jquery.com/jquery-1.9.1.js"&gt;&lt;/script&gt;<xsl:if test="code/@location='head'">
+	&lt;script src="//code.jquery.com/jquery-1.10.2.js"&gt;&lt;/script&gt;<xsl:if test="code/@location='head'">
 	&lt;script&gt;
 	<xsl:copy-of select="code/text()"/>
 	&lt;/script&gt;
