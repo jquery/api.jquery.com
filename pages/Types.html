@@ -112,7 +112,7 @@ var x = "";
 "&lt;a href=\"home\"&gt;Home&lt;/a&gt;"
 </code></pre>
 <h3 id="Built-in_Methods"> Built-in Methods </h3>
-<p>A string in JavaScript has some built-in methods to manipulate the string, though the result is always a new string - or something else, eg. split returns an <a href="http://api.jquery.com/Types/#Array" title="Types">array</a>.
+<p>A string in JavaScript has some built-in methods to manipulate the string, though the result is always a new string - or something else, eg. split returns an <a href="/Types/#Array" title="Types">array</a>.
 </p>
 <pre><code data-lang="javascript">"hello".charAt( 0 ) // "h"
 "hello".toUpperCase() // "HELLO"
@@ -291,7 +291,7 @@ for( key in obj ) {
 </code></pre>
 <p>Note that for-in-loop can be spoiled by extending Object.prototype (see <a href="http://erik.eae.net/archives/2005/06/06/22.13.54" class="external text" title="http://erik.eae.net/archives/2005/06/06/22.13.54">Object.prototype is verboten</a>) so take care when using other libraries.
 </p>
-<p>jQuery provides a generic <a href="http://api.jquery.com/jQuery.each/"><em>each</em> function</a> to iterate over properties of objects, as well as elements of arrays:
+<p>jQuery provides a generic <a href="/jQuery.each/"><em>each</em> function</a> to iterate over properties of objects, as well as elements of arrays:
 </p>
 <pre><code data-lang="javascript">jQuery.each( obj, function( key, value ) {
   console.log( "key", key, "value", value );
@@ -360,7 +360,7 @@ y[ 2 ] // 3
   // Do something with item
 }
 </code></pre>
-<p>jQuery provides a generic <a href="http://api.jquery.com/jQuery.each/"><em>each</em> function</a> to iterate over element of arrays, as well as properties of objects:
+<p>jQuery provides a generic <a href="/jQuery.each/"><em>each</em> function</a> to iterate over element of arrays, as well as properties of objects:
 </p>
 <pre><code data-lang="javascript">var x = [ 1, 2, 3 ];
 jQuery.each( x, function( index, value ) {
@@ -544,7 +544,7 @@ c.print(); // 1
 <h2 id="Selector"> Selector </h2>
 <p>A selector is used in jQuery to select DOM elements from a DOM document. That document is, in most cases, the DOM document present in all browsers, but can also be an XML document received via AJAX.
 </p>
-<p>The selectors are a composition of CSS and custom additions. All selectors available in jQuery are documented on the <a href="http://api.jquery.com/category/selectors" title="Selectors">Selectors API page</a>.
+<p>The selectors are a composition of CSS and custom additions. All selectors available in jQuery are documented on the <a href="/category/selectors/" title="Selectors">Selectors API page</a>.
 </p>
 <p>There are lot of plugins that leverage jQuery's selectors in other ways. The validation plugin accepts a selector to specify a dependency, whether an input is required or not:
 </p>
@@ -559,7 +559,7 @@ c.print(); // 1
 <h2 id="Event">Event</h2>
 <p>jQuery's event system normalizes the event object according to W3C standards. The event object is guaranteed to be passed to the event handler (no checks for window.event required). It normalizes the target, relatedTarget, which, metaKey and pageX/Y properties and provides both stopPropagation() and preventDefault() methods.
 </p>
-<p>Those properties are all documented, and accompanied by examples, on the <a href="http://api.jquery.com/category/events/event-object/" title="Events">Event object</a> page.
+<p>Those properties are all documented, and accompanied by examples, on the <a href="/category/events/event-object/" title="Events">Event object</a> page.
 </p>
 <p>The standard events in the Document Object Model are: <code>blur</code>, <code>focus</code>, <code> load</code>, <code>resize</code>, <code>scroll</code>, <code>unload</code>, <code>beforeunload</code>, <code>click</code>, <code>dblclick</code>, <code>mousedown</code>, <code>mouseup</code>, <code>mousemove</code>, <code>mouseover</code>, <code>mouseout</code>, <code>mouseenter</code>, <code>mouseleave</code>, <code>change</code>, <code>select</code>, <code>submit</code>, <code>keydown</code>, <code>keypress,</code> and <code>keyup</code>. Since the DOM event names have predefined meanings for some elements, using them for other purposes is not recommended. jQuery's event model can trigger an event by any name on an element, and it is propagated up the DOM tree to which that element belongs, if any.
 </p>
@@ -607,13 +607,13 @@ c.print(); // 1
 <p>Google does not appear to have an official page for their XHR documentation for Chrome. As of version 5, Chrome does not support the use of the file protocol for XHR requests.
 </p>
 <h2 id="jqXHR"> jqXHR </h2>
-<p>As of jQuery 1.5, the <a href="http://api.jquery.com/jQuery.ajax/">$.ajax()</a> method returns the jqXHR object, which is a superset of the XMLHTTPRequest object. For more information, see the <a href="http://api.jquery.com/jQuery.ajax/#jqXHR">jqXHR section of the $.ajax entry</a>
+<p>As of jQuery 1.5, the <a href="/jQuery.ajax/">$.ajax()</a> method returns the jqXHR object, which is a superset of the XMLHTTPRequest object. For more information, see the <a href="/jQuery.ajax/#jqXHR">jqXHR section of the $.ajax entry</a>
 </p>
 <h2 id="Deferred"> Deferred Object</h2>
-<p>As of jQuery 1.5, the <a href="http://api.jquery.com/category/deferred-object">Deferred</a> object provides a way to register multiple callbacks into self-managed callback queues, invoke callback queues as appropriate, and relay the success or failure state of any synchronous or asynchronous function.
+<p>As of jQuery 1.5, the <a href="/category/deferred-object/">Deferred</a> object provides a way to register multiple callbacks into self-managed callback queues, invoke callback queues as appropriate, and relay the success or failure state of any synchronous or asynchronous function.
 </p>
 <h2 id="Promise"> Promise Object</h2>
-<p>This object provides a subset of the methods of the <a href="http://api.jquery.com/category/deferred-object">Deferred</a> object (<a href="http://api.jquery.com/deferred.then/"><code>then</code></a>, <a href="http://api.jquery.com/deferred.done/"><code>done</code></a>, <a href="http://api.jquery.com/deferred.fail/"><code>fail</code></a>, <a href="http://api.jquery.com/deferred.always"><code>always</code></a>, <a href="http://api.jquery.com/deferred.pipe/"><code>pipe</code></a>. <a href="http://api.jquery.com/deferred.isResolved/"><code>isResolved</code></a>, and <a href="http://api.jquery.com/deferred.isRejected/"><code>isRejected</code></a>) to prevent users from changing the state of the Deferred.
+<p>This object provides a subset of the methods of the <a href="/category/deferred-object/">Deferred</a> object (<a href="/deferred.then/"><code>then</code></a>, <a href="/deferred.done/"><code>done</code></a>, <a href="/deferred.fail/"><code>fail</code></a>, <a href="/deferred.always/"><code>always</code></a>, <a href="/deferred.pipe/"><code>pipe</code></a>. <a href="/deferred.isResolved/"><code>isResolved</code></a>, and <a href="/deferred.isRejected/"><code>isRejected</code></a>) to prevent users from changing the state of the Deferred.
 </p>
 <h2 id="Callbacks">Callbacks Object</h2>
 <p>A multi-purpose object that provides a powerful way to manage callback lists. It supports adding, removing, firing, and disabling callbacks. The Callbacks object is created and returned by the <code>$.Callbacks</code> function and subsequently returned by most of that function's methods. </p>
