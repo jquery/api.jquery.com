@@ -1,18 +1,18 @@
 <?xml version="1.0"?>
 <categories>
   <category name="Ajax" slug="ajax">
-    <desc><![CDATA[The jQuery library has a full suite of AJAX capabilities. The functions and methods therein allow us to load data from the server without a browser page refresh. ]]></desc>
+    <desc><![CDATA[The jQuery library has a full suite of Ajax capabilities. The functions and methods therein allow us to load data from the server without a browser page refresh. ]]></desc>
     <category name="Global Ajax Event Handlers" slug="global-ajax-event-handlers">
-      <desc><![CDATA[These methods register handlers to be called when certain events, such as initialization or completion, take place for any AJAX request on the page. The global events are fired on each AJAX request if the <code>global</code> property in <a href="/jQuery.ajaxSetup/"><code>jQuery.ajaxSetup()</code></a> is <code>true</code>, which it is by default. <em>Note: Global events are never fired for cross-domain script or JSONP requests, regardless of the value of <code>global</code>.</em>]]></desc>
+      <desc><![CDATA[These methods register handlers to be called when certain events, such as initialization or completion, take place for any Ajax request on the page. The global events are fired on each Ajax request if the <code>global</code> property in <a href="/jQuery.ajaxSetup/"><code>jQuery.ajaxSetup()</code></a> is <code>true</code>, which it is by default. <em>Note: Global events are never fired for cross-domain script or JSONP requests, regardless of the value of <code>global</code>.</em>]]></desc>
     </category>
     <category name="Helper Functions" slug="helper-functions">
-      <desc><![CDATA[These functions assist with common idioms encountered when performing AJAX tasks.]]></desc>
+      <desc><![CDATA[These functions assist with common idioms encountered when performing Ajax tasks.]]></desc>
     </category>
     <category name="Low-Level Interface" slug="low-level-interface">
-      <desc><![CDATA[These methods can be used to make arbitrary AJAX requests.]]></desc>
+      <desc><![CDATA[These methods can be used to make arbitrary Ajax requests.]]></desc>
     </category>
     <category name="Shorthand Methods" slug="shorthand-methods">
-      <desc><![CDATA[These methods perform the more common types of AJAX requests in less code.]]></desc>
+      <desc><![CDATA[These methods perform the more common types of Ajax requests in less code.]]></desc>
     </category>
   </category>
   <category name="Attributes" slug="attributes">
