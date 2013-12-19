@@ -14,8 +14,11 @@
       </p>
       <p>This method is also able to find the height of the window and document.</p>
       <pre><code>
-$( window ).height(); // returns height of browser viewport
-$( document ).height(); // returns height of HTML document
+// Returns height of browser viewport
+$( window ).height();
+
+// Returns height of HTML document
+$( document ).height();
       </code></pre>
       <p>Note that <code>.height()</code> will always return the content height, regardless of the value of the CSS <code>box-sizing</code> property. As of jQuery 1.8, this may require retrieving the CSS height plus <code>box-sizing</code> property and then subtracting any potential border and padding on each element when the element has <code>box-sizing: border-box</code>. To avoid this penalty, use <code>.css( "height" )</code> rather than <code>.height()</code>.</p>
       <div class="warning">
