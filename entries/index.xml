@@ -133,7 +133,7 @@ $( "div" ).html( "Index: " + $( "li" ).index( listItem ) );
   }
 ]]></css>
     <code><![CDATA[
-var listItems = $( "li:gt(0)" ");
+var listItems = $( "li:gt(0)" );
 $( "div" ).html( "Index: " + $( "li" ).index( listItems ) );
 ]]></code>
     <html><![CDATA[
