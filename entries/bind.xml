@@ -21,7 +21,7 @@
     <argument name="eventData" type="Object" optional="true">
       <desc>An object containing data that will be passed to the event handler.</desc>
     </argument>
-    <argument name="preventBubble" type="Boolean">
+    <argument name="preventBubble" type="Boolean" optional="true">
       <desc>Setting the third argument to false will attach a function that prevents the default action from occurring and stops the event from bubbling. The default is true.</desc>
     </argument>
   </signature>
