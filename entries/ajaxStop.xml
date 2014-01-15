@@ -18,8 +18,8 @@
     </code></pre>
     <p>Attach the event handler to the document:</p>
     <pre><code>
-$( ".log" ).ajaxStop(function() {
-  $( this ).text( "Triggered ajaxStop handler." );
+$( document ).ajaxStop(function() {
+  $( ".log" ).text( "Triggered ajaxStop handler." );
 });
     </code></pre>
     <p>Now, make an Ajax request using any jQuery method:</p>

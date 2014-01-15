@@ -19,7 +19,7 @@
     <p>Attach the event handler to the document:</p>
     <pre><code>
 $( document ).ajaxError(function() {
-  $( "div.log" ).text( "Triggered ajaxError handler." );
+  $( ".log" ).text( "Triggered ajaxError handler." );
 });
     </code></pre>
     <p>Now, make an Ajax request using any jQuery method:</p>
