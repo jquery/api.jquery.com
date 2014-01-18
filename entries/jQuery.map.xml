@@ -6,7 +6,10 @@
     <argument name="array" type="Array">
       <desc>The Array to translate.</desc>
     </argument>
-    <argument name="callback( elementOfArray, indexInArray )" type="Function">
+    <argument name="callback" type="Function">
+      <argument name="elementOfArray" type="Object" />
+      <argument name="indexInArray" type="Integer" />
+      <return type="Object" />      
       <desc>The function to process each item against.  The first argument to the function is the array item, the second argument is the index in array The function can return any value. Within the function, <code>this</code> refers to the global (window) object.</desc>
     </argument>
   </signature>
@@ -17,7 +20,13 @@
       <type name="Object"/>
       <desc>The Array or Object to translate.</desc>
     </argument>
-    <argument name="callback( value, indexOrKey )" type="Function">
+    <argument name="callback" type="Function">
+      <argument name="elementOfArray" type="Object" />
+      <argument name="indexOrKey">
+        <type name="Integer"/>
+        <type name="String"/>
+      </argument>      
+      <return type="Object" />            
       <desc>The function to process each item against.  The first argument to the function is the value; the second argument is the index or key of the array or object property. The function can return any value to add to the array. A returned array will be flattened into the resulting array. Within the function, <code>this</code> refers to the global (window) object. </desc>
     </argument>
   </signature>

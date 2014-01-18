@@ -7,8 +7,11 @@
     <argument name="dataTypes" optional="true" type="String">
       <desc>An optional string containing one or more space-separated dataTypes</desc>
     </argument>
-    <argument name="handler(options, originalOptions, jqXHR)" type="Function">
+    <argument name="handler" type="Function">
       <desc>A handler to set default values for future Ajax requests.</desc>
+      <argument name="options" type="ajaxOptions" />
+      <argument name="originalOptions" type="ajaxOptions" />
+      <argument name="jqXHR" type="jqXHR" />      
     </argument>
   </signature>
   <longdesc>

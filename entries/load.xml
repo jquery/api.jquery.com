@@ -11,7 +11,10 @@
       <type name="String"/>
       <desc>A plain object or string that is sent to the server with the request.</desc>
     </argument>
-    <argument name="complete(responseText, textStatus, XMLHttpRequest)" type="Function" optional="true">
+    <argument name="complete" type="Function" optional="true">
+      <argument name="responseText" type="String" />
+      <argument name="textStatus" type="String"/>
+      <argument name="XMLHttpRequest" type="XMLHttpRequest"/>       
       <desc>A callback function that is executed when the request completes.</desc>
     </argument>
   </signature>

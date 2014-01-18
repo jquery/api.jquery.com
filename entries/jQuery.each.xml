@@ -6,7 +6,12 @@
     <argument name="collection" type="Object">
       <desc>The object or array to iterate over.</desc>
     </argument>
-    <argument name="callback(indexInArray, valueOfElement)" type="Function">
+    <argument name="callback" type="Function">
+      <argument name="indexInArray">
+        <type name="Integer"/>
+        <type name="String"/>
+      </argument>
+      <argument name="valueOfElement" type="Object" />      
       <desc>The function that will be executed on every object.</desc>
     </argument>
   </signature>

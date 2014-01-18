@@ -91,7 +91,7 @@ runIt();
       <argument name="queueName" type="String">
         <desc>A string containing the name of the queue. Defaults to <code>fx</code>, the standard effects queue.</desc>
       </argument>
-      <argument name="callback()" type="Function">
+      <argument name="callback" type="Function">
         <desc>The new function to add to the queue.</desc>
       </argument>
     </signature>

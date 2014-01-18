@@ -4,14 +4,17 @@
   <desc>Bind two or more handlers to the matched elements, to be executed on alternate clicks.</desc>
   <signature>
     <added>1.0</added>
-    <argument name="handler(eventObject)" type="Function">
+    <argument name="handler" type="Function">
       <desc>A function to execute every even time the element is clicked.</desc>
+      <argument name="eventObject" type="Event" />
     </argument>
-    <argument name="handler(eventObject)" type="Function">
+    <argument name="handler" type="Function">
       <desc>A function to execute every odd time the element is clicked.</desc>
+      <argument name="eventObject" type="Event" />
     </argument>
-    <argument name="handler(eventObject)" optional="true" type="Function">
+    <argument name="handler" optional="true" type="Function">
       <desc>Additional handlers to cycle through after clicks.</desc>
+      <argument name="eventObject" type="Event" />
     </argument>
   </signature>
   <longdesc>

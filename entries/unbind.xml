@@ -7,8 +7,9 @@
     <argument name="eventType" type="String">
       <desc>A string containing a JavaScript event type, such as <code>click</code> or <code>submit</code>.</desc>
     </argument>
-    <argument name="handler(eventObject)" type="Function" optional="true">
+    <argument name="handler" type="Function" optional="true">
       <desc>The function that is to be no longer executed.</desc>
+      <argument name="eventObject" type="Event" />
     </argument>
   </signature>
   <signature>

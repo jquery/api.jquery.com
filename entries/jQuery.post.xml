@@ -11,7 +11,10 @@
       <type name="String"/>
       <desc>A plain object or string that is sent to the server with the request.</desc>
     </argument>
-    <argument name="success(data, textStatus, jqXHR)" optional="true" type="Function">
+    <argument name="success" optional="true" type="Function">
+      <argument name="data" type="Object" />
+      <argument name="textStatus" type="String"/>
+      <argument name="jqXHR" type="jqXHR"/>        
       <desc>A callback function that is executed if the request succeeds. Required if <code>dataType</code> is provided, but can be <code>null</code> in that case.</desc>
     </argument>
     <argument name="dataType" optional="true" type="String">
