@@ -14,7 +14,7 @@
     <argument name="complete" type="Function" optional="true">
       <argument name="responseText" type="String" />
       <argument name="textStatus" type="String"/>
-      <argument name="jsXHR" type="jsXHR"/>       
+      <argument name="jqXHR" type="jqXHR"/>       
       <desc>A callback function that is executed when the request completes.</desc>
     </argument>
   </signature>

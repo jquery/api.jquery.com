@@ -9,8 +9,8 @@
     </argument>
     <argument name="handler" type="Function">
       <desc>A handler to set default values for future Ajax requests.</desc>
-      <argument name="options" type="ajaxOptions" />
-      <argument name="originalOptions" type="ajaxOptions" />
+      <argument name="options" type="PlainObject" />
+      <argument name="originalOptions" type="PlainObject" />
       <argument name="jqXHR" type="jqXHR" />      
     </argument>
   </signature>

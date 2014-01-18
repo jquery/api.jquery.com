@@ -6,8 +6,8 @@
     <argument name="handler" type="Function">
       <desc>The function to be invoked.</desc>
       <argument name="event" type="Event" />
-      <argument name="jsXHR" type="jsXHR" />
-      <argument name="ajaxOptions" type="ajaxOptions" />      
+      <argument name="jqXHR" type="jqXHR" />
+      <argument name="ajaxOptions" type="PlainObject" />      
     </argument>
   </signature>
   <desc>Attach a function to be executed whenever an Ajax request completes successfully. This is an <a href="/Ajax_Events/">Ajax Event</a>.</desc>

@@ -5,8 +5,8 @@
     <added>1.0</added>
     <argument name="handler" type="Function">      
       <argument name="event" type="Event" />
-      <argument name="jsXHR" type="jsXHR" />
-      <argument name="ajaxOptions" type="ajaxOptions" />
+      <argument name="jqXHR" type="jqXHR" />
+      <argument name="ajaxOptions" type="PlainObject" />
       <desc>The function to be invoked.</desc>
     </argument>
   </signature>

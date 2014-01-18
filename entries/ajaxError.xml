@@ -7,7 +7,7 @@
       <desc>The function to be invoked.</desc>
       <argument name="event" type="Event" />
       <argument name="jqXHR" type="jqXHR" />
-      <argument name="ajaxSettings" type="ajaxSettings" />      
+      <argument name="ajaxSettings" type="PlainObject" />      
       <argument name="thrownError" type="Error" />   
     </argument>
   </signature>

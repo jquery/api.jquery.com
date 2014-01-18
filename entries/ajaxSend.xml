@@ -7,7 +7,7 @@
       <desc>The function to be invoked.</desc>
       <argument name="event" type="Event" />
       <argument name="jqXHR" type="jqXHR" />
-      <argument name="ajaxOptions" type="ajaxOptions" />
+      <argument name="ajaxOptions" type="PlainObject" />
     </argument>
   </signature>
   <desc>Attach a function to be executed before an Ajax request is sent. This is an <a href="/Ajax_Events/">Ajax Event</a>.</desc>
