@@ -6,7 +6,7 @@
     <argument name="handler" type="Function">
       <desc>The function to be invoked.</desc>
       <argument name="event" type="Event" />
-      <argument name="XMLHttpRequest" type="XMLHttpRequest" />
+      <argument name="jsXHR" type="jsXHR" />
       <argument name="ajaxOptions" type="ajaxOptions" />      
     </argument>
   </signature>

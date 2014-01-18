@@ -5,7 +5,7 @@
     <added>1.0</added>
     <argument name="handler" type="Function">      
       <argument name="event" type="Event" />
-      <argument name="XMLHttpRequest" type="XMLHttpRequest" />
+      <argument name="jsXHR" type="jsXHR" />
       <argument name="ajaxOptions" type="ajaxOptions" />
       <desc>The function to be invoked.</desc>
     </argument>
