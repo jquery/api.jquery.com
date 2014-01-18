@@ -9,7 +9,7 @@
   </signature>
   <signature>
     <added>1.4</added>
-    <argument name="-index" type="Integer">
+    <argument name="indexFromEnd" type="Integer">
       <desc>An integer indicating the position of the element, counting backwards from the last element in the set. </desc>
     </argument>
   </signature>

@@ -6,11 +6,13 @@
     <desc>Bind two handlers to the matched elements, to be executed when the mouse pointer enters and leaves the elements.</desc>
     <signature>
       <added>1.0</added>
-      <argument name="handlerIn(eventObject)" type="Function">
-        <desc>A function to execute when the mouse pointer enters the element.</desc>
+      <argument name="handlerIn" type="Function">
+        <argument name="eventObject" type="Event" />
+        <desc>A function to execute when the mouse pointer enters the element.</desc>        
       </argument>
-      <argument name="handlerOut(eventObject)" type="Function">
-        <desc>A function to execute when the mouse pointer leaves the element.</desc>
+      <argument name="handlerOut" type="Function">
+        <argument name="eventObject" type="Event" />
+        <desc>A function to execute when the mouse pointer leaves the element.</desc>        
       </argument>
     </signature>
     <longdesc>
@@ -83,8 +85,9 @@ $( "td" ).off( "mouseenter mouseleave" );
     <desc>Bind a single handler to the matched elements, to be executed when the mouse pointer enters or leaves the elements.</desc>
     <signature>
       <added>1.4</added>
-      <argument name="handlerInOut(eventObject)" type="Function">
-        <desc>A function to execute when the mouse pointer enters or leaves the element.</desc>
+      <argument name="handlerInOut" type="Function">
+        <argument name="eventObject" type="Event" />
+        <desc>A function to execute when the mouse pointer enters or leaves the element.</desc>        
       </argument>
     </signature>
     <longdesc>

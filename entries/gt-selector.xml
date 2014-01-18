@@ -11,7 +11,7 @@
   <signature>
     <sample>:gt(-index)</sample>
     <added>1.8</added>
-    <argument name="-index" type="Integer">
+    <argument name="indexFromEnd" type="Integer">
       <desc>Zero-based index, counting backwards from the last element. </desc>
     </argument>
   </signature>

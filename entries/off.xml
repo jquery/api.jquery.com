@@ -10,8 +10,9 @@
     <argument name="selector" type="String" optional="true">
       <desc>A selector which should match the one originally passed to <code>.on()</code> when attaching event handlers.</desc>
     </argument>
-    <argument name="handler(eventObject)" type="Function" optional="true">
+    <argument name="handler" type="Function" optional="true">
       <desc>A handler function previously attached for the event(s), or the special value <code>false</code>.</desc>
+      <argument name="eventObject" type="Event" />
     </argument>
   </signature>
   <signature>

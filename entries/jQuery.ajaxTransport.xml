@@ -7,8 +7,11 @@
     <argument name="dataType" type="String">
       <desc>A string identifying the data type to use</desc>
     </argument>
-    <argument name="handler(options, originalOptions, jqXHR)" type="Function">
+    <argument name="handler" type="Function">
       <desc>A handler to return the new transport object to use with the data type provided in the first argument.</desc>
+      <argument name="options" type="PlainObject" />
+      <argument name="originalOptions" type="PlainObject" />
+      <argument name="jqXHR" type="jqXHR" />
     </argument>
   </signature>
   <longdesc>

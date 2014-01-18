@@ -9,7 +9,10 @@
     <argument name="data" optional="true" type="PlainObject">
       <desc>A plain object or string that is sent to the server with the request.</desc>
     </argument>
-    <argument name="success( data, textStatus, jqXHR )" optional="true" type="Function">
+    <argument name="success" optional="true" type="Function">
+      <argument name="data" type="PlainObject" />
+      <argument name="textStatus" type="String"/>
+      <argument name="jqXHR" type="jqXHR"/>      
       <desc>A callback function that is executed if the request succeeds.</desc>
     </argument>
   </signature>

@@ -3,6 +3,7 @@
   <desc>Get the value of a property for the first element in the set of matched elements or set one or more properties for every matched element.</desc>
   <entry type="method" name="prop">
     <return type="String"/>
+    <return type="Integer"/>
     <return type="Boolean"/>
     <title>.prop()</title>
     <signature>
@@ -132,7 +133,18 @@ $( "input" ).change(function() {
       <argument name="propertyName" type="String">
         <desc>The name of the property to set.</desc>
       </argument>
-      <argument name="function(index, oldPropertyValue)" type="Function">
+      <argument name="function" type="Function">
+      <argument name="index" type="Integer" />
+      <argument name="oldPropertyValue">
+        <type name="String"/>
+        <type name="Number"/>
+        <type name="Boolean"/>                
+      </argument>
+      <return>
+        <type name="String"/>
+        <type name="Number"/>
+        <type name="Boolean"/>        
+      </return>        
         <desc>A function returning the value to set. Receives the index position of the element in the set and the old property value as arguments. Within the function, the keyword <code>this</code> refers to the current element.</desc>
       </argument>
     </signature>

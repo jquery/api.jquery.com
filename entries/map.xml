@@ -3,7 +3,10 @@
   <title>.map()</title>
   <signature>
     <added>1.2</added>
-    <argument name="callback(index, domElement)" type="Function">
+    <argument name="callback" type="Function">
+        <argument name="index" type="Integer" />
+        <argument name="domElement" type="Element" />
+        <return type="Object" />
       <desc>A function object that will be invoked for each element in the current set.</desc>
     </argument>
   </signature>

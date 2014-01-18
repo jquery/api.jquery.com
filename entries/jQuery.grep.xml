@@ -7,7 +7,10 @@
     <argument name="array" type="Array">
       <desc>The array to search through.</desc>
     </argument>
-    <argument name="function(elementOfArray, indexInArray)" type="Function">
+    <argument name="function" type="Function">
+      <argument name="elementOfArray" type="Object" />
+      <argument name="indexInArray" type="Integer" />
+      <return type="Boolean" />
       <desc>The function to process each item against.  The first argument to the function is the item, and the second argument is the index.  The function should return a Boolean value.  <code>this</code> will be the global window object.</desc>
     </argument>
     <argument name="invert" optional="true" type="Boolean">

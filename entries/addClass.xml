@@ -9,8 +9,11 @@
   </signature>
   <signature>
     <added>1.4</added>
-    <argument name="function(index, currentClass)" type="Function">
+    <argument name="function" type="Function">
       <desc>A function returning one or more space-separated class names to be added to the existing class name(s). Receives the index position of the element in the set and the existing class name(s) as arguments. Within the function, <code>this</code> refers to the current element in the set.</desc>
+      <argument name="index" type="Integer" />
+      <argument name="currentClassName" type="String" />
+      <return type="String"/>
     </argument>
   </signature>
   <desc>Adds the specified class(es) to each of the set of matched elements.</desc>

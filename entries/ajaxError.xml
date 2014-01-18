@@ -3,8 +3,12 @@
   <title>.ajaxError()</title>
   <signature>
     <added>1.0</added>
-    <argument name="handler(event, jqXHR, ajaxSettings, thrownError)" type="Function">
+    <argument name="handler" type="Function">
       <desc>The function to be invoked.</desc>
+      <argument name="event" type="Event" />
+      <argument name="jqXHR" type="jqXHR" />
+      <argument name="ajaxSettings" type="PlainObject" />      
+      <argument name="thrownError" type="String" />   
     </argument>
   </signature>
   <desc>Register a handler to be called when Ajax requests complete with an error. This is an <a href="/Ajax_Events/">Ajax Event</a>.</desc>

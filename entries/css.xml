@@ -123,8 +123,14 @@ $( "div" ).click(function() {
       <argument name="propertyName" type="String">
         <desc>A CSS property name.</desc>
       </argument>
-      <argument name="function(index, value)" type="Function">
+      <argument name="function" type="Function">
         <desc>A function returning the value to set. <code>this</code> is the current element. Receives the index position of the element in the set and the old value as arguments.</desc>
+        <argument name="index" type="Integer" />
+        <argument name="value" type="String" />
+        <return>  
+          <type name="String"/>
+          <type name="Number"/>
+        </return>
       </argument>
     </signature>
     <signature>
