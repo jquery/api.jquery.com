@@ -19,7 +19,7 @@
     </signature>
     <signature>
       <added>1.6</added>
-      <argument name="jQuery object" type="jQuery">
+      <argument name="jQueryObject" type="jQuery">
         <desc>A jQuery object to match elements against.</desc>
       </argument>
     </signature>
