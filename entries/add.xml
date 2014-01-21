@@ -21,7 +21,7 @@
   </signature>
   <signature>
     <added>1.3.2</added>
-    <argument name="jQuery object" type="jQuery object ">
+    <argument name="jQueryObject" type="jQuery">
       <desc>An existing jQuery object to add to the set of matched elements.</desc>
     </argument>
   </signature>

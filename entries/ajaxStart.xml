@@ -3,7 +3,7 @@
   <title>.ajaxStart()</title>
   <signature>
     <added>1.0</added>
-    <argument name="handler()" type="Function">
+    <argument name="handler" type="Function">
       <desc>The function to be invoked.</desc>
     </argument>
   </signature>

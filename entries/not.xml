@@ -15,13 +15,15 @@
   </signature>
   <signature>
     <added>1.4</added>
-    <argument name="function(index)" type="Function">
+    <argument name="function" type="Function">
       <desc>A function used as a test for each element in the set. <code>this</code> is the current DOM element.</desc>
+      <argument name="index" type="Integer" />
+      <return type="Boolean" />      
     </argument>
   </signature>
   <signature>
     <added>1.4</added>
-    <argument name="jQuery object" type="PlainObject">
+    <argument name="selection" type="jQuery">
       <desc>An existing jQuery object to match the current set of elements against.</desc>
     </argument>
   </signature>

@@ -10,8 +10,9 @@
     <argument name="data" type="PlainObject" optional="true">
       <desc>An object containing data that will be passed to the event handler.</desc>
     </argument>
-    <argument name="handler(eventObject)" type="Function">
+    <argument name="handler" type="Function">
       <desc>A function to execute at the time the event is triggered.</desc>
+      <argument name="eventObject" type="Event" />
     </argument>
   </signature>
   <signature>
@@ -25,8 +26,9 @@
     <argument name="data" type="Anything" optional="true">
       <desc>Data to be passed to the handler in <a href="/event.data/"><code>event.data</code></a> when an event is triggered.</desc>
     </argument>
-    <argument name="handler(eventObject)" type="Function">
+    <argument name="handler" type="Function">
       <desc>A function to execute when the event is triggered. The value <code>false</code> is also allowed as a shorthand for a function that simply does <code>return false</code>.</desc>
+      <argument name="eventObject" type="Event" />
     </argument>
   </signature>
   <signature>

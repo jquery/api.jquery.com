@@ -3,8 +3,11 @@
   <title>.ajaxSuccess()</title>
   <signature>
     <added>1.0</added>
-    <argument name="handler(event, XMLHttpRequest, ajaxOptions)" type="Function">
+    <argument name="handler" type="Function">
       <desc>The function to be invoked.</desc>
+      <argument name="event" type="Event" />
+      <argument name="jqXHR" type="jqXHR" />
+      <argument name="ajaxOptions" type="PlainObject" />      
     </argument>
   </signature>
   <desc>Attach a function to be executed whenever an Ajax request completes successfully. This is an <a href="/Ajax_Events/">Ajax Event</a>.</desc>

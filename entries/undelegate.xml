@@ -22,8 +22,9 @@
     <argument name="eventType" type="String">
       <desc>A string containing a JavaScript event type, such as "click" or "keydown"</desc>
     </argument>
-    <argument name="handler(eventObject)" type="Function">
+    <argument name="handler" type="Function">
       <desc>A function to execute at the time the event is triggered.</desc>
+      <argument name="eventObject" type="Event" />
     </argument>
   </signature>
   <signature>

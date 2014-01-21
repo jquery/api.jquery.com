@@ -3,8 +3,9 @@
   <title>.unload()</title>
   <signature>
     <added>1.0</added>
-    <argument name="handler(eventObject)" type="Function">
+    <argument name="handler" type="Function">
       <desc>A function to execute when the event is triggered.</desc>
+      <argument name="eventObject" type="Event" />
     </argument>
   </signature>
   <signature>
@@ -12,8 +13,9 @@
     <argument name="eventData" type="Object" optional="true">
       <desc>A plain object of data that will be passed to the event handler.</desc>
     </argument>
-    <argument name="handler(eventObject)" type="Function">
+    <argument name="handler" type="Function">
       <desc>A function to execute each time the event is triggered.</desc>
+      <argument name="eventObject" type="Event" />
     </argument>
   </signature>
   <desc>Bind an event handler to the "unload" JavaScript event.</desc>
