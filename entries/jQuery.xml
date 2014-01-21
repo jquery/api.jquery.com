@@ -34,7 +34,7 @@
     </signature>
     <signature>
       <added>1.0</added>
-      <argument name="jQueryObject" type="jQuery">
+      <argument name="selection" type="jQuery">
         <desc>An existing jQuery object to clone.</desc>
       </argument>
     </signature>

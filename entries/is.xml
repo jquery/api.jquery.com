@@ -17,7 +17,7 @@
   </signature>
   <signature>
     <added>1.6</added>
-    <argument name="jQueryObject" type="Object">
+    <argument name="selection" type="jQuery">
       <desc>An existing jQuery object to match the current set of elements against.</desc>
     </argument>
   </signature>
