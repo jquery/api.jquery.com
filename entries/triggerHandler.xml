@@ -16,7 +16,7 @@
     <ul>
       <li>The <code>.triggerHandler()</code> method does not cause the default behavior of an event to occur (such as a form submission).</li>
       <li>While <code>.trigger()</code> will operate on all elements matched by the jQuery object, <code>.triggerHandler()</code> only affects the first matched element.</li>
-      <li>Events created with <code>.triggerHandler()</code> do not bubble up the DOM hierarchy; if they are not handled by the target element directly, they do nothing.</li>
+      <li>Events triggered with <code>.triggerHandler()</code> do not bubble up the DOM hierarchy; if they are not handled by the target element directly, they do nothing.</li>
       <li>Instead of returning the jQuery object (to allow chaining), <code>.triggerHandler()</code> returns whatever value was returned by the last handler it caused to be executed. If no handlers are triggered, it returns <code>undefined</code></li>
     </ul>
     <p>For more information on this method, see the discussion for <code><a href="/trigger/">.trigger()</a></code>.</p>
