@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<entry type="method" name="innerWidth" return="Integer">
+<entry type="method" name="innerWidth" return="Number">
   <title>.innerWidth()</title>
   <signature>
     <added>1.2.6</added>
@@ -12,6 +12,7 @@
       <img src="/resources/0042_04_05.png"/>
     </p>
   </longdesc>
+	<note id="dimensions-number" type="additional" data-title=".innerWidth()"/>
   <example>
     <desc>Get the innerWidth of a paragraph.</desc>
     <code><![CDATA[

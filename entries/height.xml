@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <entries>
   <desc>Get the current computed height for the first element in the set of matched elements or set the height of every matched element.</desc>
-  <entry type="method" name="height" return="Integer">
+  <entry type="method" name="height" return="Number">
     <title>.height()</title>
     <signature>
       <added>1.0</added>
@@ -22,6 +22,7 @@ $( document ).height(); // returns height of HTML document
         <p><strong>Note:</strong> Although <code>style</code> and <code>script</code> tags will report a value for <code>.width()</code> or <code>height()</code> when absolutely positioned and given <code>display:block</code>, it is strongly discouraged to call those methods on these tags. In addition to being a bad practice, the results may also prove unreliable.</p>
       </div>
     </longdesc>
+	<note id="dimensions-number" type="additional" data-title=".height()"/>
     <example>
       <desc>Show various heights.  Note the values are from the iframe so might be smaller than you expected.  The yellow highlight shows the iframe body.</desc>
       <code><![CDATA[

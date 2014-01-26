@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <entries>
   <desc>Get the current computed width for the first element in the set of matched elements or set the width of every matched element.</desc>
-  <entry type="method" name="width" return="Integer">
+  <entry type="method" name="width" return="Number">
     <title>.width()</title>
     <signature>
       <added>1.0</added>
@@ -22,6 +22,7 @@ $( document ).width();
       </code></pre>
       <p>Note that <code>.width()</code> will always return the content width, regardless of the value of the CSS <code>box-sizing</code> property. As of jQuery 1.8, this may require retrieving the CSS width plus <code>box-sizing</code> property and then subtracting any potential border and padding on each element when the element has <code>box-sizing: border-box</code>. To avoid this penalty, use <code>.css( "width" )</code> rather than <code>.width()</code>.</p>
     </longdesc>
+	<note id="dimensions-number" type="additional" data-title=".width()"/>
     <example>
       <desc>Show various widths.  Note the values are from the iframe so might be smaller than you expected.  The yellow highlight shows the iframe body.</desc>
       <code><![CDATA[

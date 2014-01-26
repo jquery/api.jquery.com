@@ -15,7 +15,8 @@
         <p>While it is possible to get the coordinates of elements with <code>visibility:hidden</code> set, <code>display:none</code> is excluded from the rendering tree and thus has a position that is undefined.</p>
       </div>
     </longdesc>
-    <example>
+	<note id="dimensions-number" type="additional" data-title=".offset()"/>
+     <example>
       <desc>Access the offset of the second paragraph:</desc>
       <code><![CDATA[
 var p = $( "p:last" );
@@ -81,7 +82,7 @@ $( "*", document.body ).click(function( event ) {
     <signature>
       <added>1.4</added>
       <argument name="coordinates" type="PlainObject">
-        <desc>An object containing the properties <code>top</code> and <code>left</code>, which are integers indicating the new top and left coordinates for the elements.</desc>
+        <desc>An object containing the properties <code>top</code> and <code>left</code>, which are numbers indicating the new top and left coordinates for the elements.</desc>
       </argument>
     </signature>
     <signature>

@@ -12,7 +12,8 @@
       <p><strong>Note:</strong> jQuery does not support getting the position coordinates of hidden elements or accounting for borders, margins, or padding set on the body element.</p>
     </div>
   </longdesc>
-  <example>
+	<note id="dimensions-number" type="additional" data-title=".position()"/>
+   <example>
     <desc>Access the position of the second paragraph:</desc>
     <code><![CDATA[
 var p = $( "p:first" );

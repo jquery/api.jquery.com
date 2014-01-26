@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<entry type="method" name="innerHeight" return="Integer">
+<entry type="method" name="innerHeight" return="Number">
   <title>.innerHeight()</title>
   <signature>
     <added>1.2.6</added>
@@ -12,6 +12,7 @@
       <img src="/resources/0042_04_02.png"/>
     </p>
   </longdesc>
+	<note id="dimensions-number" type="additional" data-title=".innerHeight()"/>
   <example>
     <desc>Get the innerHeight of a paragraph.</desc>
     <code><![CDATA[
