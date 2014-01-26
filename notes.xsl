@@ -40,6 +40,9 @@
 		<xsl:when test="@id = 'slide-in-ie'">
 			If <code><xsl:value-of select="@data-title"/></code> is called on an unordered list (<code>&lt;ul&gt;</code>) and its <code>&lt;li&gt;</code> elements have position (relative, absolute, or fixed), the effect may not work properly in IE6 through at least IE9 unless the <code>&lt;ul&gt;</code> has "layout." To remedy the problem, add the <code>position: relative;</code> and <code>zoom: 1;</code> CSS declarations to the <code>ul</code>.
 		</xsl:when>
+		<xsl:when test="@id = 'html-code-execution'">
+			By design, any jQuery constructor or method that accepts an HTML string — <a href="/jQuery/">jQuery()</a>, <a href="/append/">.append()</a>, <a href="/after/">.after()</a>, etc. — can potentially execute code. This can occur by injection of script tags or use of HTML attributes that execute code (for example, <code>&lt;img onload=""&gt;</code>). Do not use these methods to insert strings obtained from untrusted sources such as URL query parameters, cookies, or form inputs. Doing so can introduce cross-site-scripting (XSS) vulnerabilities. Remove or escape any user input before adding content to the document.
+		</xsl:when>
 	</xsl:choose>
 </xsl:template>
 </xsl:stylesheet>

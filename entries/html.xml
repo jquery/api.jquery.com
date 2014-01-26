@@ -25,6 +25,7 @@ $( "div.demo-container" ).html();
       </code></pre>
       <p>This method uses the browser's <code>innerHTML</code> property. Some browsers may not return HTML that exactly replicates the HTML source in an original document. For example, Internet Explorer sometimes leaves off the quotes around attribute values if they contain only alphanumeric characters.</p>
     </longdesc>
+    <note id="html-code-execution" type="additional"/>
     <example>
       <desc>Click a paragraph to convert it from html to text.</desc>
       <code><![CDATA[

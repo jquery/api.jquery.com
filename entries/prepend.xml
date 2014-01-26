@@ -79,6 +79,7 @@ $( "body" ).prepend( $newdiv1, [ newdiv2, existingdiv1 ] );
     </code></pre>
     <p>Since <code>.prepend()</code> can accept any number of additional arguments, the same result can be achieved by passing in the three <code>&lt;div&gt;</code>s as three separate arguments, like so: <code>$( "body" ).prepend( $newdiv1, newdiv2, existingdiv1 )</code>. The type and number of arguments will largely depend on how you collect the elements in your code.</p>
   </longdesc>
+  <note id="html-code-execution" type="additional"/>
   <example>
     <desc>Prepends some HTML to all paragraphs.</desc>
     <code><![CDATA[
