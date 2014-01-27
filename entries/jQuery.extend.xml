@@ -37,8 +37,8 @@
     <p>The merge performed by <code>$.extend()</code> is not recursive by default; if a property of the first object is itself an object or array, it will be completely overwritten by a property with the same key in the second or subsequent object. The values are not merged. This can be seen in the example below by examining the value of banana. However, by passing <code>true</code> for the first function argument, objects will be recursively merged.</p>
     <p><strong>Warning</strong>: Passing <code>false</code> for the first argument is not supported.</p>
     <p>Undefined properties are not copied. However, properties inherited from the object's prototype <em>will</em> be copied over. Properties that are an object constructed via <code>new MyCustomObject(args)</code>, or built-in JavaScript types such as Date or RegExp, are not re-constructed and will appear as plain Objects in the resulting object or array.</p>
-    <p>On a <code>deep</code> extend, Object and Array are extended, but object wrappers on primitive types such as String, Boolean, and Number are not.</p>
-    <p>For needs that fall outside of this behavior, write a custom extend method instead. </p>
+    <p>On a <code>deep</code> extend, Object and Array are extended, but object wrappers on primitive types such as String, Boolean, and Number are not. Deep-extending a cyclical data structure will result in an error.</p>
+    <p>For needs that fall outside of this behavior, write a custom extend method instead, or use a library like <a href="http://lodash.com">lodash</a>. </p>
   </longdesc>
   <example>
     <desc>Merge two objects, modifying the first.</desc>
