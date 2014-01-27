@@ -585,6 +585,8 @@ c.print(); // 1
 </p>
 <p>Most frequently, you will use the jQuery() function to create a jQuery object. <code>jQuery()</code> can also be accessed by its familiar single-character alias of <code>$()</code>, unless you have called <code>jQuery.noConflict()</code> to disable this option. Many jQuery methods return the jQuery object itself, so that method calls can be chained:
 </p>
+<p>In API calls that return <code>jQuery</code>, the value returned will be the original jQuery object unless otherwise documented by that API. API methods such as <code>.filter()</code> or <code>.not()</code> modify their incoming set and thus return a new jQuery object.
+</p>
 <pre><code data-lang="javascript">$( "p" ).css( "color", "red" ).find( ".special" ).css( "color", "green" );
 </code></pre>
 <p>Whenever you use a "destructive" jQuery method that potentially changes the set of elements in the jQuery object, such as <code>.filter()</code> or <code>.find()</code>, that method actually returns a new jQuery object with the resulting elements. To return to the previous jQuery object, you use the <code>.end()</code> method.
