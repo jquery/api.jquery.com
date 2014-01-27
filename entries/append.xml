@@ -66,7 +66,7 @@ $( ".container" ).append( $( "h2" ) );
   &lt;h2&gt;Greetings&lt;/h2&gt;
 &lt;/div&gt;
     </code></pre>
-    <p>If there is more than one target element, however, cloned copies of the inserted element will be created for each target after the first.</p>
+    <p>If there is more than one target element, however, cloned copies of the inserted element will be created for each target except for the last one.</p>
     <h4 id="additional-arguments">Additional Arguments</h4>
     <p>Similar to other content-adding methods such as <code><a href="/prepend/">.prepend()</a></code> and <code><a href="/before/">.before()</a></code>, <code>.append()</code> also supports passing in multiple arguments as input. Supported input includes DOM elements, jQuery objects, HTML strings, and arrays of DOM elements.</p>
     <p>For example, the following will insert two new <code>&lt;div&gt;</code>s and an existing <code>&lt;div&gt;</code> as the last three child nodes of the body:</p>
