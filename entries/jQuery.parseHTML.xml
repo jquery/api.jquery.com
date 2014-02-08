@@ -17,6 +17,8 @@
   <longdesc>
     <p><code>jQuery.parseHTML</code> uses a native DOM element creation function to convert the string to a set of DOM elements, which can then be inserted into the document.</p>
     <p>By default, the <code>context</code> is the current <code>document</code> if not specified or given as <code>null</code> or <code>undefined</code>. If the HTML was to be used in another document such as an iframe, that frame's document could be used.</p>
+	<h2>Security Considerations</h2>
+	<p>Most jQuery APIs that accept HTML strings will run scripts that are included in the HTML. <code>jQuery.parseHTML</code> does not run script in the parsed HTML unless <code>keepScripts</code> is explicitly <code>true</code>. However, it is still possible in most environments to execute script indirectly, for example via the <code>&lt;img onerror&gt;</code> attribute. The caller should be aware of this and guard against it by cleaning or escaping any untrusted inputs from sources such as the URL or cookies. For future compatibility, callers should not depend on the ability to run <em>any</em> script content when <code>keepScripts</code> is unspecified or <code>false</code>.</p>
   </longdesc>
   <example>
     <desc>Create an array of Dom nodes using an HTML string and insert it into a div.</desc>
