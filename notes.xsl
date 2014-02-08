@@ -1,6 +1,9 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 <xsl:template name="note">
 	<xsl:choose>
+		<xsl:when test="@id = 'dimensions-number'">
+			The numbers returned by dimensions-related APIs, including <code><xsl:value-of select="@data-title"/></code>, may be fractional in some cases. Code should not assume it is an integer. Also, dimensions may be incorrect when the page is zoomed by the user; browsers do not expose an API to detect this condition.
+		</xsl:when>
 		<xsl:when test="@id = 'document-order'">
 			Selected elements are in the order of their appearance in the document.
 		</xsl:when>

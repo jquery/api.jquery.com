@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<entry type="method" name="outerHeight" return="Integer">
+<entry type="method" name="outerHeight" return="Number">
   <title>.outerHeight()</title>
   <signature>
     <added>1.2.6</added>
@@ -7,7 +7,7 @@
       <desc>A Boolean indicating whether to include the element's margin in the calculation.</desc>
     </argument>
   </signature>
-  <desc>Get the current computed height for the first element in the set of matched elements, including padding, border, and optionally margin. Returns an integer (without "px") representation of the value or null if called on an empty set of elements.</desc>
+  <desc>Get the current computed height for the first element in the set of matched elements, including padding, border, and optionally margin. Returns a number (without "px") representation of the value or null if called on an empty set of elements.</desc>
   <longdesc>
     <p>The top and bottom padding and border are always included in the <code>.outerHeight()</code> calculation; if the <code>includeMargin</code> argument is set to <code>true</code>, the margin (top and bottom) is also included.</p>
     <p>This method is not applicable to <code>window</code> and <code>document</code> objects; for these, use <code><a href="/height/">.height()</a></code> instead.</p>
@@ -15,6 +15,7 @@
       <img src="/resources/0042_04_03.png"/>
     </p>
   </longdesc>
+	<note id="dimensions-number" type="additional" data-title=".outerHeight()"/>
   <example>
     <desc>Get the outerHeight of a paragraph.</desc>
     <code><![CDATA[
