@@ -4,7 +4,7 @@
   <signature>
     <added>1.4</added>
   </signature>
-  <desc>Retrieve all the DOM elements contained in the jQuery set, as an array.</desc>
+  <desc>Retrieve all the elements contained in the jQuery set, as an array.</desc>
   <longdesc>
     <p><code>.toArray()</code> returns all of the elements in the jQuery set:</p>
     <pre><code>
@@ -16,7 +16,7 @@ alert( $( "li" ).toArray() );
     </p>
   </longdesc>
   <example>
-    <desc>Selects all divs in the document and returns the DOM Elements as an Array, then uses the built-in reverse-method to reverse that array.</desc>
+    <desc>Select all divs in the document and return the DOM Elements as an Array; then use the built-in reverse() method to reverse that array.</desc>
     <code><![CDATA[
 function disp( divs ) {
   var a = [];

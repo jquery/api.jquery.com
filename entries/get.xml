@@ -9,7 +9,7 @@
         <desc>A zero-based integer indicating which element to retrieve.</desc>
       </argument>
     </signature>
-    <desc>Retrieve one of the DOM elements matched by the jQuery object.</desc>
+    <desc>Retrieve one of the elements matched by the jQuery object.</desc>
     <longdesc>
       <p>The <code>.get()</code> method grants us access to the DOM nodes underlying each jQuery object. Consider a simple unordered list:</p>
       <pre><code>
@@ -71,7 +71,7 @@ $( "*", document.body ).click(function( event ) {
     <signature>
       <added>1.0</added>
     </signature>
-    <desc>Retrieve the DOM elements matched by the jQuery object.</desc>
+    <desc>Retrieve the elements matched by the jQuery object.</desc>
     <longdesc>
       <p>Consider a simple unordered list:</p>
       <pre><code>
