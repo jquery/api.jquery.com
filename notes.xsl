@@ -3,6 +3,8 @@
 	<xsl:choose>
 		<xsl:when test="@id = 'dimensions-number'">
 			The numbers returned by dimensions-related APIs, including <code><xsl:value-of select="@data-title"/></code>, may be fractional in some cases. Code should not assume it is an integer. Also, dimensions may be incorrect when the page is zoomed by the user; browsers do not expose an API to detect this condition.
+		<xsl:when test="@id = 'disconnected-manipulation'">
+			Prior to jQuery 1.9, <code><xsl:value-of select="@data-title"/></code> would attempt to add or change nodes in the current jQuery set if the first node in the set was not connected to a document, and in those cases return a new jQuery set rather than the original set. The method might or might not return a new result depending on the number or connectedness of its arguments! As of jQuery 1.9, these methods always return the original unmodified set and attempting to use .after(), .before(), or .replaceWith() on a node without a parent has no effect--that is, neither the set or the nodes it contains are changed.
 		</xsl:when>
 		<xsl:when test="@id = 'document-order'">
 			Selected elements are in the order of their appearance in the document.
