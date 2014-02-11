@@ -29,7 +29,7 @@ $( "#whichkey" ).on( "mousedown", function( event ) {
 });
 ]]></code>
     <html><![CDATA[
-<input id="whichkey" value="type something">
+<input id="whichkey" value="click here">
 <div id="log"></div>
 ]]></html>
   </example>
