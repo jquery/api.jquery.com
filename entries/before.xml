@@ -22,6 +22,7 @@
     <added>1.4</added>
     <argument name="function" type="Function">
       <argument name="index" type="Integer" />
+      <argument name="html" type="String" />
       <return>
         <type name="htmlString"/>
         <type name="Element"/>

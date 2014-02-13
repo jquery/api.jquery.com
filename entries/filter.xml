@@ -12,6 +12,7 @@
     <argument name="function" type="Function">
       <desc>A function used as a test for each element in the set. <code>this</code> is the current DOM element.</desc>
       <argument name="index" type="Integer" />
+      <argument name="element" type="Element" />
       <return type="Boolean" />
     </argument>
   </signature>
