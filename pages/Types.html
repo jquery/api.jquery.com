@@ -73,6 +73,7 @@ var x = "";
     </ul>
   </li>
   <li class="toclevel-1"><a href="#PlainObject"><span class="toctext">PlainObject</span></a></li>
+  <li class="toclevel-1"><a href="#Date"><span class="toctext">Date</span></a></li>
   <li class="toclevel-1"><a href="#Function"><span class="toctext">Function</span></a>
     <ul>
       <li class="toclevel-2"><a href="#Arguments"><span class="toctext">Arguments</span></a></li>
@@ -419,6 +420,18 @@ x.splice( 1, 2 ) // [ 2, 3 ]
   jQuery.isPlainObject( a ); // false
   jQuery.isPlainObject( d ); // false
   jQuery.isPlainObject( o ); // true
+</code></pre>
+
+<h2 id="Date"> Date </h2>
+<p>The Date type is a JavaScript object that represents a single moment in time. Date objects are instantiated using their constructor function, which by default creates an object that represents the current date and time.
+</p>
+<pre><code data-lang="javascript">
+new Date();
+</code></pre>
+<p>To create a Date object for an alternative date and time, pass numeric arguments in the following order: year, month, day, minute, second, millisecond - although note that the month is zero-based, whereas the other arguments are one-based. The following creates a Date object representing January 1st, 2014 at 8:15.
+</p>
+<pre><code data-lang="javascript">
+new Date( 2014, 0, 1, 8, 15 );
 </code></pre>
 
 <h2 id="Function"> Function </h2>
