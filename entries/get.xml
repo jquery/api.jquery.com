@@ -11,7 +11,7 @@
     </signature>
     <desc>Retrieve one of the elements matched by the jQuery object.</desc>
     <longdesc>
-      <p>The <code>.get()</code> method grants us access to the DOM nodes underlying each jQuery object. Consider a simple unordered list:</p>
+      <p>The <code>.get()</code> method grants us access to the DOM nodes underlying each jQuery object. If the value of <code>index</code> is out of bounds, that is less than 0, or equal to or greater than the number of elements, it returns <code>undefined</code>. Consider a simple unordered list:</p>
       <pre><code>
 &lt;ul&gt;
   &lt;li id="foo"&gt;foo&lt;/li&gt;
