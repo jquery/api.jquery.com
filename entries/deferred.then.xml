@@ -113,7 +113,7 @@ $.Deferred(function( defer ) {
   filtered.fail(function( value ) {
     alert( "Value is ( 3*6 = ) 18: " + value );
   });
-}),
+});
 ]]></code>
   </example>
   <example>
