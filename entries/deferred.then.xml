@@ -86,14 +86,15 @@ $.get( "test.php" ).then(
 ]]></html>
     <code><![CDATA[
 var filterResolve = function() {
-  var defer = $.Deferred(),
-    filtered = defer.then(function( value ) {
+  $.Deferred(function( defer ) {
+    var filtered = defer.then(function( value ) {
       return value * 2;
     });
-
-  defer.resolve( 5 );
-  filtered.done(function( value ) {
-    $( "p" ).html( "Value is ( 2*5 = ) 10: " + value );
+    defer.resolve( 5 );
+    
+    filtered.done(function( value ) {
+      $( "p" ).html( "Value is ( 2*5 = ) 10: " + value );
+    });
   });
 };
 
@@ -103,15 +104,16 @@ $( "button" ).on( "click", filterResolve );
   <example>
     <desc>Filter reject value:</desc>
     <code><![CDATA[
-var defer = $.Deferred(),
-  filtered = defer.then( null, function( value ) {
+$.Deferred(function( defer ) {
+  var filtered = defer.then( null, function( value ) {
     return value * 3;
   });
 
-defer.reject( 6 );
-filtered.fail(function( value ) {
-  alert( "Value is ( 3*6 = ) 18: " + value );
-});
+  defer.reject( 6 );
+  filtered.fail(function( value ) {
+    alert( "Value is ( 3*6 = ) 18: " + value );
+  });
+}),
 ]]></code>
   </example>
   <example>
