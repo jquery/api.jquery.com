@@ -15,8 +15,8 @@
   </signature>
   <signature>
     <added>1.4</added>
-    <argument name="element" type="Element">
-      <desc>An element to match the current set of elements against.</desc>
+    <argument name="elements" type="Element">
+      <desc>One or more DOM elements to match the current set of elements against.</desc>
     </argument>
   </signature>
   <signature>
