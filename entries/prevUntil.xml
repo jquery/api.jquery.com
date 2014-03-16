@@ -12,7 +12,9 @@
   </signature>
   <signature>
     <added>1.6</added>
-    <argument name="element" optional="true" type="Element">
+    <argument name="element" optional="true">
+      <type name="Element"/>
+      <type name="jQuery"/>
       <desc>A DOM node or jQuery object indicating where to stop matching preceding sibling elements.</desc>
     </argument>
     <argument name="filter" optional="true" type="Selector">
