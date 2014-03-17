@@ -56,7 +56,7 @@ $( "p:last" ).html( str );
         <type name="String"/>
         <type name="Number"/>
         <type name="Boolean"/>
-        <desc>The text to set as the content of each matched element.</desc>
+        <desc>The text to set as the content of each matched element. Where Number or Boolean are supplied these will be converted to string representations.</desc>
       </argument>
     </signature>
     <signature>
