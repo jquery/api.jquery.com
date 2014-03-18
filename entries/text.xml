@@ -52,8 +52,11 @@ $( "p:last" ).html( str );
   <entry type="method" name="text" return="jQuery">
     <signature>
       <added>1.0</added>
-      <argument name="textString" type="String">
-        <desc>A string of text to set as the content of each matched element.</desc>
+      <argument name="text">
+        <type name="String"/>
+        <type name="Number"/>
+        <type name="Boolean"/>
+        <desc>The text to set as the content of each matched element. When Number or Boolean is supplied, it will be converted to a String representation.</desc>
       </argument>
     </signature>
     <signature>
