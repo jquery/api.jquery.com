@@ -248,7 +248,7 @@ $( "<div/>", {
     </signature>
     <desc>Binds a function to be executed when the DOM has finished loading.</desc>
     <longdesc>
-      <p>This function behaves just like <code>$( document ).ready()</code>, in that it should be used to wrap other <code>$()</code> operations on your page that depend on the DOM being ready. While this function is, technically, chainable, there really isn"t much use for chaining against it.</p>
+      <p>This function behaves just like <code>$( document ).ready()</code>, in that it should be used to wrap other <code>$()</code> operations on your page that depend on the DOM being ready. While this function is, technically, chainable, there really isn't much use for chaining against it.</p>
     </longdesc>
     <example>
       <desc>Execute the function when the DOM is ready to be used.</desc>
