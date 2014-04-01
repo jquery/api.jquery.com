@@ -16,7 +16,7 @@
     <p>Since each request requires its own transport object instance, transports cannot be registered directly. Therefore, you should provide a function that returns a transport instead.</p>
     <p>Transports factories are registered using <code>$.ajaxTransport()</code>. A typical registration looks like this:</p>
     <pre><code>
-$.ajaxTransport(function( options, originalOptions, jqXHR ) {
+$.ajaxTransport( dataType, function( options, originalOptions, jqXHR ) {
   if( /* transportCanHandleRequest */ ) {
     return {
       send: function( headers, completeCallback ) {
