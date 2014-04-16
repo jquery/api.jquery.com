@@ -56,9 +56,9 @@ $( "#b" ).load( "article.html #target" );
   </longdesc>
   <note id="same-origin-policy" type="additional"/>
   <example>
-    <desc>Load the main page's footer navigation into an ordered list.</desc>
+    <desc>Load another page's list items into an ordered list.</desc>
     <code><![CDATA[
-$( "#new-nav" ).load( "/ #jq-footerNavigation li" );
+$( "#new-projects" ).load( "/resources/load.html #projects li" );
 ]]></code>
     <css><![CDATA[
   body {
@@ -67,8 +67,8 @@ $( "#new-nav" ).load( "/ #jq-footerNavigation li" );
   }
 ]]></css>
     <html><![CDATA[
-<b>Footer navigation:</b>
-<ol id="new-nav"></ol>
+<b>Projects:</b>
+<ol id="new-projects"></ol>
 ]]></html>
   </example>
   <example>
