@@ -35,11 +35,11 @@ $( ".trigger" ).click(function() {
 $( document ).ajaxComplete(function( event, xhr, settings ) {
   if ( settings.url === "ajax/test.html" ) {
     $( ".log" ).text( "Triggered ajaxComplete handler. The result is " +
-      xhr.responseXML );
+      xhr.responseText );
   }
 });
     </code></pre>
-    <p><strong>Note:</strong> You can get the returned ajax contents by looking at <code>xhr.responseXML</code> for xml.</p>
+    <p><strong>Note:</strong> You can get the returned ajax contents by looking at <code>xhr.responseText</code>.</p>
   </longdesc>
   <note id="ajax-global-false" type="additional" data-title=".ajaxComplete()"/>
   <example>
