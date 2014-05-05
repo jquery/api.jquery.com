@@ -91,7 +91,7 @@ $.cachedScript( "ajax/test.js" ).done(function( script, textStatus ) {
   <example>
     <desc>Load the <a href="https://github.com/jquery/jquery-color">official jQuery Color Animation plugin</a> dynamically and bind some color animations to occur once the new functionality is loaded.</desc>
     <code><![CDATA[
-var url = "https://raw.github.com/jquery/jquery-color/master/jquery.color.js";
+var url = "https://raw.githubusercontent.com/jquery/jquery-color/master/jquery.color.js";
 $.getScript( url, function() {
   $( "#go" ).click(function() {
     $( ".block" )
