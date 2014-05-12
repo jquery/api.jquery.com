@@ -22,8 +22,8 @@
     <desc>Parse a JSON string.</desc>
     <code><![CDATA[
 var obj = jQuery.parseJSON( '{ "name": "John" }' );
-alert( obj.name === "John" )
-;]]></code>
+alert( obj.name === "John" );
+]]></code>
   </example>
   <category slug="utilities"/>
   <category slug="version/1.4.1"/>
