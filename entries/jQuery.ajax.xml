@@ -66,7 +66,7 @@ $.ajax({
       <property name="dataFilter" type="Function">
         <argument name="data" type="String"/>
         <argument name="type" type="String"/>
-        <return type="Object"/>
+        <return type="Anything"/>
         <desc>A function to be used to handle the raw response data of XMLHttpRequest.This is a pre-filtering function to sanitize the response. You should return the sanitized data. The function accepts two arguments: The raw data returned from the server and the 'dataType' parameter.</desc>
       </property>
       <property name="dataType" default="Intelligent Guess (xml, json, script, or html)" type="String">
@@ -129,7 +129,7 @@ $.ajax({
         </desc>
       </property>
       <property name="success" type="Function">
-        <argument name="data" type="PlainObject"/>
+        <argument name="data" type="Anything"/>
         <argument name="textStatus" type="String"/>
         <argument name="jqXHR" type="jqXHR"/>
         <desc>A function to be called if the request succeeds. The function gets passed three arguments: The data returned from the server, formatted according to the <code>dataType</code> parameter; a string describing the status; and the <code>jqXHR</code> (in jQuery 1.4.x, XMLHttpRequest) object. <strong>As of jQuery 1.5</strong>, <em>the success setting can accept an array of functions. Each function will be called in turn.</em> This is an <a href="/Ajax_Events/">Ajax Event</a>.</desc>
