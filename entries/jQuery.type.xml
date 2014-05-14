@@ -3,7 +3,7 @@
   <title>jQuery.type()</title>
   <signature>
     <added>1.4.3</added>
-    <argument name="obj" type="PlainObject">
+    <argument name="obj" type="Anything">
       <desc>Object to get the internal JavaScript [[Class]] of.</desc>
     </argument>
   </signature>
