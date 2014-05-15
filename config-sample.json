@@ -1,5 +1,5 @@
 {
-	"url": "local.api.jquery.com",
+	"url": "vagrant.api.jquery.com",
 	"username": "admin",
 	"password": "secret"
 }
