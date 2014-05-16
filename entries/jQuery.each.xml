@@ -3,15 +3,23 @@
   <title>jQuery.each()</title>
   <signature>
     <added>1.0</added>
-    <argument name="collection" type="Object">
-      <desc>The object or array to iterate over.</desc>
+    <argument name="array" type="Array">
+      <desc>The array to iterate over.</desc>
     </argument>
     <argument name="callback" type="Function">
-      <argument name="indexInArray">
-        <type name="Integer"/>
-        <type name="String"/>
-      </argument>
-      <argument name="valueOfElement" type="Object" />      
+      <argument name="indexInArray" type="Integer" />      
+      <argument name="value" type="Object" />      
+      <desc>The function that will be executed on every object.</desc>
+    </argument>
+  </signature>  
+  <signature>
+    <added>1.0</added>
+    <argument name="object" type="Object">
+      <desc>The object to iterate over.</desc>
+    </argument>
+    <argument name="callback" type="Function">
+      <argument name="propertyName" type="String" />
+      <argument name="valueOfProperty" type="Object" />      
       <desc>The function that will be executed on every object.</desc>
     </argument>
   </signature>

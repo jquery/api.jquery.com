@@ -2,9 +2,7 @@
 <entries>
   <desc>Get the value of a property for the first element in the set of matched elements or set one or more properties for every matched element.</desc>
   <entry type="method" name="prop">
-    <return type="String"/>
-    <return type="Integer"/>
-    <return type="Boolean"/>
+    <return type="Anything"/>
     <title>.prop()</title>
     <signature>
       <added>1.6</added>
