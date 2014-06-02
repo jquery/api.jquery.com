@@ -13,7 +13,7 @@
   </signature>
   <desc>Replace each target element with the set of matched elements.</desc>
   <longdesc>
-    <p>The <code>.replaceAll()</code> method is corollary to <code><a href="/replaceWith/">.replaceWith()</a></code>, but with the source and target reversed. Consider this DOM structure:</p>
+    <p>The <code>.replaceAll()</code> method is similar to <code><a href="/replaceWith/">.replaceWith()</a></code>, but with the source and target reversed. Consider this DOM structure:</p>
     <pre><code>
 &lt;div class="container"&gt;
   &lt;div class="inner first"&gt;Hello&lt;/div&gt;
