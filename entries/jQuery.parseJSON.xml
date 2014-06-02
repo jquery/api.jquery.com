@@ -19,7 +19,7 @@
       <li><code>"{test: 1}"</code> (test does not have double quotes around it).</li>
       <li><code>"{'test': 1}"</code> ('test' is using single quotes instead of double quotes).</li>
       <li><code>"'test'"</code> ('test' is using single quotes instead of double quotes).</li>
-      <li><code>".1"</code> (a numbers must start with a digit; <code>"0.1"</code> would be valid).</li>
+      <li><code>".1"</code> (a number must start with a digit; <code>"0.1"</code> would be valid).</li>
       <li><code>"undefined"</code> (<code>undefined</code> cannot be represented in a JSON string; <code>null</code>, however, can be).</li>
       <li><code>"NaN"</code> (<code>NaN</code> cannot be represented in a JSON string; direct representation of <code>Infinity</code> is also not permitted).</li>
     </ul>
