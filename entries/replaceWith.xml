@@ -64,6 +64,7 @@ $( "div.third" ).replaceWith( $( ".first" ) );
     <p>This example demonstrates that the selected element replaces the target by being moved from its old location, not by being cloned.</p>
     <p>The <code>.replaceWith()</code> method, like most jQuery methods, returns the jQuery object so that other methods can be chained onto it. However, it must be noted that the <em>original</em> jQuery object is returned. This object refers to the element that has been removed from the DOM, not the new element that has replaced it.</p>
   </longdesc>
+  <note id="removes-data" type="additional" data-title=".replaceWith()"/>
   <note id="disconnected-manipulation" type="additional" data-title=".replaceWith()"/>
   <example>
     <desc>On click, replace the button with a div containing the same word.</desc>

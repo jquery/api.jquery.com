@@ -7,6 +7,9 @@
 		<xsl:when test="@id = 'disconnected-manipulation'">
 			Prior to jQuery 1.9, <code><xsl:value-of select="@data-title"/></code> would attempt to add or change nodes in the current jQuery set if the first node in the set was not connected to a document, and in those cases return a new jQuery set rather than the original set. The method might or might not have returned a new result depending on the number or connectedness of its arguments! As of jQuery 1.9, <code>.after()</code>, <code>.before()</code>, and <code>.replaceWith()</code> always return the original unmodified set. Attempting to use these methods on a node without a parent has no effect—that is, neither the set nor the nodes it contains are changed.
 		</xsl:when>
+		<xsl:when test="@id = 'removes-data'">
+			The <code><xsl:value-of select="@data-title"/></code> method removes all data and event handlers associated with the removed nodes.
+		</xsl:when>
 		<xsl:when test="@id = 'document-order'">
 			Selected elements are in the order of their appearance in the document.
 		</xsl:when>

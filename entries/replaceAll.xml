@@ -44,6 +44,7 @@ $( ".first" ).replaceAll( ".third" );
     </code></pre>
     <p>From this example, we can see that the selected element replaces the target by being moved from its old location, not by being cloned.</p>
   </longdesc>
+  <note id="removes-data" type="additional" data-title=".replaceAll()"/>
   <example>
     <desc>Replace all the paragraphs with bold words.</desc>
     <code><![CDATA[
