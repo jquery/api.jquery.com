@@ -73,7 +73,6 @@ $( document ).on( "click", "a.offsite", function() {
       <li>As of <b>jQuery 1.4</b> the <code>.live()</code> method supports custom events as well as <em>all JavaScript events that bubble</em>. It also supports certain events that don't bubble, including <code>change</code>, <code>submit</code>, <code>focus</code> and <code>blur</code>.</li>
       <li>In <b>jQuery 1.3.x</b> only the following JavaScript events could be bound: <code>click</code>, <code>dblclick</code>, <code>keydown</code>, <code>keypress</code>, <code>keyup</code>, <code>mousedown</code>, <code>mousemove</code>, <code>mouseout</code>, <code>mouseover</code>, and <code>mouseup</code>.</li>
     </ul>
-    <div class="warning"><strong>Note:</strong> the consequences of returning <code>false</code> from an event handler in jQuery differ from returning <code>false</code> in a native event handler (<code>element.addEventListener("click", function () { return false; })</code>) in that jQuery calls <code>event.preventDefault()</code> and <code>event.stopPropagation()</code> and a native event handler only calls <code>event.preventDefault()</code>.</div>
   </longdesc>
   <example>
     <desc>Cancel a default action and prevent it from bubbling up by returning false.</desc>
