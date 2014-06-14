@@ -64,6 +64,7 @@ $( "table" ).on( "click", "td", function() {
     <p>Passing and handling event data works the same way as it does for <code>.on()</code>.</p>
   </longdesc>
   <note id="propagation-for-live-or-delegate" type="additional"/>
+  <div class="warning"><strong>Note:</strong> the consequences of returning <code>false</code> from an event handler in jQuery differ from returning <code>false</code> in a native event handler (<code>element.addEventListener("click", function () { return false; })</code>) in that jQuery calls <code>event.preventDefault()</code> and <code>event.stopPropagation()</code> and a native event handler only calls <code>event.preventDefault()</code>.</div>
   <example>
     <desc>Click a paragraph to add another. Note that .delegate() attaches a click event handler to all paragraphs - even new ones.</desc>
     <code><![CDATA[
