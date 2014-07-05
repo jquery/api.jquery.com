@@ -37,7 +37,9 @@
       <property name="contents" type="PlainObject" added="1.5">
         <desc>An object of string/regular-expression pairs that determine how jQuery will parse the response, given its content type.</desc>
       </property>
-      <property default="'application/x-www-form-urlencoded; charset=UTF-8'" name="contentType" type="String">
+      <property default="'application/x-www-form-urlencoded; charset=UTF-8'" name="contentType">
+        <type name="Boolean"/>
+        <type name="String"/>
         <desc>When sending data to the server, use this content type. Default is "application/x-www-form-urlencoded; charset=UTF-8", which is fine for most cases. If you explicitly pass in a content-type to <code>$.ajax()</code>, then it is always sent to the server (even if no data is sent). The W3C XMLHttpRequest specification dictates that the charset is always UTF-8; specifying another charset will not force the browser to change the encoding.</desc>
       </property>
       <property name="context" type="PlainObject">
