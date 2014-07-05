@@ -50,7 +50,7 @@ $( "#foo" ).one( "click", function() {
   alert( "This will be displayed only once." );
 });
 $( "body" ).one( "click", "#foo", function() {
-  alert( "This displays if #foo is the first thing clicked in the body." );
+  alert( "This displays the first time #foo is clicked in the body." );
 });
     </code></pre>
     <p>After the code is executed, a click on the element with ID <code>foo</code> will display the alert. Subsequent clicks will do nothing. This code is equivalent to:</p>
