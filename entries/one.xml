@@ -44,13 +44,10 @@
     </argument>
   </signature>
   <longdesc>
-    <p>The first form of this method is identical to <code>.bind()</code>, except that the handler is unbound after its first invocation. The second two forms, introduced in jQuery 1.7, are identical to <code>.on()</code> except that the handler is removed after the first time the event occurs at the delegated element, whether the selector matched anything or not. For example:</p>
+    <p>The  <code>.one()</code> method is identical to  <code>.on()</code>, except that the handler is unbound after its first invocation. For example:</p>
     <pre><code>
 $( "#foo" ).one( "click", function() {
   alert( "This will be displayed only once." );
-});
-$( "body" ).one( "click", "#foo", function() {
-  alert( "This displays the first time #foo is clicked in the body." );
 });
     </code></pre>
     <p>After the code is executed, a click on the element with ID <code>foo</code> will display the alert. Subsequent clicks will do nothing. This code is equivalent to:</p>
