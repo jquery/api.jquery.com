@@ -9,7 +9,7 @@
     <p>When this property is set to <code>true</code>, all animation methods will immediately set elements to their final state when called, rather than displaying an effect. This may be desirable for a couple reasons:</p>
     <ul>
       <li>jQuery is being used on a low-resource device.</li>
-      <li>Users are encountering accessibility problems with the animations (see the article <a href="http://www.jdeegan.phlegethon.org/turn_off_animation.html">Turn Off Animation</a> for more information).</li>
+      <li>Users are encountering accessibility problems with the animations.</li>
     </ul>
     <p>Animations can be turned back on by setting the property to <code>false</code>.</p>
   </longdesc>
