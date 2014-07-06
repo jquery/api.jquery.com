@@ -3,8 +3,12 @@
   <title>.wrapInner()</title>
   <signature>
     <added>1.2</added>
-    <argument name="wrappingElement" type="String">
+    <argument name="wrappingElement">
       <desc>An HTML snippet, selector expression, jQuery object, or DOM element specifying the structure to wrap around the content of the matched elements.</desc>
+      <type name="htmlString"/>
+      <type name="Selector"/>
+      <type name="jQuery"/>
+      <type name="Element"/>
     </argument>
   </signature>
   <signature>
