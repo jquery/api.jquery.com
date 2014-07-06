@@ -11,7 +11,7 @@
       <desc>An attribute value. Can be either an unquoted single word or a quoted string.</desc>
     </argument>
   </signature>
-  <desc>Selects elements that have the specified attribute with a value containing the a given substring.</desc>
+  <desc>Selects elements that have the specified attribute with a value containing a given substring.</desc>
   <longdesc>
     <p>This is the most generous of the jQuery attribute selectors that match against a value. It will select an element if the selector's string appears anywhere within the element's attribute value. Compare this selector with the Attribute Contains Word selector (e.g. [attr~="word"]), which is more appropriate in many cases.</p>
   </longdesc>
