@@ -11,6 +11,14 @@
       <desc>A selector, element, HTML string, or jQuery object specifying the structure to wrap around the matched elements.</desc>
     </argument>
   </signature>
+  <signature>
+    <added>1.4</added>
+    <argument name="function" type="Function">
+      <desc>A callback function which generates a structure to wrap around the matched elements. Receives the index position of the element in the set as an argument. Within the function, <code>this</code> refers to the current element in the set.</desc>
+      <argument name="index" type="Integer" />
+      <return type="String"/>
+    </argument>
+  </signature>
   <desc>Wrap an HTML structure around all elements in the set of matched elements.</desc>
   <longdesc>
     <p>The <code>.wrapAll()</code> function can take any string or object that could be passed to the <code>$()</code> function to specify a DOM structure. This structure may be nested several levels deep, but should contain only one inmost element. The structure will be wrapped around all of the elements in the set of matched elements, as a single group.</p>
