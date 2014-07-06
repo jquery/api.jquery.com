@@ -3,14 +3,11 @@
   <title>.not()</title>
   <signature>
     <added>1.0</added>
-    <argument name="selector" type="Selector">
-      <desc>A string containing a selector expression to match elements against.</desc>
-    </argument>
-  </signature>
-  <signature>
-    <added>1.0</added>
-    <argument name="elements" type="Elements">
-      <desc>One or more DOM elements to remove from the matched set.</desc>
+    <argument name="selector">
+      <desc>A string containing a selector expression, a DOM element, or an array of elements to match against the set.</desc>
+      <type name="Selector"/>
+      <type name="Element"/>
+      <type name="Array"/>
     </argument>
   </signature>
   <signature>
