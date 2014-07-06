@@ -582,19 +582,19 @@ c.print(); // 1
 <p>The standard events in the Document Object Model are: <code>blur</code>, <code>focus</code>, <code> load</code>, <code>resize</code>, <code>scroll</code>, <code>unload</code>, <code>beforeunload</code>, <code>click</code>, <code>dblclick</code>, <code>mousedown</code>, <code>mouseup</code>, <code>mousemove</code>, <code>mouseover</code>, <code>mouseout</code>, <code>mouseenter</code>, <code>mouseleave</code>, <code>change</code>, <code>select</code>, <code>submit</code>, <code>keydown</code>, <code>keypress,</code> and <code>keyup</code>. Since the DOM event names have predefined meanings for some elements, using them for other purposes is not recommended. jQuery's event model can trigger an event by any name on an element, and it is propagated up the DOM tree to which that element belongs, if any.
 </p>
 <h2 id="Element"> Element </h2>
-<p>An element in the Document Object Model (DOM) has attributes, text and children. It provides methods to traverse the parent and children and to get access to its attributes. Due to a lot of flaws in DOM API specifications and implementations, those methods are no fun to use. jQuery provides a wrapper around those elements to help interacting with the DOM. But often enough you will be working directly with DOM elements, or see methods that (also) accept DOM elements as arguments.
+<p>An element in the Document Object Model (DOM) can have attributes, text, and children. It provides methods to traverse the parent and children and to get access to its attributes. Due to inconsistencies in DOM API specifications and implementations, however, those methods can be a challenge to use. jQuery provides a "wrapper" around those elements to help interacting with the DOM. But sometimes you will be working directly with DOM elements, or see methods that (also) accept DOM elements as arguments.
 </p>
-<p>Whenever you use jQuery's each-method, the context of your callback is set to a DOM element. That is also the case for event handlers.
+<p>Whenever you call jQuery's <code>.each()</code> method or one of its event methods on a jQuery collection, the context of the callback function — <code>this</code> — is set to a DOM element.
 </p>
-<p>Some properties of DOM elements are quite consistent among browsers. Consider this example of a simple on-blur-validation:
+<p>Some properties of DOM elements are quite consistent among browsers. Consider this example of a simple onblur validation:
 </p>
-<pre><code data-lang="javascript">$( ":text" ).blur(function() {
+<pre><code data-lang="javascript">$( "input[type='text']" ).on( "blur", function() {
   if( !this.value ) {
     alert( "Please enter some text!" );
   }
 });
 </code></pre>
-<p>You could replace this.value with $(this).val() to access the value of the text input via jQuery, but in that case you don't gain anything.
+<p>You could replace <code>this.value</code> with <code>$(this).val()</code> to access the value of the text input via jQuery, but in that case you wouldn't gain anything.
 </p>
 <h2 id="jQuery"> jQuery </h2>
 <p>A jQuery object contains a collection of Document Object Model (DOM) elements that have been created from an HTML string or selected from a document. Since jQuery methods often use CSS selectors to match elements from a document, the set of elements in a jQuery object is often called a set of "matched elements" or "selected elements".
