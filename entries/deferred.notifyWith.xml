@@ -8,9 +8,9 @@
         Context passed to the progressCallbacks as the <code>this</code> object.
       </desc>
     </argument>
-    <argument name="args" type="Object" optional="true">
+    <argument name="args" type="Array" optional="true">
       <desc>
-        Optional arguments that are passed to the progressCallbacks.
+        An optional array of arguments that are passed to the progressCallbacks.
       </desc>
     </argument>
   </signature>
