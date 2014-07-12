@@ -13,7 +13,7 @@
   </signature>
   <desc>Replace each target element with the set of matched elements.</desc>
   <longdesc>
-    <p>The <code>.replaceAll()</code> method is corollary to <code><a href="/replaceWith/">.replaceWith()</a></code>, but with the source and target reversed. Consider this DOM structure:</p>
+    <p>The <code>.replaceAll()</code> method is similar to <code><a href="/replaceWith/">.replaceWith()</a></code>, but with the source and target reversed. Consider this DOM structure:</p>
     <pre><code>
 &lt;div class="container"&gt;
   &lt;div class="inner first"&gt;Hello&lt;/div&gt;
@@ -44,6 +44,7 @@ $( ".first" ).replaceAll( ".third" );
     </code></pre>
     <p>From this example, we can see that the selected element replaces the target by being moved from its old location, not by being cloned.</p>
   </longdesc>
+  <note id="removes-data" type="additional" data-title=".replaceAll()"/>
   <example>
     <desc>Replace all the paragraphs with bold words.</desc>
     <code><![CDATA[
