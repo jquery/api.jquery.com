@@ -26,6 +26,7 @@
   <desc>A generic iterator function, which can be used to seamlessly iterate over both objects and arrays. Arrays and array-like objects with a length property (such as a function's arguments object) are iterated by numeric index, from 0 to length-1. Other objects are iterated via their named properties.</desc>
   <longdesc>
     <p>The <code>$.each()</code> function is not the same as <a href="/each/">$(selector).each()</a>, which is used to iterate, exclusively, over a jQuery object. The <code>$.each()</code> function can be used to iterate over any collection, whether it is an object or an array. In the case of an array, the callback is passed an array index and a corresponding array value each time. (The value can also be accessed through the <code>this</code> keyword, but Javascript will always wrap the <code>this</code> value as an <code>Object</code> even if it is a simple string or number value.) The method returns its first argument, the object that was iterated.</p>
+    <p><b>Note:</b> The <code>$.each()</code> function internally retrieves and uses the <code>length</code> property of the passed collection. So, if the collection has a property called <code>length</code> — e.g. <code>{bar: 'foo', length: 10}</code> — the function might not work as expected.</p>
     <pre><code>
 $.each([ 52, 97 ], function( index, value ) {
   alert( index + ": " + value );
