@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<entry type="method" name="jQuery.ready.promise" return="Promise">
+  <title>jQuery.ready.promise()</title>
+  <desc>Return a Promise that is resolved when the document is ready.</desc>
+  <signature>
+    <added>1.8</added>
+    <argument name="target" type="Object" optional="true">
+      <desc>Object onto which the promise methods have to be attached</desc>
+    </argument>
+  </signature>
+  <longdesc>
+    <p>See also <code><a href="/ready/">ready()</a></code>, which makes use of this.</p>
+  </longdesc>
+  <example>
+    <desc>Listen for document ready using a Promise object.</desc>
+    <code><![CDATA[
+$.ready.promise().done(function() {
+  // Document is ready.
+});
+]]></code>
+  </example>
+  <example>
+    <desc>Listen for document ready via <code><a href="/jQuery.when/">jQuery.when</a>.</desc>
+    <code><![CDATA[
+$.when(
+  $.getJSON( "ajax/test.json" ),
+  $.ready
+).done(function( data ) {
+  // Document is ready.
+  // Value of test.json is passed as `data`.
+});
+]]></code>
+  </example>
+  <category slug="core"/>
+  <category slug="properties/global-jquery-object-properties"/>
+  <category slug="events/document-loading"/>
+  <category slug="version/1.8"/>
+</entry>
