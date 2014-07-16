@@ -184,7 +184,7 @@ $( myForm.elements ).hide();
 $( "&lt;img&gt;" );
 $( "&lt;input&gt;" );
       </code></pre>
-      <p>When passing HTML to <code>jQuery()</code>, note that text nodes are not treated as DOM elements. With the exception of a few methods (such as <code>.content()</code>), they are generally otherwise ignored or removed. E.g:</p>
+      <p>When passing HTML to <code>jQuery()</code>, note that text nodes are not treated as DOM elements. With the exception of a few methods (such as <code>.content()</code>), they are generally ignored or removed. E.g:</p>
       <pre><code>
 var el = $( "&lt;br&gt;2&lt;br&gt;3" ); // returns [&lt;br&gt;, "2", &lt;br&gt;]
 el = $( "&lt;br&gt;2&lt;br&gt;3 &gt;" ); // returns [&lt;br&gt;, "2", &lt;br&gt;, "3 &amp;gt;"]
