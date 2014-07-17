@@ -20,9 +20,6 @@
       <div class="warning">
         <p><strong>Note:</strong> Attribute values are strings with the exception of a few attributes such as value and tabindex.</p>
       </div>
-      <div class="warning">
-        <p><strong>Note:</strong> Attempting to change the <code>type</code> attribute (or property) of an <code>input</code> element created via HTML or already in an HTML document will result in an error being thrown by Internet Explorer 6, 7, or 8.</p>
-      </div>
       <p>As of jQuery 1.6, the <code>.attr()</code> method returns <code>undefined</code> for attributes that have not been set. <strong>To retrieve and change DOM properties such as the <code>checked</code>, <code>selected</code>, or <code>disabled</code> state of form elements, use the <a href="/prop/">.prop()</a> method.</strong></p>
 
       <h4>Attributes vs. Properties</h4>
@@ -197,7 +194,9 @@ $( "#greatphoto" ).attr({
       </code></pre>
       <p>When setting multiple attributes, the quotes around attribute names are optional.</p>
       <p><strong>WARNING</strong>: When setting the 'class' attribute, you must always use quotes!</p>
-      <p><strong>Note</strong>: jQuery prohibits changing the <code>type</code> attribute on an <code>&lt;input&gt;</code> or <code>&lt;button&gt;</code> element and will throw an error in all browsers. This is because the <code>type</code> attribute cannot be changed in Internet Explorer.</p>
+      <div class="warning">
+        <p><strong>Note:</strong> Attempting to change the <code>type</code> attribute on an <code>input</code> or <code>button</code> element created via <code>document.createElement()</code> will throw an exception on Internet Explorer 8 or older.</p>
+      </div>
       <h4 id="computed-attr-values">Computed attribute values</h4>
       <p>By using a function to set attributes, you can compute the value based on other properties of the element. For example, to concatenate a new value with an existing value:</p>
       <pre><code>
