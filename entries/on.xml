@@ -121,7 +121,7 @@ $( "form" ).on( "submit", false );
 ]]></code>
   </example>
   <example>
-    <desc>Cancel only the default action by using .preventDefault().</desc>
+    <desc>Cancel only the default action by using <code>.preventDefault()</code>.</desc>
     <code><![CDATA[
 $( "form" ).on( "submit", function( event ) {
   event.preventDefault();
@@ -129,7 +129,7 @@ $( "form" ).on( "submit", function( event ) {
 ]]></code>
   </example>
   <example>
-    <desc>Stop submit events from bubbling without preventing form submit, using .stopPropagation().</desc>
+    <desc>Stop submit events from bubbling without preventing form submit, using <code>.stopPropagation()</code>.</desc>
     <code><![CDATA[
 $( "form" ).on( "submit", function( event ) {
   event.stopPropagation();
@@ -215,7 +215,7 @@ $( "div.test" ).on({
 ]]></code>
   </example>
   <example>
-    <desc>Click any paragraph to add another after it. Note that .on() allows a click event on any paragraph--even new ones--since the event is handled by the ever-present body element after it bubbles to there.</desc>
+    <desc>Click any paragraph to add another after it. Note that <code>.on()</code> allows a click event on any paragraph--even new ones--since the event is handled by the ever-present body element after it bubbles to there.</desc>
     <code><![CDATA[
 var count = 0;
 $( "body" ).on( "click", "p", function() {
@@ -250,7 +250,7 @@ $( "body" ).on( "click", "p", function() {
 ]]></code>
   </example>
   <example>
-    <desc>Cancel a link's default action using the preventDefault method.</desc>
+    <desc>Cancel a link's default action using the <code>.preventDefault()</code> method.</desc>
     <code><![CDATA[
 $( "body" ).on( "click", "a", function( event ) {
   event.preventDefault();
