@@ -139,8 +139,8 @@ $( "form" ).on( "submit", function( event ) {
   <example>
     <desc>Pass data to the event handler using the second argument to <code>.trigger()</code></desc>
     <code><![CDATA[
-$( "div" ).on( "click", function( event, extraParameter ) {
-  alert( "Hello, " + extraParameter.name );
+$( "div" ).on( "click", function( event, person ) {
+  alert( "Hello, " + person.name );
 });
 $( "div" ).trigger( "click", { name: "Jim" } );
 ]]></code>
