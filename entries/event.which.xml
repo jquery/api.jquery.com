@@ -24,8 +24,11 @@ $( "#whichkey" ).on( "keydown", function( event ) {
   <example>
     <desc>Log which mouse button was depressed.</desc>
     <code><![CDATA[
-$( "#whichkey" ).on( "mousedown", function( event ) {
-  $( "#log" ).html( event.type + ": " +  event.which );
+$( "#whichkey" ).on( "keydown", function( event ) {
+    $( "#log" ).append( event.type + ": " + event.which +'<br>' );
+});
+$( "#whichkey" ).on( "keypress", function( event ) {
+    $( "#log" ).append( event.type + ": " + event.which +'<br>' );
 });
 ]]></code>
     <html><![CDATA[
