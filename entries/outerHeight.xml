@@ -16,6 +16,7 @@
     </p>
   </longdesc>
 	<note id="dimensions-number" type="additional" data-title=".outerHeight()"/>
+  <note id="inaccurate-dimensions-for-hidden-elements" type="additional" data-title=".outerHeight()"/>
   <example>
     <desc>Get the outerHeight of a paragraph.</desc>
     <code><![CDATA[

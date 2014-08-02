@@ -13,6 +13,7 @@
     </p>
   </longdesc>
 	<note id="dimensions-number" type="additional" data-title=".innerHeight()"/>
+  <note id="inaccurate-dimensions-for-hidden-elements" type="additional" data-title=".innerHeight()"/>
   <example>
     <desc>Get the innerHeight of a paragraph.</desc>
     <code><![CDATA[

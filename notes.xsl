@@ -16,6 +16,9 @@
 		<xsl:when test="@id = 'domlint'">
 			Forms and their child elements should not use input names or ids that conflict with properties of a form, such as <code>submit</code>, <code>length</code>, or <code>method</code>. Name conflicts can cause confusing failures. For a complete list of rules and to check your markup for these problems, see <a href="http://kangax.github.com/domlint/">DOMLint</a>.
 		</xsl:when>
+		<xsl:when test="@id = 'inaccurate-dimensions-for-hidden-elements'">
+			The value reported by <code><xsl:value-of select="@data-title" /></code> is not guaranteed to be accurate when the element's parent is hidden. To get an accurate value, you should show the parent first, before using <code><xsl:value-of select="@data-title" /></code>.
+		</xsl:when>
 		<xsl:when test="@id = 'jquery-selector-extension'">
 			Because <code><xsl:value-of select="@data-selector"/></code> is a jQuery extension and not part of the CSS specification, queries using <code><xsl:value-of select="@data-selector"/></code> cannot take advantage of the performance boost provided by the native DOM <code>querySelectorAll()</code> method. To achieve the best performance when using <code><xsl:value-of select="@data-selector"/></code> to select elements, first select the elements using a pure CSS selector, then use <a href="/filter/"><code>.filter("<xsl:value-of select="@data-selector"/>")</code></a>.
 		</xsl:when>
