@@ -1,14 +1,14 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 <xsl:template name="note">
 	<xsl:choose>
+		<xsl:when test="@id = 'data-doesnt-accept-undefined'">
+			<code>undefined</code> is not recognised as a data value. Calls such as <code><xsl:value-of select="@data-title" />( <xsl:value-of select="@data-parameters" />, undefined )</code> will return the corresponding data for "name", and is therefore the same as <code><xsl:value-of select="@data-title" />( <xsl:value-of select="@data-parameters" /> )</code>.
+		</xsl:when>
 		<xsl:when test="@id = 'dimensions-number'">
 			The numbers returned by dimensions-related APIs, including <code><xsl:value-of select="@data-title"/></code>, may be fractional in some cases. Code should not assume it is an integer. Also, dimensions may be incorrect when the page is zoomed by the user; browsers do not expose an API to detect this condition.
 		</xsl:when>
 		<xsl:when test="@id = 'disconnected-manipulation'">
 			Prior to jQuery 1.9, <code><xsl:value-of select="@data-title"/></code> would attempt to add or change nodes in the current jQuery set if the first node in the set was not connected to a document, and in those cases return a new jQuery set rather than the original set. The method might or might not have returned a new result depending on the number or connectedness of its arguments! As of jQuery 1.9, <code>.after()</code>, <code>.before()</code>, and <code>.replaceWith()</code> always return the original unmodified set. Attempting to use these methods on a node without a parent has no effect—that is, neither the set nor the nodes it contains are changed.
-		</xsl:when>
-		<xsl:when test="@id = 'removes-data'">
-			The <code><xsl:value-of select="@data-title"/></code> method removes all data and event handlers associated with the removed nodes.
 		</xsl:when>
 		<xsl:when test="@id = 'document-order'">
 			Selected elements are in the order of their appearance in the document.
@@ -33,6 +33,9 @@
 		</xsl:when>
 		<xsl:when test="@id = 'propagation-for-live-or-delegate'">
 			Since the <a href="/live/"><code>.live()</code></a> method handles events once they have propagated to the top of the document, it is not possible to stop propagation of live events. Similarly, events handled by <code><a href="/delegate/">.delegate()</a></code> will propagate to the elements to which they are delegated; event handlers bound on any elements below it in the DOM tree will already have been executed by the time the delegated event handler is called. These handlers, therefore, may prevent the delegated handler from triggering by calling <code><a href="/event.stopPropagation/">event.stopPropagation()</a></code> or returning <code>false</code>.
+		</xsl:when>
+		<xsl:when test="@id = 'removes-data'">
+			The <code><xsl:value-of select="@data-title"/></code> method removes all data and event handlers associated with the removed nodes.
 		</xsl:when>
 		<xsl:when test="@id = 'same-origin-policy'">
 			Due to browser security restrictions, most "Ajax" requests are subject to the <a title="Same Origin Policy on Wikipedia" href="http://en.wikipedia.org/wiki/Same_origin_policy">same origin policy</a>; the request can not successfully retrieve data from a different domain, subdomain, port, or protocol.

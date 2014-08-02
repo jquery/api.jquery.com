@@ -11,8 +11,8 @@
       <argument name="key" type="String">
         <desc>A string naming the piece of data to set.</desc>
       </argument>
-      <argument name="value" type="Object">
-        <desc>The new data value.</desc>
+      <argument name="value" type="Anything">
+        <desc>The new data value; this can be any Javascript type except <code>undefined</code>.</desc>
       </argument>
     </signature>
     <desc>Store arbitrary data associated with the specified element. Returns the value that was set.</desc>
@@ -23,8 +23,9 @@
 jQuery.data( document.body, "foo", 52 );
 jQuery.data( document.body, "bar", "test" );
       </code></pre>
-      <p><em>Note:</em> this method currently does not provide cross-platform support for setting data on XML documents, as Internet Explorer does not allow data to be attached via expando properties.</p>
     </longdesc>
+    <note id="no-data-on-xml" type="additional"/>
+    <note id="data-doesnt-accept-undefined" type="additional" data-title="jQuery.data" data-parameters="el, &quot;name&quot;"/>
     <example>
       <desc>Store then retrieve a value from the div element.</desc>
       <code><![CDATA[
