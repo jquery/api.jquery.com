@@ -17,10 +17,13 @@
   </signature>
   <desc>Remove a previously-stored piece of data.</desc>
   <longdesc>
-    <p>The <code>.removeData()</code> method allows us to remove values that were previously set using <code>.data()</code>. When called with the name of a key, <code>.removeData()</code> deletes that particular value. When called with no arguments, <code>.removeData()</code> removes all values. Removing data from jQuery's internal <code>.data()</code> cache does not affect any HTML5 <code>data-</code> attributes in a document; use <code>.removeAttr()</code> to remove those.</p>
-    <p>When using <code>.removeData("name")</code>, jQuery will attempt to locate a <code>data-</code> attribute on the element if no property by that name is in the internal data cache. To avoid a re-query of the <code>data-</code> attribute, set the name to a value of either <code>null</code> or <code>undefined</code> (e.g. <code>.data("name", undefined)</code>) rather than using <code>.removeData()</code>.</p>
+    <p>The <code>.removeData()</code> method allows us to remove values that were previously set using <code>.data()</code>. When called with the name of a key, <code>.removeData()</code> deletes that particular value. When called with no arguments, <code>.removeData()</code> removes all values.</p>
+    <p>
+      Note that <code>.removeData()</code> will only remove data from jQuery's internal <code>.data()</code> cache, and any corresponding <code>data-</code> attributes on the element will not be removed. A later call to <code>data()</code>
+      will therefore re-retrieve the value from the <code>data-</code> attribute. To prevent this, use <code>.removeAttr()</code> alongside <code>.removeData()</code> to remove the <code>data-</code> attribute as well. Prior to jQuery 1.4.3,
+      as <code>data()</code> did not use <code>data-</code> attributes, this was not an issue.
+    </p>
     <p><strong>As of jQuery 1.7</strong>, when called with an array of keys or a string of space-separated keys, <code>.removeData()</code> deletes the value of each key in that array or string.</p>
-    <p><strong>As of jQuery 1.4.3</strong>, calling <code>.removeData()</code> will cause the value of the property being removed to revert to the value of the data attribute of the same name in the DOM, rather than being set to <code>undefined</code>.</p>
   </longdesc>
   <example>
     <desc>Set a data store for 2 names then remove one of them.</desc>
