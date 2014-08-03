@@ -34,7 +34,7 @@ $.when( d1, d2 ).done(function ( v1, v2 ) {
 d1.resolve( "Fish" );
 d2.resolve( "Pizza" );
     </code></pre>
-    <p>In the event a Deferred was resolved with no value, the corresponding doneCallback argument will be undefined. If a Deferred resolved to a single value, the corresponding argument will hold that value. If the case where a Deferred resolved to multiple values, the corresponding argument will be an array of those values. For example:</p>
+    <p>In the event a Deferred was resolved with no value, the corresponding doneCallback argument will be undefined. If a Deferred resolved to a single value, the corresponding argument will hold that value. In the case where a Deferred resolved to multiple values, the corresponding argument will be an array of those values. For example:</p>
     <pre><code>
 var d1 = new $.Deferred();
 var d2 = new $.Deferred();
