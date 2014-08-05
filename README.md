@@ -1,3 +1,28 @@
+**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+
+- [Referencing Bug Tracker Tickets](#user-content-referencing-bug-tracker-tickets)
+- [Building](#user-content-building)
+	- [Requirements](#user-content-requirements)
+	- [Build](#user-content-build)
+- [Style Guidelines](#user-content-style-guidelines)
+	- [Prose Style & Grammar](#user-content-prose-style--grammar)
+		- [Sentence Structure](#user-content-sentence-structure)
+		- [Spelling](#user-content-spelling)
+		- [Pronoun Usage](#user-content-pronoun-usage)
+		- ["Voice"](#user-content-voice)
+	- [Code Style](#user-content-code-style)
+		- [Code within prose content (paragraphs and the like):](#user-content-code-within-prose-content-paragraphs-and-the-like)
+		- [Examples](#user-content-examples)
+	- [Rhetorical Context](#user-content-rhetorical-context)
+
+
+
+
+
+
+
+
+
 ## Referencing Bug Tracker Tickets
 
 * Pull requests for changes that were requested or recommended via the [jQuery Bug Tracker](http://bugs.jquery.com) should include a link back to the relevant ticket.
