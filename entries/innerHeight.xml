@@ -53,7 +53,7 @@ $( "p:last" ).text( "innerHeight:" + p.innerHeight() );
   <added>1.8.0</added>
   <argument name="function" type="Function">
     <argument name="index" type="Integer" />
-    <argument name="width" type="Number" />
+    <argument name="height" type="Number" />
     <return>
       <type name="String"/>
       <type name="Number"/>
