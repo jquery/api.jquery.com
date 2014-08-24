@@ -10,7 +10,7 @@
   </signature>
   <signature>
     <added>1.4.3</added>
-    <argument name="eventData" type="Object" optional="true">
+    <argument name="eventData" type="Anything" optional="true">
       <desc>A plain object of data that will be passed to the event handler.</desc>
     </argument>
     <argument name="handler" type="Function">

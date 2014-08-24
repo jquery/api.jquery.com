@@ -6,7 +6,7 @@
     <argument name="eventType" type="String">
       <desc>A string containing one or more DOM event types, such as "click" or "submit," or custom event names.</desc>
     </argument>
-    <argument name="eventData" type="Object" optional="true">
+    <argument name="eventData" type="Anything" optional="true">
       <desc>An object containing data that will be passed to the event handler.</desc>
     </argument>
     <argument name="handler" type="Function">
@@ -19,7 +19,7 @@
     <argument name="eventType" type="String">
       <desc>A string containing one or more DOM event types, such as "click" or "submit," or custom event names.</desc>
     </argument>
-    <argument name="eventData" type="Object" optional="true">
+    <argument name="eventData" type="Anything" optional="true">
       <desc>An object containing data that will be passed to the event handler.</desc>
     </argument>
     <argument name="preventBubble" type="Boolean" optional="true">
