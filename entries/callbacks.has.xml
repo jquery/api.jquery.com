@@ -3,11 +3,11 @@
   <title>callbacks.has()</title>
   <signature>
     <added>1.7</added>
-    <argument name="callback" type="Function">
+    <argument name="callback" type="Function" optional="true">
       <desc>The callback to search for.</desc>
     </argument>
   </signature>
-  <desc>Determine whether a supplied callback is in a list</desc>
+  <desc>Determine whether or not the list has any callbacks attached. If a callback is provided as an argument, determine whether it is in a list.</desc>
   <longdesc/>
   <example>
     <desc>Use <code>callbacks.has()</code> to check if a callback list contains a specific callback:</desc>
