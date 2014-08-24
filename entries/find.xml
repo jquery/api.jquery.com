@@ -9,14 +9,10 @@
   </signature>
   <signature>
     <added>1.6</added>
-    <argument name="selection" type="jQuery">
-      <desc>A jQuery object to match elements against.</desc>
-    </argument>
-  </signature>
-  <signature>
-    <added>1.6</added>
-    <argument name="element" type="Element">
-      <desc>An element to match elements against.</desc>
+    <argument name="element">
+      <desc>An element or a jQuery object to match elements against.</desc>
+      <type name="Element"/>
+      <type name="jQuery"/>
     </argument>
   </signature>
   <desc>Get the descendants of each element in the current set of matched elements, filtered by a selector, jQuery object, or element.</desc>
