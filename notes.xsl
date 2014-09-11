@@ -5,7 +5,7 @@
 			<code>undefined</code> is not recognised as a data value. Calls such as <code><xsl:value-of select="@data-title" />( <xsl:value-of select="@data-parameters" />, undefined )</code> will return the corresponding data for "name", and is therefore the same as <code><xsl:value-of select="@data-title" />( <xsl:value-of select="@data-parameters" /> )</code>.
 		</xsl:when>
 		<xsl:when test="@id = 'dimensions-number'">
-			The numbers returned by dimensions-related APIs, including <code><xsl:value-of select="@data-title"/></code>, may be fractional in some cases. Code should not assume it is an integer. Also, dimensions may be incorrect when the page is zoomed by the user; browsers do not expose an API to detect this condition.
+			The number returned by dimensions-related APIs, including <code><xsl:value-of select="@data-title"/></code>, may be fractional in some cases. Code should not assume it is an integer. Also, dimensions may be incorrect when the page is zoomed by the user; browsers do not expose an API to detect this condition.
 		</xsl:when>
 		<xsl:when test="@id = 'disconnected-manipulation'">
 			Prior to jQuery 1.9, <code><xsl:value-of select="@data-title"/></code> would attempt to add or change nodes in the current jQuery set if the first node in the set was not connected to a document, and in those cases return a new jQuery set rather than the original set. The method might or might not have returned a new result depending on the number or connectedness of its arguments! As of jQuery 1.9, <code>.after()</code>, <code>.before()</code>, and <code>.replaceWith()</code> always return the original unmodified set. Attempting to use these methods on a node without a parent has no effect—that is, neither the set nor the nodes it contains are changed.
@@ -15,6 +15,9 @@
 		</xsl:when>
 		<xsl:when test="@id = 'domlint'">
 			Forms and their child elements should not use input names or ids that conflict with properties of a form, such as <code>submit</code>, <code>length</code>, or <code>method</code>. Name conflicts can cause confusing failures. For a complete list of rules and to check your markup for these problems, see <a href="http://kangax.github.com/domlint/">DOMLint</a>.
+		</xsl:when>
+		<xsl:when test="@id = 'inaccurate-dimensions-for-hidden-elements'">
+			The value reported by <code><xsl:value-of select="@data-title" /></code> is not guaranteed to be accurate when the element's parent is hidden. To get an accurate value, you should show the parent first, before using <code><xsl:value-of select="@data-title" /></code>.
 		</xsl:when>
 		<xsl:when test="@id = 'jquery-selector-extension'">
 			Because <code><xsl:value-of select="@data-selector"/></code> is a jQuery extension and not part of the CSS specification, queries using <code><xsl:value-of select="@data-selector"/></code> cannot take advantage of the performance boost provided by the native DOM <code>querySelectorAll()</code> method. To achieve the best performance when using <code><xsl:value-of select="@data-selector"/></code> to select elements, first select the elements using a pure CSS selector, then use <a href="/filter/"><code>.filter("<xsl:value-of select="@data-selector"/>")</code></a>.

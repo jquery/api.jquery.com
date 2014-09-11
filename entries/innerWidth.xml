@@ -15,6 +15,7 @@
     </p>
   </longdesc>
 	<note id="dimensions-number" type="additional" data-title=".innerWidth()"/>
+  <note id="inaccurate-dimensions-for-hidden-elements" type="additional" data-title=".innerWidth()"/>
   <example>
     <desc>Get the innerWidth of a paragraph.</desc>
     <code><![CDATA[
