@@ -9,20 +9,48 @@
   </signature>
   <desc>Provides a way to execute callback functions based on one or more objects, usually <a href="/category/deferred-object/">Deferred</a> objects that represent asynchronous events.</desc>
   <longdesc>
-    <p>If a single Deferred is passed to <code>jQuery.when</code>, its Promise object (a subset of the Deferred methods) is returned by the method. Additional methods of the Promise object can be called to attach callbacks, such as <a href="/deferred.then/"><code>deferred.then</code></a>. When the Deferred is resolved or rejected, usually by the code that created the Deferred originally, the appropriate callbacks will be called. For example, the jqXHR object returned by <code>jQuery.ajax()</code> is a Promise and can be used this way:</p>
+    <p>If a single Deferred is passed to <code>jQuery.when()</code>, its Promise object (a subset of the Deferred methods) is returned by the method. Additional methods of the Promise object can be called to attach callbacks, such as <a href="/deferred.then/"><code>deferred.then</code></a>. When the Deferred is resolved or rejected, usually by the code that created the Deferred originally, the appropriate callbacks will be called. For example, the jqXHR object returned by <code>jQuery.ajax()</code> is a Promise and can be used this way:</p>
     <pre><code>
 $.when( $.ajax( "test.aspx" ) ).then(function( data, textStatus, jqXHR ) {
   alert( jqXHR.status ); // Alerts 200
 });
     </code></pre>
-    <p>If a single argument is passed to <code>jQuery.when</code> and it is not a Deferred or a Promise, it will be treated as a resolved Deferred and any doneCallbacks attached will be executed immediately. The doneCallbacks are passed the original argument. In this case any failCallbacks you might set are never called since the Deferred is never rejected. For example:</p>
+    <p>If a single argument is passed to <code>jQuery.when()</code> and it is not a Deferred or a Promise, it will be treated as a resolved Deferred and any doneCallbacks attached will be executed immediately. The doneCallbacks are passed the original argument. In this case any failCallbacks you might set are never called since the Deferred is never rejected. For example:</p>
     <pre><code>
 $.when( { testing: 123 } ).done(function( x ) {
   alert( x.testing ); // Alerts "123"
 });
     </code></pre>
-    <p>In the case where multiple Deferred objects are passed to <code>jQuery.when</code>, the method returns the Promise from a new "master" Deferred object that tracks the aggregate state of all the Deferreds it has been passed. The method will resolve its master Deferred as soon as all the Deferreds resolve, or reject the master Deferred as soon as one of the Deferreds is rejected. If the master Deferred is resolved, it is passed the resolved values of all the Deferreds that were passed to <code>jQuery.when</code>. For example, when the Deferreds are <code>jQuery.ajax()</code> requests, the arguments will be the jqXHR objects for the requests, in the order they were given in the argument list.</p>
-    <p>In the multiple-Deferreds case where one of the Deferreds is rejected, <code>jQuery.when</code> immediately fires the failCallbacks for its master Deferred. Note that some of the Deferreds may still be unresolved at that point. If you need to perform additional processing for this case, such as canceling any unfinished ajax requests, you can keep references to the underlying jqXHR objects in a closure and inspect/cancel them in the failCallback.</p>
+    <p>In the case where multiple Deferred objects are passed to <code>jQuery.when()</code>, the method returns the Promise from a new "master" Deferred object that tracks the aggregate state of all the Deferreds it has been passed. The method will resolve its master Deferred as soon as all the Deferreds resolve, or reject the master Deferred as soon as one of the Deferreds is rejected. If the master Deferred is resolved, the doneCallbacks for the master Deferred are executed. The arguments passed to the doneCallbacks provide the resolved values for each of the Deferreds, and matches the order the Deferreds were passed to <code>jQuery.when()</code>. For example:</p>
+    <pre><code>
+var d1 = new $.Deferred();
+var d2 = new $.Deferred();
+
+$.when( d1, d2 ).done(function ( v1, v2 ) {
+    console.log( v1 ); // "Fish"
+    console.log( v2 ); // "Pizza"
+});
+
+d1.resolve( "Fish" );
+d2.resolve( "Pizza" );
+    </code></pre>
+    <p>In the event a Deferred was resolved with no value, the corresponding doneCallback argument will be undefined. If a Deferred resolved to a single value, the corresponding argument will hold that value. In the case where a Deferred resolved to multiple values, the corresponding argument will be an array of those values. For example:</p>
+    <pre><code>
+var d1 = new $.Deferred();
+var d2 = new $.Deferred();
+var d3 = new $.Deferred();
+
+$.when( d1, d2, d3 ).done(function ( v1, v2, v3 ) {
+    console.log( v1 ); // v1 is undefined
+    console.log( v2 ); // v2 is "abc"
+    console.log( v3 ); // v3 is an array [ 1, 2, 3, 4, 5 ]
+});
+
+d1.resolve();
+d2.resolve( "abc" );
+d3.resolve( 1, 2, 3, 4, 5 );
+    </code></pre>
+    <p>In the multiple-Deferreds case where one of the Deferreds is rejected, <code>jQuery.when()</code> immediately fires the failCallbacks for its master Deferred. Note that some of the Deferreds may still be unresolved at that point. The arguments passed to the failCallbacks match the signature of the failCallback for the Deferred that was rejected. If you need to perform additional processing for this case, such as canceling any unfinished ajax requests, you can keep references to the underlying jqXHR objects in a closure and inspect/cancel them in the failCallback.</p>
   </longdesc>
   <example>
     <desc>Execute a function after two ajax requests are successful. (See the jQuery.ajax() documentation for a complete description of success and error cases for an ajax request).</desc>
