@@ -16,6 +16,7 @@
     <argument name="handler" type="Function">
       <desc>A function to execute when the event is triggered. The value <code>false</code> is also allowed as a shorthand for a function that simply does <code>return false</code>.</desc>
       <argument name="eventObject" type="Event" />
+      <argument name="extraParameter" type="Anything" optional="true" rest="true" />
     </argument>
   </signature>
   <signature>
@@ -63,7 +64,7 @@ function notify() {
 }
 $( "button" ).on( "click", notify );
     </code></pre>
-    <p>When the browser triggers an event or other JavaScript calls jQuery's <code>.trigger()</code> method, jQuery passes the handler an <a href="/category/events/event-object/"><code>event object</code></a> it can use to analyze and change the status of the event. This object is a <em>normalized subset</em> of data provided by the browser; the browser's unmodified native event object is available in <code>event.originalEvent</code>. For example, <a href="/event.type/"><code>event.type</code></a> contains the event name (e.g., "resize") and <a href="/event.target/"><code>event.target</code></a> indicates the deepest (innermost) element where the event occurred.</p>
+    <p>When the browser triggers an event or other JavaScript calls jQuery's <code>.trigger()</code> method, jQuery passes the handler an <a href="/category/events/event-object/"><code>Event</code></a> object it can use to analyze and change the status of the event. This object is a <em>normalized subset</em> of data provided by the browser; the browser's unmodified native event object is available in <code>event.originalEvent</code>. For example, <a href="/event.type/"><code>event.type</code></a> contains the event name (e.g., "resize") and <a href="/event.target/"><code>event.target</code></a> indicates the deepest (innermost) element where the event occurred.</p>
     <p>By default, most events bubble up from the original event target to the <code>document</code> element. At each element along the way, jQuery calls any matching event handlers that have been attached. A handler can prevent the event from bubbling further up the document tree (and thus prevent handlers on those elements from running) by calling <code>event.stopPropagation()</code>. Any other handlers attached on the current element <em>will</em> run however. To prevent that, call <code>event.stopImmediatePropagation()</code>. (Event handlers bound to an element are called in the same order that they were bound.)</p>
     <p>Similarly, a handler can call <code>event.preventDefault()</code> to cancel any default action that the browser may have for this event; for example, the default action on a <code>click</code> event is to follow the link. Not all browser events have default actions, and not all default actions can be canceled. See the <a href="http://www.w3.org/TR/DOM-Level-3-Events/#event-types-list">W3C Events Specification</a> for details.</p>
     <p>Returning <code>false</code> from an event handler will automatically call <code>event.stopPropagation()</code> and <code>event.preventDefault()</code>. A <code>false</code> value can also be passed for the <code>handler</code> as a shorthand for <code>function(){ return false; }</code>. So, <code>$( "a.disabled" ).on( "click", false );</code> attaches an event handler to all links with class "disabled" that prevents them from being followed when they are clicked and also stops the event from bubbling. </p>
@@ -83,7 +84,7 @@ $( "button" ).on( "click", {
 }, greet );
     </code></pre>
     <p>The above code will generate two different alerts when the button is clicked.</p>
-    <p>As an alternative or in addition to the <code>data</code> argument provided to the <code>.on()</code> method, you can also pass data to an event handler using a second argument to <a href="/trigger/">.trigger()</a> or <a href="/triggerHandler/">.triggerHandler()</a>.</p>
+    <p>As an alternative or in addition to the <code>data</code> argument provided to the <code>.on()</code> method, you can also pass data to an event handler using a second argument to <a href="/trigger/"><code>.trigger()</code></a> or <a href="/triggerHandler/"><code>.triggerHandler()</code></a>. Data provided this way is passed to the event handler as further parameters after the <code>Event</code> object. If an array was passed to the second argument of <code>.trigger()</code> or <code>.triggerHandler()</code>, each element in the array will be presented to the event handler as an individual parameter.</p>
     <h2 id="event-performance">Event performance</h2>
     <p>In most cases, an event such as <code>click</code> occurs infrequently and performance is not a significant concern. However, high frequency events such as <code>mousemove</code> or <code>scroll</code> can fire dozens of times per second, and in those cases it becomes more important to use events judiciously. Performance can be increased by reducing the amount of work done in the handler itself, caching information needed by the handler rather than recalculating it, or by rate-limiting the number of actual page updates using <code>setTimeout</code>.</p>
     <p>Attaching many delegated event handlers near the top of the document tree can degrade performance. Each time the event occurs, jQuery must compare all selectors of all attached events of that type to every element in the path from the event target up to the top of the document. For best performance, attach delegated events at a document location as close as possible to the target elements. Avoid excessive use of <code>document</code> or <code>document.body</code> for delegated events on large documents.</p>
@@ -120,7 +121,7 @@ $( "form" ).on( "submit", false );
 ]]></code>
   </example>
   <example>
-    <desc>Cancel only the default action by using .preventDefault().</desc>
+    <desc>Cancel only the default action by using <code>.preventDefault()</code>.</desc>
     <code><![CDATA[
 $( "form" ).on( "submit", function( event ) {
   event.preventDefault();
@@ -128,11 +129,29 @@ $( "form" ).on( "submit", function( event ) {
 ]]></code>
   </example>
   <example>
-    <desc>Stop submit events from bubbling without preventing form submit, using .stopPropagation().</desc>
+    <desc>Stop submit events from bubbling without preventing form submit, using <code>.stopPropagation()</code>.</desc>
     <code><![CDATA[
 $( "form" ).on( "submit", function( event ) {
   event.stopPropagation();
 });
+]]></code>
+  </example>
+  <example>
+    <desc>Pass data to the event handler using the second argument to <code>.trigger()</code></desc>
+    <code><![CDATA[
+$( "div" ).on( "click", function( event, person ) {
+  alert( "Hello, " + person.name );
+});
+$( "div" ).trigger( "click", { name: "Jim" } );
+]]></code>
+  </example>
+  <example>
+    <desc>Use the the second argument of <code>.trigger()</code> to pass an array of data to the event handler</desc>
+    <code><![CDATA[
+$( "div" ).on( "click", function( event, salutation, name ) {
+  alert( salutation + ", " + name );
+});
+$( "div" ).trigger( "click", [ "Goodbye", "Jim" ] );
 ]]></code>
   </example>
   <example>
@@ -196,7 +215,7 @@ $( "div.test" ).on({
 ]]></code>
   </example>
   <example>
-    <desc>Click any paragraph to add another after it. Note that .on() allows a click event on any paragraph--even new ones--since the event is handled by the ever-present body element after it bubbles to there.</desc>
+    <desc>Click any paragraph to add another after it. Note that <code>.on()</code> allows a click event on any paragraph--even new ones--since the event is handled by the ever-present body element after it bubbles to there.</desc>
     <code><![CDATA[
 var count = 0;
 $( "body" ).on( "click", "p", function() {
@@ -231,7 +250,7 @@ $( "body" ).on( "click", "p", function() {
 ]]></code>
   </example>
   <example>
-    <desc>Cancel a link's default action using the preventDefault method.</desc>
+    <desc>Cancel a link's default action using the <code>.preventDefault()</code> method.</desc>
     <code><![CDATA[
 $( "body" ).on( "click", "a", function( event ) {
   event.preventDefault();
