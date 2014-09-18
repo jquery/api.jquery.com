@@ -7,7 +7,7 @@
   </signature>
   <desc>Matches all elements that are checked or selected.</desc>
   <longdesc>
-    <p>The <code>:checked</code> selector works for checkboxes, radio buttons, and select elements. For select elements only, use the <code>:selected</code> selector.</p>
+    <p>The <code>:checked</code> selector works for checkboxes, radio buttons, and selected options of select elements. For the selected options of select elements only, use the <code>:selected</code> selector.</p>
   </longdesc>
   <example>
     <desc>Determine how many input elements are checked.</desc>
@@ -65,6 +65,31 @@ $( "input" ).on( "click", function() {
   <div>
     <input type="radio" name="fruit" value="banana" id="banana">
     <label for="banana">banana</label>
+  </div>
+  <div id="log"></div>
+</form>
+]]></html>
+  </example>
+  <example>
+    <desc>Identify the selected option</desc>
+    <code><![CDATA[
+$( "select" ).on( "change", function() {
+  $( "#log" ).html( $( "select :checked" ).val() + " is selected!" );
+});
+]]></code>
+    <css><![CDATA[
+  select, label {
+    line-height: 1.5em;
+  }
+]]></css>
+    <html><![CDATA[
+<form>
+  <div>
+    <select name="numbers" id="numbers" value="numbers">
+        <option value="1">one</option>
+        <option value="2">two</option>
+        <option value="3">three</option>
+    </select>
   </div>
   <div id="log"></div>
 </form>
