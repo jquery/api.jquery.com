@@ -101,10 +101,11 @@ $( "div" ).data( "lastValue" ) === 43;
 $( "div" ).data( "hidden" ) === true;
 $( "div" ).data( "options" ).name === "John";
       </code></pre>
+      <p>The second statement of the code above correctly refers to the <code>data-last-value</code> attribute of the element. In case no data is stored with the passed key, jQuery searches among the attributes of the element, converting a camel-cased string into a dashed string and then prepending <code>data-</code> to the result. So, the string <code>lastValue</code> is converted to <code>data-last-value</code>.</p>
       <p>Every attempt is made to convert the string to a JavaScript value (this includes booleans, numbers, objects, arrays, and null). A value is only converted to a number if doing so doesn't change the value's representation. For example, "1E02" and "100.000" are equivalent as numbers (numeric value 100) but converting them would alter their representation so they are left as strings. The string value "100" is converted to the number 100.</p>
-	  <p>When the data attribute is an object (starts with '{') or array (starts with '[') then <code>jQuery.parseJSON</code> is used to parse the string; it must follow <a href="http://en.wikipedia.org/wiki/JSON#Data_types.2C_syntax_and_example">valid JSON syntax</a> <em>including quoted property names</em>. If the value isn't parseable as a JavaScript value, it is left as a string.</p>
-	  <p>To retrieve the value's attribute as a string without any attempt to convert it, use the <code><a href="/attr/">attr()</a></code> method.</p>
-	  <p>The data- attributes are pulled in the first time the data property is accessed and then are no longer accessed or mutated (all data values are then stored internally in jQuery).</p>
+      <p>When the data attribute is an object (starts with '{') or array (starts with '[') then <code>jQuery.parseJSON</code> is used to parse the string; it must follow <a href="http://en.wikipedia.org/wiki/JSON#Data_types.2C_syntax_and_example">valid JSON syntax</a> <em>including quoted property names</em>. If the value isn't parseable as a JavaScript value, it is left as a string.</p>
+      <p>To retrieve the value's attribute as a string without any attempt to convert it, use the <code><a href="/attr/">attr()</a></code> method.</p>
+      <p>The data- attributes are pulled in the first time the data property is accessed and then are no longer accessed or mutated (all data values are then stored internally in jQuery).</p>
       <p>Calling <code>.data()</code> with no parameters retrieves all of the values as a JavaScript object. This object can be safely cached in a variable as long as a new object is not set with <code>.data(obj)</code>. Using the object directly to get or set values is faster than making individual calls to <code>.data()</code> to get or set each value:</p>
       <pre><code>
 var mydata = $( "#mydiv" ).data();
