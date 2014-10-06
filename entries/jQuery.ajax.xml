@@ -67,8 +67,8 @@ $.ajax({
       <property name="dataFilter" type="Function">
         <argument name="data" type="String"/>
         <argument name="type" type="String"/>
-        <return type="Object"/>
-        <desc>A function to be used to handle the raw response data of XMLHttpRequest.This is a pre-filtering function to sanitize the response. You should return the sanitized data. The function accepts two arguments: The raw data returned from the server and the 'dataType' parameter.</desc>
+        <return type="Anything"/>
+        <desc>A function to be used to handle the raw response data of XMLHttpRequest. This is a pre-filtering function to sanitize the response. You should return the sanitized data. The function accepts two arguments: The raw data returned from the server and the 'dataType' parameter.</desc>
       </property>
       <property name="dataType" default="Intelligent Guess (xml, json, script, or html)" type="String">
         <desc>The type of data that you're expecting back from the server. If none is specified, jQuery will try to infer it based on the MIME type of the response (an XML MIME type will yield XML, in 1.4 JSON will yield a JavaScript object, in 1.4 script will execute the script, and anything else will be returned as a string). The available types (and the result passed as the first argument to your success callback) are:
@@ -130,10 +130,10 @@ $.ajax({
         </desc>
       </property>
       <property name="success" type="Function">
-        <argument name="data" type="PlainObject"/>
+        <argument name="data" type="Anything"/>
         <argument name="textStatus" type="String"/>
         <argument name="jqXHR" type="jqXHR"/>
-        <desc>A function to be called if the request succeeds. The function gets passed three arguments: The data returned from the server, formatted according to the <code>dataType</code> parameter; a string describing the status; and the <code>jqXHR</code> (in jQuery 1.4.x, XMLHttpRequest) object. <strong>As of jQuery 1.5</strong>, <em>the success setting can accept an array of functions. Each function will be called in turn.</em> This is an <a href="/Ajax_Events/">Ajax Event</a>.</desc>
+        <desc>A function to be called if the request succeeds. The function gets passed three arguments: The data returned from the server, formatted according to the <code>dataType</code> parameter or the <code>dataFilter</code> callback function, if specified; a string describing the status; and the <code>jqXHR</code> (in jQuery 1.4.x, XMLHttpRequest) object. <strong>As of jQuery 1.5</strong>, <em>the success setting can accept an array of functions. Each function will be called in turn.</em> This is an <a href="/Ajax_Events/">Ajax Event</a>.</desc>
       </property>
       <property name="timeout" type="Number">
         <desc>Set a timeout (in milliseconds) for the request. This will override any global timeout set with <a href="/jQuery.ajaxSetup/">$.ajaxSetup()</a>. The timeout period starts at the point the <code>$.ajax</code> call is made; if several other requests are in progress and the browser has no connections available, it is possible for a request to time out before it can be sent. <strong>In jQuery 1.4.x and below,</strong> the XMLHttpRequest object will be in an invalid state if the request times out; accessing any object members may throw an exception. <strong>In Firefox 3.0+ only,</strong> script and JSONP requests cannot be cancelled by a timeout; the script will run even if it arrives after the timeout period.</desc>
