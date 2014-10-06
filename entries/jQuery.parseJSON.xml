@@ -1,5 +1,10 @@
 <?xml version="1.0"?>
-<entry type="method" name="jQuery.parseJSON" return="Object">
+<entry type="method" name="jQuery.parseJSON">
+  <return type="String"/>
+  <return type="Number"/>
+  <return type="Object"/>
+  <return type="Array"/>
+  <return type="Boolean"/>
   <title>jQuery.parseJSON()</title>
   <signature>
     <added>1.4.1</added>
@@ -7,16 +12,20 @@
       <desc>The JSON string to parse.</desc>
     </argument>
   </signature>
-  <desc>Takes a well-formed JSON string and returns the resulting JavaScript object.</desc>
+  <desc>Takes a well-formed JSON string and returns the resulting JavaScript value.</desc>
   <longdesc>
-    <p>Passing in a malformed JSON string results in a JavaScript exception being thrown. For example, the following are all malformed JSON strings:</p>
+    <p>Passing in a malformed JSON string results in a JavaScript exception being thrown. For example, the following are all invalid JSON strings:</p>
     <ul>
-      <li><code>{test: 1}</code> (test does not have double quotes around it).</li>
-      <li><code>{'test': 1}</code> ('test' is using single quotes instead of double quotes).</li>
+      <li><code>"{test: 1}"</code> (test does not have double quotes around it).</li>
+      <li><code>"{'test': 1}"</code> ('test' is using single quotes instead of double quotes).</li>
+      <li><code>"'test'"</code> ('test' is using single quotes instead of double quotes).</li>
+      <li><code>".1"</code> (a number must start with a digit; <code>"0.1"</code> would be valid).</li>
+      <li><code>"undefined"</code> (<code>undefined</code> cannot be represented in a JSON string; <code>null</code>, however, can be).</li>
+      <li><code>"NaN"</code> (<code>NaN</code> cannot be represented in a JSON string; direct representation of <code>Infinity</code> is also not permitted).</li>
     </ul>
     <p>The JSON standard does not permit "control characters" such as a tab or newline. An example like <code>$.parseJSON( '{ "testing":"1\t2\n3" }' )</code> will throw an error in most implementations because the JavaScript parser converts the string's tab and newline escapes into literal tab and newline; doubling the backslashes like <code>"1\\t2\\n3"</code> yields expected results. This problem is often seen when injecting JSON into a JavaScript file from a server-side language such as PHP.</p>
     <p>Where the browser provides a native implementation of <code>JSON.parse</code>, jQuery uses it to parse the string. For details on the JSON format, see <a href="http://json.org/">http://json.org/</a>.</p>
-    <p>Prior to jQuery 1.9, <code>$.parseJSON</code> returned <code>null</code> instead of throwing an error if it was passed an empty string, <code>null</code>, or <code>undefined</code>, even though those are not valid JSON. </p>
+    <p>Prior to jQuery 1.9, <code>$.parseJSON</code> returned <code>null</code> instead of throwing an error if it was passed an empty string, <code>null</code>, or <code>undefined</code>, even though those are not valid JSON.</p>
   </longdesc>
   <example>
     <desc>Parse a JSON string.</desc>
