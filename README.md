@@ -1,6 +1,6 @@
 ## Referencing Bug Tracker Tickets
 
-* Pull requests for changes that were requested or recommended via the [jQuery Bug Tracker](http://bugs.jquery.com) should include a link back to the relevant ticket.
+* Pull requests for changes that were requested or recommended via the [jQuery Issue Tracker](https://github.com/jquery/jquery/issues) should include a link back to the relevant ticket.
 
 ## Building
 
