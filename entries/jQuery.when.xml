@@ -9,7 +9,7 @@
   </signature>
   <desc>Provides a way to execute callback functions based on one or more objects, usually <a href="/category/deferred-object/">Deferred</a> objects that represent asynchronous events.</desc>
   <longdesc>
-    <p>If a single Deferred is passed to <code>jQuery.when()</code>, its Promise object (a subset of the Deferred methods) is returned by the method. Additional methods of the Promise object can be called to attach callbacks, such as <a href="/deferred.then/"><code>deferred.then</code></a>. When the Deferred is resolved or rejected, usually by the code that created the Deferred originally, the appropriate callbacks will be called. For example, the jqXHR object returned by <code>jQuery.ajax()</code> is a Promise and can be used this way:</p>
+    <p>If a single Deferred is passed to <code>jQuery.when()</code>, its Promise object (a subset of the Deferred methods) is returned by the method. Additional methods of the Promise object can be called to attach callbacks, such as <a href="/deferred.then/"><code>deferred.then</code></a>. When the Deferred is resolved or rejected, usually by the code that created the Deferred originally, the appropriate callbacks will be called. For example, the jqXHR object returned by <code>jQuery.ajax()</code> is a Promise-compatible object and can be used this way:</p>
     <pre><code>
 $.when( $.ajax( "test.aspx" ) ).then(function( data, textStatus, jqXHR ) {
   alert( jqXHR.status ); // Alerts 200
