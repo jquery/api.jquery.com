@@ -11,8 +11,10 @@
   <desc>Selects elements that have the specified attribute, with any value. </desc>
   <longdesc/>
   <example>
-    <desc>Bind a single click that adds the div id to its text.</desc>
+    <desc>Bind a single click to divs with an id that adds the id to the div's text.</desc>
     <code><![CDATA[
+// Using .one() so the handler is executed at most once
+// per element per event type
 $( "div[id]" ).one( "click", function() {
   var idString = $( this ).text() + " = " + $( this ).attr( "id" );
   $( this ).text( idString );
