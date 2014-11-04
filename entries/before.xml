@@ -25,8 +25,8 @@
       <return>
         <type name="htmlString"/>
         <type name="Element"/>
-        <type name="jQuery"/>        
-      </return>      
+        <type name="jQuery"/>
+      </return>
       <desc>A function that returns an HTML string, DOM element(s), or jQuery object to insert before each element in the set of matched elements. Receives the index position of the element in the set as an argument. Within the function, <code>this</code> refers to the current element in the set.
       </desc>
     </argument>
@@ -47,7 +47,7 @@
   </signature>
   <desc>Insert content, specified by the parameter, before each element in the set of matched elements.</desc>
   <longdesc>
-    <p>The <code>.before()</code> and <code><a href="/insertBefore/">.insertBefore()</a></code> methods perform the same task. The major difference is in the syntax-specifically, in the placement of the content and target. With <code>.before()</code>, the selector expression preceding the method is the container before which the content is inserted. With <code>.insertBefore()</code>, on the other hand, the content precedes the method, either as a selector expression or as markup created on the fly, and it is inserted before the target container.</p>
+    <p>The <code>.before()</code> and <code><a href="/insertBefore/">.insertBefore()</a></code> methods perform the same task. The major difference is in the syntax—specifically, in the placement of the content and target. With <code>.before()</code>, the content to be inserted comes from the method's argument: <code>$(target).before(contentToBeInserted)</code>. With <code>.insertBefore()</code>, on the other hand, the content precedes the method and is inserted before the target, which in turn is passed as the <code>.insertBefore()</code> method's argument: <code>$(contentToBeInserted).insertBefore(target)</code>.</p>
     <p>Consider the following HTML:</p>
     <pre><code>
 &lt;div class="container"&gt;
@@ -83,11 +83,6 @@ $( ".container" ).before( $( "h2" ) );
 &lt;/div&gt;
     </code></pre>
     <p><strong>Important</strong>: If there is more than one target element, however, cloned copies of the inserted element will be created for each target except for the last one.</p>
-    <p>In jQuery 1.4, <code>.before()</code> and <code>.after()</code> will also work on disconnected DOM nodes:</p>
-    <pre><code>
-$( "&lt;div&gt;" ).before( "&lt;p&gt;&lt;/p&gt;" );
-    </code></pre>
-    <p>The result is a jQuery set that contains a paragraph and a div (in that order).</p>
     <h4 id="additional-arguments">Additional Arguments</h4>
     <p>Similar to other content-adding methods such as <code><a href="/prepend/">.prepend()</a></code> and <code><a href="/after/">.after()</a></code>, <code>.before()</code> also supports passing in multiple arguments as input. Supported input includes DOM elements, jQuery objects, HTML strings, and arrays of DOM elements.</p>
     <p>For example, the following will insert two new <code>&lt;div&gt;</code>s and an existing <code>&lt;div&gt;</code> before the first paragraph:</p>
