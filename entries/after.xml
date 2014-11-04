@@ -45,7 +45,7 @@
   </signature>
   <desc>Insert content, specified by the parameter, after each element in the set of matched elements.</desc>
   <longdesc>
-    <p>The <code>.after()</code> and <code><a href="/insertAfter/">.insertAfter()</a></code> methods perform the same task. The major difference is in the syntax&#x2014;specifically, in the placement of the content and target. With <code>.after()</code>, the selector expression preceding the method is the container after which the content is inserted. With <code>.insertAfter()</code>, on the other hand, the content precedes the method, either as a selector expression or as markup created on the fly, and it is inserted after the target container.</p>
+    <p>The <code>.after()</code> and <code><a href="/insertAfter/">.insertAfter()</a></code> methods perform the same task. The major difference is in the syntax&#x2014;specifically, in the placement of the content and target. With <code>.after()</code>, the content to be inserted comes from the method's argument: <code>$(target).after(contentToBeInserted)</code>. With <code>.insertAfter()</code>, on the other hand, the content precedes the method and is inserted after the target, which in turn is passed as the <code>.insertAfter()</code> method's argument: <code>$(contentToBeInserted).insertAfter(target)</code>.</p>
     <p>Using the following HTML:</p>
     <pre><code>
 &lt;div class="container"&gt;
