@@ -9,7 +9,7 @@
     <argument name="success" optional="true" type="Function">
       <argument name="script" type="String" />
       <argument name="textStatus" type="String"/>
-      <argument name="jqXHR" type="jqXHR"/>      
+      <argument name="jqXHR" type="jqXHR"/>
       <desc>A callback function that is executed if the request succeeds.</desc>
     </argument>
   </signature>
@@ -94,7 +94,7 @@ $.cachedScript( "ajax/test.js" ).done(function( script, textStatus ) {
   <example>
     <desc>Load the <a href="https://github.com/jquery/jquery-color">official jQuery Color Animation plugin</a> dynamically and bind some color animations to occur once the new functionality is loaded.</desc>
     <code><![CDATA[
-var url = "//code.jquery.com/color/jquery.color-git.js";
+var url = "//code.jquery.com/color/jquery.color.js";
 $.getScript( url, function() {
   $( "#go" ).click(function() {
     $( ".block" )
