@@ -143,7 +143,7 @@ jQuery( "body" ).trigger( e );
             </li>
           </ul>
           <p>The following properties are also copied to the event object, though some of their values may be undefined depending on the event:</p>
-          <p>altKey, bubbles, button, cancelable, charCode, clientX, clientY, ctrlKey, currentTarget, data, detail, eventPhase, metaKey, offsetX, offsetY, originalTarget, pageX, pageY, prevValue, relatedTarget, screenX, screenY, shiftKey, target, view, which</p>
+          <p>altKey, bubbles, button, cancelable, charCode, clientX, clientY, ctrlKey, currentTarget, data, detail, eventPhase, metaKey, offsetX, offsetY, originalTarget, pageX, pageY, relatedTarget, screenX, screenY, shiftKey, target, view, which</p>
           <h4>OtherProperties</h4>
           <p>Certain events may have properties specific to them. Those can be accessed as properties of the <code>event.originalEvent</code> object.</p>
           <p>Example:</p>
@@ -406,7 +406,7 @@ jQuery.event.props.push( "dataTransfer" );
         <p>For more information, see the Release Notes/Changelog at <a href="http://blog.jquery.com/2012/08/09/jquery-1-8-released/">http://blog.jquery.com/2012/08/09/jquery-1-8-released/</a></p>
         <hr/>
       ]]></desc>
-    </category>
+    </category>p
     <category name="Version 1.9" slug="1.9">
       <desc><![CDATA[
         <p>Aspects of the API that were changed in the corresponding version of jQuery. Changes in jQuery 1.9 dealt primarily removal or modification of several APIs that behaved inconsistently or inefficiently in the past. A <a href="https://github.com/jquery/jquery-migrate">jQuery Migrate Plugin</a> was offered to help developers with a transitional upgrade path.
