@@ -28,9 +28,6 @@ $.ajax({
         Success Callback
       </h4>
     <p>The callback is fired once the script has been loaded but not necessarily executed.</p>
-    <pre><code>
-$( ".result" ).html( "&lt;p&gt;Lorem ipsum dolor sit amet.&lt;/p&gt;" );
-    </code></pre>
     <p>Scripts are included and run by referencing the file name:</p>
     <pre><code>
 $.getScript( "ajax/test.js", function( data, textStatus, jqxhr ) {
