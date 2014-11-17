@@ -9,7 +9,7 @@
     <p>The <code>.position()</code> method allows us to retrieve the current position of an element <em>relative to the offset parent</em>. Contrast this with <code><a href="/offset/">.offset()</a></code>, which retrieves the current position <em>relative to the document</em>. When positioning a new element near another one and within the same containing DOM element, <code>.position()</code> is the more useful.</p>
     <p>Returns an object containing the properties <code>top</code> and <code>left</code>.</p>
     <div class="warning">
-      <p><strong>Note:</strong> jQuery does not support getting the position coordinates of hidden elements or accounting for borders, margins, or padding set on the body element.</p>
+      <p><strong>Note:</strong> jQuery does not support getting the position coordinates of hidden elements or accounting for borders, margins, or padding set on the body element.  Position coordinates are not supported for node types other than Element (such as text nodes).</p>
     </div>
   </longdesc>
 	<note id="dimensions-number" type="additional" data-title=".position()"/>
