@@ -7,8 +7,10 @@
     <argument name="eventType" type="String">
       <desc>A string containing a JavaScript event type, such as <code>click</code> or <code>submit</code>.</desc>
     </argument>
-    <argument name="extraParameters" optional="true" type="Array">
-      <desc>An array of additional parameters to pass along to the event handler.</desc>
+    <argument name="extraParameters" optional="true">
+      <type name="Array"/>
+      <type name="PlainObject"/>
+      <desc>Additional parameters to pass along to the event handler.</desc>
     </argument>
   </signature>
   <longdesc>
