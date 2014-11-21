@@ -32,7 +32,7 @@
       <property name="complete" type="Function">
         <argument name="jqXHR" type="jqXHR"/>
         <argument name="textStatus" type="String"/>
-        <desc>A function to be called when the request finishes (after <code>success</code> and <code>error</code> callbacks are executed). The function gets passed two arguments: The jqXHR (in jQuery 1.4.x, XMLHTTPRequest) object and a string categorizing the status of the request (<code>"success"</code>, <code>"notmodified"</code>, <code>"error"</code>, <code>"timeout"</code>, <code>"abort"</code>, or <code>"parsererror"</code>). <strong>As of jQuery 1.5</strong>, the <code>complete</code> setting can accept an array of functions. Each function will be called in turn. This is an <a href="/Ajax_Events/">Ajax Event</a>.</desc>
+        <desc>A function to be called when the request finishes (after <code>success</code> and <code>error</code> callbacks are executed). The function gets passed two arguments: The jqXHR (in jQuery 1.4.x, XMLHTTPRequest) object and a string categorizing the status of the request (<code>"success"</code>, <code>"notmodified"</code>, <code>"nocontent"</code>, <code>"error"</code>, <code>"timeout"</code>, <code>"abort"</code>, or <code>"parsererror"</code>). <strong>As of jQuery 1.5</strong>, the <code>complete</code> setting can accept an array of functions. Each function will be called in turn. This is an <a href="/Ajax_Events/">Ajax Event</a>.</desc>
       </property>
       <property name="contents" type="PlainObject" added="1.5">
         <desc>An object of string/regular-expression pairs that determine how jQuery will parse the response, given its content type.</desc>
