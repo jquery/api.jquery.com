@@ -6,7 +6,9 @@
     <argument name="url" type="String">
       <desc>A string containing the URL to which the request is sent.</desc>
     </argument>
-    <argument name="data" optional="true" type="PlainObject">
+    <argument name="data" optional="true">
+      <type name="PlainObject"/>
+      <type name="String"/>
       <desc>A plain object or string that is sent to the server with the request.</desc>
     </argument>
     <argument name="success" optional="true" type="Function">
