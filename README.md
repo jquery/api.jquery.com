@@ -1,18 +1,15 @@
-## Referencing Bug Tracker Tickets
+# api.jquery.com
 
-* Pull requests for changes that were requested or recommended via the [jQuery Issue Tracker](https://github.com/jquery/jquery/issues) should include a link back to the relevant ticket.
+## Building and Deploying
 
-## Building
+To build and deploy your changes for previewing in a [`jquery-wp-content`](https://github.com/jquery/jquery-wp-content) instance, follow the [workflow instructions](http://contribute.jquery.org/web-sites/#workflow) from our documentation on [contributing to jQuery Foundation web sites](http://contribute.jquery.org/web-sites/).
 
 ### Requirements
-* <a href="http://www.xmlsoft.org/">libxml2</a>
-* <a href="http://xmlsoft.org/XSLT/">libxslt</a>
 
-The `xmllint` and `xsltproc` utilities need to be in your path. If you are on Windows, you can get libxml2 and libxslt from <a href="http://www.zlatkovic.com/libxml.en.html">zlatkovic.com</a>.
+* [libxml2](http://xmlsoft.org/)
+* [libxslt](http://xmlsoft.org/libxslt/)
 
-### Build
-
-To build and deploy your changes for previewing in a [jquery-wp-content](https://github.com/jquery/jquery-wp-content) instance, follow the [workflow instructions](http://contribute.jquery.org/web-sites/#workflow) from our documentation on [contributing to jQuery Foundation web sites](http://contribute.jquery.org/web-sites/).
+The `xmllint` and `xsltproc` utilities need to be in your path. If you are on Windows, you can get libxml2 and libxslt from <a href="http://sourceforge.net/projects/gnuwin32/files/">GnuWin32</a>.
 
 ## Style Guidelines
 
