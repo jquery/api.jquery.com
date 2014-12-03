@@ -142,7 +142,7 @@ $.ajax({
         <desc>Set this to <code>true</code> if you wish to use the traditional style of <a href="/jQuery.param/">param serialization</a>.</desc>
       </property>
       <property default="'GET'" name="type" type="String">
-        <desc>The type of request to make ("POST" or "GET"), default is "GET". <strong>Note:</strong> Other HTTP request methods, such as PUT and DELETE, can also be used here, but they are not supported by all browsers.</desc>
+        <desc>The type of request to make (e.g. "POST", "GET", "PUT"); default is "GET". </desc>
       </property>
       <property default="The current page" name="url" type="String">
         <desc> A string containing the URL to which the request is sent.</desc>
