@@ -9,7 +9,7 @@
   </signature>
   <signature>
     <added>1.0</added>
-    <argument name="elements" type="Elements">
+    <argument name="elements" type="Element">
       <desc>One or more elements to add to the set of matched elements.</desc>
     </argument>
   </signature>
