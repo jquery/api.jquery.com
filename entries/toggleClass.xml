@@ -12,13 +12,13 @@
     <argument name="className" type="String">
       <desc>One or more class names (separated by spaces) to be toggled for each element in the matched set.</desc>
     </argument>
-    <argument name="switch" type="Boolean">
+    <argument name="state" type="Boolean">
       <desc>A Boolean (not just truthy/falsy) value to determine whether the class should be added or removed.</desc>
     </argument>
   </signature>
   <signature>
     <added>1.4</added>
-    <argument name="switch" optional="true" type="Boolean">
+    <argument name="state" optional="true" type="Boolean">
       <desc>A boolean value to determine whether the class should be added or removed.</desc>
     </argument>
   </signature>
@@ -27,15 +27,15 @@
     <argument name="function" type="Function">
       <argument name="index" type="Integer" />
       <argument name="className" type="String" />
-      <argument name="switch" type="Boolean" />
+      <argument name="state" type="Boolean" />
       <return type="String" />  
-      <desc>A function that returns class names to be toggled in the class attribute of each element in the matched set. Receives the index position of the element in the set, the old class value, and the switch as arguments.</desc>
+      <desc>A function that returns class names to be toggled in the class attribute of each element in the matched set. Receives the index position of the element in the set, the old class value, and the state as arguments.</desc>
     </argument>
-    <argument name="switch" optional="true" type="Boolean">
+    <argument name="state" optional="true" type="Boolean">
       <desc>A boolean value to determine whether the class should be added or removed.</desc>
     </argument>
   </signature>
-  <desc>Add or remove one or more classes from each element in the set of matched elements, depending on either the class's presence or the value of the switch argument.</desc>
+  <desc>Add or remove one or more classes from each element in the set of matched elements, depending on either the class's presence or the value of the state argument.</desc>
   <longdesc>
     <p>This method takes one or more class names as its parameter. In the first version, if an element in the matched set of elements already has the class, then it is removed; if an element does not have the class, then it is added. For example, we can apply <code>.toggleClass()</code> to a simple <code>&lt;div&gt;</code>: </p>
     <pre><code>
