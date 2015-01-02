@@ -4,7 +4,7 @@
   <desc>Stop the currently-running animation, remove all queued animations, and complete all animations for the matched elements.</desc>
   <signature>
     <added>1.9</added>
-    <argument name="queue" type="String" optional="true">
+    <argument name="queue" type="String" optional="true" default="'fx'">
       <desc>The name of the queue in which to stop animations.</desc>
     </argument>
   </signature>
