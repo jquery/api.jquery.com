@@ -14,10 +14,10 @@
       </argument>
     </argument>
   </signature>
-  <desc> A constructor function that returns a chainable utility object with methods to register multiple callbacks into callback queues, invoke callback queues, and relay the success or failure state of any synchronous or asynchronous function.</desc>
+  <desc> A factory function that returns a chainable utility object with methods to register multiple callbacks into callback queues, invoke callback queues, and relay the success or failure state of any synchronous or asynchronous function.</desc>
   <longdesc>
-    <p>The <code>jQuery.Deferred()</code> constructor creates a new Deferred object. The <code>new</code> operator is optional.</p>
-    <p>The <code>jQuery.Deferred</code> method can be passed an optional function, which is called just before the constructor returns and is passed the constructed <code>deferred</code> object as both the <code>this</code> object and as the first argument to the function. The called function can attach callbacks using <a href="/deferred.then/"><code>deferred.then()</code></a>, for example.</p>
+    <p>The <code>jQuery.Deferred()</code> factory creates a new <code>deferred</code> object.</p>
+    <p>The <code>jQuery.Deferred</code> method can be passed an optional function, which is called just before the method returns and is passed the new <code>deferred</code> object as both the <code>this</code> object and as the first argument to the function. The called function can attach callbacks using <a href="/deferred.then/"><code>deferred.then()</code></a>, for example.</p>
     <p>A Deferred object starts in the <em>pending</em> state. Any callbacks added to the object with <a href="/deferred.then/"><code>deferred.then()</code></a>, <a href="/deferred.always/"><code>deferred.always()</code></a>, <a href="/deferred.done/"><code>deferred.done()</code></a>, or <a href="/deferred.fail/"><code>deferred.fail()</code></a> are queued to be executed later. Calling <a href="/deferred.resolve/"><code>deferred.resolve()</code></a> or <a href="/deferred.resolveWith/"><code>deferred.resolveWith()</code></a> transitions the Deferred into the <em>resolved</em> state and immediately executes any <code>doneCallbacks</code> that are set. Calling <a href="/deferred.reject/"><code>deferred.reject()</code></a> or <a href="/deferred.rejectWith/"><code>deferred.rejectWith()</code></a> transitions the Deferred into the <em>rejected</em> state and immediately executes any <code>failCallbacks</code> that are set. Once the object has entered the resolved or rejected state, it stays in that state. Callbacks can still be added to the resolved or rejected Deferred — they will execute immediately.</p>
     <h4>
       Enhanced Callbacks with jQuery Deferred
