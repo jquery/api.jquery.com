@@ -206,7 +206,7 @@ $( "#greatphoto" ).attr( "title", function( i, val ) {
 });
       </code></pre>
       <p>This use of a function to compute attribute values can be particularly useful when modifying the attributes of multiple elements at once.</p>
-      <p><strong>Note: </strong>If nothing is returned in the setter function (ie. <code>function(index, attr){})</code>, or if <code>undefined</code> is returned, the current value is not changed. This is useful for selectively setting values only when certain criteria are met.</p>
+      <p><strong>Note: </strong>If nothing is returned in the setter function (ie. <code>function(index, attr){}</code>), or if <code>undefined</code> is returned, the current value is not changed. This is useful for selectively setting values only when certain criteria are met.</p>
     </longdesc>
     <example>
       <desc>Set some attributes for all &lt;img&gt;s in the page.</desc>
