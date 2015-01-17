@@ -42,7 +42,7 @@ $( "form" ).submit(function( event ) {
   <input type="submit">
   <input type="text">
   <select>
-    <option>Option<option/>
+    <option>Option</option>
   </select>
   <textarea></textarea>
   <button>Button</button>
