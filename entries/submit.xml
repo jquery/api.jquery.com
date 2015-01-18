@@ -44,7 +44,7 @@ $( "#target" ).submit(function( event ) {
   event.preventDefault();
 });
     </code></pre>
-    <p>Now when the form is submitted, the message is alerted. This happens prior to the actual submission, so we can cancel the submit action by calling <code>.preventDefault()</code> on the event object or by returning <code>false</code> from our handler. We can trigger the event manually when another element is clicked:</p>
+    <p>Now when the form is submitted, the message is alerted. This happens prior to the actual submission, so we can cancel the submit action by calling <code>.preventDefault()</code> on the event object or by returning <code>false</code> (which will additionally implicitly call <code>.stopPropagation()</code>) from our handler. We can trigger the event manually when another element is clicked:</p>
     <pre><code>
 $( "#other" ).click(function() {
   $( "#target" ).submit();
@@ -52,6 +52,7 @@ $( "#other" ).click(function() {
     </code></pre>
     <p>After this code executes, clicks on <samp>Trigger the handler</samp> will also display the message. In addition, the default <code>submit</code> action on the form will be fired, so the form will be submitted.</p>
     <p>The JavaScript <code>submit</code> event does not bubble in Internet Explorer. However, scripts that rely on event delegation with the <code>submit</code> event will work consistently across browsers as of jQuery 1.4, which has normalized the event's behavior. </p>
+    <div class="warning"><strong>Note:</strong> the consequences of returning <code>false</code> from an event handler in jQuery differ from returning <code>false</code> in a native event handler (<code>element.addEventListener("click", function () { return false; })</code>) in that jQuery calls <code>event.preventDefault()</code> and <code>event.stopPropagation()</code> and a native event handler only calls <code>event.preventDefault()</code>.</div>
   </longdesc>
   <note id="domlint" type="additional"/>
   <example>

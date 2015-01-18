@@ -82,6 +82,7 @@ $( "#foo" ).bind( "click", function() {
     <p>The <code>handler</code> callback function can also take parameters. When the function is called, the event object will be passed to the first parameter.</p>
     <p>The event object is often unnecessary and the parameter omitted, as sufficient context is usually available when the handler is bound to know exactly what needs to be done when the handler is triggered. However, at times it becomes necessary to gather more information about the user's environment at the time the event was initiated. <a href="/category/events/event-object/">View the full Event Object</a>.</p>
     <p>Returning <code>false</code> from a handler is equivalent to calling both <code>.preventDefault()</code> and <code>.stopPropagation()</code> on the event object.</p>
+    <div class="warning"><strong>Note:</strong> the consequences of returning <code>false</code> from an event handler in jQuery differ from returning <code>false</code> in a native event handler (<code>element.addEventListener("click", function () { return false; })</code>) in that jQuery calls <code>event.preventDefault()</code> and <code>event.stopPropagation()</code> and a native event handler only calls <code>event.preventDefault()</code>.</div>
     <p>Using the event object in a handler looks like this:</p>
     <pre><code>
 $( document ).ready(function() {

@@ -59,6 +59,7 @@ $( "#foo" ).on( "click", function( event ) {
     </code></pre>
     <p>In other words, explicitly calling <code>.off()</code> from within a regularly-bound handler has exactly the same effect.</p>
     <p>If the first argument contains more than one space-separated event types, the event handler is called <em>once for each event type</em>.</p>
+    <div class="warning"><strong>Note:</strong> the consequences of returning <code>false</code> from an event handler in jQuery differ from returning <code>false</code> in a native event handler (<code>element.addEventListener("click", function () { return false; })</code>) in that jQuery calls <code>event.preventDefault()</code> and <code>event.stopPropagation()</code> and a native event handler only calls <code>event.preventDefault()</code>.</div>
   </longdesc>
   <example>
     <desc>Tie a one-time click to each div.</desc>
