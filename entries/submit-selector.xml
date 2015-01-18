@@ -39,7 +39,7 @@ $( "#exampleTable" ).find( "td" ).each(function( i, el ) {
   textarea {
     height: 45px;
   }
-  ]]></css>
+]]></css>
     <html><![CDATA[
 <form>
 <table id="exampleTable" border="1" cellpadding="10" align="center">
