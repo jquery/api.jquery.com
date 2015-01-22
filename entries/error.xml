@@ -34,22 +34,23 @@ $( "#book" )
   })
   .attr( "src", "missing.png" );
     </code></pre>
-    <p>If the image cannot be loaded (for example, because it is not present at the supplied URL), the alert  is displayed:</p>
+    <p>If the image cannot be loaded (for example, because it is not present at the supplied URL), the alert is displayed:</p>
     <p>
       <samp>Handler for .error() called.</samp>
     </p>
     <div class="warning">
-      <p>The event handler <em>must</em> be attached before the browser fires the error event, which is why the example sets the src attribute after attaching the handler. Also, the error event may not be correctly fired when the page is served locally; <code>error</code> relies on HTTP status codes and will generally not be triggered if the URL uses the <code>file:</code> protocol.</p>
+      <p>The event handler <em>must</em> be attached before the browser fires the <code>error</code> event, which is why the example sets the <code>src</code> attribute after attaching the handler. Also, the <code>error</code> event may not be correctly fired when the page is served locally; <code>error</code> relies on HTTP status codes and will generally not be triggered if the URL uses the <code>file:</code> protocol.</p>
     </div>
-    <p>Note: A jQuery error event handler should not be attached to the window object. The browser fires the window's error event when a script error occurs. However, the window error event receives different arguments and has different return value requirements than conventional event handlers. Use <code>window.onerror</code> instead.</p>
+    <p>Note: A jQuery <code>error</code> event handler should not be attached to the <code>window</code> object. The browser fires the <code>window</code>'s <code>error</code> event when a script error occurs. However, the window <code>error</code> event receives different arguments and has different return value requirements than conventional event handlers. Use <code>window.onerror</code> instead.</p>
   </longdesc>
   <note id="detach-shorthand" type="additional" data-event="error"/>
   <example>
-    <desc>To hide the "broken image" icons for IE users, you can try:</desc>
+    <desc>To replace all the missing images with another, you can update the <code>src</code> attribute inside the callback passed to <code>.error()</code>. Be sure that the replacement image exists; otherwise the <code>error</code> event will be triggered indefinitely.</desc>
     <code><![CDATA[
+// If missing.png is missing, it is replaced by replacement.png
 $( "img" )
   .error(function() {
-    $( this ).hide();
+    $( this ).attr( "src", "replacement.png" );
   })
   .attr( "src", "missing.png" );
 ]]></code>
