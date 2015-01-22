@@ -60,7 +60,7 @@ $( "img" )
   })
   .attr( "src", "missing.png" );
 ]]></code>
-  <p><b>Note:</b> Be sure that the replacement image exists otherwise the <code>error</code> event will be triggered indefinitely.</p>
+  <p><b>Note:</b> Be sure that the replacement image exists; otherwise the <code>error</code> event will be triggered indefinitely.</p>
   </example>
   <category slug="events/browser-events"/>
   <category slug="version/1.0"/>
