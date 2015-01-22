@@ -52,7 +52,7 @@ $( "img" )
   })
   .attr( "src", "missing.png" );
 ]]></code>
-    <p>In the example, missing.png is an hypotetical missing image that is used to trigger the <code>error</code> event, not an image to replace those giving an error. To do that, you have to modify the body of the anonymous function passed to <code>.error()</code> as shown below:</p>
+    <p>In the example, missing.png is an hypothetical missing image that is used to trigger the <code>error</code> event, not an image to replace those giving an error. To do that, you have to modify the body of the anonymous function passed to <code>.error()</code> as shown below:</p>
     <code><![CDATA[
 $( "img" )
   .error(function() {
