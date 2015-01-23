@@ -26,6 +26,15 @@
   </signature>
   <signature>
     <added>1.7</added>
+    <argument name="event" type="Event">
+      <desc>A <a href="/category/events/event-object/"><code>jQuery.Event</code></a> object.</desc>
+    </argument>
+    <argument name="selector" type="String" optional="true">
+      <desc>A selector which should match the one originally passed to <code>.on()</code> when attaching event handlers.</desc>
+    </argument>
+  </signature>
+  <signature>
+    <added>1.7</added>
   </signature>
   <longdesc>
     <p>The <code>.off()</code> method removes event handlers that were attached with <a href="/on/"><code>.on()</code></a>. See the discussion of delegated and directly bound events on that page for more information. Calling <code>.off()</code> with no arguments removes all handlers attached to the elements. Specific event handlers can be removed on elements by providing combinations of event names, namespaces, selectors, or handler function names. <strong>When multiple filtering arguments are given, all of the arguments provided must match for the event handler to be removed.</strong></p>
