@@ -22,7 +22,7 @@
       <desc>A Boolean indicating whether to perform a traditional "shallow" serialization.</desc>
     </argument>
   </signature>
-  <desc>Create a serialized representation of an array, a plain object, or a jQuery object suitable for use in a URL query string or Ajax request. In case a jQuery object is passed, it should contain <code>&lt;input&gt;</code> elements with name/value properties.</desc>
+  <desc>Create a serialized representation of an array, a plain object, or a jQuery object suitable for use in a URL query string or Ajax request. In case a jQuery object is passed, it should contain input elements with name/value properties.</desc>
   <longdesc>
     <p>This function is used internally to convert form element values into a serialized string representation (See <a href="/serialize/">.serialize()</a> for more information).</p>
     <p>As of jQuery 1.3, the return value of a function is used instead of the function as a String.</p>
