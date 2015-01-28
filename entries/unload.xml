@@ -28,7 +28,7 @@
     <p>Any <code>unload</code> event handler should be bound to the <code>window</code> object:</p>
     <pre><code>
 $( window ).unload(function() {
-  alert( "Handler for .unload() called." );
+  return "Handler for .unload() called.";
 });
     </code></pre>
     <p>After this code executes, the alert will be displayed whenever the browser leaves the current page.
@@ -39,7 +39,7 @@ It is not possible to cancel the <code>unload</code> event with <code>.preventDe
     <desc>To display an alert when a page is unloaded:</desc>
     <code><![CDATA[
 $( window ).unload(function() {
-  alert( "Bye now!" );
+  return "Bye now!";
 });
   ]]></code>
   </example>
