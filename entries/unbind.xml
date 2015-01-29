@@ -25,7 +25,7 @@
     <added>1.0</added>
     <argument name="event" type="Event">
       <desc>A <a href="/category/events/event-object/"><code>jQuery.Event</code></a> object.</desc>
-    </argument> 
+    </argument>
   </signature>
   <signature>
     <added>1.0</added>
