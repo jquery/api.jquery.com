@@ -106,8 +106,9 @@ $( "input" )
       <added>1.0</added>
       <argument name="value">
         <type name="String"/>
+        <type name="Number"/>
         <type name="Array"/>
-        <desc>A string of text or an array of strings corresponding to the value of each matched element to set as selected/checked.</desc>
+        <desc>A string of text, a number, or an array of strings corresponding to the value of each matched element to set as selected/checked.</desc>
       </argument>
     </signature>
     <signature>
