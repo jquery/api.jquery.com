@@ -24,8 +24,8 @@
   </signature>
   <signature>
     <added>1.3</added>
-    <argument name="showOrHide" type="Boolean">
-      <desc>A Boolean indicating whether to show or hide the elements.</desc>
+    <argument name="setShown" type="Boolean">
+      <desc>Use <code>true</code> to show the element or <code>false</code> to hide it.</desc>
     </argument>
   </signature>
 
@@ -75,13 +75,13 @@ $( "#clickme" ).click(function() {
     <p>The second version of the method accepts a Boolean parameter. If this parameter is <code>true</code>, then the matched elements are shown; if <code>false</code>, the elements are hidden. In essence, the statement:
     </p>
     <pre><code>
-$( "#foo" ).toggle( showOrHide );
+$( "#foo" ).toggle( setShown );
     </code></pre>
     <p>is equivalent to:</p>
     <pre><code>
-if ( showOrHide === true ) {
+if ( setShown === true ) {
   $( "#foo" ).show();
-} else if ( showOrHide === false ) {
+} else if ( setShown === false ) {
   $( "#foo" ).hide();
 }
     </code></pre>
