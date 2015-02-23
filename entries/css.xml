@@ -21,6 +21,7 @@
       <p>Also, jQuery can equally interpret the CSS and DOM formatting of multiple-word properties. For example, jQuery understands and returns the correct value for both <code>.css( "background-color" )</code> and <code>.css( "backgroundColor" )</code>.</p>
 	  <p>Note that the <em>computed style</em> of an element may not be the same as the value specified for that element in a style sheet. For example, computed styles of dimensions are almost always pixels, but they can be specified as em, ex, px or % in a style sheet. Different browsers may return CSS color values that are logically but not textually equal, e.g., #FFF, #ffffff, and rgb(255,255,255).</p>
       <p>Retrieval of shorthand CSS properties (e.g., <code>margin</code>, <code>background</code>, <code>border</code>), although functional with some browsers, is not guaranteed. For example, if you want to retrieve the rendered <code>border-width</code>, use: <code>$( elem ).css( "borderTopWidth" )</code>, <code>$( elem ).css( "borderBottomWidth" )</code>, and so on.</p>
+      <p>An element should be connected to the DOM when calling <code>.css()</code> on it. If it isn't, jQuery may throw an error.</p>
       <p><strong>As of jQuery 1.9</strong>, passing an array of style properties to <code>.css()</code> will result in an object of property-value pairs. For example, to retrieve all four rendered <code>border-width</code> values, you could use <code>$( elem ).css([ "borderTopWidth", "borderRightWidth", "borderBottomWidth", "borderLeftWidth" ])</code>. </p>
     </longdesc>
     <example>
