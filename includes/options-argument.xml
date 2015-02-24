@@ -15,7 +15,7 @@
 		<type name="String"/>
 	</property>
 	<property name="specialEasing" type="PlainObject" added="1.4">
-		<desc>A map of one or more of the CSS properties defined by the properties argument and their corresponding easing functions.</desc>
+		<desc>An object containing one or more of the CSS properties defined by the properties argument and their corresponding easing functions.</desc>
 	</property>
 
 	<property name="step" type="Function">
