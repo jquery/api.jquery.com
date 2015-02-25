@@ -56,17 +56,8 @@ var object2 = {
 // Merge object2 into object1
 $.extend( object1, object2 );
 
-var printObj = typeof JSON !== "undefined" ? JSON.stringify : function( obj ) {
-  var arr = [];
-  $.each( obj, function( key, val ) {
-    var next = key + ": ";
-    next += $.isPlainObject( val ) ? printObj( val ) : val;
-    arr.push( next );
-  });
-  return "{ " +  arr.join( ", " ) + " }";
-};
-
-$( "#log" ).append( printObj( object1 ) );
+// Assuming JSON.stringify - not available in IE<8
+$( "#log" ).append( JSON.stringify( object1 ) );
 ]]></code>
     <html><![CDATA[
 <div id="log"></div>
@@ -88,17 +79,8 @@ var object2 = {
 // Merge object2 into object1, recursively
 $.extend( true, object1, object2 );
 
-var printObj = typeof JSON !== "undefined" ? JSON.stringify : function( obj ) {
-  var arr = [];
-  $.each( obj, function( key, val ) {
-    var next = key + ": ";
-    next += $.isPlainObject( val ) ? printObj( val ) : val;
-    arr.push( next );
-  });
-  return "{ " +  arr.join( ", " ) + " }";
-};
-
-$( "#log" ).append( printObj( object1 ) );
+// Assuming JSON.stringify - not available in IE<8
+$( "#log" ).append( JSON.stringify( object1 ) );
 ]]></code>
     <html><![CDATA[
 <div id="log"></div>
@@ -113,19 +95,10 @@ var options = { validate: true, name: "bar" };
 // Merge defaults and options, without modifying defaults
 var settings = $.extend( {}, defaults, options );
 
-var printObj = typeof JSON !== "undefined" ? JSON.stringify : function( obj ) {
-  var arr = [];
-  $.each( obj, function( key, val ) {
-    var next = key + ": ";
-    next += $.isPlainObject( val ) ? printObj( val ) : val;
-    arr.push( next );
-  });
-  return "{ " +  arr.join( ", " ) + " }";
-};
-
-$( "#log" ).append( "<div><b>defaults -- </b>" + printObj( defaults ) + "</div>" );
-$( "#log" ).append( "<div><b>options -- </b>" + printObj( options ) + "</div>" );
-$( "#log" ).append( "<div><b>settings -- </b>" + printObj( settings ) + "</div>" );
+// Assuming JSON.stringify - not available in IE<8
+$( "#log" ).append( "<div><b>defaults -- </b>" + JSON.stringify( defaults ) + "</div>" );
+$( "#log" ).append( "<div><b>options -- </b>" + JSON.stringify( options ) + "</div>" );
+$( "#log" ).append( "<div><b>settings -- </b>" + JSON.stringify( settings ) + "</div>" );
 ]]></code>
     <html><![CDATA[
 <div id="log"></div>
