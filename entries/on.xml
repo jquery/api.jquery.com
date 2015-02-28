@@ -96,6 +96,21 @@ $( "button" ).on( "click", {
     <p>The <code>focus</code> and <code>blur</code> events are specified by the W3C to not bubble, but jQuery defines cross-browser <code>focusin</code> and <code>focusout</code> events that do bubble. When <code>focus</code> and <code>blur</code> are used to attach delegated event handlers, jQuery maps the names and delivers them as <code>focusin</code> and <code>focusout</code> respectively. For consistency and clarity, use the bubbling event type names.</p>
     <p>In all browsers, the <code>load</code>, <code>scroll</code>, and <code>error</code> events (e.g., on an <code>&lt;img&gt;</code> element) do not bubble. In Internet Explorer 8 and lower, the <code>paste</code> and <code>reset</code> events do not bubble. Such events are not supported for use with delegation, but they <em>can</em> be used when the event handler is directly attached to the element generating the event.</p>
     <p>The <code>error</code> event on the <code>window</code> object uses nonstandard arguments and return value conventions, so it is not supported by jQuery. Instead, assign a handler function directly to the <code>window.onerror</code> property.</p>
+    <p>The handler list for an element is set when the event is first delivered. This means that even if you try to remove an event handler inside another one for the same event executed first, the removed handler will be executed anyway. It will not be executed the following times because it's correctly removed. This behavior goes against the <a href="http://www.w3.org/TR/DOM-Level-2-Events/events.html#Events-EventTarget-removeEventListener">W3C events specification</a>. It's worth noting that this is an edge case and this behavior allows to keep the logic simple. To better understand this case, consider the following code:</p>
+    <pre><code>var $test = $( "#test" );
+
+function handler1() {
+  console.log( "handler1" );
+  $test.off( "click", handler2 );
+}
+
+function handler2() {
+  console.log( "handler2" );
+}
+
+$test.on( "click", handler1 );
+$test.on( "click", handler2 );</code></pre>
+    <p>In the code above, <code>handler2</code> will be executed anyway the first time even if it's removed using <a href="/off/"><code>.off()</code></a>. However, the handler will not be executed the following times the <code>click</code> event is triggered.</p>
   </longdesc>
   <example>
     <desc>Display a paragraph's text in an alert when it is clicked:</desc>
