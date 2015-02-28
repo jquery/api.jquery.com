@@ -25,7 +25,7 @@ jQuery.data( document.body, "bar", "test" );
       </code></pre>
     </longdesc>
     <note id="no-data-on-xml" type="additional"/>
-    <note id="data-doesnt-accept-undefined" type="additional" data-title="jQuery.data" data-parameters="el, &quot;name&quot;"/>
+    <note id="jquery-data-doesnt-accept-undefined" type="additional" data-title="jQuery.data" data-parameters="el, &quot;name&quot;"/>
     <example>
       <desc>Store then retrieve a value from the div element.</desc>
       <code><![CDATA[
