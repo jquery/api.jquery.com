@@ -11,6 +11,8 @@ To build and deploy your changes for previewing in a [`jquery-wp-content`](https
 
 The `xmllint` and `xsltproc` utilities need to be in your path. If you are on Windows, you can get libxml2 and libxslt from <a href="http://www.zlatkovic.com/libxml.en.html">zlatkovic.com</a>.
 
+**Note**: If you're using Windows and you receive the error "Error" when executing the task `build-xml-entries:all`, try to add the DLL `libwinpthread-1.dll` in the root of the project.
+
 ## Style Guidelines
 
 ### Prose Style & Grammar
