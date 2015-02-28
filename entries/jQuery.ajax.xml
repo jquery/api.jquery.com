@@ -8,7 +8,7 @@
       <desc>A string containing the URL to which the request is sent.</desc>
     </argument>
     <argument name="settings" type="PlainObject" optional="true">
-      <desc>A set of key/value pairs that configure the Ajax request. All settings are optional. A default can be set for any option with <a href="/jQuery.ajaxSetup/">$.ajaxSetup()</a>. See <a href="#jQuery-ajax-settings">jQuery.ajax( settings )</a> below for a complete list of all settings. </desc>
+      <desc>A set of key/value pairs that configure the Ajax request. All settings are optional. A default can be set for any option with <a href="/jQuery.ajaxSetup/">$.ajaxSetup()</a>. See <a href="#jQuery-ajax-settings">jQuery.ajax( settings )</a> below for a complete list of all settings.</desc>
     </argument>
   </signature>
   <signature>
@@ -82,7 +82,7 @@ $.ajax({
         <argument name="jqXHR" type="jqXHR"/>
         <argument name="textStatus" type="String"/>
         <argument name="errorThrown" type="String"/>
-        <desc>A function to be called if the request fails. The function receives three arguments: The jqXHR (in jQuery 1.4.x, XMLHttpRequest) object, a string describing the type of error that occurred and an optional exception object, if one occurred. Possible values for the second argument (besides <code>null</code>) are <code>"timeout"</code>, <code>"error"</code>, <code>"abort"</code>, and <code>"parsererror"</code>. When an HTTP error occurs, <code>errorThrown</code> receives the textual portion of the HTTP status, such as "Not Found" or "Internal Server Error."  <strong>As of jQuery 1.5</strong>, the <code>error</code> setting can accept an array of functions. Each function will be called in turn.  <strong>Note:</strong> <em>This handler is not called for cross-domain script and cross-domain JSONP requests.</em> This is an <a href="/Ajax_Events/">Ajax Event</a>. </desc>
+        <desc>A function to be called if the request fails. The function receives three arguments: The jqXHR (in jQuery 1.4.x, XMLHttpRequest) object, a string describing the type of error that occurred and an optional exception object, if one occurred. Possible values for the second argument (besides <code>null</code>) are <code>"timeout"</code>, <code>"error"</code>, <code>"abort"</code>, and <code>"parsererror"</code>. When an HTTP error occurs, <code>errorThrown</code> receives the textual portion of the HTTP status, such as "Not Found" or "Internal Server Error."  <strong>As of jQuery 1.5</strong>, the <code>error</code> setting can accept an array of functions. Each function will be called in turn.  <strong>Note:</strong> <em>This handler is not called for cross-domain script and cross-domain JSONP requests.</em> This is an <a href="/Ajax_Events/">Ajax Event</a>.</desc>
       </property>
       <property default="true" name="global" type="Boolean">
         <desc>Whether to trigger global Ajax event handlers for this request. The default is <code>true</code>. Set to <code>false</code> to prevent the global handlers like <code>ajaxStart</code> or <code>ajaxStop</code> from being triggered. This can be used to control various <a href="/Ajax_Events/">Ajax Events</a>.</desc>
@@ -94,7 +94,7 @@ $.ajax({
         <desc>Allow the request to be successful only if the response has changed since the last request. This is done by checking the Last-Modified header. Default value is <code>false</code>, ignoring the header. In jQuery 1.4 this technique also checks the 'etag' specified by the server to catch unmodified data.</desc>
       </property>
       <property default="depends on current location protocol" name="isLocal" type="Boolean" added="1.5.1">
-        <desc>Allow the current environment to be recognized as "local," (e.g. the filesystem), even if jQuery does not recognize it as such by default. The following protocols are currently recognized as local: <code>file</code>, <code>*-extension</code>, and <code>widget</code>. If the <code>isLocal</code> setting needs modification, it is recommended to do so once in the <code>$.ajaxSetup()</code> method.  </desc>
+        <desc>Allow the current environment to be recognized as "local," (e.g. the filesystem), even if jQuery does not recognize it as such by default. The following protocols are currently recognized as local: <code>file</code>, <code>*-extension</code>, and <code>widget</code>. If the <code>isLocal</code> setting needs modification, it is recommended to do so once in the <code>$.ajaxSetup()</code> method.</desc>
       </property>
       <property name="jsonp" type="String">
         <desc>Override the callback function name in a JSONP request.  This value will be used instead of 'callback' in the 'callback=?' part of the query string in the url.  So <code>{jsonp:'onJSONPLoad'}</code> would result in <code>'onJSONPLoad=?'</code> passed to the server. <strong>As of jQuery 1.5</strong>, setting the <code>jsonp</code> option to <code>false</code> prevents jQuery from adding the "?callback" string to the URL or attempting to use "=?" for transformation. In this case, you should also explicitly set the <code>jsonpCallback</code> setting. For example, <code>{ jsonp: false, jsonpCallback: "callbackName" }</code></desc>
@@ -102,7 +102,10 @@ $.ajax({
       <property name="jsonpCallback">
         <type name="String"/>
         <type name="Function"/>
-        <desc>Specify the callback function name for a JSONP request.  This value will be used instead of the random name automatically generated by jQuery. It is preferable to let jQuery generate a unique name as it'll make it easier to manage the requests and provide callbacks and error handling. You may want to specify the callback when you want to enable better browser caching of GET requests. <strong>As of jQuery 1.5</strong>, you can also use a function for this setting, in which case the value of <code>jsonpCallback</code> is set to the return value of that function. </desc>
+        <desc>Specify the callback function name for a JSONP request.  This value will be used instead of the random name automatically generated by jQuery. It is preferable to let jQuery generate a unique name as it'll make it easier to manage the requests and provide callbacks and error handling. You may want to specify the callback when you want to enable better browser caching of GET requests. <strong>As of jQuery 1.5</strong>, you can also use a function for this setting, in which case the value of <code>jsonpCallback</code> is set to the return value of that function.</desc>
+      </property>
+      <property default="'GET'" name="method" type="String" added="1.9.0">
+        <desc>The HTTP method to use for the request (e.g. <code>"POST"</code>, <code>"GET"</code>, <code>"PUT"</code>).</desc>
       </property>
       <property name="mimeType" type="String" added="1.5.1">
         <desc>A mime type to override the <abbr title="XMLHttpRequest">XHR</abbr> mime type.</desc>
@@ -144,7 +147,7 @@ $.ajax({
         <desc>Set this to <code>true</code> if you wish to use the traditional style of <a href="/jQuery.param/">param serialization</a>.</desc>
       </property>
       <property default="'GET'" name="type" type="String">
-        <desc>The type of request to make (e.g. "POST", "GET", "PUT"); default is "GET". </desc>
+        <desc>An alias for <code>method</code>. You should use <code>type</code> if you're using versions of jQuery prior to 1.9.0.</desc>
       </property>
       <property default="The current page" name="url" type="String">
         <desc> A string containing the URL to which the request is sent.</desc>
@@ -346,7 +349,7 @@ $.ajaxSetup({
     <desc>Save some data to the server and notify the user once it's complete.</desc>
     <code><![CDATA[
 $.ajax({
-  type: "POST",
+  method: "POST",
   url: "some.php",
   data: { name: "John", location: "Boston" }
 })
@@ -387,7 +390,7 @@ xmlRequest.done( handleResponse );
 var menuId = $( "ul.nav" ).first().attr( "id" );
 var request = $.ajax({
   url: "script.php",
-  type: "POST",
+  method: "POST",
   data: { id : menuId },
   dataType: "html"
 });
@@ -405,7 +408,7 @@ request.fail(function( jqXHR, textStatus ) {
     <desc>Load and execute a JavaScript file.</desc>
     <code><![CDATA[
 $.ajax({
-  type: "GET",
+  method: "GET",
   url: "test.js",
   dataType: "script"
 });
