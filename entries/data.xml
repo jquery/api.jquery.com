@@ -21,7 +21,7 @@
     <desc>Store arbitrary data associated with the matched elements.</desc>
     <longdesc>
       <p>The <code>.data()</code> method allows us to attach data of any type to DOM elements in a way that is safe from circular references and therefore from memory leaks.</p>
-      <p> We can set several distinct values for a single element and retrieve them later:</p>
+      <p>We can set several distinct values for a single element and retrieve them later:</p>
       <pre><code>
 $( "body" ).data( "foo", 52 );
 $( "body" ).data( "bar", { myType: "test", count: 40 } );
