@@ -75,7 +75,7 @@ jqxhr.always(function() {
 });
     </code></pre>
     <h4>Deprecation Notice</h4>
-    <p>The <code>jqXHR.success()</code>, <code>jqXHR.error()</code>, and <code>jqXHR.complete()</code> callback methods introduced in jQuery 1.5 are <strong>deprecated as of jQuery 1.8</strong>. To prepare your code for their eventual removal, use <code>jqXHR.done()</code>, <code>jqXHR.fail()</code>, and <code>jqXHR.always()</code> instead.</p>
+    <p>The <code>jqXHR.success()</code>, <code>jqXHR.error()</code>, and <code>jqXHR.complete()</code> callback methods are <strong>removed as of jQuery 3.0</strong>. You can use <code>jqXHR.done()</code>, <code>jqXHR.fail()</code>, and <code>jqXHR.always()</code> instead.</p>
   </longdesc>
   <note id="same-origin-policy" type="additional"/>
   <note id="use-ajaxerror" type="additional" data-title="jQuery.get()"/>
