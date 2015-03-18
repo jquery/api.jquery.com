@@ -26,7 +26,7 @@
 $( "li.third-item" ).siblings().css( "background-color", "red" );
     </code></pre>
     <p>The result of this call is a red background behind items 1, 2, 4, and 5. Since we do not supply a selector expression, all of the siblings are part of the object. If we had supplied one, only the matching items among these four would be included.</p>
-    <p>The original element is not included among the siblings, which is important to remember when we wish to find all elements at a particular level of the DOM tree.</p>
+    <p>The original element is not included among the siblings, which is important to remember when we wish to find all elements at a particular level of the DOM tree. However, if the original set contains more than one element, they might be mutual siblings and will both be found. If you need an exclusive list of siblings, use <code>$set.siblings().not($set)</code>.</p>
   </longdesc>
   <example>
     <desc>Find the unique siblings of all yellow li elements in the 3 lists (including other yellow li elements if appropriate).</desc>
