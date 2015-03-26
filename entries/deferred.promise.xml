@@ -18,7 +18,7 @@
     <desc>Create a Deferred and set two timer-based functions to either resolve or reject the Deferred after a random interval. Whichever one fires first "wins" and will call one of the callbacks. The second timeout has no effect since the Deferred is already complete (in a resolved or rejected state) from the first timeout action. Also set a timer-based progress notification function, and call a progress handler that adds "working..." to the document body.</desc>
     <code><![CDATA[
 function asyncEvent() {
-  var dfd = new jQuery.Deferred();
+  var dfd = jQuery.Deferred();
 
   // Resolve after a random interval
   setTimeout(function() {
