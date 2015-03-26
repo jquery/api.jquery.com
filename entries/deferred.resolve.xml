@@ -11,6 +11,7 @@
   </signature>
   <desc> Resolve a Deferred object and call any doneCallbacks with the given <code>args</code>. </desc>
   <longdesc>
+    <p>Normally, only the creator of a Deferred should call this method; you can prevent other code from changing the Deferred's state by returning a restricted Promise object through <a href="/deferred.promise/"><code>deferred.promise()</code></a>.</p>
     <p>When the Deferred is resolved, any doneCallbacks added by <a href="/deferred.then/"><code>deferred.then()</code></a> or <a href="/deferred.done/"><code>deferred.done()</code></a> are called. Callbacks are executed in the order they were added. Each callback is passed the <code>args</code> from the <code>deferred.resolve()</code>. Any doneCallbacks added after the Deferred enters the resolved state are executed immediately when they are added, using the arguments that were passed to the <code>deferred.resolve()</code> call. For more information, see the documentation for <a href="/jQuery.Deferred/">jQuery.Deferred()</a>.</p>
   </longdesc>
   <category slug="deferred-object"/>
