@@ -58,6 +58,9 @@
 		<xsl:when test="@id = 'html-code-execution'">
 			By design, any jQuery constructor or method that accepts an HTML string — <a href="/jQuery/">jQuery()</a>, <a href="/append/">.append()</a>, <a href="/after/">.after()</a>, etc. — can potentially execute code. This can occur by injection of script tags or use of HTML attributes that execute code (for example, <code>&lt;img onload=""&gt;</code>). Do not use these methods to insert strings obtained from untrusted sources such as URL query parameters, cookies, or form inputs. Doing so can introduce cross-site-scripting (XSS) vulnerabilities. Remove or escape any user input before adding content to the document.
 		</xsl:when>
+		<xsl:when test="@id = 'hidden-forces-layout'">
+			Using this selector heavily can have performance implications, as it may force the browser to re-render the page before it can determine visibility. Tracking the visibility of elements via other methods, using a class for example, can provide better performance.
+		</xsl:when>
 	</xsl:choose>
 </xsl:template>
 </xsl:stylesheet>
