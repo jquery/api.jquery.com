@@ -21,6 +21,12 @@ $.when( { testing: 123 } ).done(function( x ) {
   alert( x.testing ); // Alerts "123"
 });
     </code></pre>
+    <p>If you don't pass it any arguments at all, <code>jQuery.when()</code> will return a resolved promise.</p>
+    <pre><code>
+$.when().then(function( x ) {
+  alert( "I fired immediately" );
+});
+    </code></pre>
     <p>In the case where multiple Deferred objects are passed to <code>jQuery.when()</code>, the method returns the Promise from a new "master" Deferred object that tracks the aggregate state of all the Deferreds it has been passed. The method will resolve its master Deferred as soon as all the Deferreds resolve, or reject the master Deferred as soon as one of the Deferreds is rejected. If the master Deferred is resolved, the doneCallbacks for the master Deferred are executed. The arguments passed to the doneCallbacks provide the resolved values for each of the Deferreds, and matches the order the Deferreds were passed to <code>jQuery.when()</code>. For example:</p>
     <pre><code>
 var d1 = $.Deferred();
