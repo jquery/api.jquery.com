@@ -11,7 +11,7 @@ ol ul { margin-left: 1.5em !important; }
 </style>
 <p>JavaScript provides several built-in datatypes. In addition to those, this page documents virtual types like Selectors, enhanced pseudo-types like Events and all and everything you wanted to know about Functions.
 </p>
-<p>You should be able to try out most of the examples below by just copying them to your browser's JavaScript Console (Chrome, Safari with Develop menu activated, IE 8+) or <a href="http://www.getfirebug.com/">Firebug</a> console (<a href="http://www.getfirefox.com">Firefox</a>).
+<p>You should be able to try out most of the examples below by just copying them to your browser's JavaScript Console (Chrome, Safari with Develop menu activated, IE 8+) or <a href="http://www.getfirebug.com/">Firebug</a> console (<a href="https://www.mozilla.org/en-US/firefox/new/">Firefox</a>).
 </p>
 <p>Whenever an example mentions that a type defaults to a boolean value, the result is good to know when using that type in a boolean context:
 </p>
@@ -296,7 +296,7 @@ for( key in obj ) {
   alert( "key is " + [ key ] + ", value is " + obj[ key ] );
 }
 </code></pre>
-<p>Note that for-in-loop can be spoiled by extending Object.prototype (see <a href="http://erik.eae.net/archives/2005/06/06/22.13.54" class="external text" title="http://erik.eae.net/archives/2005/06/06/22.13.54">Object.prototype is verboten</a>) so take care when using other libraries.
+<p>Note that for-in-loop can be spoiled by extending Object.prototype (see <a href="http://erik.eae.net/archives/2005/06/06/22.13.54/" class="external text" title="http://erik.eae.net/archives/2005/06/06/22.13.54/">Object.prototype is verboten</a>) so take care when using other libraries.
 </p>
 <p>jQuery provides a generic <a href="/jQuery.each/"><em>each</em> function</a> to iterate over properties of objects, as well as elements of arrays:
 </p>
@@ -412,7 +412,7 @@ x.splice( 1, 2 ) // [ 2, 3 ]
 <p>This indicates that the method doesn't only expect an array as the argument, but also specifies the expected type. The notation is borrowed from Java 5's generics notation (or C++ templates).
 </p>
 <h2 id="PlainObject"> PlainObject </h2>
-<p>The PlainObject type is a JavaScript object containing zero or more key-value pairs. The plain object is, in other words, an <code>Object</code> object. It is designated "plain" in jQuery documentation to distinguish it from other kinds of JavaScript objects: for example, <code>null</code>, user-defined arrays, and host objects such as <code>document</code>, all of which have a <code>typeof</code> value of "object." The <code><a href="/jQuery.isPlainObject">jQuery.isPlainObject()</a></code> method identifies whether the passed argument is a plain object or not, as demonstrated below:
+<p>The PlainObject type is a JavaScript object containing zero or more key-value pairs. The plain object is, in other words, an <code>Object</code> object. It is designated "plain" in jQuery documentation to distinguish it from other kinds of JavaScript objects: for example, <code>null</code>, user-defined arrays, and host objects such as <code>document</code>, all of which have a <code>typeof</code> value of "object." The <code><a href="/jQuery.isPlainObject/">jQuery.isPlainObject()</a></code> method identifies whether the passed argument is a plain object or not, as demonstrated below:
 </p>
 <pre><code data-lang="javascript">
   var a = [];
@@ -621,7 +621,7 @@ c.print(); // 1
 </p>
 <ul><li> <a href="http://www.w3.org/TR/XMLHttpRequest/" class="external text" title="http://www.w3.org/TR/XMLHttpRequest/">W3C standard</a>
 </li><li> <a href="http://developer.apple.com/internet/webcontent/xmlhttpreq.html" class="external text" title="http://developer.apple.com/internet/webcontent/xmlhttpreq.html">Apple (Safari)</a>
-</li><li> <a href="http://developer.mozilla.org/en/xmlhttprequest" class="external text" title="http://developer.mozilla.org/en/xmlhttprequest">Mozilla (Firefox)</a>
+</li><li> <a href="https://developer.mozilla.org/docs/en/DOM/XMLHttpRequest" class="external text" title="http://developer.mozilla.org/en/xmlhttprequest">Mozilla (Firefox)</a>
 </li><li> <a href="http://msdn.microsoft.com/en-us/library/ms535874%28VS.85%29.aspx" class="external text" title="http://msdn.microsoft.com/en-us/library/ms535874%28VS.85%29.aspx">Microsoft (Internet Explorer)</a>
 </li><li> <a href="http://www.opera.com/docs/specs/opera9/xhr/" class="external text" title="http://www.opera.com/docs/specs/opera9/xhr/">Opera</a>
 </li></ul>
@@ -641,4 +641,4 @@ c.print(); // 1
 <h2 id="XMLDocument">XML Document</h2>
 <p>A document object created by the browser's XML DOM parser, usually from a string representing XML. XML documents have different semantics than HTML documents, but most of the traversing and manipulation methods provided by jQuery will work with them.</p>
 <h2 id="Assert">Assert</h2>
-<p>A reference to or instance of the object holding all of QUnit's assertions. See the <a href="//api.qunitjs.com/QUnit.assert">API documentation for <code>QUnit.assert</code></a> for details.</p>
+<p>A reference to or instance of the object holding all of QUnit's assertions. See the <a href="//api.qunitjs.com/QUnit.assert/">API documentation for <code>QUnit.assert</code></a> for details.</p>

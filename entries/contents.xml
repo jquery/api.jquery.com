@@ -33,7 +33,7 @@ $( ".container" )
     .filter( "br" )
     .remove();
     </code></pre>
-    <p>This code first retrieves the contents  of <code>&lt;div class="container"&gt;</code> and then filters it for text nodes, which are wrapped in paragraph tags. This is accomplished by testing the <a href="https://developer.mozilla.org/en/nodeType"><code>.nodeType</code> property</a> of the element. This DOM property holds a numeric code indicating the node's type; text nodes use the code 3. The contents are again filtered, this time for <code>&lt;br /&gt;</code> elements, and these elements are removed.</p>
+    <p>This code first retrieves the contents  of <code>&lt;div class="container"&gt;</code> and then filters it for text nodes, which are wrapped in paragraph tags. This is accomplished by testing the <a href="https://developer.mozilla.org/docs/en/DOM/Node.nodeType"><code>.nodeType</code> property</a> of the element. This DOM property holds a numeric code indicating the node's type; text nodes use the code 3. The contents are again filtered, this time for <code>&lt;br /&gt;</code> elements, and these elements are removed.</p>
   </longdesc>
   <example>
     <desc>Find all the text nodes inside a paragraph and wrap them with a bold tag.</desc>
