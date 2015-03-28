@@ -14,7 +14,7 @@
     </argument>
   </signature>
   <longdesc>
-    <p><code>.triggerHandler( eventType )</code> executes all handlers bound with jQuery for the event type.  It will also execute any method called <code>on{eventType}()</code> found on the element.  The behavior of this method is similar to <a href="/trigger"><code>.trigger()</code></a>, with the following exceptions:</p>
+    <p><code>.triggerHandler( eventType )</code> executes all handlers bound with jQuery for the event type.  It will also execute any method called <code>on{eventType}()</code> found on the element.  The behavior of this method is similar to <a href="/trigger/"><code>.trigger()</code></a>, with the following exceptions:</p>
     <ul>
       <li>The <code>.triggerHandler( "event" )</code> method will not call <code>.event()</code> on the element it is triggered on.  This means <code>.triggerHandler( "submit" )</code> on a form will not call <code>.submit()</code> on the form.</li>
       <li>While <code>.trigger()</code> will operate on all elements matched by the jQuery object, <code>.triggerHandler()</code> only affects the first matched element.</li>
