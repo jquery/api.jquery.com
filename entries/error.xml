@@ -46,21 +46,24 @@ $( "#book" )
   <example>
     <desc>To hide the "broken image" icons for users of older versions of IE, you can write:</desc>
     <code><![CDATA[
+// missing.png is an hypothetical missing image used to trigger the error event
 $( "img" )
   .error(function() {
     $( this ).hide();
   })
   .attr( "src", "missing.png" );
 ]]></code>
-    <p>In the example, missing.png is an hypothetical missing image that is used to trigger the <code>error</code> event, not an image to replace those giving an error. To do that, you have to modify the body of the anonymous function passed to <code>.error()</code> as shown below:</p>
+  </example>
+  <example>
+    <desc>To replace all the missing images with another, you can update the <code>src</code> attribute inside the callback passed to <code>.error()</code>. Be sure that the replacement image exists; otherwise the <code>error</code> event will be triggered indefinitely.</desc>
     <code><![CDATA[
+// If missing.png is missing, it is replaced by replacement.png
 $( "img" )
   .error(function() {
     $( this ).attr( "src", "replacement.png" );
   })
   .attr( "src", "missing.png" );
 ]]></code>
-  <p><b>Note:</b> Be sure that the replacement image exists; otherwise the <code>error</code> event will be triggered indefinitely.</p>
   </example>
   <category slug="events/browser-events"/>
   <category slug="version/1.0"/>
