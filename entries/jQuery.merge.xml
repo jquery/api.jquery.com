@@ -4,15 +4,15 @@
   <desc>Merge the contents of two arrays together into the first array. </desc>
   <signature>
     <added>1.0</added>
-    <argument name="first" type="Array">
-      <desc>The first array to merge, the elements of second added.</desc>
+    <argument name="first" type="ArrayLikeObjects">
+      <desc>The first array-like object to merge, the elements of second added.</desc>
     </argument>
-    <argument name="second" type="Array">
-      <desc>The second array to merge into the first, unaltered.</desc>
+    <argument name="second" type="ArrayLikeObjects">
+      <desc>The second array-like object to merge into the first, unaltered.</desc>
     </argument>
   </signature>
   <longdesc>
-    <p>The <code>$.merge()</code> operation forms an array that contains all elements from the two arrays. The orders of items in the arrays are preserved, with items from the second array appended. The <code>$.merge()</code> function is destructive. It alters the first parameter to add the items from the second.  </p>
+    <p>The <code>$.merge()</code> operation forms an array that contains all elements from the two arrays. The orders of items in the arrays are preserved, with items from the second array appended. The <code>$.merge()</code> function is destructive. It alters the <code>length</code> and numeric index properties of the first object to include items from the second.</p>
     <p>If you need the original first array, make a copy of it before calling <code>$.merge()</code>. Fortunately, <code>$.merge()</code> itself can be used for this duplication:</p>
     <pre><code>
 var newArray = $.merge([], oldArray);
