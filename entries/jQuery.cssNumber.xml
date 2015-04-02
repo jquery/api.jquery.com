@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<entry type="property" name="jQuery.cssNumber" return="Object">
+  <title>jQuery.cssNumber</title>
+  <signature>
+    <added>1.4.3</added>
+  </signature>
+  <desc>An object containing all CSS properties that may be used without a unit. The <a href="/css/"><code>.css()</code></a> method uses this object to see if it may append <code>px</code> to unitless values.</desc>
+  <longdesc>
+    <p>You can think about <code>jQuery.cssNumber</code> as a list of all CSS properties you might use without a unit. It's used by <a href="/css/"><code>.css()</code></a> to determine if it needs to add <code>px</code> to unitless values.</p>
+    <p>The keys of the <code>jQuery.cssNumber</code> object are camel-cased and the values are all set to <code>true</code>. If you want to prevent the <a href="/css/"><code>.css()</code></a> method from automatically adding the <code>px</code> unit for a specific CSS property, you can add an extra property to the <code>jQuery.cssNumber</code> object.</p>
+    <pre><code>
+jQuery.cssNumber.someCSSProp = true;
+    </code></pre>
+    <p>By default the object contains the following properties:</p>
+    <ul>
+      <li><code>zIndex</code></li>
+      <li><code>fontWeight</code></li>
+      <li><code>opacity</code></li>
+      <li><code>zoom</code></li>
+      <li><code>lineHeight</code></li>
+      <li><code>widows</code> (added in jQuery 1.6)</li>
+      <li><code>orphans</code> (added in jQuery 1.6)</li>
+      <li><code>fillOpacity</code> (added in jQuery 1.6.2)</li>
+      <li><code>columnCount</code> (added in jQuery 1.9)</li>
+      <li><code>order</code> (added in jQuery 1.10.2)</li>
+      <li><code>flexGrow</code> (added in jQuery 1.11.1)</li>
+      <li><code>flexShrink</code> (added in jQuery 1.11.1)</li>
+    </ul>
+  </longdesc>
+  <category slug="css"/>
+  <category slug="manipulation/style-properties"/>
+  <category slug="version/1.4.3"/>
+</entry>
