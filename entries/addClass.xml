@@ -16,7 +16,7 @@
       <return type="String"/>
     </argument>
   </signature>
-  <desc>Adds the specified class(es) to each of the set of matched elements.</desc>
+  <desc>Adds the specified class(es) to each element in the set of matched elements.</desc>
   <longdesc>
     <p>It's important to note that this method does not replace a class. It simply adds the class, appending it to any which may already be assigned to the elements.</p>
     <p>More than one class may be added at a time, separated by a space, to the set of matched elements, like so:</p>
