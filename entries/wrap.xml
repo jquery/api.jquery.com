@@ -8,7 +8,7 @@
       <type name="htmlString"/>
       <type name="Element"/>
       <type name="jQuery"/>
-      <desc>A selector, element, HTML string, or jQuery object specifying the structure to wrap around the matched elements. When you pass a jQuery collection containing more than one element the first element will be used.</desc>
+      <desc>A selector, element, HTML string, or jQuery object specifying the structure to wrap around the matched elements. When you pass a jQuery collection containing more than one element, or a selector matching more than one element, the first element will be used.</desc>
     </argument>
   </signature>
   <signature>
