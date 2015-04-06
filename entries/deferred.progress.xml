@@ -10,7 +10,7 @@
         A function, or array of functions, to be called when the Deferred generates progress notifications.
       </desc>
     </argument>
-    <argument name="progressCallbacks">
+    <argument name="progressCallbacks" optional="true">
       <type name="Function"/>
       <type name="Array"/>
       <desc>
