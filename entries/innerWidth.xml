@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <entries>
   <desc>Get the current computed inner width (including padding but not border) for the first element in the set of matched elements or set the inner width of every matched element.</desc>
-<entry type="method" name="innerWidth" return="Integer">
+<entry type="method" name="innerWidth" return="Number">
   <title>.innerWidth()</title>
   <signature>
     <added>1.2.6</added>
