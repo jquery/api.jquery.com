@@ -7,7 +7,7 @@
       <desc>Object to test whether or not it is a function.</desc>
     </argument>
   </signature>
-  <desc>Determine if the argument passed is a Javascript function object. </desc>
+  <desc>Determine if the argument passed is a JavaScript function object. </desc>
   <longdesc>
     <p><strong>Note:</strong> As of jQuery 1.3, functions provided by the browser like <code>alert()</code> and DOM element methods like <code>getAttribute()</code> are not guaranteed to be detected as functions in browsers such as Internet Explorer.</p>
   </longdesc>
