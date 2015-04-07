@@ -7,7 +7,7 @@
       <desc>The argument or list of arguments to pass back to the callback list.</desc>
     </argument>
   </signature>
-  <desc>Call all of the callbacks with the given arguments</desc>
+  <desc>Call all of the callbacks with the given arguments.</desc>
   <longdesc>
     <p>This method returns the Callbacks object onto which it is attached (<code>this</code>).</p>
   </longdesc>
