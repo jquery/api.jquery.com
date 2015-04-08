@@ -62,8 +62,8 @@ $( "p" )
 <div id="blur-count">blur fire</div>
 ]]></html>
   </example>
-  <category slug="events/keyboard-events"/>
-  <category slug="events/mouse-events"/>
+  <category slug="events/form-events"/>
+  <category slug="forms"/>
   <category slug="version/1.4"/>
   <category slug="version/1.4.3"/>
 </entry>
