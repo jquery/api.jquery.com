@@ -2,10 +2,10 @@
 <xsl:template name="note">
 	<xsl:choose>
 		<xsl:when test="@id = 'data-doesnt-accept-undefined'">
-			<code>undefined</code> is not recognised as a data value. Calls such as <code><xsl:value-of select="@data-title" />( <xsl:value-of select="@data-parameters" />, undefined )</code> will return the jQuery object that it was called on, allowing for chaining.
+			<code>undefined</code> is not recognized as a data value. Calls such as <code><xsl:value-of select="@data-title" />( <xsl:value-of select="@data-parameters" />, undefined )</code> will return the jQuery object that it was called on, allowing for chaining.
 		</xsl:when>
 		<xsl:when test="@id = 'jquery-data-doesnt-accept-undefined'">
-			<code>undefined</code> is not recognised as a data value. Calls such as <code><xsl:value-of select="@data-title" />( <xsl:value-of select="@data-parameters" />, undefined )</code> will return the corresponding data for "name", and is therefore the same as <code><xsl:value-of select="@data-title" />( <xsl:value-of select="@data-parameters" /> )</code>.
+			<code>undefined</code> is not recognized as a data value. Calls such as <code><xsl:value-of select="@data-title" />( <xsl:value-of select="@data-parameters" />, undefined )</code> will return the corresponding data for "name", and is therefore the same as <code><xsl:value-of select="@data-title" />( <xsl:value-of select="@data-parameters" /> )</code>.
 		</xsl:when>
 		<xsl:when test="@id = 'dimensions-number'">
 			The number returned by dimensions-related APIs, including <code><xsl:value-of select="@data-title"/></code>, may be fractional in some cases. Code should not assume it is an integer. Also, dimensions may be incorrect when the page is zoomed by the user; browsers do not expose an API to detect this condition.
