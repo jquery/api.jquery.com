@@ -114,7 +114,7 @@ $.ajax({
         <desc>A password to be used with XMLHttpRequest in response to an HTTP access authentication request.</desc>
       </property>
       <property default="true" name="processData" type="Boolean">
-        <desc>By default, data passed in to the data option as an object (technically, anything other than a string) will be processed and transformed into a query string, fitting to the default content-type "application/x-www-form-urlencoded". If you want to send a DOMDocument, or other non-processed data, set this option to <code>false</code>.</desc>
+        <desc>By default, data passed in to the <code>data</code> option as an object (technically, anything other than a string) will be processed and transformed into a query string, fitting to the default content-type "application/x-www-form-urlencoded". If you want to send a DOMDocument, or other non-processed data, set this option to <code>false</code>.</desc>
       </property>
       <property name="scriptCharset" type="String">
         <desc>Only applies when the "script" transport is used (e.g., cross-domain requests with "jsonp" or "script" dataType and "GET" type). Sets the <code>charset</code> attribute on the script tag used in the request. Used when the character set on the local page is not the same as the one on the remote script.</desc>
