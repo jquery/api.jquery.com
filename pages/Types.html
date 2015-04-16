@@ -73,7 +73,7 @@ var x = "";
       <li class="toclevel-2"><a href="#Array.3CType.3E_Notation"><span class="toctext">Array&lt;Type&gt; Notation</span></a></li>
     </ul>
   </li>
-  <li class="toclevel-1"><a href="#ArrayLikeObjects"><span class="toctext">Array-Like Objects</span></a></li>
+  <li class="toclevel-1"><a href="#ArrayLikeObject"><span class="toctext">Array-Like Object</span></a></li>
   <li class="toclevel-1"><a href="#PlainObject"><span class="toctext">PlainObject</span></a></li>
   <li class="toclevel-1"><a href="#Date"><span class="toctext">Date</span></a></li>
   <li class="toclevel-1"><a href="#Function"><span class="toctext">Function</span></a>
@@ -412,7 +412,7 @@ x.splice( 1, 2 ) // [ 2, 3 ]
 </pre>
 <p>This indicates that the method doesn't only expect an array as the argument, but also specifies the expected type. The notation is borrowed from Java 5's generics notation (or C++ templates).
 </p>
-<h2 id="ArrayLikeObjects">Array-Like Objects</h2>
+<h2 id="ArrayLikeObject">Array-Like Object</h2>
 <p>Either a true JavaScript Array or a JavaScript Object that contains a nonnegative integer <code>length</code> property and index properties from <code>0</code> up to <code>length - 1</code>. This latter case includes array-like objects commonly encountered in web-based code such as the <code>arguments</code> object and the <code>NodeList</code> object returned by many DOM methods.</p>
 <p>When a jQuery API accepts either plain Objects or Array-Like objects, a plain Object with a numeric <code>length</code> property will trigger the Array-Like behavior.</p>
 <h2 id="PlainObject"> PlainObject </h2>
