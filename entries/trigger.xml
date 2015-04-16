@@ -46,6 +46,7 @@ $( "#foo").trigger( "custom", [ "Custom", "Event" ] );
     <p>The <code>.trigger()</code> method can be used on jQuery collections that wrap plain JavaScript objects similar to a pub/sub mechanism; any event handlers bound to the object will be called when the event is triggered. </p>
     <div class="warning"><strong>Note:</strong> For both plain objects and DOM objects other than <code>window</code>, if a triggered event name matches the name of a property on the object, jQuery will attempt to invoke the property as a method if no event handler calls <a href="/event.preventDefault/"><code>event.preventDefault()</code></a>. If this behavior is not desired, use <a href="/triggerHandler/"><code>.triggerHandler()</code></a> instead.</div>
     <div class="warning"><strong>Note:</strong> As with <a href="/triggerHandler/"><code>.triggerHandler()</code></a>, when calling <code>.trigger()</code> with an event name matches the name of a property on the object, prefixed by <code>on</code> (e.g. triggering <code>click</code> on <code>window</code> that has a non null <code>onclick</code> method), jQuery will attempt to invoke that property as a method.</div>
+    <div class="warning"><strong>Note:</strong> When triggering with a plain object that is not array-like but still contains a <code>length</code> property, you should pass the object in an array (e.g. <code>[ { length: 1 } ]</code>).</div>
   </longdesc>
   <example>
     <desc>Clicks to button #2 also trigger a click for button #1.</desc>
