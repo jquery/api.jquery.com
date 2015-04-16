@@ -4,10 +4,10 @@
   <desc>Merge the contents of two arrays together into the first array. </desc>
   <signature>
     <added>1.0</added>
-    <argument name="first" type="ArrayLikeObjects">
+    <argument name="first" type="ArrayLikeObject">
       <desc>The first array-like object to merge, the elements of second added.</desc>
     </argument>
-    <argument name="second" type="ArrayLikeObjects">
+    <argument name="second" type="ArrayLikeObject">
       <desc>The second array-like object to merge into the first, unaltered.</desc>
     </argument>
   </signature>
