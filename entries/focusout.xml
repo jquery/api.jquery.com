@@ -24,6 +24,7 @@
     <p>The <code>focusout</code> event is sent to an element when it, or any element inside of it, loses focus. This is distinct from the <a href="/blur/">blur</a> event in that it supports detecting the loss of focus on descendant elements (in other words, it supports event bubbling).</p>
     <p>This event will likely be used together with the <a href="/focusin/">focusin</a> event.</p>
   </longdesc>
+  <note id="detach-shorthand" type="additional" data-event="focusout"/>
   <example>
     <desc>Watch for a loss of focus to occur inside paragraphs and note the difference between the <code>focusout</code> count and the <code>blur</code> count. (The <code>blur</code> count does not change because those events do not bubble.)</desc>
     <css><![CDATA[

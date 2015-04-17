@@ -53,6 +53,7 @@ $( "#other" ).click(function() {
     <p>After this code executes, clicks on <samp>Trigger the handler</samp> will also display the message. In addition, the default <code>submit</code> action on the form will be fired, so the form will be submitted.</p>
     <p>The JavaScript <code>submit</code> event does not bubble in Internet Explorer. However, scripts that rely on event delegation with the <code>submit</code> event will work consistently across browsers as of jQuery 1.4, which has normalized the event's behavior. </p>
   </longdesc>
+  <note id="detach-shorthand" type="additional" data-event="submit"/>
   <note id="domlint" type="additional"/>
   <example>
     <desc>If you'd like to prevent forms from being submitted unless a flag variable is set, try:</desc>

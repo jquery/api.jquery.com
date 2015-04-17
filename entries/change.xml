@@ -56,6 +56,7 @@ $( "#other" ).click(function() {
 	  <p><strong>Note: </strong>Changing the value of an input element using JavaScript, using <a href="/val"><code>.val()</code></a> for example, won't fire the event.</p>
     </div>
   </longdesc>
+  <note id="detach-shorthand" type="additional" data-event="change"/>
   <example>
     <desc>Attaches a change event to the select that gets the text for each selected option and writes them in the div.  It then triggers the event for the initial text draw.</desc>
     <code><![CDATA[

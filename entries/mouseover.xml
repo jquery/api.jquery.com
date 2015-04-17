@@ -56,6 +56,7 @@ $( "#other" ).click(function() {
     <p>After this code executes, clicks on <samp>Trigger the handler</samp> will also append the message.</p>
     <p>This event type can cause many headaches due to event bubbling. For instance, when the mouse pointer moves over the <samp>Inner</samp> element in this example, a <code>mouseover</code> event will be sent to that, then trickle up to <samp>Outer</samp>. This can trigger our bound <code>mouseover</code> handler at inopportune times. See the discussion for <code>.mouseenter()</code> for a useful alternative.</p>
   </longdesc>
+  <note id="detach-shorthand" type="additional" data-event="mouseover"/>
   <example>
     <desc>Show the number of times mouseover and mouseenter events are triggered.
 <code>mouseover</code> fires when the pointer moves into the child element as well, while <code>mouseenter</code> fires only when the pointer moves into the bound element.</desc>

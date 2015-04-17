@@ -64,6 +64,7 @@ $( "#other" ).click(function() {
     <p>It is inadvisable to bind handlers to both the <code>click</code> and <code>dblclick</code> events for the same element. The sequence of events triggered varies from browser to browser, with some receiving two <code>click</code> events before the <code>dblclick</code> and others only one. Double-click sensitivity (maximum time between clicks that is detected as a double click) can vary by operating system and browser, and is often user-configurable.
     </p>
   </longdesc>
+  <note id="detach-shorthand" type="additional" data-event="dblclick"/>
   <example>
     <desc>To bind a "Hello World!" alert box the dblclick event on every paragraph on the page:</desc>
     <code><![CDATA[
