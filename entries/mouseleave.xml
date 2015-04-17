@@ -55,6 +55,7 @@ $( "#other" ).click(function() {
     <p>After this code executes, clicks on <samp>Trigger the handler</samp> will also append the message.</p>
     <p>The <code>mouseleave</code> event differs from <code>mouseout</code> in the way it handles event bubbling. If <code>mouseout</code> were used in this example, then when the mouse pointer moved out of the <samp>Inner</samp> element, the handler would be triggered. This is usually undesirable behavior. The <code>mouseleave</code> event, on the other hand, only triggers its handler when the mouse leaves the element it is bound to, not a descendant. So in this example, the handler is triggered when the mouse leaves the <samp>Outer</samp> element, but not the <samp>Inner</samp> element.</p>
   </longdesc>
+  <note id="detach-shorthand" type="additional" data-event="mouseleave"/>
   <example>
     <desc>Show number of times mouseout and mouseleave events are triggered. <code>mouseout</code> fires when the pointer moves out of child element as well, while <code>mouseleave</code> fires only when the pointer moves out of the bound element.</desc>
     <css><![CDATA[

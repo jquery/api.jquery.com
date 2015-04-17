@@ -61,6 +61,9 @@
 		<xsl:when test="@id = 'hidden-forces-layout'">
 			Using this selector heavily can have performance implications, as it may force the browser to re-render the page before it can determine visibility. Tracking the visibility of elements via other methods, using a class for example, can provide better performance.
 		</xsl:when>
+		<xsl:when test="@id = 'detach-shorthand'">
+			As the <code>.<xsl:value-of select="@data-event"/>()</code> method is just a shorthand for <code>.on( "<xsl:value-of select="@data-event"/>", handler )</code>, detaching is possible using <code>.off( "<xsl:value-of select="@data-event"/>" )</code>.
+		</xsl:when>
 	</xsl:choose>
 </xsl:template>
 </xsl:stylesheet>

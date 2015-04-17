@@ -43,6 +43,7 @@ $( "#book" )
     </div>
     <p>Note: A jQuery error event handler should not be attached to the window object. The browser fires the window's error event when a script error occurs. However, the window error event receives different arguments and has different return value requirements than conventional event handlers. Use <code>window.onerror</code> instead.</p>
   </longdesc>
+  <note id="detach-shorthand" type="additional" data-event="error"/>
   <example>
     <desc>To hide the "broken image" icons for IE users, you can try:</desc>
     <code><![CDATA[
