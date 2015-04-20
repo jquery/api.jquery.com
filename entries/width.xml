@@ -26,7 +26,7 @@ $( document ).width();
       </div>
     </longdesc>
   	<note id="dimensions-number" type="additional" data-title=".width()"/>
-    <note id="inaccurate-dimensions-for-hidden-elements" type="additional" data-title=".width()"/>
+    <note id="hidden-element-dimensions" type="additional" data-title=".width()"/>
     <example>
       <desc>Show various widths.  Note the values are from the iframe so might be smaller than you expected.  The yellow highlight shows the iframe body.</desc>
       <code><![CDATA[
