@@ -59,4 +59,5 @@ $( "li.item-a" ).offsetParent().css( "background-color", "red" );
   </example>
   <category slug="offset"/>
   <category slug="traversing/tree-traversal"/>
+  <category slug="version/1.2.6"/>
 </entry>
