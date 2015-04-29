@@ -2,12 +2,6 @@
 <entry type="method" name="jQuery.post" return="jqXHR">
   <title>jQuery.post()</title>
   <signature>
-    <added>3.0</added>
-    <argument name="settings" type="PlainObject" optional="false">
-      <desc>A set of key/value pairs that configure the Ajax request. All properties except for <code>url</code> are optional. A default can be set for any option with <a href="/jQuery.ajaxSetup/">$.ajaxSetup()</a>. See <a href="/jquery.ajax/#jQuery-ajax-settings">jQuery.ajax( settings )</a> for a complete list of all settings. Type will automatically be set to <code>POST</code>.</desc>
-    </argument>
-  </signature>
-  <signature>
     <added>1.0</added>
     <argument name="url" type="String">
       <desc>A string containing the URL to which the request is sent.</desc>
@@ -25,6 +19,12 @@
     </argument>
     <argument name="dataType" optional="true" type="String">
       <desc>The type of data expected from the server. Default: Intelligent Guess (xml, json, script, text, html).</desc>
+    </argument>
+  </signature>
+  <signature>
+    <added>3.0</added>
+    <argument name="settings" type="PlainObject" optional="false">
+      <desc>A set of key/value pairs that configure the Ajax request. All properties except for <code>url</code> are optional. A default can be set for any option with <a href="/jQuery.ajaxSetup/">$.ajaxSetup()</a>. See <a href="/jquery.ajax/#jQuery-ajax-settings">jQuery.ajax( settings )</a> for a complete list of all settings. Type will automatically be set to <code>POST</code>.</desc>
     </argument>
   </signature>
   <desc>Load data from the server using a HTTP POST request.</desc>
