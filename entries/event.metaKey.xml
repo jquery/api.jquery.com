@@ -8,6 +8,8 @@
   <longdesc>
     <p>Returns a boolean value (<code>true</code> or <code>false</code>) that indicates whether or not the <kbd>META</kbd> key was pressed at the time the event fired.
     This key might map to an alternative key name on some platforms.</p>
+    <p>On Macintosh keyboards, the <kbd>META</kbd> key maps to the <a href="http://en.wikipedia.org/wiki/Command_key">Command key (⌘)</a>.</p>
+    <p>On Windows keyboards, the <kbd>META</kbd> key maps to the <a href="http://en.wikipedia.org/wiki/Windows_key">Windows key</a>.</p>
   </longdesc>
   <example>
     <desc>Determine whether the META key was pressed when the event fired.</desc>
