@@ -7,7 +7,8 @@
   </signature>
   <desc>Matches all elements that are checked or selected.</desc>
   <longdesc>
-    <p>The <code>:checked</code> selector works for checkboxes, radio buttons, and select elements. For select elements only, use the <code>:selected</code> selector.</p>
+    <p>The <code>:checked</code> selector works for checkboxes, radio buttons, and options of <code>select</code> elements.</p>
+    <p>To retrieve only the selected options of <code>select</code> elements, use the <a href="/selected-selector/"><code>:selected</code></a> selector.</p>
   </longdesc>
   <example>
     <desc>Determine how many input elements are checked.</desc>
