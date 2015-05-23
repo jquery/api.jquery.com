@@ -123,7 +123,7 @@ $( "input" )
     <desc>Set the value of each element in the set of matched elements.</desc>
     <longdesc>
       <p>This method is typically used to set the values of form fields. </p>
-      <p>Passing an array of element values allows matching  <code>&lt;input type="checkbox"&gt;</code>, <code>&lt;input type="radio"&gt;</code> and <code>&lt;option&gt;</code>s inside of n <code>&lt;select multiple="multiple"&gt;</code> to be selected. In the case of <code>&lt;input type="radio"&gt;</code>s that are part of a radio group and <code>&lt;select multiple="multiple"&gt;</code> the other elements will be deselected.</p>
+      <p><code>val()</code> allows you to pass an array of element values. This is useful when working on a jQuery object containing elements like <code>&lt;input type="checkbox"&gt;</code>, <code>&lt;input type="radio"&gt;</code> and <code>&lt;option&gt;</code>s inside of a <code>&lt;select&gt;</code>. In this case, the <code>input</code>s and the <code>option</code>s having a <code>value</code> that matches one of the elements of the array will be checked or selected, depending on the type. In case of <code>&lt;input type="radio"&gt;</code>s that are part of a radio group and <code>&lt;select&gt;</code>s, any previously selected element will be deselected. If you provide an array and the jQuery object contains <code>&lt;select&gt;</code>s that don't allow for multiple values, the <code>option</code> whose value appears last in the array will be selected.</p>
       <p>The <code>.val()</code> method allows us to set the value by passing in a function. As of jQuery 1.4, the function is passed two arguments, the current element's index and its current value: </p>
       <pre><code>
 $( "input:text.items" ).val(function( index, value ) {
