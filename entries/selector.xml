@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<entry type="property" name="selector" return="String" deprecated="1.7" removed="1.9">
+<entry type="property" name="selector" return="String" deprecated="1.7">
   <title>.selector</title>
   <signature>
     <added>1.3</added>
