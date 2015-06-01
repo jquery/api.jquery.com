@@ -20,6 +20,7 @@
     </argument>
   </signature>
   <longdesc>
+    <p>This method is a shortcut for <code>.on( "error", handler )</code>.</p>
     <p>The <code>error</code> event is sent to elements, such as images, that are referenced by a document and loaded by the browser. It is called if the element was not loaded correctly.</p>
     <p>For example, consider a page with a simple image element:</p>
     <pre><code>
