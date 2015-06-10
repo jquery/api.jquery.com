@@ -22,7 +22,12 @@ grunt.initConfig({
 		all: "resources/**"
 	},
 	wordpress: (function() {
-		var config = require( "./config" );
+
+		// There's no config for CI, but we don't need one for basic testing
+		var config = {};
+		try {
+			config = require( "./config" );
+		} catch ( error ) {}
 		config.dir = "dist/wordpress";
 		return config;
 	})()

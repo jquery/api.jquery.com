@@ -20,6 +20,9 @@
       "url": "https://github.com/jquery/api.jquery.com/blob/master/LICENSE.txt"
     }
   ],
+  "scripts": {
+    "test": "grunt lint"
+  },
   "dependencies": {
     "grunt": "0.4.5",
     "grunt-jquery-content": "2.0.0"
