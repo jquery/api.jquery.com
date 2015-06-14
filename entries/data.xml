@@ -31,7 +31,7 @@ $( "body" ).data(); // { foo: 52, bar: { myType: "test", count: 40 }, baz: [ 1, 
       </code></pre>
       <p>In jQuery 1.4.3 setting an element's data object with <code>.data(obj)</code> extends the data previously stored with that element.</p>
       <p>Prior to jQuery 1.4.3 (starting in jQuery 1.4) the <code>.data()</code> method completely replaced all data, instead of just extending the data object. If you are using third-party plugins it may not be advisable to completely replace the element's data object, since plugins may have also set data.</p>
-      <p>jQuery 3 changes the behavior of this method to align it to the <a href="http://www.w3.org/TR/html5/dom.html#dom-dataset">Dataset API specifications</a>. Specifically, jQuery 3 transforms all the properties' key to be camelCase. Writing a statement like <code>$( "body" ).data( {"my-name": "aValue"} ).data();</code> will return <code>{ myName: "aValue" }</code>.</p>
+      <p><strong>jQuery 3</strong> changes the behavior of this method to align it to the <a href="http://www.w3.org/TR/html5/dom.html#dom-dataset">Dataset API specifications</a>. Specifically, jQuery 3 transforms all the properties' key to be camelCase. Writing a statement like <code>$( "body" ).data( { "my-name": "aValue" } ).data();</code> will return <code>{ myName: "aValue" }</code>.</p>
       <p>Due to the way browsers interact with plugins and external code, the <code>.data()</code> method cannot be used on <code>&lt;object&gt;</code> (unless it's a Flash plugin), <code>&lt;applet&gt;</code> or <code>&lt;embed&gt;</code> elements.</p>
     </longdesc>
     <note id="no-data-on-xml" type="additional"/>
@@ -89,7 +89,7 @@ alert( $( "body" ).data( "foo" ) ); // undefined
 $( "body" ).data( "bar", "foobar" );
 alert( $( "body" ).data( "bar" ) ); // foobar
       </code></pre>
-      <p>jQuery 3 changes the behavior of this method to align it to the <a href="http://www.w3.org/TR/html5/dom.html#dom-dataset">Dataset API specifications</a>. Specifically, jQuery 3 transforms all the properties' key to be camelCase. Writing a statement like <code>$( "body" ).data( {"my-name": "aValue"} ).data();</code> will return <code>{ myName: "aValue" }</code>.</p>
+      <p><strong>jQuery 3</strong> changes the behavior of this method to align it to the <a href="http://www.w3.org/TR/html5/dom.html#dom-dataset">Dataset API specifications</a>. Specifically, jQuery 3 transforms all the properties' key to be camelCase. Writing a statement like <code>$( "body" ).data( { "my-name": "aValue" } ).data();</code> will return <code>{ myName: "aValue" }</code>.</p>
       <h4 id="data-html5">
         <a href="#data-html5">HTML5 data-* Attributes</a>
       </h4>
