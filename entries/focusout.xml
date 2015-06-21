@@ -19,6 +19,9 @@
       <argument name="eventObject" type="Event" />
     </argument>
   </signature>
+  <signature>
+    <added>1.0</added>
+  </signature>
   <longdesc>
     <p>This method is a shortcut for <code>.on( "focusout", handler )</code> when passed arguments, and <code>.trigger( "focusout" )</code> when no arguments are passed.</p>
     <p>The <code>focusout</code> event is sent to an element when it, or any element inside of it, loses focus. This is distinct from the <a href="/blur/">blur</a> event in that it supports detecting the loss of focus on descendant elements (in other words, it supports event bubbling).</p>
