@@ -71,40 +71,6 @@ $( "input" ).on( "click", function() {
 </form>
 ]]></html>
   </example>
-  <example>
-    <desc>Determine how many input elements are checked.</desc>
-    <code><![CDATA[
-var countCheckedOptions = function() {
-  var n = $( "option:checked" ).length;
-  $( "#log_option" ).text( n + (n === 1 ? " is" : " are") + " ':checked'!" );
-};
-countCheckedOptions();
-
-$( "select" ).on( "change", countCheckedOptions );
-]]></code>
-    <css><![CDATA[
-  #log_option {
-    color: red;
-  }
-]]></css>
-    <html><![CDATA[
-<form>
-  <label for="cities">Cities I'd like to visit</label>
-  <br />
-  <select name="cities" id="cities" size="8" multiple="multiple">
-    <option value="Athens">Athens</option>
-    <option value="Barcelona">Barcelona</option>
-    <option value="Chicago">Chicago</option>
-    <option value="Detroit">Detroit</option>
-    <option value="Frankfurt">Frankfurt</option>
-    <option value="London">London</option>
-    <option value="Madrid">Madrid</option>
-    <option value="Paris">Paris</option>
-  </select>
-</form>
-<div id="log_option"></div>
-]]></html>
-  </example>
   <category slug="selectors/form-selectors"/>
   <category slug="version/1.0"/>
 </entry>
