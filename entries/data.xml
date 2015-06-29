@@ -89,12 +89,12 @@ alert( $( "body" ).data( "foo" ) ); // undefined
 $( "body" ).data( "bar", "foobar" );
 alert( $( "body" ).data( "bar" ) ); // foobar
       </code></pre>
-      <p><strong>jQuery 3</strong> changes the behavior of this method to align it to the <a href="http://www.w3.org/TR/html5/dom.html#dom-dataset">Dataset API specifications</a>. Specifically, jQuery 3 transforms all the properties' key to be camelCase. Writing a statement like <code>$( "body" ).data( { "my-name": "aValue" } ).data();</code> will return <code>{ myName: "aValue" }</code>.</p>
+      <p><strong>jQuery 3</strong> changes the behavior of this method to align it to the <a href="http://www.w3.org/TR/html5/dom.html#dom-dataset">Dataset API specifications</a>. Specifically, jQuery 3 transforms every two-character sequence of "-" (U+002D) followed by a lowercase ASCII letter by the uppercase version of the letter as per definition of [the algorithm of the Dataset API](http://www.w3.org/TR/html5/dom.html#dom-dataset). Writing a statement like <code>$( "body" ).data( { "my-name": "aValue" } ).data();</code> will return <code>{ myName: "aValue" }</code>.</p>
       <h4 id="data-html5">
         <a href="#data-html5">HTML5 data-* Attributes</a>
       </h4>
       <p>As of jQuery 1.4.3 <a href="http://ejohn.org/blog/html-5-data-attributes/">HTML 5 data- attributes</a> will be automatically pulled in to jQuery's data object. The treatment of attributes with embedded dashes was changed in jQuery 1.6 to conform to the <a href="http://www.w3.org/TR/html5/dom.html#embedding-custom-non-visible-data-with-the-data-*-attributes">W3C HTML5 specification</a>.</p>
-      <p>For example, given the following HTML:</p>
+      <p>For examjple, given the following HTML:</p>
       <pre><code>&lt;div data-role="page" data-last-value="43" data-hidden="true" data-options='{"name":"John"}'&gt;&lt;/div&gt;</code></pre>
       <p>All of the following jQuery code will work.</p>
       <pre><code>
