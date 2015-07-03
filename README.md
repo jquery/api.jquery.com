@@ -32,7 +32,7 @@ The `xmllint` and `xsltproc` utilities need to be in your path. If you are on Wi
 #### Pronoun Usage
 
 * Use second-person pronoun ("you") when necessary, but try to avoid it.
-* Favor the definite article ("the") over second-person possesive ("your").
+* Favor the definite article ("the") over second-person possessive ("your").
   * **Yes**: Insert the paragraph after the unordered list.
   * **No**: Insert your paragraph after the unordered list.
 * When editing current entries, change first-person plural pronouns ("we," "our," "us") to second-person.
@@ -83,5 +83,5 @@ Code in the API documentation should follow the [jQuery Core Style Guide](http:/
   * Strong in English writing
 * Tone
   * Middle ground between formal and familiar. Err on the side of formality.
-  * Authoritive
+  * Authoritative
   * Tactful
