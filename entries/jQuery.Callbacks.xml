@@ -38,7 +38,7 @@ callbacks.fire( "bar!" );
     </code></pre>
     <p>The result of this is that it becomes simple to construct complex lists of callbacks where input values can be passed through to as many functions as needed with ease.</p>
     <p>Two specific methods were being used above: <code>.add()</code> and <code>.fire()</code>. The <code>.add()</code> method supports adding new callbacks to the callback list, while the <code>.fire()</code> method executes the added functions and provides a way to pass arguments to be processed by the callbacks in the same list.</p>
-    <p>Another method supported by <code>$.Callbacks</code> is <code>.remove()</code>, which has the ability to remove a particular callback from the callback list. Here"s a practical example of <code>.remove()</code> being used:</p>
+    <p>Another method supported by <code>$.Callbacks</code> is <code>.remove()</code>, which has the ability to remove a particular callback from the callback list. Here's a practical example of <code>.remove()</code> being used:</p>
     <pre><code>
 var callbacks = $.Callbacks();
 callbacks.add( fn1 );
