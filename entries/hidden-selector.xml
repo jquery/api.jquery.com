@@ -19,6 +19,7 @@
     <p>This selector is the opposite of the <a href="/visible-selector/"><code>:visible</code></a> selector. So, every element selected by <code>:hidden</code> isn't selected by <code>:visible</code> and vice versa.</p>
     <p>During animations to show an element, the element is considered to be visible at the start of the animation.</p>
     <p>How <code>:hidden</code> is determined was changed in jQuery 1.3.2. An element is assumed to be hidden if it or any of its parents consumes no space in the document. CSS visibility isn't taken into account (therefore <code>$( elem ).css( "visibility", "hidden" ).is( ":hidden" ) == false</code>). The <a href="http://blog.jquery.com/2009/02/20/jquery-1-3-2-released/">release notes</a> outline the changes in more detail.</p>
+    <p>jQuery 3 slightly modifies the meaning of <code>:hidden</code> (and therefore of <a href="/visible-selector/"><code>:visible</code></a>). Starting with this version, elements will be considered <code>:hidden</code> if they don't have any layout boxes. For example, <code>br</code> elements and inline elements with no content will not be selected by the <code>:hidden</code> selector.</p>
   </longdesc>
   <note id="jquery-selector-extension" type="additional" data-selector=":hidden"/>
   <note id="hidden-forces-layout" type="additional"/>
