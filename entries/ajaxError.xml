@@ -42,6 +42,7 @@ $( document ).ajaxError(function( event, jqxhr, settings, thrownError ) {
   }
 });</code></pre>
   </longdesc>
+  <note id="global-ajax-event" type="additional" data-title=".ajaxError()"/>
   <note id="ajax-global-false" type="additional" data-title=".ajaxError()"/>
   <example>
     <desc>Show a message when an Ajax request fails.</desc>

@@ -42,6 +42,7 @@ $( document ).ajaxSend(function( event, jqxhr, settings ) {
 });
     </code></pre>
   </longdesc>
+  <note id="global-ajax-event" type="additional" data-title=".ajaxSend()"/>
   <note id="ajax-global-false" type="additional" data-title=".ajaxSend()"/>
   <example>
     <desc>Show a message before an Ajax request is sent.</desc>
