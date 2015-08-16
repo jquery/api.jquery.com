@@ -31,6 +31,7 @@ $( ".trigger" ).click(function() {
     <p>When the user clicks the element with class <code>trigger</code> and the Ajax request is sent, the log message is displayed.</p>
     <p><strong>As of jQuery 1.8, the <code>.ajaxStart()</code> method should only be attached to <code>document</code>.</strong></p>
   </longdesc>
+  <note id="global-ajax-event" type="additional" data-title=".ajaxStart()"/>
   <note id="ajax-global-false" type="additional" data-title=".ajaxStart()"/>
   <example>
     <desc>Show a loading message whenever an Ajax request starts (and none is already active).</desc>
