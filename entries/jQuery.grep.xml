@@ -4,8 +4,8 @@
   <desc>Finds the elements of an array which satisfy a filter function. The original array is not affected.</desc>
   <signature>
     <added>1.0</added>
-    <argument name="array" type="Array">
-      <desc>The array to search through.</desc>
+    <argument name="array" type="ArrayLikeObject">
+      <desc>The array-like object to search through.</desc>
     </argument>
     <argument name="function" type="Function">
       <argument name="elementOfArray" type="Object" />
