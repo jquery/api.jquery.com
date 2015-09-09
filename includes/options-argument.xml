@@ -41,17 +41,17 @@
 		</argument>
 	</property>
 	<property name="complete" type="Function">
-		<desc>A function to call once the animation is complete.</desc>
+		<desc>A function that is called once the animation on an element is complete.</desc>
 		<!-- no parameters -->
 	</property>
 	<property name="start" type="Function" added="1.8">
-		<desc>A function to call when the animation begins.</desc>
+		<desc>A function to call when the animation on an element begins.</desc>
 		<argument name="animation" type="Promise">
 			<desc>An enhanced Promise object with additional properties for the animation</desc>
 		</argument>
 	</property>
 	<property name="done" type="Function" added="1.8">
-		<desc>A function to be called when the animation completes (its Promise object is resolved).</desc>
+		<desc>A function to be called when the animation on an element completes (its Promise object is resolved).</desc>
 		<argument name="animation" type="Promise">
 			<desc>An enhanced Promise object with additional properties for the animation</desc>
 		</argument>
@@ -60,7 +60,7 @@
 		</argument>
 	</property>
 	<property name="fail" type="Function" added="1.8">
-		<desc>A function to be called when the animation fails to complete (its Promise object is rejected).</desc>
+		<desc>A function to be called when the animation on an element fails to complete (its Promise object is rejected).</desc>
 		<argument name="animation" type="Promise">
 			<desc>An enhanced Promise object with additional properties for the animation</desc>
 		</argument>
@@ -69,7 +69,7 @@
 		</argument>
 	</property>
 	<property name="always" type="Function" added="1.8">
-		<desc>A function to be called when the animation completes or stops without completing (its Promise object is either resolved or rejected).</desc>
+		<desc>A function to be called when the animation on an element completes or stops without completing (its Promise object is either resolved or rejected).</desc>
 		<argument name="animation" type="Promise">
 			<desc>An enhanced Promise object with additional properties for the animation</desc>
 		</argument>

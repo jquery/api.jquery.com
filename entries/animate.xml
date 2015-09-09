@@ -32,8 +32,8 @@
     </div>
     <h4 id="duration">Duration</h4>
     <p>Durations are given in milliseconds; higher values indicate slower animations, not faster ones. The default duration is <code>400</code> milliseconds. The strings <code>'fast'</code> and <code>'slow'</code> can be supplied to indicate durations of <code>200</code> and <code>600</code> milliseconds, respectively.</p>
-    <h4 id="complete">Complete Function</h4>
-    <p>If supplied, the <code>complete</code> callback function is fired once the animation is complete. This can be useful for stringing different animations together in sequence. The callback is not sent any arguments, but <code>this</code> is set to the DOM element being animated. If multiple elements are animated, the callback is executed once per matched element, not once for the animation as a whole.</p>
+    <h4 id="callbacks">Callback Functions</h4>
+    <p>If supplied, the <code>start</code>, <code>step</code>, <code>progress</code>, <code>complete</code>, <code>done</code>, <code>fail</code>, and <code>always</code> callbacks are called on a <em>per-element</em> basis; <code>this</code> is set to the DOM element being animated. If no elements are in the set, no callbacks are called. If multiple elements are animated, the callback is executed once per matched element, not once for the animation as a whole. Use the <code>.promise()</code> method to obtain a promise to which you can attach callbacks that fire once for an animated set of any size, including zero elements.</p>
     <h4 id="basic-usage">Basic Usage</h4>
     <p>To animate any element, such as a simple image:</p>
     <pre><code>
