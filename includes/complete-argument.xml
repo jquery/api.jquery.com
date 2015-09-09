@@ -1,4 +1,4 @@
 <?xml version="1.0"?>
 <argument name="complete" type="Function" optional="true">
-	<desc>A function to call once the animation is complete.</desc>
+	<desc>A function to call once the animation is complete, called once per matched element.</desc>
 </argument>
