@@ -33,7 +33,6 @@ $( "button.trigger" ).on( "click", function() {
 });
     </code></pre>
     <p>When the user clicks the button and the Ajax request fails, because the requested file is missing, the log message is displayed.</p>
-    <p><strong>As of jQuery 1.8, the <code>.ajaxError()</code> method should only be attached to <code>document</code>.</strong></p>
     <p>All <code>ajaxError</code> handlers are invoked, regardless of what Ajax request was completed. To differentiate between the requests, use the parameters passed to the handler. Each time an <code>ajaxError</code> handler is executed, it is passed the event object, the <code>jqXHR</code> object (prior to jQuery 1.5, the <code><abbr title="XMLHttpRequest">XHR</abbr></code> object), and the settings object that was used in the creation of the request. When an HTTP error occurs, the fourth argument (<code>thrownError</code>) receives the textual portion of the HTTP status, such as "Not Found" or "Internal Server Error." For example, to restrict the error callback to only handling events dealing with a particular URL:</p>
     <pre><code>
 $( document ).ajaxError(function( event, jqxhr, settings, thrownError ) {
