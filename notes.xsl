@@ -68,7 +68,7 @@
 			As the <code>.<xsl:value-of select="@data-event"/>()</code> method is just a shorthand for <code>.on( "<xsl:value-of select="@data-event"/>", handler )</code>, detaching is possible using <code>.off( "<xsl:value-of select="@data-event"/>" )</code>.
 		</xsl:when>
 		<xsl:when test="@id = 'global-ajax-event'">
-			As of jQuery 1.9, all the handlers for the <a href="/category/ajax/global-ajax-event-handlers/">jQuery global Ajax events</a>, including those added with the <code><xsl:value-of select="@data-title"/></code> method, <em>must</em> be attached to <code>document</code>.
+         As of jQuery 1.8, the <code><xsl:value-of select="@data-title"/></code> method <em>should</em> only be used to attach handlers to <code>document</code>. As of jQuery 1.9, all the handlers for the <a href="/category/ajax/global-ajax-event-handlers/">jQuery global Ajax events</a>, including those added with the <code><xsl:value-of select="@data-title"/></code> method, <em>must</em> be attached to <code>document</code>.
 		</xsl:when>
 	</xsl:choose>
 </xsl:template>

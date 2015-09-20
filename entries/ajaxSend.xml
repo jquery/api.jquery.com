@@ -32,7 +32,6 @@ $( ".trigger" ).click(function() {
 });
     </code></pre>
     <p>When the user clicks the element with class <code>trigger</code> and the Ajax request is about to begin, the log message is displayed.</p>
-    <p><strong>As of jQuery 1.8, the <code>.ajaxSend()</code> method should only be attached to <code>document</code>.</strong></p>
     <p>All <code>ajaxSend</code> handlers are invoked, regardless of what Ajax request is to be sent. If you must differentiate between the requests, use the parameters passed to the handler. Each time an <code>ajaxSend</code> handler is executed, it is passed the event object, the <code>jqXHR</code> object (in version 1.4, <code>XMLHttpRequest</code>object), and the <a href="/jQuery.ajax/">settings object</a> that was used in the creation of the Ajax request. For example, you can restrict the callback to only handling events dealing with a particular URL:</p>
     <pre><code>
 $( document ).ajaxSend(function( event, jqxhr, settings ) {
