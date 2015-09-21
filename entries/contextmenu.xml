@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<entry type="method" name="contextmenu" return="jQuery">
+  <title>.contextmenu()</title>
+  <desc>Bind an event handler to the "contextmenu" JavaScript event, or trigger that event on an element.</desc>
+  <signature>
+    <added>1.0</added>
+    <argument name="handler" type="Function">
+      <desc>A function to execute each time the event is triggered.</desc>
+      <argument name="eventObject" type="Event" />
+    </argument>
+  </signature>
+  <signature>
+    <added>1.4.3</added>
+    <argument name="eventData" type="Anything" optional="true">
+      <desc>An object containing data that will be passed to the event handler.</desc>
+    </argument>
+    <argument name="handler" type="Function">
+      <desc>A function to execute each time the event is triggered.</desc>
+      <argument name="eventObject" type="Event" />
+    </argument>
+  </signature>
+  <signature>
+    <added>1.0</added>
+  </signature>
+  <longdesc>
+    <p>This method is a shortcut for <code>.on( "contextmenu", handler )</code> in the first two variations, and <code>.trigger( "contextmenu" )</code> in the third.
+    The <code>contextmenu</code> event is sent to an element when the right button of the mouse is clicked on it, but before the context menu is displayed. In case the context menu key is pressed, the event is triggered on the <code>html</code> element. Any HTML element can receive this event.
+    For example, consider the HTML:</p>
+    <pre><code>
+&lt;div id="target"&gt;
+  Right-click here
+&lt;/div&gt;
+    </code></pre>
+    <p>The event handler can be bound to the <code>&lt;div&gt;</code> as follows:</p>
+    <pre><code>
+$( "#target" ).contextmenu(function() {
+  alert( "Handler for .contextmenu() called." );
+});
+    </code></pre>
+    <p>Now right-clicking on this element displays the alert:</p>
+    <p>
+      <samp>Handler for .contextmenu() called.</samp>
+    </p>
+    <p>To trigger the event manually, call <code>.contextmenu()</code> without an argument:</p>
+    <pre><code>
+$( "#target" ).contextmenu();
+    </code></pre>
+  </longdesc>
+  <note id="detach-shorthand" type="additional" data-event="contextmenu"/>
+  <example>
+    <desc>To show a "Hello World!" alert box when the contextmenu event is triggered on a paragraph on the page:</desc>
+    <code><![CDATA[
+$( "p" ).contextmenu(function() {
+  alert( "Hello World!" );
+});
+]]></code>
+  </example>
+  <example>
+    <desc>Right click to toggle background color.</desc>
+    <code><![CDATA[
+var div = $( "div:first" );
+div.contextmenu(function() {
+  div.toggleClass( "contextmenu" );
+});
+]]></code>
+    <css><![CDATA[
+  div {
+    background: blue;
+    color: white;
+    height: 100px;
+    width: 150px;
+ }
+  div.contextmenu {
+    background: yellow;
+    color: black;
+  }
+]]></css>
+    <html><![CDATA[
+<div></div>
+<span>Right click the block</span>
+]]></html>
+  </example>
+  <category slug="events/mouse-events"/>
+  <category slug="version/1.0"/>
+  <category slug="version/1.4.3"/>
+</entry>
