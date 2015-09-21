@@ -259,7 +259,7 @@ dfd.done( topic.publish );
 // Here the Deferred is being resolved with a message
 // that will be passed back to subscribers. It's possible to
 // easily integrate this into a more complex routine
-// (eg. waiting on an ajax call to complete) so that
+// (eg. waiting on an Ajax call to complete) so that
 // messages are only published once the task has actually
 // finished.
 dfd.resolve( "it's been published!" );

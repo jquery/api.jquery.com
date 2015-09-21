@@ -42,7 +42,7 @@ $( document ).ajaxComplete(function( event, xhr, settings ) {
   }
 });
     </code></pre>
-    <p><strong>Note:</strong> You can get the returned ajax contents by looking at <code>xhr.responseText</code>.</p>
+    <p><strong>Note:</strong> You can get the returned Ajax contents by looking at <code>xhr.responseText</code>.</p>
   </longdesc>
   <note id="global-ajax-event" type="additional" data-title=".ajaxComplete()"/>
   <note id="ajax-global-false" type="additional" data-title=".ajaxComplete()"/>

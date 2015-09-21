@@ -35,10 +35,10 @@ $.ajaxTransport( dataType, function( options, originalOptions, jqXHR ) {
     <p>where:</p>
     <ul>
       <li><code>options</code> are the request options</li>
-      <li><code>originalOptions</code> are the options as provided to the ajax method, unmodified and, thus, without defaults from ajaxSettings</li>
+      <li><code>originalOptions</code> are the options as provided to the <code>$.ajax()</code> method, unmodified and, thus, without defaults from ajaxSettings</li>
       <li><code>jqXHR</code> is the jqXHR object of the request</li>
       <li><code>headers</code> is an object of (key-value) request headers that the transport can transmit if it supports it</li>
-      <li><code>completeCallback</code> is the callback used to notify ajax of the completion of the request</li>
+      <li><code>completeCallback</code> is the callback used to notify Ajax of the completion of the request</li>
     </ul>
     <p><code>completeCallback</code> has the following signature:</p>
     <pre><code>
