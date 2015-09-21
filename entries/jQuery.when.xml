@@ -56,10 +56,10 @@ d1.resolve();
 d2.resolve( "abc" );
 d3.resolve( 1, 2, 3, 4, 5 );
     </code></pre>
-    <p>In the multiple-Deferreds case where one of the Deferreds is rejected, <code>jQuery.when()</code> immediately fires the failCallbacks for its master Deferred. Note that some of the Deferreds may still be unresolved at that point. The arguments passed to the failCallbacks match the signature of the failCallback for the Deferred that was rejected. If you need to perform additional processing for this case, such as canceling any unfinished ajax requests, you can keep references to the underlying jqXHR objects in a closure and inspect/cancel them in the failCallback.</p>
+    <p>In the multiple-Deferreds case where one of the Deferreds is rejected, <code>jQuery.when()</code> immediately fires the failCallbacks for its master Deferred. Note that some of the Deferreds may still be unresolved at that point. The arguments passed to the failCallbacks match the signature of the failCallback for the Deferred that was rejected. If you need to perform additional processing for this case, such as canceling any unfinished Ajax requests, you can keep references to the underlying jqXHR objects in a closure and inspect/cancel them in the failCallback.</p>
   </longdesc>
   <example>
-    <desc>Execute a function after two ajax requests are successful. (See the jQuery.ajax() documentation for a complete description of success and error cases for an ajax request).</desc>
+    <desc>Execute a function after two Ajax requests are successful. (See the jQuery.ajax() documentation for a complete description of success and error cases for an ajax request).</desc>
     <code><![CDATA[
 $.when( $.ajax( "/page1.php" ), $.ajax( "/page2.php" ) ).done(function( a1, a2 ) {
   // a1 and a2 are arguments resolved for the page1 and page2 ajax requests, respectively.

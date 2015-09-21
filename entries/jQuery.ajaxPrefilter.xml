@@ -24,7 +24,7 @@ $.ajaxPrefilter(function( options, originalOptions, jqXHR ) {
     <p>where:</p>
     <ul>
       <li><code>options</code> are the request options</li>
-      <li><code>originalOptions</code> are the options as provided to the ajax method, unmodified and, thus, without defaults from <code>ajaxSettings</code></li>
+      <li><code>originalOptions</code> are the options as provided to the <code>$.ajax()</code> method, unmodified and, thus, without defaults from <code>ajaxSettings</code></li>
       <li><code>jqXHR</code> is the jqXHR object of the request</li>
     </ul>
     <p>Prefilters are a perfect fit when custom options need to be handled.  Given the following code, for example, a call to <code>$.ajax()</code> would automatically abort a request to the same URL if the custom <code>abortOnRetry</code> option is set to <code>true</code>:</p>

@@ -100,7 +100,7 @@ $.post( "test.php", { 'choices[]': [ "Jon", "Susan" ] } );
 ]]></code>
   </example>
   <example>
-    <desc>Send form data using ajax requests</desc>
+    <desc>Send form data using Ajax requests</desc>
     <code><![CDATA[
 $.post( "test.php", $( "#testform" ).serialize() );
 ]]></code>
@@ -132,7 +132,7 @@ $.post( "test.php", { func: "getNameAndTime" }, function( data ) {
 ]]></code>
   </example>
   <example>
-    <desc>Post a form using ajax and put results in a div</desc>
+    <desc>Post a form using Ajax and put results in a div</desc>
     <code><![CDATA[
 // Attach a submit handler to the form
 $( "#searchForm" ).submit(function( event ) {
