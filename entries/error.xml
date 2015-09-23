@@ -44,17 +44,6 @@ $( "#book" )
     <p>Note: A jQuery <code>error</code> event handler should not be attached to the <code>window</code> object. The browser fires the <code>window</code>'s <code>error</code> event when a script error occurs. However, the window <code>error</code> event receives different arguments and has different return value requirements than conventional event handlers. Use <code>window.onerror</code> instead.</p>
   </longdesc>
   <example>
-    <desc>To hide the "broken image" icons for users of older versions of IE, you can write:</desc>
-    <code><![CDATA[
-// missing.png is an hypothetical missing image used to trigger the error event
-$( "img" )
-  .error(function() {
-    $( this ).hide();
-  })
-  .attr( "src", "missing.png" );
-]]></code>
-  </example>
-  <example>
     <desc>To replace all the missing images with another, you can update the <code>src</code> attribute inside the callback passed to <code>.error()</code>. Be sure that the replacement image exists; otherwise the <code>error</code> event will be triggered indefinitely.</desc>
     <code><![CDATA[
 // If missing.png is missing, it is replaced by replacement.png
