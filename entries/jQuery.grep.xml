@@ -5,7 +5,7 @@
   <signature>
     <added>1.0</added>
     <argument name="array" type="ArrayLikeObject">
-      <desc>The array to search through.</desc>
+      <desc>The array-like object to search through.</desc>
     </argument>
     <argument name="function" type="Function">
       <argument name="elementOfArray" type="Object" />
