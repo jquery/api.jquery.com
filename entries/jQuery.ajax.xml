@@ -16,7 +16,27 @@
     <argument name="settings" type="PlainObject" optional="true">
       <desc>A set of key/value pairs that configure the Ajax request. All settings are optional. A default can be set for any option with <a href="/jQuery.ajaxSetup/">$.ajaxSetup()</a>.</desc>
       <property default="depends on DataType" name="accepts" type="PlainObject">
-        <desc>The content type sent in the request header that tells the server what kind of response it will accept in return.</desc>
+        <desc>A set of key/value pairs that map a given <code>dataType</code> to its MIME type, which gets sent in the <em>Accept</em> request header that tells the server what kind of response it will accept in return.  For example, the following defines a custom type <code>mycustomtype</code> to be sent with the request:
+          <pre><code>
+$.ajax({
+  accepts: {
+    mycustomtype: 'application/x-some-custom-type'
+  },
+
+  // Instructions for how to deserialize a `mycustomtype`
+  converters: {
+    'text mycustomtype': function(result) {
+      // Do Stuff
+      return newresult;
+    }
+  },
+
+  // Expect a `mycustomtype` back from server
+  dataType: 'mycustomtype'
+});
+          </code></pre>
+          <strong>Note:</strong> You will need to specify a complementary entry for this type in <code>converters</code> for this to function properly.
+        </desc>
       </property>
       <property default="true" name="async" type="Boolean">
         <desc>By default, all requests are sent asynchronously (i.e. this is set to <code>true</code> by default). If you need synchronous requests, set this option to <code>false</code>. Cross-domain requests and <code>dataType: "jsonp"</code> requests do not support synchronous operation. Note that synchronous requests may temporarily lock the browser, disabling any actions while the request is active. <strong>As of jQuery 1.8, the use of <code>async: false</code> with jqXHR (<code>$.Deferred</code>) is deprecated; you must use the success/error/complete callback options instead of the corresponding methods of the jqXHR object such as <code>jqXHR.done()</code> or the deprecated <code>jqXHR.success()</code>.</strong></desc>
