@@ -19,6 +19,7 @@
   <desc>Remove a single class, multiple classes, or all classes from each element in the set of matched elements.</desc>
   <longdesc>
     <p>If a class name is included as a parameter, then only that class will be removed from the set of matched elements. If no class names are specified in the parameter, all classes will be removed.</p>
+    <p><code>.removeClass()</code> manipulates the property of the selected elements, not the attribute. Once the property is changed, it's the browser that updates the <code>class</code> attribute accordingly. This means that when the <code>class</code> attribute is updated and the last class name is removed, the browser may set the attribute's value to an empty string instead of removing the attribute completely. An implication of this behaviour is that this method only works for documents with HTML DOM semantics (e.g., not pure XML documents).</p>
     <p>More than one class may be removed at a time, separated by a space, from the set of matched elements, like so:</p>
     <pre><code>
 $( "p" ).removeClass( "myClass yourClass" )
