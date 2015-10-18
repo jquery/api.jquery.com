@@ -10,6 +10,7 @@
   </signature>
   <longdesc>
     <p>The <code>$.isNumeric()</code> method checks whether its argument represents a numeric value. If so, it returns <code>true</code>. Otherwise it returns <code>false</code>. The argument can be of any type.</p>
+    <p>As of jQuery 3.0 <code>$.isNumeric()</code> returns <code>true</code> only if the argument is of type <code>number</code>, or if it's of type <code>string</code> and it can be coerced into finite numbers. In all other cases, it returns <code>false</code>.</p>
   </longdesc>
   <example>
     <desc>Sample return values of $.isNumeric with various inputs.</desc>
