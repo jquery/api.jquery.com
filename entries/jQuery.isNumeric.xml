@@ -4,7 +4,7 @@
   <desc>Determines whether its argument is a number.</desc>
   <signature>
     <added>1.7</added>
-    <argument name="value" type="PlainObject">
+    <argument name="value" type="Anything">
       <desc>The value to be tested.</desc>
     </argument>
   </signature>
