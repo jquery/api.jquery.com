@@ -23,7 +23,7 @@ $.isNumeric( 3.1415 );    // true
 $.isNumeric( +10 );       // true
 $.isNumeric( 0144 );      // true (octal integer literal)
 $.isNumeric( "" );        // false
-$.isNumeric({});          // false (empty object)
+$.isNumeric( {} );        // false (empty object)
 $.isNumeric( NaN );       // false
 $.isNumeric( null );      // false
 $.isNumeric( true );      // false
