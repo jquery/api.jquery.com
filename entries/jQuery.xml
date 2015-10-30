@@ -57,7 +57,7 @@ $( "div.foo" ).click(function() {
       <p>Internally, selector context is implemented with the <code>.find()</code> method, so  <code>$( "span", this )</code> is equivalent to  <code>$( this ).find( "span" )</code>.</p>
 
       <h4 id="using-dom-elements">Using DOM elements</h4>
-      <p>The second and third formulations of this function create a jQuery object using one or more DOM elements that were already selected in some other way. A jQuery object is created from the array elements in the order they appeared in the array; unlike most other multi-element jQuery operations, the elements are not sorted in DOM order. Elements will be copied from the array as-is and won't be unwrapped if they're already jQuery collections.</p>
+      <p>The second and third formulations of this function create a jQuery object using one or more DOM elements that were already selected in some other way. A jQuery object is created from the array elements in the order they appeared in the array; most multi-element jQuery operations sort the elements in DOM order, <code>jQuery()</code> however does not sort the elements in DOM order. Elements will be copied from the array as-is and won't be unwrapped if they're already jQuery collections.</p>
       <p>Please note that although you can pass text nodes and comment nodes into a jQuery collection this way, most operations don't support them. The few that do will have an explicit note on their API documentation page.</p>
       <p>A common use of single-DOM-element construction is to call jQuery methods on an element that has been passed to a callback function through the keyword <code>this</code>:</p>
       <pre><code>
