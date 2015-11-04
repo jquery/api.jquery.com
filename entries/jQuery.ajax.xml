@@ -318,7 +318,7 @@ jqxhr.always(function() {
     <p><strong>As of jQuery 1.5</strong>, jQuery's Ajax implementation includes <a href="/jQuery.ajaxPrefilter/">prefilters</a>, <a href="/jQuery.ajaxTransport/">transports</a>, and converters that allow you to extend Ajax with a great deal of flexibility.</p>
 
     <h4 id="using-converters">Using Converters</h4>
-    <p><code>$.ajax()</code> converters support mapping data types to other data types. If, however, you want to map a custom data type to a known type (e.g <code>json</code>), you must add a correspondance between the response Content-Type and the actual data type using the <code>contents</code> option:</p>
+    <p><code>$.ajax()</code> converters support mapping data types to other data types. If, however, you want to map a custom data type to a known type (e.g <code>json</code>), you must add a correspondence between the response Content-Type and the actual data type using the <code>contents</code> option:</p>
     <pre><code>
 $.ajaxSetup({
   contents: {
@@ -332,7 +332,7 @@ $.ajaxSetup({
   }
 });
     </code></pre>
-    <p>This extra object is necessary because the response Content-Types and data types never have a strict one-to-one correspondance (hence the regular expression).</p>
+    <p>This extra object is necessary because the response Content-Types and data types never have a strict one-to-one correspondence (hence the regular expression).</p>
     <p>To convert from a supported type (e.g <code>text</code>, <code>json</code>) to a custom data type and back again, use another pass-through converter:</p>
     <pre><code>
 $.ajaxSetup({

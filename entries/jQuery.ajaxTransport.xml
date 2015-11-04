@@ -48,7 +48,7 @@ function( status, statusText, responses, headers ) {}
     <ul>
       <li><code>status</code> is the HTTP status code of the response, like  200 for a typical success, or 404 for when the resource is not found.</li>
       <li><code>statusText</code> is the statusText of the response.</li>
-      <li><code>responses</code> (Optional) is An object containing dataType/value that contains the response in all the formats the transport could provide (for instance, a native XMLHttpRequest object would set reponses to <code>{ xml: XMLData, text: textData }</code> for a response that is an XML document)</li>
+      <li><code>responses</code> (Optional) is An object containing dataType/value that contains the response in all the formats the transport could provide (for instance, a native XMLHttpRequest object would set responses to <code>{ xml: XMLData, text: textData }</code> for a response that is an XML document)</li>
       <li><code>headers</code> (Optional) is a string containing all the response headers if the transport has access to them (akin to what <code>XMLHttpRequest.getAllResponseHeaders()</code> would provide).</li>
     </ul>
     <p>Just like prefilters, a transport's factory function can be attached to a specific dataType:</p>
