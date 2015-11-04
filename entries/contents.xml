@@ -50,7 +50,7 @@ $( "p" )
 ]]></html>
   </example>
   <example>
-    <desc>Change the background colour of links inside of an iframe.</desc>
+    <desc>Change the background color of links inside of an iframe.</desc>
     <code><![CDATA[
 $( "#frameDemo" ).contents().find( "a" ).css( "background-color", "#BADA55" );
 ]]></code>
