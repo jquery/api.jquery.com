@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<entry type="method" name="jQuery.noConflict" return="Object">
+<entry type="method" name="jQuery.noConflict" return="jQuery">
   <title>jQuery.noConflict()</title>
   <signature>
     <added>1.0</added>
