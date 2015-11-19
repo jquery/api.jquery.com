@@ -24,10 +24,10 @@ $.noConflict();
 &lt;script src="other_lib.js"&gt;&lt;/script&gt;
 &lt;script src="jquery.js"&gt;&lt;/script&gt;
 &lt;script&gt;
-$.noConflict();
 jQuery( document ).ready(function( $ ) {
   // Code that uses jQuery's $ can follow here.
 });
+$.noConflict();
 // Code that uses other library's $ can follow here.
 &lt;/script&gt;
     </code></pre>
