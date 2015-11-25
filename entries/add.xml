@@ -77,7 +77,7 @@ $( "li" ).add( "&lt;p id='new'&gt;new paragraph&lt;/p&gt;" )
     <p><strong>Note:</strong> To reverse the <code>.add()</code> you can use <a href="/not/"><code>.not( elements | selector )</code></a> to remove elements from the jQuery results, or <a href="/end/"><code>.end()</code></a> to return to the selection before you added.</p>
   </longdesc>
   <example>
-    <desc>Finds all divs and makes a border.  Then adds all paragraphs to the jQuery object to set their backgrounds yellow.</desc>
+    <desc>Finds all divs and make a border.  Then adds all paragraphs to the jQuery object to set their backgrounds yellow.</desc>
     <code><![CDATA[
 $( "div" ).css( "border", "2px solid red" )
   .add( "p" )
