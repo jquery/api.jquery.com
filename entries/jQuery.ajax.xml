@@ -195,7 +195,7 @@ $.ajax();
     <p><strong>As of jQuery 1.5.1</strong>, the <code>jqXHR</code> object also contains the <code>overrideMimeType()</code> method (it was available in jQuery 1.4.x, as well, but was temporarily removed in jQuery 1.5). The <code>.overrideMimeType()</code> method may be used in the <code>beforeSend()</code> callback function, for example, to modify the response content-type header:</p>
     <pre><code>
 $.ajax({
-  url: "http://fiddle.jshell.net/favicon.png",
+  url: "https://fiddle.jshell.net/favicon.png",
   beforeSend: function( xhr ) {
     xhr.overrideMimeType( "text/plain; charset=x-user-defined" );
   }
@@ -297,7 +297,7 @@ jqxhr.always(function() {
     <p>Different types of response to <code>$.ajax()</code> call are subjected to different kinds of pre-processing before being passed to the success handler. The type of pre-processing depends by default upon the Content-Type of the response, but can be set explicitly using the <code>dataType</code> option. If the <code>dataType</code> option is provided, the Content-Type header of the response will be disregarded.</p>
     <p>The available data types are <code>text</code>, <code>html</code>, <code>xml</code>, <code>json</code>, <code>jsonp</code>, and <code>script</code>.</p>
     <p>If <code>text</code> or <code>html</code> is specified, no pre-processing occurs. The data is simply passed on to the success handler, and made available through the <code>responseText</code> property of the <code>jqXHR</code> object.</p>
-    <p>If <code>xml</code> is specified, the response is parsed using <a href="/jQuery.parseXML/"><code>jQuery.parseXML</code></a> before being passed, as an <a href="http://api.jquery.com/Types/#XMLDocument"><code>XMLDocument</code></a>, to the success handler. The XML document is made available through the <code>responseXML</code> property of the <code>jqXHR</code> object.</p>
+    <p>If <code>xml</code> is specified, the response is parsed using <a href="/jQuery.parseXML/"><code>jQuery.parseXML</code></a> before being passed, as an <a href="https://api.jquery.com/Types/#XMLDocument"><code>XMLDocument</code></a>, to the success handler. The XML document is made available through the <code>responseXML</code> property of the <code>jqXHR</code> object.</p>
     <p>If <code>json</code> is specified, the response is parsed using <a href="/jQuery.parseJSON/"><code>jQuery.parseJSON</code></a> before being passed, as an object, to the success handler. The parsed JSON object is made available through the <code>responseJSON</code> property of the <code>jqXHR</code> object.</p>
     <p>If <code>script</code> is specified, <code>$.ajax()</code> will execute the JavaScript that is received from the server before passing it on to the success handler as a string.</p>
     <p>If <code>jsonp</code> is specified, <code>$.ajax()</code> will automatically append a query string parameter of (by default) <code>callback=?</code> to the URL. The <code>jsonp</code> and <code>jsonpCallback</code> properties of the settings passed to <code>$.ajax()</code> can be used to specify, respectively, the name of the query string parameter and the name of the JSONP callback function. The server should return valid JavaScript that passes the JSON response into the callback function. <code>$.ajax()</code> will execute the returned JavaScript, calling the JSONP callback function, before passing the JSON object contained in the response to the <code>$.ajax()</code> success handler.</p>

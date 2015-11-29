@@ -2,14 +2,14 @@
 
 ## Building and Deploying
 
-To build and deploy your changes for previewing in a [`jquery-wp-content`](https://github.com/jquery/jquery-wp-content) instance, follow the [workflow instructions](http://contribute.jquery.org/web-sites/#workflow) from our documentation on [contributing to jQuery Foundation web sites](http://contribute.jquery.org/web-sites/).
+To build and deploy your changes for previewing in a [`jquery-wp-content`](https://github.com/jquery/jquery-wp-content) instance, follow the [workflow instructions](https://contribute.jquery.org/web-sites/#workflow) from our documentation on [contributing to jQuery Foundation web sites](https://contribute.jquery.org/web-sites/).
 
 ### Requirements
 
 * [libxml2](http://xmlsoft.org/)
 * [libxslt](http://xmlsoft.org/libxslt/)
 
-The `xmllint` and `xsltproc` utilities need to be in your path. If you are on Windows, you can get libxml2 and libxslt from <a href="http://www.zlatkovic.com/libxml.en.html">zlatkovic.com</a>.
+The `xmllint` and `xsltproc` utilities need to be in your path. If you are on Windows, you can get libxml2 and libxslt from <a href="https://www.zlatkovic.com/libxml.en.html">zlatkovic.com</a>.
 
 **Note**: If you're using Windows and you receive the error "Error" when executing the task `build-xml-entries:all`, try to add the DLL `libwinpthread-1.dll` in the root of the project.
 
@@ -49,7 +49,7 @@ The `xmllint` and `xsltproc` utilities need to be in your path. If you are on Wi
 
 ### Code Style
 
-Code in the API documentation should follow the [jQuery Core Style Guide](http://contribute.jquery.org/style-guide/) with the following addition:
+Code in the API documentation should follow the [jQuery Core Style Guide](https://contribute.jquery.org/style-guide/) with the following addition:
 
 * **Document ready syntax**: Use `$( document ).ready(function() {` instead of `$(function() {` as it's harder for new users to distinguish the difference between the latter and an IIFE.
 
