@@ -13,9 +13,10 @@
   <longdesc>
     <p>The top and bottom padding and border are always included in the <code>.outerHeight()</code> calculation; if the <code>includeMargin</code> argument is set to <code>true</code>, the margin (top and bottom) is also included.</p>
     <p>This method is not applicable to <code>window</code> and <code>document</code> objects; for these, use <code><a href="/height/">.height()</a></code> instead.</p>
-    <p class="image">
+    <figure>
       <img src="/resources/0042_04_03.png"/>
-    </p>
+      <figcaption>figure 1</figcaption>
+    </figure>
   </longdesc>
 	<note id="dimensions-number" type="additional" data-title=".outerHeight()"/>
   <note id="hidden-element-dimensions" type="additional" data-title=".outerHeight()"/>

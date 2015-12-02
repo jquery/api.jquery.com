@@ -52,12 +52,12 @@ $( "#clickme" ).click(function() {
   });
 });
     </code></pre>
-    <p class="image four-across">
-      <img src="/resources/0042_06_05.png" alt=""/>
-      <img src="/resources/0042_06_06.png" alt=""/>
-      <img src="/resources/0042_06_07.png" alt=""/>
-      <img src="/resources/0042_06_08.png" alt=""/>
-    </p>
+    <figure>
+      <img class="column three" src="/resources/0042_06_05.png" alt=""/>
+      <img class="column three" src="/resources/0042_06_06.png" alt=""/>
+      <img class="column three" src="/resources/0042_06_07.png" alt=""/>
+      <img class="column three" src="/resources/0042_06_08.png" alt=""/>
+    </figure>
   </longdesc>
   <note id="jquery.fx.off" type="additional" data-title=".hide()"/>
   <example>

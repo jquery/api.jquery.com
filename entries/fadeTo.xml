@@ -50,12 +50,13 @@ $( "#clickme" ).click(function() {
   });
 });
     </code></pre>
-    <p class="image four-across">
-      <img src="/resources/0042_06_41.png" alt=""/>
-      <img src="/resources/0042_06_42.png" alt=""/>
-      <img src="/resources/0042_06_43.png" alt=""/>
-      <img src="/resources/0042_06_44.png" alt=""/>
-    </p>
+    <figure>
+      <img class="column three" src="/resources/0042_06_41.png" alt=""/>
+      <img class="column three" src="/resources/0042_06_42.png" alt=""/>
+      <img class="column three" src="/resources/0042_06_43.png" alt=""/>
+      <img class="column three" src="/resources/0042_06_44.png" alt=""/>
+      <figcaption>figure 1</figcaption>
+    </figure>
     <p>With <code>duration</code> set to <code>0</code>, this method just changes the <code>opacity</code> CSS property, so <code>.fadeTo( 0, opacity )</code> is the same as <code>.css( "opacity", opacity )</code>.</p>
   </longdesc>
   <note id="jquery.fx.off" type="additional" data-title=".fadeTo()"/>

@@ -38,9 +38,10 @@
 &lt;/div&gt;
 &lt;div id="log"&gt;&lt;/div&gt;
     </code></pre>
-    <p class="image">
+    <figure>
       <img src="/resources/0042_05_07.png" alt=""/>
-    </p>
+      <figcaption>figure 1</figcaption>
+    </figure>
     <p>The event handler can be bound to any element:</p>
     <pre><code>
 $( "#outer" ).mouseout(function() {

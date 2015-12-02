@@ -14,9 +14,10 @@
     <p>Returns the width of the element, along with left and right padding, border, and optionally margin, in pixels.</p>
     <p>If <code>includeMargin</code> is omitted or <code>false</code>, the padding and border are included in the calculation; if <code>true</code>, the margin is also included.</p>
     <p>This method is not applicable to <code>window</code> and <code>document</code> objects; for these, use <code><a href="/width/">.width()</a></code> instead. Although <code>.outerWidth()</code> can be used on table elements, it may give unexpected results on tables using the <code>border-collapse: collapse</code> CSS property.</p>
-    <p class="image">
+    <figure>
       <img src="/resources/0042_04_06.png"/>
-    </p>
+      <figcaption>figure 1</figcaption>
+    </figure>
   </longdesc>
 	<note id="dimensions-number" type="additional" data-title=".outerWidth()"/>
   <note id="hidden-element-dimensions" type="additional" data-title=".outerWidth()"/>
@@ -63,7 +64,7 @@ $( "p:last" ).text(
   <longdesc>
     <p>When calling <code>.outerWidth(value)</code>, the value can be either a string (number and unit) or a number. If only a number is provided for the value, jQuery assumes a pixel unit. If a string is provided, however, any valid CSS measurement may be used (such as <code>100px</code>, <code>50%</code>, or <code>auto</code>).</p>
   </longdesc>
-  
+
   <example>
     <desc>Change the outer width of each div the first time it is clicked (and change its color).</desc>
     <code><![CDATA[
@@ -96,7 +97,7 @@ $( "div" ).one( "click", function() {
 <div>d</div>
 ]]></html>
   </example>
-  
+
   <category slug="css"/>
   <category slug="dimensions"/>
   <category slug="manipulation/style-properties"/>

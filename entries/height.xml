@@ -9,9 +9,10 @@
     <desc>Get the current computed height for the first element in the set of matched elements.</desc>
     <longdesc>
       <p>The difference between <code>.css( "height" )</code> and <code>.height()</code> is that the latter returns a unit-less pixel value (for example, <code>400</code>) while the former returns a value with units intact (for example, <code>400px</code>). The <code>.height()</code> method is recommended when an element's height needs to be used in a mathematical calculation.</p>
-      <p class="image">
+      <figure>
         <img src="/resources/0042_04_01.png"/>
-      </p>
+        <figcaption>figure 1</figcaption>
+      </figure>
       <p>This method is also able to find the height of the window and document.</p>
       <pre><code>
 // Returns height of browser viewport

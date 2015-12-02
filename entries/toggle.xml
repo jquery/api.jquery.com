@@ -59,19 +59,21 @@ $( "#clickme" ).click(function() {
     </code></pre>
     <p>With the element initially shown, we can hide it slowly with the first click:
     </p>
-    <p class="image four-across">
-      <img src="/resources/0042_06_09.png" alt=""/>
-      <img src="/resources/0042_06_10.png" alt=""/>
-      <img src="/resources/0042_06_11.png" alt=""/>
-      <img src="/resources/0042_06_12.png" alt=""/>
-    </p>
+    <figure>
+      <img class="column three" src="/resources/0042_06_09.png" alt=""/>
+      <img class="column three" src="/resources/0042_06_10.png" alt=""/>
+      <img class="column three" src="/resources/0042_06_11.png" alt=""/>
+      <img class="column three" src="/resources/0042_06_12.png" alt=""/>
+      <figcaption>figure 1</figcaption>
+    </figure>
     <p>A second click will show the element once again:</p>
-    <p class="image four-across">
-      <img src="/resources/0042_06_13.png" alt=""/>
-      <img src="/resources/0042_06_14.png" alt=""/>
-      <img src="/resources/0042_06_15.png" alt=""/>
-      <img src="/resources/0042_06_16.png" alt=""/>
-    </p>
+    <figure>
+      <img class="column three" src="/resources/0042_06_13.png" alt=""/>
+      <img class="column three" src="/resources/0042_06_14.png" alt=""/>
+      <img class="column three" src="/resources/0042_06_15.png" alt=""/>
+      <img class="column three" src="/resources/0042_06_16.png" alt=""/>
+      <figcaption>figure 2</figcaption>
+    </figure>
     <p>The second version of the method accepts a Boolean parameter. If this parameter is <code>true</code>, then the matched elements are shown; if <code>false</code>, the elements are hidden. In essence, the statement:
     </p>
     <pre><code>

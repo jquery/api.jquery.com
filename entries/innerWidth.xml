@@ -10,9 +10,10 @@
   <longdesc>
     <p>This method returns the width of the element, including left and right padding, in pixels.</p>
     <p>This method is not applicable to <code>window</code> and <code>document</code> objects; for these, use <code><a href="/width/">.width()</a></code> instead.</p>
-    <p class="image">
+    <figure>
       <img src="/resources/0042_04_05.png"/>
-    </p>
+      <figcaption>figure 1</figcaption>
+    </figure>
   </longdesc>
 	<note id="dimensions-number" type="additional" data-title=".innerWidth()"/>
   <note id="hidden-element-dimensions" type="additional" data-title=".innerWidth()"/>

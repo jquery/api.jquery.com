@@ -56,12 +56,18 @@ $( "#clickme" ).click(function() {
 });
     </code></pre>
     <p class="image">
-      <img src="/resources/animate-1.jpg" alt=""/>
+      <figure>
+        <img src="/resources/animate-1.jpg" alt=""/>
+        <figcaption>figure 1</figcaption>
+      </figure>
     </p>
     <p>Note that the target value of the <code>height</code> property is <code>'toggle'</code>. Since the image was visible before, the animation shrinks the height to 0 to hide it. A second click then reverses this transition:
     </p>
     <p class="image">
-      <img src="/resources/animate-2.jpg" alt=""/>
+      <figure>
+        <img src="/resources/animate-2.jpg" alt=""/>
+        <figcaption>figure 2</figcaption>
+      </figure>
     </p>
     <p>The <code>opacity</code> of the image is already at its target value, so this property is not animated by the second click. Since the target value for <code>left</code> is a relative value, the image moves even farther to the right during this second animation.</p>
     <p>Directional properties (<code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code>) have no discernible effect on elements if their  <code>position</code> style property is <code>static</code>, which it is by default.</p>
