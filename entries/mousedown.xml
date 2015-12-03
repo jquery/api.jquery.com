@@ -35,7 +35,7 @@
     </code></pre>
     <figure>
       <img src="/resources/0042_05_01.png" alt=""/>
-      <figcaption>figure 1</figcaption>
+      <figcaption>Figure 1 - Illustration of the rendered HTML</figcaption>
     </figure>
     <p>The event handler can be bound to any <code>&lt;div&gt;</code>:</p>
     <pre><code>

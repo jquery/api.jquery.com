@@ -39,7 +39,7 @@
 &lt;div id="log"&gt;&lt;/div&gt;</code></pre>
     <figure>
       <img src="/resources/0042_05_08.png" alt=""/>
-      <figcaption>figure 1</figcaption>
+      <figcaption>Figure 1 - Illustration of the rendered HTML</figcaption>
     </figure>
     <p>The event handler can be bound to any element:</p>
     <pre><code>

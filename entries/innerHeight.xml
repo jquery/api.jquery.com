@@ -13,7 +13,7 @@
     <p>This method is not applicable to <code>window</code> and <code>document</code> objects; for these, use <code><a href="/height/">.height()</a></code> instead.</p>
     <figure>
       <img src="/resources/0042_04_02.png"/>
-      <figcaption>figure 1</figcaption>
+      <figcaption>Figure 1 - Illustration of the measured height</figcaption>
     </figure>
   </longdesc>
 	<note id="dimensions-number" type="additional" data-title=".innerHeight()"/>

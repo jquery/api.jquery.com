@@ -41,7 +41,7 @@ $( "#clickme" ).click(function() {
       <img class="column three" src="/resources/0042_06_38.png" alt=""/>
       <img class="column three" src="/resources/0042_06_39.png" alt=""/>
       <img class="column three" src="/resources/0042_06_40.png" alt=""/>
-      <figcaption>figure 1</figcaption>
+      <figcaption>Figure 1 - Illustration of the <code>fadeOut()</code> effect</figcaption>
     </figure>
     <div class="warning">
       <p><strong>Note: </strong>To avoid unnecessary DOM manipulation, <code>.fadeOut()</code> will not hide an element that is already considered hidden. For information on which elements jQuery considers hidden, see <a href="/hidden-selector/"> :hidden Selector</a>.</p>

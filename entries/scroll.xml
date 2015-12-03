@@ -45,7 +45,7 @@
     <p>The style definition is present to make the target element small enough to be scrollable:</p>
     <figure>
       <img src="/resources/0042_05_11.png" alt=""/>
-      <figcaption>figure 1</figcaption>
+      <figcaption>Figure 1 - Illustration of the rendered HTML</figcaption>
     </figure>
     <p>The <code>scroll</code> event handler can be bound to this element:</p>
     <pre><code>
