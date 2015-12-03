@@ -19,7 +19,7 @@ $( "a" ).click(function( event ) {
 });
 ]]></code>
     <html><![CDATA[
-<a href="http://jquery.com">default click action is prevented</a>
+<a href="https://jquery.com">default click action is prevented</a>
 <div id="log"></div>
 ]]></html>
   </example>

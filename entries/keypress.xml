@@ -61,7 +61,7 @@ $( "#other" ).click(function() {
   </longdesc>
   <note id="detach-shorthand" type="additional" data-event="keypress"/>
   <example>
-    <desc>Show the event object when a key is pressed in the input. Note: This demo relies on a simple $.print() plugin (http://api.jquery.com/resources/events.js) for the event object's output.</desc>
+    <desc>Show the event object when a key is pressed in the input. Note: This demo relies on a simple $.print() plugin (https://api.jquery.com/resources/events.js) for the event object's output.</desc>
     <code><![CDATA[
 var xTriggered = 0;
 $( "#target" ).keypress(function( event ) {
