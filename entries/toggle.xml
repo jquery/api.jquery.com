@@ -64,7 +64,7 @@ $( "#clickme" ).click(function() {
       <img class="column three" src="/resources/0042_06_10.png" alt=""/>
       <img class="column three" src="/resources/0042_06_11.png" alt=""/>
       <img class="column three" src="/resources/0042_06_12.png" alt=""/>
-      <figcaption>figure 1</figcaption>
+      <figcaption>Figure 1 - Illustration of the <code>toggle()</code> effect when hiding the image</figcaption>
     </figure>
     <p>A second click will show the element once again:</p>
     <figure>
@@ -72,7 +72,7 @@ $( "#clickme" ).click(function() {
       <img class="column three" src="/resources/0042_06_14.png" alt=""/>
       <img class="column three" src="/resources/0042_06_15.png" alt=""/>
       <img class="column three" src="/resources/0042_06_16.png" alt=""/>
-      <figcaption>figure 2</figcaption>
+      <figcaption>Figure 2 - Illustration of the <code>toggle()</code> effect when showing the image</figcaption>
     </figure>
     <p>The second version of the method accepts a Boolean parameter. If this parameter is <code>true</code>, then the matched elements are shown; if <code>false</code>, the elements are hidden. In essence, the statement:
     </p>

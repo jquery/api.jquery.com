@@ -16,7 +16,7 @@
     <p>This method is not applicable to <code>window</code> and <code>document</code> objects; for these, use <code><a href="/width/">.width()</a></code> instead. Although <code>.outerWidth()</code> can be used on table elements, it may give unexpected results on tables using the <code>border-collapse: collapse</code> CSS property.</p>
     <figure>
       <img src="/resources/0042_04_06.png"/>
-      <figcaption>figure 1</figcaption>
+      <figcaption>Figure 1 - Illustration of the measured width</figcaption>
     </figure>
   </longdesc>
 	<note id="dimensions-number" type="additional" data-title=".outerWidth()"/>

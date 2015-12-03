@@ -58,7 +58,7 @@ $( "#clickme" ).click(function() {
     <p class="image">
       <figure>
         <img src="/resources/animate-1.jpg" alt=""/>
-        <figcaption>figure 1</figcaption>
+        <figcaption>Figure 1 - Illustration of the specified animation effect</figcaption>
       </figure>
     </p>
     <p>Note that the target value of the <code>height</code> property is <code>'toggle'</code>. Since the image was visible before, the animation shrinks the height to 0 to hide it. A second click then reverses this transition:
@@ -66,7 +66,7 @@ $( "#clickme" ).click(function() {
     <p class="image">
       <figure>
         <img src="/resources/animate-2.jpg" alt=""/>
-        <figcaption>figure 2</figcaption>
+        <figcaption>Figure 2  - Illustration of the specified animation effect</figcaption>
       </figure>
     </p>
     <p>The <code>opacity</code> of the image is already at its target value, so this property is not animated by the second click. Since the target value for <code>left</code> is a relative value, the image moves even farther to the right during this second animation.</p>

@@ -61,7 +61,7 @@ $( "#clickme" ).click(function() {
       <img class="column three" src="/resources/0042_06_02.png" alt=""/>
       <img class="column three" src="/resources/0042_06_03.png" alt=""/>
       <img class="column three" src="/resources/0042_06_04.png" alt=""/>
-      <figcaption>figure 1</figcaption>
+      <figcaption>Figure 1 - Illustration of the <code>show()</code> effect</figcaption>
     </figure>
   </longdesc>
   <note id="jquery.fx.off" type="additional" data-title=".show()"/>

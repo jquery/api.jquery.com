@@ -11,7 +11,7 @@
       <p>The difference between <code>.css(width)</code> and <code>.width()</code> is that the latter returns a unit-less pixel value (for example, <code>400</code>) while the former returns a value with units intact (for example, <code>400px</code>). The <code>.width()</code> method is recommended when an element's width needs to be used in a mathematical calculation.</p>
       <figure>
         <img src="/resources/0042_04_04.png"/>
-        <figcaption>figure 1</figcaption>
+        <figcaption>Figure 1 - Illustration of the measured width</figcaption>
       </figure>
       <p>This method is also able to find the width of the window and document.</p>
       <pre><code>
