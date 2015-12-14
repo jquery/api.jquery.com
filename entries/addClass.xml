@@ -19,7 +19,8 @@
   <desc>Adds the specified class(es) to each element in the set of matched elements.</desc>
   <longdesc>
     <p>It's important to note that this method does not replace a class. It simply adds the class, appending it to any which may already be assigned to the elements.</p>
-    <p>The <code>.addClass()</code> method manipulates the <code>className</code> <em>property</em> of the selected elements, not the <code>class</code> <em>attribute</em>. Once the property is changed, it's the browser that updates the attribute accordingly. An implication of this behavior is that this method only works for documents with HTML DOM semantics (e.g., not pure XML documents).</p>
+    <p>Before jQuery version 1.12/2.2, the <code>.addClass()</code> method manipulated the <code>className</code> <em>property</em> of the selected elements, not the <code>class</code> <em>attribute</em>. Once the property was changed, it was the browser that updated the attribute accordingly. An implication of this behavior was that this method only worked for documents with HTML DOM semantics (e.g., not pure XML documents).</p>
+    <p>As of jQuery 1.12/2.2, this behavior is changed to improve the support for XML documents, including SVG. Starting from this version, the <code>class</code> <em>attribute</em> is used instead. So, <code>.addClass()</code> can be used on XML or SVG documents.</p>
     <p>More than one class may be added at a time, separated by a space, to the set of matched elements, like so:</p>
     <pre><code>
 $( "p" ).addClass( "myClass yourClass" );
