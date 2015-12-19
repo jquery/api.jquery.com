@@ -147,7 +147,8 @@ The title of the emphasis is:<div></div>
       <argument name="value">
         <type name="String"/>
         <type name="Number"/>
-        <desc>A value to set for the attribute.</desc>
+        <type name="Null"/>
+        <desc>A value to set for the attribute. If <code>null</code>, the specified attribute will be removed (as in <a href="/removeAttr/"><code>.removeAttr()</code></a>).</desc>
       </argument>
     </signature>
     <signature>
