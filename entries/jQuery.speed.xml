@@ -3,15 +3,44 @@
   <title>jQuery.speed</title>
   <desc>Creates an object containing a set of properties ready to be used in the definition of custom animations.</desc>
   <signature>
-    <added>3.0.0</added>
+    <added>1.0</added>
+    <xi:include href="../includes/duration-argument.xml" xmlns:xi="http://www.w3.org/2003/XInclude"/>
+    <argument name="settings" type="PlainObject" optional="true">
+        <property name="easing" type="String" default="swing" optional="true">
+            <desc>A string indicating which easing function to use for the transition.</desc>
+        </property>
+        <property name="complete" type="Function" optional="true">
+            <desc>A function to call once the animation is complete.</desc>
+        </property>
+    </argument>
+  </signature>
+  <signature>
+    <added>1.1</added>
     <xi:include href="../includes/duration-argument.xml" xmlns:xi="http://www.w3.org/2003/XInclude"/>
     <xi:include href="../includes/easing-argument.xml" xmlns:xi="http://www.w3.org/2003/XInclude"/>
     <xi:include href="../includes/complete-argument.xml" xmlns:xi="http://www.w3.org/2003/XInclude"/>
   </signature>
+  <signature>
+    <added>1.1</added>
+    <argument name="settings" type="PlainObject">
+        <property name="duration" default="400" optional="true">
+            <desc>A string or number determining how long the animation will run.</desc>
+            <type name="Number"/>
+            <type name="String"/>
+        </property>
+        <property name="easing" type="String" default="swing" optional="true">
+            <desc>A string indicating which easing function to use for the transition.</desc>
+        </property>
+        <property name="complete" type="Function" optional="true">
+            <desc>A function to call once the animation is complete.</desc>
+        </property>
+    </argument>
+  </signature>
   <longdesc>
-    <p>The <code>$.speed</code> method provides a way to define properties, such as <code>duration</code>, <code>easing</code>, and <code>queue</code>, to use in a custom animation. By using it, you don't have to implement the logic that deals with default values and optional parameters.</p>
-    <p>This method is meant for plugin developers who are creating new animation methods. Letting <code>$.speed</code> do all the parameter hockey and normalization for you, rather than duplicating the logic yourself, makes your work simpler. An example of use can be found in the animated form of <code>.addClass()</code> of jQuery UI. </p>
+    <p>The <code>$.speed()</code> method provides a way to define properties, such as <code>duration</code>, <code>easing</code>, and <code>queue</code>, to use in a custom animation. By using it, you don't have to implement the logic that deals with default values and optional parameters.</p>
+    <p>This method is meant for plugin developers who are creating new animation methods. Letting <code>$.speed()</code> do all the parameter hockey and normalization for you, rather than duplicating the logic yourself, makes your work simpler. An example of use can be found in the animated form of <code>.addClass()</code> of jQuery UI. </p>
   </longdesc>
   <category slug="effects/custom"/>
-  <category slug="version/3.0.0"/>
+  <category slug="version/1.0"/>
+  <category slug="version/1.1"/>
 </entry>
