@@ -2,12 +2,6 @@
 <entry type="method" name="jQuery.get" return="jqXHR">
   <title>jQuery.get()</title>
   <signature>
-    <added>3.0</added>
-    <argument name="settings" type="PlainObject" optional="false">
-      <desc>A set of key/value pairs that configure the Ajax request. All properties except for <code>url</code> are optional. A default can be set for any option with <a href="/jQuery.ajaxSetup/">$.ajaxSetup()</a>. See <a href="/jquery.ajax/#jQuery-ajax-settings">jQuery.ajax( settings )</a> for a complete list of all settings. The type option will automatically be set to <code>GET</code>.</desc>
-    </argument>
-  </signature>
-  <signature>
     <added>1.0</added>
     <argument name="url" type="String">
       <desc>A string containing the URL to which the request is sent.</desc>
@@ -24,7 +18,13 @@
       <desc>A callback function that is executed if the request succeeds. Required if <code>dataType</code> is provided, but you can use <code>null</code> or <a href="/jQuery.noop/"><code>jQuery.noop</code></a> as a placeholder.</desc>
     </argument>
     <argument name="dataType" optional="true" type="String">
-      <desc>The type of data expected from the server. Default: Intelligent Guess (xml, json, script, or html).</desc>
+      <desc>The type of data expected from the server. Default: Intelligent Guess (xml, json, script, text, html).</desc>
+    </argument>
+  </signature>
+  <signature>
+    <added>1.12/2.2</added>
+    <argument name="settings" type="PlainObject" optional="false">
+      <desc>A set of key/value pairs that configure the Ajax request. All properties except for <code>url</code> are optional. A default can be set for any option with <a href="/jQuery.ajaxSetup/">$.ajaxSetup()</a>. See <a href="/jquery.ajax/#jQuery-ajax-settings">jQuery.ajax( settings )</a> for a complete list of all settings. The type option will automatically be set to <code>GET</code>.</desc>
     </argument>
   </signature>
   <desc>Load data from the server using a HTTP GET request.</desc>
