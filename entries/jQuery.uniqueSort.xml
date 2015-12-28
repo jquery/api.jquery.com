@@ -2,7 +2,7 @@
 <entry type="method" name="jQuery.uniqueSort" return="Array">
   <title>jQuery.uniqueSort()</title>
   <signature>
-    <added>3.0</added>
+    <added>1.12/2.2</added>
     <argument name="array" type="Array">
       <desc>The Array of DOM elements.</desc>
     </argument>
