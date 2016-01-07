@@ -33,7 +33,7 @@
   </signature>
    <signature>
     <added>1.10</added>
-    <argument name="function" type="Function">
+    <argument name="function-html" type="Function">
       <argument name="index" type="Integer" />
       <argument name="html" type="String" />
       <return>
