@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<entry type="method" name="jQuery.htmlPrefilter" return="String">
+  <title>jQuery.htmlPrefilter()</title>
+  <desc>Modify and filter HTML strings passed through <a href="/category/manipulation/">jQuery manipulation methods</a>.</desc>
+  <signature>
+    <added>1.12/2.2</added>
+    <argument name="html" type="String">
+      <desc>The HTML string on which to operate.</desc>
+    </argument>
+  </signature>
+  <longdesc>
+    <p>This method rarely needs to be called directly. Instead, use it as an entry point to modify existing <a href="/category/manipulation/">jQuery manipulation methods</a>. For instance, to remove all <code>&lt;del&gt;</code> tags from incoming HTML strings, do this:</p>
+    <pre><code>
+var htmlPrefilter = $.htmlPrefilter,
+  rdel = /&lt;(del)(?=[\s&gt;])[\w\W]*?&lt;\/\1\s*&gt;/gi;
+
+$.htmlPrefilter = function( html ) {
+  return htmlPrefilter.call( this, html ).replace( rdel, "" );
+};
+    </code></pre>
+    <p>This function can also be overwritten in order to bypass certain edge case issues. The default <code>htmlPrefilter</code> function in jQuery will greedily ensure that all tags are XHTML-compliant. This includes anything that looks like an HTML tag, but is actually within a string (e.g. <pre>&lt;a title="&lt;div /&gt;"&gt;&lt;&gt;</pre>). The <code>jQuery.htmlPrefilter()</code> function can be used to bypass this:</p>
+    <pre><code>
+$.htmlPrefilter = function( html ) {
+  // Return HTML strings unchanged
+  return html;
+};
+    </code></pre>
+    <p>However, while the above fix is short and simple, it puts the burden on you to ensure XHTML-compliant tags in any HTML strings. A more thorough fix for this issue would be this:</p>
+    <pre><code>
+var panything = "[\\w\\W]*?",
+
+  // Whitespace
+  // https://html.spec.whatwg.org/multipage/infrastructure.html#space-character
+  pspace = "[\\x20\\t\\r\\n\\f]",
+
+  // End of tag name (whitespace or greater-than)
+  pnameEnd = pspace.replace( "]", "&gt;]" ),
+
+  // Tag name (a leading letter, then almost anything)
+  // https://html.spec.whatwg.org/multipage/syntax.html#tag-open-state
+  // https://html.spec.whatwg.org/multipage/syntax.html#tag-name-state
+  pname = "[a-z]" + pnameEnd.replace( "[", "[^/\\0" ) + "*",
+
+  // Void element (end tag prohibited)
+  // https://html.spec.whatwg.org/multipage/syntax.html#void-elements
+  pvoidName = "(?:area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|" +
+    "source|track|wbr)(?=" + pnameEnd + ")",
+
+  // Attributes (double-quoted value, single-quoted value, unquoted value, or no value)
+  // https://html.spec.whatwg.org/multipage/syntax.html#attributes-2
+  pattrs = "(?:" + pspace + "+[^\\0-\\x20\\x7f-\\x9f=\"'/&gt;]+(?:" + pspace + "*=" + pspace +
+    "*(?:\"" + panything + "\"|'" + panything + "'|" +
+    pnameEnd.replace( "[", "[^" ) + "*(?!/)" +
+    ")|))*" + pspace + "*",
+
+  // Trailing content of a close tag
+  pcloseTail = "(?:" + pspace + panything + "|)",
+
+  rspecialHtml = new RegExp(
+    // Non-void element that self-closes: $1–$5
+    "(&lt;)(?!" + pvoidName + ")(" + pname + ")(" + pattrs + ")(\\/)(&gt;)|" +
+      // No-innerHTML container (element, comment, or CDATA): $6
+      "(&lt;(script|style|textarea)" + pattrs + "&gt;" + panything + "&lt;\\/\\7" + pcloseTail + "&gt;|" +
+      "&lt;!--" + panything + "--)",
+    "gi"
+  ),
+
+  // "&lt;"; element name; attributes; "&gt;"; "&lt;"; "/"; element name; "&gt;"; no-innerHTML container
+  pspecialReplacement = "$1$2$3$5$1$4$2$5$6";
+
+$.htmlPrefilter = function( html ) {
+  return ( html + "" ).replace( rspecialHtml, pspecialReplacement );
+};
+    </code></pre>
+  </longdesc>
+  <category slug="manipulation"/>
+</entry>
