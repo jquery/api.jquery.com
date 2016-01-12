@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <entry type="method" name="jQuery.isNumeric" return="Boolean">
   <title>jQuery.isNumeric()</title>
-  <desc>Determines whether its argument is a number.</desc>
+  <desc>Determines whether its argument represents a JavaScript number.</desc>
   <signature>
     <added>1.7</added>
     <argument name="value" type="Anything">
@@ -9,26 +9,31 @@
     </argument>
   </signature>
   <longdesc>
-    <p>The <code>$.isNumeric()</code> method checks whether its argument represents a numeric value. If so, it returns <code>true</code>. Otherwise it returns <code>false</code>. The argument can be of any type.</p>
+    <p>The <code>$.isNumeric()</code> method checks whether a value is a finite number, or would be cast to one by <code>Number</code>. If so, it returns <code>true</code>. Otherwise it returns <code>false</code>. The argument can be of any type.</p>
   </longdesc>
   <example>
     <desc>Sample return values of $.isNumeric with various inputs.</desc>
     <code><![CDATA[
-$.isNumeric( "-10" );     // true
-$.isNumeric( 16 );        // true
-$.isNumeric( 0xFF );      // true
-$.isNumeric( "0xFF" );    // true
-$.isNumeric( "8e5" );     // true (exponential notation string)
-$.isNumeric( 3.1415 );    // true
-$.isNumeric( +10 );       // true
-$.isNumeric( 0144 );      // true (octal integer literal)
-$.isNumeric( "" );        // false
-$.isNumeric({});          // false (empty object)
-$.isNumeric( NaN );       // false
-$.isNumeric( null );      // false
-$.isNumeric( true );      // false
-$.isNumeric( Infinity );  // false
-$.isNumeric( undefined ); // false
+// true (numeric)
+$.isNumeric( "-10" )
+$.isNumeric( "0" )
+$.isNumeric( 0xFF )
+$.isNumeric( "0xFF" )
+$.isNumeric( "8e5" )
+$.isNumeric( "3.1415" )
+$.isNumeric( +10 )
+$.isNumeric( 0144 )
+
+// false (non-numeric)
+$.isNumeric( "-0x42" )
+$.isNumeric( "7.2acdgs" )
+$.isNumeric( "" )
+$.isNumeric( {} )
+$.isNumeric( NaN )
+$.isNumeric( null )
+$.isNumeric( true )
+$.isNumeric( Infinity )
+$.isNumeric( undefined )
 ]]></code>
   </example>
   <category slug="utilities"/>
