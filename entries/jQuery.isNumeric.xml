@@ -14,21 +14,26 @@
   <example>
     <desc>Sample return values of $.isNumeric with various inputs.</desc>
     <code><![CDATA[
-$.isNumeric( "-10" );     // true
-$.isNumeric( 16 );        // true
-$.isNumeric( 0xFF );      // true
-$.isNumeric( "0xFF" );    // true
-$.isNumeric( "8e5" );     // true (exponential notation string)
-$.isNumeric( 3.1415 );    // true
-$.isNumeric( +10 );       // true
-$.isNumeric( 0144 );      // true (octal integer literal)
-$.isNumeric( "" );        // false
-$.isNumeric({});          // false (empty object)
-$.isNumeric( NaN );       // false
-$.isNumeric( null );      // false
-$.isNumeric( true );      // false
-$.isNumeric( Infinity );  // false
-$.isNumeric( undefined ); // false
+// true (numeric)
+$.isNumeric( "-10" )
+$.isNumeric( "0" )
+$.isNumeric( 0xFF )
+$.isNumeric( "0xFF" )
+$.isNumeric( "8e5" )
+$.isNumeric( "3.1415" )
+$.isNumeric( +10 )
+$.isNumeric( 0144 )
+
+// false (non-numeric)
+$.isNumeric( "-0x42" )
+$.isNumeric( "7.2acdgs" )
+$.isNumeric( "" )
+$.isNumeric( {} )
+$.isNumeric( NaN )
+$.isNumeric( null )
+$.isNumeric( true )
+$.isNumeric( Infinity )
+$.isNumeric( undefined )
 ]]></code>
   </example>
   <category slug="utilities"/>
