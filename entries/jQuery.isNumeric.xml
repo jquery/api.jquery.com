@@ -9,7 +9,7 @@
     </argument>
   </signature>
   <longdesc>
-    <p>The <code>$.isNumeric()</code> method checks whether a value is a finite number or <code>Number</code> object, or a <code>Number</code>-castable string or <code>String</code> object representing one. If so, it returns <code>true</code>. Otherwise it returns <code>false</code>. The argument can be of any type.</p>
+    <p>The <code>$.isNumeric()</code> method checks whether a value is a finite number, or is <code>Number</code>-castable to one. If so, it returns <code>true</code>. Otherwise it returns <code>false</code>. The argument can be of any type.</p>
   </longdesc>
   <example>
     <desc>Sample return values of $.isNumeric with various inputs.</desc>
