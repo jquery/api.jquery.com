@@ -234,11 +234,11 @@ typeof Infinity // "number"
 </code></pre>
 <p>Note that NaN compares in a strange way:
 </p>
-<pre><code data-lang="javascript">NaN == NaN // false (!)
+<pre><code data-lang="javascript">NaN === NaN // false (!)
 </code></pre>
 <p>But:
 </p>
-<pre><code data-lang="javascript">Infinity == Infinity // true
+<pre><code data-lang="javascript">Infinity === Infinity // true
 </code></pre>
 <h3 id="Integer"> Integer </h3>
 <p>An integer is a plain Number type, but whenever explicitly mentioned, indicates that a non-floating-point number is expected.
@@ -320,7 +320,7 @@ for( key in obj ) {
 <pre><code data-lang="javascript">var form = $("#myform");
 console.log( form.clearForm ); // undefined
 
-// jQuery.fn == jQuery.prototype
+// jQuery.fn === jQuery.prototype
 jQuery.fn.clearForm = function() {
   return this.find( ":input" ).each(function() {
     this.value = "";
@@ -477,7 +477,7 @@ log( "1", "2", "3" ); // "string", 3
 <p>The arguments object also has a callee property, which refers to the function you're inside of. For instance:
 </p>
 <pre><code data-lang="javascript">var awesome = function() { return arguments.callee; }
-awesome() == awesome // true
+awesome() === awesome // true
 </code></pre>
 <h3 id="Context.2C_Call_and_Apply"> Context, Call and Apply </h3>
 <p>In JavaScript, the variable "this" always refers to the current context. By default, "this" refers to the window object. Within a function this context can change, depending on how the function is called.
