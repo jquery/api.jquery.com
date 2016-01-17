@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <entry type="method" name="jQuery.isNumeric" return="Boolean">
   <title>jQuery.isNumeric()</title>
-  <desc>Determines whether its argument represents a Javascript number.</desc>
+  <desc>Determines whether its argument represents a JavaScript number.</desc>
   <signature>
     <added>1.7</added>
     <argument name="value" type="Anything">
@@ -9,7 +9,7 @@
     </argument>
   </signature>
   <longdesc>
-    <p>The <code>$.isNumeric()</code> method checks whether a value is a finite number, or is <code>Number</code>-castable to one. If so, it returns <code>true</code>. Otherwise it returns <code>false</code>. The argument can be of any type.</p>
+    <p>The <code>$.isNumeric()</code> method checks whether a value is a finite number, or would be cast to one by <code>Number</code>. If so, it returns <code>true</code>. Otherwise it returns <code>false</code>. The argument can be of any type.</p>
   </longdesc>
   <example>
     <desc>Sample return values of $.isNumeric with various inputs.</desc>
