@@ -8,7 +8,7 @@
     </signature>
     <desc>Get the current coordinates of the first element in the set of matched elements, relative to the document.</desc>
     <longdesc>
-      <p>The <code>.offset()</code> method allows us to retrieve the current position of an element <em>relative to the document</em>. Contrast this with <code>.position()</code>, which retrieves the current position <em>relative to the offset parent</em>. When positioning a new element on top of an existing one for global manipulation (in particular, for implementing drag-and-drop), <code>.offset()</code> is more useful.</p>
+      <p>The <code>.offset()</code> method allows us to retrieve the current position of an element <em>relative to the document</em>. Contrast this with <code><a href="/position/">.position()</a></code>, which retrieves the current position <em>relative to the offset parent</em>. When positioning a new element on top of an existing one for global manipulation (in particular, for implementing drag-and-drop), <code>.offset()</code> is more useful.</p>
       <p><code>.offset()</code> returns an object containing the properties <code>top</code> and <code>left</code>.</p>
       <div class="warning">
         <p><strong>Note:</strong> jQuery does not support getting the offset coordinates of hidden elements or accounting for borders, margins, or padding set on the body element.</p>
