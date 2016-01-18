@@ -14,7 +14,7 @@
         <desc>A string containing a selector expression to match elements against.</desc>
       </argument>
       <argument name="context" optional="true" type="Element">
-        <desc>A DOM element within which a matching element may be found. If no context is passed in then the context of the jQuery set will be used instead.</desc>
+        <desc>A DOM element within which a matching element may be found.</desc>
       </argument>
     </signature>
     <signature>
@@ -166,7 +166,7 @@ $( document ).on( "click", function( event ) {
         <desc>An array or string containing a selector expression to match elements against (can also be a jQuery object).</desc>
       </argument>
       <argument name="context" optional="true" type="Element">
-        <desc>A DOM element within which a matching element may be found. If no context is passed in then the context of the jQuery set will be used instead.</desc>
+        <desc>A DOM element within which a matching element may be found.</desc>
       </argument>
     </signature>
     <desc>Get an array of all the elements and selectors matched against the current element up through the DOM tree.</desc>
