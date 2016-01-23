@@ -18,7 +18,7 @@
       <figcaption>Figure 1 - Illustration of the measured width</figcaption>
     </figure>
   </longdesc>
-	<note id="dimensions-number" type="additional" data-title=".outerWidth()"/>
+  <note id="dimensions-number" type="additional" data-title=".outerWidth()"/>
   <note id="hidden-element-dimensions" type="additional" data-title=".outerWidth()"/>
   <example>
     <desc>Get the outerWidth of a paragraph.</desc>

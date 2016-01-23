@@ -15,7 +15,7 @@
       <figcaption>Figure 1 - Illustration of the measured width</figcaption>
     </figure>
   </longdesc>
-	<note id="dimensions-number" type="additional" data-title=".innerWidth()"/>
+  <note id="dimensions-number" type="additional" data-title=".innerWidth()"/>
   <note id="hidden-element-dimensions" type="additional" data-title=".innerWidth()"/>
   <example>
     <desc>Get the innerWidth of a paragraph.</desc>
@@ -45,9 +45,9 @@ $( "p" ).last().text( "innerWidth:" + p.innerWidth() );
 <signature>
   <added>1.8</added>
   <argument name="value">
-	<type name="String"/>
-	<type name="Number"/>
-	<desc>A number representing the number of pixels, or a number along with an optional unit of measure appended (as a string).</desc>
+  <type name="String"/>
+  <type name="Number"/>
+  <desc>A number representing the number of pixels, or a number along with an optional unit of measure appended (as a string).</desc>
   </argument>
 </signature>
 <signature>

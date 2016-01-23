@@ -11,11 +11,11 @@
       <p>The <code>.offset()</code> method allows us to retrieve the current position of an element (specifically its border box, which excludes margins) <em>relative to the document</em>. Contrast this with <code><a href="/position/">.position()</a></code>, which retrieves the current position <em>relative to the offset parent</em>. When positioning a new element on top of an existing one for global manipulation (in particular, for implementing drag-and-drop), <code>.offset()</code> is more useful.</p>
       <p><code>.offset()</code> returns an object containing the properties <code>top</code> and <code>left</code>.</p>
       <div class="warning">
-	  <p><strong>Note:</strong> jQuery does not support getting the offset coordinates of hidden elements or accounting for margins set on the <code>&lt;html&gt;</code> document element.</p>
+    <p><strong>Note:</strong> jQuery does not support getting the offset coordinates of hidden elements or accounting for margins set on the <code>&lt;html&gt;</code> document element.</p>
         <p>While it is possible to get the coordinates of elements with <code>visibility:hidden</code> set, <code>display:none</code> is excluded from the rendering tree and thus has a position that is undefined.</p>
       </div>
     </longdesc>
-	<note id="dimensions-number" type="additional" data-title=".offset()"/>
+  <note id="dimensions-number" type="additional" data-title=".offset()"/>
      <example>
       <desc>Access the offset of the second paragraph:</desc>
       <code><![CDATA[
@@ -90,7 +90,7 @@ $( "*", document.body ).on( "click", function( event ) {
       <argument name="function" type="Function">
         <argument name="index" type="Integer" />
         <argument name="coords" type="PlainObject" />
-        <return type="PlainObject" />   
+        <return type="PlainObject" />
         <desc>A function to return the coordinates to set. Receives the index of the element in the collection as the first argument and the current coordinates as the second argument. The function should return an object with the new <code>top</code> and <code>left</code> properties.</desc>
       </argument>
     </signature>

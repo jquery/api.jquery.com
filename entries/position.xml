@@ -12,7 +12,7 @@
       <p><strong>Note:</strong> jQuery does not support getting the position coordinates of hidden elements or accounting for margins set on the <code>&lt;html&gt;</code> document element.</p>
     </div>
   </longdesc>
-	<note id="dimensions-number" type="additional" data-title=".position()"/>
+  <note id="dimensions-number" type="additional" data-title=".position()"/>
    <example>
     <desc>Access the position of the second paragraph:</desc>
     <code><![CDATA[

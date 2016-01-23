@@ -16,7 +16,7 @@
       <figcaption>Figure 1 - Illustration of the measured height</figcaption>
     </figure>
   </longdesc>
-	<note id="dimensions-number" type="additional" data-title=".innerHeight()"/>
+  <note id="dimensions-number" type="additional" data-title=".innerHeight()"/>
   <note id="hidden-element-dimensions" type="additional" data-title=".innerHeight()"/>
   <example>
     <desc>Get the innerHeight of a paragraph.</desc>
