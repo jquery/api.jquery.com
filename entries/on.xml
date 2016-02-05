@@ -265,10 +265,18 @@ $( "body" ).on( "click", "p", function() {
 ]]></code>
   </example>
   <example>
-    <desc>Cancel a link's default action using the <code>.preventDefault()</code> method.</desc>
+    <desc>Cancel a link's default action using the <code>.preventDefault()</code> method:</desc>
     <code><![CDATA[
 $( "body" ).on( "click", "a", function( event ) {
   event.preventDefault();
+});
+]]></code>
+  </example>
+  <example>
+    <desc>Attach multiple events—one on <code>mouseenter</code> and one on <code>mouseleave</code> to the same element:</desc>
+    <code><![CDATA[
+$( "#cart" ).on( "mouseenter mouseleave", function( event ) {
+  $( this ).toggleClass( "active" );
 });
 ]]></code>
   </example>
