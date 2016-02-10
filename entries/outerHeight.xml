@@ -5,7 +5,7 @@
   <title>.outerHeight()</title>
   <signature>
     <added>1.2.6</added>
-    <argument name="includeMargin" optional="true" type="Boolean">
+    <argument name="includeMargin" optional="true" type="Boolean" default="false">
       <desc>A Boolean indicating whether to include the element's margin in the calculation.</desc>
     </argument>
   </signature>
