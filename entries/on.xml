@@ -265,10 +265,18 @@ $( "body" ).on( "click", "p", function() {
 ]]></code>
   </example>
   <example>
-    <desc>Cancel a link's default action using the <code>.preventDefault()</code> method.</desc>
+    <desc>Cancel a link's default action using the <code>.preventDefault()</code> method:</desc>
     <code><![CDATA[
 $( "body" ).on( "click", "a", function( event ) {
   event.preventDefault();
+});
+]]></code>
+  </example>
+  <example>
+    <desc>Also you can attach multiple events - for example this is usefull if you want to fire you function when user enter the mouse on some element and move out:</desc>
+    <code><![CDATA[
+$( "#cart" ).on( "mouseenter mouseleave", function( event ) {
+  $('#cart').toggleClass('active');
 });
 ]]></code>
   </example>
