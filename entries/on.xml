@@ -273,10 +273,10 @@ $( "body" ).on( "click", "a", function( event ) {
 ]]></code>
   </example>
   <example>
-    <desc>Multiple events:</desc>
+    <desc>Also you can attach multiple events - for example this is usefull if you want to fire you function when user enter the mouse on some element and move out:</desc>
     <code><![CDATA[
-$( "body" ).on( "click mouseleave", function( event ) {
-  $('#cart').removeClass('active');
+$( "#cart" ).on( "mouseenter mouseleave", function( event ) {
+  $('#cart').toggleClass('active');
 });
 ]]></code>
   </example>
