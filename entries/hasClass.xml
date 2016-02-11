@@ -25,6 +25,7 @@ $( "#mydiv" ).hasClass( "bar" )
     <pre><code>
 $( "#mydiv" ).hasClass( "quux" )
     </code></pre>
+    <p>As of jQuery 1.12/2.2, this method supports XML documents, including SVG.</p>
   </longdesc>
   <example>
     <desc>Looks for the paragraph that contains 'selected' as a class.</desc>

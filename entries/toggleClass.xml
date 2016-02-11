@@ -37,6 +37,8 @@
   </signature>
   <desc>Add or remove one or more classes from each element in the set of matched elements, depending on either the class's presence or the value of the state argument.</desc>
   <longdesc>
+    <p>Before jQuery version 1.12/2.2, the <code>.toggleClass()</code> method manipulated the <code>className</code> <em>property</em> of the selected elements, not the <code>class</code> <em>attribute</em>. Once the property was changed, it was the browser that updated the attribute accordingly. An implication of this behavior was that this method only worked for documents with HTML DOM semantics (e.g., not pure XML documents).</p>
+    <p>As of jQuery 1.12/2.2, this behavior is changed to improve the support for XML documents, including SVG. Starting from this version, the <code>class</code> <em>attribute</em> is used instead. So, <code>.toggleClass()</code> can be used on XML or SVG documents.</p>
     <p>This method takes one or more class names as its parameter. In the first version, if an element in the matched set of elements already has the class, then it is removed; if an element does not have the class, then it is added. For example, we can apply <code>.toggleClass()</code> to a simple <code>&lt;div&gt;</code>: </p>
     <pre><code>
 &lt;div class="tumble"&gt;Some text.&lt;/div&gt;
