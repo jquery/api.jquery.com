@@ -4,22 +4,22 @@
   <desc>Stop the currently-running animation on the matched elements.</desc>
   <signature>
     <added>1.2</added>
-    <argument name="clearQueue" type="Boolean" optional="true">
+    <argument name="clearQueue" type="Boolean" optional="true" default="false">
       <desc>A Boolean indicating whether to remove queued animation as well. Defaults to <code>false</code>.</desc>
     </argument>
-    <argument name="jumpToEnd" type="Boolean" optional="true">
+    <argument name="jumpToEnd" type="Boolean" optional="true" default="false">
       <desc>A Boolean indicating whether to complete the current animation immediately. Defaults to <code>false</code>.</desc>
     </argument>
   </signature>
   <signature>
     <added>1.7</added>
-    <argument name="queue" type="String" optional="true">
+    <argument name="queue" type="String" optional="true" default="false">
       <desc>The name of the queue in which to stop animations.</desc>
     </argument>
     <argument name="clearQueue" type="Boolean" optional="true">
       <desc>A Boolean indicating whether to remove queued animation as well. Defaults to <code>false</code>.</desc>
     </argument>
-    <argument name="jumpToEnd" type="Boolean" optional="true">
+    <argument name="jumpToEnd" type="Boolean" optional="true" default="false">
       <desc>A Boolean indicating whether to complete the current animation immediately. Defaults to <code>false</code>.</desc>
     </argument>
   </signature>
