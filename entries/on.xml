@@ -276,7 +276,7 @@ $( "body" ).on( "click", "a", function( event ) {
     <desc>Attach multiple events—one on mouseenter and one on mouseleave to the same element:</desc>
     <code><![CDATA[
 $( "#cart" ).on( "mouseenter mouseleave", function( event ) {
-  $( $this ).toggleClass("active");
+  $( this ).toggleClass( "active" );
 });
 ]]></code>
   </example>
