@@ -15,6 +15,7 @@
 $element.prop( "onclick", null );
 console.log( "onclick property: ", $element[ 0 ].onclick );
     </code></pre>
+    <note id="svg-support" type="additional"/>
   </longdesc>
   <example>
     <desc>Clicking the button changes the title of the input next to it. Move the mouse pointer over the text input to see the effect of adding and removing the title attribute.</desc>

@@ -53,6 +53,7 @@ $( "h2" ).insertBefore( $( ".container" ) );
     <p><strong>Before jQuery 1.9,</strong> the append-to-single-element case did not create a new set, but instead returned the original set which made it difficult to use the <code>.end()</code> method reliably when being used with an unknown number of elements.</p>
   </longdesc>
   <note id="html-code-execution" type="additional"/>
+  <note id="svg-support" type="additional"/>
   <example>
     <desc>Insert all paragraphs before an element with id of "foo". Same as $( "#foo" ).before( "p" )</desc>
     <code><![CDATA[

@@ -33,7 +33,7 @@
   </signature>
   <desc>Insert content, specified by the parameter, to the end of each element in the set of matched elements.</desc>
   <longdesc>
-    <p>The <code>.append()</code> method inserts the  specified content as the last child of each element in the jQuery collection (To insert it as the <em>first</em> child, use <a href="/prepend/"><code>.prepend()</code></a>). </p>
+    <p>The <code>.append()</code> method inserts the  specified content as the last child of each element in the jQuery collection (To insert it as the <em>first</em> child, use <a href="/prepend/"><code>.prepend()</code></a>).</p>
     <p>The <code>.append()</code> and <code><a href="/appendTo/">.appendTo()</a></code> methods perform the same task. The major difference is in the syntax-specifically, in the placement of the content and target. With <code>.append()</code>, the selector expression preceding the method is the container into which the content is inserted. With <code>.appendTo()</code>, on the other hand, the content precedes the method, either as a selector expression or as markup created on the fly, and it is inserted into the target container.</p>
     <p>Consider the following HTML:</p>
     <pre><code>
@@ -87,6 +87,7 @@ $( "body" ).append( $newdiv1, [ newdiv2, existingdiv1 ] );
     <p>Since <code>.append()</code> can accept any number of additional arguments, the same result can be achieved by passing in the three <code>&lt;div&gt;</code>s as three separate arguments, like so: <code>$('body').append( $newdiv1, newdiv2, existingdiv1 )</code>. The type and number of arguments will largely depend on how you collect the elements in your code.</p>
   </longdesc>
   <note id="html-code-execution" type="additional"/>
+  <note id="svg-support" type="additional"/>
   <example>
     <desc>Appends some HTML to all paragraphs.</desc>
     <code><![CDATA[

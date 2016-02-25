@@ -63,6 +63,7 @@ var item1 = $( "li.item-1" )[ 0 ];
 $( "li.item-ii" ).find( item1 ).css( "background-color", "red" );
     </code></pre>
     <p>The result of this call would be a red background on item 1.</p>
+    <note id="svg-support" type="additional"/>
   </longdesc>
   <example>
     <desc>Starts with all paragraphs and searches for descendant span elements, same as <code>$( "p span" )</code></desc>
