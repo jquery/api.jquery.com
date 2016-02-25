@@ -56,6 +56,7 @@ $( "h2" ).prependTo( $( ".container" ) );
     <p>If there is more than one target element, however, cloned copies of the inserted element will be created for each target except the last.</p>
   </longdesc>
   <note id="html-code-execution" type="additional"/>
+  <note id="svg-support" type="additional"/>
   <example>
     <desc>Prepend all spans to the element with the ID "foo" (Check .prepend() documentation for more examples)</desc>
     <css><![CDATA[

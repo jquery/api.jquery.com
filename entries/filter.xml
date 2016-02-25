@@ -76,6 +76,7 @@ $( "li" )
     .css( "background-color", "red" );
     </code></pre>
     <p>This alteration to the code will cause the third and sixth list items to be highlighted, as it uses the modulus operator (<code>%</code>) to select every item with an <code>index</code> value that, when divided by 3, has a remainder of <code>2</code>.</p>
+    <note id="svg-support" type="additional"/>
   </longdesc>
   <example>
     <desc>Change the color of all divs; then add a border to those with a "middle" class.</desc>

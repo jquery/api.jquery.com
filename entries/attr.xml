@@ -21,6 +21,7 @@
         <p><strong>Note:</strong> Attribute values are strings with the exception of a few attributes such as value and tabindex.</p>
       </div>
       <p>As of jQuery 1.6, the <code>.attr()</code> method returns <code>undefined</code> for attributes that have not been set. <strong>To retrieve and change DOM properties such as the <code>checked</code>, <code>selected</code>, or <code>disabled</code> state of form elements, use the <a href="/prop/">.prop()</a> method.</strong></p>
+      <note id="svg-support" type="additional"/>
 
       <h4>Attributes vs. Properties</h4>
       <p>The difference between <em>attributes</em> and <em>properties</em> can be important in specific situations. <strong>Before jQuery 1.6</strong>, the <code>.attr()</code> method sometimes took property values into account when retrieving some attributes, which could cause inconsistent behavior. <strong>As of jQuery 1.6</strong>, the <code>.prop()</code> method provides a way to explicitly retrieve property values, while <code>.attr()</code> retrieves attributes.</p>

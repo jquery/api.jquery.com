@@ -70,6 +70,9 @@
 		<xsl:when test="@id = 'global-ajax-event'">
 			As of jQuery 1.9, all the handlers for the <a href="/category/ajax/global-ajax-event-handlers/">jQuery global Ajax events</a>, including those added with the <code><xsl:value-of select="@data-title"/></code> method, <em>must</em> be attached to <code>document</code>.
 		</xsl:when>
+		<xsl:when test="@id = 'svg-support'">
+			jQuery doesn't officially support SVG. Using jQuery methods on SVG documents, unless explicitly documented for that method, might cause unexpected behaviors. Examples of methods that support SVG as of jQuery 3.0 are <code>addClass</code> and <code>removeClass</code>.
+		</xsl:when>
 	</xsl:choose>
 </xsl:template>
 </xsl:stylesheet>
