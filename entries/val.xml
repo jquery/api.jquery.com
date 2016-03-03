@@ -11,7 +11,7 @@
     </signature>
     <desc>Get the current value of the first element in the set of matched elements.</desc>
     <longdesc>
-      <p>The <code>.val()</code> method is primarily used to get the values of form elements such as <code>input</code>, <code>select</code> and <code>textarea</code>. In the case of <code>select</code> elements, it returns <code>null</code> when no option is selected and an array containing the value of each selected option when there is at least one and it is possible to select more because the <code>multiple</code> attribute is present.</p>
+      <p>The <code>.val()</code> method is primarily used to get the values of form elements such as <code>input</code>, <code>select</code> and <code>textarea</code>. When called on an empty collection, it returns <code>undefined</code>. In the case of <code>select</code> elements, it returns <code>null</code> when no option is selected and an array containing the value of each selected option when there is at least one and it is possible to select more because the <code>multiple</code> attribute is present.</p>
       <p>For selects and checkboxes, you can also use the <a href="/selected-selector/">:selected</a> and <a href="/checked-selector/">:checked</a> selectors to get at values, for example:</p>
       <pre><code>
 // Get the value from a dropdown select
