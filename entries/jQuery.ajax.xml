@@ -123,7 +123,9 @@ $.ajax({
       <property default="depends on current location protocol" name="isLocal" type="Boolean" added="1.5.1">
         <desc>Allow the current environment to be recognized as "local," (e.g. the filesystem), even if jQuery does not recognize it as such by default. The following protocols are currently recognized as local: <code>file</code>, <code>*-extension</code>, and <code>widget</code>. If the <code>isLocal</code> setting needs modification, it is recommended to do so once in the <code>$.ajaxSetup()</code> method.</desc>
       </property>
-      <property name="jsonp" type="String">
+      <property name="jsonp">
+        <type name="String"/>
+        <type name="Boolean"/>
         <desc>Override the callback function name in a JSONP request. This value will be used instead of 'callback' in the 'callback=?' part of the query string in the url. So <code>{jsonp:'onJSONPLoad'}</code> would result in <code>'onJSONPLoad=?'</code> passed to the server. <strong>As of jQuery 1.5</strong>, setting the <code>jsonp</code> option to <code>false</code> prevents jQuery from adding the "?callback" string to the URL or attempting to use "=?" for transformation. In this case, you should also explicitly set the <code>jsonpCallback</code> setting. For example, <code>{ jsonp: false, jsonpCallback: "callbackName" }</code>. If you don't trust the target of your Ajax requests, consider setting the <code>jsonp</code> property to <code>false</code> for security reasons.</desc>
       </property>
       <property name="jsonpCallback">
