@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <entries>
-  <entry type="method" name="scrollTop" return="Integer">
+  <entry type="method" name="scrollTop" return="Number">
     <title>.scrollTop()</title>
     <signature>
       <added>1.2.6</added>
@@ -35,7 +35,7 @@ $( "p:last" ).text( "scrollTop:" + p.scrollTop() );
     <signature>
       <added>1.2.6</added>
       <argument name="value" type="Number">
-        <desc>An integer indicating the new position to set the scroll bar to.</desc>
+        <desc>A number indicating the new position to set the scroll bar to.</desc>
       </argument>
     </signature>
     <desc>Set the current vertical position of the scroll bar for each of the set of matched elements.</desc>
