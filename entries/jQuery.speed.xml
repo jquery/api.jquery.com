@@ -40,7 +40,7 @@
     <p>The <code>$.speed()</code> method provides a way to define properties, such as <code>duration</code>, <code>easing</code>, and <code>queue</code>, to use in a custom animation. By using it, you don't have to implement the logic that deals with default values and optional parameters.</p>
     <p>This method is meant for plugin developers who are creating new animation methods. Letting <code>$.speed()</code> do all the parameter hockey and normalization for you, rather than duplicating the logic yourself, makes your work simpler. An example of use can be found in the animated form of <code>.addClass()</code> of jQuery UI. </p>
   </longdesc>
-  <category slug="effects/custom"/>
+  <category slug="effects/custom-effects"/>
   <category slug="version/1.0"/>
   <category slug="version/1.1"/>
 </entry>
