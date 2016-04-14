@@ -8,7 +8,7 @@
       <desc>An attribute name.</desc>
     </argument>
     <argument name="value" type="String">
-      <desc>An attribute value. Can be either an unquoted single word or a quoted string.</desc>
+      <desc>An attribute value. Can be either an <a href="https://www.w3.org/TR/css3-selectors/#attribute-selectors">unquoted single word</a> or a quoted string.</desc>
     </argument>
   </signature>
   <desc>Selects elements that have the specified attribute with a value containing a given substring.</desc>
