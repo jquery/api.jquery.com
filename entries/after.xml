@@ -4,16 +4,18 @@
   <signature>
     <added>1.0</added>
     <argument name="content">
-      <desc>HTML string, DOM element, array of elements, or jQuery object to insert after each element in the set of matched elements.</desc>
+      <desc>HTML string, DOM element, text node, array of elements and text nodes, or jQuery object to insert after each element in the set of matched elements.</desc>
       <type name="htmlString"/>
       <type name="Element"/>
+      <type name="Text"/>
       <type name="Array"/>
       <type name="jQuery"/>
     </argument>
     <argument name="content" optional="true">
-      <desc>One or more additional DOM elements, arrays of elements, HTML strings, or jQuery objects to insert after each element in the set of matched elements.</desc>
+      <desc>One or more additional DOM elements, text nodes, arrays of elements and text nodes, HTML strings, or jQuery objects to insert after each element in the set of matched elements.</desc>
       <type name="htmlString"/>
       <type name="Element"/>
+      <type name="Text"/>
       <type name="Array"/>
       <type name="jQuery"/>
     </argument>
@@ -21,11 +23,12 @@
   <signature>
     <added>1.4</added>
     <argument name="function" type="Function">
-      <desc>A function that returns an HTML string, DOM element(s), or jQuery object to insert after each element in the set of matched elements. Receives the index position of the element in the set as an argument. Within the function, <code>this</code> refers to the current element in the set.</desc>
+      <desc>A function that returns an HTML string, DOM element(s), text node(s), or jQuery object to insert after each element in the set of matched elements. Receives the index position of the element in the set as an argument. Within the function, <code>this</code> refers to the current element in the set.</desc>
       <argument name="index" type="Integer" />
       <return>
         <type name="htmlString"/>
         <type name="Element"/>
+        <type name="Text"/>
         <type name="jQuery"/>
       </return>
     </argument>
@@ -33,12 +36,13 @@
   <signature>
     <added>1.10</added>
     <argument name="function-html" type="Function">
-      <desc>A function that returns an HTML string, DOM element(s), or jQuery object to insert after each element in the set of matched elements. Receives the index position of the element in the set and the old HTML value of the element as arguments. Within the function, <code>this</code> refers to the current element in the set.</desc>
+      <desc>A function that returns an HTML string, DOM element(s), text node(s), or jQuery object to insert after each element in the set of matched elements. Receives the index position of the element in the set and the old HTML value of the element as arguments. Within the function, <code>this</code> refers to the current element in the set.</desc>
       <argument name="index" type="Integer" />
       <argument name="html" type="String" />
       <return>
         <type name="htmlString"/>
         <type name="Element"/>
+        <type name="Text"/>
         <type name="jQuery"/>
       </return>
     </argument>
