@@ -12,10 +12,15 @@
     <p>If no arguments are passed to <code>jQuery.when()</code>, it will return a resolved Promise.</p>
     <p>If a single Deferred is passed to <code>jQuery.when()</code>, its Promise object (a subset of the Deferred methods) is returned by the method. Additional methods of the Promise object can be called to attach callbacks, such as <a href="/deferred.then/"><code>deferred.then</code></a>. When the Deferred is resolved or rejected, usually by the code that created the Deferred originally, the appropriate callbacks will be called. For example, the jqXHR object returned by <code>jQuery.ajax()</code> is a Promise-compatible object and can be used this way:</p>
     <pre><code>
-$.when( $.ajax( "test.aspx" ) ).then(function( data, textStatus, jqXHR ) {
-  alert( jqXHR.status ); // Alerts 200
+$.when( $.ajax( "test.aspx" ), $.ajax( "page.aspx" ) ).then(function( res1, res2 ) {
+  alert( res1[2].status ); // Alerts 200
+})
+.fail(function( err1, err2 ) {
+  alert( err1.status );
 });
     </code></pre>
+    <p>In the previous example, <code>res1</code> and <code>res2</code> are arrays containing three values: <code>data</code>, <code>textStatus</code>, and <code>jqXHR</code>. It is adviced to always provide a callback to handle errors through the use of <code>deferred.fail()</code> or the second parameter of <code>deferred.then()</code>.</p>
+    <p>When a single <a href="/Types/#Deferred">Deferred</a>, <a href="/Types/#Promise">Promise</a>, or Promise-compatible object is passed to <code>jQuery.when()</code>, an argument for each of the returned value is provided to the <code>doneCallback</code> instead of a single argument containing an array of values. It is suggested not to rely on this behavior because it is considered an anti-pattern and it will change in the upcoming versions of jQuery, starting with version 3.</p>
     <p>If a single argument is passed to <code>jQuery.when()</code> and it is not a Deferred or a Promise, it will be treated as a resolved Deferred and any doneCallbacks attached will be executed immediately. The doneCallbacks are passed the original argument. In this case any failCallbacks you might set are never called since the Deferred is never rejected. For example:</p>
     <pre><code>
 $.when( { testing: 123 } ).done(function( x ) {
