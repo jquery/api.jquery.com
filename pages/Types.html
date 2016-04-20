@@ -608,13 +608,12 @@ c.print(); // 1
 <h2 id="Text"> Text </h2>
 <p>Text is a node of the Document Object Model (DOM) that represents the textual content of an <a href="#Element">element</a> or an attribute. Consider the following code:
 </p>
-<pre><code data-lang="html">&lt;p id=&quot;target&quot;&gt;&lt;b&gt;Hello&lt;/b&gt; world&lt;/p&gt;
-</code></pre>
+<pre><code>&lt;p id="target"&gt;&lt;b&gt;Hello&lt;/b&gt; world&lt;/p&gt;</code></pre>
 <p>If you retrieve the children of the paragraph of the example as follows:
 </p>
 <pre><code data-lang="javascript">var children = document.getElementById( "target" ).childNodes;
 </code></pre>
-you obtain two children. The first one is the <a href="#Element">element</a> representing the <code>b</code> tag. The second child is a text node containing the string " world".
+<p>you obtain two children. The first one is the <a href="#Element">element</a> representing the <code>b</code> tag. The second child is a text node containing the string " world".
 </p>
 <h2 id="jQuery"> jQuery </h2>
 <p>A jQuery object contains a collection of Document Object Model (DOM) elements that have been created from an HTML string or selected from a document. Since jQuery methods often use CSS selectors to match elements from a document, the set of elements in a jQuery object is often called a set of "matched elements" or "selected elements".
