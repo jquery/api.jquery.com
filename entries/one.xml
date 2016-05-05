@@ -59,6 +59,12 @@ $( "#foo" ).on( "click", function( event ) {
     </code></pre>
     <p>In other words, explicitly calling <code>.off()</code> from within a regularly-bound handler has exactly the same effect.</p>
     <p>If the first argument contains more than one space-separated event types, the event handler is called <em>once for each event type</em>.</p>
+    <pre><code>
+$( "#foo" ).one( "click mouseover", function() {
+  alert( "This could be displayed twice." );
+});
+    </code></pre>
+    <p>In the example above the alert could be displayed twice due to the <i>two</i> event types (<code>click</code> and <code>mouseover</code>).</p>
   </longdesc>
   <example>
     <desc>Tie a one-time click to each div.</desc>
