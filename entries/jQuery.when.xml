@@ -3,60 +3,69 @@
   <title>jQuery.when()</title>
   <signature>
     <added>1.5</added>
-    <argument name="deferreds" type="Deferred">
-      <desc>One or more Deferred objects, or plain JavaScript objects.</desc>
+    <argument name="value" type="Anything" optional="true">
+      <desc>A Promise-like object to resolve a Deferred object, or any value to encapsulate within a Deferred object.</desc>
+    </argument>
+  </signature>
+  <signature>
+    <added>1.5</added>
+    <argument name="values" type="Anything">
+    <desc>Two or values to resolve or encapsulate with Deferred objects for <code>Promise.all</code>-like fulfillment aggregation.</desc>
     </argument>
   </signature>
   <desc>Provides a way to execute callback functions based on one or more objects, usually <a href="/category/deferred-object/">Deferred</a> objects that represent asynchronous events.</desc>
   <longdesc>
-    <p>If a single Deferred is passed to <code>jQuery.when()</code>, its Promise object (a subset of the Deferred methods) is returned by the method. Additional methods of the Promise object can be called to attach callbacks, such as <a href="/deferred.then/"><code>deferred.then</code></a>. When the Deferred is resolved or rejected, usually by the code that created the Deferred originally, the appropriate callbacks will be called. For example, the jqXHR object returned by <code>jQuery.ajax()</code> is a Promise-compatible object and can be used this way:</p>
-    <pre><code>
-$.when( $.ajax( "test.aspx" ) ).then(function( data, textStatus, jqXHR ) {
-  alert( jqXHR.status ); // Alerts 200
-});
-    </code></pre>
-    <p>If a single argument is passed to <code>jQuery.when()</code> and it is not a Deferred or a Promise, it will be treated as a resolved Deferred and any doneCallbacks attached will be executed immediately. The doneCallbacks are passed the original argument. In this case any failCallbacks you might set are never called since the Deferred is never rejected. For example:</p>
-    <pre><code>
-$.when( { testing: 123 } ).done(function( x ) {
-  alert( x.testing ); // Alerts "123"
-});
-    </code></pre>
-    <p>If you don't pass it any arguments at all, <code>jQuery.when()</code> will return a resolved promise.</p>
+    <p>If no arguments are provided, <code>jQuery.when()</code> will return a resolved Promise.</p>
     <pre><code>
 $.when().then(function( x ) {
   alert( "I fired immediately" );
 });
     </code></pre>
-    <p>In the case where multiple Deferred objects are passed to <code>jQuery.when()</code>, the method returns the Promise from a new "master" Deferred object that tracks the aggregate state of all the Deferreds it has been passed. The method will resolve its master Deferred as soon as all the Deferreds resolve, or reject the master Deferred as soon as one of the Deferreds is rejected. If the master Deferred is resolved, the doneCallbacks for the master Deferred are executed. The arguments passed to the doneCallbacks provide the resolved values for each of the Deferreds, and matches the order the Deferreds were passed to <code>jQuery.when()</code>. For example:</p>
+    <p>If a single argument is provided and it is a Promise or has a <code>then</code> method, <code>jQuery.when()</code> will return a Promise that will resolve or reject identically to the argument.</p>
     <pre><code>
-var d1 = $.Deferred();
-var d2 = $.Deferred();
-
-$.when( d1, d2 ).done(function ( v1, v2 ) {
-    console.log( v1 ); // "Fish"
-    console.log( v2 ); // "Pizza"
+$.when( $.ajax( "test.aspx" ) ).then(function( data, textStatus, jqXHR ) {
+  alert( jqXHR.status ); // Alerts 200
 });
-
-d1.resolve( "Fish" );
-d2.resolve( "Pizza" );
     </code></pre>
-    <p>In the event a Deferred was resolved with no value, the corresponding doneCallback argument will be undefined. If a Deferred resolved to a single value, the corresponding argument will hold that value. In the case where a Deferred resolved to multiple values, the corresponding argument will be an array of those values. For example:</p>
+    <p>If any other single argument is provided, <code>jQuery.when()</code> will return a Promise that is resolved to it.</p>
+    <pre><code>
+$.when( { testing: 123 } ).done(function( x ) {
+  alert( x.testing ); // Alerts "123"
+});
+    </code></pre>
+    <p>If more than one argument is provided, <code>jQuery.when()</code> will return the Promise from a new "master" Deferred object that tracks their aggregate state (upgrading each to a Deferred object as in the single-argument case where necessary). The master Deferred will resolve as soon as all subordinates resolve, or reject as soon as one is rejected. If the master Deferred is resolved, the resolution context and values of each subordinate are preserved in its resolution context (an array of all the resolution contexts) and resolution values (the resolution values of each subordinate appear as a single value, with multi-valued resolutions theirselves becoming arrays), each preserving the order in which the subordinate was provided to <code>jQuery.when()</code>. For example:</p>
     <pre><code>
 var d1 = $.Deferred();
 var d2 = $.Deferred();
 var d3 = $.Deferred();
 
-$.when( d1, d2, d3 ).done(function ( v1, v2, v3 ) {
-    console.log( v1 ); // v1 is undefined
-    console.log( v2 ); // v2 is "abc"
-    console.log( v3 ); // v3 is an array [ 1, 2, 3, 4, 5 ]
+$.when( d1, d2 ).done(function ( v1, v2, v3 ) {
+    console.log( v1 );   // "Fish"
+    console.log( v2 );   // ["Pizza", "Pie"]
+    console.log( v3 );   // undefined
+    console.log( this ); // [{ where: "Ocean" }, undefined, undefined]
 });
 
-d1.resolve();
-d2.resolve( "abc" );
-d3.resolve( 1, 2, 3, 4, 5 );
+d1.resolveWith( { where: "Ocean" }, [ "Fish" ] );
+d2.resolve( "Pizza", "Pie" );
+d3.resolve();
     </code></pre>
-    <p>In the multiple-Deferreds case where one of the Deferreds is rejected, <code>jQuery.when()</code> immediately fires the failCallbacks for its master Deferred. Note that some of the Deferreds may still be unresolved at that point. The arguments passed to the failCallbacks match the signature of the failCallback for the Deferred that was rejected. If you need to perform additional processing for this case, such as canceling any unfinished ajax requests, you can keep references to the underlying jqXHR objects in a closure and inspect/cancel them in the failCallback.</p>
+    <p>If more than one argument is provided and one of the arguments is rejected, <code>jQuery.when()</code> immediately rejects with corresponding context and values. Note that some of the subordinates may still be unresolved at that point. For example:</p>
+    <pre><code>
+var d1 = $.Deferred();
+var d2 = $.Deferred();
+var d3 = $.Deferred();
+
+$.when( d1, d2 ).fail(function ( rejection ) {
+    console.log( rejection ); // "Pie"
+    console.log( this );      // { type: "Pizza" }
+});
+
+d1.resolve( "Fish" );
+d2.rejectWith( { type: "Pizza" }, [ "Pie" ] );
+d3.resolve();
+    </code></pre>
+    <p>Regardless of provided arguments, methods of the returned Promise object can be called to attach callbacks, such as <a href="/deferred.then/"><code>deferred.then</code></a>. When the Deferred is resolved or rejected, usually by the code that created the Deferred originally, the appropriate callbacks will be called.</p>
   </longdesc>
   <example>
     <desc>Execute a function after two ajax requests are successful. (See the jQuery.ajax() documentation for a complete description of success and error cases for an ajax request).</desc>
