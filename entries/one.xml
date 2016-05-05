@@ -44,7 +44,7 @@
     </argument>
   </signature>
   <longdesc>
-    <p>The  <code>.one()</code> method is identical to  <code>.on()</code>, except that the handler is unbound after its first invocation. For example:</p>
+    <p>The  <code>.one()</code> method is identical to  <code>.on()</code>, except that the handler for a given element and event type is unbound after its first invocation. For example:</p>
     <pre><code>
 $( "#foo" ).one( "click", function() {
   alert( "This will be displayed only once." );
