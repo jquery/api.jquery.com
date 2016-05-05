@@ -9,7 +9,9 @@
   <longdesc>
     <p>As with other pseudo-class selectors (those that begin with a ":"), it is recommended to precede it with a tag name or some other selector; otherwise, the universal selector ("*") is implied. In other words, the bare <code>$(':disabled')</code> is equivalent to <code>$('*:disabled')</code>, so <code>$('input:disabled')</code> or similar should be used instead. </p>
 
-    <p>Although their resulting selections are usually the same, the <code>:disabled</code> selector is subtly different from the <code>[disabled]</code> attribute selector; <code>:disabled</code> checks the boolean (true/false) value of the element's disabled property while <code>[disabled]</code> checks for the existence of the disabled attribute.</p>
+    <p>Although their resulting selections are usually the same, the <code>:disabled</code> selector is subtly different from the <code>[disabled]</code> attribute selector;
+      <code>:disabled</code> matches elements that are <a href="https://html.spec.whatwg.org/multipage/scripting.html#disabled-elements" target="_blank">actually disabled</a>
+      while <code>[disabled]</code> only checks for the existence of the disabled attribute.</p>
 
     <p>The <code>:disabled</code> selector should only be used for selecting HTML elements that support the <code>disabled</code> attribute (<code>&lt;button&gt;</code>, <code>&lt;input&gt;</code>, <code>&lt;optgroup&gt;</code>, <code>&lt;option&gt;</code>, <code>&lt;select&gt;</code>, and <code>&lt;textarea&gt;</code>).</p>
 
