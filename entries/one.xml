@@ -44,7 +44,7 @@
     </argument>
   </signature>
   <longdesc>
-    <p>The  <code>.one()</code> method is identical to  <code>.on()</code>, except that the handler is unbound after its first invocation. For example:</p>
+    <p>The <code>.one()</code> method is identical to <code>.on()</code>, except that the handler for a given element and event type is unbound after its first invocation. For example:</p>
     <pre><code>
 $( "#foo" ).one( "click", function() {
   alert( "This will be displayed only once." );
@@ -59,6 +59,12 @@ $( "#foo" ).on( "click", function( event ) {
     </code></pre>
     <p>In other words, explicitly calling <code>.off()</code> from within a regularly-bound handler has exactly the same effect.</p>
     <p>If the first argument contains more than one space-separated event types, the event handler is called <em>once for each event type</em>.</p>
+    <pre><code>
+$( "#foo" ).one( "click mouseover", function() {
+  alert( "The " + event.type + " event happened!" );
+});
+    </code></pre>
+    <p>In the example above the alert could be displayed twice due to the <em>two</em> event types (<code>click</code> and <code>mouseover</code>).</p>
   </longdesc>
   <example>
     <desc>Tie a one-time click to each div.</desc>
