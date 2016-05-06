@@ -61,7 +61,7 @@ $( "#foo" ).on( "click", function( event ) {
     <p>If the first argument contains more than one space-separated event types, the event handler is called <em>once for each event type</em>.</p>
     <pre><code>
 $( "#foo" ).one( "click mouseover", function() {
-  alert( "This could be displayed twice." );
+  alert( "The " + event.type + " event happened!" );
 });
     </code></pre>
     <p>In the example above the alert could be displayed twice due to the <em>two</em> event types (<code>click</code> and <code>mouseover</code>).</p>
