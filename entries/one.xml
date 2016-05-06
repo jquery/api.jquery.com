@@ -64,7 +64,7 @@ $( "#foo" ).one( "click mouseover", function() {
   alert( "This could be displayed twice." );
 });
     </code></pre>
-    <p>In the example above the alert could be displayed twice due to the <i>two</i> event types (<code>click</code> and <code>mouseover</code>).</p>
+    <p>In the example above the alert could be displayed twice due to the <em>two</em> event types (<code>click</code> and <code>mouseover</code>).</p>
   </longdesc>
   <example>
     <desc>Tie a one-time click to each div.</desc>
