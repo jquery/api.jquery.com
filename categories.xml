@@ -120,7 +120,7 @@ var e = jQuery.Event( "keydown", { keyCode: 64 } );
 // trigger an artificial keydown event with keyCode 64
 jQuery( "body" ).trigger( e );
 </code></pre>
-          <h4>Event Properties</h4>
+          <h4>Common Event Properties</h4>
           <p>jQuery normalizes the following properties for cross-browser consistency:</p>
           <ul>
             <li>
@@ -144,13 +144,12 @@ jQuery( "body" ).trigger( e );
           </ul>
           <p>The following properties are also copied to the event object, though some of their values may be undefined depending on the event:</p>
           <p>altKey, bubbles, button, buttons, cancelable, char, charCode, clientX, clientY, ctrlKey, currentTarget, data, detail, eventPhase, key, keyCode, metaKey, offsetX, offsetY, originalTarget, pageX, pageY, relatedTarget, screenX, screenY, shiftKey, target, toElement, view, which</p>
-          <h4>OtherProperties</h4>
-          <p>Certain events may have properties specific to them. Those can be accessed as properties of the <code>event.originalEvent</code> object.</p>
-          <p>Example:</p>
+          <h4>Other Properties</h4>
+          <p>To access event properties not listed above, use the <code>event.originalEvent</code> object:</p>
           <pre><code>
-// add the dataTransfer property for use with the native `drop` event
-// to capture information about files dropped into the browser window
-jQuery.event.props.push( "dataTransfer" );
+// Access the `dataTransfer` property from the `drop` event which
+// holds the files dropped into the browser window.
+var files = event.originalEvent.dataTransfer.files;
 </code></pre>
         </div>
       ]]></desc>
