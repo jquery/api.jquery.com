@@ -81,7 +81,7 @@ $( ".container" ).prepend( $( "h2" ) );
     <p>Similar to other content-adding methods such as <code><a href="/append/">.append()</a></code> and <code><a href="/before/">.before()</a></code>, <code>.prepend()</code> also supports passing in multiple arguments as input. Supported input includes DOM elements, jQuery objects, HTML strings, and arrays of DOM elements.</p>
     <p>For example, the following will insert two new <code>&lt;div&gt;</code>s and an existing <code>&lt;div&gt;</code> as the first three child nodes of the body:</p>
     <pre><code>
-var $newdiv1 = $( "&lt;div id='object1'/&gt;"),
+var $newdiv1 = $( "&lt;div id='object1'&gt;&lt;/div&gt;"),
   newdiv2 = document.createElement( "div" ),
   existingdiv1 = document.getElementById( "foo" );
 
