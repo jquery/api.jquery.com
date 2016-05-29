@@ -14,7 +14,7 @@
       <type name="Function"/>
       <type name="Array"/>
       <desc>
-        Optional additional function, or array of functions, to be called when the Deferred generates progress notifications.
+        Optional additional functions, or arrays of functions, to be called when the Deferred generates progress notifications.
       </desc>
     </argument>
   </signature>
