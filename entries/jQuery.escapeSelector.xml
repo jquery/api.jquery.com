@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<entry type="method" name="jQuery.escapeSelector" return="Selector">
+  <title>jQuery.escapeSelector()</title>
+  <desc>Escapes any character that has a special meaning in a CSS selector.</desc>
+  <signature>
+    <added>3.0</added>
+    <argument name="selector" type="Selector">
+      <desc>A string containing a selector expression to escape.</desc>
+    </argument>
+  </signature>
+  <longdesc>
+    <p>This method is useful for situations where a class name or an ID contains characters that have a special meaning in CSS, such as the dot or the semicolon.</p>
+    <p>The method is essentially a shim for the <a href="https://drafts.csswg.org/cssom/#the-css.escape()-method">CSS Working Group's CSS.escape() method</a>. The main difference is that <code>$.escapeSelector()</code> can be reliably used in all of jQuery's supported browsers.</p>
+  </longdesc>
+  <example>
+    <desc>Escape an ID containing a hash.</desc>
+    <code><![CDATA[
+$.escapeSelector( "#target" ); // "\#target"
+]]></code>
+  </example>
+  <example>
+    <desc>Select all the elements having a class name of <code>.box</code> inside a <code>div</code>.</desc>
+    <code><![CDATA[
+$( "div" ).find( "." + $.escapeSelector( ".box" ) );
+]]></code>
+  </example>
+  <category slug="css"/>
+  <category slug="version/3.0"/>
+</entry>
