@@ -38,7 +38,7 @@
     <desc/>
     <category name="Deprecated 1.3" slug="deprecated-1.3">
       <desc><![CDATA[All the aspects of the API that were deprecated in the corresponding version of jQuery.
-        <p>For more information, see the <a href="http://blog.jquery.com/2009/01/14/jquery-1-3-released/">jQuery 1.3 Release Notes</a>.</p>
+        <p>For more information, see the <a href="https://blog.jquery.com/2009/01/14/jquery-1-3-released/">jQuery 1.3 Release Notes</a>.</p>
       ]]></desc>
     </category>
     <category name="Deprecated 1.4" slug="deprecated-1.4">
@@ -48,22 +48,22 @@
     </category>
     <category name="Deprecated 1.7" slug="deprecated-1.7">
       <desc><![CDATA[All the aspects of the API that were deprecated in the corresponding version of jQuery.
-        <p>For more information, see the Release Notes/Changelog at <a href="http://blog.jquery.com/2011/11/03/jquery-1-7-released/">http://blog.jquery.com/2011/11/03/jquery-1-7-released/</a></p>
+        <p>For more information, see the Release Notes/Changelog at <a href="https://blog.jquery.com/2011/11/03/jquery-1-7-released/">https://blog.jquery.com/2011/11/03/jquery-1-7-released/</a></p>
       ]]></desc>
     </category>
     <category name="Deprecated 1.8" slug="deprecated-1.8">
       <desc><![CDATA[All the aspects of the API that were deprecated in the corresponding version of jQuery.
-        <p>For more information, see the Release Notes/Changelog at <a href="http://blog.jquery.com/2012/08/09/jquery-1-8-released/">http://blog.jquery.com/2012/08/09/jquery-1-8-released/</a></p>
+        <p>For more information, see the Release Notes/Changelog at <a href="https://blog.jquery.com/2012/08/09/jquery-1-8-released/">https://blog.jquery.com/2012/08/09/jquery-1-8-released/</a></p>
       ]]></desc>
     </category>
     <category name="Deprecated 1.9" slug="deprecated-1.9">
       <desc><![CDATA[All the aspects of the API that were deprecated in the corresponding version of jQuery.
-        <p>For more information, see the Release Notes/Changelog at <a href="http://blog.jquery.com/2013/01/15/jquery-1-9-final-jquery-2-0-beta-migrate-final-released/">http://blog.jquery.com/2013/01/15/jquery-1-9-final-jquery-2-0-beta-migrate-final-released/</a></p>
+        <p>For more information, see the Release Notes/Changelog at <a href="https://blog.jquery.com/2013/01/15/jquery-1-9-final-jquery-2-0-beta-migrate-final-released/">https://blog.jquery.com/2013/01/15/jquery-1-9-final-jquery-2-0-beta-migrate-final-released/</a></p>
       ]]></desc>
     </category>
     <category name="Deprecated 1.10" slug="deprecated-1.10">
       <desc><![CDATA[All the aspects of the API that were deprecated in the corresponding version of jQuery.
-        <p>For more information, see the Release Notes/Changelog at <a href="http://blog.jquery.com/2013/05/24/jquery-1-10-0-and-2-0-1-released/">http://blog.jquery.com/2013/05/24/jquery-1-10-0-and-2-0-1-released/</a></p>
+        <p>For more information, see the Release Notes/Changelog at <a href="https://blog.jquery.com/2013/05/24/jquery-1-10-0-and-2-0-1-released/">https://blog.jquery.com/2013/05/24/jquery-1-10-0-and-2-0-1-released/</a></p>
       ]]></desc>
     </category>
   </category>
@@ -98,7 +98,7 @@
     </category>
     <category name="Event Object" slug="event-object">
       <desc><![CDATA[
-        <p>jQuery's event system normalizes the event object according to <a href="http://www.w3.org/TR/2003/WD-DOM-Level-3-Events-20030331/ecma-script-binding.html">W3C standards</a>. The event object is guaranteed to be passed to the event handler. Most properties from the original event are copied over and normalized to the new event object.</p>
+        <p>jQuery's event system normalizes the event object according to <a href="https://www.w3.org/TR/2003/WD-DOM-Level-3-Events-20030331/ecma-script-binding.html">W3C standards</a>. The event object is guaranteed to be passed to the event handler. Most properties from the original event are copied over and normalized to the new event object.</p>
         <div class="longdesc">
           <h4>jQuery.Event Constructor</h4>
           <p>The <code>jQuery.Event</code> constructor is exposed and can be used when calling <a href="/trigger">trigger</a>. The <code>new</code> operator is optional.</p>
@@ -238,13 +238,13 @@ var files = event.originalEvent.dataTransfer.files;
   <category name="Selectors" slug="selectors">
     <desc><![CDATA[
       <p>Borrowing from CSS 1&#x2013;3, and then adding its own, jQuery offers a powerful set of tools for matching a set of elements in a document.</p>
-      <p>To use any of the meta-characters ( such as <code> !"#$%&amp;'()*+,./:;&lt;=&gt;?@[\]^`{|}~</code> ) as a literal part of a name, it must be escaped with with two backslashes: <code>\\</code>. For example, an element with <code>id="foo.bar"</code>, can use the selector <code>$("#foo\\.bar")</code>. The W3C CSS specification contains the <a href="http://www.w3.org/TR/CSS21/syndata.html#value-def-identifier">complete set of rules regarding valid CSS selectors</a>. Also useful is the blog entry by Mathias Bynens on <a href="http://mathiasbynens.be/notes/css-escapes">CSS character escape sequences for identifiers</a>.</p>
+      <p>To use any of the meta-characters ( such as <code> !"#$%&amp;'()*+,./:;&lt;=&gt;?@[\]^`{|}~</code> ) as a literal part of a name, it must be escaped with with two backslashes: <code>\\</code>. For example, an element with <code>id="foo.bar"</code>, can use the selector <code>$("#foo\\.bar")</code>. The W3C CSS specification contains the <a href="https://www.w3.org/TR/CSS21/syndata.html#value-def-identifier">complete set of rules regarding valid CSS selectors</a>. Also useful is the blog entry by Mathias Bynens on <a href="https://mathiasbynens.be/notes/css-escapes">CSS character escape sequences for identifiers</a>.</p>
     ]]></desc>
     <category name="Attribute" slug="attribute-selectors">
       <desc><![CDATA[
         <p>The CSS specification allows elements to be identified by their attributes. While not supported by some older browsers for the purpose of styling documents, jQuery allows you to employ them regardless of the browser being used.</p>
         <p>When using any of the following attribute selectors, you should account for attributes that have multiple, space-separated values. Since these selectors see attribute values as a single string, this selector, for example, <code>$("a[rel='nofollow']")</code>, will select <code>&lt;a href="example.html" rel="nofollow"&gt;Some text&lt;/a&gt;</code> but not <code>&lt;a href="example.html" rel="nofollow foe"&gt;Some text&lt;/a&gt;</code>.</p>
-        <p>Attribute values in selector expressions <b>must</b> follow the rules for W3C CSS selectors; in general, that means anything other than a <a href="http://www.w3.org/TR/CSS21/syndata.html#value-def-identifier">valid identifier</a> should be surrounded by quotation marks.</p>
+        <p>Attribute values in selector expressions <b>must</b> follow the rules for W3C CSS selectors; in general, that means anything other than a <a href="https://www.w3.org/TR/CSS21/syndata.html#value-def-identifier">valid identifier</a> should be surrounded by quotation marks.</p>
         <ul>
           <li>double quotes inside single quotes: <code>$('a[rel="nofollow self"]')</code></li>
           <li>single quotes inside double quotes: <code>$("a[rel='nofollow self']")</code></li>
@@ -258,7 +258,7 @@ var files = event.originalEvent.dataTransfer.files;
       </desc>
     </category>
     <category name="Basic" slug="basic-css-selectors">
-      <desc><![CDATA[The following selectors are based on the Cascading Style Sheet 1 specification, as outlined by the W3C. For more information about the specifications, visit <a href="http://www.w3.org/Style/CSS/#specs">http://www.w3.org/Style/CSS/#specs</a>. ]]></desc>
+      <desc><![CDATA[The following selectors are based on the Cascading Style Sheet 1 specification, as outlined by the W3C. For more information about the specifications, visit <a href="https://www.w3.org/Style/CSS/#specs">https://www.w3.org/Style/CSS/#specs</a>. ]]></desc>
     </category>
     <category name="Basic Filter" slug="basic-filter-selectors">
       <desc/>
@@ -276,7 +276,7 @@ var files = event.originalEvent.dataTransfer.files;
       <desc/>
     </category>
     <category name="jQuery Extensions" slug="jquery-selector-extensions">
-      <desc><![CDATA[jQuery has extended the CSS3 selectors with the following selectors.  Because these selectors are jQuery extension and not part of the CSS specification, queries using them cannot take advantage of the performance boost provided by the native DOM <code>querySelectorAll()</code> method. To achieve the best performance when using these selectors, first select some elements using a pure CSS selector, then use <a href="http://api.jquery.com/filter/"><code>.filter()</code></a>.]]></desc>
+      <desc><![CDATA[jQuery has extended the CSS3 selectors with the following selectors.  Because these selectors are jQuery extension and not part of the CSS specification, queries using them cannot take advantage of the performance boost provided by the native DOM <code>querySelectorAll()</code> method. To achieve the best performance when using these selectors, first select some elements using a pure CSS selector, then use <a href="https://api.jquery.com/filter/"><code>.filter()</code></a>.]]></desc>
     </category>
     <category name="Visibility Filter" slug="visibility-filter-selectors">
       <desc/>
@@ -302,52 +302,52 @@ var files = event.originalEvent.dataTransfer.files;
     <desc/>
     <category name="Version 1.0" slug="1.0">
       <desc><![CDATA[All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.
-				<a href="http://blog.jquery.com/2006/08/26/jquery-10/">jQuery 1.0 Release Notes</a>.
+				<a href="https://blog.jquery.com/2006/08/26/jquery-10/">jQuery 1.0 Release Notes</a>.
 			]]></desc>
     </category>
     <category name="Version 1.0.4" slug="1.0.4">
       <desc><![CDATA[All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.
-				Release Notes: <a href="http://blog.jquery.com/2006/08/31/jquery-101/">1.0.1</a>, <a href="http://blog.jquery.com/2006/10/09/jquery-102/">1.0.2</a>, <a href="http://blog.jquery.com/2006/10/27/jquery-103/">1.0.3</a>, <a href="http://blog.jquery.com/2006/12/12/jquery-104/">1.0.4</a>.
+				Release Notes: <a href="https://blog.jquery.com/2006/08/31/jquery-101/">1.0.1</a>, <a href="https://blog.jquery.com/2006/10/09/jquery-102/">1.0.2</a>, <a href="https://blog.jquery.com/2006/10/27/jquery-103/">1.0.3</a>, <a href="https://blog.jquery.com/2006/12/12/jquery-104/">1.0.4</a>.
 			]]></desc>
     </category>
     <category name="Version 1.1" slug="1.1">
       <desc><![CDATA[All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.
-				<a href="http://blog.jquery.com/2007/01/14/jquery-birthday-11-new-site-new-docs/">jQuery 1.1 Release Notes</a>.
+				<a href="https://blog.jquery.com/2007/01/14/jquery-birthday-11-new-site-new-docs/">jQuery 1.1 Release Notes</a>.
 			]]></desc>
     </category>
     <category name="Version 1.1.2" slug="1.1.2">
       <desc><![CDATA[All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.
-				<a href="http://blog.jquery.com/2007/02/27/jquery-112/">jQuery 1.1.2 Release Notes</a>.
+				<a href="https://blog.jquery.com/2007/02/27/jquery-112/">jQuery 1.1.2 Release Notes</a>.
 			]]></desc>
     </category>
     <category name="Version 1.1.3" slug="1.1.3">
       <desc><![CDATA[All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.
-				<a href="http://blog.jquery.com/2007/07/01/jquery-113-800-faster-still-20kb/">jQuery 1.1.3 Release Notes</a>
+				<a href="https://blog.jquery.com/2007/07/01/jquery-113-800-faster-still-20kb/">jQuery 1.1.3 Release Notes</a>
 			]]></desc>
     </category>
     <category name="Version 1.1.4" slug="1.1.4">
       <desc><![CDATA[All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.
-				<a href="http://blog.jquery.com/2007/08/24/jquery-114-faster-more-tests-ready-for-12/">jQuery 1.1.4 Release Notes</a>.
+				<a href="https://blog.jquery.com/2007/08/24/jquery-114-faster-more-tests-ready-for-12/">jQuery 1.1.4 Release Notes</a>.
 			]]></desc>
     </category>
     <category name="Version 1.2" slug="1.2">
       <desc><![CDATA[All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.
-				<a href="http://blog.jquery.com/2007/09/10/jquery-1-2-released/">jQuery 1.2 Release Notes</a>
+				<a href="https://blog.jquery.com/2007/09/10/jquery-1-2-released/">jQuery 1.2 Release Notes</a>
 			]]></desc>
     </category>
     <category name="Version 1.2.3" slug="1.2.3">
       <desc><![CDATA[All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.
-				Release Notes: <a href="http://blog.jquery.com/2007/09/16/jquery-1-2-1-released/">1.2.1</a>, <a href="http://blog.jquery.com/2008/01/14/jquery-1-2-2-released/">1.2.2</a>, <a href="http://blog.jquery.com/2008/02/07/jquery-1-2-3-released/">1.2.3</a>.
+				Release Notes: <a href="https://blog.jquery.com/2007/09/16/jquery-1-2-1-released/">1.2.1</a>, <a href="https://blog.jquery.com/2008/01/14/jquery-1-2-2-released/">1.2.2</a>, <a href="https://blog.jquery.com/2008/02/07/jquery-1-2-3-released/">1.2.3</a>.
 			]]></desc>
     </category>
     <category name="Version 1.2.6" slug="1.2.6">
       <desc><![CDATA[All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.
-				<a href="http://blog.jquery.com/2008/05/24/jquery-1-2-6-released/">jQuery 1.2.6 Release Notes</a>.
+				<a href="https://blog.jquery.com/2008/05/24/jquery-1-2-6-released/">jQuery 1.2.6 Release Notes</a>.
 			]]></desc>
     </category>
     <category name="Version 1.3" slug="1.3">
       <desc><![CDATA[All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.
-				Release Notes: <a href="http://blog.jquery.com/2009/01/14/jquery-1-3-released/">1.3</a>, <a href="http://blog.jquery.com/2009/01/21/jquery-131-released/">1.3.1</a>, <a href="http://blog.jquery.com/2009/02/20/jquery-1-3-2-released/">1.3.2</a>
+				Release Notes: <a href="https://blog.jquery.com/2009/01/14/jquery-1-3-released/">1.3</a>, <a href="https://blog.jquery.com/2009/01/21/jquery-131-released/">1.3.1</a>, <a href="https://blog.jquery.com/2009/02/20/jquery-1-3-2-released/">1.3.2</a>
 			]]></desc>
     </category>
     <category name="Version 1.4" slug="1.4">
@@ -362,22 +362,22 @@ var files = event.originalEvent.dataTransfer.files;
     </category>
     <category name="Version 1.4.2" slug="1.4.2">
       <desc><![CDATA[All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.
-				<a href="http://blog.jquery.com/2010/02/19/jquery-142-released/">jQuery 1.4.2 Release Notes</a>.
+				<a href="https://blog.jquery.com/2010/02/19/jquery-142-released/">jQuery 1.4.2 Release Notes</a>.
 			]]></desc>
     </category>
     <category name="Version 1.4.3" slug="1.4.3">
       <desc><![CDATA[All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.
-				<a href="http://blog.jquery.com/2010/10/16/jquery-143-released/">jQuery 1.4.3 Release Notes</a>.
+				<a href="https://blog.jquery.com/2010/10/16/jquery-143-released/">jQuery 1.4.3 Release Notes</a>.
 			]]></desc>
     </category>
     <category name="Version 1.4.4" slug="1.4.4">
-      <desc><![CDATA[All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery. <a href="http://blog.jquery.com/2010/11/11/jquery-1-4-4-release-notes/">jQuery 1.4.4 Release Notes</a>.]]></desc>
+      <desc><![CDATA[All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery. <a href="https://blog.jquery.com/2010/11/11/jquery-1-4-4-release-notes/">jQuery 1.4.4 Release Notes</a>.]]></desc>
     </category>
     <category name="Version 1.5" slug="1.5">
       <desc><![CDATA[
         <p>All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.</p>
-        <p>jQuery 1.5 also includes a large rewrite of the Ajax module, which has a number of extensibility improvements. You can find out more about those improvements in the <a href="http://api.jquery.com/extending-ajax/">Extending Ajax</a> documentation.</p>
-        <p>Additionally jQuery 1.5 includes a new Deferred callback management system you can learn more about in in the <a href="http://api.jquery.com/category/deferred-object/">Deferred Object</a> documentation.</p>
+        <p>jQuery 1.5 also includes a large rewrite of the Ajax module, which has a number of extensibility improvements. You can find out more about those improvements in the <a href="https://api.jquery.com/extending-ajax/">Extending Ajax</a> documentation.</p>
+        <p>Additionally jQuery 1.5 includes a new Deferred callback management system you can learn more about in in the <a href="https://api.jquery.com/category/deferred-object/">Deferred Object</a> documentation.</p>
       ]]></desc>
     </category>
     <category name="Version 1.5.1" slug="1.5.1">
@@ -394,7 +394,7 @@ var files = event.originalEvent.dataTransfer.files;
 				<code>jQuery.Callbacks()</code>
 				Toggling Animations Work Intuitively
 				</p>
-        <p>For more information, see the Release Notes/Changelog at <a href="http://blog.jquery.com/2011/11/03/jquery-1-7-released/">http://blog.jquery.com/2011/11/03/jquery-1-7-released/</a></p>
+        <p>For more information, see the Release Notes/Changelog at <a href="https://blog.jquery.com/2011/11/03/jquery-1-7-released/">https://blog.jquery.com/2011/11/03/jquery-1-7-released/</a></p>
         <hr/>
       ]]></desc>
     </category>
@@ -402,7 +402,7 @@ var files = event.originalEvent.dataTransfer.files;
       <desc><![CDATA[
         <p>Aspects of the API that were changed in the corresponding version of jQuery. API changes in jQuery 1.8.0 dealt primarily with animations and the removal of some methods such as <code>deferred.isResolved()</code>, <code>deferred.isRejected()</code>, <code>$.curCSS()</code>, <code>$.attrFn()</code>, and <code>$(element).closest(Array)</code> returning Array.
         </p>
-        <p>For more information, see the Release Notes/Changelog at <a href="http://blog.jquery.com/2012/08/09/jquery-1-8-released/">http://blog.jquery.com/2012/08/09/jquery-1-8-released/</a></p>
+        <p>For more information, see the Release Notes/Changelog at <a href="https://blog.jquery.com/2012/08/09/jquery-1-8-released/">https://blog.jquery.com/2012/08/09/jquery-1-8-released/</a></p>
         <hr/>
       ]]></desc>
     </category>
@@ -410,7 +410,7 @@ var files = event.originalEvent.dataTransfer.files;
       <desc><![CDATA[
         <p>Aspects of the API that were changed in the corresponding version of jQuery. Changes in jQuery 1.9 dealt primarily removal or modification of several APIs that behaved inconsistently or inefficiently in the past. A <a href="https://github.com/jquery/jquery-migrate">jQuery Migrate Plugin</a> was offered to help developers with a transitional upgrade path.
         </p>
-        <p>For more information, see the <a href="http://jquery.com/upgrade-guide/1.9/">jQuery Core 1.9 Upgrade guide</a> and the <a href="http://blog.jquery.com/2013/01/15/jquery-1-9-final-jquery-2-0-beta-migrate-final-released/">Release Notes/Changelog</a></p>
+        <p>For more information, see the <a href="https://jquery.com/upgrade-guide/1.9/">jQuery Core 1.9 Upgrade guide</a> and the <a href="https://blog.jquery.com/2013/01/15/jquery-1-9-final-jquery-2-0-beta-migrate-final-released/">Release Notes/Changelog</a></p>
         <hr/>
       ]]></desc>
     </category>
