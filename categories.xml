@@ -414,6 +414,14 @@ var files = event.originalEvent.dataTransfer.files;
         <hr/>
       ]]></desc>
     </category>
+    <category name="Version 3.0" slug="3.0">
+      <desc><![CDATA[
+        <p>Aspects of the API that were changed in the corresponding version of jQuery. Changes in jQuery 3.0 dealt primarily with deferreds, data, show/hide and removal of some deprecated APIs. A <a href="https://github.com/jquery/jquery-migrate">jQuery Migrate Plugin</a> was offered to help developers with a transitional upgrade path.
+        </p>
+        <p>For more information, see the <a href="https://jquery.com/upgrade-guide/3.0/">jQuery Core 3.0 Upgrade guide</a> and the <a href="https://blog.jquery.com/2016/06/09/jquery-3-0-final-released/">Release Notes/Changelog</a></p>
+        <hr/>
+      ]]></desc>
+    </category>
     <category name="All" slug="all"/>
   </category>
 </categories>
