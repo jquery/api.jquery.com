@@ -240,7 +240,7 @@ $.ajax({
         </p>
       </li>
       <li>
-        <strong>jqXHR.always(function( data|jqXHR, textStatus, jqXHR|errorThrown ) { });</strong>
+        <strong>jqXHR.always(function( data|jqXHR, textStatus, jqXHR|errorThrown ) { });</strong> (added in jQuery 1.6)
         <p>An alternative construct to the complete callback option, the <code>.always()</code> method replaces the deprecated <code>.complete()</code> method.</p>
         <p>In response to a successful request, the function's arguments are the same as those of <code>.done()</code>: data, textStatus, and the jqXHR object. For failed requests the arguments are the same as those of <code>.fail()</code>: the jqXHR object, textStatus, and errorThrown. Refer to <code><a href="/deferred.always/">deferred.always()</a></code> for implementation details.</p>
       </li>
