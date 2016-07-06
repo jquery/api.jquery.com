@@ -422,6 +422,12 @@ var files = event.originalEvent.dataTransfer.files;
         <hr/>
       ]]></desc>
     </category>
+    <category name="Version 3.1" slug="3.1">
+      <desc><![CDATA[
+        <p><a href="/jQuery.readyException">jQuery.readyException</a> was added.</p>
+        <hr/>
+      ]]></desc>
+    </category>
     <category name="All" slug="all"/>
   </category>
 </categories>
