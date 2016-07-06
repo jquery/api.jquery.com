@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<entry type="method" name="jQuery.readyException" return="Selector">
+  <title>jQuery.readyException()</title>
+  <desc>Handles errors thrown synchronously in functions wrapped in <code>jQuery()</code>.</desc>
+  <signature>
+    <added>3.1</added>
+    <argument name="error" type="Error">
+      <desc>An error thrown in the function wrapped in <code>jQuery()</code>.</desc>
+    </argument>
+  </signature>
+  <longdesc>
+    <p>This method is fired when an error is thrown synchronously in a function wrapped in <code>jQuery()</code> or <code>jQuery( document ).ready()</code>, or equivalent. By default it re-throws the error in a timeout so that it's logged in the console and passed to <code>window.onerror</code> instead of being swallowed. Overwrite this method if you want to handle such errors differently.</p>
+  </longdesc>
+  <example>
+    <desc>Pass the received error to <code>console.error</code>.</desc>
+    <code><![CDATA[
+jQuery.readyException = function( error ) {
+  console.error( error );
+};
+]]></code>
+  </example>
+  <category slug="core"/>
+  <category slug="version/3.1"/>
+</entry>
