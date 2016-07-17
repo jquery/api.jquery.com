@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<entry type="method" name="size" return="Integer" deprecated="1.8">
+<entry type="method" name="size" return="Integer" deprecated="1.8" removed="3.0">
   <title>.size()</title>
   <signature>
     <added>1.0</added>
@@ -66,4 +66,5 @@ $( document.body )
   <category slug="miscellaneous/dom-element-methods"/>
   <category slug="version/1.0"/>
   <category slug="deprecated/deprecated-1.8"/>
+  <category slug="removed"/>
 </entry>
