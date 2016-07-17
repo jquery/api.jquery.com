@@ -126,7 +126,7 @@ $( "input" )
       <p>This method is typically used to set the values of form fields. </p>
       <p><code>val()</code> allows you to pass an array of element values. This is useful when working on a jQuery object containing elements like <code>&lt;input type="checkbox"&gt;</code>, <code>&lt;input type="radio"&gt;</code>, and <code>&lt;option&gt;</code>s inside of a <code>&lt;select&gt;</code>. In this case, the <code>input</code>s and the <code>option</code>s having a <code>value</code> that matches one of the elements of the array will be checked or selected while those having a <code>value</code> that doesn't match one of the elements of the array will be unchecked or unselected, depending on the type. In the case of <code>&lt;input type="radio"&gt;</code>s that are part of a radio group and <code>&lt;select&gt;</code>s, any previously selected element will be deselected.</p>
       <p>Setting values using this method (or using the native <code>value</code> property) does not cause the dispatch of the <code>change</code> event. For this reason, the relevant event handlers will not be executed. If you want to execute them, you should call <code>.trigger( "change" )</code> after setting the value.</p>
-      <p>The <code>.val()</code> method allows settting the value by passing in a function. As of jQuery 1.4, the function is passed two arguments, the current element's index and its current value: </p>
+      <p>The <code>.val()</code> method allows setting the value by passing in a function. As of jQuery 1.4, the function is passed two arguments, the current element's index and its current value: </p>
       <pre><code>
 $( "input:text.items" ).val(function( index, value ) {
   return value + " " + this.className;
