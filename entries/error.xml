@@ -60,4 +60,5 @@ $( "img" )
   <category slug="version/1.0"/>
   <category slug="version/1.4.3"/>
   <category slug="deprecated/deprecated-1.8"/>
+  <category slug="removed"/>
 </entry>

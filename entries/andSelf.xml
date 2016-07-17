@@ -75,4 +75,5 @@ $( "div.after-andself" ).find( "p" ).andSelf().addClass( "background" );
   <category slug="traversing/miscellaneous-traversal"/>
   <category slug="version/1.2"/>
   <category slug="deprecated/deprecated-1.8"/>
+  <category slug="removed"/>
 </entry>

@@ -66,4 +66,5 @@ $( document.body )
   <category slug="miscellaneous/dom-element-methods"/>
   <category slug="version/1.0"/>
   <category slug="deprecated/deprecated-1.8"/>
+  <category slug="removed"/>
 </entry>
