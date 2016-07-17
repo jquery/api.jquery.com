@@ -46,11 +46,7 @@ function displayVals() {
   var singleValues = $( "#single" ).val();
   var multipleValues = $( "#multiple" ).val() || [];
   // When using jQuery 3:
-<<<<<<< HEAD
-  // var multipleValues = $( "#multiple" ).val()
-=======
   // var multipleValues = $( "#multiple" ).val();
->>>>>>> multi-select-val
   $( "p" ).html( "<b>Single:</b> " + singleValues +
     " <b>Multiple:</b> " + multipleValues.join( ", " ) );
 }
