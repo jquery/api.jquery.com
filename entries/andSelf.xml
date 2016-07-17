@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<entry type="method" name="andSelf" return="jQuery" deprecated="1.8">
+<entry type="method" name="andSelf" return="jQuery" deprecated="1.8" removed="3.0">
   <title>.andSelf()</title>
   <signature>
     <added>1.2</added>
