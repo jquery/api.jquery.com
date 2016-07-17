@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<entry type="method" name="load" return="jQuery" deprecated="1.8">
+<entry type="method" name="load" return="jQuery" deprecated="1.8" removed="3.0">
   <title>.load()</title>
   <desc>Bind an event handler to the "load" JavaScript event.</desc>
   <signature>
@@ -76,4 +76,5 @@ $( "img.userIcon" ).load(function() {
   <category slug="version/1.0"/>
   <category slug="version/1.4.3"/>
   <category slug="deprecated/deprecated-1.8"/>
+  <category slug="removed"/>
 </entry>

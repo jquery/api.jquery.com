@@ -26,4 +26,5 @@ Context: <ul></ul>
   <category slug="properties/jquery-object-instance-properties"/>
   <category slug="version/1.3"/>
   <category slug="deprecated/deprecated-1.10"/>
+  <category slug="removed"/>
 </entry>

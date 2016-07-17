@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<entry type="method" name="unload" return="jQuery" deprecated="1.8">
+<entry type="method" name="unload" return="jQuery" deprecated="1.8" removed="3.0">
   <title>.unload()</title>
   <signature>
     <added>1.0</added>
@@ -46,4 +46,5 @@ $( window ).unload(function() {
   <category slug="version/1.0"/>
   <category slug="version/1.4.3"/>
   <category slug="deprecated/deprecated-1.8"/>
+  <category slug="removed"/>
 </entry>
