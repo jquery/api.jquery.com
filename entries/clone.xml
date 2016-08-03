@@ -63,7 +63,7 @@ $( ".hello" ).clone().appendTo( ".goodbye" );
     <p>However, objects and arrays within element data are not copied and will continue to be shared between the cloned element and the original element. To deep copy all data, copy each one manually:</p>
     <pre><code>
 // Original element with attached data
-var $elem = $( "#elem" ).data( "arr": [ 1 ] ),
+var $elem = $( "#elem" ).data( "arr", [ 1 ] ),
     $clone = $elem.clone( true )
       // Deep copy to prevent data sharing
       .data( "arr", $.extend( [], $elem.data( "arr" ) ) );
