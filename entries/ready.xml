@@ -14,6 +14,7 @@
     <div class="warning">
       <p>The <code>.ready()</code> method is generally incompatible with the <code>&lt;body onload=""&gt;</code> attribute. If <code>load</code> must be used, either do not use <code>.ready()</code> or use jQuery's <code>.load()</code> method to attach <code>load</code> event handlers to the window or to more specific items, like images.
       </p>
+      <p>Loading jQuery asynchronously may cause jQuery to load after <code>DOMContentReady</code>, resulting in <code>.ready()</code> firing on <code>load</code>. Due to browser quirks jQuery is unable to determine whether <code>DOMContentLoaded</code> has fired and falls back to <code>load</code>. This can be fixed two ways. Loading jQuery synchronously will fix it. You can also place your async script requests near the closing of the body tag and remove <code>.ready()</code> usage. You code will be loaded after <code>DOMContentReady</code> fires and can execute immediately. </p>
     </div>
     <p>All three of the following syntaxes are equivalent:</p>
     <ul>
