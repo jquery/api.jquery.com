@@ -9,49 +9,53 @@
     </argument>
   </signature>
   <longdesc>
-    <p>While JavaScript provides the <code>load</code> event for executing code when a page is rendered, this event does not get triggered until all assets such as images have been completely received. In most cases, the script can be run as soon as the DOM hierarchy has been fully constructed. The handler passed to <code>.ready()</code> is guaranteed to be executed after the DOM is ready, so this is usually the best place to attach all other event handlers and run other jQuery code.  When using scripts that rely on the value of CSS style properties, it's important to reference external stylesheets or embed style elements before referencing the scripts.</p>
-    <p>In cases where code relies on loaded assets (for example, if the dimensions of an image are required), the code should be placed in a handler for the <code>load</code> event instead.</p>
-    <div class="warning">
-      <p>The <code>.ready()</code> method is generally incompatible with the <code>&lt;body onload=""&gt;</code> attribute. If <code>load</code> must be used, either do not use <code>.ready()</code> or use jQuery's <code>.load()</code> method to attach <code>load</code> event handlers to the window or to more specific items, like images.
-      </p>
-    </div>
-    <p>All three of the following syntaxes are equivalent:</p>
+    <p>The <code>.ready()</code> method offers a way to run JavaScript code as soon as the page's Document Object Model (DOM) becomes safe to manipulate. This will often be a good time to perform tasks that are needed before the user views or interacts with the page, for example to add event handlers and initialize plugins. When multiple functions are added via successive calls to this method, they run when the DOM is ready in the order in which they are added. As of jQuery 3.0, jQuery ensures that an exception occuring in one handler does not prevent subsequently added handlers from executing.</p>
+
+    <p>Most browsers <a href="http://caniuse.com/#search=DOMContentLoaded">provide similar functionality</a> in the form of a <code>DOMContentLoaded</code> event. However, jQuery's <code>.ready()</code> method differs in an important and useful way: If the DOM becomes ready and the browser fires <code>DOMContentLoaded</code> before the code calls <code>.ready( handler )</code>, the function <code>handler</code> will still be executed. In contrast, a <code>DOMContentLoaded</code> event listener added after the event fires is never executed.<p>
+
+    <p>Browsers also provide the <code>load</code> event on the <code>window</code> object. When this event fires it indicates that all assets on the page have loaded, including images. This event can be watched in jQuery using <code>$( window ).on( "load", handler )</code>. In cases where code relies on loaded assets (for example, if the dimensions of an image are required), the code should be placed in a handler for the <code>load</code> event instead.
+    
+    Note that although the DOM always becomes ready before the page is fully loaded, it is <em>usually not safe</em> to attach a <code>load</code> event listener in code executed during a <code>.ready()</code> handler. For example, scripts can be loaded dynamically long after the page has loaded using methods such as <code>$.getScript()</code>. Although handlers added by <code>.ready()</code> will always be executed in a dynamically loaded script, the <code>window</code>'s <code>load</code> event has already occurred and those listeners will never run.
+
+    <p>jQuery offers several ways to attach a function that will run when the DOM is ready. All of the following syntaxes are equivalent:</p>
+
     <ul>
-      <li>
-        <code>$( document ).ready( handler )</code>
-      </li>
-      <li><code>$().ready( handler )</code> (this is not recommended)</li>
-      <li>
-        <code>$( handler )</code>
-      </li>
+      <li><code>$( handler )</code></li>
+      <li><code>$( document ).ready( handler )</code></li>
+      <li><code>$( "document" ).ready( handler )</code></li>
+      <li><code>$( "img" ).ready( handler )</code></li>
+      <li><code>$().ready( handler )</code></li>
     </ul>
-    <p>There is also <code>$(document).on( "ready", handler )</code>, <em>deprecated as of jQuery 1.8</em>. This behaves similarly to the ready method but if the ready event has already fired and you try to <code>.on( "ready" )</code> the bound handler will not be executed. Ready handlers bound this way are executed <em>after</em> any bound by the other three methods above.</p>
-    <p>The <code>.ready()</code> method can only be called on a jQuery object matching the current document, so the selector can be omitted.</p>
+
+    <p>As of jQuery 3.0, only the first syntax is recommended; the other syntaxes still work but are deprecated. This is because the selection has no bearing on the behavior of the <code>.ready()</code> method, which is inefficient and can lead to incorrect assumptions about the method's behavior. For example, the third syntax works with <code>"document"</code> which selects nothing. The fourth syntax waits for the document to be ready but implies (incorrectly) that it waits for images to become ready. </p>
+
+    <p>There is also <code>$(document).on( "ready", handler )</code>, <em>deprecated as of jQuery 1.8 and removed in jQuery 3.0</em>. Note that if the DOM becomes ready before this event is attached, the handler <em>will not be executed</em>.</p>
+
     <p>The <code>.ready()</code> method is typically used with an anonymous function:</p>
     <pre><code>
 $( document ).ready(function() {
   // Handler for .ready() called.
 });
     </code></pre>
-    <p>Which is equivalent to calling:</p>
+    <p>Which is equivalent to the recommended way of calling:</p>
     <pre><code>
 $(function() {
   // Handler for .ready() called.
 });
     </code></pre>
-    <p>If <code>.ready()</code> is called after the DOM has been initialized, the new handler passed in will be executed immediately.</p>
-    <h4>Aliasing the jQuery Namespace</h4>
-    <p>When using another JavaScript library, we may wish to call <code><a href="/jQuery.noConflict/">$.noConflict()</a></code> to avoid namespace difficulties. When this function is called, the <code>$</code> shortcut is no longer available, forcing us to write <code>jQuery</code> each time we would normally write <code>$</code>. However, the handler passed to the <code>.ready()</code> method can take an argument, which is passed the global <code>jQuery</code> object. This means we can rename the object within the context of our <code>.ready()</code> handler without affecting other code:</p>
+    <h4>Aliasing the jQuery Object</h4>
+    <p>When <code><a href="/jQuery.noConflict/">$.noConflict()</a></code> is used to avoid namespace conflicts, the <code>$</code> shortcut is no longer available. However, the <code>.ready()</code> handler is passed a reference to the <code>jQuery</code> object that called the method. This allows the handler to use a jQuery object, for example as <code>$</code>, without knowing its aliased name:</p>
     <pre><code>
-jQuery( document ).ready(function( $ ) {
-  // Code using $ as usual goes here.
+jq2 = jQuery.noConflict();
+jq2(function( $ ) {
+  // Code using $ as usual goes here; the actual jQuery object is jq2
 });
     </code></pre>
   </longdesc>
   <example>
     <desc>Display a message when the DOM is loaded.</desc>
     <code location="head"><![CDATA[
-  $( document ).ready(function() {
+  $(function() {
     $( "p" ).text( "The DOM is now loaded and can be manipulated." );
   });
 ]]></code>
