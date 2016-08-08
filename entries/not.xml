@@ -61,6 +61,7 @@ $( "li" ).not( document.getElementById( "notli" ) )
     </code></pre>
     <p>This statement changes the color of items 1, 2, 4, and 5. We could have accomplished the same thing with a simpler jQuery expression, but this technique can be useful when, for example, other libraries provide references to plain DOM nodes.</p>
     <p>As of jQuery 1.4, the <code>.not()</code> method can take a function as its argument in the same way that <code>.filter()</code> does. Elements for which the function returns <code>true</code> are excluded from the filtered set; all other elements are included.</p>
+    <p><strong>Note:</strong> When a CSS selector string is passed to <code>.not()</code>, text and comment nodes will always be removed from the resulting jQuery object during the filtering process. When a specific node or array of nodes are provided, text or comment nodes will only be removed from the jQuery object if they match one of the nodes in the filtering array.</p>
   </longdesc>
   <example>
     <desc>Adds a border to divs that are not green or blue.</desc>

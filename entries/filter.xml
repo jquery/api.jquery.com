@@ -76,6 +76,7 @@ $( "li" )
     .css( "background-color", "red" );
     </code></pre>
     <p>This alteration to the code will cause the third and sixth list items to be highlighted, as it uses the modulus operator (<code>%</code>) to select every item with an <code>index</code> value that, when divided by 3, has a remainder of <code>2</code>.</p>
+    <p><strong>Note:</strong> When a CSS selector string is passed to <code>.filter()</code>, text and comment nodes will always be removed from the resulting jQuery object during the filtering process. When a specific node or array of nodes are provided, a text or comment node will be included in the resulting jQuery object only if it matches one of the nodes in the filtering array.</p>
     <note id="svg-support" type="additional"/>
   </longdesc>
   <example>
