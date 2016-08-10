@@ -1,12 +1,13 @@
 <?xml version="1.0"?>
-<entry type="property" name="jQuery.fx.interval" return="Number">
+<entry type="property" name="jQuery.fx.interval" return="Number" deprecated="3.0">
   <title>jQuery.fx.interval</title>
   <desc>The rate (in milliseconds) at which animations fire.</desc>
   <signature>
     <added>1.4.3</added>
   </signature>
   <longdesc>
-    <p>This property can be manipulated to adjust the number of frames per second at which animations will run. The default is 13 milliseconds. Making this a lower number could make the animations run smoother in faster browsers (such as Chrome) but there may be performance and CPU implications of doing so.</p>
+    <p>This property is deprecated as of version 3.0, and has no effect in browsers that support the <a href="http://caniuse.com/#feat=requestanimationframe"><code>requestAnimationFrame</code></a> method.</p>
+    <p>On browsers that do not support <code>requestAnimationFrame</code>, this property can be changed to adjust the interval at which animations will run. The default is 13 milliseconds.</p>
     <p>Since jQuery uses one global interval, no animation should be running or all animations should stop for the change of this property to take effect.</p>
   </longdesc>
   <example>
@@ -34,4 +35,5 @@ $( "input" ).click(function() {
   <category slug="effects/custom-effects"/>
   <category slug="properties/global-jquery-object-properties"/>
   <category slug="version/1.4.3"/>
+  <category slug="deprecated/deprecated-3.0"/>
 </entry>
