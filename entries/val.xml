@@ -13,7 +13,7 @@
     <longdesc>
       <p>The <code>.val()</code> method is primarily used to get the values of form elements such as <code>input</code>, <code>select</code> and <code>textarea</code>. When called on an empty collection, it returns <code>undefined</code>.</p>
       <p>When the first element in the collection is a <code>select-multiple</code> (i.e., a <code>select</code> element with the <code>multiple</code> attribute set), <code>.val()</code> returns an array containing the value of each selected option. <strong>As of jQuery 3.0</strong>, if no options are selected, it returns an empty array; <strong>prior to jQuery 3.0</strong>, it returns <code>null</code>.</p>
-      <p>For selects and checkboxes, you can also use the <a href="/selected-selector/">:selected</a> and <a href="/checked-selector/">:checked</a> selectors to get at values. For example:</p>
+      <p>For selects, checkboxes and radio buttons, you can also use the <a href="/selected-selector/">:selected</a> and <a href="/checked-selector/">:checked</a> selectors to get at values. For example:</p>
       <pre><code>
 
 // Get the value from a dropdown select
