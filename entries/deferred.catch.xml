@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<entry name="deferred.catch" type="method" return="Promise">
+    <title>deferred.catch()</title>
+    <signature>
+        <added>3.0</added>
+        <argument name="failFilter" type="Function">
+            <desc>
+                A function that is called when the Deferred is rejected.
+            </desc>
+        </argument>
+    </signature>
+    <desc>Add handlers to be called when the Deferred object is rejected. </desc>
+
+    <longdesc>
+        <p><code>deferred.catch( fn )</code> is an alias to <a href="/deferred.then/"><code>deferred.then( null, fn )</code></a>. Read its page for more information.</p>
+    </longdesc>
+    <example>
+        <desc>Since the <a href="/jQuery.get/"><code>jQuery.get</code></a> method returns a jqXHR object, which is derived from a Deferred object, we can rejection handlers using the <code>.catch</code> method.</desc>
+        <code><![CDATA[
+$.get( "test.php" )
+  .then( function() {
+    alert( "$.get succeeded" );
+  } )
+  .catch( function() {
+    alert( "$.get failed!" );
+  } );
+]]></code>
+    </example>
+    <category slug="deferred-object"/>
+    <category slug="version/3.0"/>
+</entry>
