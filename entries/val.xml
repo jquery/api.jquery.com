@@ -13,20 +13,20 @@
     <longdesc>
       <p>The <code>.val()</code> method is primarily used to get the values of form elements such as <code>input</code>, <code>select</code> and <code>textarea</code>. When called on an empty collection, it returns <code>undefined</code>.</p>
       <p>When the first element in the collection is a <code>select-multiple</code> (i.e., a <code>select</code> element with the <code>multiple</code> attribute set), <code>.val()</code> returns an array containing the value of each selected option. <strong>As of jQuery 3.0</strong>, if no options are selected, it returns an empty array; <strong>prior to jQuery 3.0</strong>, it returns <code>null</code>.</p>
-      <p>For selects, checkboxes and radio buttons, you can also use the <a href="/selected-selector/">:selected</a> and <a href="/checked-selector/">:checked</a> selectors to get at values. For example:</p>
+      <p>For selects, checkboxes and radio buttons, you can also use the <a href="/checked-selector/">:checked</a> selector to get at values. For example:</p>
       <pre><code>
 
 // Get the value from a dropdown select
-$( "select.foo option:selected").val();
+$( "select.foo option:checked").val();
 
 // Get the value from a dropdown select even easier
 $( "select.foo" ).val();
 
 // Get the value from a checked checkbox
-$( "input:checkbox:checked" ).val();
+$( "input[type=checkbox]:checked" ).val();
 
 // Get the value from a set of radio buttons
-$( "input:radio[name=bar]:checked" ).val();
+$( "input[type=radio][name=bar]:checked" ).val();
       </code></pre>
       <div class="warning">
         <p><strong>Note: </strong> At present, using <code>.val()</code> on <code>&lt;textarea&gt;</code> elements strips carriage return characters from the browser-reported value. When this value is sent to the server via XHR, however, carriage returns are preserved (or added by browsers which do not include them in the raw value). A workaround for this issue can be achieved using a valHook as follows:</p>
@@ -131,11 +131,11 @@ $( "input" )
       <p>Setting values using this method (or using the native <code>value</code> property) does not cause the dispatch of the <code>change</code> event. For this reason, the relevant event handlers will not be executed. If you want to execute them, you should call <code>.trigger( "change" )</code> after setting the value.</p>
       <p>The <code>.val()</code> method allows setting the value by passing in a function. As of jQuery 1.4, the function is passed two arguments, the current element's index and its current value: </p>
       <pre><code>
-$( "input:text.items" ).val(function( index, value ) {
-  return value + " " + this.className;
+$( "input[type=text].tags" ).val(function( index, value ) {
+  return value.trim();
 });
       </code></pre>
-      <p>This example appends the string " items" to the text inputs' values.</p>
+      <p>This example removes leading and trailing whitespace from the text inputs' values.</p>
     </longdesc>
     <example>
       <desc>Set the value of an input box.</desc>
