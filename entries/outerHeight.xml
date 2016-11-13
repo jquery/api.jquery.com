@@ -11,7 +11,7 @@
   </signature>
   <desc>Get the current computed outer height (including padding, border, and optionally margin) for the first element in the set of matched elements.</desc>
   <longdesc>
-    <p>Returns the height of the element, including top and bottom padding, border, and optionally margin, in pixels.</p>
+    <p>Returns the height of the element, including top and bottom padding, border, and optionally margin, in pixels. If called on an empty set of elements, returns <code>undefined</code> (<code>null</code> before jQuery 3.0).</p>
     <p>This method is not applicable to <code>window</code> and <code>document</code> objects; for these, use <code><a href="/height/">.height()</a></code> instead. Although <code>.outerHeight()</code> can be used on table elements, it may give unexpected results on tables using the <code>border-collapse: collapse</code> CSS property.</p>
     <figure>
       <img src="/resources/0042_04_03.png"/>
