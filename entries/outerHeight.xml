@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <entries>
-  <desc>Get the current computed height for the first element in the set of matched elements, including padding, border, and optionally margin. Returns a number (without "px") representation of the value or null if called on an empty set of elements.</desc>
+  <desc>Get the current computed outer height (including padding, border, and optionally margin) for the first element in the set of matched elements or set the outer height of every matched element.</desc>
 <entry type="method" name="outerHeight" return="Number">
   <title>.outerHeight()</title>
   <signature>
@@ -9,10 +9,10 @@
       <desc>A Boolean indicating whether to include the element's margin in the calculation.</desc>
     </argument>
   </signature>
-  <desc>Get the current computed height for the first element in the set of matched elements, including padding, border, and optionally margin. Returns a number (without "px") representation of the value or null if called on an empty set of elements.</desc>
+  <desc>Get the current computed outer height (including padding, border, and optionally margin) for the first element in the set of matched elements.</desc>
   <longdesc>
-    <p>The top and bottom padding and border are always included in the <code>.outerHeight()</code> calculation; if the <code>includeMargin</code> argument is set to <code>true</code>, the margin (top and bottom) is also included.</p>
-    <p>This method is not applicable to <code>window</code> and <code>document</code> objects; for these, use <code><a href="/height/">.height()</a></code> instead.</p>
+    <p>Returns the height of the element, including top and bottom padding, border, and optionally margin, in pixels.</p>
+    <p>This method is not applicable to <code>window</code> and <code>document</code> objects; for these, use <code><a href="/height/">.height()</a></code> instead. Although <code>.outerHeight()</code> can be used on table elements, it may give unexpected results on tables using the <code>border-collapse: collapse</code> CSS property.</p>
     <figure>
       <img src="/resources/0042_04_03.png"/>
       <figcaption>Figure 1 - Illustration of the measured height</figcaption>
@@ -60,7 +60,7 @@ $( "p:last" ).text(
       <desc>A function returning the outer height to set. Receives the index position of the element in the set and the old outer height as arguments. Within the function, <code>this</code> refers to the current element in the set.</desc>
     </argument>
   </signature>
-  <desc>Set the CSS outer Height of each element in the set of matched elements.</desc>
+  <desc>Set the CSS outer height of each element in the set of matched elements.</desc>
   <longdesc>
     <p>When calling <code>.outerHeight(value)</code>, the value can be either a string (number and unit) or a number. If only a number is provided for the value, jQuery assumes a pixel unit. If a string is provided, however, any valid CSS measurement may be used (such as <code>100px</code>, <code>50%</code>, or <code>auto</code>).</p>
   </longdesc>
