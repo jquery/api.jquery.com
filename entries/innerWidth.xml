@@ -8,7 +8,7 @@
   </signature>
   <desc>Get the current computed inner width for the first element in the set of matched elements, including padding but not border.</desc>
   <longdesc>
-    <p>This method returns the width of the element, including left and right padding, in pixels. If called on an empty set of elements, returns <code>undefined</code> (<code>null</code> before jQuery 2.2.0).</p>
+    <p>This method returns the width of the element, including left and right padding, in pixels. If called on an empty set of elements, returns <code>undefined</code> (<code>null</code> before jQuery 3.0).</p>
     <p>This method is not applicable to <code>window</code> and <code>document</code> objects; for these, use <code><a href="/width/">.width()</a></code> instead.</p>
     <figure>
       <img src="/resources/0042_04_05.png"/>

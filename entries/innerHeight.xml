@@ -9,7 +9,7 @@
   </signature>
   <desc>Get the current computed height for the first element in the set of matched elements, including padding but not border.</desc>
   <longdesc>
-    <p>This method returns the height of the element, including top and bottom padding, in pixels. If called on an empty set of elements, returns <code>undefined</code> (<code>null</code> before jQuery 2.2.0).</p>
+    <p>This method returns the height of the element, including top and bottom padding, in pixels. If called on an empty set of elements, returns <code>undefined</code> (<code>null</code> before jQuery 3.0).</p>
     <p>This method is not applicable to <code>window</code> and <code>document</code> objects; for these, use <code><a href="/height/">.height()</a></code> instead.</p>
     <figure>
       <img src="/resources/0042_04_02.png"/>
