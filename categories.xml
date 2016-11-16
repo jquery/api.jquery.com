@@ -43,7 +43,7 @@
     </category>
     <category name="Deprecated 1.4" slug="deprecated-1.4">
       <desc><![CDATA[All the aspects of the API that were deprecated in the corresponding version of jQuery.
-        <p>For more information, see the <a href="http://jquery14.com/day-01/jquery-14">jQuery 1.4 Release Notes</a></p>
+        <p>For more information, see the <a href="https://web.archive.org/web/20150119205819/http://jquery14.com/day-01/jquery-14">jQuery 1.4 Release Notes</a></p>
       ]]></desc>
     </category>
     <category name="Deprecated 1.7" slug="deprecated-1.7">
@@ -357,12 +357,12 @@ var files = event.originalEvent.dataTransfer.files;
     </category>
     <category name="Version 1.4" slug="1.4">
       <desc><![CDATA[All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.
-				<a href="http://jquery14.com/day-01/jquery-14">jQuery 1.4 Release Notes</a>.
+				<a href="https://web.archive.org/web/20150119205819/http://jquery14.com/day-01/jquery-14">jQuery 1.4 Release Notes</a>.
 			]]></desc>
     </category>
     <category name="Version 1.4.1" slug="1.4.1">
       <desc><![CDATA[All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.
-				<a href="http://jquery14.com/day-12/jquery-141-released">jQuery 1.4.1 Release Notes</a>.
+				<a href="https://web.archive.org/web/20150213113058/http://jquery14.com/day-12/jquery-141-released">jQuery 1.4.1 Release Notes</a>.
 			]]></desc>
     </category>
     <category name="Version 1.4.2" slug="1.4.2">
