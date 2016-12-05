@@ -48,7 +48,7 @@ $( document ).ajaxComplete(function( event, xhr, settings ) {
   <example>
     <desc>Show a message when an Ajax request completes.</desc>
     <code><![CDATA[
-$( document ).ajaxComplete(function( event,request, settings ) {
+$( document ).ajaxComplete(function( event, request, settings ) {
   $( "#msg" ).append( "<li>Request Complete.</li>" );
 });
 ]]></code>
