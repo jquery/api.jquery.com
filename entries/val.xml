@@ -134,7 +134,7 @@ $( "input[type=text].tags" ).val(function( index, value ) {
   return value.trim();
 });
       </code></pre>
-	  <p>This example removes leading and trailing whitespace from the values of text inputs with a "tags" class.</p>
+      <p>This example removes leading and trailing whitespace from the values of text inputs with a "tags" class.</p>
     </longdesc>
     <example>
       <desc>Set the value of an input box.</desc>
