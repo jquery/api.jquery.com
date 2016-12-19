@@ -5,7 +5,7 @@
   <signature>
     <added>1.0</added>
     <argument name="eventType" type="String">
-      <desc>A string containing a JavaScript event type, such as <code>click</code> or <code>submit</code>.</desc>
+      <desc>A string containing one or more DOM event types, such as "click" or "submit," or custom event names.</desc>
     </argument>
     <argument name="handler" type="Function" optional="true">
       <desc>The function that is to be no longer executed.</desc>
@@ -15,7 +15,7 @@
   <signature>
     <added>1.4.3</added>
     <argument name="eventType" type="String">
-      <desc>A string containing a JavaScript event type, such as <code>click</code> or <code>submit</code>.</desc>
+      <desc>A string containing one or more DOM event types, such as "click" or "submit," or custom event names.</desc>
     </argument>
     <argument name="false" type="Boolean">
       <desc>Unbinds the corresponding 'return false' function that was bound using <code>.bind( eventType, false )</code>.</desc>
