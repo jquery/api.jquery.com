@@ -85,6 +85,7 @@ var x = "";
       <li class="toclevel-2"><a href="#Proxy_Pattern"><span class="toctext">Proxy Pattern</span></a></li>
     </ul>
   </li>
+  <li class="toclevel-1"><a href="#Error"><span class="toctext">Error</span></a></li>
   <li class="toclevel-1"><a href="#Selector"><span class="toctext">Selector</span></a></li>
   <li class="toclevel-1"><a href="#Event"><span class="toctext">Event</span></a></li>
   <li class="toclevel-1"><a href="#Element"><span class="toctext">Element</span></a></li>
@@ -566,8 +567,16 @@ c.print(); // 1
 </code></pre>
 <p>Instead of always returning false, the callback could check fields of the form for validity, and return false only when the form is invalid.
 </p>
-<p><br />
+<h2 id="Error"> Error </h2>
+<p>An instance of an Error object is thrown as an exception when a runtime error occurs. Error can also be used as base to define user custom exception classes. In JavaScript an error can be thrown as shown below:
 </p>
+<pre><code data-lang="javascript">throw new Error( "The argument provided is incorrect" );
+</code></pre>
+<p>An error can also be thrown by the engine under some circumstances. For example, when trying to access a property of <code>null</code>:
+</p>
+<pre><code data-lang="javascript">var obj = null;
+console.log( obj.foo() );
+</code></pre>
 <h2 id="Selector"> Selector </h2>
 <p>A selector is used in jQuery to select DOM elements from a DOM document. That document is, in most cases, the DOM document present in all browsers, but can also be an XML document received via Ajax.
 </p>
