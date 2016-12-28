@@ -60,7 +60,7 @@ $( "#foo" ).on( "click", function( event ) {
     <p>In other words, explicitly calling <code>.off()</code> from within a regularly-bound handler has exactly the same effect.</p>
     <p>If the first argument contains more than one space-separated event types, the event handler is called <em>once for each event type</em>.</p>
     <pre><code>
-$( "#foo" ).one( "click mouseover", function() {
+$( "#foo" ).one( "click mouseover", function( event ) {
   alert( "The " + event.type + " event happened!" );
 });
     </code></pre>
