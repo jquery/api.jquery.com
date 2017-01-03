@@ -32,7 +32,7 @@
     <pre><code>
 $( ".target" ).show();
     </code></pre>
-    <p>The matched elements will be revealed immediately, with no animation. This is roughly equivalent to calling <code>.css("display", "block")</code>, except that the <code>display</code> property is restored to whatever it was initially. If an element has a <code>display</code> value of <code>inline</code>, then is hidden and shown, it will once again be displayed <code>inline</code>.</p>
+    <p>The matched elements will be revealed immediately, with no animation. This is roughly equivalent to calling <code>.css( "display", "block" )</code>, except that the <code>display</code> property is restored to whatever it was initially. If an element has a <code>display</code> value of <code>inline</code>, then is hidden and shown, it will once again be displayed <code>inline</code>.</p>
     <p><strong>Note: </strong> If using !important in your styles, such as <code>display: none !important</code>, <code>.show()</code> will not override <code>!important</code>.
     It is recommended to use different classes with <code>.addClass()</code>, <code>.removeClass()</code> or <code>.toggleClass()</code>. Another approach can be the use of <code>.attr( "style", "display:block !important" )</code>, being careful not to overwrite the style attribute of the element.</p>
     <p>When a duration, a plain object, or a "complete" function is provided, <code>.show()</code> becomes an animation method. The <code>.show()</code> method animates the width, height, and opacity of the matched elements simultaneously.</p>
