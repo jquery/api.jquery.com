@@ -293,7 +293,7 @@ jqxhr.always(function() {
         <code>setRequestHeader( name, value )</code> which departs from the standard by replacing the old value with the new one rather than concatenating the new value to the old one
       </li>
       <li>
-        <code>getAllResponseHeaders()</code>
+        <code>getAllResponseHeaders()</code> as a string
       </li>
       <li>
         <code>getResponseHeader( name )</code>
