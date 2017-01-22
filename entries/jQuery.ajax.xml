@@ -292,7 +292,7 @@ jqxhr.always(function() {
         <code>getAllResponseHeaders()</code>
       </li>
       <li>
-        <code>getResponseHeader()</code>
+        <code>getResponseHeader( name )</code>
       </li>
       <li>
         <code>statusCode()</code>
