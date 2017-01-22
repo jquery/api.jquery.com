@@ -281,24 +281,31 @@ jqxhr.always(function() {
         <code>readyState</code>
       </li>
       <li>
+        <code>responseXML</code> and/or <code>responseText</code> when the underlying request responded with xml and/or text, respectively
+      </li>
+      <li>
         <code>status</code>
       </li>
       <li>
         <code>statusText</code>
       </li>
-      <li><code>responseXML</code> and/or <code>responseText</code> when the underlying request responded with xml and/or text, respectively</li>
-      <li><code>setRequestHeader(name, value)</code> which departs from the standard by replacing the old value with the new one rather than concatenating the new value to the old one</li>
       <li>
-        <code>getAllResponseHeaders()</code>
+        <code>abort( [ statusText ] )</code>
       </li>
       <li>
-        <code>getResponseHeader()</code>
+        <code>getAllResponseHeaders()</code> as a string
       </li>
       <li>
-        <code>statusCode()</code>
+        <code>getResponseHeader( name )</code>
       </li>
       <li>
-        <code>abort()</code>
+        <code>overrideMimeType( mimeType )</code>
+      </li>
+      <li>
+        <code>setRequestHeader( name, value )</code> which departs from the standard by replacing the old value with the new one rather than concatenating the new value to the old one
+      </li>
+      <li>
+        <code>statusCode( callbacksByStatusCode )</code>
       </li>
     </ul>
     <p>No <code>onreadystatechange</code> mechanism is provided, however, since <code>done</code>, <code>fail</code>, <code>always</code>, and <code>statusCode</code> cover all conceivable requirements.</p>
