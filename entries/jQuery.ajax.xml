@@ -299,10 +299,13 @@ jqxhr.always(function() {
         <code>getResponseHeader( name )</code>
       </li>
       <li>
-        <code>statusCode()</code>
+        <code>statusCode( callbacksByStatusCode )</code>
       </li>
       <li>
-        <code>abort()</code>
+        <code>abort( [ statusText ] )</code>
+      </li>
+      <li>
+        <code>overrideMimeType( mimeType )</code>
       </li>
     </ul>
     <p>No <code>onreadystatechange</code> mechanism is provided, however, since <code>done</code>, <code>fail</code>, <code>always</code>, and <code>statusCode</code> cover all conceivable requirements.</p>
