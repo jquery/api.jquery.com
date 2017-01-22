@@ -28,7 +28,7 @@
   &lt;/div&gt;
 &lt;/form&gt;
     </code></pre>
-    <p>The <code>.serializeArray()</code> method uses the standard W3C rules for <a href="http://www.w3.org/TR/html401/interact/forms.html#h-17.13.2">successful controls</a> to determine which elements it should include; in particular the element cannot be disabled and must contain a <code>name</code> attribute. No submit button value is serialized since the form was not submitted using a button. Data from file select elements is not serialized.</p>
+    <p>The <code>.serializeArray()</code> method uses the standard W3C rules for <a href="http://www.w3.org/TR/html401/interact/forms.html#h-17.13.2">successful controls</a> to determine which elements it should include; in particular the element cannot be disabled and must contain a <code>name</code> attribute. No submit button value is serialized since the form was not submitted using a button. Data from file select elements is not serialized. Elements that do not contain a <code>value</code> attribute are represented with the empty string value.</p>
     <p>This method can act on a jQuery object that has selected individual form controls, such as <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, and <code>&lt;select&gt;</code>. However, it is typically easier to select the <code>&lt;form&gt;</code> element itself for serialization:</p>
     <pre><code>
 $( "form" ).submit(function( event ) {
