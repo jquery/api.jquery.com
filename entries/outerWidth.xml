@@ -58,7 +58,7 @@ $( "p:last" ).text(
     <added>1.8.0</added>
     <argument name="function" type="Function">
       <argument name="index" type="Integer" />
-      <argument name="height" type="Number" />
+      <argument name="width" type="Number" />
       <return>
         <type name="String"/>
         <type name="Number"/>
