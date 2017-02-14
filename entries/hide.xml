@@ -17,7 +17,7 @@
   <signature>
     <added>1.4.3</added>
     <!-- doesn't use the include because duration is required for this signature -->
-    <argument name="duration" default="400">
+    <argument name="duration" default="0">
       <desc>A string or number determining how long the animation will run.</desc>
       <type name="Number"/>
       <type name="String"/>
