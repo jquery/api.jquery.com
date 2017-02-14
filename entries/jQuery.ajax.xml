@@ -443,8 +443,24 @@ $.ajax({
 });
 ]]></code>
   </example>
+  <example>
+    <desc>Load a binary file as an ArrayBuffer, and cast it into an Uint8Array.</desc>
+    <code><![CDATA[
+$.ajax({
+  type: "GET",
+  url: "data.bin",
+  xhrFields: {
+    responseType: "arraybuffer"
+  }
+}).done(function ( data, jqXHR ) {
+  var array = new Uint8Array( data ); // Or, var array = new Uint8Array( jqXHR.responseNative );
+});
+]]></code>
+  </example>
   <category slug="ajax/low-level-interface"/>
   <category slug="version/1.0"/>
   <category slug="version/1.5"/>
   <category slug="version/1.5.1"/>
+  <category slug="version/1.12"/>
+  <category slug="version/2.2"/>
 </entry>
