@@ -34,7 +34,7 @@ $( "p" ).click(function( event ) {
 });
 $( "div" ).click(function( event ) {
   // This function will be executed
-  $( this ).css( "background-color", "#f00" );
+  $( this ).css( "background-color", "#0f0" );
 });
 ]]></code>
     <html><![CDATA[
