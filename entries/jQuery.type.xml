@@ -32,6 +32,8 @@
           <li>jQuery.type( new Array() ) === "array"</li>
           <li>jQuery.type( new Date() ) === "date"</li>
           <li>jQuery.type( new Error() ) === "error" // <strong>as of jQuery 1.9</strong></li>
+          <li>jQuery.type( Symbol() ) === "symbol" // <strong>as of jQuery 1.9</strong></li>
+          <li>jQuery.type( Object(Symbol()) ) === "symbol" // <strong>as of jQuery 1.12</strong></li>
           <li>jQuery.type( /test/ ) === "regexp"</li>
         </ul>
       </li>
