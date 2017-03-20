@@ -6,10 +6,10 @@
   </signature>
   <desc>Get the current coordinates of the first element in the set of matched elements, relative to the offset parent.</desc>
   <longdesc>
-    <p>The <code>.position()</code> method allows us to retrieve the current position of an element <em>relative to the offset parent</em>. Contrast this with <code><a href="/offset/">.offset()</a></code>, which retrieves the current position <em>relative to the document</em>. When positioning a new element near another one and within the same containing DOM element, <code>.position()</code> is the more useful.</p>
+    <p>The <code>.position()</code> method allows us to retrieve the current position of an element (specifically its margin box) <em>relative to the offset parent</em> (specifically its padding box, which excludes margins and borders). Contrast this with <code><a href="/offset/">.offset()</a></code>, which retrieves the current position <em>relative to the document</em>. When positioning a new element near another one and within the same containing DOM element, <code>.position()</code> is the more useful.</p>
     <p>Returns an object containing the properties <code>top</code> and <code>left</code>.</p>
     <div class="warning">
-      <p><strong>Note:</strong> jQuery does not support getting the position coordinates of hidden elements or accounting for borders, margins, or padding set on the body element.</p>
+      <p><strong>Note:</strong> jQuery does not support getting the position coordinates of hidden elements.</p>
     </div>
   </longdesc>
 	<note id="dimensions-number" type="additional" data-title=".position()"/>

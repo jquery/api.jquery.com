@@ -8,10 +8,10 @@
     </signature>
     <desc>Get the current coordinates of the first element in the set of matched elements, relative to the document.</desc>
     <longdesc>
-      <p>The <code>.offset()</code> method allows us to retrieve the current position of an element <em>relative to the document</em>. Contrast this with <code><a href="/position/">.position()</a></code>, which retrieves the current position <em>relative to the offset parent</em>. When positioning a new element on top of an existing one for global manipulation (in particular, for implementing drag-and-drop), <code>.offset()</code> is more useful.</p>
+      <p>The <code>.offset()</code> method allows us to retrieve the current position of an element (specifically its border box, which excludes margins) <em>relative to the document</em>. Contrast this with <code><a href="/position/">.position()</a></code>, which retrieves the current position <em>relative to the offset parent</em>. When positioning a new element on top of an existing one for global manipulation (in particular, for implementing drag-and-drop), <code>.offset()</code> is more useful.</p>
       <p><code>.offset()</code> returns an object containing the properties <code>top</code> and <code>left</code>.</p>
       <div class="warning">
-        <p><strong>Note:</strong> jQuery does not support getting the offset coordinates of hidden elements or accounting for borders, margins, or padding set on the body element.</p>
+        <p><strong>Note:</strong> jQuery does not support getting the offset coordinates of hidden elements.</p>
         <p>While it is possible to get the coordinates of elements with <code>visibility:hidden</code> set, <code>display:none</code> is excluded from the rendering tree and thus has a position that is undefined.</p>
       </div>
     </longdesc>
@@ -96,7 +96,7 @@ $( "*", document.body ).click(function( event ) {
     </signature>
     <desc>Set the current coordinates of every element in the set of matched elements, relative to the document.</desc>
     <longdesc>
-      <p>The <code>.offset()</code> setter method allows us to reposition an element. The element's position is specified <em>relative to the document</em>. If the element's <code>position</code> style property is currently <code>static</code>, it will be set to <code>relative</code> to allow for this repositioning.</p>
+      <p>The <code>.offset()</code> setter method allows us to reposition an element. The element's border-box position is specified <em>relative to the document</em>. If the element's <code>position</code> style property is currently <code>static</code>, it will be set to <code>relative</code> to allow for this repositioning.</p>
     </longdesc>
     <example>
       <desc>Set the offset of the second paragraph:</desc>
