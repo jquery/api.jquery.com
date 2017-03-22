@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<entry type="property" name="jQuery.ready" return="Thenable">
+  <title>jQuery.ready</title>
+  <desc>A Promise-like object (or "thenable") that resolves when the document is ready.</desc>
+  <signature>
+    <added>1.8</added>
+  </signature>
+  <longdesc>
+    <p>As of jQuery 3.0, use of this object is supported via <code><a href="/jQuery.when/">jQuery.when</a></code> or the native <code>Promise.resolve()</code>. Code should not make assumptions about whether this object is a <code>jQuery.Deferred</code>, native Promise, or some other type of promise object.</p>
+    <p>See also <code><a href="/ready/">ready()</a></code>, which makes use of this.</p>
+  </longdesc>
+  <example>
+    <desc>Listen for document ready using <code><a href="/jQuery.when/">jQuery.when</a></code>.</desc>
+    <code><![CDATA[
+$.when( $.ready ).then(function() {
+  // Document is ready.
+});
+]]></code>
+  </example>
+  <example>
+    <desc>Typical usage involving another promise, using <code><a href="/jQuery.when/">jQuery.when</a></code>.</desc>
+    <code><![CDATA[
+$.when(
+  $.getJSON( "ajax/test.json" ),
+  $.ready
+).done(function( data ) {
+  // Document is ready.
+  // Value of test.json is passed as `data`.
+});
+]]></code>
+  </example>
+  <category slug="core"/>
+  <category slug="properties/global-jquery-object-properties"/>
+  <category slug="events/document-loading"/>
+  <category slug="version/1.8"/>
+</entry>

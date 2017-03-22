@@ -22,5 +22,7 @@ $.getScript( "myplugin.js", function() {
 ]]></code>
   </example>
   <category slug="core"/>
+  <category slug="properties/global-jquery-object-properties"/>
+  <category slug="events/document-loading"/>
   <category slug="version/1.6"/>
 </entry>
