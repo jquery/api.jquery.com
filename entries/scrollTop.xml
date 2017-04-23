@@ -41,6 +41,17 @@ $( "p:last" ).text( "scrollTop:" + p.scrollTop() );
     <desc>Set the current vertical position of the scroll bar for each of the set of matched elements.</desc>
     <longdesc>
       <p>The vertical scroll position is the same as the number of pixels that are hidden from view above the scrollable area. Setting the <code>scrollTop</code> positions the vertical scroll of each matched element.</p>
+      <p>Note that scrollTop can be used to read, but not write, the document scroll position. To scroll the document, animated or not, you have to call <code>scrollTop()</code> only on the body element:</p>
+      <pre><code>
+// Without animation
+$( document.body ).scrollTop( 500 );
+
+// With animation
+$( document.body ).animate({
+  scrollTop: 500
+});
+      </code></pre>
+      <p>Any examples elsewhere that suggest <code>$( "html, body" ).animate({ scrollTop: ... });</code> are wrong, since this will cause the animation callback to get triggered twice, regarding the selector target for both <code>html</code> and <code>body</code> elements.</p>
     </longdesc>
     <example>
       <desc>Set the scrollTop of a div.</desc>
