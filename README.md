@@ -13,6 +13,8 @@ The `xmllint` and `xsltproc` utilities need to be in your path. If you are on Wi
 
 **Note**: If you're using Windows and you receive the error "Error" when executing the task `build-xml-entries:all`, try to add the DLL `libwinpthread-1.dll` in the root of the project.
 
+**Note**: If you're using Windows and you receive the error "Error" when executing the task `build-xml-entries:all`, try to add the DLL `libwinpthread-1.dll` in the root of the project.
+
 ## Style Guidelines
 
 ### Prose Style & Grammar
