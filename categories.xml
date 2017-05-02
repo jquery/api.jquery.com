@@ -61,6 +61,11 @@
         <p>For more information, see the Release Notes/Changelog at <a href="https://blog.jquery.com/2013/01/15/jquery-1-9-final-jquery-2-0-beta-migrate-final-released/">https://blog.jquery.com/2013/01/15/jquery-1-9-final-jquery-2-0-beta-migrate-final-released/</a></p>
       ]]></desc>
     </category>
+    <category name="Deprecated 1.9" slug="deprecated-1.9">
+      <desc><![CDATA[All the aspects of the API that were deprecated in the corresponding version of jQuery.
+        <p>For more information, see the Release Notes/Changelog at <a href="http://blog.jquery.com/2013/01/15/jquery-1-9-final-jquery-2-0-beta-migrate-final-released/">http://blog.jquery.com/2013/01/15/jquery-1-9-final-jquery-2-0-beta-migrate-final-released/</a></p>
+      ]]></desc>
+    </category>
     <category name="Deprecated 1.10" slug="deprecated-1.10">
       <desc><![CDATA[All the aspects of the API that were deprecated in the corresponding version of jQuery.
         <p>For more information, see the Release Notes/Changelog at <a href="https://blog.jquery.com/2013/05/24/jquery-1-10-0-and-2-0-1-released/">https://blog.jquery.com/2013/05/24/jquery-1-10-0-and-2-0-1-released/</a></p>
