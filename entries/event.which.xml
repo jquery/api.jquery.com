@@ -13,7 +13,10 @@
     <desc>Log which key was depressed.</desc>
     <code><![CDATA[
 $( "#whichkey" ).on( "keydown", function( event ) {
-  $( "#log" ).html( event.type + ": " +  event.which );
+    $( "#log" ).append( event.type + ": " + event.which + "<br>" );
+});
+$( "#whichkey" ).on( "keypress", function( event ) {
+    $( "#log" ).append( event.type + ": " + event.which + "<br>" );
 });
 ]]></code>
     <html><![CDATA[
