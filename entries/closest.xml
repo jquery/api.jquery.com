@@ -109,7 +109,7 @@ $( "li.item-a" )
       <desc>Show how event delegation can be done with closest. The closest list element toggles a yellow background when it or its descendent is clicked.</desc>
       <code><![CDATA[
 $( document ).on( "click", function( event ) {
-  $( event.target ).closest( "li" ).toggleClass( "hilight" );
+  $( event.target ).closest( "li" ).toggleClass( "highlight" );
 });
 ]]></code>
       <css><![CDATA[
@@ -118,7 +118,7 @@ $( document ).on( "click", function( event ) {
     padding: 3px;
     background: #EEEEEE;
   }
-  li.hilight {
+  li.highlight {
     background: yellow;
   }
 ]]></css>
@@ -134,7 +134,7 @@ $( document ).on( "click", function( event ) {
       <code><![CDATA[
 var listElements = $( "li" ).css( "color", "blue" );
 $( document ).on( "click", function( event ) {
-  $( event.target ).closest( listElements ).toggleClass( "hilight" );
+  $( event.target ).closest( listElements ).toggleClass( "highlight" );
 });
 ]]></code>
       <css><![CDATA[
@@ -143,7 +143,7 @@ $( document ).on( "click", function( event ) {
     padding: 3px;
     background: #EEEEEE;
   }
-  li.hilight {
+  li.highlight {
     background: yellow;
   }
 ]]></css>
