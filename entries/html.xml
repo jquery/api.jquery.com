@@ -68,8 +68,11 @@ $( "p" ).click(function() {
   <entry type="method" name="html" return="jQuery">
     <signature>
       <added>1.0</added>
-      <argument name="htmlString" type="htmlString">
-        <desc>A string of HTML to set as the content of each matched element.</desc>
+      <argument name="content">
+        <desc>A string of HTML, DOM element, or array of strings or elements to set as the content of each matched element.</desc>
+        <type name="htmlString"/>
+        <type name="Element"/>
+        <type name="Array"/>
       </argument>
     </signature>
     <signature>
