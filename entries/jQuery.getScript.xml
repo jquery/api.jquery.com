@@ -2,6 +2,18 @@
 <entry type="method" name="jQuery.getScript" return="jqXHR">
   <title>jQuery.getScript()</title>
   <signature>
+    <added>1.12</added>
+    <argument name="settings" type="PlainObject">
+        <desc>A set of key/value pairs that configure the Ajax request. All settings are optional except for <code>url</code>. See <a href="/jQuery.ajax/#jQuery-ajax-settings">jQuery.ajax( settings )</a> for a complete list of all settings.</desc>
+    </argument>
+    <argument name="success" optional="true" type="Function">
+      <argument name="script" type="String" />
+      <argument name="textStatus" type="String"/>
+      <argument name="jqXHR" type="jqXHR"/>
+      <desc>A callback function that is executed if the request succeeds.</desc>
+    </argument>
+  </signature>
+  <signature>
     <added>1.0</added>
     <argument name="url" type="String">
       <desc>A string containing the URL to which the request is sent.</desc>
@@ -57,42 +69,40 @@ $( "div.log" ).ajaxError(function( e, jqxhr, settings, exception ) {
 });
     </code></pre>
     <h4 id="caching-requests">Caching Responses</h4>
-    <p>By default, <code>$.getScript()</code> sets the cache setting to <code>false</code>. This appends a timestamped query parameter to the request URL to ensure that the browser downloads the script each time it is requested. You can override this feature by setting the cache property globally using <a href="/jquery.ajaxsetup/"><code>$.ajaxSetup()</code></a>: </p>
+    <p>By default, <code>$.getScript()</code> sets the cache setting to <code>false</code>. This appends a timestamped query parameter to the request URL to ensure that the browser downloads the script each time it is requested. 
+      To override this feature you can use the settings object signature as of jQuery 1.12:
+      <pre><code>
+$.getScript({
+  url: "foo.js",
+  cache: true
+});
+    </code></pre>
+    
+    You can also override this feature by setting the cache property globally using <a href="/jquery.ajaxsetup/"><code>$.ajaxSetup()</code></a>:
     <pre><code>
 $.ajaxSetup({
   cache: true
 });
+$.getScript("foo.js");
     </code></pre>
-    <p>Alternatively, you could define a new method that uses the more flexible <code>$.ajax()</code> method.</p>
-  </longdesc>
-  <example>
-    <desc>Define a $.cachedScript() method that allows fetching a cached script:</desc>
-    <code><![CDATA[
-jQuery.cachedScript = function( url, options ) {
-
-  // Allow user to set any option except for dataType, cache, and url
-  options = $.extend( options || {}, {
-    dataType: "script",
-    cache: true,
-    url: url
-  });
-
-  // Use $.ajax() since it is more flexible than $.getScript
-  // Return the jqXHR object so we can chain callbacks
-  return jQuery.ajax( options );
-};
-
-// Usage
-$.cachedScript( "ajax/test.js" ).done(function( script, textStatus ) {
+      
+    You can also use <a href="/jquery.ajax/"><code>$.ajax()</code></a> directly:
+    <pre><code>
+jQuery.ajax({
+  url: "foo.js",
+  dataType: "script", // this part makes the script run
+  cache: true,
+}).done(function( script, textStatus ) {
   console.log( textStatus );
 });
-]]></code>
-  </example>
+  </code></pre>
+    <p></p>
+  </longdesc>
   <example>
-    <desc>Load the <a href="https://github.com/jquery/jquery-color">official jQuery Color Animation plugin</a> dynamically and bind some color animations to occur once the new functionality is loaded.</desc>
+    <desc>Load the <a href="https://github.com/jquery/jquery-color">official jQuery Color Animation plugin</a> dynamically and bind some color animations to occur once the new functionality is loaded. Enable browser caching.</desc>
     <code><![CDATA[
 var url = "https://code.jquery.com/color/jquery.color.js";
-$.getScript( url, function() {
+$.getScript( {url: url, cache: true}, function() {
   $( "#go" ).click(function() {
     $( ".block" )
       .animate({
