@@ -70,7 +70,7 @@ $( "div.log" ).ajaxError(function( e, jqxhr, settings, exception ) {
     </code></pre>
     <h4 id="caching-requests">Caching Responses</h4>
     <p>By default, <code>$.getScript()</code> sets the cache setting to <code>false</code>. This appends a timestamped query parameter to the request URL to ensure that the browser downloads the script each time it is requested. 
-      To override this feature you can use the settings object signature as of jQuery 1.12:
+      You can override this feature by using a settings object, as of jQuery 1.12:</p>
       <pre><code>
 $.getScript({
   url: "foo.js",
@@ -78,7 +78,7 @@ $.getScript({
 });
     </code></pre>
     
-    You can also override this feature by setting the cache property globally using <a href="/jquery.ajaxsetup/"><code>$.ajaxSetup()</code></a>:
+    <p>You can also override this feature by setting the cache property globally using <a href="/jquery.ajaxsetup/"><code>$.ajaxSetup()</code></a>:</p>
     <pre><code>
 $.ajaxSetup({
   cache: true
@@ -86,37 +86,32 @@ $.ajaxSetup({
 $.getScript("foo.js");
     </code></pre>
       
-    You can also use <a href="/jquery.ajax/"><code>$.ajax()</code></a> directly:
-    <pre><code>
-jQuery.ajax({
-  url: "foo.js",
-  dataType: "script", // this part makes the script run
-  cache: true,
-}).done(function( script, textStatus ) {
-  console.log( textStatus );
-});
-  </code></pre>
     <p></p>
   </longdesc>
   <example>
     <desc>Load the <a href="https://github.com/jquery/jquery-color">official jQuery Color Animation plugin</a> dynamically and bind some color animations to occur once the new functionality is loaded. Enable browser caching.</desc>
     <code><![CDATA[
-var url = "https://code.jquery.com/color/jquery.color.js";
-$.getScript( {url: url, cache: true}, function() {
-  $( "#go" ).click(function() {
-    $( ".block" )
-      .animate({
-        backgroundColor: "rgb(255, 180, 180)"
-      }, 1000 )
-      .delay( 500 )
-      .animate({
-        backgroundColor: "olive"
-      }, 1000 )
-      .delay( 500 )
-      .animate({
-        backgroundColor: "#00f"
-      }, 1000 );
-  });
+var settings = {
+    url: "https://code.jquery.com/color/jquery.color.js",
+    cache: true // Enable browser caching. Cache is highly recommended when loading static scripts such as plugins.
+  };
+  // Override toString for backward compatibility with jQuery prior to 1.12 (though it will prevent browser caching)
+  settings.toString = function() {
+    return this.url;
+  };
+$.getScript( settings, function() {
+  $( "body,div" ).css('background','')
+    .animate({
+      backgroundColor: "rgb(255, 180, 180)"
+    }, 500 )
+    .delay( 500 )
+    .animate({
+      backgroundColor: "olive"
+    }, 500 )
+    .delay( 500 )
+    .animate({
+      backgroundColor: "#00f"
+    }, 500 );
 });
 ]]></code>
     <html><![CDATA[
