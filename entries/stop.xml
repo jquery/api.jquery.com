@@ -13,10 +13,10 @@
   </signature>
   <signature>
     <added>1.7</added>
-    <argument name="queue" type="String" optional="true" default="false">
+    <argument name="queue" type="String" optional="true">
       <desc>The name of the queue in which to stop animations.</desc>
     </argument>
-    <argument name="clearQueue" type="Boolean" optional="true">
+    <argument name="clearQueue" type="Boolean" optional="true" default="false">
       <desc>A Boolean indicating whether to remove queued animation as well. Defaults to <code>false</code>.</desc>
     </argument>
     <argument name="jumpToEnd" type="Boolean" optional="true" default="false">
