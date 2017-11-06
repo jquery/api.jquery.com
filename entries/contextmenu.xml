@@ -24,7 +24,7 @@
   </signature>
   <longdesc>
     <p>This method is a shortcut for <code>.on( "contextmenu", handler )</code> in the first two variations, and <code>.trigger( "contextmenu" )</code> in the third.
-    The <code>contextmenu</code> event is sent to an element when the right button of the mouse is clicked on it, but before the context menu is displayed. In case the context menu key is pressed, the event is triggered on the <code>html</code> element. Any HTML element can receive this event.
+    The <code>contextmenu</code> event is sent to an element when the right button of the mouse is clicked on it, but before the context menu is displayed. In case the context menu key is pressed, the event is triggered on the <code>html</code> element or the currently focused element. Any HTML element can receive this event.
     For example, consider the HTML:</p>
     <pre><code>
 &lt;div id="target"&gt;
