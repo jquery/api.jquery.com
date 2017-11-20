@@ -3,13 +3,11 @@
   <title>callbacks.fireWith()</title>
   <signature>
     <added>1.7</added>
-    <argument name="context" optional="true" type="Object">
+    <argument name="context" optional="true" type="Anything">
       <desc>A reference to the context in which the callbacks in the list should be fired.</desc>
     </argument>
-    <argument name="args" optional="true">
-      <desc>An argument, or array of arguments, to pass to the callbacks in the list.</desc>
-      <type name="Array"/>
-      <type name="Anything"/>
+    <argument name="args" optional="true" type="ArrayLikeObject">
+      <desc>An array or array-like object of arguments to pass to the callbacks in the list. If omitted or undefined, no arguments will be passed.</desc>
     </argument>
   </signature>
   <desc>Call all callbacks in a list with the given context and arguments.</desc>
