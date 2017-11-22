@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<entry type="method" name="jQuery.globalEval" return="">
+<entry type="method" name="jQuery.globalEval" return="Anything">
   <title>jQuery.globalEval()</title>
   <signature>
     <added>1.0.4</added>
