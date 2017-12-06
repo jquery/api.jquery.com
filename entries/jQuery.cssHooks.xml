@@ -45,7 +45,7 @@ function styleSupport( prop ) {
 
     // Capitalize first character of the prop to test vendor prefix
     capProp = prop.charAt( 0 ).toUpperCase() + prop.slice( 1 ),
-    prefixes = [ "Moz", "Webkit", "O", "ms" ],
+    prefixes = [ "Moz", "Webkit", "ms" ],
     div = document.createElement( "div" );
 
   if ( prop in div.style ) {
@@ -89,7 +89,7 @@ if ( !$.cssHooks ) {
 function styleSupport( prop ) {
   var vendorProp, supportedProp,
     capProp = prop.charAt( 0 ).toUpperCase() + prop.slice( 1 ),
-    prefixes = [ "Moz", "Webkit", "O", "ms" ],
+    prefixes = [ "Moz", "Webkit", "ms" ],
     div = document.createElement( "div" );
 
   if ( prop in div.style ) {
