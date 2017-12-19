@@ -95,7 +95,7 @@ jqxhr.complete(function() {
     <desc>Loads the four most recent pictures of Mount Rainier from the Flickr JSONP API.</desc>
     <code><![CDATA[
 (function() {
-  var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+  var flickerAPI = "https://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
   $.getJSON( flickerAPI, {
     tags: "mount rainier",
     tagmode: "any",
