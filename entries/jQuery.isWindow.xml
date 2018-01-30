@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<entry type="method" name="jQuery.isWindow" return="boolean">
+<entry type="method" name="jQuery.isWindow" return="boolean" deprecated="3.3">
   <title>jQuery.isWindow()</title>
   <signature>
     <added>1.4.3</added>
@@ -22,4 +22,5 @@ Is 'window' a window? <b></b>
   </example>
   <category slug="utilities"/>
   <category slug="version/1.4.3"/>
+  <category slug="deprecated/deprecated-3.3"/>
 </entry>
