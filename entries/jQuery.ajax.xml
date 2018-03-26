@@ -15,7 +15,7 @@
     <added>1.0</added>
     <argument name="settings" type="PlainObject" optional="true">
       <desc>A set of key/value pairs that configure the Ajax request. All settings are optional. A default can be set for any option with <a href="/jQuery.ajaxSetup/">$.ajaxSetup()</a>.</desc>
-      <property default="depends on DataType" name="accepts" type="PlainObject">
+      <property default="depends on dataType" name="accepts" type="PlainObject">
         <desc>A set of key/value pairs that map a given <code>dataType</code> to its MIME type, which gets sent in the <code>Accept</code> request header. This header tells the server what kind of response it will accept in return. For example, the following defines a custom type <code>mycustomtype</code> to be sent with the request:
           <pre><code>
 $.ajax({
