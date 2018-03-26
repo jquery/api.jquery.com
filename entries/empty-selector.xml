@@ -9,7 +9,7 @@
   <longdesc>
     <p>This is the inverse of <code>:parent</code>. </p>
     <p>One important thing to note with :empty (and :parent) is that child elements include text nodes.</p>
-    <p>The W3C recommends that the <code>&lt;p&gt;</code> element have at least one child node, even if that child is merely text (see http://www.w3.org/TR/html401/struct/text.html#edef-P). Some other elements, on the other hand, are empty (i.e. have no children) by definition: &lt;input&gt;, &lt;img&gt;, &lt;br&gt;, and &lt;hr&gt;, for example.</p>
+    <p>The W3C recommends that the <code>&lt;p&gt;</code> element have at least one child node, even if that child is merely text (see https://www.w3.org/TR/html401/struct/text.html#edef-P). Some other elements, on the other hand, are empty (i.e. have no children) by definition: &lt;input&gt;, &lt;img&gt;, &lt;br&gt;, and &lt;hr&gt;, for example.</p>
   </longdesc>
   <example>
     <desc>Finds all elements that are empty - they don't have child elements or text.</desc>

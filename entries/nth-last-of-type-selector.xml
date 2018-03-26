@@ -11,7 +11,7 @@
   <desc>Selects all the elements that are the nth-child of their parent in relation to siblings with the same element name, counting from the last element to the first.</desc>
   <longdesc>
     <p>Because jQuery's implementation of <code>:nth-</code> selectors is strictly derived from the CSS specification, the value of <code>n</code> is "1-indexed", meaning that the counting starts at 1. For other selector expressions such as <code>:eq()</code> or <code>:even</code> jQuery follows JavaScript's "0-indexed" counting. Given a single <code>&lt;ul&gt;</code> containing three <code>&lt;li&gt;</code>s, <code>$('li:nth-last-of-type(1)')</code> selects the third, last, <code>&lt;li&gt;</code>.</p>
-    <p>Further discussion of this usage can be found in the <a href="http://www.w3.org/TR/css3-selectors/#nth-last-of-type-pseudo">W3C CSS specification</a>.</p>
+    <p>Further discussion of this usage can be found in the <a href="https://www.w3.org/TR/css3-selectors/#nth-last-of-type-pseudo">W3C CSS specification</a>.</p>
   </longdesc>
   <example>
     <desc>Find the second to last li in each matched ul and note it.</desc>

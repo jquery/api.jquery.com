@@ -4,7 +4,7 @@
   <signature>
     <added>1.0</added>
   </signature>
-  <desc>States if the current page, in the user's browser, is being rendered using the <a href="http://www.w3.org/TR/REC-CSS2/box.html">W3C CSS Box Model</a>. <strong>This property was removed in jQuery 1.8</strong>. Please try to use feature detection instead.</desc>
+  <desc>States if the current page, in the user's browser, is being rendered using the <a href="https://www.w3.org/TR/REC-CSS2/box.html">W3C CSS Box Model</a>. <strong>This property was removed in jQuery 1.8</strong>. Please try to use feature detection instead.</desc>
   <longdesc/>
   <category slug="utilities"/>
   <category slug="version/1.0"/>

@@ -1,4 +1,4 @@
-Copyright Packt Publishing (http://packtpub.com/),
+Copyright Packt Publishing (https://www.packtpub.com/),
 jQuery Foundation (https://jquery.org/), and other contributors.
 
 This software consists of voluntary contributions made by many
@@ -35,7 +35,7 @@ Copyright and related rights for sample code are waived via CC0. Sample
 code is defined as all source code displayed within the prose of the
 documentation and all examples and demos.
 
-CC0: http://creativecommons.org/publicdomain/zero/1.0/
+CC0: https://creativecommons.org/publicdomain/zero/1.0/
 
 ====
 

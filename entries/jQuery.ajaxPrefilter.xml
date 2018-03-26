@@ -40,11 +40,11 @@ $.ajaxPrefilter(function( options, originalOptions, jqXHR ) {
   }
 });
     </code></pre>
-    <p>Prefilters can also be used to modify existing options. For example, the following proxies cross-domain requests through http://mydomain.net/proxy/:</p>
+    <p>Prefilters can also be used to modify existing options. For example, the following proxies cross-domain requests through https://mydomain.net/proxy/:</p>
     <pre><code>
 $.ajaxPrefilter(function( options ) {
   if ( options.crossDomain ) {
-    options.url = "http://mydomain.net/proxy/" + encodeURIComponent( options.url );
+    options.url = "https://mydomain.net/proxy/" + encodeURIComponent( options.url );
     options.crossDomain = false;
   }
 });

@@ -69,7 +69,7 @@ $( "p" )
 <form>
   <input type="text" name="name" value="John">
   <input type="text" name="password" value="password">
-  <input type="text" name="url" value="http://ejohn.org/">
+  <input type="text" name="url" value="https://johnresig.com/">
 </form>
 ]]></html>
   </example>

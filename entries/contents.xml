@@ -46,7 +46,7 @@ $( "p" )
   .wrap( "<b></b>" );
 ]]></code>
     <html><![CDATA[
-<p>Hello <a href="http://ejohn.org/">John</a>, how are you doing?</p>
+<p>Hello <a href="https://johnresig.com/">John</a>, how are you doing?</p>
 ]]></html>
   </example>
   <example>

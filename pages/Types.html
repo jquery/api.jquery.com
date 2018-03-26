@@ -11,7 +11,7 @@ ol ul { margin-left: 1.5em !important; }
 </style>
 <p>This page documents data types appearing in jQuery function signatures, whether defined by JavaScript itself or further restricted by jQuery. Unless explicitly stated otherwise, jQuery functions require primitive values where applicable, and do not accept their Object-wrapped forms. If you want to study these concepts in depth, take a look at <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">MDN</a>.
 </p>
-<p>You should be able to try out most of the examples below by just copying them to your browser's JavaScript Console (Chrome, Safari with Develop menu activated, IE 8+) or <a href="http://www.getfirebug.com/">Firebug</a> console (<a href="https://www.mozilla.org/en-US/firefox/new/">Firefox</a>).
+<p>You should be able to try out most of the examples below by just copying them to your browser's JavaScript Console.
 </p>
 <p>Whenever an example mentions that a type defaults to a boolean value, the result is good to know when using that type in a boolean context:
 </p>
@@ -645,16 +645,11 @@ console.log( obj.foo() );
 <h2 id="XMLHttpRequest"> XMLHttpRequest </h2>
 <p>Some of jQuery's Ajax functions return the native XMLHttpRequest (XHR) object, or pass it as an argument to success/error/complete handlers, so that you can do additional processing or monitoring on the request. Note that Ajax functions only return or pass an XHR object when an XHR object is actually used in the request. For example, JSONP requests and cross-domain GET requests use a script element rather than an XHR object.
 </p>
-<p>Although the XHR object is a standard, there are variations in its behavior on different browsers. Refer to the WHATWG site and browsers' documentation for more information:
+<p>Although the XHR object is a standard, there are variations in its behavior on different browsers. Refer to the WHATWG site and Mozilla Developer Network for more information:
 </p>
 <ul><li> <a href="https://xhr.spec.whatwg.org/" class="external text" title="https://xhr.spec.whatwg.org/">WHATWG living standard</a>
-</li><li> <a href="http://developer.apple.com/internet/webcontent/xmlhttpreq.html" class="external text" title="http://developer.apple.com/internet/webcontent/xmlhttpreq.html">Apple (Safari)</a>
-</li><li> <a href="https://developer.mozilla.org/docs/en/DOM/XMLHttpRequest" class="external text" title="http://developer.mozilla.org/en/xmlhttprequest">Mozilla (Firefox)</a>
-</li><li> <a href="http://msdn.microsoft.com/en-us/library/ms535874%28VS.85%29.aspx" class="external text" title="http://msdn.microsoft.com/en-us/library/ms535874%28VS.85%29.aspx">Microsoft (Internet Explorer)</a>
-</li><li> <a href="http://www.opera.com/docs/specs/opera9/xhr/" class="external text" title="http://www.opera.com/docs/specs/opera9/xhr/">Opera</a>
+</li><li> <a href="https://developer.mozilla.org/docs/DOM/XMLHttpRequest" class="external text" title="https://developer.mozilla.org/docs/DOM/XMLHttpRequest">Mozilla Developer Network</a>
 </li></ul>
-<p>Google does not appear to have an official page for their XHR documentation for Chrome. As of version 5, Chrome does not support the use of the file protocol for XHR requests.
-</p>
 <h2 id="jqXHR"> jqXHR </h2>
 <p>As of jQuery 1.5, the <a href="/jQuery.ajax/">$.ajax()</a> method returns the jqXHR object, which is a superset of the XMLHTTPRequest object. For more information, see the <a href="/jQuery.ajax/#jqXHR">jqXHR section of the $.ajax entry</a>
 </p>

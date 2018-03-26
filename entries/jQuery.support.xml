@@ -4,7 +4,7 @@
   <signature>
     <added>1.3</added>
   </signature>
-  <desc>A collection of properties that represent the presence of different browser features or bugs. Intended for jQuery's internal use; specific properties may be removed when they are no longer needed internally to improve page startup performance. For your own project's feature-detection needs, we strongly recommend the use of an external library such as <a href="http://modernizr.com">Modernizr</a> instead of dependency on properties in <code>jQuery.support</code>.</desc>
+  <desc>A collection of properties that represent the presence of different browser features or bugs. Intended for jQuery's internal use; specific properties may be removed when they are no longer needed internally to improve page startup performance. For your own project's feature-detection needs, we strongly recommend the use of an external library such as <a href="https://modernizr.com">Modernizr</a> instead of dependency on properties in <code>jQuery.support</code>.</desc>
   <category slug="properties/global-jquery-object-properties"/>
   <category slug="utilities"/>
   <category slug="version/1.3"/>

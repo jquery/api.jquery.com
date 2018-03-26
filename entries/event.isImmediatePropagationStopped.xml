@@ -6,7 +6,7 @@
   </signature>
   <desc>  Returns whether event.stopImmediatePropagation() was ever called on this event object. </desc>
   <longdesc>
-    <p>This property was introduced in <a href="http://www.w3.org/TR/2003/NOTE-DOM-Level-3-Events-20031107/events.html#Events-Event-isImmediatePropagationStopped">DOM level 3</a>.</p>
+    <p>This property was introduced in <a href="https://www.w3.org/TR/2003/NOTE-DOM-Level-3-Events-20031107/events.html#Events-Event-isImmediatePropagationStopped">DOM level 3</a>.</p>
   </longdesc>
   <example>
     <desc>Checks whether event.stopImmediatePropagation() was called.</desc>
