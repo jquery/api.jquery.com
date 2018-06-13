@@ -68,7 +68,7 @@
     </category>
     <category name="Deprecated 3.0" slug="deprecated-3.0">
       <desc><![CDATA[All the aspects of the API that were deprecated in the corresponding version of jQuery.
-        <p>For more information, see the Release Notes/Changelog at <a href="https://blog.jquery.com/2016/06/09/jquery-3-0-final-released/">http://blog.jquery.com/2016/06/09/jquery-3-0-final-released/</a></p>
+        <p>For more information, see the Release Notes/Changelog at <a href="https://blog.jquery.com/2016/06/09/jquery-3-0-final-released/">https://blog.jquery.com/2016/06/09/jquery-3-0-final-released/</a></p>
       ]]></desc>
     </category>
 	<category name="Deprecated 3.3" slug="deprecated-3.3">

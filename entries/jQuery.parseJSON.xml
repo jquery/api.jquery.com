@@ -25,7 +25,7 @@
       <li><code>"NaN"</code> (<code>NaN</code> cannot be represented in a JSON string; direct representation of <code>Infinity</code> is also not permitted).</li>
     </ul>
     <p>The JSON standard does not permit "control characters" such as a tab or newline. An example like <code>$.parseJSON( '{ "testing":"1\t2\n3" }' )</code> will throw an error in most implementations because the JavaScript parser converts the string's tab and newline escapes into literal tab and newline; doubling the backslashes like <code>"1\\t2\\n3"</code> yields expected results. This problem is often seen when injecting JSON into a JavaScript file from a server-side language such as PHP.</p>
-    <p>Where the browser provides a native implementation of <code>JSON.parse</code>, jQuery uses it to parse the string. For details on the JSON format, see <a href="https://json.org/">http://json.org/</a>.</p>
+    <p>Where the browser provides a native implementation of <code>JSON.parse</code>, jQuery uses it to parse the string. For details on the JSON format, see <a href="https://json.org/">https://json.org/</a>.</p>
     <p>Prior to jQuery 1.9, <code>$.parseJSON</code> returned <code>null</code> instead of throwing an error if it was passed an empty string, <code>null</code>, or <code>undefined</code>, even though those are not valid JSON.</p>
   </longdesc>
   <example>
