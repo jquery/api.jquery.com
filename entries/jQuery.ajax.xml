@@ -168,7 +168,7 @@ $.ajax({
   }
 });
         </code></pre>
-          <p>If the request is successful, the status code functions take the same parameters as the success callback; if it results in an error (including 3xx redirect), they take the same parameters as the <code>error</code> callback.</p>
+          <p>If the request is successful, the status code functions take the same parameters as the success callback; if it results in an error (including 3xx redirects to another domain), they take the same parameters as the <code>error</code> callback. 3xx redirects to the same domain are handled by the browser and are not controlled by jQuery.</p>
         </desc>
       </property>
       <property name="success" type="Function">
