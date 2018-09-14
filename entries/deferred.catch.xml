@@ -15,7 +15,7 @@
         <p><code>deferred.catch( fn )</code> is an alias to <a href="/deferred.then/"><code>deferred.then( null, fn )</code></a>. Read its page for more information.</p>
     </longdesc>
     <example>
-        <desc>Since the <a href="/jQuery.get/"><code>jQuery.get</code></a> method returns a jqXHR object, which is derived from a Deferred object, we can rejection handlers using the <code>.catch</code> method.</desc>
+        <desc>Since the <a href="/jQuery.get/"><code>jQuery.get</code></a> method returns a jqXHR object, which is derived from a Deferred object, we can add rejection handlers using the <code>.catch</code> method.</desc>
         <code><![CDATA[
 $.get( "test.php" )
   .then( function() {
