@@ -24,14 +24,13 @@
       <p>We can set several distinct values for a single element and retrieve them later:</p>
       <pre><code>
 $( "body" ).data( "foo", 52 );
-$( "body" ).data( "bar", { myType: "test", count: 40 } );
+$( "body" ).data( "bar", { isManual: true } );
 $( "body" ).data( { baz: [ 1, 2, 3 ] } );
 $( "body" ).data( "foo" ); // 52
-$( "body" ).data(); // { foo: 52, bar: { myType: "test", count: 40 }, baz: [ 1, 2, 3 ] }
+$( "body" ).data(); // { foo: 52, bar: { isManual: true }, baz: [ 1, 2, 3 ] }
       </code></pre>
-      <p>In jQuery 1.4.3 setting an element's data object with <code>.data(obj)</code> extends the data previously stored with that element.</p>
-      <p>Prior to jQuery 1.4.3 (starting in jQuery 1.4) the <code>.data()</code> method completely replaced all data, instead of just extending the data object. If you are using third-party plugins it may not be advisable to completely replace the element's data object, since plugins may have also set data.</p>
-      <p><strong>jQuery 3</strong> changes the behavior of this method to align it to the <a href="https://www.w3.org/TR/html5/dom.html#dom-dataset">Dataset API specifications</a>. Specifically, jQuery 3 transforms every two-character sequence of "-" (U+002D) followed by a lowercase ASCII letter by the uppercase version of the letter as per definition of <a href="https://www.w3.org/TR/html5/dom.html#dom-dataset">the algorithm of the Dataset API</a>. Writing a statement like <code>$( "body" ).data( { "my-name": "aValue" } ).data();</code> will return <code>{ myName: "aValue" }</code>.</p>
+      <p>Prior to jQuery 1.4.3, <code>.data( obj )</code> completely replaced all data. Since jQuery 1.4.3, data is instead extended by shallow merge.</p>
+      <p>Since <strong>jQuery 3</strong>, every two-character sequence of "-" (U+002D) followed by a lowercase ASCII letter in a key is replaced by the uppercase version of the letter, in alignment with the <a href="https://html.spec.whatwg.org/multipage/dom.html#dom-dataset">HTML dataset API</a>. A statement like <code>$( "body" ).data( { "my-name": "aValue" } ).data();</code> will return <code>{ myName: "aValue" }</code>.</p>
       <p>Due to the way browsers interact with plugins and external code, the <code>.data()</code> method cannot be used on <code>&lt;object&gt;</code> (unless it's a Flash plugin), <code>&lt;applet&gt;</code> or <code>&lt;embed&gt;</code> elements.</p>
     </longdesc>
     <note id="no-data-on-xml" type="additional"/>
@@ -76,46 +75,42 @@ $( "span:last" ).text( $( "div" ).data( "test" ).last );
     <signature>
       <added>1.4</added>
     </signature>
-    <desc>Return the value at the named data store for the first element in the jQuery collection, as set by data(name, value) or by an HTML5 data-* attribute.</desc>
+    <desc>Return arbitrary data associated with the first element in the jQuery collection, as set by data() or by an HTML5 data-* attribute.</desc>
     <longdesc>
-      <p>The <code>.data()</code> method allows us to attach data of any type to DOM elements in a way that is safe from circular references and therefore from memory leaks. We can retrieve several distinct values for a single element one at a time, or as a set:</p>
+      <p>The <code>.data()</code> method allows us to read data previously associated with DOM elements. We can retrieve several distinct values for a single element one at a time, or as a set:</p>
       <pre><code>
-alert( $( "body" ).data( "foo" ) );
-alert( $( "body" ).data() );
+var elem = document.createElement( "span" );
+$( elem ).data( "foo" ); // undefined
+$( elem ).data(); // {}
+
+$( elem ).data( "foo", 42 );
+$( elem ).data( "foo" ); // 42
+$( elem ).data(); // { foo: 42 }
       </code></pre>
-      <p>The above lines alert the data values that were set on the <code>body</code> element. If no data at all was set on that element, <code>undefined</code> is returned.</p>
+      <p>Calling <code>.data()</code> with no parameters returns a JavaScript object containing each stored value as a property. Using the object directly to get or set values is faster than making individual calls to <code>.data()</code>:</p>
       <pre><code>
-alert( $( "body" ).data( "foo" ) ); // undefined
-$( "body" ).data( "bar", "foobar" );
-alert( $( "body" ).data( "bar" ) ); // foobar
-      </code></pre>
-      <p><strong>jQuery 3</strong> changes the behavior of this method to align it to the <a href="https://www.w3.org/TR/html5/dom.html#dom-dataset">Dataset API specifications</a>. Specifically, jQuery 3 transforms every two-character sequence of "-" (U+002D) followed by a lowercase ASCII letter by the uppercase version of the letter as per definition of <a href="https://www.w3.org/TR/html5/dom.html#dom-dataset">the algorithm of the Dataset API</a>. Writing a statement like <code>$( "body" ).data( { "my-name": "aValue" } ).data();</code> will return <code>{ myName: "aValue" }</code>.</p>
+var mydata = $( "#mydiv" ).data();
+mydata.count = 43;
+mydata.status = "embiggened";
+$( "#mydiv" ).data( "count" ); // 43
+    </code></pre>
+      <p>Since <strong>jQuery 3</strong>, every two-character sequence of "-" (U+002D) followed by a lowercase ASCII letter in a key is replaced by the uppercase version of the letter, in alignment with the <a href="https://html.spec.whatwg.org/multipage/dom.html#dom-dataset">HTML dataset API</a>. A statement like <code>$( "body" ).data( { "my-name": "aValue" } ).data();</code> will return <code>{ myName: "aValue" }</code>.</p>
       <h4 id="data-html5">
         <a href="#data-html5">HTML5 data-* Attributes</a>
       </h4>
-      <p>As of jQuery 1.4.3 <a href="https://johnresig.com/blog/html-5-data-attributes/">HTML 5 data- attributes</a> will be automatically pulled in to jQuery's data object. The treatment of attributes with embedded dashes was changed in jQuery 1.6 to conform to the <a href="https://www.w3.org/TR/html5/dom.html#embedding-custom-non-visible-data-with-the-data-*-attributes">W3C HTML5 specification</a>.</p>
+      <p>Since jQuery 1.4.3, <a href="https://html.spec.whatwg.org/multipage/dom.html#embedding-custom-non-visible-data-with-the-data-*-attributes">data-* attributes</a> are used to initialize jQuery data. An element's data-* attributes are retrieved the first time the <code>data()</code> method is invoked upon it, and then are no longer accessed or mutated (all values are stored internally by jQuery).</p>
+      <p>Every attempt is made to convert the attribute's string value to a JavaScript value (this includes booleans, numbers, objects, arrays, and null). A string is only converted to a number if doing so doesn't change its representation (for example, the string "100" is converted to the number 100, but "1E02" and "100.000" are left as strings because their numeric value of 100 serializes to "100"). When a string starts with '{' or '[', then <code>jQuery.parseJSON</code> is used to parse it; it must follow <a href="https://en.wikipedia.org/wiki/JSON#Data_types.2C_syntax_and_example">valid JSON syntax</a> <em>including quoted property names</em>. A string not parseable as a JavaScript value is not converted.</p>
+      <p>To retrieve a data-* attribute value as an unconverted string, use the <code><a href="/attr/">attr()</a></code> method.</p>
+      <p>Since jQuery 1.6, dashes in data-* attribute names have been processed in alignment with the <a href="https://html.spec.whatwg.org/multipage/dom.html#dom-dataset">HTML dataset API</a>.</p>
       <p>For example, given the following HTML:</p>
       <pre><code>&lt;div data-role="page" data-last-value="43" data-hidden="true" data-options='{"name":"John"}'&gt;&lt;/div&gt;</code></pre>
-      <p>All of the following jQuery code will work.</p>
+      <p>The following comparisons are all true:</p>
       <pre><code>
 $( "div" ).data( "role" ) === "page";
 $( "div" ).data( "lastValue" ) === 43;
 $( "div" ).data( "hidden" ) === true;
 $( "div" ).data( "options" ).name === "John";
       </code></pre>
-      <p>The second statement of the code above correctly refers to the <code>data-last-value</code> attribute of the element. In case no data is stored with the passed key, jQuery searches among the attributes of the element, converting a camel-cased string into a dashed string and then prepending <code>data-</code> to the result. So, the string <code>lastValue</code> is converted to <code>data-last-value</code>.</p>
-      <p>Every attempt is made to convert the string to a JavaScript value (this includes booleans, numbers, objects, arrays, and null). A value is only converted to a number if doing so doesn't change the value's representation. For example, "1E02" and "100.000" are equivalent as numbers (numeric value 100) but converting them would alter their representation so they are left as strings. The string value "100" is converted to the number 100.</p>
-      <p>When the data attribute is an object (starts with '{') or array (starts with '[') then <code>jQuery.parseJSON</code> is used to parse the string; it must follow <a href="https://en.wikipedia.org/wiki/JSON#Data_types.2C_syntax_and_example">valid JSON syntax</a> <em>including quoted property names</em>. If the value isn't parseable as a JavaScript value, it is left as a string.</p>
-      <p>To retrieve the value's attribute as a string without any attempt to convert it, use the <code><a href="/attr/">attr()</a></code> method.</p>
-      <p>The data- attributes are pulled in the first time the data property is accessed and then are no longer accessed or mutated (all data values are then stored internally in jQuery).</p>
-      <p>Calling <code>.data()</code> with no parameters retrieves all of the values as a JavaScript object. This object can be safely cached in a variable as long as a new object is not set with <code>.data(obj)</code>. Using the object directly to get or set values is faster than making individual calls to <code>.data()</code> to get or set each value:</p>
-      <pre><code>
-var mydata = $( "#mydiv" ).data();
-if ( mydata.count &lt; 9 ) {
-  mydata.count = 43;
-  mydata.status = "embiggened";
-}
-    </code></pre>
     </longdesc>
     <note id="no-data-on-xml" type="additional"/>
     <example>
