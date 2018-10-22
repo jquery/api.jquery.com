@@ -29,6 +29,7 @@ $( "body" ).data( { baz: [ 1, 2, 3 ] } );
 $( "body" ).data( "foo" ); // 52
 $( "body" ).data(); // { foo: 52, bar: { isManual: true }, baz: [ 1, 2, 3 ] }
       </code></pre>
+      <p>Using the <code>data()</code> method to update data does not affect attributes in the DOM. To set a data-* attribute value, use <code><a href="/attr/">attr</a></code>.</p>
       <p>Prior to jQuery 1.4.3, <code>.data( obj )</code> completely replaced all data. Since jQuery 1.4.3, data is instead extended by shallow merge.</p>
       <p>Since <strong>jQuery 3</strong>, every two-character sequence of "-" (U+002D) followed by a lowercase ASCII letter in a key is replaced by the uppercase version of the letter, in alignment with the <a href="https://html.spec.whatwg.org/multipage/dom.html#dom-dataset">HTML dataset API</a>. A statement like <code>$( "body" ).data( { "my-name": "aValue" } ).data();</code> will return <code>{ myName: "aValue" }</code>.</p>
       <p>Due to the way browsers interact with plugins and external code, the <code>.data()</code> method cannot be used on <code>&lt;object&gt;</code> (unless it's a Flash plugin), <code>&lt;applet&gt;</code> or <code>&lt;embed&gt;</code> elements.</p>
