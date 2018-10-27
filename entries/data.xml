@@ -88,13 +88,7 @@ $( elem ).data( "foo", 42 );
 $( elem ).data( "foo" ); // 42
 $( elem ).data(); // { foo: 42 }
       </code></pre>
-      <p>Calling <code>.data()</code> with no parameters returns a JavaScript object containing each stored value as a property. Using the object directly to get or set values is faster than making individual calls to <code>.data()</code>:</p>
-      <pre><code>
-var mydata = $( "#mydiv" ).data();
-mydata.count = 43;
-mydata.status = "embiggened";
-$( "#mydiv" ).data( "count" ); // 43
-    </code></pre>
+      <p>Calling <code>.data()</code> with no parameters returns a JavaScript object containing each stored value as a property. The object can be used directly to get data values (but note that property names originally containing dashes will have been modified as described below).</p>
       <p>Since <strong>jQuery 3</strong>, every two-character sequence of "-" (U+002D) followed by a lowercase ASCII letter in a key is replaced by the uppercase version of the letter, in alignment with the <a href="https://html.spec.whatwg.org/multipage/dom.html#dom-dataset">HTML dataset API</a>. A statement like <code>$( "body" ).data( { "my-name": "aValue" } ).data();</code> will return <code>{ myName: "aValue" }</code>.</p>
       <h4 id="data-html5">
         <a href="#data-html5">HTML5 data-* Attributes</a>
