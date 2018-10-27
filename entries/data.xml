@@ -29,7 +29,7 @@ $( "body" ).data( { baz: [ 1, 2, 3 ] } );
 $( "body" ).data( "foo" ); // 52
 $( "body" ).data(); // { foo: 52, bar: { isManual: true }, baz: [ 1, 2, 3 ] }
       </code></pre>
-      <p>Using the <code>data()</code> method to update data does not affect attributes in the DOM. To set a data-* attribute value, use <code><a href="/attr/">attr</a></code>.</p>
+      <p>Using the <code>data()</code> method to update data does not affect attributes in the DOM. To set a <code>data-*</code> attribute value, use <code><a href="/attr/">attr</a></code>.</p>
       <p>Prior to jQuery 1.4.3, <code>.data( obj )</code> completely replaced all data. Since jQuery 1.4.3, data is instead extended by shallow merge.</p>
       <p>Since <strong>jQuery 3</strong>, every two-character sequence of "-" (U+002D) followed by a lowercase ASCII letter in a key is replaced by the uppercase version of the letter, in alignment with the <a href="https://html.spec.whatwg.org/multipage/dom.html#dom-dataset">HTML dataset API</a>. A statement like <code>$( "body" ).data( { "my-name": "aValue" } ).data();</code> will return <code>{ myName: "aValue" }</code>.</p>
       <p>Due to the way browsers interact with plugins and external code, the <code>.data()</code> method cannot be used on <code>&lt;object&gt;</code> (unless it's a Flash plugin), <code>&lt;applet&gt;</code> or <code>&lt;embed&gt;</code> elements.</p>
@@ -76,7 +76,7 @@ $( "span:last" ).text( $( "div" ).data( "test" ).last );
     <signature>
       <added>1.4</added>
     </signature>
-    <desc>Return arbitrary data associated with the first element in the jQuery collection, as set by data() or by an HTML5 data-* attribute.</desc>
+    <desc>Return arbitrary data associated with the first element in the jQuery collection, as set by data() or by an HTML5 <code>data-*</code> attribute.</desc>
     <longdesc>
       <p>The <code>.data()</code> method allows us to read data previously associated with DOM elements. We can retrieve several distinct values for a single element one at a time, or as a set:</p>
       <pre><code>
@@ -91,12 +91,12 @@ $( elem ).data(); // { foo: 42 }
       <p>Calling <code>.data()</code> with no parameters returns a JavaScript object containing each stored value as a property. The object can be used directly to get data values (but note that property names originally containing dashes will have been modified as described below).</p>
       <p>Since <strong>jQuery 3</strong>, every two-character sequence of "-" (U+002D) followed by a lowercase ASCII letter in a key is replaced by the uppercase version of the letter, in alignment with the <a href="https://html.spec.whatwg.org/multipage/dom.html#dom-dataset">HTML dataset API</a>. A statement like <code>$( "body" ).data( { "my-name": "aValue" } ).data();</code> will return <code>{ myName: "aValue" }</code>.</p>
       <h4 id="data-html5">
-        <a href="#data-html5">HTML5 data-* Attributes</a>
+        <a href="#data-html5">HTML5 <code>data-*</code> Attributes</a>
       </h4>
-      <p>Since jQuery 1.4.3, <a href="https://html.spec.whatwg.org/multipage/dom.html#embedding-custom-non-visible-data-with-the-data-*-attributes">data-* attributes</a> are used to initialize jQuery data. An element's data-* attributes are retrieved the first time the <code>data()</code> method is invoked upon it, and then are no longer accessed or mutated (all values are stored internally by jQuery).</p>
+      <p>Since jQuery 1.4.3, <a href="https://html.spec.whatwg.org/multipage/dom.html#embedding-custom-non-visible-data-with-the-data-*-attributes"><code>data-*</code> attributes</a> are used to initialize jQuery data. An element's <code>data-*</code> attributes are retrieved the first time the <code>data()</code> method is invoked upon it, and then are no longer accessed or mutated (all values are stored internally by jQuery).</p>
       <p>Every attempt is made to convert the attribute's string value to a JavaScript value (this includes booleans, numbers, objects, arrays, and null). A string is only converted to a number if doing so doesn't change its representation (for example, the string "100" is converted to the number 100, but "1E02" and "100.000" are left as strings because their numeric value of 100 serializes to "100"). When a string starts with '{' or '[', then <code>jQuery.parseJSON</code> is used to parse it; it must follow <a href="https://en.wikipedia.org/wiki/JSON#Data_types.2C_syntax_and_example">valid JSON syntax</a> <em>including quoted property names</em>. A string not parseable as a JavaScript value is not converted.</p>
-      <p>To retrieve a data-* attribute value as an unconverted string, use the <code><a href="/attr/">attr()</a></code> method.</p>
-      <p>Since jQuery 1.6, dashes in data-* attribute names have been processed in alignment with the <a href="https://html.spec.whatwg.org/multipage/dom.html#dom-dataset">HTML dataset API</a>.</p>
+      <p>To retrieve a <code>data-*</code> attribute value as an unconverted string, use the <code><a href="/attr/">attr()</a></code> method.</p>
+      <p>Since jQuery 1.6, dashes in <code>data-*</code> attribute names have been processed in alignment with the <a href="https://html.spec.whatwg.org/multipage/dom.html#dom-dataset">HTML dataset API</a>.</p>
       <p>For example, given the following HTML:</p>
       <pre><code>&lt;div data-role="page" data-last-value="43" data-hidden="true" data-options='{"name":"John"}'&gt;&lt;/div&gt;</code></pre>
       <p>The following comparisons are all true:</p>
