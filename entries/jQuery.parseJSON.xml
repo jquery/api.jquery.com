@@ -37,4 +37,5 @@ alert( obj.name === "John" );
   </example>
   <category slug="utilities"/>
   <category slug="version/1.4.1"/>
+  <category slug="deprecated/deprecated-3.0"/>
 </entry>
