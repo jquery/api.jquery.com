@@ -208,5 +208,6 @@ $( "a" ).on( "click", function( event ) {
     <longdesc>
       <div class="warning"><strong>This signature (only!) is deprecated as of jQuery 3.0</strong>.</div>
     </longdesc>
+    <category slug="deprecated/deprecated-3.0"/>
   </entry>
 </entries>
