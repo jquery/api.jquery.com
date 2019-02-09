@@ -18,12 +18,12 @@
       <desc>A callback function that is executed when the request completes.</desc>
     </argument>
   </signature>
-  <desc>Load data from the server and place the returned HTML into the matched element.</desc>
+  <desc>Load data from the server and place the returned HTML into the matched elements.</desc>
   <longdesc>
     <div class="warning">
       <p>Note: Prior to jQuery 3.0, the event handling suite also had a method named <code><a href="/load-event/">.load()</a></code>. Older versions of jQuery determined which method to fire based on the set of arguments passed to it.</p>
     </div>
-    <p>This method is the simplest way to fetch data from the server. It is roughly equivalent to <code>$.get(url, data, success)</code> except that it is a method rather than global function and it has an implicit callback function.  When a successful response is detected (i.e. when <code>textStatus</code> is "success" or "notmodified"), <code>.load()</code> sets the HTML contents of the matched element to the returned data. This means that most uses of the method can be quite simple:</p>
+    <p>This method is the simplest way to fetch data from the server. It is roughly equivalent to <code>$.get(url, data, success)</code> except that it is a method rather than global function and it has an implicit callback function.  When a successful response is detected (i.e. when <code>textStatus</code> is "success" or "notmodified"), <code>.load()</code> sets the HTML contents of the matched elements to the returned data. This means that most uses of the method can be quite simple:</p>
     <pre><code>
 $( "#result" ).load( "ajax/test.html" );
     </code></pre>
