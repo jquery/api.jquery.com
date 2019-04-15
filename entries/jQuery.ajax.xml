@@ -145,8 +145,11 @@ $.ajax({
       <property default="true" name="processData" type="Boolean">
         <desc>By default, data passed in to the <code>data</code> option as an object (technically, anything other than a string) will be processed and transformed into a query string, fitting to the default content-type "application/x-www-form-urlencoded". If you want to send a DOMDocument, or other non-processed data, set this option to <code>false</code>.</desc>
       </property>
+      <property name="scriptAttrs" type="PlainObject" added="3.4.0">
+        <desc>Defines an object with additional attributes to be used in a "script" or "jsonp" request. The key represents the name of the attribute and the value is the attribute's value. If this object is provided it will force the use of a script-tag transport. For example, this can be used to set <code>nonce</code>, <code>integrity</code>, or <code>crossorigin</code> attributes to satisfy Content Security Policy requirements.</desc>
+      </property>
       <property name="scriptCharset" type="String">
-        <desc>Only applies when the "script" transport is used (e.g., cross-domain requests with "jsonp" or "script" dataType and "GET" type). Sets the <code>charset</code> attribute on the script tag used in the request. Used when the character set on the local page is not the same as the one on the remote script.</desc>
+        <desc>Only applies when the "script" transport is used. Sets the <code>charset</code> attribute on the script tag used in the request. Used when the character set on the local page is not the same as the one on the remote script. Alternatively, the <code>charset</code> attribute can be specified in <code>scriptAttrs</code> instead, which will also ensure the use of the "script" transport.</desc>
       </property>
       <property name="statusCode" type="PlainObject" default="{}" added="1.5">
         <desc>
