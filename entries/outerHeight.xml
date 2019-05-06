@@ -53,6 +53,9 @@ $( "p:last" ).text(
       <type name="Number"/>
       <desc>A number representing the number of pixels, or a number along with an optional unit of measure appended (as a string).</desc>
     </argument>
+    <argument name="includeMargin" optional="true" type="Boolean" default="false">
+      <desc>A Boolean indicating whether to new value should account for the element's margin.</desc>
+    </argument>
   </signature>
   <signature>
     <added>1.8.0</added>
