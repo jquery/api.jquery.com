@@ -77,7 +77,7 @@ $.post( "url.xml", function( data ) {
       <p>When a jQuery object is passed to the <code>$()</code> function, a clone of the object is created. This new jQuery object references the same DOM elements as the initial one.</p>
 
       <h4 id="returning-empty-set">Returning an Empty Set</h4>
-      <p>As of jQuery 1.4, calling the <code>jQuery()</code> method with <em>no arguments</em> returns an empty jQuery set (with a <code><a href="/length/">.length</a></code> property of 0). In previous versions of jQuery, this would return a set containing the document node.</p>
+      <p>Calling the <code>jQuery()</code> method with <em>no arguments</em> returns an empty jQuery set (with a <code><a href="/length/">.length</a></code> property of 0). Similarly, if an argument of <code>null</code>, <code>undefined</code>, an empty array (<code>[]</code>), or an empty string (<code>""</code>) is passed, the set contains no elements.</p>
       <h4 id="working-with-plain-objects">Working With Plain Objects</h4>
       <p>At present, the only operations supported on plain JavaScript objects wrapped in jQuery are: <code>.data()</code>,<code>.prop()</code>,<code>.on()</code>, <code>.off()</code>, <code>.trigger()</code> and <code>.triggerHandler()</code>. The use of <code>.data()</code> (or any method requiring <code>.data()</code>) on a plain object will result in a new property on the object called jQuery{randomNumber} (eg. jQuery123456789).</p>
       <pre><code>
