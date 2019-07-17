@@ -149,7 +149,7 @@ var x = "";
 
 <h2 id="htmlString"> htmlString </h2>
 <p>A string is designated <strong>htmlString</strong> in jQuery documentation when it is used to represent one or more DOM elements, typically to be created and inserted in the document. When passed as an argument of the <code>jQuery()</code> function, the string is identified as HTML if it starts with <code>&lt;tag ... &gt;</code>) and is parsed as such until the final <code>&gt;</code> character. Prior to jQuery 1.9, a string was considered to be HTML if it contained <code>&lt;tag ... &gt;</code> <em>anywhere within the string</em>.</p>
-<p>When a string as passed as an argument to a manipulation method such as <code>.append()</code>, it is always considered to be HTML since jQuery's other common interpretation of a string (CSS selectors) does not apply in those contexts.</p>
+<p>When a string is passed as an argument to a manipulation method such as <code>.append()</code>, it is always considered to be HTML since jQuery's other common interpretation of a string (CSS selectors) does not apply in those contexts.</p>
 <p>For explicit parsing of a string to HTML, the <code><a href="/jQuery.parseHTML/">$.parseHTML()</a></code> method is available as of jQuery 1.8.</p>
 <pre><code data-lang="javascript">// Appends <b>hello</b>:
 $( "<b>hello</b>" ).appendTo( "body" );
