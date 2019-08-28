@@ -55,7 +55,7 @@ $( "#clickme" ).click(function() {
     <desc>Animates all divs to slide up, completing the animation within 400 milliseconds.</desc>
     <code><![CDATA[
 $( document.body ).click(function() {
-  if ( $( "div:first" ).is( ":hidden" ) ) {
+  if ( $( "div" ).first().is( ":hidden" ) ) {
     $( "div" ).show( "slow" );
   } else {
     $( "div" ).slideUp();

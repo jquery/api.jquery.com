@@ -71,14 +71,19 @@
         <p>For more information, see the Release Notes/Changelog at <a href="https://blog.jquery.com/2016/06/09/jquery-3-0-final-released/">https://blog.jquery.com/2016/06/09/jquery-3-0-final-released/</a></p>
       ]]></desc>
     </category>
-	<category name="Deprecated 3.3" slug="deprecated-3.3">
+    <category name="Deprecated 3.3" slug="deprecated-3.3">
       <desc><![CDATA[All the aspects of the API that were deprecated in the corresponding version of jQuery.
         <p>For more information, see the Release Notes/Changelog at <a href="https://blog.jquery.com/2018/01/19/jquery-3-3-0-a-fragrant-bouquet-of-deprecations-and-is-that-a-new-feature/">https://blog.jquery.com/2018/01/19/jquery-3-3-0-a-fragrant-bouquet-of-deprecations-and-is-that-a-new-feature/</a></p>
       ]]></desc>
     </category>
+    <category name="Deprecated 3.4" slug="deprecated-3.4">
+      <desc><![CDATA[All the aspects of the API that were deprecated in the corresponding version of jQuery.
+        <p>For more information, see the Release Notes/Changelog at <a href="https://blog.jquery.com/2019/04/10/jquery-3-4-0-released/">https://blog.jquery.com/2019/04/10/jquery-3-4-0-released/</a></p>
+      ]]></desc>
+    </category>
   </category>
   <category name="Dimensions" slug="dimensions">
-	  <desc><![CDATA[These methods are used to get and set the CSS dimensions for the various properties.]]></desc>
+    <desc><![CDATA[These methods are used to get and set the CSS dimensions for the various properties.]]></desc>
   </category>
   <category name="Effects" slug="effects">
     <desc><![CDATA[The jQuery library provides several techniques for adding animation to a web page. These include simple, standard animations that are frequently used, and the ability to craft sophisticated custom effects.]]></desc>

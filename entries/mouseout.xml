@@ -85,21 +85,21 @@ $( "#other" ).click(function() {
 var i = 0;
 $( "div.overout" )
   .mouseout(function() {
-    $( "p:first", this ).text( "mouse out" );
-    $( "p:last", this ).text( ++i );
+    $( "p", this ).first().text( "mouse out" );
+    $( "p", this ).last().text( ++i );
   })
   .mouseover(function() {
-    $( "p:first", this ).text( "mouse over" );
+    $( "p", this ).first().text( "mouse over" );
   });
 
 var n = 0;
 $( "div.enterleave" )
   .on( "mouseenter", function() {
-    $( "p:first", this ).text( "mouse enter" );
+    $( "p", this ).first().text( "mouse enter" );
   })
   .on( "mouseleave", function() {
-    $( "p:first", this ).text( "mouse leave" );
-    $( "p:last", this ).text( ++n );
+    $( "p", this ).first().text( "mouse leave" );
+    $( "p", this ).last().text( ++n );
   });
 ]]></code>
     <html><![CDATA[

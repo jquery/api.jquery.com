@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<entry type="selector" name="eq" return="">
+<entry type="selector" name="eq" return="" deprecated="3.4">
   <title>:eq() Selector</title>
   <signature>
     <sample>:eq(index)</sample>
@@ -17,6 +17,7 @@
   </signature>
   <desc>Select the element at index <code>n</code> within the matched set.</desc>
   <longdesc>
+    <p><strong>As of jQuery 3.4</strong>, the <code>:eq</code> pseudo-class is deprecated. Remove it from your selectors and filter the results later using <a href="/eq/"><code>.eq()</code></a>.</p>
     <p>The index-related selectors (<code>:eq()</code>, <code>:lt()</code>, <code>:gt()</code>, <code>:even</code>, <code>:odd</code>) filter the set of elements that have matched the expressions that precede them. They narrow the set down based on the order of the elements within this matched set. For example, if elements are first selected with a class selector (<code>.myclass</code>) and four elements are returned, these elements are given indices <code>0</code> through <code>3</code> for the purposes of these selectors.</p>
     <p>Note that since JavaScript arrays use <em>0-based indexing</em>, these selectors reflect that fact. This is why <code>$( ".myclass:eq(1)" )</code> selects the second element in the document with the class myclass, rather than the first. In contrast, <code>:nth-child(n)</code> uses <em>1-based indexing</em> to conform to the CSS specification.</p>
     <p>Prior to jQuery 1.8, the <code>:eq(index)</code> selector did <em>not</em> accept a negative value for <code>index</code> (though the <a href="/eq/"><code>.eq(index)</code></a> method did).</p>
@@ -92,4 +93,5 @@ $( "li:eq(-2)" ).addClass( "foo" )
   <category slug="selectors/jquery-selector-extensions"/>
   <category slug="version/1.0"/>
   <category slug="version/1.8"/>
+  <category slug="deprecated/deprecated-3.4"/>
 </entry>

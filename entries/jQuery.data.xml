@@ -34,8 +34,8 @@ jQuery.data( div, "test", {
   first: 16,
   last: "pizza!"
 });
-$( "span:first" ).text( jQuery.data( div, "test" ).first );
-$( "span:last" ).text( jQuery.data( div, "test" ).last );
+$( "span" ).first().text( jQuery.data( div, "test" ).first );
+$( "span" ).last().text( jQuery.data( div, "test" ).last );
 ]]></code>
       <css><![CDATA[
   div {

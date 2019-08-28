@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<entry type="selector" name="first" return="">
+<entry type="selector" name="first" return="" deprecated="3.4">
   <title>:first Selector</title>
   <sample>:first</sample>
   <signature>
@@ -7,6 +7,7 @@
   </signature>
   <desc>Selects the first matched DOM element.</desc>
   <longdesc>
+    <p><strong>As of jQuery 3.4</strong>, the <code>:first</code> pseudo-class is deprecated. Remove it from your selectors and filter the results later using <a href="/first/"><code>.first()</code></a>.</p>
     <p>The <code>:first</code> pseudo-class is equivalent to <code>:eq( 0 )</code>. It could also be written as <code>:lt( 1 )</code>. While this matches only a single element, <a href="/first-child-selector/">:first-child</a> can match more than one: One for each parent.</p>
   </longdesc>
   <note id="jquery-selector-extension" type="additional" data-selector=":first"/>
@@ -33,4 +34,5 @@ $( "tr:first" ).css( "font-style", "italic" );
   <category slug="selectors/basic-filter-selectors"/>
   <category slug="selectors/jquery-selector-extensions"/>
   <category slug="version/1.0"/>
+  <category slug="deprecated/deprecated-3.4"/>
 </entry>

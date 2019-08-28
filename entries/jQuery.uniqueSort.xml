@@ -21,10 +21,10 @@ var divs = $( "div" ).get();
 
 // Add 3 elements of class dup too (they are divs)
 divs = divs.concat( $( ".dup" ).get() );
-$( "div:eq(1)" ).text( "Pre-unique there are " + divs.length + " elements." );
+$( "div" ).eq( 1 ).text( "Pre-unique there are " + divs.length + " elements." );
 
 divs = jQuery.uniqueSort( divs );
-$( "div:eq(2)" ).text( "Post-unique there are " + divs.length + " elements." )
+$( "div" ).eq( 2 ).text( "Post-unique there are " + divs.length + " elements." )
   .css( "color", "red" );
 ]]></code>
     <css><![CDATA[

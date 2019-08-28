@@ -63,7 +63,7 @@ $( "#clickme" ).click(function() {
   <example>
     <desc>Animates first paragraph to fade to an opacity of 0.33 (33%, about one third visible), completing the animation within 600 milliseconds.</desc>
     <code><![CDATA[
-$( "p:first" ).click(function() {
+$( "p" ).first().click(function() {
   $( this ).fadeTo( "slow", 0.33 );
 });
 ]]></code>
@@ -128,8 +128,8 @@ var getPos = function( n ) {
 $( "p" ).each(function( n ) {
   var r = Math.floor( Math.random() * 3 );
   var tmp = $( this ).text();
-  $( this ).text( $( "p:eq(" + r + ")" ).text() );
-  $( "p:eq(" + r + ")" ).text( tmp );
+  $( this ).text( $( "p" ).eq( r ).text() );
+  $( "p" ).eq( r ).text( tmp );
   $( this ).css( "left", getPos( n ) );
 });
 $( "div" )

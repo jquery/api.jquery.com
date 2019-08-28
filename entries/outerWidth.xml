@@ -23,8 +23,8 @@
   <example>
     <desc>Get the outerWidth of a paragraph.</desc>
     <code><![CDATA[
-var p = $( "p:first" );
-$( "p:last" ).text(
+var p = $( "p" ).first();
+$( "p" ).last().text(
   "outerWidth:" + p.outerWidth() +
   " , outerWidth( true ):" + p.outerWidth( true ) );
 ]]></code>

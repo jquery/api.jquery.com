@@ -51,7 +51,7 @@ jQuery.fn.showTags = function( n ) {
   })
   .get()
   .join( ", " );
-  $( "b:eq( " + n + " )" ).text( tags );
+  $( "b" ).eq( n ).text( tags );
   return this;
 };
 

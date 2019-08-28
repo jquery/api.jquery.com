@@ -53,7 +53,7 @@ $( "#clickme" ).click(function() {
     <desc>Animates hidden divs to fade in one by one, completing each animation within 600 milliseconds.</desc>
     <code><![CDATA[
 $( document.body ).click(function() {
-  $( "div:hidden:first" ).fadeIn( "slow" );
+  $( "div:hidden" ).first().fadeIn( "slow" );
 });
 ]]></code>
     <css><![CDATA[

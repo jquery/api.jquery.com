@@ -33,7 +33,7 @@ $( "p" ).removeClass( "myClass noClass" ).addClass( "yourClass" );
     <p>To replace all existing classes with another class, we can use <code>.attr( "class", "newClass" )</code> instead.</p>
     <p>As of jQuery 1.4, the <code>.removeClass()</code> method allows us to indicate the class to be removed by passing in a function.</p>
     <pre><code>
-$( "li:last" ).removeClass(function() {
+$( "li" ).last().removeClass(function() {
   return $( this ).prev().attr( "class" );
 });
     </code></pre>
@@ -98,7 +98,7 @@ $( "p:odd" ).removeClass( "blue under" );
   <example>
     <desc>Remove all the classes from the matched elements.</desc>
     <code><![CDATA[
-$( "p:eq(1)" ).removeClass();
+$( "p" ).eq( 1 ).removeClass();
 ]]></code>
     <css><![CDATA[
   p {

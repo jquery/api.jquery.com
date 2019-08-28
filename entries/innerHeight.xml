@@ -21,8 +21,8 @@
   <example>
     <desc>Get the innerHeight of a paragraph.</desc>
     <code><![CDATA[
-var p = $( "p:first" );
-$( "p:last" ).text( "innerHeight:" + p.innerHeight() );
+var p = $( "p" ).first();
+$( "p" ).last().text( "innerHeight:" + p.innerHeight() );
 ]]></code>
     <css><![CDATA[
   p {

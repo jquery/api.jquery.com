@@ -7,7 +7,7 @@
   </signature>
   <desc>Selects all elements that are the first child of their parent.</desc>
   <longdesc>
-    <p>While <a href="/first-selector/">:first</a> matches only a single element, the <code>:first-child</code> selector can match more than one: one for each parent. This is equivalent to <code>:nth-child(1)</code>.</p>
+    <p>While <a href="/first/">.first()</a> matches only a single element, the <code>:first-child</code> selector can match more than one: one for each parent. This is equivalent to <code>:nth-child(1)</code>.</p>
   </longdesc>
   <example>
     <desc>Finds the first span in each matched div to underline and add a hover state.</desc>

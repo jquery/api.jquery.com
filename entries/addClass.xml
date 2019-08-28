@@ -64,7 +64,7 @@ $( "p" ).last().addClass( "selected" );
   <example>
     <desc>Add the classes "selected" and "highlight" to the matched elements.</desc>
     <code><![CDATA[
-$( "p:last" ).addClass( "selected highlight" );
+$( "p" ).last().addClass( "selected highlight" );
 ]]></code>
     <css><![CDATA[
   p {

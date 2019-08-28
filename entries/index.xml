@@ -53,7 +53,7 @@ alert( "Index: " + $( "li" ).index( listItem ) );
     </p>
     <p>Note that if the jQuery collection used as the <code>.index()</code> method's argument contains more than one element, the first element within the matched set of elements will be used.</p>
     <pre><code>
-var listItems = $( "li:gt(0)" );
+var listItems = $( "li" ).slice( 1 );
 alert( "Index: " + $( "li" ).index( listItems ) );
     </code></pre>
     <p>We get back the zero-based position of the first list item within the matched set:</p>
@@ -133,7 +133,7 @@ $( "div" ).html( "Index: " + $( "li" ).index( listItem ) );
   }
 ]]></css>
     <code><![CDATA[
-var listItems = $( "li:gt(0)" );
+var listItems = $( "li" ).slice( 1 );
 $( "div" ).html( "Index: " + $( "li" ).index( listItems ) );
 ]]></code>
     <html><![CDATA[

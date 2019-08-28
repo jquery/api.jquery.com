@@ -28,8 +28,8 @@
     <example>
       <desc>Find the text in the first paragraph (stripping out the html), then set the html of the last paragraph to show it is just text (the red bold is gone).</desc>
       <code><![CDATA[
-var str = $( "p:first" ).text();
-$( "p:last" ).html( str );
+var str = $( "p" ).first().text();
+$( "p" ).last().html( str );
 ]]></code>
       <css><![CDATA[
   p {

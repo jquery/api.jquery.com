@@ -51,13 +51,13 @@ $( "#foo").trigger( "custom", [ "Custom", "Event" ] );
   <example>
     <desc>Clicks to button #2 also trigger a click for button #1.</desc>
     <code><![CDATA[
-$( "button:first" ).click(function() {
-  update( $( "span:first" ) );
+$( "button" ).first().click(function() {
+  update( $( "span" ).first() );
 });
 
-$( "button:last" ).click(function() {
-  $( "button:first" ).trigger( "click" );
-  update( $( "span:last" ) );
+$( "button" ).last().click(function() {
+  $( "button" ).first().trigger( "click" );
+  update( $( "span" ).last() );
 });
 
 function update( j ) {
@@ -87,14 +87,14 @@ function update( j ) {
   <example>
     <desc>To submit the first form without using the submit() function, try:</desc>
     <code><![CDATA[
-$( "form:first" ).trigger( "submit" );
+$( "form" ).first().trigger( "submit" );
 ]]></code>
   </example>
   <example>
     <desc>To submit the first form without using the submit() function, try:</desc>
     <code><![CDATA[
 var event = jQuery.Event( "submit" );
-$( "form:first" ).trigger( event );
+$( "form" ).first().trigger( event );
 if ( event.isDefaultPrevented() ) {
   // Perform an action...
 }

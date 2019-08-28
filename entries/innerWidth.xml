@@ -20,8 +20,8 @@
   <example>
     <desc>Get the innerWidth of a paragraph.</desc>
     <code><![CDATA[
-var p = $( "p:first" );
-$( "p:last" ).text( "innerWidth:" + p.innerWidth() );
+var p = $( "p" ).first();
+$( "p" ).last().text( "innerWidth:" + p.innerWidth() );
 ]]></code>
     <css><![CDATA[
   p {
