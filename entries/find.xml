@@ -18,7 +18,7 @@
   <desc>Get the descendants of each element in the current set of matched elements, filtered by a selector, jQuery object, or element.</desc>
   <longdesc>
     <p>Given a jQuery object that represents a set of DOM elements, the <code>.find()</code> method allows us to search through the descendants of these elements in the DOM tree and construct a new jQuery object from the matching elements. The <code>.find()</code> and <code>.children()</code> methods are similar, except that the latter only travels a single level down the DOM tree.</p>
-    <p>The first signature for the <code>.find()</code>method accepts a selector expression of the same type that we can pass to the <code>$()</code> function. The elements will be filtered by testing whether they match this selector. The expressions allowed include selectors like <code>&gt; p</code> which will find all the paragraphs that are children of the elements in the jQuery object.</p>
+    <p>The first signature for the <code>.find()</code>method accepts a selector expression of the same type that we can pass to the <code>$()</code> function. The elements will be filtered by testing whether they match this selector; all parts of the selector must lie inside of an element on which .find() is called. The expressions allowed include selectors like <code>&gt; p</code> which will find all the paragraphs that are children of the elements in the jQuery object.</p>
     <p>Consider a page with a basic nested list on it:</p>
     <pre><code>
 &lt;ul class="level-1"&gt;
