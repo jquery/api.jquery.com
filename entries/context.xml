@@ -6,7 +6,9 @@
   </signature>
   <desc>The DOM node context originally passed to <code>jQuery()</code>; if none was passed then context will likely be the document.</desc>
   <longdesc>
-    <p>The <code>.context</code> property was deprecated in jQuery 1.10 and is only maintained to the extent needed for supporting <code>.live()</code> in the jQuery Migrate plugin. It may be removed without notice in a future version.</p>
+    <div class="warning">
+      <p>Note: This API has been removed in jQuery 3.0.</p>
+    </div>
     <p>The <code>.live()</code> method for binding event handlers uses this property to determine the root element to use for its event delegation needs.</p>
     <p>The value of this property is typically equal to <code>document</code>, as this is the default context for jQuery objects if none is supplied. The context may differ if, for example, the object was created by searching within an <code>&lt;iframe&gt;</code> or XML document.</p>
     <p>Note that the context property may only apply to the elements originally selected by <code>jQuery()</code>, as it is possible for the user to add elements to the collection via methods such as <code>.add()</code> and these may have a different context.</p>
@@ -18,9 +20,6 @@ $( "ul" )
   .append( "<li>" + $( "ul" ).context + "</li>" )
   .append( "<li>" + $( "ul", document.body ).context.nodeName + "</li>" );
 ]]></code>
-    <html><![CDATA[
-Context: <ul></ul>
-]]></html>
   </example>
   <category slug="internals"/>
   <category slug="properties/jquery-object-instance-properties"/>

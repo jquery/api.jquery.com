@@ -6,9 +6,9 @@
   </signature>
   <desc>Creates a new copy of jQuery whose properties and methods can be modified without affecting the original jQuery object.</desc>
   <longdesc>
-    <p>
-      <strong>This method is deprecated as of jQuery 1.7 and will be moved to a plugin in jQuery 1.8.</strong>
-    </p>
+    <div class="warning">
+      <p>Note: This API has been removed in jQuery 1.9.</p>
+    </div>
     <p>There are two specific use cases for which jQuery.sub() was created. The first was for providing a painless way of overriding jQuery methods without completely destroying the original methods and another was for helping to do encapsulation and basic namespacing for jQuery plugins.</p>
     <p>Note that jQuery.sub() doesn't attempt to do any sort of isolation - that's not its intention. All the methods on the sub'd version of jQuery will still point to the original jQuery (events bound and triggered will still be through the main jQuery, data will be bound to elements through the main jQuery, Ajax queries and events will run through the main jQuery, etc.).</p>
     <p>Note that if you're looking to use this for plugin development you should first <i>strongly</i> consider using something like the jQuery UI widget factory which manages both state and plugin sub-methods. <a href="http://blog.nemikor.com/2010/05/15/building-stateful-jquery-plugins/">Some examples of using the jQuery UI widget factory</a> to build a plugin.</p>

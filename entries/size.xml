@@ -6,7 +6,9 @@
   </signature>
   <desc>Return the number of elements in the jQuery object.</desc>
   <longdesc>
-    <p>The <code>.size()</code> method is deprecated as of jQuery 1.8. Use the <code><a href="/length/">.length</a></code> property instead.</p>
+    <div class="warning">
+      <p>Note: This method has been removed in jQuery 3.0. Use the <code><a href="/length/">.length</a></code> property instead.</p>
+    </div>
 
     <p>The <code>.size()</code> method is functionally equivalent to the <code><a href="/length/">.length</a></code> property; however, <strong>the <code>.length</code> property is preferred</strong> because it does not have the overhead of a function call.</p>
     <p>Given a simple unordered list on the page:</p>
@@ -30,7 +32,7 @@ alert( "Size: " + $( "li" ).length );
     </p>
   </longdesc>
   <example>
-    <desc>Count the divs. Click to add more.</desc>
+    <desc>Count the divs.</desc>
     <code><![CDATA[
 $( document.body )
   .click(function() {
@@ -42,26 +44,6 @@ $( document.body )
   // Trigger the click to start
   .click();
 ]]></code>
-    <css><![CDATA[
-  body {
-    cursor: pointer;
-    min-height: 100px;
-  }
-  div {
-    width: 50px;
-    height: 30px;
-    margin: 5px;
-    float: left;
-    background: blue;
-  }
-  span {
-    color: red;
-  }
-]]></css>
-    <html><![CDATA[
-<span></span>
-<div></div>
-]]></html>
   </example>
   <category slug="miscellaneous/dom-element-methods"/>
   <category slug="version/1.0"/>
