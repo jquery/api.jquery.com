@@ -30,7 +30,7 @@ $( "li.third-item" ).prevAll().css( "background-color", "red" );
   <example>
     <desc>Locate all the divs preceding the last div and give them a class.</desc>
     <code><![CDATA[
-$( "div:last" ).prevAll().addClass( "before" );
+$( "div" ).last().prevAll().addClass( "before" );
 ]]></code>
     <css><![CDATA[
   div {

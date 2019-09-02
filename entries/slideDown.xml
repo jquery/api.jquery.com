@@ -55,7 +55,7 @@ $( "#clickme" ).click(function() {
     <desc>Animates all divs to slide down and show themselves over 600 milliseconds.</desc>
     <code><![CDATA[
 $( document.body ).click(function () {
-  if ( $( "div:first" ).is( ":hidden" ) ) {
+  if ( $( "div" ).first().is( ":hidden" ) ) {
     $( "div" ).slideDown( "slow" );
   } else {
     $( "div" ).hide();

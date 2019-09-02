@@ -59,7 +59,7 @@ $( "#other" ).click(function() {
     <desc>If you'd like to prevent forms from being submitted unless a flag variable is set, try:</desc>
     <code><![CDATA[
 $( "form" ).submit(function( event ) {
-  if ( $( "input:first" ).val() === "correct" ) {
+  if ( $( "input" ).first().val() === "correct" ) {
     $( "span" ).text( "Validated..." ).show();
     return;
   }
@@ -102,7 +102,7 @@ $( "form" ).submit(function() {
   <example>
     <desc>To trigger the submit event on the first form on the page, try:</desc>
     <code><![CDATA[
-$( "form:first" ).submit();
+$( "form" ).first().submit();
 ]]></code>
   </example>
   <category slug="events/form-events"/>

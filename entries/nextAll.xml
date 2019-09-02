@@ -30,7 +30,7 @@ $( "li.third-item" ).nextAll().css( "background-color", "red" );
   <example>
     <desc>Locate all the divs after the first and give them a class.</desc>
     <code><![CDATA[
-$( "div:first" ).nextAll().addClass( "after" );
+$( "div" ).first().nextAll().addClass( "after" );
 ]]></code>
     <css><![CDATA[
   div {

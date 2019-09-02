@@ -77,7 +77,7 @@ $( "p" ).dblclick(function() {
   <example>
     <desc>Double click to toggle background color.</desc>
     <code><![CDATA[
-var divdbl = $( "div:first" );
+var divdbl = $( "div" ).first();
 divdbl.dblclick(function() {
   divdbl.toggleClass( "dbl" );
 });

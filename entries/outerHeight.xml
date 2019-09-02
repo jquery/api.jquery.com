@@ -23,8 +23,8 @@
   <example>
     <desc>Get the outerHeight of a paragraph.</desc>
     <code><![CDATA[
-var p = $( "p:first" );
-$( "p:last" ).text(
+var p = $( "p" ).first();
+$( "p" ).last().text(
   "outerHeight:" + p.outerHeight() +
   " , outerHeight( true ):" + p.outerHeight( true ) );
 ]]></code>

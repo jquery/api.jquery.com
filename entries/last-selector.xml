@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<entry type="selector" name="last" return="">
+<entry type="selector" name="last" return="" deprecated="3.4">
   <title>:last Selector</title>
   <sample>:last</sample>
   <signature>
@@ -7,13 +7,14 @@
   </signature>
   <desc>Selects the last matched element.</desc>
   <longdesc>
+    <p><strong>As of jQuery 3.4</strong>, the <code>:last</code> pseudo-class is deprecated. Remove it from your selectors and filter the results later using <a href="/last/"><code>.last()</code></a>.</p>
     <p>Note that <code>:last</code> selects a single element by filtering  the current jQuery collection and matching the last element within it.</p>
   </longdesc>
   <note id="jquery-selector-extension" type="additional" data-selector=":last"/>
   <example>
     <desc>Finds the last table row.</desc>
     <code><![CDATA[
-$( "tr:last" ).css({ backgroundColor: "yellow", fontWeight: "bolder" });
+$( "tr" ).last().css({ backgroundColor: "yellow", fontWeight: "bolder" });
 ]]></code>
     <html><![CDATA[
 <table>
@@ -26,4 +27,5 @@ $( "tr:last" ).css({ backgroundColor: "yellow", fontWeight: "bolder" });
   <category slug="selectors/basic-filter-selectors"/>
   <category slug="selectors/jquery-selector-extensions"/>
   <category slug="version/1.0"/>
+  <category slug="deprecated/deprecated-3.4"/>
 </entry>

@@ -58,7 +58,7 @@ $( "p" ).contextmenu(function() {
   <example>
     <desc>Right click to toggle background color.</desc>
     <code><![CDATA[
-var div = $( "div:first" );
+var div = $( "div" ).first();
 div.contextmenu(function() {
   div.toggleClass( "contextmenu" );
 });

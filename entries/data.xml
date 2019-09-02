@@ -40,8 +40,8 @@ $( "body" ).data(); // { foo: 52, bar: { isManual: true }, baz: [ 1, 2, 3 ] }
       <desc>Store then retrieve a value from the div element.</desc>
       <code><![CDATA[
 $( "div" ).data( "test", { first: 16, last: "pizza!" } );
-$( "span:first" ).text( $( "div" ).data( "test" ).first );
-$( "span:last" ).text( $( "div" ).data( "test" ).last );
+$( "span" ).first().text( $( "div" ).data( "test" ).first );
+$( "span" ).last().text( $( "div" ).data( "test" ).last );
 ]]></code>
       <css><![CDATA[
   div {

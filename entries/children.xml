@@ -43,8 +43,8 @@ $( "#container" ).click(function ( event ) {
   var kids = $( event.target ).children();
   var len = kids.addClass( "hilite" ).length;
 
-  $( "#results span:first" ).text( len );
-  $( "#results span:last" ).text( event.target.tagName );
+  $( "#results span" ).first().text( len );
+  $( "#results span" ).last().text( event.target.tagName );
 
   event.preventDefault();
 });

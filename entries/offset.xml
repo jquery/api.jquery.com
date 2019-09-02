@@ -19,7 +19,7 @@
      <example>
       <desc>Access the offset of the second paragraph:</desc>
       <code><![CDATA[
-var p = $( "p:last" );
+var p = $( "p" ).last();
 var offset = p.offset();
 p.html( "left: " + offset.left + ", top: " + offset.top );
 ]]></code>
@@ -101,7 +101,7 @@ $( "*", document.body ).click(function( event ) {
     <example>
       <desc>Set the offset of the second paragraph:</desc>
       <code><![CDATA[
-$( "p:last" ).offset({ top: 10, left: 30 });
+$( "p" ).last().offset({ top: 10, left: 30 });
 ]]></code>
       <css><![CDATA[
   p {

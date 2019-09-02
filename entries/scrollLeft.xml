@@ -16,8 +16,8 @@
     <example>
       <desc>Get the scrollLeft of a paragraph.</desc>
       <code><![CDATA[
-var p = $( "p:first" );
-$( "p:last" ).text( "scrollLeft:" + p.scrollLeft() );
+var p = $( "p" ).first();
+$( "p" ).last().text( "scrollLeft:" + p.scrollLeft() );
 ]]></code>
       <css><![CDATA[
   p {

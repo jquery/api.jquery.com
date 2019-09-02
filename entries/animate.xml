@@ -249,12 +249,12 @@ $( "#go4" ).click(function() {
     <desc>Animates the first div's left property and synchronizes the remaining divs, using the step function to set their left properties at each stage of the animation. </desc>
     <code><![CDATA[
 $( "#go" ).click(function() {
-  $( ".block:first" ).animate({
+  $( ".block" ).first().animate({
     left: 100
   }, {
     duration: 1000,
     step: function( now, fx ){
-      $( ".block:gt(0)" ).css( "left", now );
+      $( ".block" ).slice( 1 ).css( "left", now );
     }
   });
 });

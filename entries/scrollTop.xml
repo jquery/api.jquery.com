@@ -12,8 +12,8 @@
     <example>
       <desc>Get the scrollTop of a paragraph.</desc>
       <code><![CDATA[
-var p = $( "p:first" );
-$( "p:last" ).text( "scrollTop:" + p.scrollTop() );
+var p = $( "p" ).first();
+$( "p" ).last().text( "scrollTop:" + p.scrollTop() );
 ]]></code>
       <css><![CDATA[
   p {

@@ -30,8 +30,8 @@ $( "#mydiv" ).hasClass( "quux" )
   <example>
     <desc>Looks for the paragraph that contains 'selected' as a class.</desc>
     <code><![CDATA[
-$( "#result1" ).append( $( "p:first" ).hasClass( "selected" ).toString() );
-$( "#result2" ).append( $( "p:last" ).hasClass( "selected" ).toString() );
+$( "#result1" ).append( $( "p" ).first().hasClass( "selected" ).toString() );
+$( "#result2" ).append( $( "p" ).last().hasClass( "selected" ).toString() );
 $( "#result3" ).append( $( "p" ).hasClass( "selected" ).toString() ) ;
 ]]></code>
     <css><![CDATA[

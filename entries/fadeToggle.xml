@@ -26,11 +26,11 @@
   <example>
     <desc>Fades first paragraph in or out, completing the animation within 600 milliseconds and using a linear easing. Fades last paragraph in or out for 200 milliseconds, inserting a "finished" message upon completion. </desc>
     <code><![CDATA[
-$( "button:first" ).click(function() {
-  $( "p:first" ).fadeToggle( "slow", "linear" );
+$( "button" ).first().click(function() {
+  $( "p" ).first().fadeToggle( "slow", "linear" );
 });
-$( "button:last" ).click(function() {
-  $( "p:last" ).fadeToggle( "fast", function() {
+$( "button" ).last().click(function() {
+  $( "p" ).last().fadeToggle( "fast", function() {
     $( "#log" ).append( "<div>finished</div>" );
   });
 });
