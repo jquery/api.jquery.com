@@ -4,8 +4,12 @@
   <signature>
     <added>1.0</added>
   </signature>
-  <desc>States if the current page, in the user's browser, is being rendered using the <a href="https://www.w3.org/TR/REC-CSS2/box.html">W3C CSS Box Model</a>. <strong>This property was removed in jQuery 1.8</strong>. Please try to use feature detection instead.</desc>
-  <longdesc/>
+  <desc>States if the current page, in the user's browser, is being rendered using the <a href="https://www.w3.org/TR/REC-CSS2/box.html">W3C CSS Box Model</a>.</desc>
+  <longdesc>
+    <div class="warning">
+      <p>Note: This API has been removed in jQuery 3.0; check if <code>.document.compatMode</code> is equal to <code>"CSS1Compat"</code> instead. Or, even better - always specify a DOCTYPE and avoid using quirks mode which jQuery doesn't support.</p>
+    </div>
+  </longdesc>
   <category slug="utilities"/>
   <category slug="version/1.0"/>
   <category slug="deprecated/deprecated-1.3"/>

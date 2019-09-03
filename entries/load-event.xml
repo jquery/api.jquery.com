@@ -20,6 +20,9 @@
     </argument>
   </signature>
   <longdesc>
+    <div class="warning">
+      <p>Note: This API has been removed in jQuery 3.0; please use <code>.on( "load", handler )</code> instead of <code>.load( handler )</code> and <code>.trigger( "load" )</code> instead of <code>.load()</code>.</p>
+    </div>
     <p>This method is a shortcut for <code>.on( "load", handler )</code>.</p>
     <p>The <code>load</code> event is sent to an element when it and all sub-elements have been completely loaded. This event can be sent to any element associated with a URL: images, scripts, frames, iframes, and the <code>window</code> object.</p>
     <p>For example, consider a page with a simple image:</p>

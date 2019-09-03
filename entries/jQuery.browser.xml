@@ -7,6 +7,9 @@
     </signature>
     <desc>Contains flags for the useragent, read from navigator.userAgent. <strong>This property was removed in jQuery 1.9</strong> and is available only through the jQuery.migrate plugin. Please try to use feature detection instead.</desc>
     <longdesc>
+      <div class="warning">
+        <p>Note: This API has been removed in jQuery 1.9; please rely on feature detection instead.</p>
+      </div>
       <p>The <code>$.browser</code> property provides information about the web browser that is accessing the page, as reported by the browser itself. It contains flags for each of the four most prevalent browser classes (Internet Explorer, Mozilla, Webkit, and Opera) as well as version information.</p>
       <p>Available flags are:</p>
       <ul>
@@ -56,6 +59,9 @@ $.browser.msie;
     </signature>
     <desc>The version number of the rendering engine for the user's browser. <strong>This property was removed in jQuery 1.9</strong> and is available only through the jQuery.migrate plugin.</desc>
     <longdesc>
+      <div class="warning">
+        <p>Note: This API has been removed in jQuery 1.9; please rely on feature detection instead.</p>
+      </div>
       <p>Here are some typical results:</p>
       <ul>
         <li>Internet Explorer: 6.0, 7.0, 8.0</li>

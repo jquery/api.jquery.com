@@ -21,6 +21,9 @@
     </argument>
   </signature>
   <longdesc>
+    <div class="warning">
+      <p>Note: This API has been removed in jQuery 1.9; please use <a href="/on/"><code>on()</code></a> instead.</p>
+    </div>
     <p>Any handler that has been attached with <code>.live()</code> can be removed with <code>.die()</code>. This method is analogous to calling <code>.off()</code> with no arguments, which is used to remove all handlers attached with <code>.on()</code>.
   See the discussions of <code>.live()</code> and <code>.off()</code> for further details.</p>
     <p>If used without an argument, .die() removes <em>all</em> event handlers previously attached using <code>.live()</code> from the elements.</p>

@@ -32,7 +32,9 @@
     </argument>
   </signature>
   <longdesc>
-    <p><strong>As of jQuery 1.7</strong>, the <code>.live()</code> method is deprecated. Use <a href="/on/"><code>.on()</code></a> to attach event handlers. Users of older versions of jQuery should use <a href="/delegate/"><code>.delegate()</code></a> in preference to <code>.live()</code>.</p>
+    <div class="warning">
+      <p>Note: This API has been removed in jQuery 1.9; please use <a href="/on/"><code>on()</code></a> instead.</p>
+    </div>
     <p>This method provides a means to attach delegated event handlers to the <code>document</code> element of a page, which simplifies the use of event handlers when content is dynamically added to a page. See the discussion of direct versus delegated events in the <a href="/on/"><code>.on()</code></a> method for more information. </p>
     <p>Rewriting the <code>.live()</code> method in terms of its successors is straightforward; these are templates for equivalent calls for all three event attachment methods:</p>
     <pre><code>
