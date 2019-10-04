@@ -82,7 +82,7 @@ var jqxhr = $.getJSON( "example.json", function() {
 // Perform other work here ...
 
 // Set another completion function for the request above
-jqxhr.complete(function() {
+jqxhr.always(function() {
   console.log( "second complete" );
 });
     </code></pre>
