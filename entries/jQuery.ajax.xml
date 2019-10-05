@@ -109,7 +109,7 @@ $.ajax({
         <argument name="jqXHR" type="jqXHR"/>
         <argument name="textStatus" type="String"/>
         <argument name="errorThrown" type="String"/>
-        <desc>A function to be called if the request fails. The function receives three arguments: The jqXHR (in jQuery 1.4.x, XMLHttpRequest) object, a string describing the type of error that occurred and an optional exception object, if one occurred. Possible values for the second argument (besides <code>null</code>) are <code>"timeout"</code>, <code>"error"</code>, <code>"abort"</code>, and <code>"parsererror"</code>. When an HTTP error occurs, <code>errorThrown</code> receives the textual portion of the HTTP status, such as "Not Found" or "Internal Server Error."  <strong>As of jQuery 1.5</strong>, the <code>error</code> setting can accept an array of functions. Each function will be called in turn.  <strong>Note:</strong> <em>This handler is not called for cross-domain script and cross-domain JSONP requests.</em> This is an <a href="/Ajax_Events/">Ajax Event</a>.</desc>
+        <desc>A function to be called if the request fails. The function receives three arguments: The jqXHR (in jQuery 1.4.x, XMLHttpRequest) object, a string describing the type of error that occurred and an optional exception object, if one occurred. Possible values for the second argument (besides <code>null</code>) are <code>"timeout"</code>, <code>"error"</code>, <code>"abort"</code>, and <code>"parsererror"</code>. When an HTTP error occurs, <code>errorThrown</code> receives the textual portion of the HTTP status, such as "Not Found" or "Internal Server Error." (in HTTP/2 it may instead be an empty string) <strong>As of jQuery 1.5</strong>, the <code>error</code> setting can accept an array of functions. Each function will be called in turn.  <strong>Note:</strong> <em>This handler is not called for cross-domain script and cross-domain JSONP requests.</em> This is an <a href="/Ajax_Events/">Ajax Event</a>.</desc>
       </property>
       <property default="true" name="global" type="Boolean">
         <desc>Whether to trigger global Ajax event handlers for this request. The default is <code>true</code>. Set to <code>false</code> to prevent the global handlers like <code>ajaxStart</code> or <code>ajaxStop</code> from being triggered. This can be used to control various <a href="/Ajax_Events/">Ajax Events</a>.</desc>
@@ -290,7 +290,7 @@ jqxhr.always(function() {
         <code>status</code>
       </li>
       <li>
-        <code>statusText</code>
+        <code>statusText</code> (may be an empty string in HTTP/2)
       </li>
       <li>
         <code>abort( [ statusText ] )</code>
