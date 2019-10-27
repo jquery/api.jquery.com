@@ -116,13 +116,24 @@ $.get( "test.cgi", { name: "John", time: "2pm" } )
 ]]></code>
   </example>
   <example>
-    <desc> Get the test.php page contents, which has been returned in json format (&lt;?php echo json_encode( array( "name"=&gt;"John","time"=&gt;"2pm" ) ); ?&gt;), and add it to the page.</desc>
+    <desc>Get the test.php page contents, which has been returned in json format (&lt;?php echo json_encode( array( "name"=&gt;"John","time"=&gt;"2pm" ) ); ?&gt;), and add it to the page.</desc>
     <code><![CDATA[
 $.get( "test.php", function( data ) {
   $( "body" )
     .append( "Name: " + data.name ) // John
     .append( "Time: " + data.time ); //  2pm
 }, "json" );
+]]></code>
+  </example>
+  <example>
+    <desc>Get another page on the same domain. Outputs to console both the data returned and the type of data returned.</desc>
+    <code><![CDATA[
+// If this was sent on https://api.jquery.com/jQuery.get/ you will
+// get the response result of https://api.jquery.com/jQuery.ajax/
+$.get( "/jQuery.ajax/", function( data ) {
+  console.log( typeof( data ) );
+  console.log( data );
+});
 ]]></code>
   </example>
   <category slug="ajax/shorthand-methods"/>
