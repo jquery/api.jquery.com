@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<entry type="method" name="jQuery.removeData" return="jQuery">
+<entry type="method" name="jQuery.removeData" return="undefined">
   <title>jQuery.removeData()</title>
   <signature>
     <added>1.2.3</added>
