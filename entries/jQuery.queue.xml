@@ -70,7 +70,7 @@ runIt();
     <category slug="utilities"/>
     <category slug="version/1.3"/>
   </entry>
-  <entry type="method" name="jQuery.queue" return="jQuery">
+  <entry type="method" name="jQuery.queue" return="Array">
     <signature>
       <added>1.3</added>
       <argument name="element" type="Element">
