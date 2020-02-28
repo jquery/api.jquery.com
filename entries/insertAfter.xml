@@ -14,7 +14,7 @@
   </signature>
   <desc>Insert every element in the set of matched elements after the target.</desc>
   <longdesc>
-    <p>The <code><a href="/after/">.after()</a></code> and <code>.insertAfter()</code> methods perform the same task. The major difference is in the syntax-specifically, in the placement of the content and target. With <code>.after()</code>, the selector expression preceding the method is the container after which the content is inserted. With <code>.insertAfter()</code>, on the other hand, the content precedes the method, either as a selector expression or as markup created on the fly, and it is inserted after the target container.</p>
+    <p>The <code><a href="/after/">.after()</a></code> and <code>.insertAfter()</code> methods perform the same task. The major difference is in the syntax&#x2014;specifically, in the placement of the content and target. With <code>.after()</code>, the selector expression preceding the method is the container after which the content is inserted. With <code>.insertAfter()</code>, on the other hand, the content precedes the method, either as a selector expression or as markup created on the fly, and it is inserted after the target container.</p>
     <p>Consider the following HTML:</p>
     <pre><code>
 &lt;div class="container"&gt;
