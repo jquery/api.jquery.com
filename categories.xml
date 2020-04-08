@@ -71,6 +71,11 @@
         <p>For more information, see the Release Notes/Changelog at <a href="https://blog.jquery.com/2016/06/09/jquery-3-0-final-released/">https://blog.jquery.com/2016/06/09/jquery-3-0-final-released/</a></p>
       ]]></desc>
     </category>
+    <category name="Deprecated 3.2" slug="deprecated-3.2">
+      <desc><![CDATA[All the aspects of the API that were deprecated in the corresponding version of jQuery.
+        <p>For more information, see the Release Notes/Changelog at <a href="https://blog.jquery.com/2017/03/16/jquery-3-2-0-is-out/">https://blog.jquery.com/2017/03/16/jquery-3-2-0-is-out/</a></p>
+      ]]></desc>
+    </category>
     <category name="Deprecated 3.3" slug="deprecated-3.3">
       <desc><![CDATA[All the aspects of the API that were deprecated in the corresponding version of jQuery.
         <p>For more information, see the Release Notes/Changelog at <a href="https://blog.jquery.com/2018/01/19/jquery-3-3-0-a-fragrant-bouquet-of-deprecations-and-is-that-a-new-feature/">https://blog.jquery.com/2018/01/19/jquery-3-3-0-a-fragrant-bouquet-of-deprecations-and-is-that-a-new-feature/</a></p>
@@ -79,6 +84,11 @@
     <category name="Deprecated 3.4" slug="deprecated-3.4">
       <desc><![CDATA[All the aspects of the API that were deprecated in the corresponding version of jQuery.
         <p>For more information, see the Release Notes/Changelog at <a href="https://blog.jquery.com/2019/04/10/jquery-3-4-0-released/">https://blog.jquery.com/2019/04/10/jquery-3-4-0-released/</a></p>
+      ]]></desc>
+    </category>
+    <category name="Deprecated 3.5" slug="deprecated-3.5">
+      <desc><![CDATA[All the aspects of the API that were deprecated in the corresponding version of jQuery.
+        <p>For more information, see the Release Notes/Changelog at <a href="https://blog.jquery.com/2020/04/10/jquery-3-5-0-released/">https://blog.jquery.com/2020/04/10/jquery-3-5-0-released/</a></p>
       ]]></desc>
     </category>
   </category>
@@ -429,7 +439,7 @@ var files = event.originalEvent.dataTransfer.files;
         <hr/>
       ]]></desc>
     </category>
-    <category name="Version 1.12 &amp; 2.2" slug="1.12-2.2">
+    <category name="Version 1.12 &amp; 2.2" slug="1.12-and-2.2">
       <desc><![CDATA[
         <p>Aspects of the API that were changed in the corresponding versions of jQuery. Changes in jQuery 1.12 and 2.2 includes performance improvements of the selector engine, manipulation of class names for SVG elements, support for the Symbol type and iterators added in ES2015, and a new hook has been added for filtering HTML. A <a href="https://github.com/jquery/jquery-migrate">jQuery Migrate Plugin</a> was offered to help developers with a transitional upgrade path.
         </p>
@@ -447,7 +457,36 @@ var files = event.originalEvent.dataTransfer.files;
     </category>
     <category name="Version 3.1" slug="3.1">
       <desc><![CDATA[
-        <p><a href="/jQuery.readyException">jQuery.readyException</a> was added.</p>
+        <p>Aspects of the API that were changed in the corresponding version of jQuery. Version 3.1 added the <a href="/jQuery.readyException">jQuery.readyException</a> API.</p>
+        <p>For more information, see the <a href="https://blog.jquery.com/2016/07/07/jquery-3-1-0-released-no-more-silent-errors/">Release Notes/Changelog</a></p>
+        <hr/>
+      ]]></desc>
+    </category>
+    <category name="Version 3.2" slug="3.2">
+      <desc><![CDATA[
+        <p>Aspects of the API that were changed in the corresponding version of jQuery. Version 3.2 added support for custom CSS properties, made <code>.contents()</code> work on the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template"><code>&lt;template&gt;</code> element</a> &amp; made <code>.width()</code> &amp; <code>.height()</code> ignore CSS transforms. A few APIs were deprecated. The deprecated module was added back to the slim build.</p>
+        <p>For more information, see the <a href="https://blog.jquery.com/2017/03/16/jquery-3-2-0-is-out/">Release Notes/Changelog</a></p>
+        <hr/>
+      ]]></desc>
+    </category>
+    <category name="Version 3.3" slug="3.3">
+      <desc><![CDATA[
+        <p>Aspects of the API that were changed in the corresponding version of jQuery. <code>.addClass()</code>, <code>.removeClass()</code> &amp; <code>.toggleClass()</code> now work on arrays of classes; a few APIs were deprecated.</p>
+        <p>For more information, see the <a href="https://blog.jquery.com/2018/01/19/jquery-3-3-0-a-fragrant-bouquet-of-deprecations-and-is-that-a-new-feature/">Release Notes/Changelog</a></p>
+        <hr/>
+      ]]></desc>
+    </category>
+    <category name="Version 3.4" slug="3.4">
+      <desc><![CDATA[
+        <p>Aspects of the API that were changed in the corresponding version of jQuery. <code>nonce</code> &amp; <code>nomodule</code> attributes are now preserved during script manipulation, layout thrashing was eliminated in some cases in <code>.width()</code> &amp; <code>.height()</code> APIs. Radio elements state is now updated before event handlers run. Passing data now works when triggering all events, including <code>focus</code>. A minor security fix is also included.</p>
+        <p>For more information, see the <a href="https://blog.jquery.com/2019/04/10/jquery-3-4-0-released/">Release Notes/Changelog</a></p>
+        <hr/>
+      ]]></desc>
+    </category>
+    <category name="Version 3.5" slug="3.5">
+      <desc><![CDATA[
+        <p>Aspects of the API that were changed in the corresponding version of jQuery. Security fixes, new <code>.even()</code> &amp; <code>.odd()</code> methods; <code>jQuery.globalEval</code> now accepts context; unsuccessful HTTP script responses are no longer evaluated; performance improvements. <code>jQuery.trim</code> is now deprecated.</p>
+        <p>For more information, see the <a href="https://jquery.com/upgrade-guide/3.5/">jQuery Core 3.5 Upgrade guide</a> and the <a href="https://blog.jquery.com/2020/04/10/jquery-3-5-0-released/">Release Notes/Changelog</a></p>
         <hr/>
       ]]></desc>
     </category>

@@ -8,6 +8,7 @@
   <longdesc>
     <p>Given a jQuery object that represents a set of DOM elements, the <code>.contents()</code> method allows us to search through the immediate children of these elements in the DOM tree and construct a new jQuery object from the matching elements. The <code>.contents()</code> and <code>.children()</code> methods are similar, except that the former includes text nodes and comment nodes as well as HTML elements in the resulting jQuery object. Please note that most jQuery operations don't support text nodes and comment nodes. The few that do will have an explicit note on their API documentation page.</p>
     <p>The <code>.contents()</code> method can also be used to get the content document of an iframe, if the iframe is on the same domain as the main page.</p>
+    <p><strong>As of jQuery 3.2</strong>, <code>.contents()</code> returns contents of <code>&lt;template&gt;</code> elements as well.</p>
     <p>Consider a simple <code>&lt;div&gt;</code> with a number of text nodes, each of which is separated by two line break elements (<code>&lt;br&gt;</code>):</p>
     <pre><code>
 &lt;div class="container"&gt;
@@ -60,4 +61,5 @@ $( "#frameDemo" ).contents().find( "a" ).css( "background-color", "#BADA55" );
   </example>
   <category slug="traversing/miscellaneous-traversal"/>
   <category slug="version/1.2"/>
+  <category slug="version/3.2"/>
 </entry>

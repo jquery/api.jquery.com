@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
-<entry type="method" name="last" return="jQuery">
-  <title>.last()</title>
+<entry type="method" name="even" return="jQuery">
+  <title>.even()</title>
   <signature>
-    <added>1.4</added>
+    <added>3.5</added>
   </signature>
-  <desc>Reduce the set of matched elements to the final one in the set.</desc>
+  <desc>Reduce the set of matched elements to the even ones in the set, numbered from zero.</desc>
   <longdesc>
-    <p>Given a jQuery object that represents a set of DOM elements, the <code>.last()</code> method constructs a new jQuery object from the last element in that set.</p>
+    <p>Given a jQuery object that represents a set of DOM elements, the <code>.even()</code> method constructs a new jQuery object from the even elements in that set. Counting starts from zero!</p>
     <p>Consider a page with a simple list on it:</p>
     <pre><code>
 &lt;ul&gt;
@@ -19,19 +19,19 @@
     </code></pre>
     <p>We can apply this method to the set of list items:</p>
     <pre><code>
-$( "li" ).last().css( "background-color", "red" );
+$( "li" ).even().css( "background-color", "red" );
     </code></pre>
-    <p>The result of this call is a red background for the final item.</p>
+    <p>The result of this call is a red background for the first, third &amp; 5th items.</p>
   </longdesc>
   <example>
-    <desc>Highlight the last item in a list.</desc>
+    <desc>Highlight the even items in a list.</desc>
     <css><![CDATA[
   .highlight {
     background-color: yellow;
   }
 ]]></css>
     <code><![CDATA[
-$( "ul li" ).last().addClass( "highlight" );
+$( "ul li" ).even().addClass( "highlight" );
 ]]></code>
     <html><![CDATA[
 <ul>
@@ -43,5 +43,5 @@ $( "ul li" ).last().addClass( "highlight" );
 ]]></html>
   </example>
   <category slug="traversing/filtering"/>
-  <category slug="version/1.4"/>
+  <category slug="version/3.5"/>
 </entry>

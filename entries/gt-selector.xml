@@ -17,7 +17,9 @@
   </signature>
   <desc>Select all elements at an index greater than <code>index</code> within the matched set.</desc>
   <longdesc>
-    <p><strong>As of jQuery 3.4</strong>, the <code>:gt</code> pseudo-class is deprecated. Remove it from your selectors and filter the results later using <a href="/slice/"><code>.slice()</code></a>. For example, <code>:gt(3)</code> can be replaced with a call to <code>.slice( 4 )</code> (the provided index needs to be increased by one).</p>
+    <div class="warning">
+      <p><strong>As of jQuery 3.4</strong>, the <code>:gt</code> pseudo-class is deprecated. Remove it from your selectors and filter the results later using <a href="/slice/"><code>.slice()</code></a>. For example, <code>:gt(3)</code> can be replaced with a call to <code>.slice( 4 )</code> (the provided index needs to be increased by one).</p>
+    </div>
     <p>
       <strong>index-related selectors</strong>
     </p>

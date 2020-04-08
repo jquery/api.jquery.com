@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<entry type="method" name="jQuery.isArray" return="boolean">
+<entry type="method" name="jQuery.isArray" return="boolean" deprecated="3.2">
   <title>jQuery.isArray()</title>
   <signature>
     <added>1.3</added>
@@ -9,6 +9,9 @@
   </signature>
   <desc>Determine whether the argument is an array.</desc>
   <longdesc>
+    <div class="warning">
+      <p>Note: This API has been deprecated in jQuery 3.2; please use the native <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray"><code>Array.isArray</code></a> method instead.</p>
+    </div>
     <p><code>$.isArray()</code> returns a Boolean indicating whether the object is a JavaScript array (not an array-like object, such as a jQuery object).</p>
   </longdesc>
   <example>
@@ -22,4 +25,5 @@ Is [] an Array? <b></b>
   </example>
   <category slug="utilities"/>
   <category slug="version/1.3"/>
+  <category slug="deprecated/deprecated-3.2"/>
 </entry>

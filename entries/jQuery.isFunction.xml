@@ -9,7 +9,9 @@
   </signature>
   <desc>Determines if its argument is callable as a function.</desc>
   <longdesc>
-    <p>As of jQuery 3.3, <code>jQuery.isFunction()</code> has been deprecated. In most cases, its use can be replaced by <code>typeof x === "function"</code>.</p>
+    <div class="warning">
+      <p>As of jQuery 3.3, <code>jQuery.isFunction()</code> has been deprecated. In most cases, its use can be replaced by <code>typeof x === "function"</code>.</p>
+    </div>
     <p><strong>Note:</strong> As of jQuery 1.3, functions provided by the browser like <code>alert()</code> and DOM element methods like <code>getAttribute()</code> are not guaranteed to be detected as functions in browsers such as Internet Explorer.</p>
   </longdesc>
   <example>

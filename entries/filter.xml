@@ -42,9 +42,9 @@
     </code></pre>
     <p>We can apply this method to the set of list items:</p>
     <pre><code>
-$( "li" ).filter( ":even" ).css( "background-color", "red" );
+$( "li" ).filter( ":nth-child(2n)" ).css( "background-color", "red" );
     </code></pre>
-    <p>The result of this call is a red background for items 1, 3, and 5, as they match the selector (recall that <code>:even</code> and <code>:odd</code> use 0-based indexing).</p>
+    <p>The result of this call is a red background for items 2, 4, and 6, as they match the selector.</p>
     <h4 id="using-filter-function">Using a Filter Function</h4>
     <p>The second form of this method allows us to filter elements against a function rather than a selector. For each element, if the function returns <code>true</code> (or a "truthy" value), the element will be included in the filtered set; otherwise, it will be excluded. Suppose we have a somewhat more involved HTML snippet:</p>
     <pre><code>

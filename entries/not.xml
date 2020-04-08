@@ -40,9 +40,9 @@
     </code></pre>
     <p>We can apply this method to the set of list items:</p>
     <pre><code>
-$( "li" ).not( ":even" ).css( "background-color", "red" );
+$( "li" ).not( ":nth-child(2n)" ).css( "background-color", "red" );
     </code></pre>
-    <p>The result of this call is a red background for items 2 and 4, as they do not match the selector (recall that :even and :odd use 0-based indexing).</p>
+    <p>The result of this call is a red background for items 1, 3 and 5, as they do not match the selector.</p>
     <h4>Removing Specific Elements</h4>
     <p>The second version of the <code>.not()</code> method allows us to remove elements from the matched set, assuming we have found those elements previously by some other means. For example, suppose our list had an id applied to one of its items:</p>
     <pre><code>

@@ -2,7 +2,7 @@
 <entry type="method" name="jQuery.uniqueSort" return="Array">
   <title>jQuery.uniqueSort()</title>
   <signature>
-    <added>1.12-2.2</added>
+    <added>1.12-and-2.2</added>
     <argument name="array" type="Array">
       <desc>The Array of DOM elements.</desc>
     </argument>
@@ -42,5 +42,5 @@ $( "div" ).eq( 2 ).text( "Post-unique there are " + divs.length + " elements." )
 ]]></html>
   </example>
   <category slug="utilities"/>
-  <category slug="version/1.12-2.2"/>
+  <category slug="version/1.12-and-2.2"/>
 </entry>

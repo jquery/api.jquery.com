@@ -102,10 +102,10 @@ $( selector ).on( "mouseenter mouseleave", handlerInOut );
       <desc>Slide the next sibling LI up or down on hover, and toggle a class.</desc>
       <code><![CDATA[
 $( "li" )
-  .filter( ":odd" )
+  .odd()
     .hide()
   .end()
-  .filter( ":even" )
+  .even()
     .hover(function() {
       $( this )
         .toggleClass( "active" )

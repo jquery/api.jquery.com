@@ -7,7 +7,9 @@
   </signature>
   <desc>Selects the first matched DOM element.</desc>
   <longdesc>
-    <p><strong>As of jQuery 3.4</strong>, the <code>:first</code> pseudo-class is deprecated. Remove it from your selectors and filter the results later using <a href="/first/"><code>.first()</code></a>.</p>
+    <div class="warning">
+      <p><strong>As of jQuery 3.4</strong>, the <code>:first</code> pseudo-class is deprecated. Remove it from your selectors and filter the results later using <a href="/first/"><code>.first()</code></a>.</p>
+    </div>
     <p>The <code>:first</code> pseudo-class is equivalent to <code>:eq( 0 )</code>. It could also be written as <code>:lt( 1 )</code>. While this matches only a single element, <a href="/first-child-selector/">:first-child</a> can match more than one: One for each parent.</p>
   </longdesc>
   <note id="jquery-selector-extension" type="additional" data-selector=":first"/>

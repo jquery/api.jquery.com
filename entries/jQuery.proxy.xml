@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<entry type="method" name="jQuery.proxy" return="Function">
+<entry type="method" name="jQuery.proxy" return="Function" deprecated="3.3">
   <title>jQuery.proxy()</title>
   <signature>
     <added>1.4</added>
@@ -46,6 +46,9 @@
 
   <desc>Takes a function and returns a new one that will always have a particular context.</desc>
   <longdesc>
+    <div class="warning">
+      <p>Note: This API has been deprecated in jQuery 3.3; please use the native <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind"><code>Function.prototype.bind</code></a> method instead.</p>
+    </div>
     <p>This method is most useful for attaching event handlers to an element where the context is pointing back to a different object. Additionally, jQuery makes sure that even if you bind the function returned from <code>jQuery.proxy()</code> it will still unbind the correct function if passed the original.</p>
     <p>Be aware, however, that jQuery's event binding subsystem assigns a unique id to each event handling function in order to track it when it is used to specify the function to be unbound. The function represented by <code>jQuery.proxy()</code> is seen as a single function by the event subsystem, even when it is used to bind different contexts. To avoid unbinding the wrong handler, use a unique event namespace for binding and unbinding (e.g., <code>"click.myproxy1"</code>) rather than specifying the proxied function during unbinding.</p>
     <p><strong>As of jQuery 1.6</strong>, any number of additional arguments may be supplied to <code>$.proxy()</code>, and they will be passed to the function whose context will be changed.</p>
@@ -170,4 +173,5 @@ $( "#test" )
   <category slug="utilities"/>
   <category slug="version/1.4"/>
   <category slug="version/1.6"/>
+  <category slug="deprecated/deprecated-3.3"/>
 </entry>
