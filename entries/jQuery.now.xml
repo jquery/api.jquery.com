@@ -1,13 +1,17 @@
 <?xml version="1.0"?>
-<entry type="method" name="jQuery.now" return="Number">
+<entry type="method" name="jQuery.now" return="Number" deprecated="3.3">
   <title>jQuery.now()</title>
   <signature>
     <added>1.4.3</added>
   </signature>
   <desc>Return a number representing the current time.</desc>
   <longdesc>
-    <p>The <code>$.now()</code> method is a shorthand for the number returned by the expression <code>(new Date).getTime()</code>.</p>
+    <div class="warning">
+      <p>Note: This API has been deprecated in jQuery 3.3; please use the native <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/now"><code>Date.now()</code></a> method instead.</p>
+    </div>
+    <p>The <code>$.now()</code> method is an alias for <code>Date.now()</code>.</p>
   </longdesc>
   <category slug="utilities"/>
   <category slug="version/1.4.3"/>
+  <category slug="deprecated/deprecated-3.3"/>
 </entry>

@@ -9,6 +9,12 @@
   </signature>
   <desc>Determine whether the argument is a window.</desc>
   <longdesc>
+    <div class="warning">
+      <p>Note: This API has been deprecated in jQuery 3.3; if you need this function, reimplement it by yourself:</p>
+      <code><![CDATA[function isWindow( obj ) {
+  return obj != null && obj === obj.window;
+}]]></code>
+    </div>
     <p>This is used in a number of places in jQuery to determine if we're operating against a browser window (such as the current window or an iframe).</p>
   </longdesc>
   <example>

@@ -24,21 +24,22 @@ $( "li" ).first().css( "background-color", "red" );
     <p>The result of this call is a red background for the first item.</p>
   </longdesc>
   <example>
-    <desc>Highlight the first span in a paragraph.</desc>
+    <desc>Highlight the first item in a list.</desc>
     <css><![CDATA[
-  .highlight{
-    background-color: yellow
+  .highlight {
+    background-color: yellow;
   }
 ]]></css>
     <code><![CDATA[
-$( "p span" ).first().addClass( "highlight" );
+$( "ul li" ).first().addClass( "highlight" );
 ]]></code>
     <html><![CDATA[
-<p>
-  <span>Look:</span>
-  <span>This is some text in a paragraph.</span>
-  <span>This is a note about it.</span>
-</p>
+<ul>
+  <li>Look:</li>
+  <li>This is some text in a list.</li>
+  <li>This is a note about it.</li>
+  <li>This is another note about it.</li>
+</ul>
 ]]></html>
   </example>
   <category slug="traversing/filtering"/>

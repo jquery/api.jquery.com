@@ -17,7 +17,9 @@
   </signature>
   <desc>Select all elements at an index less than <code>index</code> within the matched set.</desc>
   <longdesc>
-    <p><strong>As of jQuery 3.4</strong>, the <code>:lt</code> pseudo-class is deprecated. Remove it from your selectors and filter the results later using <a href="/slice/"><code>.slice()</code></a>. For example, <code>:lt(3)</code> can be replaced with a call to <code>.slice( 0, 3 )</code>.</p>
+    <div class="warning">
+      <p><strong>As of jQuery 3.4</strong>, the <code>:lt</code> pseudo-class is deprecated. Remove it from your selectors and filter the results later using <a href="/slice/"><code>.slice()</code></a>. For example, <code>:lt(3)</code> can be replaced with a call to <code>.slice( 0, 3 )</code>.</p>
+    </div>
     <p>
       <strong>index-related selectors</strong>
     </p>

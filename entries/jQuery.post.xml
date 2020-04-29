@@ -22,7 +22,7 @@
     </argument>
   </signature>
   <signature>
-    <added>1.12/2.2</added>
+    <added>1.12-and-2.2</added>
     <argument name="settings" type="PlainObject" optional="false">
       <desc>A set of key/value pairs that configure the Ajax request. All properties except for <code>url</code> are optional. A default can be set for any option with <a href="/jQuery.ajaxSetup/">$.ajaxSetup()</a>. See <a href="/jquery.ajax/#jQuery-ajax-settings">jQuery.ajax( settings )</a> for a complete list of all settings. Type will automatically be set to <code>POST</code>.</desc>
     </argument>
@@ -167,4 +167,5 @@ $( "#searchForm" ).submit(function( event ) {
   <category slug="ajax/shorthand-methods"/>
   <category slug="version/1.0"/>
   <category slug="version/1.5"/>
+  <category slug="version/1.12-and-2.2"/>
 </entry>

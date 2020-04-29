@@ -5,8 +5,11 @@
   <signature>
     <added>1.0</added>
   </signature>
-  <desc>Selects even elements, zero-indexed.  See also <a href="/Selectors/odd/">odd</a>.</desc>
+  <desc>Selects even elements, zero-indexed.  See also <a href="/odd-selector/"><code>:odd</code></a>.</desc>
   <longdesc>
+    <div class="warning">
+      <p><strong>As of jQuery 3.4</strong>, the <code>:even</code> pseudo-class is deprecated. Remove it from your selectors and filter the results later using <a href="/even/"><code>.even()</code></a> (available in jQuery 3.5.0 or newer).</p>
+    </div>
     <p>In particular, note that the <em>0-based indexing</em> means that, counter-intuitively, <code>:even</code> selects the first element, third element, and so on within the matched set.</p>
   </longdesc>
   <note id="jquery-selector-extension" type="additional" data-selector=":even"/>

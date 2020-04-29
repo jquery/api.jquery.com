@@ -7,7 +7,9 @@
   </signature>
   <desc>Selects the last matched element.</desc>
   <longdesc>
-    <p><strong>As of jQuery 3.4</strong>, the <code>:last</code> pseudo-class is deprecated. Remove it from your selectors and filter the results later using <a href="/last/"><code>.last()</code></a>.</p>
+    <div class="warning">
+      <p><strong>As of jQuery 3.4</strong>, the <code>:last</code> pseudo-class is deprecated. Remove it from your selectors and filter the results later using <a href="/last/"><code>.last()</code></a>.</p>
+    </div>
     <p>Note that <code>:last</code> selects a single element by filtering  the current jQuery collection and matching the last element within it.</p>
   </longdesc>
   <note id="jquery-selector-extension" type="additional" data-selector=":last"/>

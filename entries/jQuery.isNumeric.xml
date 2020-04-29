@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<entry type="method" name="jQuery.isNumeric" return="Boolean">
+<entry type="method" name="jQuery.isNumeric" return="Boolean" deprecated="3.3">
   <title>jQuery.isNumeric()</title>
   <desc>Determines whether its argument represents a JavaScript number.</desc>
   <signature>
@@ -9,6 +9,9 @@
     </argument>
   </signature>
   <longdesc>
+    <div class="warning">
+      <p>Note: This API has been deprecated in jQuery 3.3.</p>
+    </div>
     <p>The <code>$.isNumeric()</code> method checks whether its argument represents a numeric value. If so, it returns <code>true</code>. Otherwise it returns <code>false</code>. The argument can be of any type.</p>
     <p>As of jQuery 3.0 <code>$.isNumeric()</code> returns <code>true</code> only if the argument is of type <a href="/Types/#Number"><code>number</code></a>, or if it's of type <code>string</code> and it can be coerced into finite numbers. In all other cases, it returns <code>false</code>.</p>
   </longdesc>
@@ -39,4 +42,5 @@ $.isNumeric( undefined )
   </example>
   <category slug="utilities"/>
   <category slug="version/1.7"/>
+  <category slug="deprecated/deprecated-3.3"/>
 </entry>

@@ -23,6 +23,7 @@
       <p>Retrieval of shorthand CSS properties (e.g., <code>margin</code>, <code>background</code>, <code>border</code>), although functional with some browsers, is not guaranteed. For example, if you want to retrieve the rendered <code>border-width</code>, use: <code>$( elem ).css( "borderTopWidth" )</code>, <code>$( elem ).css( "borderBottomWidth" )</code>, and so on.</p>
       <p>An element should be connected to the DOM when calling <code>.css()</code> on it. If it isn't, jQuery may throw an error.</p>
       <p><strong>As of jQuery 1.9</strong>, passing an array of style properties to <code>.css()</code> will result in an object of property-value pairs. For example, to retrieve all four rendered <code>border-width</code> values, you could use <code>$( elem ).css([ "borderTopWidth", "borderRightWidth", "borderBottomWidth", "borderLeftWidth" ])</code>. </p>
+      <p><strong>As of jQuery 3.2</strong>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/--*">CSS Custom Properties</a> (also called CSS Variables) are supported: <code>$( "p" ).css( "--custom-property" )</code>. Note that you need to provide the property name as-is, camelCasing it won't work as it does for regular CSS properties.</p>
     </longdesc>
     <example>
       <desc>Get the background color of a clicked div.</desc>
@@ -106,6 +107,7 @@ $( "div" ).click(function() {
     <category slug="version/1.0"/>
     <category slug="version/1.4"/>
     <category slug="version/1.9"/>
+    <category slug="version/3.2"/>
   </entry>
   <entry type="method" name="css" return="jQuery">
     <signature>
@@ -157,6 +159,7 @@ $( "div.example" ).css( "width", function( index ) {
       </code></pre>
       <p>This example sets the widths of the matched elements to incrementally larger values.</p>
       <p><strong>Note: </strong>If nothing is returned in the setter function (ie. <code>function( index, style ){} )</code>, or if <code>undefined</code> is returned, the current value is not changed. This is useful for selectively setting values only when certain criteria are met.</p>
+      <p><strong>As of jQuery 3.2</strong>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/--*">CSS Custom Properties</a> (also called CSS Variables) are supported: <code>$( "p" ).css( "--custom-property", "value" )</code>. Note that you need to provide the property name as-is, camelCasing it won't work as it does for regular CSS properties.</p>
     </longdesc>
     <example>
       <desc>Change the color of any paragraph to red on mouseover event.</desc>
@@ -282,5 +285,6 @@ $( "div" ).on( "click", function() {
     <category slug="manipulation/style-properties"/>
     <category slug="version/1.0"/>
     <category slug="version/1.4"/>
+    <category slug="version/3.2"/>
   </entry>
 </entries>
