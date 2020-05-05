@@ -21,6 +21,9 @@
     <argument name="traditional" type="Boolean">
       <desc>A Boolean indicating whether to perform a traditional "shallow" serialization.</desc>
     </argument>
+    <argument name="standaloneKeys" type="Boolean">
+      <desc>A Boolean indicating whether to use abbreviated serialization of keys with null values</desc>
+    </argument>
   </signature>
   <desc>Create a serialized representation of an array, a plain object, or a jQuery object suitable for use in a URL query string or Ajax request. In case a jQuery object is passed, it should contain input elements with name/value properties.</desc>
   <longdesc>
@@ -87,6 +90,16 @@ alert( shallowDecoded );
       <br/>
       <samp>a=[object+Object]&amp;b=1&amp;b=2&amp;b=3</samp>
     </p>
+    <p>To abbreviate the serialization of keys with null values, we can set the <code>standaloneKeys</code> argument to <code>true</code></p>
+    <pre><code>
+var myObject = {
+  x: 1,
+  y: null
+};
+var abbreviatedSerialization = $.param( myObject, false, true );
+
+alert( abbreviatedSerialization );
+    </code></pre>
   </longdesc>
   <example>
     <desc>Serialize a key/value object.</desc>
