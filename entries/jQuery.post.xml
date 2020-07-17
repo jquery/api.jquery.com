@@ -27,7 +27,7 @@
       <desc>A set of key/value pairs that configure the Ajax request. All properties except for <code>url</code> are optional. A default can be set for any option with <a href="/jQuery.ajaxSetup/">$.ajaxSetup()</a>. See <a href="/jquery.ajax/#jQuery-ajax-settings">jQuery.ajax( settings )</a> for a complete list of all settings. Type will automatically be set to <code>POST</code>.</desc>
     </argument>
   </signature>
-  <desc>Load data from the server using a HTTP POST request.</desc>
+  <desc>Send data to the server using a HTTP POST request.</desc>
   <longdesc>
     <p>This is a shorthand Ajax function, which is equivalent to:</p>
     <pre><code>
