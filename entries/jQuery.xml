@@ -155,7 +155,7 @@ $( myForm.elements ).hide();
       <argument name="html" type="htmlString">
         <desc>A string of HTML to create on the fly. Note that this parses HTML, <strong>not</strong> XML.</desc>
       </argument>
-      <argument name="ownerDocument" optional="true" type="document">
+      <argument name="ownerDocument" optional="true" type="Document">
         <desc>A document in which the new elements will be created.</desc>
       </argument>
     </signature>
