@@ -18,6 +18,20 @@
       </property>
     </argument>
   </signature>
+  <signature>
+    <added>3.5.0</added>
+    <argument name="code" type="String">
+      <desc>The JavaScript code to execute.</desc>
+    </argument>
+    <argument name="options" type="PlainObject" optional="true">
+      <property name="nonce" type="string">
+        <desc>The nonce attribute passed to the executed script.</desc>
+      </property>
+    </argument>
+    <argument name="doc" type="Document" optional="true">
+      <desc>A document in which context the code will be evaluated.</desc>
+    </argument>
+  </signature>
   <desc>Execute some JavaScript code globally.</desc>
   <longdesc>
     <p>This method behaves differently from using a normal JavaScript <code>eval()</code> in that it's executed within the global context (which is important for loading external scripts dynamically).</p>
