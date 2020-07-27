@@ -11,7 +11,8 @@
       <argument name="context" optional="true">
         <type name="Element"/>
         <type name="jQuery"/>
-        <desc>A DOM Element, Document, or jQuery to use as context</desc>
+        <type name="Selector"/>
+        <desc>A DOM Element, Document, jQuery or selector to use as context</desc>
       </argument>
     </signature>
     <signature>
