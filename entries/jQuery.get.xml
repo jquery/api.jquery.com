@@ -131,8 +131,8 @@ $.get( "test.php", function( data ) {
 // If this was sent on https://api.jquery.com/jQuery.get/ you will
 // get the response result of https://api.jquery.com/jQuery.ajax/
 $.get( "/jQuery.ajax/", function( data ) {
-  console.log( typeof data );
-  console.log( data );
+  console.log( typeof data ); // string
+  console.log( data ); // HTML content of the jQuery.ajax page
 });
 ]]></code>
   </example>
