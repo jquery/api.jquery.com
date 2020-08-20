@@ -10,7 +10,10 @@
   <desc>Remove the whitespace from the beginning and end of a string.</desc>
   <longdesc>
     <div class="warning">
-      <p>Note: This API has been deprecated in jQuery 3.5; please use the native <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim"><code>String.prototype.trim</code></a> method instead.</p>
+      <p>Note: This API has been deprecated in jQuery 3.5; please use the native <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim"><code>String.prototype.trim</code></a> method instead.
+      Unlike <code>jQuery.trim</code>, <code>String.prototype.trim</code> does not work with types other than strings (<code>null</code>, <code>undefined</code>, <code>Number</code>). 
+      Make sure that your code is compatible when migrating.
+      </p>
     </div>
     <p>The <code>$.trim()</code> function removes all newlines, spaces (including non-breaking spaces), and tabs from the beginning and end of the supplied string. If these whitespace characters occur in the middle of the string, they are preserved.</p>
   </longdesc>
