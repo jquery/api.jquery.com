@@ -1,5 +1,4092 @@
-# Auto detect text files and perform LF normalization
-* text=auto
-
-# JS files must always use LF for tools to work
-*.js eol=lf
+{
+    "Browser History": [
+        {
+            "page_transition": "LINK",
+            "title": "Télécharger vos données",
+            "url": "https://takeout.google.com/settings/takeout/custom/chrome?dnm\u003dtrue\u0026hl\u003dfr_CA\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558986710226246
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/other?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558986609796091
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/?hl\u003dfr_CA\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558986590319626
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/label/258850f40c46c656?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558986586522369
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/other?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558986576442386
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/other?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558986570399920
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/other?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558986566537245
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/other?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558986565259058
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/other?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558986553610092
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/other?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558986553334649
+},
+        {
+            "page_transition": "LINK",
+            "title": "Ajouter, déplacer ou importer des contacts - Android - Aide Contacts",
+            "url": "https://support.google.com/contacts/answer/1069522?p\u003dother_contacts\u0026visit_id\u003d636945833477898630-1979117497\u0026rd\u003d1#auto",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558986548656582
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/other?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558986544145346
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/other?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558986540162076
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/label/258850f40c46c656?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558986533641467
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/label/258850f40c46c656?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558986529747498
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/label/258850f40c46c656?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558986524851247
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/label/258850f40c46c656?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558986520032518
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/label/258850f40c46c656?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558986508278800
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/label/258850f40c46c656?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558986498618584
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/label/258850f40c46c656?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558986489709093
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/?hl\u003dfr_CA\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558986482084678
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Drive",
+            "url": "https://drive.google.com/drive/mobile/my-drive?hl\u003dfr_CA\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558986459957257
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Drive",
+            "url": "https://drive.google.com/drive/mobile/backups?hl\u003dfr_CA\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558986459898811
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Drive",
+            "url": "https://drive.google.com/drive/mobile/my-drive?hl\u003dfr_CA\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558986449849327
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Drive",
+            "url": "https://drive.google.com/drive/mobile/backups?hl\u003dfr_CA\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558986449790324
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Drive",
+            "url": "https://drive.google.com/drive/mobile/backups?hl\u003dfr_CA\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558986442249766
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Télécharger vos données",
+            "url": "https://takeout.google.com/settings/takeout/custom/contacts?dnm\u003dtrue\u0026hl\u003dfr_CA\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558986380538420
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Télécharger vos données",
+            "url": "https://takeout.google.com/settings/takeout/custom/contacts?dnm\u003dtrue\u0026hl\u003dfr_CA\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558986378881466
+},
+        {
+            "page_transition": "LINK",
+            "title": "Télécharger vos données",
+            "url": "https://takeout.google.com/settings/takeout/custom/contacts?dnm\u003dtrue\u0026hl\u003dfr_CA\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558986372392160
+},
+        {
+            "page_transition": "LINK",
+            "title": "Gérer les archives",
+            "url": "https://takeout.google.com/settings/takeout/downloads?hl\u003dfr_CA\u0026dnm\u003dtrue",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558986369909739
+},
+        {
+            "page_transition": "LINK",
+            "title": "Télécharger vos données",
+            "url": "https://takeout.google.com/settings/takeout?hl\u003dfr_CA\u0026dnm\u003dtrue",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558986367486780
+},
+        {
+            "page_transition": "LINK",
+            "title": "Gérer les archives",
+            "url": "https://takeout.google.com/settings/takeout/downloads?hl\u003dfr_CA\u0026dnm\u003dtrue",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558986364999362
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Télécharger vos données",
+            "url": "https://takeout.google.com/settings/takeout?hl\u003dfr_CA\u0026dnm\u003dtrue",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558986358245423
+},
+        {
+            "page_transition": "LINK",
+            "title": "Gérer les archives",
+            "url": "https://takeout.google.com/settings/takeout/downloads?hl\u003dfr_CA\u0026dnm\u003dtrue",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558986356042045
+},
+        {
+            "page_transition": "LINK",
+            "title": "Gérer les archives",
+            "url": "https://takeout.google.com/settings/takeout/downloads?hl\u003dfr_CA\u0026dnm\u003dtrue",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558986354724501
+},
+        {
+            "page_transition": "LINK",
+            "title": "Gérer les archives",
+            "url": "https://takeout.google.com/settings/takeout/downloads?hl\u003dfr_CA\u0026dnm\u003dtrue",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558986325944295
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Télécharger vos données",
+            "url": "https://takeout.google.com/settings/takeout?hl\u003dfr_CA\u0026dnm\u003dtrue",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558986316091379
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Compte Google",
+            "url": "https://myaccount.google.com/security",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558986289049943
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Accueil - Dropbox",
+            "url": "https://www.dropbox.com/h",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558985856341006
+},
+        {
+            "page_transition": "FORM_SUBMIT",
+            "title": "Test d\u0027application Android \u2013 Google Play",
+            "url": "https://play.google.com/apps/testing/com.dropbox.android?authuser\u003d0",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558985824430276
+},
+        {
+            "page_transition": "LINK",
+            "title": "Connexion : comptes Google",
+            "url": "https://accounts.google.com/SignOutOptions?hl\u003dfr\u0026continue\u003dhttps://play.google.com/apps/testing/com.dropbox.android",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558985820427357
+},
+        {
+            "page_transition": "LINK",
+            "title": "Test d\u0027application Android \u2013 Google Play",
+            "url": "https://play.google.com/apps/testing/com.dropbox.android",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558985811375688
+},
+        {
+            "page_transition": "LINK",
+            "title": "Chargements appareil photo sur mobile - Dropbox",
+            "url": "https://www.dropbox.com/sh/dlb82oz8i12b9mp/AABZYC5t_aqgDklFdaN6WhMza?dl\u003d0",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558985651900496
+},
+        {
+            "page_transition": "LINK",
+            "title": "Partage - Dropbox",
+            "url": "https://www.dropbox.com/share/links",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558985637553315
+},
+        {
+            "page_transition": "LINK",
+            "title": "Partage - Dropbox",
+            "url": "https://www.dropbox.com/share/files",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558985635843903
+},
+        {
+            "page_transition": "LINK",
+            "title": "Partage - Dropbox",
+            "url": "https://www.dropbox.com/share/folders",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558985627774605
+},
+        {
+            "page_transition": "LINK",
+            "title": "Dropbox",
+            "url": "https://www.dropbox.com/share?_tk\u003dweb_left_nav_bar\u0026role\u003dpersonal",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558985624357691
+},
+        {
+            "page_transition": "LINK",
+            "title": "Chargements appareil photo sur mobile - Dropbox",
+            "url": "https://www.dropbox.com/home/Chargements%20appareil%20photo%20sur%20mobile",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558985616292762
+},
+        {
+            "page_transition": "LINK",
+            "title": "Fichiers - Dropbox",
+            "url": "https://www.dropbox.com/home",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558985606375490
+},
+        {
+            "page_transition": "LINK",
+            "title": "Fichiers envoyés - Dropbox",
+            "url": "https://www.dropbox.com/home/Fichiers%20envoy%C3%A9s",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558985583072437
+},
+        {
+            "page_transition": "LINK",
+            "title": "Fichiers - Dropbox",
+            "url": "https://www.dropbox.com/home",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558985524272083
+},
+        {
+            "page_transition": "LINK",
+            "title": "Accueil - Dropbox",
+            "url": "https://www.dropbox.com/h",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558985497267785
+},
+        {
+            "page_transition": "LINK",
+            "title": "Ajout d\u0027un fichier, d\u0027un dossier, d\u0027un document Paper ou d\u0027un dossier Paper aux favoris - Aide de Dropbox",
+            "url": "https://help.dropbox.com/fr-fr/desktop-web/star-doc-file-folder",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558985467558286
+},
+        {
+            "page_transition": "LINK",
+            "title": "Accueil - Dropbox",
+            "url": "https://www.dropbox.com/h",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558985346046199
+},
+        {
+            "page_transition": "LINK",
+            "title": "Paper - Dropbox",
+            "url": "https://www.dropbox.com/paper?_tk\u003dleft_nav_paper\u0026role\u003dpersonal",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558985337698690
+},
+        {
+            "page_transition": "LINK",
+            "title": "Accueil - Dropbox",
+            "url": "https://www.dropbox.com/h",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558985328290705
+},
+        {
+            "page_transition": "LINK",
+            "title": "Application Dropbox mobile - Dropbox",
+            "url": "https://www.dropbox.com/mobile",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558985316461841
+},
+        {
+            "page_transition": "LINK",
+            "title": "Fichiers - Dropbox",
+            "url": "https://www.dropbox.com/home?d\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558985286242665
+},
+        {
+            "page_transition": "LINK",
+            "title": "Dropbox",
+            "url": "https://www.dropbox.com/home?_tk\u003dweb_left_nav_bar",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558985271557376
+},
+        {
+            "page_transition": "LINK",
+            "title": "Accueil - Dropbox",
+            "url": "https://www.dropbox.com/h",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558985258947322
+},
+        {
+            "page_transition": "LINK",
+            "title": "Android - Dropbox",
+            "url": "https://www.dropbox.com/android",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558985240144741
+},
+        {
+            "page_transition": "LINK",
+            "title": "Dropbox",
+            "url": "https://www.dropbox.com/account/plan",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558985221794885
+},
+        {
+            "page_transition": "LINK",
+            "title": "Dropbox",
+            "url": "https://www.dropbox.com/account/notifications",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558985209680767
+},
+        {
+            "page_transition": "LINK",
+            "title": "Samsung Canada | Mobile | TV | Home Appliances",
+            "url": "https://www.samsung.com/ca/",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558985155138202
+},
+        {
+            "page_transition": "LINK",
+            "title": "",
+            "url": "https://www.dropbox.com/referrer_cleansing_redirect?hmac\u003dEs3rTgQkGcUfvieW41w35df%2BdtROBjv0ZwXavS1VqPY%3D\u0026url\u003dhttp%3A%2F%2Fwww.samsung.com",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558985153944576
+},
+        {
+            "page_transition": "LINK",
+            "title": "Connectez-vous à votre compte",
+            "url": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id\u003d61464454-fe14-4d25-9ee7-dc595547112c\u0026redirect_uri\u003dhttps%3A%2F%2Fwww.dropbox.com%2Foutlook%2Fauthcallback\u0026response_type\u003dcode\u0026scope\u003doffline_access+user.read+contacts.read+calendars.readwrite\u0026state\u003dACCSlsrHoDxf5Ve3U6E55QMAYqA0JVSKMwXcV7XfjE_vMTYow4QPbeYOkIvTXIWFJADHWIpCHtT8AWDoH3wKM8cInjDRTkgtmyN-rBIu6LPld1Y8LMAlMnubE9hscj5MIEm9SSqGZav1GqMNiXEc2HKxgGIPXsqp5stdAphWQdx-G0P9oPlDTS3Vf079pjwylkDNanYq6PyTUigkeiIbkn35ekWl2evadqPv8CVA8A7gKU-iPrKY_mkwVoeDINqENZrYFwM14RbdI_qhQsE_x0MDxygYWUQwC8mcdrbXH985Ng",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558985142405362
+},
+        {
+            "page_transition": "LINK",
+            "title": "Dropbox",
+            "url": "https://www.dropbox.com/account/connected_apps",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558985131832790
+},
+        {
+            "page_transition": "LINK",
+            "title": "Dropbox",
+            "url": "https://www.dropbox.com/account/general",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558985094934280
+},
+        {
+            "page_transition": "LINK",
+            "title": "Dropbox",
+            "url": "https://www.dropbox.com/account/security#apps",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558985066023188
+},
+        {
+            "page_transition": "LINK",
+            "title": "",
+            "url": "https://www.dropbox.com/google/authcallback?state\u003dACCFzG2SFJrwyXGYOLHALsCM8Gs_S0xLlyupN-JVInLWCk7yp9_hF4PqNFZduavd7zTF0HfmwBq9KcinMpJc97FSbQ26fxpdyy5stPBJz-GivfAAXch9tU43qit9SCFPbQBGwpI1mMJmW2LYu3aW9rYc2KdeaU3NwwGjvDsCln7H-jOG-Hz35d6Bol1iCV4f3NUwBK8vKGPHaKkMVdV9XjbsAwEKtP6SdjnMV7zinD5WozM9WcUa-gnDQ5OrYdbYNWUBi0ZltkgNNrOJQdkJQsNDUihLGhD2QuZrZzWzdjnh4C8aXmZVeVBp3MN_FNjchLBF9OKjSdF-nlqYGPlo5ltDTEvGyFv2p-7coHYJS0POc3OCrXYGG5RuLiqclQ1DifZaZiHPqtbZEN25u1_eSzkwoDvVM26gkiOChv9kn6DmOvJSC1-NOuPSF5sbdCLoKQk\u0026code\u003d4/VwHf_SOxSADINPhKDYTUMXITEvp1okv872EeZiRclJfh_MLild-txVDD6rS6OOiiCFSbgqigBPwmBLyScUF4Ck0\u0026scope\u003demail%20profile%20https://www.googleapis.com/auth/contacts.readonly%20https://www.googleapis.com/auth/userinfo.email%20https://www.googleapis.com/auth/userinfo.profile%20openid\u0026authuser\u003d0\u0026session_state\u003d4a8fb2293a7dc8b2bf656d1a1e57ca725337635d..cfd6\u0026prompt\u003dconsent",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558985065346483
+},
+        {
+            "page_transition": "LINK",
+            "title": "Connexion : comptes Google",
+            "url": "https://accounts.google.com/signin/oauth/consent?authuser\u003d0\u0026part\u003dAJi8hAPez2ruza_mqh95T-Ieeh-B7y5YUHdYxDgWzoU3bJ-Zr7CZzeM_FnO31LFs2nb3dP1qDYPjguXPBaqiyQ5STIUoKk8G2O9SYsGBezRQl4IWSFkuGUWwtchPhA8fFJP7hTmTeFtg6M8nHz6rGdGT3kioWQBPASKDlZTlNQD8Em2IopqNTN0U4FjFxDvLjpCpT7b_ECSVNeF66qNe-O0IOKmpmZjTyMdeh_qoCBXdZM6ccEKCWF77GKlq0OaNyfgPNQDsg6682ZXY0wyqMN9ulOEEMGWS0Ad_iPtxakXYqYDkB1fRFoI12cYpHyW3xGLI0T-EfO0RSzbB3AWUQp3ou9uVQ0aM2SgPrz_LNzFXtNYqsstbtk2ud3-bVVpwbChL-QOMdj84\u0026as\u003dhecqzk7_e2u_sjrmiYg3Ug\u0026pli\u003d1\u0026rapt\u003dAEjHL4NG-UAsIYCdcDKOE61AxO3X8WJhyBlV2tdVgh31L7y5zDYLr3n3HuMWYbIJr1hPN1F8h1wZ82pdahHraj1b9x6Q3nSTig#",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558985048397560
+},
+        {
+            "page_transition": "LINK",
+            "title": "Connexion - Comptes Google",
+            "url": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id\u003d801668726815.apps.googleusercontent.com\u0026as\u003dhecqzk7_e2u_sjrmiYg3Ug\u0026destination\u003dhttps%3A%2F%2Fwww.dropbox.com\u0026approval_state\u003d!ChRuNGpZX0VoQ0N3T2NkMzBQRlJGVBIfTXd2X0ZYeHd2bGdTWUlreWNoTjIyM1FNbmYycnJ4WQ%E2%88%99AJDr988AAAAAXO2KzsZ3pM8WMjFYRqvLfdk3vUl8XmLJ\u0026oauthgdpr\u003d1\u0026oauthriskyscope\u003d1\u0026xsrfsig\u003dChkAeAh8T_KEccNVJ4iaaMPkZDvrZqkR8EgrEg5hcHByb3ZhbF9zdGF0ZRILZGVzdGluYXRpb24SBXNvYWN1Eg9vYXV0aHJpc2t5c2NvcGU\u0026flowName\u003dGeneralOAuthFlow",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558985041876219
+},
+        {
+            "page_transition": "LINK",
+            "title": "Connexion - Comptes Google",
+            "url": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id\u003d801668726815.apps.googleusercontent.com\u0026as\u003dd1b-Lyp45Xla9qtrJ9irCQ\u0026destination\u003dhttps%3A%2F%2Fwww.dropbox.com\u0026approval_state\u003d!ChRoXzZuQldHZFpUS2hCX0JxRlNTNhIfSTk0T1ZBd3dhNkVhWUlreWNoTjIyM1FzWVB1cnJ4WQ%E2%88%99AJDr988AAAAAXO2KxSmrZI-QEXz18xOrOqo7nw3Akc7n\u0026oauthgdpr\u003d1\u0026oauthriskyscope\u003d1\u0026xsrfsig\u003dChkAeAh8T9y-2yZoLjHHD-MRMvr27CI4Mx0jEg5hcHByb3ZhbF9zdGF0ZRILZGVzdGluYXRpb24SBXNvYWN1Eg9vYXV0aHJpc2t5c2NvcGU\u0026flowName\u003dGeneralOAuthFlow",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558985032808043
+},
+        {
+            "page_transition": "LINK",
+            "title": "Connexion - Comptes Google",
+            "url": "https://accounts.google.com/signin/oauth?client_id\u003d801668726815.apps.googleusercontent.com\u0026as\u003dd1b-Lyp45Xla9qtrJ9irCQ\u0026destination\u003dhttps://www.dropbox.com\u0026approval_state\u003d!ChRoXzZuQldHZFpUS2hCX0JxRlNTNhIfSTk0T1ZBd3dhNkVhWUlreWNoTjIyM1FzWVB1cnJ4WQ%E2%88%99AJDr988AAAAAXO2KxSmrZI-QEXz18xOrOqo7nw3Akc7n\u0026oauthgdpr\u003d1\u0026oauthriskyscope\u003d1\u0026xsrfsig\u003dChkAeAh8T9y-2yZoLjHHD-MRMvr27CI4Mx0jEg5hcHByb3ZhbF9zdGF0ZRILZGVzdGluYXRpb24SBXNvYWN1Eg9vYXV0aHJpc2t5c2NvcGU",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558985030069433
+},
+        {
+            "page_transition": "LINK",
+            "title": "Dropbox - Se connecter",
+            "url": "https://www.dropbox.com/m/login?cont\u003dhttps%3A%2F%2Fwww.dropbox.com%2Faccount%2Fsecurity#apps",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558985021306693
+},
+        {
+            "page_transition": "LINK",
+            "title": "Booking.com Account",
+            "url": "https://account.booking.com/email-confirmed",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558984964752890
+},
+        {
+            "page_transition": "LINK",
+            "title": "Booking.com Account",
+            "url": "https://account.booking.com/sign-in",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558984956765538
+},
+        {
+            "page_transition": "LINK",
+            "title": "Booking.com Account",
+            "url": "https://account.booking.com/email-confirmed",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558984952716888
+},
+        {
+            "page_transition": "LINK",
+            "title": "Booking.com Account",
+            "url": "https://account.booking.com/sign-in?op_token\u003dEgVvYXV0aCL0BAoUdk8xS2Jsazd4WDl0VW4yY3BaTFMSCWF1dGhvcml6ZRo1aHR0cHM6Ly9zZWN1cmUuYm9va2luZy5jb20vbG9naW4uaHRtbD9vcD1vYXV0aF9yZXR1cm4qkwRVb3NERGdyMkZjWFJlWWVvcHVTZ3FBLVpGd0dZa1g1X01hUGl0RW1GOWZHREhnQURUZE8ybHA2LW1uWTdvWnBrVXl4M1cwY01udmdyMWh0RmJuYlhlS2QyUEZldXpRV3pBd0pwdmZKNmI5SGowZFR1SzlDbDBvZW5Edk40RXpHajJPTFpJLUF4OGdrcWdHdEthaUw5T3F3NVE3VFBUQUVnRjlST0ktelpnS1FPMTFSX25KMGdQbW41R3dFampmSmlUTDJwZjhuSncwX2dpNTAzSHBUMURYeXIwd0ZfSjZraTRLX3RQRnFyRm53LXFMTEt4NGpaTjZuUEhhMjRxR3gwYjk0V1BGY2pXOWEyT0s3WUtLel9vT0hxTFpWVThzd3pmSHhVdmVLanRJdXR5QkpnUGJIeWVyeUVjWWNQWjBJMUtuT3dTbURDVnFCWGJaT25xV1NaeHZQbUdyQmdPUmJuQ0VkYi1ScExIS29kWnJNci1xX3Bqa1p3dlByRTJJdUFTc1cyR2lsd2NmUk5pLWJMcXRxMVFVLURHbHBZLXVYZU43dTFibUVCX2l5dzA5TnJVVTA2V2hUTTJEcXJkODRIdGdwVF9qUW5BTUdILWlsN2F0a3U0enBIWmx2UTJlX2dhcmRwTTFJRWs3Z2lDZ2ZxSG1EdU44c2MzYUtHWm9reXl6ZXNqX3hiVHlJVVZkVXRncElCBGNvZGUqEAiOyBIwkNypuru5IzoAQgA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558984925845915
+},
+        {
+            "page_transition": "LINK",
+            "title": "Booking.com Account",
+            "url": "https://account.booking.com/sign-in/connect-social?op_token\u003dEgVvYXV0aCL0BAoUdk8xS2Jsazd4WDl0VW4yY3BaTFMSCWF1dGhvcml6ZRo1aHR0cHM6Ly9zZWN1cmUuYm9va2luZy5jb20vbG9naW4uaHRtbD9vcD1vYXV0aF9yZXR1cm4qkwRVb3NERGdyMkZjWFJlWWVvcHVTZ3FBLVpGd0dZa1g1X01hUGl0RW1GOWZHREhnQURUZE8ybHA2LW1uWTdvWnBrVXl4M1cwY01udmdyMWh0RmJuYlhlS2QyUEZldXpRV3pBd0pwdmZKNmI5SGowZFR1SzlDbDBvZW5Edk40RXpHajJPTFpJLUF4OGdrcWdHdEthaUw5T3F3NVE3VFBUQUVnRjlST0ktelpnS1FPMTFSX25KMGdQbW41R3dFampmSmlUTDJwZjhuSncwX2dpNTAzSHBUMURYeXIwd0ZfSjZraTRLX3RQRnFyRm53LXFMTEt4NGpaTjZuUEhhMjRxR3gwYjk0V1BGY2pXOWEyT0s3WUtLel9vT0hxTFpWVThzd3pmSHhVdmVLanRJdXR5QkpnUGJIeWVyeUVjWWNQWjBJMUtuT3dTbURDVnFCWGJaT25xV1NaeHZQbUdyQmdPUmJuQ0VkYi1ScExIS29kWnJNci1xX3Bqa1p3dlByRTJJdUFTc1cyR2lsd2NmUk5pLWJMcXRxMVFVLURHbHBZLXVYZU43dTFibUVCX2l5dzA5TnJVVTA2V2hUTTJEcXJkODRIdGdwVF9qUW5BTUdILWlsN2F0a3U0enBIWmx2UTJlX2dhcmRwTTFJRWs3Z2lDZ2ZxSG1EdU44c2MzYUtHWm9reXl6ZXNqX3hiVHlJVVZkVXRncElCBGNvZGUqEAiOyBIwkNypuru5IzoAQgA\u0026social_token\u003dUqEDJ127rj_EO2uGOJHwNSzkhb_zGPNe_5vE7WBBSvS47meJxYPCS6TkGZoxb3WabchQFN9hcqBoB8bzc_pscaFO1JGsS9HlwV7y7Ok3no075P2nAIHV4i9PA-MPHk6SYqU_KC0hhhxtIomP5Haudf2oh8iTQNowjpovNHSyYo3_RkVx3vHu40HNZTAAybqbe47OEE_gI-NQZev3Woo2K5UL85jrSZQS5UpqNgalV6w1CXFM5fiNRUvu6IGzPcV7E7_fKQrCfT822_xMqI9ma78ONAr6COsKVEvQ95us-JjeGoAx0t9eF1qVgVnr-3EoxTGi22eQt0Gmh6BJ8nQbI7z4w2mNIybMl0MNcrbjpB7Xn60aXTZfzI8avFyjKX4OeSeOVo5NeyTa6vX6mLOtrngDGA07-6oim9YqTNlnpIXdanfDzdFPTlwXr8sTkf3tpvDX-QWpP-4OaDAHmrHVpuSIP33lKhvC0L00i0r84HxpT-TvzPdE5yyVGbCF-PmpXr6lrDHUqRcIldUhuYvQ9O0kHnOuZi7OZwwswf7_WT8w0shr",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558984910494271
+},
+        {
+            "page_transition": "LINK",
+            "title": "Booking.com Account",
+            "url": "https://account.booking.com/sign-in?op_token\u003dEgVvYXV0aCL0BAoUdk8xS2Jsazd4WDl0VW4yY3BaTFMSCWF1dGhvcml6ZRo1aHR0cHM6Ly9zZWN1cmUuYm9va2luZy5jb20vbG9naW4uaHRtbD9vcD1vYXV0aF9yZXR1cm4qkwRVb3NERGdyMkZjWFJlWWVvcHVTZ3FBLVpGd0dZa1g1X01hUGl0RW1GOWZHREhnQURUZE8ybHA2LW1uWTdvWnBrVXl4M1cwY01udmdyMWh0RmJuYlhlS2QyUEZldXpRV3pBd0pwdmZKNmI5SGowZFR1SzlDbDBvZW5Edk40RXpHajJPTFpJLUF4OGdrcWdHdEthaUw5T3F3NVE3VFBUQUVnRjlST0ktelpnS1FPMTFSX25KMGdQbW41R3dFampmSmlUTDJwZjhuSncwX2dpNTAzSHBUMURYeXIwd0ZfSjZraTRLX3RQRnFyRm53LXFMTEt4NGpaTjZuUEhhMjRxR3gwYjk0V1BGY2pXOWEyT0s3WUtLel9vT0hxTFpWVThzd3pmSHhVdmVLanRJdXR5QkpnUGJIeWVyeUVjWWNQWjBJMUtuT3dTbURDVnFCWGJaT25xV1NaeHZQbUdyQmdPUmJuQ0VkYi1ScExIS29kWnJNci1xX3Bqa1p3dlByRTJJdUFTc1cyR2lsd2NmUk5pLWJMcXRxMVFVLURHbHBZLXVYZU43dTFibUVCX2l5dzA5TnJVVTA2V2hUTTJEcXJkODRIdGdwVF9qUW5BTUdILWlsN2F0a3U0enBIWmx2UTJlX2dhcmRwTTFJRWs3Z2lDZ2ZxSG1EdU44c2MzYUtHWm9reXl6ZXNqX3hiVHlJVVZkVXRncElCBGNvZGUqEAiOyBIwkNypuru5IzoAQgA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558984902320614
+},
+        {
+            "page_transition": "LINK",
+            "title": "Confirmation · Booking.com",
+            "url": "https://secure.booking.com/confirmation.fr.html?label\u003dgen173nr-1DCA4oggI46AdIDVgEaCeIAQKYAQ24AQnIARHYAQPoAQH4AQOIAgGoAgO4ArfwsOcFwAIB\u0026sid\u003dc443317ae1f7785aa8131ebbb2a2f36c\u0026auth_key\u003dqeIyCvcJAkJTEMf3\u0026activeTab\u003dmenu",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558984896783758
+},
+        {
+            "page_transition": "LINK",
+            "title": "Confirmation · Booking.com",
+            "url": "https://secure.booking.com/confirmation.fr.html?label\u003dgen173nr-1DCA4oggI46AdIDVgEaCeIAQKYAQ24AQnIARHYAQPoAQH4AQOIAgGoAgO4ArfwsOcFwAIB\u0026sid\u003dc443317ae1f7785aa8131ebbb2a2f36c\u0026auth_key\u003dqeIyCvcJAkJTEMf3\u0026activeTab\u003dyour_booking_faq",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558984839775702
+},
+        {
+            "page_transition": "LINK",
+            "title": "Confirmation · Booking.com",
+            "url": "https://secure.booking.com/confirmation.fr.html?label\u003dgen173nr-1DCA4oggI46AdIDVgEaCeIAQKYAQ24AQnIARHYAQPoAQH4AQOIAgGoAgO4ArfwsOcFwAIB;sid\u003dc443317ae1f7785aa8131ebbb2a2f36c;auth_key\u003dqeIyCvcJAkJTEMf3\u0026#",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558984770036041
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Google Pay",
+            "url": "https://pay.google.com/payments/home#subscriptionsAndServices",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558984616270654
+},
+        {
+            "page_transition": "LINK",
+            "title": "Télécharger vos données",
+            "url": "https://takeout.google.com/settings/takeout?hl\u003dfr_CA\u0026dnm\u003dtrue",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558984318235346
+},
+        {
+            "page_transition": "LINK",
+            "title": "Gérer les archives",
+            "url": "https://takeout.google.com/settings/takeout/downloads?hl\u003dfr_CA\u0026dnm\u003dtrue",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558984309569400
+},
+        {
+            "page_transition": "LINK",
+            "title": "Télécharger vos données",
+            "url": "https://takeout.google.com/settings/takeout?hl\u003dfr_CA\u0026dnm\u003dtrue",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558984259805482
+},
+        {
+            "page_transition": "LINK",
+            "title": "Télécharger vos données",
+            "url": "https://takeout.google.com/settings/takeout?hl\u003dfr_CA\u0026dnm\u003dtrue",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558984257821816
+},
+        {
+            "page_transition": "LINK",
+            "title": "Télécharger vos données",
+            "url": "https://takeout.google.com/settings/takeout?hl\u003dfr_CA\u0026dnm\u003dtrue",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558984230656238
+},
+        {
+            "page_transition": "LINK",
+            "title": "Télécharger vos données",
+            "url": "https://takeout.google.com/settings/takeout?hl\u003dfr_CA\u0026dnm\u003dtrue",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558984229306472
+},
+        {
+            "page_transition": "LINK",
+            "title": "Télécharger vos données",
+            "url": "https://takeout.google.com/settings/takeout?hl\u003dfr_CA\u0026dnm\u003dtrue",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558984204246160
+},
+        {
+            "page_transition": "LINK",
+            "title": "Télécharger vos données",
+            "url": "https://takeout.google.com/settings/takeout?hl\u003dfr_CA\u0026dnm\u003dtrue",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558984198230561
+},
+        {
+            "page_transition": "LINK",
+            "title": "Télécharger vos données",
+            "url": "https://takeout.google.com/settings/takeout?hl\u003dfr_CA\u0026dnm\u003dtrue",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558984180318329
+},
+        {
+            "page_transition": "LINK",
+            "title": "Télécharger vos données",
+            "url": "https://takeout.google.com/settings/takeout?hl\u003dfr_CA\u0026dnm\u003dtrue",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558984175932214
+},
+        {
+            "page_transition": "LINK",
+            "title": "Télécharger vos données",
+            "url": "https://takeout.google.com/settings/takeout?hl\u003dfr_CA\u0026dnm\u003dtrue",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558984172607261
+},
+        {
+            "page_transition": "LINK",
+            "title": "Télécharger vos données",
+            "url": "https://takeout.google.com/settings/takeout?hl\u003dfr_CA\u0026dnm\u003dtrue",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558984161519959
+},
+        {
+            "page_transition": "LINK",
+            "title": "Télécharger vos données",
+            "url": "https://takeout.google.com/settings/takeout?hl\u003dfr_CA\u0026dnm\u003dtrue",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558984153043959
+},
+        {
+            "page_transition": "LINK",
+            "title": "Télécharger vos données",
+            "url": "https://takeout.google.com/settings/takeout?hl\u003dfr_CA\u0026dnm\u003dtrue",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558984143216848
+},
+        {
+            "page_transition": "LINK",
+            "title": "Télécharger vos données",
+            "url": "https://takeout.google.com/settings/takeout?hl\u003dfr_CA\u0026dnm\u003dtrue",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558984130634085
+},
+        {
+            "page_transition": "LINK",
+            "title": "Télécharger vos données",
+            "url": "https://takeout.google.com/settings/takeout?hl\u003dfr_CA\u0026dnm\u003dtrue",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558984114827136
+},
+        {
+            "page_transition": "LINK",
+            "title": "Télécharger vos données",
+            "url": "https://takeout.google.com/settings/takeout?hl\u003dfr_CA\u0026dnm\u003dtrue",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558984105395937
+},
+        {
+            "page_transition": "LINK",
+            "title": "Télécharger vos données",
+            "url": "https://takeout.google.com/settings/takeout?hl\u003dfr_CA\u0026dnm\u003dtrue",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558984099359886
+},
+        {
+            "page_transition": "LINK",
+            "title": "Télécharger vos données",
+            "url": "https://takeout.google.com/settings/takeout?hl\u003dfr_CA\u0026dnm\u003dtrue",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558984094716735
+},
+        {
+            "page_transition": "LINK",
+            "title": "Télécharger vos données",
+            "url": "https://takeout.google.com/settings/takeout?hl\u003dfr_CA\u0026dnm\u003dtrue",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558984085758755
+},
+        {
+            "page_transition": "LINK",
+            "title": "Télécharger vos données",
+            "url": "https://takeout.google.com/settings/takeout?hl\u003dfr_CA\u0026dnm\u003dtrue",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558984084584424
+},
+        {
+            "page_transition": "LINK",
+            "title": "Télécharger vos données",
+            "url": "https://takeout.google.com/settings/takeout?hl\u003dfr_CA\u0026dnm\u003dtrue",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558984045381399
+},
+        {
+            "page_transition": "LINK",
+            "title": "Télécharger vos données",
+            "url": "https://takeout.google.com/settings/takeout?hl\u003dfr_CA\u0026dnm\u003dtrue",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558984032322742
+},
+        {
+            "page_transition": "LINK",
+            "title": "Télécharger vos données",
+            "url": "https://takeout.google.com/settings/takeout?hl\u003dfr_CA\u0026dnm\u003dtrue",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558984005387302
+},
+        {
+            "page_transition": "LINK",
+            "title": "Gérer les archives",
+            "url": "https://takeout.google.com/settings/takeout/downloads?hl\u003dfr_CA\u0026dnm\u003dtrue",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558983993885878
+},
+        {
+            "page_transition": "LINK",
+            "title": "Télécharger vos données",
+            "url": "https://takeout.google.com/settings/takeout?hl\u003dfr_CA\u0026dnm\u003dtrue",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558983988982995
+},
+        {
+            "page_transition": "LINK",
+            "title": "Gérer les archives",
+            "url": "https://takeout.google.com/settings/takeout/downloads?hl\u003dfr_CA\u0026dnm\u003dtrue",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558983974894116
+},
+        {
+            "page_transition": "LINK",
+            "title": "Gérer les archives",
+            "url": "https://takeout.google.com/settings/takeout/downloads?hl\u003dfr_CA\u0026dnm\u003dtrue",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558983973222818
+},
+        {
+            "page_transition": "LINK",
+            "title": "Gérer les archives",
+            "url": "https://takeout.google.com/settings/takeout/downloads?hl\u003dfr_CA\u0026dnm\u003dtrue",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558983935132191
+},
+        {
+            "page_transition": "LINK",
+            "title": "Télécharger vos données",
+            "url": "https://takeout.google.com/settings/takeout/custom/contacts?dnm\u003dtrue\u0026hl\u003dfr_CA\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558983913473717
+},
+        {
+            "page_transition": "LINK",
+            "title": "Compte Google",
+            "url": "https://myaccount.google.com/data-and-personalization",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558983895620906
+},
+        {
+            "page_transition": "LINK",
+            "title": "Langue",
+            "url": "https://myaccount.google.com/language",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558983893135887
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/?hl\u003dfr_CA\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558983875834084
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/?hl\u003dfr_CA\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558983869772487
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Google Traduction \u2013 Applications sur Google Play",
+            "url": "https://play.google.com/store/apps/details?id\u003dcom.google.android.apps.translate",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558983842165238
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Google Pay",
+            "url": "https://pay.google.com/payments/home#subscriptionsAndServices",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558983811885772
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Pay",
+            "url": "https://pay.google.com/payments/u/0/home",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558983804049304
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Pay",
+            "url": "https://pay.google.com/payments/u/0/home",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558983802003053
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Pay",
+            "url": "https://pay.google.com/payments/u/0/home",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558983797980920
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Pay",
+            "url": "https://pay.google.com/payments/u/0/home",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558983792837178
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Pay",
+            "url": "https://pay.google.com/payments/u/0/home",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558983789142428
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Pay",
+            "url": "https://pay.google.com/payments/home#subscriptionsAndServices",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558983785378226
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Pay",
+            "url": "https://pay.google.com/payments/home#activity",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558983778744501
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Pay",
+            "url": "https://pay.google.com/payments/home#subscriptionsAndServices",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558983771902643
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Pay",
+            "url": "https://pay.google.com/payments/home#userManagement",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558983726544601
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Pay",
+            "url": "https://pay.google.com/payments/home#settings",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558983705494969
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Pay",
+            "url": "https://pay.google.com/payments/home#activity",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558983698942829
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Pay",
+            "url": "https://pay.google.com/payments/home#settings",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558983647415524
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Pay",
+            "url": "https://pay.google.com/payments/home#settings",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558983641891833
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Pay",
+            "url": "https://pay.google.com/payments/home#userManagement",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558983613629657
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Pay",
+            "url": "https://pay.google.com/payments/home#settings",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558983599557972
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Pay",
+            "url": "https://pay.google.com/payments/home#activity",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558983593025257
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Pay",
+            "url": "https://pay.google.com/payments/home#subscriptionsAndServices",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558983582945930
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Pay",
+            "url": "https://pay.google.com/payments/home#paymentMethods",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558983563805242
+},
+        {
+            "page_transition": "LINK",
+            "title": "Sauvegarder et synchroniser des fichiers avec Google Drive - Android - Aide Google Drive",
+            "url": "https://support.google.com/drive/answer/2374987?visit_id\u003d636945802589365001-3456796276\u0026p\u003dbackup_and_sync_signin\u0026rd\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558983482509469
+},
+        {
+            "page_transition": "LINK",
+            "title": "Importer des fichiers et des dossiers dans Google Drive - Android - Aide Google Drive",
+            "url": "https://support.google.com/drive/answer/2424368",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558983471843995
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Publishers",
+            "url": "https://about.flipboard.com/forpublishers/",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558983459356000
+},
+        {
+            "page_transition": "LINK",
+            "title": "Sauvegarder et synchroniser des fichiers avec Google Drive - Android - Aide Google Drive",
+            "url": "https://support.google.com/drive/answer/2374987?visit_id\u003d636945802589365001-3456796276\u0026p\u003dbackup_and_sync_signin\u0026rd\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558983459184567
+},
+        {
+            "page_transition": "LINK",
+            "title": "",
+            "url": "https://www.google.com/url?sa\u003dj\u0026url\u003dhttps%3A%2F%2Fplay.app.goo.gl%2F%3Flink%3Dhttps%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.google.android.apps.translate%26ddl%3D1%26pcampaignid%3Dweb_ddl_1\u0026uct\u003d1557436285\u0026usg\u003dEskkkSjEEqGFTXXeRdemjLoQ9YY.",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558982247578015
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Traduction \u2013 Applications sur Google Play",
+            "url": "https://play.google.com/store/apps/details?id\u003dcom.google.android.apps.translate",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558982244905703
+},
+        {
+            "page_transition": "LINK",
+            "title": "Mes applis Android \u2013 Google Play",
+            "url": "https://play.google.com/apps",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558982237609169
+},
+        {
+            "page_transition": "LINK",
+            "title": "Mes applis Android \u2013 Google Play",
+            "url": "https://play.google.com/apps",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558982230737432
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Play Musique \u2013 Applications sur Google Play",
+            "url": "https://play.google.com/store/apps/details?id\u003dcom.google.android.music",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558982222347574
+},
+        {
+            "page_transition": "LINK",
+            "title": "Mes applis Android \u2013 Google Play",
+            "url": "https://play.google.com/apps",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558982200464348
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Applications Android sur Google Play",
+            "url": "https://play.google.com/store/apps",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558982197928032
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Mes applis Android \u2013 Google Play",
+            "url": "https://play.google.com/apps",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558982190934511
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Google Cloud Print \u2013 Applications sur Google Play",
+            "url": "https://play.google.com/store/apps/details?id\u003dcom.google.android.apps.cloudprint",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558982177525540
+},
+        {
+            "page_transition": "LINK",
+            "title": "",
+            "url": "https://www.google.com/url?sa\u003dj\u0026url\u003dhttps%3A%2F%2Fplay.app.goo.gl%2F%3Flink%3Dhttps%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.google.android.apps.cloudprint%26ddl%3D1%26pcampaignid%3Dweb_ddl_1\u0026uct\u003d1557436285\u0026usg\u003dQiGEyZrjwiH4acAOFouokJYmdrs.",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558982092443520
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Cloud Print \u2013 Applications sur Google Play",
+            "url": "https://play.google.com/store/apps/details?id\u003dcom.google.android.apps.cloudprint",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558982088861968
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Cloud Print \u2013 Applications sur Google Play",
+            "url": "https://play.google.com/store/apps/details?id\u003dcom.google.android.apps.cloudprint",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558982086471062
+},
+        {
+            "page_transition": "LINK",
+            "title": "Mes applis Android \u2013 Google Play",
+            "url": "https://play.google.com/apps",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558982077766577
+},
+        {
+            "page_transition": "LINK",
+            "title": "Applications Android sur Google Play",
+            "url": "https://play.google.com/store/apps",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558982061561141
+},
+        {
+            "page_transition": "LINK",
+            "title": "backup and restore \u2013 Applications Android sur Google Play",
+            "url": "https://play.google.com/store/search?q\u003dbackup%20and%20restore\u0026c\u003dapps",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558982038712568
+},
+        {
+            "page_transition": "LINK",
+            "title": "Applications Android sur Google Play",
+            "url": "https://play.google.com/store/apps/collection/cluster?clp\u003dogooCAEaHAoWcmVjc190b3BpY19SeWZkZEJTb0ZKVRA7GAMqAggBUgIIAg%3D%3D:S:ANO1ljJB5zU\u0026gsr\u003dCiuiCigIARocChZyZWNzX3RvcGljX1J5ZmRkQlNvRkpVEDsYAyoCCAFSAggC:S:ANO1ljLK73Y",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558982005174646
+},
+        {
+            "page_transition": "LINK",
+            "title": "Applications Android sur Google Play",
+            "url": "https://play.google.com/store/apps",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981938254011
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Play",
+            "url": "https://play.google.com/store/account/subscriptions",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981930372473
+},
+        {
+            "page_transition": "LINK",
+            "title": "Récompenses - Google Play",
+            "url": "https://play.google.com/store/account",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981927301549
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Play",
+            "url": "https://play.google.com/store/account/family",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981915402012
+},
+        {
+            "page_transition": "LINK",
+            "title": "Mon activité Play \u2013 Google Play",
+            "url": "https://play.google.com/store/account",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981913066925
+},
+        {
+            "page_transition": "LINK",
+            "title": "Mon activité Play \u2013 Google Play",
+            "url": "https://play.google.com/store/people/details",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981908178739
+},
+        {
+            "page_transition": "LINK",
+            "title": "Mon activité Play \u2013 Google Play",
+            "url": "https://play.google.com/store/books",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981900836066
+},
+        {
+            "page_transition": "LINK",
+            "title": "Mon activité Play \u2013 Google Play",
+            "url": "https://play.google.com/store/people/details",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981894469348
+},
+        {
+            "page_transition": "LINK",
+            "title": "",
+            "url": "https://www.google.com/url?sa\u003dj\u0026url\u003dhttps%3A%2F%2Fplay.app.goo.gl%2F%3Flink%3Dhttps%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.easybrain.sudoku.android%26ddl%3D1%26pcampaignid%3Dweb_ddl_1\u0026uct\u003d1557436285\u0026usg\u003d0hePBqGmrosHWnd9baPWTZOP27Y.",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981806270228
+},
+        {
+            "page_transition": "LINK",
+            "title": "Sudoku.com - Jeu gratuit \u2013 Applications sur Google Play",
+            "url": "https://play.google.com/store/apps/details?id\u003dcom.easybrain.sudoku.android",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981799328171
+},
+        {
+            "page_transition": "LINK",
+            "title": "Mon activité Play \u2013 Google Play",
+            "url": "https://play.google.com/store/people/details",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981796324031
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Play",
+            "url": "https://play.google.com/store/account/family",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981784751637
+},
+        {
+            "page_transition": "LINK",
+            "title": "Récompenses - Google Play",
+            "url": "https://play.google.com/store/account/rewards",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981781041209
+},
+        {
+            "page_transition": "LINK",
+            "title": "Historique des commandes - Google Play",
+            "url": "https://play.google.com/store/account/orderhistory",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981778871368
+},
+        {
+            "page_transition": "LINK",
+            "title": "Historique des commandes - Google Play",
+            "url": "https://play.google.com/store/account/orderhistory?purchaseFilter\u003dapps",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981773921452
+},
+        {
+            "page_transition": "LINK",
+            "title": "Historique des commandes - Google Play",
+            "url": "https://play.google.com/store/account/orderhistory",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981769588729
+},
+        {
+            "page_transition": "LINK",
+            "title": "Récompenses - Google Play",
+            "url": "https://play.google.com/store/account",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981763951408
+},
+        {
+            "page_transition": "LINK",
+            "title": "Mon activité Play \u2013 Google Play",
+            "url": "https://play.google.com/store/people/details?id\u003d102145583629165332792",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981760586879
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Play",
+            "url": "https://play.google.com/store",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981756753128
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Play",
+            "url": "https://play.google.com/store/account/subscriptions",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981750077679
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Play",
+            "url": "https://play.google.com/store",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981722748874
+},
+        {
+            "page_transition": "LINK",
+            "title": "Mon activité Play \u2013 Google Play",
+            "url": "https://play.google.com/store/people/details?id\u003d102145583629165332792",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981714185181
+},
+        {
+            "page_transition": "LINK",
+            "title": "Récompenses - Google Play",
+            "url": "https://play.google.com/store/account",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981703833004
+},
+        {
+            "page_transition": "LINK",
+            "title": "Applications Android sur Google Play",
+            "url": "https://play.google.com/store/apps",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981696754283
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Google Play",
+            "url": "https://play.google.com/settings",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981689685610
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Play",
+            "url": "https://play.google.com/redeem?code",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981667762043
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Play",
+            "url": "https://play.google.com/settings",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981621615279
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Play",
+            "url": "https://play.google.com/settings?hl\u003dfr_CA\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981580568268
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Drive",
+            "url": "https://drive.google.com/drive/mobile/search?hl\u003dfr_CA\u0026pli\u003d1\u0026q\u003dandr\u0026sort\u003d7\u0026direction\u003dd",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981566742544
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Drive",
+            "url": "https://drive.google.com/drive/mobile/search?hl\u003dfr_CA\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981555060253
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Drive",
+            "url": "https://drive.google.com/drive/mobile/my-drive?hl\u003dfr_CA\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981546061339
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Drive",
+            "url": "https://drive.google.com/drive/mobile/backups?hl\u003dfr_CA\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981545924142
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Drive",
+            "url": "https://drive.google.com/drive/mobile/my-drive?hl\u003dfr_CA\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981512478880
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Drive",
+            "url": "https://drive.google.com/drive/mobile/backups?hl\u003dfr_CA\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981509267720
+},
+        {
+            "page_transition": "LINK",
+            "title": "Télécharger vos données - Aide Compte Google",
+            "url": "https://support.google.com/accounts/answer/3024190",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981487469526
+},
+        {
+            "page_transition": "LINK",
+            "title": "En savoir plus sur le service de configuration d\u0027appareils Android - Aide Android",
+            "url": "https://support.google.com/android/answer/9021432",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981475225575
+},
+        {
+            "page_transition": "LINK",
+            "title": "Télécharger vos données",
+            "url": "https://takeout.google.com/settings/takeout?hl\u003dfr\u0026gl\u003dCA\u0026expflags\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981471879882
+},
+        {
+            "page_transition": "LINK",
+            "title": "Télécharger vos données",
+            "url": "https://takeout.google.com/settings/takeout?hl\u003dfr\u0026gl\u003dCA\u0026expflags\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981460868536
+},
+        {
+            "page_transition": "LINK",
+            "title": "Télécharger vos données",
+            "url": "https://takeout.google.com/settings/takeout?hl\u003dfr\u0026gl\u003dCA\u0026expflags\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981456814128
+},
+        {
+            "page_transition": "LINK",
+            "title": "Télécharger vos données",
+            "url": "https://takeout.google.com/settings/takeout?hl\u003dfr\u0026gl\u003dCA\u0026expflags\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981434749057
+},
+        {
+            "page_transition": "LINK",
+            "title": "Télécharger vos données",
+            "url": "https://takeout.google.com/settings/takeout?hl\u003dfr\u0026gl\u003dCA\u0026expflags\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981427079011
+},
+        {
+            "page_transition": "LINK",
+            "title": "Télécharger vos données",
+            "url": "https://takeout.google.com/settings/takeout?hl\u003dfr\u0026gl\u003dCA\u0026expflags\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981420557680
+},
+        {
+            "page_transition": "LINK",
+            "title": "Télécharger vos données",
+            "url": "https://takeout.google.com/settings/takeout?hl\u003dfr\u0026gl\u003dCA\u0026expflags\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981393121200
+},
+        {
+            "page_transition": "LINK",
+            "title": "Télécharger vos données",
+            "url": "https://takeout.google.com/settings/takeout?hl\u003dfr\u0026gl\u003dCA\u0026expflags\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981389248465
+},
+        {
+            "page_transition": "LINK",
+            "title": "Télécharger vos données",
+            "url": "https://takeout.google.com/settings/takeout?hl\u003dfr\u0026gl\u003dCA\u0026expflags\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981374314804
+},
+        {
+            "page_transition": "LINK",
+            "title": "Télécharger vos données",
+            "url": "https://takeout.google.com/settings/takeout?hl\u003dfr\u0026gl\u003dCA\u0026expflags\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981370312649
+},
+        {
+            "page_transition": "LINK",
+            "title": "Télécharger vos données",
+            "url": "https://takeout.google.com/settings/takeout?hl\u003dfr\u0026gl\u003dCA\u0026expflags\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981361130303
+},
+        {
+            "page_transition": "LINK",
+            "title": "Télécharger vos données",
+            "url": "https://takeout.google.com/settings/takeout?hl\u003dfr\u0026gl\u003dCA\u0026expflags\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981348734384
+},
+        {
+            "page_transition": "LINK",
+            "title": "Télécharger vos données",
+            "url": "https://takeout.google.com/settings/takeout?hl\u003dfr\u0026gl\u003dCA\u0026expflags\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981304372331
+},
+        {
+            "page_transition": "LINK",
+            "title": "Télécharger vos données",
+            "url": "https://takeout.google.com/settings/takeout?hl\u003dfr\u0026gl\u003dCA\u0026expflags\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981297552294
+},
+        {
+            "page_transition": "LINK",
+            "title": "Télécharger vos données",
+            "url": "https://takeout.google.com/settings/takeout?hl\u003dfr\u0026gl\u003dCA\u0026expflags\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981254804820
+},
+        {
+            "page_transition": "LINK",
+            "title": "Télécharger vos données",
+            "url": "https://takeout.google.com/settings/takeout?hl\u003dfr\u0026gl\u003dCA\u0026expflags\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981253542362
+},
+        {
+            "page_transition": "LINK",
+            "title": "Télécharger vos données",
+            "url": "https://takeout.google.com/settings/takeout?hl\u003dfr\u0026gl\u003dCA\u0026expflags\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981244770670
+},
+        {
+            "page_transition": "LINK",
+            "title": "Télécharger vos données",
+            "url": "https://takeout.google.com/settings/takeout?hl\u003dfr\u0026gl\u003dCA\u0026expflags\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981234041409
+},
+        {
+            "page_transition": "LINK",
+            "title": "Télécharger vos données",
+            "url": "https://takeout.google.com/settings/takeout?hl\u003dfr\u0026gl\u003dCA\u0026expflags\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981220108737
+},
+        {
+            "page_transition": "LINK",
+            "title": "Télécharger vos données",
+            "url": "https://takeout.google.com/settings/takeout?hl\u003dfr\u0026gl\u003dCA\u0026expflags\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981209660779
+},
+        {
+            "page_transition": "LINK",
+            "title": "Télécharger vos données",
+            "url": "https://takeout.google.com/settings/takeout?hl\u003dfr\u0026gl\u003dCA\u0026expflags\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981194443102
+},
+        {
+            "page_transition": "LINK",
+            "title": "Vos trajets",
+            "url": "https://www.google.com/maps/timeline?hl\u003dfr_CA\u0026pli\u003d1\u0026pb",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981175871319
+},
+        {
+            "page_transition": "LINK",
+            "title": "Vos trajets",
+            "url": "https://www.google.com/maps/timeline?hl\u003dfr_CA\u0026pli\u003d1\u0026pb\u003d!1m2!1m1!1s2019-04-27",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981167128484
+},
+        {
+            "page_transition": "LINK",
+            "title": "Vos trajets",
+            "url": "https://www.google.com/maps/timeline?hl\u003dfr_CA\u0026pli\u003d1\u0026pb\u003d!1m2!1m1!1s2019-05-04",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981164744203
+},
+        {
+            "page_transition": "LINK",
+            "title": "Vos trajets",
+            "url": "https://www.google.com/maps/timeline?hl\u003dfr_CA\u0026pli\u003d1\u0026pb\u003d!1m2!1m1!1s2019-05-11",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981150373814
+},
+        {
+            "page_transition": "LINK",
+            "title": "Vos trajets",
+            "url": "https://www.google.com/maps/timeline?hl\u003dfr_CA\u0026pli\u003d1\u0026pb\u003d!1m2!1m1!1s2019-05-15",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981108751397
+},
+        {
+            "page_transition": "LINK",
+            "title": "Vos trajets",
+            "url": "https://www.google.com/maps/timeline?hl\u003dfr_CA\u0026pli\u003d1\u0026pb\u003d!1m2!1m1!1s2019-05-08",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981095998140
+},
+        {
+            "page_transition": "LINK",
+            "title": "Vos trajets",
+            "url": "https://www.google.com/maps/timeline?hl\u003dfr_CA\u0026pli\u003d1\u0026pb\u003d!1m2!1m1!1s2019-05-07",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981093822597
+},
+        {
+            "page_transition": "LINK",
+            "title": "Vos trajets",
+            "url": "https://www.google.com/maps/timeline?hl\u003dfr_CA\u0026pli\u003d1\u0026pb\u003d!1m2!1m1!1s2019-05-06",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981088812443
+},
+        {
+            "page_transition": "LINK",
+            "title": "Vos trajets",
+            "url": "https://www.google.com/maps/timeline?hl\u003dfr_CA\u0026pli\u003d1\u0026pb\u003d!1m2!1m1!1s2019-05-05",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981082138522
+},
+        {
+            "page_transition": "LINK",
+            "title": "Vos trajets",
+            "url": "https://www.google.com/maps/timeline?hl\u003dfr_CA\u0026pli\u003d1\u0026pb\u003d!1m2!1m1!1s2019-05-04",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981063999847
+},
+        {
+            "page_transition": "LINK",
+            "title": "Vos trajets",
+            "url": "https://www.google.com/maps/timeline?hl\u003dfr_CA\u0026pli\u003d1\u0026pb",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981049823142
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Vos trajets",
+            "url": "https://www.google.com/maps/timeline?hl\u003dfr_CA\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558981036238354
+},
+        {
+            "page_transition": "LINK",
+            "title": "Vos trajets",
+            "url": "https://www.google.com/maps/timeline?hl\u003dfr_CA\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980999199781
+},
+        {
+            "page_transition": "LINK",
+            "title": "Gérer et restaurer vos sauvegardes d\u0027appareil dans Google Drive - Android - Aide Google Drive",
+            "url": "https://support.google.com/drive/answer/6305834?hl\u003dfr-CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980983572930
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Gérer et restaurer vos sauvegardes d\u0027appareil dans Google Drive - Android - Aide Google Drive",
+            "url": "https://support.google.com/drive/answer/6305834?hl\u003dfr-CA#",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980974908123
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Ajouter, déplacer ou importer des contacts - Android - Aide Contacts",
+            "url": "https://support.google.com/contacts/answer/1069522?p\u003dother_contacts\u0026visit_id\u003d636945770319956032-2023193375\u0026rd\u003d1#auto",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980698304511
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/other?hl\u003dfr-CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980695687030
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/other?hl\u003dfr-CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980691869444
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/label/258850f40c46c656?hl\u003dfr-CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980687759677
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/label/258850f40c46c656?hl\u003dfr-CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980680387373
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/label/258850f40c46c656?hl\u003dfr-CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980677563988
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/label/258850f40c46c656?hl\u003dfr-CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980670794729
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/label/258850f40c46c656?hl\u003dfr-CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980666982730
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/label/258850f40c46c656?hl\u003dfr-CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980660797250
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/label/258850f40c46c656?hl\u003dfr-CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980656986841
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/label/258850f40c46c656?hl\u003dfr-CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980652873814
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Gmail",
+            "url": "https://mail.google.com/mail/mu/mp/214/#all/15c9d5f97f9c4999",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980645164553
+},
+        {
+            "page_transition": "LINK",
+            "title": "Gmail",
+            "url": "https://mail.google.com/mail/mu/mp/214/#tl/priority/%5Esmartlabel_personal",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980644243345
+},
+        {
+            "page_transition": "LINK",
+            "title": "Gmail",
+            "url": "https://mail.google.com/mail/mu/mp/214/#all/15c9d5f97f9c4999",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980632643228
+},
+        {
+            "page_transition": "LINK",
+            "title": "Gmail",
+            "url": "https://mail.google.com/mail/mu/mp/214/#tl/priority/%5Esmartlabel_personal",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980630697553
+},
+        {
+            "page_transition": "LINK",
+            "title": "Gmail",
+            "url": "https://mail.google.com/mail/mu/mp/214/#mn",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980623694616
+},
+        {
+            "page_transition": "LINK",
+            "title": "Gmail",
+            "url": "https://mail.google.com/mail/mu/mp/214/#tl/priority/%5Esmartlabel_personal",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980608242507
+},
+        {
+            "page_transition": "LINK",
+            "title": "Gmail",
+            "url": "https://mail.google.com/mail/mu/mp/214/#all/15c9d5f97f9c4999",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980607494726
+},
+        {
+            "page_transition": "LINK",
+            "title": "",
+            "url": "https://mail.google.com/mail/mu/#all/15c9d5f97f9c4999",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980607183674
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/label/258850f40c46c656?hl\u003dfr-CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980600428748
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/label/258850f40c46c656?hl\u003dfr-CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980599384763
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/label/258850f40c46c656?hl\u003dfr-CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980587427537
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/label/258850f40c46c656?hl\u003dfr-CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980585709034
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/?hl\u003dfr-CA\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980574240738
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr-CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980536503433
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr-CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980524581650
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr-CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980522299985
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr-CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980520186764
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr-CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980515272004
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr-CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980511395068
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr-CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980502496774
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr-CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980500707615
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr-CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980491817851
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr-CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980489953334
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr-CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980480670753
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr-CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980479029494
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr-CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980477328929
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr-CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980466531906
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr-CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980464477332
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr-CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980455131043
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr-CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980452855884
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr-CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980442578202
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr-CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980439569863
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr-CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980430034712
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr-CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980423656810
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr-CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980422102116
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr-CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980418010986
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr-CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980416675547
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr-CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980402820817
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr-CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980401647181
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr-CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980392915484
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr-CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980391470157
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr-CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980382805705
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr-CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980382100936
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr-CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980378773090
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr-CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980375727724
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr-CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980374101782
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr-CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980362576258
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/?hl\u003dfr-CA\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980356180181
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Gérer et restaurer vos sauvegardes d\u0027appareil dans Google Drive - Android - Aide Google Drive",
+            "url": "https://support.google.com/drive/answer/6305834?hl\u003dfr-CA#",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980273193901
+},
+        {
+            "page_transition": "LINK",
+            "title": "Gérer et restaurer vos sauvegardes d\u0027appareil dans Google Drive - Android - Aide Google Drive",
+            "url": "https://support.google.com/drive/answer/6305834?hl\u003dfr-CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980231607974
+},
+        {
+            "page_transition": "LINK",
+            "title": "Localiser mon appareil",
+            "url": "https://www.google.com/android/find?hl\u003dfr_CA\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980221568709
+},
+        {
+            "page_transition": "LINK",
+            "title": "Connexion - Comptes Google",
+            "url": "https://accounts.google.com/SignOutOptions?hl\u003dfr-CA\u0026continue\u003dhttps://www.google.com/android/find%3Fhl%3Dfr_CA%26pli%3D1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980219958661
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Localiser mon appareil",
+            "url": "https://www.google.com/android/find?hl\u003dfr_CA\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980160416941
+},
+        {
+            "page_transition": "FORM_SUBMIT",
+            "title": "Localiser mon appareil",
+            "url": "https://www.google.com/android/find?hl\u003dfr_CA\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980093006254
+},
+        {
+            "page_transition": "LINK",
+            "title": "Connexion - Comptes Google",
+            "url": "https://accounts.google.com/SignOutOptions?hl\u003dfr-CA\u0026continue\u003dhttps://www.google.com/android/find%3Fhl%3Dfr_CA%26pli%3D1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980089780216
+},
+        {
+            "page_transition": "LINK",
+            "title": "Localiser mon appareil",
+            "url": "https://www.google.com/android/find?hl\u003dfr_CA\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980042793356
+},
+        {
+            "page_transition": "LINK",
+            "title": "Connexion - Comptes Google",
+            "url": "https://accounts.google.com/SignOutOptions?service\u003dgoogleplay\u0026continue\u003dhttps%3A%2F%2Fstore.google.com%2Faccount%3Fhl%3Dfr-CA\u0026hl\u003dfr-CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558980021601065
+},
+        {
+            "page_transition": "LINK",
+            "title": "Compte \u2013 Boutique Google Store",
+            "url": "https://store.google.com/account?hl\u003dfr-CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558979960743143
+},
+        {
+            "page_transition": "LINK",
+            "title": "Historique des commandes",
+            "url": "https://store.google.com/orderhistory?hl\u003dfr-CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558979958189447
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Store officiel pour les appareils et les accessoires Google",
+            "url": "https://store.google.com/?playredirect\u003dtrue",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558979930957662
+},
+        {
+            "page_transition": "LINK",
+            "title": "Applications Android sur Google Play",
+            "url": "https://play.google.com/store/apps/collection/cluster?clp\u003dogoXCAYSC0FQUExJQ0FUSU9OKgIIAVICCAM%3D:S:ANO1ljJeyws\u0026gsr\u003dChqiChcIBhILQVBQTElDQVRJT04qAggBUgIIAw%3D%3D:S:ANO1ljLsirA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558979906228195
+},
+        {
+            "page_transition": "LINK",
+            "title": "Applications Android sur Google Play",
+            "url": "https://play.google.com/store/apps",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558979900294774
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Play",
+            "url": "https://play.google.com/settings?hl\u003dfr_CA\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558979862992102
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Play",
+            "url": "https://play.google.com/store?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558979853266420
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Play",
+            "url": "https://play.google.com/settings?hl\u003dfr_CA\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558979725560208
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Publishers",
+            "url": "https://about.flipboard.com/forpublishers/",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558979572639091
+},
+        {
+            "page_transition": "LINK",
+            "title": "Tools",
+            "url": "https://about.flipboard.com/tools/",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558979571424609
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Tools",
+            "url": "https://about.flipboard.com/tools/",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558979569662103
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Social Plugins",
+            "url": "https://about.flipboard.com/social-plugins/?tool\u003dbrowser",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558979566986868
+},
+        {
+            "page_transition": "LINK",
+            "title": "Connecting ...",
+            "url": "https://accounts.google.com/o/oauth2/auth?response_type\u003dpermission%20id_token%20code\u0026scope\u003dprofile\u0026openid.realm\u003d\u0026include_granted_scopes\u003dtrue\u0026redirect_uri\u003dstoragerelay%3A%2F%2Fhttps%2Fflipboard.com%3Fid%3Dauth966940\u0026client_id\u003d334069016917.apps.googleusercontent.com\u0026ss_domain\u003dhttps%3A%2F%2Fflipboard.com\u0026gsiwebsdk\u003dshim\u0026access_type\u003doffline",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558979549534184
+},
+        {
+            "page_transition": "LINK",
+            "title": "Flipboard",
+            "url": "https://flipboard.com/",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558979540963837
+},
+        {
+            "page_transition": "LINK",
+            "title": "Flipboard",
+            "url": "https://flipboard.com/",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558979537109435
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Social Plugins",
+            "url": "https://about.flipboard.com/social-plugins/?tool\u003dbrowser",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558979527980823
+},
+        {
+            "page_transition": "LINK",
+            "title": "Social Plugins",
+            "url": "https://about.flipboard.com/social-plugins/?tool\u003dbrowser",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558979491782532
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Tools",
+            "url": "https://about.flipboard.com/tools/",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558979483403772
+},
+        {
+            "page_transition": "LINK",
+            "title": "Tools",
+            "url": "https://about.flipboard.com/tools/",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558979472207735
+},
+        {
+            "page_transition": "LINK",
+            "title": "Tools",
+            "url": "https://about.flipboard.com/tools/",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558979325086445
+},
+        {
+            "page_transition": "LINK",
+            "title": "Publishers",
+            "url": "https://about.flipboard.com/forpublishers/",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558979308604237
+},
+        {
+            "page_transition": "LINK",
+            "title": "Home",
+            "url": "https://about.flipboard.com/",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558979270887963
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Help \u0026 Feedback",
+            "url": "https://about.flipboard.com/help-center/",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558979250782634
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Help \u0026 Feedback",
+            "url": "https://about.flipboard.com/help-center/",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558979245684831
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Help \u0026 Feedback",
+            "url": "https://about.flipboard.com/help-center/",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558979236620743
+},
+        {
+            "page_transition": "LINK",
+            "title": "Help \u0026 Feedback",
+            "url": "https://about.flipboard.com/help-center/",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558979193463718
+},
+        {
+            "page_transition": "LINK",
+            "title": "Help \u0026 Feedback",
+            "url": "https://about.flipboard.com/help-center/",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558979177833370
+},
+        {
+            "page_transition": "LINK",
+            "title": "Privacy Policy",
+            "url": "https://about.flipboard.com/privacy/",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558979070842577
+},
+        {
+            "page_transition": "LINK",
+            "title": "",
+            "url": "https://www.google.com/url?sa\u003dj\u0026url\u003dhttps%3A%2F%2Fplay.app.goo.gl%2F%3Flink%3Dhttps%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dflipboard.app%26ddl%3D1%26pcampaignid%3Dweb_ddl_1\u0026uct\u003d1557436285\u0026usg\u003dpWaH5eqK7Ohr4DyxJsNOx17tjQ4.",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558979017937366
+},
+        {
+            "page_transition": "LINK",
+            "title": "Privacy Policy",
+            "url": "https://about.flipboard.com/privacy/",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558978970174320
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Yahoo",
+            "url": "https://ca.yahoo.com/?p\u003dus",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558978964973303
+},
+        {
+            "page_transition": "LINK",
+            "title": "",
+            "url": "https://www.google.com/url?sa\u003dj\u0026url\u003dhttps%3A%2F%2Fplay.app.goo.gl%2F%3Flink%3Dhttps%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dflipboard.app%26ddl%3D1%26pcampaignid%3Dweb_ddl_1\u0026uct\u003d1557436285\u0026usg\u003dpWaH5eqK7Ohr4DyxJsNOx17tjQ4.",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558978902181499
+},
+        {
+            "page_transition": "LINK",
+            "title": "Flipboard \u2012 Applications sur Google Play",
+            "url": "https://play.google.com/store/apps/details?id\u003dflipboard.app\u0026hl\u003dfr_CA\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558978895153238
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Dropbox \u2012 Applications sur Google Play",
+            "url": "https://play.google.com/store/apps/details?id\u003dcom.dropbox.android\u0026hl\u003dfr_CA\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558978868567824
+},
+        {
+            "page_transition": "LINK",
+            "title": "GitHub - google/guava: Google core libraries for Java",
+            "url": "https://github.com/google/guava",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558978625499213
+},
+        {
+            "page_transition": "LINK",
+            "title": "google/guava · GitHub",
+            "url": "https://github.com/google/guava/tree/master/android",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558978608332874
+},
+        {
+            "page_transition": "LINK",
+            "title": "google/guava · GitHub",
+            "url": "https://github.com/google/guava/tree/master/android/guava-testlib",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558978606999386
+},
+        {
+            "page_transition": "LINK",
+            "title": "google/guava · GitHub",
+            "url": "https://github.com/google/guava/tree/master/android/guava-testlib/src/com/google/common",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558978606400216
+},
+        {
+            "page_transition": "LINK",
+            "title": "google/guava · GitHub",
+            "url": "https://github.com/google/guava/tree/master/android/guava-testlib/src/com/google/common/collect/testing",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558978601368544
+},
+        {
+            "page_transition": "LINK",
+            "title": "google/guava · GitHub",
+            "url": "https://github.com/google/guava/tree/master/android/guava-testlib/src/com/google/common",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558978598513122
+},
+        {
+            "page_transition": "LINK",
+            "title": "google/guava · GitHub",
+            "url": "https://github.com/google/guava/tree/master/android/guava-testlib",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558978595432921
+},
+        {
+            "page_transition": "LINK",
+            "title": "google/guava · GitHub",
+            "url": "https://github.com/google/guava/tree/master/android",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558978590867103
+},
+        {
+            "page_transition": "LINK",
+            "title": "GitHub - google/guava: Google core libraries for Java",
+            "url": "https://github.com/google/guava",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558978564380824
+},
+        {
+            "page_transition": "LINK",
+            "title": "guava/README.md at master · google/guava · GitHub",
+            "url": "https://github.com/google/guava/blob/master/README.md",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558978561968191
+},
+        {
+            "page_transition": "LINK",
+            "title": "google · GitHub",
+            "url": "https://github.com/google",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558978559556037
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Open Source \u2013 opensource.google.com",
+            "url": "https://opensource.google.com/",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558978558218839
+},
+        {
+            "page_transition": "LINK",
+            "title": "Docs \u2013 opensource.google.com",
+            "url": "https://opensource.google.com/docs/",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558978557083364
+},
+        {
+            "page_transition": "LINK",
+            "title": "Using \u2013 opensource.google.com",
+            "url": "https://opensource.google.com/docs/using/",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558978556135233
+},
+        {
+            "page_transition": "LINK",
+            "title": "Docs \u2013 opensource.google.com",
+            "url": "https://opensource.google.com/docs/",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558978527632551
+},
+        {
+            "page_transition": "LINK",
+            "title": "Using \u2013 opensource.google.com",
+            "url": "https://opensource.google.com/docs/using/",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558978502835172
+},
+        {
+            "page_transition": "LINK",
+            "title": "Docs \u2013 opensource.google.com",
+            "url": "https://opensource.google.com/docs/",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558978496012363
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Open Source \u2013 opensource.google.com",
+            "url": "https://opensource.google.com/",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558978463084548
+},
+        {
+            "page_transition": "LINK",
+            "title": "google · GitHub",
+            "url": "https://github.com/google",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558978437896690
+},
+        {
+            "page_transition": "LINK",
+            "title": "guava/README.md at master · google/guava · GitHub",
+            "url": "https://github.com/google/guava/blob/master/README.md",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558978420336733
+},
+        {
+            "page_transition": "LINK",
+            "title": "GitHub - google/guava: Google core libraries for Java",
+            "url": "https://github.com/google/guava",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558978393506055
+},
+        {
+            "page_transition": "LINK",
+            "title": "Apache License, Version 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558978327502372
+},
+        {
+            "page_transition": "LINK",
+            "title": "Navigateur Chrome \u2013 Règles de confidentialité",
+            "url": "https://www.google.com/intl/fr_CA/chrome/privacy/",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558978173873892
+},
+        {
+            "page_transition": "LINK",
+            "title": "Albums archivés - Journal des activités",
+            "url": "https://get.google.com/albumarchive/activitylog",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558978119645577
+},
+        {
+            "page_transition": "LINK",
+            "title": "Albums archivés - Journal des activités",
+            "url": "https://get.google.com/albumarchive/activitylog",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558977764716096
+},
+        {
+            "page_transition": "LINK",
+            "title": "Liens partagés Dropbox protégés par des mots de passe - Aide de Dropbox",
+            "url": "https://help.dropbox.com/fr-fr/files-folders/set-link-permissions",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558977640473792
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Yahoo",
+            "url": "https://ca.yahoo.com/?p\u003dus",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558977640149301
+},
+        {
+            "page_transition": "LINK",
+            "title": "",
+            "url": "https://www.google.com/url?sa\u003dj\u0026url\u003dhttps%3A%2F%2Fplay.app.goo.gl%2F%3Flink%3Dhttps%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.dropbox.android%26ddl%3D1%26pcampaignid%3Dweb_ddl_1\u0026uct\u003d1557436285\u0026usg\u003dELN9Px0EnyRmnORS2Qj72KXMziA.",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558977047516118
+},
+        {
+            "page_transition": "LINK",
+            "title": "Dropbox \u2012 Applications sur Google Play",
+            "url": "https://play.google.com/store/apps/details?id\u003dcom.dropbox.android\u0026hl\u003dfr_CA\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558977041638995
+},
+        {
+            "page_transition": "LINK",
+            "title": "Blogger.com \u2013 Créez un blog unique et éblouissant. Rien de plus facile, et c\u0027est gratuit.",
+            "url": "https://www.blogger.com/about/?r\u003d2",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976990638592
+},
+        {
+            "page_transition": "LINK",
+            "title": "Blogger: Confirmer votre profil",
+            "url": "https://www.blogger.com/switch-profile.g?switchProfileSource\u003d3\u0026continue\u003dhttps://www.blogger.com/blogger.g",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976987961622
+},
+        {
+            "page_transition": "LINK",
+            "title": "Blogger: Confirmer votre profil",
+            "url": "https://www.blogger.com/switch-profile.g?switchProfileSource\u003d3\u0026continue\u003dhttps://www.blogger.com/blogger.g",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976974344070
+},
+        {
+            "page_transition": "LINK",
+            "title": "Blogger",
+            "url": "https://accounts.google.com/AccountChooser/signinchooser?hl\u003dfr\u0026service\u003dblogger\u0026ltmpl\u003dblogger\u0026continue\u003dhttps%3A%2F%2Fwww.blogger.com%2Fhome\u0026flowName\u003dGlifWebSignIn\u0026flowEntry\u003dAddSession",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976972638596
+},
+        {
+            "page_transition": "LINK",
+            "title": "Blogger.com \u2013 Créez un blog unique et éblouissant. Rien de plus facile, et c\u0027est gratuit.",
+            "url": "https://www.blogger.com/about/?r\u003d2",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976962215303
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Play",
+            "url": "https://play.google.com/settings",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976914804634
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Play",
+            "url": "https://play.google.com/settings?hl\u003dfr_CA\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976873207676
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Play",
+            "url": "https://play.google.com/settings?hl\u003dfr_CA\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976870541272
+},
+        {
+            "page_transition": "LINK",
+            "title": "Connexion : comptes Google",
+            "url": "https://accounts.google.com/signoutoptions?continue\u003dhttps%3A%2F%2Fdrive.google.com%2Fdrive%2Fmobile%2Fmy-drive%3Fhl%3Dfr_CA%26pli%3D1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976859522572
+},
+        {
+            "page_transition": "FORM_SUBMIT",
+            "title": "Google Drive",
+            "url": "https://drive.google.com/drive/mobile/my-drive?hl\u003dfr_CA\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976851796533
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Drive",
+            "url": "https://drive.google.com/drive/mobile/recent?hl\u003dfr_CA\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976843642902
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Drive",
+            "url": "https://drive.google.com/drive/mobile/starred?hl\u003dfr_CA\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976840500236
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Drive",
+            "url": "https://drive.google.com/drive/mobile/shared-with-me?hl\u003dfr_CA\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976834511156
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Drive",
+            "url": "https://drive.google.com/drive/mobile/search?hl\u003dfr_CA\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976830511142
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Drive",
+            "url": "https://drive.google.com/drive/mobile/shared-with-me?hl\u003dfr_CA\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976824224596
+},
+        {
+            "page_transition": "LINK",
+            "title": "Albums archivés",
+            "url": "https://get.google.com/albumarchive/102145583629165332792",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976806189621
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Albums archivés",
+            "url": "https://get.google.com/albumarchive/102145583629165332792",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976804827066
+},
+        {
+            "page_transition": "LINK",
+            "title": "Albums archivés - Sauvegarde automatique",
+            "url": "https://get.google.com/albumarchive/102145583629165332792/albums/autobackup",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976794549275
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Albums archivés",
+            "url": "https://get.google.com/albumarchive/102145583629165332792",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976785937533
+},
+        {
+            "page_transition": "LINK",
+            "title": "Albums archivés",
+            "url": "https://get.google.com/albumarchive/102145583629165332792",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976775591949
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Albums archivés",
+            "url": "https://get.google.com/albumarchive/102145583629165332792",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976775426649
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Albums archivés",
+            "url": "https://get.google.com/albumarchive/102145583629165332792",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976766878771
+},
+        {
+            "page_transition": "LINK",
+            "title": "Albums archivés - Journal des activités",
+            "url": "https://get.google.com/albumarchive/activitylog",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976760293466
+},
+        {
+            "page_transition": "LINK",
+            "title": "Albums archivés - 2019-05-27",
+            "url": "https://get.google.com/albumarchive/102145583629165332792/album/AF1QipOa3-wWege9NrMOnSsvQyOv0dAJxFddl4KschC9",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976753909944
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Albums archivés - 2019-05-27",
+            "url": "https://get.google.com/albumarchive/102145583629165332792/album/AF1QipOa3-wWege9NrMOnSsvQyOv0dAJxFddl4KschC9",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976753378427
+},
+        {
+            "page_transition": "LINK",
+            "title": "Connexion : comptes Google",
+            "url": "https://accounts.google.com/signoutoptions?continue\u003dhttps%3A%2F%2Fdrive.google.com%2Fdrive%2Fmobile%2Fbackups%3Fhl%3Dfr_CA%26pli%3D1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976715199228
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Drive",
+            "url": "https://drive.google.com/drive/mobile/my-drive?hl\u003dfr_CA\u0026pli\u003d1\u0026sort\u003d11\u0026direction\u003dd",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976697438182
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Drive",
+            "url": "https://drive.google.com/drive/mobile/my-drive?hl\u003dfr_CA\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976690822098
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Drive",
+            "url": "https://drive.google.com/drive/mobile/shared-with-me?hl\u003dfr_CA\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976682853536
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Drive",
+            "url": "https://drive.google.com/drive/mobile/my-drive?hl\u003dfr_CA\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976677288164
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Drive",
+            "url": "https://drive.google.com/drive/mobile/backups?hl\u003dfr_CA\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976673607516
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Drive",
+            "url": "https://drive.google.com/drive/mobile/my-drive?hl\u003dfr_CA\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976651559130
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Drive",
+            "url": "https://drive.google.com/drive/mobile/backups?hl\u003dfr_CA\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976647100619
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Agenda",
+            "url": "https://calendar.google.com/calendar/gp?hl\u003dfr-CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976601352468
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976582459971
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976580940223
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976559729820
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976558905972
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976551235387
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976547234710
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976545920760
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976540461651
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976536797683
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976532432669
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976530762680
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976527385097
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976525568725
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976515477186
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976514409911
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976494749154
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976492986356
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976490108182
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976488781148
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976486084247
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976479347189
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976477683824
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976474913860
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976457483294
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976453420846
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976451568922
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976443409478
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976441065788
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976427564808
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/label/258850f40c46c656?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976424072456
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/label/258850f40c46c656?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976408024569
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976407937842
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976391668842
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976388929195
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976387547272
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976374410735
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/?hl\u003dfr_CA\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976372411577
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976364195427
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976362041545
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976347351209
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/?hl\u003dfr_CA\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976342557229
+},
+        {
+            "page_transition": "LINK",
+            "title": "Gmail",
+            "url": "https://mail.google.com/mail/mu/mp/214/#tl/priority/%5Esmartlabel_personal",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976326807923
+},
+        {
+            "page_transition": "LINK",
+            "title": "Gmail",
+            "url": "https://mail.google.com/mail/mu/mp/214/#all/1642a733c3fc1f88",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976325975603
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976311832780
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976309236655
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976298916583
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976297083383
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976292831924
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976289026851
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976283028176
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976277509137
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976272881161
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/frequent?hl\u003dfr_CA",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976269433681
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/?hl\u003dfr_CA\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976258634613
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google \u2013 Mon activité",
+            "url": "https://myactivity.google.com/item?restrict\u003dwaa\u0026hl\u003dfr_CA\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976236501503
+},
+        {
+            "page_transition": "LINK",
+            "title": "Gmail",
+            "url": "https://mail.google.com/mail/mu/mp/214/#tl/priority/%5Esmartlabel_personal",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976184225786
+},
+        {
+            "page_transition": "LINK",
+            "title": "Gmail",
+            "url": "https://mail.google.com/mail/mu/mp/214/#trash",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976182709200
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Yahoo",
+            "url": "https://ca.yahoo.com/?p\u003dus",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976104986209
+},
+        {
+            "page_transition": "LINK",
+            "title": "2019-05-27 - Google Photos",
+            "url": "https://photos.google.com/album/AF1QipOa3-wWege9NrMOnSsvQyOv0dAJxFddl4KschC9",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976057272538
+},
+        {
+            "page_transition": "LINK",
+            "title": "2019-05-27 - Google Photos",
+            "url": "https://photos.google.com/album/AF1QipOa3-wWege9NrMOnSsvQyOv0dAJxFddl4KschC9",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976050232761
+},
+        {
+            "page_transition": "LINK",
+            "title": "2019-05-27 - Google Photos",
+            "url": "https://photos.google.com/album/AF1QipOa3-wWege9NrMOnSsvQyOv0dAJxFddl4KschC9",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976029738302
+},
+        {
+            "page_transition": "LINK",
+            "title": "2019-05-27 - Google Photos",
+            "url": "https://photos.google.com/album/AF1QipOa3-wWege9NrMOnSsvQyOv0dAJxFddl4KschC9",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976019466563
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Albums archivés - 2019-05-27",
+            "url": "https://get.google.com/albumarchive/102145583629165332792/album/AF1QipOa3-wWege9NrMOnSsvQyOv0dAJxFddl4KschC9",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976015808582
+},
+        {
+            "page_transition": "LINK",
+            "title": "Albums archivés - 2019-05-27",
+            "url": "https://get.google.com/albumarchive/102145583629165332792/album/AF1QipOa3-wWege9NrMOnSsvQyOv0dAJxFddl4KschC9",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976012356854
+},
+        {
+            "page_transition": "LINK",
+            "title": "Albums archivés - 2019-05-27",
+            "url": "https://get.google.com/albumarchive/102145583629165332792/album/AF1QipOa3-wWege9NrMOnSsvQyOv0dAJxFddl4KschC9",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976007153565
+},
+        {
+            "page_transition": "LINK",
+            "title": "Albums archivés",
+            "url": "https://get.google.com/albumarchive/102145583629165332792",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976003007297
+},
+        {
+            "page_transition": "LINK",
+            "title": "",
+            "url": "https://get.google.com/albumarchive/102145583629165332792",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558976001434925
+},
+        {
+            "page_transition": "LINK",
+            "title": "Mon profil",
+            "url": "https://aboutme.google.com/?hl\u003dfr-CA\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558975993060300
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Yahoo",
+            "url": "https://ca.yahoo.com/?p\u003dus",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558975957504179
+},
+        {
+            "page_transition": "LINK",
+            "title": "Se protéger contre les applications dangereuses avec Google Play Protect - Aide Android",
+            "url": "https://support.google.com/android/answer/2812853?hl\u003d%lang%",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558975898403992
+},
+        {
+            "page_transition": "LINK",
+            "title": "Localiser mon appareil",
+            "url": "https://www.google.com/android/find",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558975871699661
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Localiser mon appareil",
+            "url": "https://www.google.com/android/find#",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558975834813913
+},
+        {
+            "page_transition": "LINK",
+            "title": "Informations supplémentaires Informations sur le navigateur appCodeName Mozilla appName Netscape appVersion 5.0 (Linux; Android 4.4.2; SM-G386W) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Mobile Safari/537.36 cookieEnabled true onLine true platform Linux armv7l userAgent Mozilla/5.0 (Linux; Android 4.4.2; SM-G386W) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Mobile Safari/537.36 javaEnabled false pluginNames Informations sur la page URL https://www.google.com/android/find# Structure de la page \u003cHTML\u003e \u003cHEAD\u003e \u003c\/HEAD\u003e \u003cBODY class\u003d\"mobile fma gb_Zd\"\u003e \u003cNOSCRIPT\u003e \u003c\/NOSCRIPT\u003e \u003cDIV class\u003d\"one-google-container mobile\"\u003e \u003cDIV\u003e \u003cHEADER id\u003d\"gb\" class\u003d\"gb_ja gb_Oa gb_re gb_td gb_ka\"\u003e \u003cDIV class\u003d\"gb_Jd\"\u003e \u003cDIV class\u003d\"gb_bc gb_9b gb_ka\"\u003e \u003c\/DIV\u003e \u003c\/DIV\u003e \u003cDIV class\u003d\"gb_od gb_Ed gb_wd gb_vd gb_4b gb_xe\"\u003e \u003cDIV class\u003d\"gb_uc gb_Ac gb_Bc\"\u003e \u003cDIV class\u003d\"gb_3b\"\u003e \u003csvg\u003e \u003cpath\u003e \u003c\/path\u003e \u003c\/svg\u003e \u003c\/DIV\u003e \u003cDIV class\u003d\"gb_3b gb_6b gb_va\"\u003e \u003c\/DIV\u003e \u003cDIV class\u003d\"gb_3b gb_7b gb_va\"\u003e \u003c\/DIV\u003e \u003cDIV\u2026 - Recherche Google",
+            "url": "https://www.google.com/search?q\u003d%0A%0A%0AInformations+suppl%C3%A9mentaires%0AInformations+sur+le+navigateur%0AappCodeName%0AMozilla%0AappName%0ANetscape%0AappVersion%0A5.0+(Linux%3B+Android+4.4.2%3B+SM-G386W)+AppleWebKit%2F537.36+(KHTML%2C+like+Gecko)+Chrome%2F74.0.3729.157+Mobile+Safari%2F537.36%0AcookieEnabled%0Atrue%0AonLine%0Atrue%0Aplatform%0ALinux+armv7l%0AuserAgent%0AMozilla%2F5.0+(Linux%3B+Android+4.4.2%3B+SM-G386W)+AppleWebKit%2F537.36+(KHTML%2C+like+Gecko)+Chrome%2F74.0.3729.157+Mobile+Safari%2F537.36%0AjavaEnabled%0Afalse%0ApluginNames%0AInformations+sur+la+page%0AURL%0Ahttps%3A%2F%2Fwww.google.com%2Fandroid%2Ffind%23%0AStructure+de+la+page%0A%3CHTML%3E+%3CHEAD%3E+%3C%2FHEAD%3E+%3CBODY+class%3D%22mobile+fma+gb_Zd%22%3E+%3CNOSCRIPT%3E+%3C%2FNOSCRIPT%3E+%3CDIV+class%3D%22one-google-container+mobile%22%3E+%3CDIV%3E+%3CHEADER+id%3D%22gb%22+class%3D%22gb_ja+gb_Oa+gb_re+gb_td+gb_ka%22%3E+%3CDIV+class%3D%22gb_Jd%22%3E+%3CDIV+class%3D%22gb_bc+gb_9b+gb_ka%22%3E+%3C%2FDIV%3E+%3C%2FDIV%3E+%3CDIV+class%3D%22gb_od+gb_Ed+gb_wd+gb_vd+gb_4b+gb_xe%22%3E+%3CDIV+class%3D%22gb_uc+gb_Ac+gb_Bc%22%3E+%3CDIV+class%3D%22gb_3b%22%3E+%3Csvg%3E+%3Cpath%3E+%3C%2Fpath%3E+%3C%2Fsvg%3E+%3C%2FDIV%3E+%3CDIV+class%3D%22gb_3b+gb_6b+gb_va%22%3E+%3C%2FDIV%3E+%3CDIV+class%3D%22gb_3b+gb_7b+gb_va%22%3E+%3C%2FDIV%3E+%3CDIV%E2%80%A6\u0026client\u003dms-android-bell-ca\u0026sourceid\u003dchrome-mobile\u0026ie\u003dUTF-8",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558975773320435
+},
+        {
+            "page_transition": "LINK",
+            "title": "ocate-message - Recherche Google",
+            "url": "https://www.google.com/search?q\u003docate-message\u0026client\u003dms-android-bell-ca\u0026sourceid\u003dchrome-mobile\u0026ie\u003dUTF-8",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558975754889086
+},
+        {
+            "page_transition": "LINK",
+            "title": "Localiser mon appareil",
+            "url": "https://www.google.com/android/find#",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558975703647964
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Yahoo",
+            "url": "https://ca.yahoo.com/?p\u003dus",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558975614597078
+},
+        {
+            "page_transition": "LINK",
+            "title": "Localiser mon appareil",
+            "url": "https://www.google.com/android/find",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558975606839779
+},
+        {
+            "page_transition": "LINK",
+            "title": "Error 404 (Introuvable)!!1",
+            "url": "https://myaccount.google.com/u/oliviaimeolivia@gmail.com/phone",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558975391253819
+},
+        {
+            "page_transition": "LINK",
+            "title": "Aide Google Maps",
+            "url": "https://support.google.com/maps/?hl\u003dfr#topic\u003d6384263",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558975362790024
+},
+        {
+            "page_transition": "LINK",
+            "title": "Activer ou désactiver la collecte des données de localisation - Aide Google Maps",
+            "url": "https://support.google.com/maps/answer/2839958?hl\u003dfr\u0026ref_topic\u003d6384263",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558975346154765
+},
+        {
+            "page_transition": "LINK",
+            "title": "Aide Google Maps",
+            "url": "https://support.google.com/maps/?hl\u003dfr#topic\u003d6384263",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558975333731017
+},
+        {
+            "page_transition": "LINK",
+            "title": "Aide Google Maps",
+            "url": "https://support.google.com/maps/?hl\u003dfr#topic\u003d3092425",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558975315645286
+},
+        {
+            "page_transition": "LINK",
+            "title": "Error 404 (Introuvable)!!1",
+            "url": "https://myaccount.google.com/u/oliviaimeolivia@gmail.com/phone",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558975233689945
+},
+        {
+            "page_transition": "LINK",
+            "title": "Error 404 (Introuvable)!!1",
+            "url": "https://myaccount.google.com/u/oliviaimeolivia@gmail.com/phone",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558975225786691
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Yahoo",
+            "url": "https://ca.yahoo.com/?p\u003dus",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558975219052693
+},
+        {
+            "page_transition": "LINK",
+            "title": "Yahoo",
+            "url": "https://ca.yahoo.com/?p\u003dus",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558974670121547
+},
+        {
+            "page_transition": "LINK",
+            "title": "Accéder à vos favoris, à vos mots de passe et plus encore sur tous vos appareils - Android - Aide Google Chrome",
+            "url": "https://support.google.com/chrome/answer/165139",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558974649802622
+},
+        {
+            "page_transition": "LINK",
+            "title": "Remplir des formulaires automatiquement - Android - Aide Google Chrome",
+            "url": "https://support.google.com/chrome/answer/142893",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558974583162954
+},
+        {
+            "page_transition": "LINK",
+            "title": "Navigateur Chrome \u2013 Règles de confidentialité",
+            "url": "https://www.google.com/chrome/privacy/archive/20190130/",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558974499032946
+},
+        {
+            "page_transition": "LINK",
+            "title": "Navigateur Chrome \u2013 Règles de confidentialité",
+            "url": "https://www.google.com/chrome/privacy/?hl\u003dfr",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558974487272554
+},
+        {
+            "page_transition": "LINK",
+            "title": "Chrome Web Store",
+            "url": "https://chrome.google.com/webstore/unsupported",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558974472363001
+},
+        {
+            "page_transition": "LINK",
+            "title": "Installer et gérer des extensions - Aide Chrome Web Store",
+            "url": "https://support.google.com/chrome_webstore/answer/2664769?hl\u003dfr",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558974465974250
+},
+        {
+            "page_transition": "LINK",
+            "title": "Chrome Web Store",
+            "url": "https://chrome.google.com/webstore/unsupported?h1\u003dfr",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558974455644035
+},
+        {
+            "page_transition": "LINK",
+            "title": "Sécurité Chrome",
+            "url": "https://www.google.com/intl/fr/chrome/security/",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558974421130527
+},
+        {
+            "page_transition": "LINK",
+            "title": "Navigateur Web Google Chrome",
+            "url": "https://www.google.com/chrome/?dark\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558974409505098
+},
+        {
+            "page_transition": "LINK",
+            "title": "Productivité Chrome",
+            "url": "https://www.google.com/intl/fr/chrome/productivity/",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558974400198292
+},
+        {
+            "page_transition": "LINK",
+            "title": "Navigateur Web Google Chrome",
+            "url": "https://www.google.com/chrome/?dark\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558974389261418
+},
+        {
+            "page_transition": "LINK",
+            "title": "Vérifier la sécurité de la connexion d\u0027un site - Aide Google Chrome",
+            "url": "https://support.google.com/chrome/answer/95617?dark\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558974380707502
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "https://www.google.ca/search?q\u003dhangouts\u0026oq\u003dhangouts\u0026aqs\u003dchrome..69i57j0l2j5.3949j0j4\u0026client\u003dms-android-bell-ca\u0026sourceid\u003dchrome-mobile\u0026ie\u003dUTF-8 - Recherche Google",
+            "url": "https://www.google.com/search?q\u003dhttps%3A%2F%2Fwww.google.ca%2Fsearch%3Fq%3Dhangouts%26oq%3Dhangouts%26aqs%3Dchrome..69i57j0l2j5.3949j0j4%26client%3Dms-android-bell-ca%26sourceid%3Dchrome-mobile%26ie%3DUTF-8\u0026oq\u003dhttps%3A%2F%2Fwww.google.ca%2Fsearch%3Fq%3Dhangouts%26oq%3Dhangouts%26aqs%3Dchrome..69i57j0l2j5.3949j0j4%26client%3Dms-android-bell-ca%26sourceid%3Dchrome-mobile%26ie%3DUTF-8\u0026aqs\u003dchrome..69i58j69i57.6784j0j4\u0026client\u003dms-android-bell-ca\u0026sourceid\u003dchrome-mobile\u0026ie\u003dUTF-8",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558974367328632
+},
+        {
+            "page_transition": "LINK",
+            "title": "Vérifier la sécurité de la connexion d\u0027un site - Aide Google Chrome",
+            "url": "https://support.google.com/chrome/answer/95617",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558974367244636
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/?hl\u003dfr",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558974310095060
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/?hl\u003dfr",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558974301631700
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/?hl\u003dfr",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558974290422463
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/?hl\u003dfr",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558974259874423
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/?hl\u003dfr",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558974259739517
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/?hl\u003dfr",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558974209146996
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/?hl\u003dfr",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558974204640177
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Contacts",
+            "url": "https://contacts.google.com/?hl\u003dfr",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558974190930231
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google One",
+            "url": "https://one.google.com/storage?hl\u003dfr-CA\u0026utm_source\u003dgoogle-account\u0026utm_medium\u003dweb",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558974160779980
+},
+        {
+            "page_transition": "LINK",
+            "title": "Compte Google",
+            "url": "https://myaccount.google.com/?utm_source\u003dsearch-privacy-advisor\u0026hl\u003dfr_CA\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558974151468620
+},
+        {
+            "page_transition": "LINK",
+            "title": "Compte Google",
+            "url": "https://myaccount.google.com/?utm_source\u003dsearch-privacy-advisor\u0026hl\u003dfr_CA\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558974140056432
+},
+        {
+            "page_transition": "LINK",
+            "title": "Commandes d\u0027activité",
+            "url": "https://myaccount.google.com/activitycontrols/search?utm_source\u003dsearch-privacy-advisor\u0026hl\u003dfr_CA\u0026pli\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558974121067934
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Afficher et contrôler votre activité de recherche - Android - Aide Recherche Google",
+            "url": "https://support.google.com/websearch/answer/54068?p\u003dweb_app_activity\u0026hl\u003dfr\u0026authuser\u003d0\u0026visit_id\u003d636945673381402082-475710259\u0026rd\u003d1",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558973928714537
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Commandes relatives à l\u0027activité",
+            "url": "https://myaccount.google.com/activitycontrols?hl\u003dfr",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558973918079538
+},
+        {
+            "page_transition": "LINK",
+            "title": "Commandes relatives à l\u0027activité",
+            "url": "https://myaccount.google.com/activitycontrols?hl\u003dfr",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558973916398853
+},
+        {
+            "page_transition": "LINK",
+            "title": "Commandes relatives à l\u0027activité",
+            "url": "https://myaccount.google.com/activitycontrols?hl\u003dfr",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558973903419757
+},
+        {
+            "page_transition": "LINK",
+            "title": "Paramètres des annonces",
+            "url": "https://adssettings.google.com/authenticated?hl\u003dfr",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558973872557843
+},
+        {
+            "page_transition": "LINK",
+            "title": "",
+            "url": "https://adssettings.google.com/authenticated?hl\u003dfr",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558973869138184
+},
+        {
+            "page_transition": "LINK",
+            "title": "Comment Google utilise les cookies \u2013 Règles de confidentialité et conditions d\u2019utilisation \u2013 Google",
+            "url": "https://policies.google.com/technologies/cookies?hl\u003dfr",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558973858666792
+},
+        {
+            "page_transition": "LINK",
+            "title": "Comment utilisons-nous les informations collectées via les sites ou applications qui font appel à nos services ? \u2013 Règles de confidentialité et conditions d\u2019utilisation \u2013 Google",
+            "url": "https://policies.google.com/technologies/partner-sites?hl\u003dfr",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558973784748849
+},
+        {
+            "page_transition": "LINK",
+            "title": "Termes clés \u2013 Règles de confidentialité et conditions d\u2019utilisation \u2013 Google",
+            "url": "https://policies.google.com/privacy/key-terms?hl\u003dfr#toc-terms-server-logs",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558973671999149
+},
+        {
+            "page_transition": "LINK",
+            "title": "Termes clés \u2013 Règles de confidentialité et conditions d\u2019utilisation \u2013 Google",
+            "url": "https://policies.google.com/privacy/key-terms?hl\u003dfr#toc-terms-browser-storage",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558973631682282
+},
+        {
+            "page_transition": "LINK",
+            "title": "Termes clés \u2013 Règles de confidentialité et conditions d\u2019utilisation \u2013 Google",
+            "url": "https://policies.google.com/privacy/key-terms?hl\u003dfr",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558973622016736
+},
+        {
+            "page_transition": "LINK",
+            "title": "Termes clés \u2013 Règles de confidentialité et conditions d\u2019utilisation \u2013 Google",
+            "url": "https://policies.google.com/privacy/key-terms?hl\u003dfr",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558973618221795
+},
+        {
+            "page_transition": "LINK",
+            "title": "Termes clés \u2013 Règles de confidentialité et conditions d\u2019utilisation \u2013 Google",
+            "url": "https://policies.google.com/privacy/key-terms?hl\u003dfr",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558973590916154
+},
+        {
+            "page_transition": "LINK",
+            "title": "Navigateur Chrome",
+            "url": "https://www.google.com/intl/fr_CA/chrome/privacy/archive/20160621/#server-log",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558973572620808
+},
+        {
+            "page_transition": "LINK",
+            "title": "Navigateur Chrome",
+            "url": "https://www.google.com/intl/fr_CA/chrome/privacy/archive/20160621/",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558973556719457
+},
+        {
+            "page_transition": "LINK",
+            "title": "Navigateur Chrome \u2013 Règles de confidentialité",
+            "url": "https://www.google.com/intl/fr_CA/chrome/privacy/",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558973512520968
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "https://www.google.ca/search?q\u003dhangouts\u0026oq\u003dhangouts\u0026aqs\u003dchrome..69i57j0l2j5.3949j0j4\u0026client\u003dms-android-bell-ca\u0026sourceid\u003dchrome-mobile\u0026ie\u003dUTF-8 - Recherche Google",
+            "url": "https://www.google.com/search?q\u003dhttps%3A%2F%2Fwww.google.ca%2Fsearch%3Fq%3Dhangouts%26oq%3Dhangouts%26aqs%3Dchrome..69i57j0l2j5.3949j0j4%26client%3Dms-android-bell-ca%26sourceid%3Dchrome-mobile%26ie%3DUTF-8\u0026oq\u003dhttps%3A%2F%2Fwww.google.ca%2Fsearch%3Fq%3Dhangouts%26oq%3Dhangouts%26aqs%3Dchrome..69i57j0l2j5.3949j0j4%26client%3Dms-android-bell-ca%26sourceid%3Dchrome-mobile%26ie%3DUTF-8\u0026aqs\u003dchrome..69i58j69i57.6784j0j4\u0026client\u003dms-android-bell-ca\u0026sourceid\u003dchrome-mobile\u0026ie\u003dUTF-8",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558973390536526
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Fonctionnalités Google intégrées",
+            "url": "https://www.google.com/intl/fr/chrome/googlebuiltin/",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558973345480342
+},
+        {
+            "page_transition": "LINK",
+            "title": "Fonctionnalités Google intégrées",
+            "url": "https://www.google.com/intl/fr/chrome/googlebuiltin/",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558973304234613
+},
+        {
+            "page_transition": "LINK",
+            "title": "Navigateur Web Google Chrome",
+            "url": "https://www.google.com/intl/fr/chrome/",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558973280656430
+},
+        {
+            "page_transition": "LINK",
+            "title": "Chrome Web Store",
+            "url": "https://chrome.google.com/webstore/unsupported?h1\u003dfr",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558973269291937
+},
+        {
+            "page_transition": "LINK",
+            "title": "Navigateur Web Google Chrome",
+            "url": "https://www.google.com/chrome/",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558973245379715
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Navigateur Web Google Chrome",
+            "url": "https://www.google.com/chrome/",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558973228475364
+},
+        {
+            "page_transition": "LINK",
+            "title": "Activer ou désactiver la synchronisation dans Chrome - Android - Aide Google Chrome",
+            "url": "https://support.google.com/chrome/answer/185277",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558973163232297
+},
+        {
+            "page_transition": "LINK",
+            "title": "Accéder à vos favoris, à vos mots de passe et plus encore sur tous vos appareils - Android - Aide Google Chrome",
+            "url": "https://support.google.com/chrome/answer/165139?hl\u003dfr",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558973154669172
+},
+        {
+            "page_transition": "LINK",
+            "title": "Chrome Web Store",
+            "url": "https://chrome.google.com/webstore/unsupported",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558973121318049
+},
+        {
+            "page_transition": "LINK",
+            "title": "Données de la synchronisation Chrome",
+            "url": "https://chrome.google.com/sync",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558973113314549
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Facebook - Se connecter ou s\u2019inscrire",
+            "url": "https://m.facebook.com/",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558972925669878
+},
+        {
+            "page_transition": "LINK",
+            "title": "Facebook - Se connecter ou s\u2019inscrire",
+            "url": "https://m.facebook.com/",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558972899230609
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Facebook - Se connecter ou s\u2019inscrire",
+            "url": "https://m.facebook.com/",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558972894429228
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Facebook - Se connecter ou s\u2019inscrire",
+            "url": "https://m.facebook.com/",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558972876438697
+},
+        {
+            "page_transition": "TYPED",
+            "title": "hangouts - Recherche Google",
+            "url": "https://www.google.ca/search?q\u003dhangouts\u0026oq\u003dhangouts\u0026aqs\u003dchrome..69i57j0l2j5.3949j0j4\u0026client\u003dms-android-bell-ca\u0026sourceid\u003dchrome-mobile\u0026ie\u003dUTF-8",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558972875360326
+},
+        {
+            "page_transition": "TYPED",
+            "title": "Check-up Confidentialité",
+            "url": "https://myaccount.google.com/privacycheckup/0/1?utm_source\u003dgoogle-account\u0026utm_medium\u003dweb\u0026continue\u003dhttps%3A%2F%2Fmyaccount.google.com%2Fdata-and-personalization%3Fhl%3Dfr\u0026hl\u003dfr",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558972864995960
+},
+        {
+            "page_transition": "TYPED",
+            "title": "Check-up Confidentialité",
+            "url": "https://myaccount.google.com/privacycheckup/0/1?utm_source\u003dgoogle-account\u0026utm_medium\u003dweb\u0026continue\u003dhttps%3A%2F%2Fmyaccount.google.com%2Fdata-and-personalization%3Fhl%3Dfr\u0026hl\u003dfr",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558972861686934
+},
+        {
+            "page_transition": "TYPED",
+            "title": "hangouts - Recherche Google",
+            "url": "https://www.google.ca/search?q\u003dhangouts\u0026oq\u003dhangouts\u0026aqs\u003dchrome..69i57j0l2j5.3949j0j4\u0026client\u003dms-android-bell-ca\u0026sourceid\u003dchrome-mobile\u0026ie\u003dUTF-8",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558972852560335
+},
+        {
+            "page_transition": "TYPED",
+            "title": "Facebook - Se connecter ou s\u2019inscrire",
+            "url": "https://m.facebook.com/",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558972840511985
+},
+        {
+            "page_transition": "TYPED",
+            "title": "Google Maps",
+            "url": "https://www.google.com/maps/@0,0,22z",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558972838964952
+},
+        {
+            "page_transition": "TYPED",
+            "title": "Google Maps",
+            "url": "https://www.google.com/maps/@0,0,22z",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558972837721241
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Maps",
+            "url": "https://www.google.com/maps/@0,0,22z",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558972806512624
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Maps",
+            "url": "https://www.google.com/maps/@0,0,22z",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558972801518351
+},
+        {
+            "page_transition": "TYPED",
+            "title": "Google Maps",
+            "url": "https://www.google.com/maps/@0,0,22z",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558972792398183
+},
+        {
+            "page_transition": "TYPED",
+            "title": "Google Maps",
+            "url": "https://www.google.com/maps/@0,0,22z",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558972782574324
+},
+        {
+            "page_transition": "TYPED",
+            "title": "Facebook - Se connecter ou s\u2019inscrire",
+            "url": "https://m.facebook.com/",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558972687290670
+},
+        {
+            "page_transition": "LINK",
+            "title": "Vérifier la sécurité de la connexion d\u0027un site - Aide Google Chrome",
+            "url": "https://support.google.com/chrome/answer/95617",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558972661391815
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Navigateur Web Google Chrome",
+            "url": "https://www.google.com/chrome/",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558972600306724
+},
+        {
+            "page_transition": "LINK",
+            "title": "Vérifier la sécurité de la connexion d\u0027un site - Aide Google Chrome",
+            "url": "https://support.google.com/chrome/answer/95617",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558972600176167
+},
+        {
+            "page_transition": "LINK",
+            "title": "Accéder à vos favoris, à vos mots de passe et plus encore sur tous vos appareils - Android - Aide Google Chrome",
+            "url": "https://support.google.com/chrome/answer/165139?hl\u003dfr",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558971443537025
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Données de la synchronisation Chrome",
+            "url": "https://chrome.google.com/sync",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558971436510968
+},
+        {
+            "page_transition": "LINK",
+            "title": "Données de la synchronisation Chrome",
+            "url": "https://chrome.google.com/sync",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558971430618841
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Données de la synchronisation Chrome",
+            "url": "https://chrome.google.com/sync",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558971121061539
+},
+        {
+            "page_transition": "LINK",
+            "title": "Accéder à vos favoris, à vos mots de passe et plus encore sur tous vos appareils - Android - Aide Google Chrome",
+            "url": "https://support.google.com/chrome/answer/165139?hl\u003dfr",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558971115426520
+},
+        {
+            "page_transition": "LINK",
+            "title": "Accéder à vos favoris, à vos mots de passe et plus encore sur tous vos appareils - Android - Aide Google Chrome",
+            "url": "https://support.google.com/chrome/answer/165139?hl\u003dfr#",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558971104788483
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Navigateur Web Google Chrome",
+            "url": "https://www.google.com/chrome/",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558970556604236
+},
+        {
+            "page_transition": "LINK",
+            "title": "Partager votre position - Android - Aide Google Chrome",
+            "url": "https://support.google.com/chrome/answer/142065",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558970538214773
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Chrome Privacy Whitepaper",
+            "url": "https://www.google.com/chrome/privacy/whitepaper.html?#geo",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558970524088364
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Chrome Privacy Whitepaper",
+            "url": "https://www.google.com/chrome/privacy/whitepaper.html?#autofill",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558970236227712
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Google Maps",
+            "url": "https://www.google.com/maps/@45.510169,-74.7099171,7z",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558970059679029
+},
+        {
+            "page_transition": "LINK",
+            "title": "Votre position à 5445 Avenue de Gaspé \u2013 Google Maps",
+            "url": "https://www.google.com/maps/dir//5445+Avenue+de+Gasp%C3%A9,+Montr%C3%A9al,+QC+H2T+3B2/@45.510169,-74.7099171,7z/data\u003d!4m7!4m6!1m1!4e2!1m2!1m1!1s0x4cc9197cf9ec15cb:0x4af62b9379d76a3f!3e0",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558970044528591
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Google \u2013 Mon activité",
+            "url": "https://myactivity.google.com/item?restrict\u003dmaps\u0026hl\u003dfr\u0026utm_source\u003dprivacy-advisor-maps",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558969974401928
+},
+        {
+            "page_transition": "LINK",
+            "title": "Vos données dans Maps",
+            "url": "https://myaccount.google.com/yourdata/maps?hl\u003dfr",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558969932231024
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Google Maps",
+            "url": "https://www.google.com/maps/@-0.0000469,-0.0000106,22z",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558969924450573
+},
+        {
+            "page_transition": "LINK",
+            "title": "Google Maps",
+            "url": "https://www.google.com/maps/@-0.0000469,-0.0000106,22z",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558969914023798
+},
+        {
+            "page_transition": "TYPED",
+            "title": "Google Maps",
+            "url": "https://www.google.com/maps/@0,0,22z",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558969906298225
+},
+        {
+            "page_transition": "LINK",
+            "title": "Doodle 1:1",
+            "url": "https://doodle.com/meetme/qc/hello",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558969882113470
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Doodle 1:1",
+            "url": "https://doodle.com/meetme/qc/dashboard",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558969864860670
+},
+        {
+            "page_transition": "LINK",
+            "title": "Doodle \u2013 Dashboard",
+            "url": "https://doodle.com/unified-dashboard?utm_expid\u003d.HXV7v5oAT_6aAGbwPTBkcg.1\u0026utm_referrer\u003dhttps%3A%2F%2Fdoodle.com%2Fcreate",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558969833958705
+},
+        {
+            "page_transition": "LINK",
+            "title": "Doodle",
+            "url": "https://doodle.com/create",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558969815062164
+},
+        {
+            "page_transition": "LINK",
+            "title": "Doodle \u2013 Dashboard",
+            "url": "https://doodle.com/unified-dashboard?utm_expid\u003d.HXV7v5oAT_6aAGbwPTBkcg.1\u0026utm_referrer\u003dhttps%3A%2F%2Fdoodle.com%2Fmsbusy",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558969800005423
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Doodle | Web Settings",
+            "url": "https://doodle.com/settings/meetme",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558969547996056
+},
+        {
+            "page_transition": "LINK",
+            "title": "Doodle | Web Settings",
+            "url": "https://doodle.com/settings/contacts",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558969455280777
+},
+        {
+            "page_transition": "LINK",
+            "title": "Doodle | Web Settings",
+            "url": "https://doodle.com/settings/notifications",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558969452319235
+},
+        {
+            "page_transition": "LINK",
+            "title": "Doodle | Web Settings",
+            "url": "https://doodle.com/settings/account",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558969402323122
+},
+        {
+            "page_transition": "LINK",
+            "title": "Doodle | Web Settings",
+            "url": "https://doodle.com/settings",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558969396547756
+},
+        {
+            "page_transition": "LINK",
+            "title": "Doodle 1:1",
+            "url": "https://doodle.com/meetme/qc/hello",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558969385619577
+},
+        {
+            "page_transition": "LINK",
+            "title": "Doodle 1:1",
+            "url": "https://doodle.com/meetme/qc/dashboard",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558969368550099
+},
+        {
+            "page_transition": "RELOAD",
+            "title": "Q\u0026R WhatsApp - Demander les informations de votre compte",
+            "url": "https://faq.whatsapp.com/general/26000110?lg\u003dfr\u0026lc\u003dCA\u0026eea\u003d0",
+            "client_id": "VwDETcp6ZP1JbGLQvnmKaw\u003d\u003d",
+            "time_usec": 1558969273285553
+}
+    ]
+}
