@@ -49,16 +49,9 @@
         <tr>
           <th>
             <code>$( elem ).attr( "checked" )</code>
-            <em>(1.6)</em>
+            <em>(1.6+)</em>
           </th>
           <td><code>"checked"</code> (String) Initial state of the checkbox; does not change</td>
-        </tr>
-        <tr>
-          <th>
-            <code>$( elem ).attr( "checked" )</code>
-            <em>(1.6.1+)</em>
-          </th>
-          <td><code>"checked"</code> (String) Will change with checkbox state</td>
         </tr>
         <tr>
           <th>
