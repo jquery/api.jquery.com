@@ -19,6 +19,7 @@
       <argument name="index" type="Integer" />
       <argument name="className" type="String" />
       <return type="String" />
+      <return type="Array" />
       <desc>A function returning one or more space-separated classes or an array of classes to be removed. Receives the index position of the element in the set and the old class value as arguments.</desc>
     </argument>
   </signature>
