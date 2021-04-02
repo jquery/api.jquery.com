@@ -20,6 +20,7 @@
       <argument name="index" type="Integer" />
       <argument name="currentClassName" type="String" />
       <return type="String"/>
+      <return type="Array"/>
     </argument>
   </signature>
   <desc>Adds the specified class(es) to each element in the set of matched elements.</desc>
