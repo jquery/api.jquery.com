@@ -144,7 +144,7 @@ $( "input" ).prop( "disabled", false );
 $( "input" ).prop( "checked", true );
 $( "input" ).val( "someValue" );
       </code></pre>
-      <p><strong>Important:</strong> the <code><a href="/removeProp/">.removeProp()</a></code> method should not be used to set these properties to false. Once a native property is removed, it cannot be added again. See <code><a href="/removeProp/">.removeProp()</a></code> for more information.</p>
+      <p><strong>Important:</strong> the <code><a href="/removeProp/">.removeProp()</a></code> method should not be used to remove native properties. This will lead to unexpected behavior. See <code><a href="/removeProp/">.removeProp()</a></code> for more information.</p>
       <h4 id="computed-prop-values">Computed property values</h4>
       <p>By using a function to set properties, you can compute the value based on other properties of the element. For example, to toggle all checkboxes based off their individual values:</p>
       <pre><code>
