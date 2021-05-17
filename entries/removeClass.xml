@@ -36,7 +36,6 @@
     </signature>
     <desc>Remove a single class or multiple classes from each element in the set of matched elements.</desc>
     <longdesc>
-      <p>If a class name is included as a parameter, then only that class will be removed from the set of matched elements. If no classes are specified in the parameter, all classes will be removed.</p>
       <p>Before jQuery version 1.12/2.2, the <code>.removeClass()</code> method manipulated the <code>className</code> <em>property</em> of the selected elements, not the <code>class</code> <em>attribute</em>. Once the property was changed, it was the browser that updated the attribute accordingly. This means that when the <code>class</code> attribute was updated and the last class name was removed, the browser might have set the attribute's value to an empty string instead of removing the attribute completely. An implication of this behavior was that this method only worked for documents with HTML DOM semantics (e.g., not pure XML documents).</p>
       <p>As of jQuery 1.12/2.2, this behavior is changed to improve the support for XML documents, including SVG. Starting from this version, the <code>class</code> <em>attribute</em> is used instead. So, <code>.removeClass()</code> can be used on XML or SVG documents.</p>
       <p>More than one class may be removed at a time, separated by a space, from the set of matched elements, like so:</p>
