@@ -2,7 +2,7 @@
 <entries>
   <desc>Remove a single class, multiple classes, or all classes from each element in the set of matched elements.</desc>
   <entry type="method" name="removeClass" return="jQuery">
-    <title>.removeClass( classes )</title>
+    <title>.removeClass()</title>
     <signature>
       <added>1.0</added>
       <argument name="className" type="String">
@@ -150,7 +150,6 @@
   </entry>
 
   <entry type="method" name="removeClass" return="jQuery">
-    <title>.removeClass()</title>
     <signature>
       <added>1.0</added>
     </signature>
