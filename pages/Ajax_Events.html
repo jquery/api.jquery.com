@@ -19,9 +19,9 @@
 </code></pre>
 <h3>Global Events</h3>
 <p>These events are triggered on the <code>document</code>, calling any handlers which may be listening. You can listen for these events like so:</p>
-<pre> $(document).bind("ajaxSend", function(){
+<pre> $(document).on("ajaxSend", function(){
    $("#loading").show();
- }).bind("ajaxComplete", function(){
+ }).on("ajaxComplete", function(){
    $("#loading").hide();
  });
 </pre>
