@@ -15,7 +15,7 @@
       <argument name="data" type="PlainObject" />
       <argument name="textStatus" type="String"/>
       <argument name="jqXHR" type="jqXHR"/>
-      <desc>A callback function that is executed if the request succeeds. Required if <code>dataType</code> is provided, but you can use <code>null</code> or <a href="/jQuery.noop/"><code>jQuery.noop</code></a> as a placeholder.</desc>
+      <desc>A callback function that is executed if the request succeeds. Required if <code>dataType</code> is provided, but you can use <code>null</code> or <a href="/jQuery.noop/"><code>jQuery.noop</code></a> as a placeholder. <strong>NOTE:</strong> In jQuery 3.x and older, when providing a <code>null</code> value for <code>success</code> you also have to provide the <code>data</code> parameter; you can set it to <code>undefined</code>.</desc>
     </argument>
     <argument name="dataType" optional="true" type="String">
       <desc>The type of data expected from the server. Default: Intelligent Guess (xml, json, script, text, html).</desc>
