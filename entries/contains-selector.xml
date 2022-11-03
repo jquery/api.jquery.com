@@ -12,6 +12,7 @@
   <longdesc>
     <p>The matching text can appear directly within the selected element, in any of that element's descendants, or a combination thereof. As with attribute value selectors, text inside the parentheses of <code>:contains()</code> can be written as a bare word or surrounded by quotation marks. The text must have matching case to be selected.</p>
   </longdesc>
+  <note id="jquery-selector-extension-alt" type="additional" data-selector=":contains()" data-alt="$( &quot;your-pure-css-selector&quot; ).filter( &quot;:contains(text)&quot; )"/>
   <example>
     <desc>Finds all divs containing "John" and underlines them.</desc>
     <code><![CDATA[
