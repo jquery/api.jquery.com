@@ -7,7 +7,7 @@
       <desc>A string containing a selector expression to match elements against.</desc>
     </argument>
   </signature>
-  <desc>Get all preceding siblings of each element in the set of matched elements, optionally filtered by a selector.</desc>
+  <desc>Get all preceding siblings of each element in the set of matched elements, optionally filtered by a selector, in the reverse document order.</desc>
   <longdesc>
     <p>Given a jQuery object that represents a set of DOM elements, the <code>.prevAll()</code> method searches through the predecessors of these elements in the DOM tree and construct a new jQuery object from the matching elements; the elements are returned in order beginning with the closest sibling.</p>
     <p>The method optionally accepts a selector expression of the same type that we can pass to the <code>$()</code> function. If the selector is supplied, the elements will be filtered by testing whether they match it.</p>
@@ -26,6 +26,36 @@
 $( "li.third-item" ).prevAll().css( "background-color", "red" );
     </code></pre>
     <p>The result of this call is a red background behind items 1 and 2. Since we do not supply a selector expression, these preceding elements are unequivocally included as part of the object. If we had supplied one, the elements would be tested for a match before they were included.</p>
+    <p><strong>Note:</strong> Many APIs, like <code><a href="/append/">append</a></code> or <code><a href="/wrapAll/">wrapAll</a></code> process node in the order in which they appear in the jQuery object. This can pose issues with APIs like <code>.prevAll()</code> in which the reverse document order is used. Consider the following example:</p>
+    <pre><code>
+&lt;div&gt;
+  &lt;div&gt;First&lt;/div&gt;
+  &lt;div&gt;Second&lt;/div&gt;
+  &lt;div class="last-item"&gt;Last&lt;/div&gt;
+&lt;/div&gt;
+    </code></pre>
+    <p>The following call:</p>
+    <pre><code>
+$( ".last-item" )
+  .prevAll()
+  .wrapAll( "&lt;div class='wrapper'&gt;&lt;/div&gt;" );
+    </code></pre>
+    <p>would result in the following HTML:</p>
+    <pre><code>
+&lt;div&gt;
+  &lt;div class="wrapper"&gt;
+    &lt;div&gt;Second&lt;/div&gt;
+    &lt;div&gt;First&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="last-item"&gt;Last&lt;/div&gt;
+&lt;/div&gt;
+    </code></pre>
+    <p>because "Item 2" gets appended to the wrapper div first. To work around the issue, you may use <code><a href="/jQuery.uniqueSort/">$.uniqueSort()</a></code> on the <code>.prevAll()</code> output first:</p>
+    <pre><code>
+var prevSiblings = $( ".last-item" ).prevAll();
+$.uniqueSort( prevSiblings );
+prevSiblings.wrapAll( "&lt;div class='wrapper'&gt;&lt;/div&gt;" );
+    </code></pre>
   </longdesc>
   <example>
     <desc>Locate all the divs preceding the last div and give them a class.</desc>
@@ -50,6 +80,69 @@ $( "div" ).last().prevAll().addClass( "before" );
 <div></div>
 <div></div>
 <div></div>
+]]></html>
+  </example>
+  <example>
+    <desc>Locate all the divs preceding the last item and wrap them with a div with class <code>wrapper</code> - with or without <code><a href="/jQuery.uniqueSort/">$.uniqueSort()</a></code>.</desc>
+    <code><![CDATA[
+$( "#container-1" )
+  .find( ".item" )
+  .last()
+  .prevAll()
+  .wrapAll( "<div class='wrapper' data-content='No uniqueSort'></div>" );
+
+var prevSiblings = $( "#container-2" )
+  .find( ".item" )
+  .last()
+  .prevAll();
+$.uniqueSort( prevSiblings );
+prevSiblings.wrapAll( "<div class='wrapper' data-content='With uniqueSort'></div>" );
+]]></code>
+    <css><![CDATA[
+  body {
+    display: flex;
+  }
+  .container {
+    display: flex;
+    margin: 10px 50px 10px 10px;
+  }
+  .wrapper {
+    position: relative;
+    display: flex;
+    padding: 30px 10px 10px 10px;
+    background: #def;
+    border: 2px solid black;
+  }
+  .wrapper::before {
+    content: attr(data-content);
+    position: absolute;
+    top: 15px;
+    left: 15px;
+  }
+  .item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    background: #abc;
+    border: 2px solid black;
+    margin: 10px;
+    font-size: 50px;
+  }
+]]></css>
+    <html><![CDATA[
+<div class="container" id="container-1">
+  <div class="item">1</div>
+  <div class="item">2</div>
+  <div class="item">3</div>
+</div>
+
+<div class="container" id="container-2">
+  <div class="item">1</div>
+  <div class="item">2</div>
+  <div class="item">3</div>
+</div>
 ]]></html>
   </example>
   <category slug="traversing/tree-traversal"/>
