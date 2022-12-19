@@ -28,7 +28,7 @@
   <desc>Translate all items in an array or object to new array of items.</desc>
   <longdesc>
     <p>If you wish to process a jQuery object — for example, <code>$('div').map( callback );</code> — use <a href="/map/">.map()</a> instead. </p>
-    <p>The <code>$.map()</code> method applies a function to each item in an array or object and maps the results into a new array. <strong>Prior to jQuery 1.6</strong>, <code>$.map()</code> supports traversing <em>arrays only</em>. <strong>As of jQuery 1.6</strong> it also traverses objects.</p>
+    <p>The <code>$.map()</code> method applies a function to each item in an array or object and maps the results into a new array. <strong>Prior to jQuery 1.6</strong>, <code>$.map()</code> supports traversing <em>arrays and array-like objects only</em>. <strong>As of jQuery 1.6</strong> it also traverses objects.</p>
     <p>Array-like objects &#x2014; those with a <code>.length</code> property <em>and</em> a value on the <code>.length - 1</code> index &#x2014; may be passed to <code>$.map()</code>.</p>
     <pre><code>
 // The following object is array-like.
