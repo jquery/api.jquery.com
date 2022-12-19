@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<entry type="method" name="uniqueSort" return="jQuery">
+  <title>.uniqueSort()</title>
+  <signature>
+    <added>3.7</added>
+  </signature>
+  <desc>Sorts a jQuery object of DOM elements, in place, with the duplicates removed. Note that this only works on jQuery objects consisting of DOM elements, not strings or numbers.</desc>
+  <longdesc>
+    <p>The <code>.uniqueSort()</code> function searches through a jQuery object, sorting it in document order, and removing any duplicate nodes. A node is considered a duplicate if it is the <em>exact same</em> node as one already in the jQuery object; two different nodes with identical attributes are not considered to be duplicates. This function only works on jQuery objects consisting of DOM elements.</p>
+  </longdesc>
+  <example>
+    <desc>Removes any duplicate elements from the jQuery object of divs.</desc>
+    <code><![CDATA[
+var divs = $( "div" ).get();
+
+// Add 3 elements of class dup too (they are divs)
+divs = divs.concat( $( ".dup" ).get() );
+
+// Create a jQuery object from `divs`.
+var elems = $( divs );
+
+$( "div" )
+  .eq( 1 )
+  .text( "Pre-uniqueSort there are " + elems.length + " elements in the collection." );
+
+elems = elems.uniqueSort(); 
+
+$( "div" )
+  .eq( 2 )
+  .text( "Post-uniqueSort there are " + elems.length + " elements in the collection." )
+  .css( "color", "red" );
+]]></code>
+    <css><![CDATA[
+  div {
+    color: blue;
+  }
+]]></css>
+    <html><![CDATA[
+<div>There are 6 divs in this document.</div>
+<div></div>
+<div class="dup"></div>
+<div class="dup"></div>
+<div class="dup"></div>
+<div></div>
+]]></html>
+  </example>
+  <example>
+    <desc>Locate all the divs preceding the last item and wrap them with a div with class <code>wrapper</code> - with or without <code><a href="/uniqueSort/">.uniqueSort()</a></code>.</desc>
+    <code><![CDATA[
+$( "#container-1" )
+  .find( ".item" )
+  .last()
+  .prevAll()
+  .wrapAll( "<div class='wrapper' data-content='No uniqueSort'></div>" );
+
+$( "#container-2" )
+  .find( ".item" )
+  .last()
+  .prevAll()
+  .uniqueSort()
+  .wrapAll( "<div class='wrapper' data-content='With uniqueSort'></div>" );
+]]></code>
+    <css><![CDATA[
+  body {
+    display: flex;
+  }
+  .container {
+    display: flex;
+    margin: 10px 50px 10px 10px;
+  }
+  .wrapper {
+    position: relative;
+    display: flex;
+    padding: 30px 10px 10px 10px;
+    background: #def;
+    border: 2px solid black;
+  }
+  .wrapper::before {
+    content: attr(data-content);
+    position: absolute;
+    top: 15px;
+    left: 15px;
+  }
+  .item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    background: #abc;
+    border: 2px solid black;
+    margin: 10px;
+    font-size: 50px;
+  }
+]]></css>
+    <html><![CDATA[
+<div class="container" id="container-1">
+  <div class="item">1</div>
+  <div class="item">2</div>
+  <div class="item">3</div>
+</div>
+
+<div class="container" id="container-2">
+  <div class="item">1</div>
+  <div class="item">2</div>
+  <div class="item">3</div>
+</div>
+]]></html>
+  </example>
+  <category slug="utilities"/>
+  <category slug="version/3.7"/>
+</entry>

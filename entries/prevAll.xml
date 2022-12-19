@@ -50,7 +50,14 @@ $( ".last-item" )
   &lt;div class="last-item"&gt;Last&lt;/div&gt;
 &lt;/div&gt;
     </code></pre>
-    <p>because "Item 2" gets appended to the wrapper div first. To work around the issue, you may use <code><a href="/jQuery.uniqueSort/">$.uniqueSort()</a></code> on the <code>.prevAll()</code> output first:</p>
+    <p>because "Item 2" gets appended to the wrapper div first. To work around the issue, you may use <code><a href="/uniqueSort/">.uniqueSort()</a></code> on the <code>.prevAll()</code> output first:</p>
+    <pre><code>
+$( ".last-item" )
+  .prevAll()
+  .uniqueSort()
+  .wrapAll( "&lt;div class='wrapper'&gt;&lt;/div&gt;" );
+    </code></pre>
+    <p>Note that the <code><a href="/uniqueSort/">.uniqueSort()</a></code> method is only available in jQuery 3.7.0 or newer. In older versions, you will need to use <code><a href="/jQuery.uniqueSort/">$.uniqueSort()</a></code> to achieve a similar effect:</p>
     <pre><code>
 var prevSiblings = $( ".last-item" ).prevAll();
 $.uniqueSort( prevSiblings );
@@ -83,7 +90,7 @@ $( "div" ).last().prevAll().addClass( "before" );
 ]]></html>
   </example>
   <example>
-    <desc>Locate all the divs preceding the last item and wrap them with a div with class <code>wrapper</code> - with or without <code><a href="/jQuery.uniqueSort/">$.uniqueSort()</a></code>.</desc>
+    <desc>Locate all the divs preceding the last item and wrap them with a div with class <code>wrapper</code> - with or without <code><a href="/uniqueSort/">.uniqueSort()</a></code>.</desc>
     <code><![CDATA[
 $( "#container-1" )
   .find( ".item" )
@@ -91,12 +98,12 @@ $( "#container-1" )
   .prevAll()
   .wrapAll( "<div class='wrapper' data-content='No uniqueSort'></div>" );
 
-var prevSiblings = $( "#container-2" )
+$( "#container-2" )
   .find( ".item" )
   .last()
-  .prevAll();
-$.uniqueSort( prevSiblings );
-prevSiblings.wrapAll( "<div class='wrapper' data-content='With uniqueSort'></div>" );
+  .prevAll()
+  .uniqueSort()
+  .wrapAll( "<div class='wrapper' data-content='With uniqueSort'></div>" );
 ]]></code>
     <css><![CDATA[
   body {

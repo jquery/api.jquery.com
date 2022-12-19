@@ -510,6 +510,15 @@ var files = event.originalEvent.dataTransfer.files;
         <hr/>
       ]]></desc>
     </category>
+    <category name="Version 3.7" slug="3.7">
+      <desc><![CDATA[
+        <p>Aspects of the API that were changed in the corresponding version of jQuery. New <code>.uniqueSort()</code> method performance improvements in manipulation, fixes for <code>.outerWidth( true )</code> &amp; <code>.outerHeight( true )</code> with negative margins, focus fixes.</p>
+        <p>As of this release, jQuery no longer relies on Sizzle.</p>
+        <p>Native events for <code>focus</code> &amp; <code>blur</code> changed in IE to - respectively - <code>focusin</code> and <code>focusout</code>.</p>
+        <p>For more information, see the <a href="https://blog.jquery.com/2023/05/11/jquery-3-7-0-released-staying-in-order/">Release Notes/Changelog</a>.</p>
+        <hr/>
+      ]]></desc>
+    </category>
     <category name="All" slug="all"/>
   </category>
 </categories>
