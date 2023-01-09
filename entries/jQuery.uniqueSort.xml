@@ -3,28 +3,28 @@
   <title>jQuery.uniqueSort()</title>
   <signature>
     <added>1.12-and-2.2</added>
-    <argument name="array" type="Array">
-      <desc>The Array of DOM elements.</desc>
+    <argument name="array" type="ArrayLikeObject">
+      <desc>The Array or an Array-like object of DOM elements.</desc>
     </argument>
   </signature>
-  <desc>Sorts an array of DOM elements, in place, with the duplicates removed. Note that this only works on arrays of DOM elements, not strings or numbers.</desc>
+  <desc>Sorts an array or an array-like object of DOM elements, in place, with the duplicates removed. Note that this only works on arrays/array-likes of DOM elements, not strings or numbers.</desc>
   <longdesc>
-    <p>The <code>$.uniqueSort()</code> function searches through an array of objects, sorting the array, and removing any duplicate nodes. A node is considered a duplicate if it is the <em>exact same</em> node as one already in the array; two different nodes with identical attributes are not considered to be duplicates. This function only works on plain JavaScript arrays of DOM elements, and is chiefly used internally by jQuery. You probably will never need to use it.</p>
+    <p>The <code>$.uniqueSort()</code> function searches through an array or an array-like object of DOM elements, sorting the array/array-like, and removing any duplicate nodes. A node is considered a duplicate if it is the <em>exact same</em> node as one already in the input; two different nodes with identical attributes are not considered to be duplicates. This function only works on plain JavaScript arrays/array-like objects of DOM elements, and is chiefly used internally by jQuery. You probably will never need to use it.</p>
     <p>Prior to jQuery 3.0, this method was called <code><a href="/jQuery.unique/">jQuery.unique()</a></code>.</p>
     <p>As of jQuery 1.4 the results will always be returned in document order.</p>
   </longdesc>
   <example>
     <desc>Removes any duplicate elements from the array of divs.</desc>
     <code><![CDATA[
-// unique() must take a native array
+// uniqueSort() must take a native array
 var divs = $( "div" ).get();
 
 // Add 3 elements of class dup too (they are divs)
 divs = divs.concat( $( ".dup" ).get() );
-$( "div" ).eq( 1 ).text( "Pre-unique there are " + divs.length + " elements." );
+$( "div" ).eq( 1 ).text( "Pre-uniqueSort there are " + divs.length + " elements." );
 
 divs = jQuery.uniqueSort( divs );
-$( "div" ).eq( 2 ).text( "Post-unique there are " + divs.length + " elements." )
+$( "div" ).eq( 2 ).text( "Post-uniqueSort there are " + divs.length + " elements." )
   .css( "color", "red" );
 ]]></code>
     <css><![CDATA[
