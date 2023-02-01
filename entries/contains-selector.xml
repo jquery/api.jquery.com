@@ -25,5 +25,6 @@ $( "div:contains('John')" ).css( "text-decoration", "underline" );
 ]]></html>
   </example>
   <category slug="selectors/content-filter-selector"/>
+  <category slug="selectors/jquery-selector-extensions"/>
   <category slug="version/1.1.4"/>
 </entry>
