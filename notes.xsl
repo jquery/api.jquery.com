@@ -53,7 +53,7 @@
 			If a request with <xsl:value-of select="@data-title"/> returns an error code, it will fail silently unless the script has also called the global <a href="/ajaxError/">.ajaxError() </a> method. Alternatively, as of jQuery 1.5, the <code>.error()</code> method of the <code>jqXHR</code> object returned by <xsl:value-of select="@data-title"/> is also available for error handling.
 		</xsl:when>
 		<xsl:when test="@id = 'ajax-global-false'">
-			If <code><a href="/jQuery.Ajax/">$.ajax()</a></code> or <code><a href="/jQuery.ajaxSetup/">$.ajaxSetup()</a></code> is called with the <code>global</code> option set to <code>false</code>, the <code><xsl:value-of select="@data-title"/></code> method will not fire.
+			If <code><a href="/jQuery.Ajax/">$.ajax()</a></code> or <code><a href="/jQuery.ajaxSetup/">$.ajaxSetup()</a></code> is called with the <code>global</code> option set to <code>false</code>, the <code><xsl:value-of select="@data-title"/></code> event will not fire.
 		</xsl:when>
 		<xsl:when test="@id = 'slide-in-ie'">
 			If <code><xsl:value-of select="@data-title"/></code> is called on an unordered list (<code>&lt;ul&gt;</code>) and its <code>&lt;li&gt;</code> elements have position (relative, absolute, or fixed), the effect may not work properly in IE6 through at least IE9 unless the <code>&lt;ul&gt;</code> has "layout." To remedy the problem, add the <code>position: relative;</code> and <code>zoom: 1;</code> CSS declarations to the <code>ul</code>.
@@ -65,7 +65,7 @@
 			Using this selector heavily can have performance implications, as it may force the browser to re-render the page before it can determine visibility. Tracking the visibility of elements via other methods, using a class for example, can provide better performance.
 		</xsl:when>
 		<xsl:when test="@id = 'global-ajax-event'">
-			As of jQuery 1.9, all the handlers for the <a href="/category/ajax/global-ajax-event-handlers/">jQuery global Ajax events</a>, including those added with the <code><xsl:value-of select="@data-title"/></code> method, <em>must</em> be attached to <code>document</code>.
+			As of jQuery 1.9, all the handlers for the <a href="/category/ajax/global-ajax-event-handlers/">jQuery global Ajax events</a>, including those added with <code>.on( "<xsl:value-of select="@data-title"/>", ... )</code>, <em>must</em> be attached to <code>document</code>.
 		</xsl:when>
 		<xsl:when test="@id = 'svg-support'">
 			jQuery doesn't officially support SVG. Using jQuery methods on SVG documents, unless explicitly documented for that method, might cause unexpected behaviors. Examples of methods that support SVG as of jQuery 3.0 are <code>addClass</code> and <code>removeClass</code>.
