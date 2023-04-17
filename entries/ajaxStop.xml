@@ -30,8 +30,8 @@ $( ".trigger" ).click(function() {
     </code></pre>
     <p>When the user clicks the element with class <code>trigger</code> and the Ajax request completes, the log message is displayed.</p>
   </longdesc>
-  <note id="global-ajax-event" type="additional" data-title=".ajaxStop()"/>
-  <note id="ajax-global-false" type="additional" data-title=".ajaxStop()"/>
+  <note id="global-ajax-event" type="additional" data-title="ajaxStop"/>
+  <note id="ajax-global-false" type="additional" data-title="ajaxStop"/>
   <example>
     <desc>Hide a loading message after all the Ajax requests have stopped.</desc>
     <code><![CDATA[
