@@ -46,7 +46,6 @@ $( "#target" ).contextmenu(function() {
 $( "#target" ).contextmenu();
     </code></pre>
   </longdesc>
-  <note id="detach-shorthand" type="additional" data-event="contextmenu"/>
   <example>
     <desc>To show a "Hello World!" alert box when the contextmenu event is triggered on a paragraph on the page:</desc>
     <code><![CDATA[

@@ -62,7 +62,6 @@ $( "#other" ).click(function() {
     </ul>
     <p>This is usually the desired sequence before taking an action. If this is not required, the <code>mousedown</code> or <code>mouseup</code> event may be more suitable.</p>
   </longdesc>
-  <note id="detach-shorthand" type="additional" data-event="click"/>
   <example>
     <desc>Hide paragraphs on a page when they are clicked:</desc>
     <code><![CDATA[

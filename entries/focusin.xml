@@ -27,7 +27,6 @@
     <p>The <code>focusin</code> event is sent to an element when it, or any element inside of it, gains focus. This is distinct from the <a href="/focus/">focus</a> event in that it supports detecting the focus event on parent elements (in other words, it supports event bubbling).</p>
     <p>This event will likely be used together with the <a href="/focusout/">focusout</a> event.</p>
   </longdesc>
-  <note id="detach-shorthand" type="additional" data-event="focusin"/>
   <example>
     <desc>Watch for a focus to occur within the paragraphs on the page.</desc>
     <css><![CDATA[

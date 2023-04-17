@@ -36,7 +36,6 @@ $( window ).unload(function() {
     </code></pre>
     <p>This event is available so that scripts can perform cleanup when the user leaves the page. Most browsers will ignore calls to <code>alert()</code>, <code>confirm()</code> and <code>prompt()</code> inside the event handler. The string you return may be used in a confirmation dialog, but not all browsers support this. It is not possible to cancel the <code>unload</code> event with <code>.preventDefault()</code>.</p>
   </longdesc>
-  <note id="detach-shorthand" type="additional" data-event="unload"/>
   <example>
     <desc>To display an alert when a page is unloaded:</desc>
     <code><![CDATA[

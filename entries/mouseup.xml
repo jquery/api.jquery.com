@@ -57,7 +57,6 @@ $( "#other" ).click(function() {
     <p>After this code executes, clicks on <samp>Trigger the handler</samp> will also alert the message.</p>
     <p>If the user clicks outside an element, drags onto it, and releases the button, this is still counted as a <code>mouseup</code> event. This sequence of actions is not treated as a button press in most user interfaces, so it is usually better to use the <code>click</code> event unless we know that the <code>mouseup</code> event is preferable for a particular situation.</p>
   </longdesc>
-  <note id="detach-shorthand" type="additional" data-event="mouseup"/>
   <example>
     <desc>Show texts when mouseup and mousedown event triggering.</desc>
     <code><![CDATA[

@@ -66,7 +66,6 @@ $( "#other" ).click(function() {
     <p>After this code executes, clicks on <samp>Trigger the handler</samp> will also append the message.</p>
     <p>A <code>scroll</code> event is sent whenever the element's scroll position changes, regardless of the cause. A mouse click or drag on the scroll bar, dragging inside the element, pressing the arrow keys, or using the mouse's scroll wheel could cause this event.</p>
   </longdesc>
-  <note id="detach-shorthand" type="additional" data-event="scroll"/>
   <example>
     <desc>To do something when your page is scrolled:</desc>
     <code><![CDATA[

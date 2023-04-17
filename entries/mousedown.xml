@@ -58,7 +58,6 @@ $( "#other" ).click(function() {
     <p>This event is primarily useful for ensuring that the primary button was used to begin a drag operation; if ignored, strange results can occur when the user attempts to use a context menu. While the middle and right buttons can be detected with these properties, this is not reliable. In Opera and Safari, for example, right mouse button clicks are not detectable by default.</p>
     <p>If the user clicks on an element, drags away from it, and releases the button, this is still counted as a <code>mousedown</code> event. This sequence of actions is treated as a "canceling" of the button press in most user interfaces, so it is usually better to use the <code>click</code> event unless we know that the <code>mousedown</code> event is preferable for a particular situation.</p>
   </longdesc>
-  <note id="detach-shorthand" type="additional" data-event="mousedown"/>
   <example>
     <desc>Show texts when mouseup and mousedown event triggering.</desc>
     <code><![CDATA[

@@ -64,9 +64,6 @@
 		<xsl:when test="@id = 'hidden-forces-layout'">
 			Using this selector heavily can have performance implications, as it may force the browser to re-render the page before it can determine visibility. Tracking the visibility of elements via other methods, using a class for example, can provide better performance.
 		</xsl:when>
-		<xsl:when test="@id = 'detach-shorthand'">
-			As the <code>.<xsl:value-of select="@data-event"/>()</code> method is just a shorthand for <code>.on( "<xsl:value-of select="@data-event"/>", handler )</code>, detaching is possible using <code>.off( "<xsl:value-of select="@data-event"/>" )</code>.
-		</xsl:when>
 		<xsl:when test="@id = 'global-ajax-event'">
 			As of jQuery 1.9, all the handlers for the <a href="/category/ajax/global-ajax-event-handlers/">jQuery global Ajax events</a>, including those added with the <code><xsl:value-of select="@data-title"/></code> method, <em>must</em> be attached to <code>document</code>.
 		</xsl:when>

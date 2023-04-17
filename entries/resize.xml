@@ -33,7 +33,6 @@ $( window ).resize(function() {
     <p>Now whenever the browser window's size is changed, the message is appended to &lt;div id="log"&gt; one or more times, depending on the browser.</p>
     <p>Code in a <code>resize</code> handler should never rely on the number of times the handler is called. Depending on implementation, <code>resize</code> events can be sent continuously as the resizing is in progress (the typical behavior in Internet Explorer and WebKit-based browsers such as Safari and Chrome), or only once at the end of the resize operation (the typical behavior in some other browsers such as Opera).</p>
   </longdesc>
-  <note id="detach-shorthand" type="additional" data-event="resize"/>
   <example>
     <desc>To see the window width while (or after) it is resized, try:</desc>
     <code><![CDATA[

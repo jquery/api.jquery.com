@@ -54,7 +54,6 @@ $( "#other" ).click(function() {
     <p>If key presses anywhere need to be caught (for example, to implement global shortcut keys on a page), it is useful to attach this behavior to the <code>document</code> object. Because of event bubbling, all key presses will make their way up the DOM to the <code>document</code> object unless explicitly stopped.</p>
     <p>To determine which key was pressed, examine the <a href="/category/events/event-object/">event object</a> that is passed to the handler function. While browsers use differing properties to store this information, jQuery normalizes the <code>.which</code> property so you can reliably use it to retrieve the key code. This code corresponds to a key on the keyboard, including codes for special keys such as arrows. For catching actual text entry, <code>.keypress()</code> may be a better choice.</p>
   </longdesc>
-  <note id="detach-shorthand" type="additional" data-event="keydown"/>
   <example>
     <desc>Show the event object for the keydown handler when a key is pressed in the input.</desc>
     <code><![CDATA[

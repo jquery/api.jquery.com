@@ -54,7 +54,6 @@ $( "#other").click(function() {
       <p>The method for retrieving the current selected text differs from one browser to another. A number of jQuery plug-ins offer cross-platform solutions.</p>
     </div>
   </longdesc>
-  <note id="detach-shorthand" type="additional" data-event="select"/>
   <example>
     <desc>To do something when text in input boxes is selected:</desc>
     <code><![CDATA[
