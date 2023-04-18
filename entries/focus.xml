@@ -18,7 +18,6 @@
     </signature>
     <longdesc>
       <ul>
-        <li>This method is a shortcut for <code>.on( "focus", handler )</code> in the first and second variations, and <code>.trigger( "focus" )</code> in the third.</li>
         <li>The <code>focus</code> event is sent to an element when it gains focus. This event is implicitly applicable to a limited set of elements, such as  form elements (<code>&lt;input&gt;</code>, <code>&lt;select&gt;</code>, etc.) and links (<code>&lt;a href&gt;</code>). In recent browser versions, the event can be extended to include all element types by explicitly setting the element's <code>tabindex</code> property. An element can gain focus via keyboard commands, such as the Tab key, or by mouse clicks on the element.</li>
         <li>Elements with focus are usually highlighted in some way by the browser, for example with a dotted line surrounding the element. The focus is used to determine which element is the first to receive keyboard-related events.</li>
       </ul>
@@ -27,19 +26,19 @@
       </div>
       <p>For example, consider the HTML:</p>
       <pre><code>
-  &lt;form&gt;
-    &lt;input id="target" type="text" value="Field 1"&gt;
-    &lt;input type="text" value="Field 2"&gt;
-  &lt;/form&gt;
-  &lt;div id="other"&gt;
-    Trigger the handler
-  &lt;/div&gt;
+&lt;form&gt;
+  &lt;input id="target" type="text" value="Field 1"&gt;
+  &lt;input type="text" value="Field 2"&gt;
+&lt;/form&gt;
+&lt;div id="other"&gt;
+  Trigger the handler
+&lt;/div&gt;
       </code></pre>
       <p>The event handler can be bound to the first input field:</p>
       <pre><code>
-  $( "#target" ).on( "focus", function() {
-    alert( "Handler for `focus` called." );
-  } );
+$( "#target" ).on( "focus", function() {
+  alert( "Handler for `focus` called." );
+} );
       </code></pre>
       <p>Now clicking on the first field, or tabbing to it from another field, displays the alert:</p>
       <p>
@@ -47,9 +46,9 @@
       </p>
       <p>We can trigger the event when another element is clicked:</p>
       <pre><code>
-  $( "#other" ).on( "click", function() {
-    $( "#target" ).trigger( "focus" );
-  } );
+$( "#other" ).on( "click", function() {
+  $( "#target" ).trigger( "focus" );
+} );
       </code></pre>
       <p>After this code executes, clicks on <samp>Trigger the handler</samp> will also alert the message.</p>
       <p>The <code>focus</code> event does not bubble. As of version 1.4.2, jQuery works around this limitation by mapping <code>focus</code> to the <code>focusin</code> event in its event delegation methods.</p>
@@ -57,14 +56,14 @@
     <example>
       <desc>Fire focus.</desc>
       <css><![CDATA[
-    span {
-      display: none;
-    }
+  span {
+    display: none;
+  }
   ]]></css>
       <code><![CDATA[
-  $( "input" ).on( "focus", function() {
-    $( this ).next( "span" ).css( "display", "inline" ).fadeOut( 1000 );
-  } );
+$( "input" ).on( "focus", function() {
+  $( this ).next( "span" ).css( "display", "inline" ).fadeOut( 1000 );
+} );
   ]]></code>
       <html><![CDATA[
   <p><input type="text"> <span>focus fire</span></p>
@@ -74,26 +73,28 @@
     <example>
       <desc>To stop people from writing in text input boxes, try:</desc>
       <code><![CDATA[
-  $( "input[type=text]" ).on( "focus", function() {
-    $( this ).trigger( "blur" );
-  } );
+$( "input[type=text]" ).on( "focus", function() {
+  $( this ).trigger( "blur" );
+} );
   ]]></code>
     </example>
     <example>
       <desc>To focus on a login input box with id 'login' on page startup, try:</desc>
       <code><![CDATA[
-  $( function() {
-    $( "#login" ).trigger( "focus" );
-  } );
+$( function() {
+  $( "#login" ).trigger( "focus" );
+} );
   ]]></code>
     </example>
     <category slug="events/form-events"/>
     <category slug="forms"/>
+    <category slug="version/1.0"/>
+    <category slug="version/1.4"/>
     <category slug="version/1.7"/>
   </entry>
 
   <entry type="method" name="trigger" return="jQuery">
-    <title>.trigger( "focus" )</title>
+    <title>focus event</title>
     <signature>
       <added>1.0</added>
       <argument name="&quot;focus&quot;" type="string">
@@ -106,5 +107,6 @@
     <category slug="events/form-events"/>
     <category slug="forms"/>
     <category slug="version/1.0"/>
+    <category slug="version/1.4"/>
   </entry>
 </entries>
