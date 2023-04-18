@@ -107,40 +107,4 @@
     <category slug="forms"/>
     <category slug="version/1.0"/>
   </entry>
-
-  <entry type="method" name="focus" return="jQuery" deprecated="3.3">
-    <title>.focus()</title>
-    <signature>
-      <added>1.0</added>
-      <argument name="handler" type="Function">
-        <desc>A function to execute each time the event is triggered.</desc>
-        <argument name="eventObject" type="Event" />
-      </argument>
-    </signature>
-    <signature>
-      <added>1.4.3</added>
-      <argument name="eventData" type="Anything" optional="true">
-        <desc>An object containing data that will be passed to the event handler.</desc>
-      </argument>
-      <argument name="handler" type="Function">
-        <desc>A function to execute each time the event is triggered.</desc>
-        <argument name="eventObject" type="Event" />
-      </argument>
-    </signature>
-    <signature>
-      <added>1.0</added>
-    </signature>
-    <longdesc>
-      <div class="warning">
-        <p>This API is deprecated.</p>
-        <p>Instead of <code>.focus( handler )</code> or <code>.focus( eventData, handler )</code>, use <a href="#on1"><code>.on( "focus", handler )</code></a> or <a href="#on1"><code>.on( "focus", eventData, handler )</code></a>, respectively.</p>
-        <p>Instead of <code>.focus()</code>, use <a href="#trigger2"><code>.trigger( "focus" )</code></a>.</p>
-      </div>
-    </longdesc>
-    <category slug="events/form-events"/>
-    <category slug="forms"/>
-    <category slug="version/1.0"/>
-    <category slug="version/1.4.3"/>
-    <category slug="deprecated/deprecated-3.3"/>
-  </entry>
 </entries>
