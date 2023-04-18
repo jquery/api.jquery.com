@@ -59,16 +59,16 @@ $( "#other" ).on( "click", function() {
   span {
     display: none;
   }
-  ]]></css>
+]]></css>
       <code><![CDATA[
 $( "input" ).on( "focus", function() {
   $( this ).next( "span" ).css( "display", "inline" ).fadeOut( 1000 );
 } );
-  ]]></code>
+]]></code>
       <html><![CDATA[
   <p><input type="text"> <span>focus fire</span></p>
   <p><input type="password"> <span>focus fire</span></p>
-  ]]></html>
+]]></html>
     </example>
     <example>
       <desc>To stop people from writing in text input boxes, try:</desc>
@@ -76,7 +76,7 @@ $( "input" ).on( "focus", function() {
 $( "input[type=text]" ).on( "focus", function() {
   $( this ).trigger( "blur" );
 } );
-  ]]></code>
+]]></code>
     </example>
     <example>
       <desc>To focus on a login input box with id 'login' on page startup, try:</desc>
@@ -84,7 +84,7 @@ $( "input[type=text]" ).on( "focus", function() {
 $( function() {
   $( "#login" ).trigger( "focus" );
 } );
-  ]]></code>
+]]></code>
     </example>
     <category slug="events/form-events"/>
     <category slug="forms"/>

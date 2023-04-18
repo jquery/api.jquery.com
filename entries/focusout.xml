@@ -31,7 +31,7 @@
   .inputs p {
     margin-top: 0;
   }
-  ]]></css>
+]]></css>
       <code><![CDATA[
 var focusout = 0,
   blur = 0;
@@ -44,7 +44,7 @@ $( "p" )
     blur++;
     $( "#blur-count" ).text( "blur fired: " + blur + "x" );
   } );
-  ]]></code>
+]]></code>
       <html><![CDATA[
 <div class="inputs">
   <p>
@@ -57,7 +57,7 @@ $( "p" )
 </div>
 <div id="focus-count">focusout fire</div>
 <div id="blur-count">blur fire</div>
-  ]]></html>
+]]></html>
     </example>
     <category slug="events/form-events"/>
     <category slug="forms"/>

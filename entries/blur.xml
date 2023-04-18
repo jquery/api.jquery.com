@@ -49,7 +49,7 @@ $( "#other" ).on( "click", function() {
       <desc>To trigger the blur event on all paragraphs:</desc>
       <code><![CDATA[
 $( "p" ).trigger( "blur" );
-  ]]></code>
+]]></code>
     </example>
     <category slug="events/form-events"/>
     <category slug="forms"/>
