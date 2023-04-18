@@ -43,7 +43,7 @@
   } );
       </code></pre>
       <p>After this code executes, clicks on <samp>Trigger the handler</samp> will also alert the message.</p>
-      <p>The <code>blur</code> event does not bubble in Internet Explorer. Therefore, scripts that rely on event delegation with the <code>blur</code> event will not work consistently across browsers. As of version 1.4.2, however, jQuery works around this limitation by mapping <code>blur</code> to the <code>focusout</code> event in its event delegation methods, <a href="/live/"><code>.live()</code></a> and <a href="/delegate/"><code>.delegate()</code></a>.</p>
+      <p>The <code>blur</code> event does not bubble. As of version 1.4.2, jQuery works around this limitation by mapping <code>blur</code> to the <code>focusout</code> event in its event delegation methods.</p>
     </longdesc>
     <example>
       <desc>To trigger the blur event on all paragraphs:</desc>
@@ -59,7 +59,7 @@
   <entry type="method" name="trigger" return="jQuery">
     <title>.trigger( "blur" )</title>
     <signature>
-      <added>1.7</added>
+      <added>1.0</added>
       <argument name="&quot;blur&quot;" type="string">
         <desc>The string <code>"blur"</code>.</desc>
       </argument>
@@ -69,7 +69,7 @@
     </longdesc>
     <category slug="events/form-events"/>
     <category slug="forms"/>
-    <category slug="version/1.7"/>
+    <category slug="version/1.0"/>
   </entry>
 
   <entry type="method" name="blur" return="jQuery" deprecated="3.3">
