@@ -3,6 +3,7 @@
   <desc>Bind an event handler to the "blur" JavaScript event, or trigger that event on an element.</desc>
   <entry type="method" name="on" return="jQuery">
     <title>blur event</title>
+    <desc>Bind an event handler to the "blur" JavaScript event.</desc>
     <signature>
       <added>1.7</added>
       <argument name="&quot;blur&quot;" type="string">
@@ -59,6 +60,7 @@ $( "p" ).trigger( "blur" );
 
   <entry type="method" name="trigger" return="jQuery">
     <title>blur event</title>
+    <desc>Trigger the "blur" event on an element.</desc>
     <signature>
       <added>1.0</added>
       <argument name="&quot;blur&quot;" type="string">

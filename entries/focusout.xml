@@ -1,8 +1,9 @@
 <?xml version="1.0"?>
 <entries>
-  <desc>Bind an event handler to the "focusout" JavaScript event.</desc>
+  <desc>Bind an event handler to the "focusout" event, or trigger that event on an element.</desc>
   <entry type="method" name="on" return="jQuery">
     <title>focusout event</title>
+    <desc>Bind an event handler to the "focusout" event.</desc>
     <signature>
       <added>1.7</added>
       <argument name="&quot;focusout&quot;" type="string">
@@ -68,6 +69,7 @@ $( "p" )
 
   <entry type="method" name="trigger" return="jQuery">
     <title>focusout event</title>
+    <desc>Trigger the "focuout" event on an element.</desc>
     <signature>
       <added>1.0</added>
       <argument name="&quot;focusout&quot;" type="string">
