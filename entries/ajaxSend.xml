@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <entry type="method" name="ajaxSend" return="jQuery">
   <title>.ajaxSend()</title>
+  <desc>Attach a function to be executed before an Ajax request is sent. This is an <a href="/Ajax_Events/">Ajax Event</a>.</desc>
   <signature>
     <added>1.0</added>
     <argument name="handler" type="Function">
@@ -10,7 +11,6 @@
       <argument name="ajaxOptions" type="PlainObject" />
     </argument>
   </signature>
-  <desc>Attach a function to be executed before an Ajax request is sent. This is an <a href="/Ajax_Events/">Ajax Event</a>.</desc>
   <longdesc>
     <p>Whenever an Ajax request is about to be sent, jQuery triggers the <code>ajaxSend</code> event. Any and all handlers that have been registered with the <code>.ajaxSend()</code> method are executed at this time.</p>
     <p>To observe this method in action, set up a basic Ajax load request:</p>
