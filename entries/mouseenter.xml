@@ -1,16 +1,15 @@
 <?xml version="1.0"?>
-<entry type="method" name="mouseenter" return="jQuery">
-  <title>.mouseenter()</title>
-  <desc>Bind an event handler to be fired when the mouse enters an element, or trigger that handler on an element.</desc>
+<entries>
+<desc>Bind an event handler to be fired when the mouse enters an element, or trigger that handler on an element.</desc>
+
+<entry type="method" name="on" return="jQuery">
+  <title>mouseenter event</title>
+  <desc>Bind an event handler to be fired when the mouse enters an element.</desc>
   <signature>
-    <added>1.0</added>
-    <argument name="handler" type="Function">
-      <desc>A function to execute each time the event is triggered.</desc>
-      <argument name="eventObject" type="Event" />
+    <added>1.7</added>
+    <argument name="&quot;mouseenter&quot;" type="string">
+      <desc>The string <code>"mouseenter"</code>.</desc>
     </argument>
-  </signature>
-  <signature>
-    <added>1.4.3</added>
     <argument name="eventData" type="Anything" optional="true">
       <desc>An object containing data that will be passed to the event handler.</desc>
     </argument>
@@ -19,11 +18,7 @@
       <argument name="eventObject" type="Event" />
     </argument>
   </signature>
-  <signature>
-    <added>1.0</added>
-  </signature>
   <longdesc>
-    <p>This method is a shortcut for <code>.on( "mouseenter", handler )</code> in the first two variations, and <code>.trigger( "mouseenter" )</code> in the third.</p>
     <p>The <code>mouseenter</code> JavaScript event is proprietary to Internet Explorer. Because of the event's general utility, jQuery simulates this event so that it can be used regardless of browser. This event is sent to an element when the mouse pointer enters the element. Any HTML element can receive this event.</p>
     <p>For example, consider the HTML:</p>
     <pre><code>
@@ -43,15 +38,15 @@
     </figure>
     <p>The event handler can be bound to any element:</p>
     <pre><code>
-$( "#outer" ).mouseenter(function() {
-  $( "#log" ).append( "&lt;div&gt;Handler for .mouseenter() called.&lt;/div&gt;" );
-});
+$( "#outer" ).on( "mouseenter", function() {
+  $( "#log" ).append( "&lt;div&gt;Handler for `mouseenter` called.&lt;/div&gt;" );
+} );
     </code></pre>
     <p>Now when the mouse pointer moves over the <samp>Outer</samp> <code>&lt;div&gt;</code>, the message is appended to <code>&lt;div id="log"&gt;</code>. You can also trigger the event when another element is clicked:</p>
     <pre><code>
-$( "#other" ).click(function() {
-  $( "#outer" ).mouseenter();
-});
+$( "#other" ).on( "click", function() {
+  $( "#outer" ).trigger( "mouseenter" );
+} );
     </code></pre>
     <p>After this code executes, clicks on <samp>Trigger the handler</samp> will also append the message.</p>
     <p>The <code>mouseenter</code> event differs from <code>mouseover</code> in the way it handles event bubbling. If <code>mouseover</code> were used in this example, then when the mouse pointer moved over the <samp>Inner</samp> element, the handler would be triggered. This is usually undesirable behavior. The <code>mouseenter</code> event, on the other hand, only triggers its handler when the mouse enters the element it is bound to, not a descendant. So in this example, the handler is triggered when the mouse enters the <samp>Outer</samp> element, but not the <samp>Inner</samp> element.</p>
@@ -82,23 +77,23 @@ $( "#other" ).click(function() {
     <code><![CDATA[
 var i = 0;
 $( "div.overout" )
-  .mouseover(function() {
+  .on( "mouseover", function() {
     $( "p", this ).first().text( "mouse over" );
     $( "p", this ).last().text( ++i );
-  })
-  .mouseout(function() {
+  } )
+  .on( "mouseout", function() {
     $( "p", this ).first().text( "mouse out" );
-  });
+  } );
 
 var n = 0;
 $( "div.enterleave" )
-  .mouseenter(function() {
+  .on( "mouseenter", function() {
     $( "p", this ).first().text( "mouse enter" );
     $( "p", this ).last().text( ++n );
-  })
-  .mouseleave(function() {
+  } )
+  .on( "mouseleave", function() {
     $( "p", this ).first().text( "mouse leave" );
-  });
+  } );
 ]]></code>
     <html><![CDATA[
 <div class="out overout">
@@ -116,5 +111,23 @@ $( "div.enterleave" )
   </example>
   <category slug="events/mouse-events"/>
   <category slug="version/1.0"/>
-  <category slug="version/1.4.3"/>
+  <category slug="version/1.7"/>
 </entry>
+
+<entry type="method" name="trigger" return="jQuery">
+  <title>mouseenter event</title>
+  <desc>Trigger the "mouseenter" event on an element.</desc>
+  <signature>
+    <added>1.0</added>
+    <argument name="&quot;mouseenter&quot;" type="string">
+      <desc>The string <code>"mouseenter"</code>.</desc>
+    </argument>
+  </signature>
+  <longdesc>
+    <p>See the description for <a href="#on1"><code>.on( "mouseenter", ... )</code></a>.</p>
+  </longdesc>
+  <category slug="events/mouse-events"/>
+  <category slug="version/1.0"/>
+</entry>
+
+</entries>
