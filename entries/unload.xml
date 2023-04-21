@@ -18,7 +18,7 @@
       <argument name="eventObject" type="Event" />
     </argument>
   </signature>
-  <desc>Bind an event handler to the "unload" JavaScript event.</desc>
+  <desc>Bind an event handler to the "unload" event.</desc>
   <longdesc>
     <div class="warning">
       <p>Note: This API has been removed in jQuery 3.0; please use <code>.on( "unload", handler )</code> instead of <code>.unload( handler )</code> and <code>.trigger( "unload" )</code> instead of <code>.unload()</code>.</p>

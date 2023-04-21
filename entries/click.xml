@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <entries>
 
-<desc>Bind an event handler to the "click" JavaScript event, or trigger that event on an element.</desc>
+<desc>Bind an event handler to the "click" event, or trigger that event on an element.</desc>
 <entry type="method" name="on" return="jQuery">
   <title>click event</title>
-  <desc>Bind an event handler to the "click" JavaScript event.</desc>
+  <desc>Bind an event handler to the "click" event.</desc>
   <signature>
     <added>1.7</added>
     <argument name="&quot;click&quot;" type="string">
