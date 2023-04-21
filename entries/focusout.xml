@@ -1,29 +1,30 @@
 <?xml version="1.0"?>
 <entries>
-  <desc>Bind an event handler to the "focusout" event, or trigger that event on an element.</desc>
-  <entry type="method" name="on" return="jQuery">
-    <title>focusout event</title>
-    <desc>Bind an event handler to the "focusout" event.</desc>
-    <signature>
-      <added>1.7</added>
-      <argument name="&quot;focusout&quot;" type="string">
-        <desc>The string <code>"focusout"</code>.</desc>
-      </argument>
-      <argument name="eventData" type="Anything" optional="true">
-        <desc>An object containing data that will be passed to the event handler.</desc>
-      </argument>
-      <argument name="handler" type="Function">
-        <desc>A function to execute each time the event is triggered.</desc>
-        <argument name="eventObject" type="Event" />
-      </argument>
-    </signature>
-    <longdesc>
-      <p>The <code>focusout</code> event is sent to an element when it, or any element inside of it, loses focus. This is distinct from the <a href="/blur/">blur</a> event in that it supports detecting the loss of focus on descendant elements (in other words, it supports event bubbling).</p>
-      <p>This event will likely be used together with the <a href="/focusin/">focusin</a> event.</p>
-    </longdesc>
-    <example>
-      <desc>Watch for a loss of focus to occur inside paragraphs and note the difference between the <code>focusout</code> count and the <code>blur</code> count. (The <code>blur</code> count does not change because those events do not bubble.)</desc>
-      <css><![CDATA[
+
+<desc>Bind an event handler to the "focusout" event, or trigger that event on an element.</desc>
+<entry type="method" name="on" return="jQuery">
+  <title>focusout event</title>
+  <desc>Bind an event handler to the "focusout" event.</desc>
+  <signature>
+    <added>1.7</added>
+    <argument name="&quot;focusout&quot;" type="string">
+      <desc>The string <code>"focusout"</code>.</desc>
+    </argument>
+    <argument name="eventData" type="Anything" optional="true">
+      <desc>An object containing data that will be passed to the event handler.</desc>
+    </argument>
+    <argument name="handler" type="Function">
+      <desc>A function to execute each time the event is triggered.</desc>
+      <argument name="eventObject" type="Event" />
+    </argument>
+  </signature>
+  <longdesc>
+    <p>The <code>focusout</code> event is sent to an element when it, or any element inside of it, loses focus. This is distinct from the <a href="/blur/">blur</a> event in that it supports detecting the loss of focus on descendant elements (in other words, it supports event bubbling).</p>
+    <p>This event will likely be used together with the <a href="/focusin/">focusin</a> event.</p>
+  </longdesc>
+  <example>
+    <desc>Watch for a loss of focus to occur inside paragraphs and note the difference between the <code>focusout</code> count and the <code>blur</code> count. (The <code>blur</code> count does not change because those events do not bubble.)</desc>
+    <css><![CDATA[
   .inputs {
     float: left;
     margin-right: 1em;
@@ -32,7 +33,7 @@
     margin-top: 0;
   }
 ]]></css>
-      <code><![CDATA[
+    <code><![CDATA[
 var focusout = 0,
   blur = 0;
 $( "p" )
@@ -45,7 +46,7 @@ $( "p" )
     $( "#blur-count" ).text( "blur fired: " + blur + "x" );
   } );
 ]]></code>
-      <html><![CDATA[
+    <html><![CDATA[
 <div class="inputs">
   <p>
     <input type="text"><br>
@@ -58,29 +59,30 @@ $( "p" )
 <div id="focus-count">focusout fire</div>
 <div id="blur-count">blur fire</div>
 ]]></html>
-    </example>
-    <category slug="events/form-events"/>
-    <category slug="forms"/>
-    <category slug="version/1.0"/>
-    <category slug="version/1.4"/>
-    <category slug="version/1.7"/>
-  </entry>
+  </example>
+  <category slug="events/form-events"/>
+  <category slug="forms"/>
+  <category slug="version/1.0"/>
+  <category slug="version/1.4"/>
+  <category slug="version/1.7"/>
+</entry>
 
-  <entry type="method" name="trigger" return="jQuery">
-    <title>focusout event</title>
-    <desc>Trigger the "focuout" event on an element.</desc>
-    <signature>
-      <added>1.0</added>
-      <argument name="&quot;focusout&quot;" type="string">
-        <desc>The string <code>"focusout"</code>.</desc>
-      </argument>
-    </signature>
-    <longdesc>
-      <p>See the description for <a href="#on1"><code>.on( "focusout", ... )</code></a>.</p>
-    </longdesc>
-    <category slug="events/form-events"/>
-    <category slug="forms"/>
-    <category slug="version/1.0"/>
-    <category slug="version/1.4"/>
-  </entry>
+<entry type="method" name="trigger" return="jQuery">
+  <title>focusout event</title>
+  <desc>Trigger the "focuout" event on an element.</desc>
+  <signature>
+    <added>1.0</added>
+    <argument name="&quot;focusout&quot;" type="string">
+      <desc>The string <code>"focusout"</code>.</desc>
+    </argument>
+  </signature>
+  <longdesc>
+    <p>See the description for <a href="#on1"><code>.on( "focusout", ... )</code></a>.</p>
+  </longdesc>
+  <category slug="events/form-events"/>
+  <category slug="forms"/>
+  <category slug="version/1.0"/>
+  <category slug="version/1.4"/>
+</entry>
+
 </entries>

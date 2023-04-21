@@ -1,65 +1,67 @@
 <?xml version="1.0"?>
 <entries>
-  <desc>Bind an event handler to the "focusin" event, or trigger that event on an element.</desc>
-  <entry type="method" name="on" return="jQuery">
-    <title>focusin event</title>
-    <desc>Bind an event handler to the "focusin" event.</desc>
-    <signature>
-      <added>1.7</added>
-      <argument name="&quot;focusin&quot;" type="string">
-        <desc>The string <code>"focusin"</code>.</desc>
-      </argument>
-      <argument name="eventData" type="Anything" optional="true">
-        <desc>An object containing data that will be passed to the event handler.</desc>
-      </argument>
-      <argument name="handler" type="Function">
-        <desc>A function to execute each time the event is triggered.</desc>
-        <argument name="eventObject" type="Event" />
-      </argument>
-    </signature>
-    <longdesc>
-      <p>The <code>focusin</code> event is sent to an element when it, or any element inside of it, gains focus. This is distinct from the <a href="/focus/">focus</a> event in that it supports detecting the focus event on parent elements (in other words, it supports event bubbling).</p>
-      <p>This event will likely be used together with the <a href="/focusout/">focusout</a> event.</p>
-    </longdesc>
-    <example>
-      <desc>Watch for a focus to occur within the paragraphs on the page.</desc>
-      <css><![CDATA[
+
+<desc>Bind an event handler to the "focusin" event, or trigger that event on an element.</desc>
+<entry type="method" name="on" return="jQuery">
+  <title>focusin event</title>
+  <desc>Bind an event handler to the "focusin" event.</desc>
+  <signature>
+    <added>1.7</added>
+    <argument name="&quot;focusin&quot;" type="string">
+      <desc>The string <code>"focusin"</code>.</desc>
+    </argument>
+    <argument name="eventData" type="Anything" optional="true">
+      <desc>An object containing data that will be passed to the event handler.</desc>
+    </argument>
+    <argument name="handler" type="Function">
+      <desc>A function to execute each time the event is triggered.</desc>
+      <argument name="eventObject" type="Event" />
+    </argument>
+  </signature>
+  <longdesc>
+    <p>The <code>focusin</code> event is sent to an element when it, or any element inside of it, gains focus. This is distinct from the <a href="/focus/">focus</a> event in that it supports detecting the focus event on parent elements (in other words, it supports event bubbling).</p>
+    <p>This event will likely be used together with the <a href="/focusout/">focusout</a> event.</p>
+  </longdesc>
+  <example>
+    <desc>Watch for a focus to occur within the paragraphs on the page.</desc>
+    <css><![CDATA[
   span {
     display: none;
   }
 ]]></css>
-      <code><![CDATA[
+    <code><![CDATA[
 $( "p" ).on( "focusin", function() {
   $( this ).find( "span" ).css( "display", "inline" ).fadeOut( 1000 );
 } );
 ]]></code>
-      <html><![CDATA[
+    <html><![CDATA[
 <p><input type="text"> <span>focusin fire</span></p>
 <p><input type="password"> <span>focusin fire</span></p>
 ]]></html>
-    </example>
-    <category slug="events/form-events"/>
-    <category slug="forms"/>
-    <category slug="version/1.0"/>
-    <category slug="version/1.4"/>
-    <category slug="version/1.7"/>
-  </entry>
+  </example>
+  <category slug="events/form-events"/>
+  <category slug="forms"/>
+  <category slug="version/1.0"/>
+  <category slug="version/1.4"/>
+  <category slug="version/1.7"/>
+</entry>
 
-  <entry type="method" name="trigger" return="jQuery">
-    <title>focusin event</title>
-    <desc>Trigger the "focusin" event on an element.</desc>
-    <signature>
-      <added>1.0</added>
-      <argument name="&quot;focusin&quot;" type="string">
-        <desc>The string <code>"focusin"</code>.</desc>
-      </argument>
-    </signature>
-    <longdesc>
-      <p>See the description for <a href="#on1"><code>.on( "focusin", ... )</code></a>.</p>
-    </longdesc>
-    <category slug="events/form-events"/>
-    <category slug="forms"/>
-    <category slug="version/1.0"/>
-    <category slug="version/1.4"/>
-  </entry>
+<entry type="method" name="trigger" return="jQuery">
+  <title>focusin event</title>
+  <desc>Trigger the "focusin" event on an element.</desc>
+  <signature>
+    <added>1.0</added>
+    <argument name="&quot;focusin&quot;" type="string">
+      <desc>The string <code>"focusin"</code>.</desc>
+    </argument>
+  </signature>
+  <longdesc>
+    <p>See the description for <a href="#on1"><code>.on( "focusin", ... )</code></a>.</p>
+  </longdesc>
+  <category slug="events/form-events"/>
+  <category slug="forms"/>
+  <category slug="version/1.0"/>
+  <category slug="version/1.4"/>
+</entry>
+
 </entries>

@@ -1,26 +1,27 @@
 <?xml version="1.0"?>
 <entries>
-  <desc>Bind an event handler to the "blur" JavaScript event, or trigger that event on an element.</desc>
-  <entry type="method" name="on" return="jQuery">
-    <title>blur event</title>
-    <desc>Bind an event handler to the "blur" JavaScript event.</desc>
-    <signature>
-      <added>1.7</added>
-      <argument name="&quot;blur&quot;" type="string">
-        <desc>The string <code>"blur"</code>.</desc>
-      </argument>
-      <argument name="eventData" type="Anything" optional="true">
-        <desc>An object containing data that will be passed to the event handler.</desc>
-      </argument>
-      <argument name="handler" type="Function">
-        <desc>A function to execute each time the event is triggered.</desc>
-        <argument name="eventObject" type="Event" />
-      </argument>
-    </signature>
-    <longdesc>
-      <p>The <code>blur</code> event is sent to an element when it loses focus. Originally, this event was only applicable to form elements, such as <code>&lt;input&gt;</code>. In recent browsers, the domain of the event has been extended to include all element types. An element can lose focus via keyboard commands, such as the Tab key, or by mouse clicks elsewhere on the page.</p>
-      <p>For example, consider the HTML:</p>
-      <pre><code>
+
+<desc>Bind an event handler to the "blur" JavaScript event, or trigger that event on an element.</desc>
+<entry type="method" name="on" return="jQuery">
+  <title>blur event</title>
+  <desc>Bind an event handler to the "blur" JavaScript event.</desc>
+  <signature>
+    <added>1.7</added>
+    <argument name="&quot;blur&quot;" type="string">
+      <desc>The string <code>"blur"</code>.</desc>
+    </argument>
+    <argument name="eventData" type="Anything" optional="true">
+      <desc>An object containing data that will be passed to the event handler.</desc>
+    </argument>
+    <argument name="handler" type="Function">
+      <desc>A function to execute each time the event is triggered.</desc>
+      <argument name="eventObject" type="Event" />
+    </argument>
+  </signature>
+  <longdesc>
+    <p>The <code>blur</code> event is sent to an element when it loses focus. Originally, this event was only applicable to form elements, such as <code>&lt;input&gt;</code>. In recent browsers, the domain of the event has been extended to include all element types. An element can lose focus via keyboard commands, such as the Tab key, or by mouse clicks elsewhere on the page.</p>
+    <p>For example, consider the HTML:</p>
+    <pre><code>
 &lt;form&gt;
   &lt;input id="target" type="text" value="Field 1"&gt;
   &lt;input type="text" value="Field 2"&gt;
@@ -28,50 +29,53 @@
 &lt;div id="other"&gt;
   Trigger the handler
 &lt;/div&gt;
-The event handler can be bound to the first input field:
+    </code></pre>
+    <p>The event handler can be bound to the first input field:</p>
+    <pre><code>
 $( "#target" ).on( "blur", function() {
   alert( "Handler for `blur` called." );
 } );
-      </code></pre>
-      <p>Now if the first field has the focus, clicking elsewhere or tabbing away from it displays the alert:</p>
-      <p>
-        <samp>Handler for `blur` called.</samp>
-      </p>
-      <p>To trigger the event programmatically, call <code>.trigger( "blur" )</code>:</p>
-      <pre><code>
+    </code></pre>
+    <p>Now if the first field has the focus, clicking elsewhere or tabbing away from it displays the alert:</p>
+    <p>
+      <samp>Handler for `blur` called.</samp>
+    </p>
+    <p>To trigger the event programmatically, call <code>.trigger( "blur" )</code>:</p>
+    <pre><code>
 $( "#other" ).on( "click", function() {
   $( "#target" ).trigger( "blur" );
 } );
-      </code></pre>
-      <p>After this code executes, clicks on <samp>Trigger the handler</samp> will also alert the message.</p>
-      <p>The <code>blur</code> event does not bubble. As of version 1.4.2, jQuery works around this limitation by mapping <code>blur</code> to the <code>focusout</code> event in its event delegation methods.</p>
-    </longdesc>
-    <example>
-      <desc>To trigger the blur event on all paragraphs:</desc>
-      <code><![CDATA[
+    </code></pre>
+    <p>After this code executes, clicks on <samp>Trigger the handler</samp> will also alert the message.</p>
+    <p>The <code>blur</code> event does not bubble. As of version 1.4.2, jQuery works around this limitation by mapping <code>blur</code> to the <code>focusout</code> event in its event delegation methods.</p>
+  </longdesc>
+  <example>
+    <desc>To trigger the blur event on all paragraphs:</desc>
+    <code><![CDATA[
 $( "p" ).trigger( "blur" );
 ]]></code>
-    </example>
-    <category slug="events/form-events"/>
-    <category slug="forms"/>
-    <category slug="version/1.0"/>
-    <category slug="version/1.7"/>
-  </entry>
+  </example>
+  <category slug="events/form-events"/>
+  <category slug="forms"/>
+  <category slug="version/1.0"/>
+  <category slug="version/1.7"/>
+</entry>
 
-  <entry type="method" name="trigger" return="jQuery">
-    <title>blur event</title>
-    <desc>Trigger the "blur" event on an element.</desc>
-    <signature>
-      <added>1.0</added>
-      <argument name="&quot;blur&quot;" type="string">
-        <desc>The string <code>"blur"</code>.</desc>
-      </argument>
-    </signature>
-    <longdesc>
-      <p>See the description for <a href="#on1"><code>.on( "blur", ... )</code></a>.</p>
-    </longdesc>
-    <category slug="events/form-events"/>
-    <category slug="forms"/>
-    <category slug="version/1.0"/>
-  </entry>
+<entry type="method" name="trigger" return="jQuery">
+  <title>blur event</title>
+  <desc>Trigger the "blur" event on an element.</desc>
+  <signature>
+    <added>1.0</added>
+    <argument name="&quot;blur&quot;" type="string">
+      <desc>The string <code>"blur"</code>.</desc>
+    </argument>
+  </signature>
+  <longdesc>
+    <p>See the description for <a href="#on1"><code>.on( "blur", ... )</code></a>.</p>
+  </longdesc>
+  <category slug="events/form-events"/>
+  <category slug="forms"/>
+  <category slug="version/1.0"/>
+</entry>
+
 </entries>
