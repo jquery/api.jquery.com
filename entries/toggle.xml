@@ -92,9 +92,9 @@ if ( display === true ) {
   <example>
     <desc>Toggles all paragraphs.</desc>
     <code><![CDATA[
-$( "button" ).click(function() {
+$( "button" ).on( "click", function() {
   $( "p" ).toggle();
-});
+} );
 ]]></code>
     <html><![CDATA[
 <button>Toggle</button>
