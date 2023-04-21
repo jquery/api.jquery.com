@@ -30,7 +30,7 @@ $( window ).on( "resize", function() {
     <example>
       <desc>To see the window width while (or after) it is resized, try:</desc>
       <code><![CDATA[
-$( window ).( "resize", function() {
+$( window ).on( "resize", function() {
   $( "body" ).prepend( "<div>" + $( window ).width() + "</div>" );
 } );
 ]]></code>

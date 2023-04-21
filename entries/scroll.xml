@@ -1,32 +1,26 @@
 <?xml version="1.0"?>
-<entry type="method" name="scroll" return="jQuery">
-  <title>.scroll()</title>
+<entries>
   <desc>Bind an event handler to the "scroll" JavaScript event, or trigger that event on an element.</desc>
-  <signature>
-    <added>1.0</added>
-    <argument name="handler" type="Function">
-      <desc>A function to execute each time the event is triggered.</desc>
-      <argument name="eventObject" type="Event" />
-    </argument>
-  </signature>
-  <signature>
-    <added>1.4.3</added>
-    <argument name="eventData" type="Anything" optional="true">
-      <desc>An object containing data that will be passed to the event handler.</desc>
-    </argument>
-    <argument name="handler" type="Function">
-      <desc>A function to execute each time the event is triggered.</desc>
-      <argument name="eventObject" type="Event" />
-    </argument>
-  </signature>
-  <signature>
-    <added>1.0</added>
-  </signature>
-  <longdesc>
-    <p>This method is a shortcut for <code>.on( "scroll", handler )</code> in the first and second variations, and <code>.trigger( "scroll" )</code> in the third.</p>
-    <p>The <code>scroll</code> event is sent to an element when the user scrolls to a different place in the element. It applies to <code>window</code> objects, but also to scrollable frames and elements with the <code>overflow </code>CSS property set to <code>scroll</code> (or <code>auto</code> when the element's explicit height or width is less than the height or width of its contents).</p>
-    <p>For example, consider the HTML:</p>
-    <pre><code>
+  <entry type="method" name="on" return="jQuery">
+    <title>scroll event</title>
+    <desc>Bind an event handler to the "scroll" JavaScript event.</desc>
+    <signature>
+      <added>1.7</added>
+      <argument name="&quot;scroll&quot;" type="string">
+        <desc>The string <code>"scroll"</code>.</desc>
+      </argument>
+      <argument name="eventData" type="Anything" optional="true">
+        <desc>An object containing data that will be passed to the event handler.</desc>
+      </argument>
+      <argument name="handler" type="Function">
+        <desc>A function to execute each time the event is triggered.</desc>
+        <argument name="eventObject" type="Event" />
+      </argument>
+    </signature>
+    <longdesc>
+      <p>The <code>scroll</code> event is sent to an element when the user scrolls to a different place in the element. It applies to <code>window</code> objects, but also to scrollable frames and elements with the <code>overflow </code>CSS property set to <code>scroll</code> (or <code>auto</code> when the element's explicit height or width is less than the height or width of its contents).</p>
+      <p>For example, consider the HTML:</p>
+      <pre><code>
 &lt;div id="target" style="overflow: scroll; width: 200px; height: 100px;"&gt;
   Lorem ipsum dolor sit amet, consectetur adipisicing elit,
   sed do eiusmod tempor incididunt ut labore et dolore magna
@@ -41,42 +35,42 @@
   Trigger the handler
 &lt;/div&gt;
 &lt;div id="log"&gt;&lt;/div&gt;
-</code></pre>
-    <p>The style definition is present to make the target element small enough to be scrollable:</p>
-    <figure>
-      <img src="/resources/0042_05_11.png" alt=""/>
-      <figcaption>Figure 1 - Illustration of the rendered HTML</figcaption>
-    </figure>
-    <p>The <code>scroll</code> event handler can be bound to this element:</p>
-    <pre><code>
-$( "#target" ).scroll(function() {
-  $( "#log" ).append( "&lt;div&gt;Handler for .scroll() called.&lt;/div&gt;" );
-});
-    </code></pre>
-    <p>Now when the user scrolls the text up or down, one or more messages are appended to <code>&lt;div id="log"&gt;&lt;/div&gt;</code>:</p>
-    <p>
-      <samp>Handler for .scroll() called.</samp>
-    </p>
-    <p>To trigger the event manually, apply <code>.scroll()</code> without an argument:</p>
-    <pre><code>
-$( "#other" ).click(function() {
-  $( "#target" ).scroll();
-});
-    </code></pre>
-    <p>After this code executes, clicks on <samp>Trigger the handler</samp> will also append the message.</p>
-    <p>A <code>scroll</code> event is sent whenever the element's scroll position changes, regardless of the cause. A mouse click or drag on the scroll bar, dragging inside the element, pressing the arrow keys, or using the mouse's scroll wheel could cause this event.</p>
-  </longdesc>
-  <example>
-    <desc>To do something when your page is scrolled:</desc>
-    <code><![CDATA[
+  </code></pre>
+      <p>The style definition is present to make the target element small enough to be scrollable:</p>
+      <figure>
+        <img src="/resources/0042_05_11.png" alt=""/>
+        <figcaption>Figure 1 - Illustration of the rendered HTML</figcaption>
+      </figure>
+      <p>The <code>scroll</code> event handler can be bound to this element:</p>
+      <pre><code>
+$( "#target" ).on( "scroll", function() {
+  $( "#log" ).append( "&lt;div&gt;Handler for `scroll` called.&lt;/div&gt;" );
+} );
+      </code></pre>
+      <p>Now when the user scrolls the text up or down, one or more messages are appended to <code>&lt;div id="log"&gt;&lt;/div&gt;</code>:</p>
+      <p>
+        <samp>Handler for `scroll` called.</samp>
+      </p>
+      <p>To trigger the event manually, use <code>.trigger( "scroll" )</code>:</p>
+      <pre><code>
+$( "#other" ).on( "click", function() {
+  $( "#target" ).trigger( "scroll" );
+} );
+      </code></pre>
+      <p>After this code executes, clicks on <samp>Trigger the handler</samp> will also append the message.</p>
+      <p>A <code>scroll</code> event is sent whenever the element's scroll position changes, regardless of the cause. A mouse click or drag on the scroll bar, dragging inside the element, pressing the arrow keys, or using the mouse's scroll wheel could cause this event.</p>
+    </longdesc>
+    <example>
+      <desc>To do something when your page is scrolled:</desc>
+      <code><![CDATA[
 $( "p" ).clone().appendTo( document.body );
 $( "p" ).clone().appendTo( document.body );
 $( "p" ).clone().appendTo( document.body );
-$( window ).scroll(function() {
+$( window ).on( "scroll", function() {
   $( "span" ).css( "display", "inline" ).fadeOut( "slow" );
-});
+} );
 ]]></code>
-    <css><![CDATA[
+      <css><![CDATA[
   div {
     color: blue;
   }
@@ -88,12 +82,29 @@ $( window ).scroll(function() {
     display: none;
   }
 ]]></css>
-    <html><![CDATA[
+      <html><![CDATA[
 <div>Try scrolling the iframe.</div>
 <p>Paragraph - <span>Scroll happened!</span></p>
 ]]></html>
-  </example>
-  <category slug="events/browser-events"/>
-  <category slug="version/1.0"/>
-  <category slug="version/1.4.3"/>
-</entry>
+    </example>
+    <category slug="events/browser-events"/>
+    <category slug="version/1.0"/>
+    <category slug="version/1.7"/>
+  </entry>
+
+  <entry type="method" name="trigger" return="jQuery">
+    <title>scroll event</title>
+    <desc>Trigger the "scroll" event on an element.</desc>
+    <signature>
+      <added>1.0</added>
+      <argument name="&quot;scroll&quot;" type="string">
+        <desc>The string <code>"scroll"</code>.</desc>
+      </argument>
+    </signature>
+    <longdesc>
+      <p>See the description for <a href="#on1"><code>.on( "scroll", ... )</code></a>.</p>
+    </longdesc>
+    <category slug="events/browser-events"/>
+    <category slug="version/1.0"/>
+  </entry>
+</entries>
