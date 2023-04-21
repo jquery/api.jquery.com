@@ -1,9 +1,7 @@
 <?xml version="1.0"?>
-<entries>
-
-<desc>Register a handler to be called when the first Ajax request begins. This is an <a href="/Ajax_Events/">Ajax Event</a>.</desc>
 <entry type="method" name="on" return="jQuery">
   <title>ajaxStart event</title>
+  <desc>Register a handler to be called when the first Ajax request begins. This is an <a href="/Ajax_Events/">Ajax Event</a>.</desc>
   <signature>
     <added>1.7</added>
     <argument name="&quot;ajaxStart&quot;" type="string">
@@ -13,6 +11,7 @@
       <desc>The function to be invoked.</desc>
     </argument>
   </signature>
+  <desc>Register a handler to be called when the first Ajax request begins. This is an <a href="/Ajax_Events/">Ajax Event</a>.</desc>
   <longdesc>
     <p>Whenever an Ajax request is about to be sent, jQuery checks whether there are any other outstanding Ajax requests. If none are in progress, jQuery triggers the <code>ajaxStart</code> event. Any and all handlers that have been registered with <code>.on( "ajaxStart", ... )</code> are executed at this time.</p>
     <p>To observe this method in action, set up a basic Ajax load request:</p>
@@ -47,24 +46,5 @@ $( document ).on( "ajaxStart", function() {
   </example>
   <category slug="ajax/global-ajax-event-handlers"/>
   <category slug="version/1.0"/>
+  <category slug="version/1.7"/>
 </entry>
-
-<entry type="method" name="ajaxStart" return="jQuery" deprecated="3.3">
-  <title>.ajaxStart()</title>
-  <signature>
-    <added>1.0</added>
-    <argument name="handler" type="Function">
-      <desc>The function to be invoked.</desc>
-    </argument>
-  </signature>
-  <longdesc>
-    <div class="warning">
-      <p>This API is deprecated. Use <a href="#on1"><code>.on( "ajaxStart", handler )</code></a> instead.</p>
-    </div>
-  </longdesc>
-  <category slug="ajax/global-ajax-event-handlers"/>
-  <category slug="version/1.0"/>
-  <category slug="deprecated/deprecated-3.3"/>
-</entry>
-
-</entries>

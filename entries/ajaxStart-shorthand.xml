@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<entry type="method" name="ajaxStart" return="jQuery" deprecated="3.3">
+  <title>.ajaxStart()</title>
+  <signature>
+    <added>1.0</added>
+    <argument name="handler" type="Function">
+      <desc>The function to be invoked.</desc>
+    </argument>
+  </signature>
+  <longdesc>
+    <div class="warning">
+      <p>This API is deprecated. Use <a href="#on1"><code>.on( "ajaxStart", handler )</code></a> instead.</p>
+    </div>
+  </longdesc>
+  <category slug="ajax/global-ajax-event-handlers"/>
+  <category slug="version/1.0"/>
+  <category slug="deprecated/deprecated-3.3"/>
+</entry>
