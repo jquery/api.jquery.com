@@ -1,16 +1,15 @@
 <?xml version="1.0"?>
-<entry type="method" name="error" return="jQuery" deprecated="1.8" removed="3.0">
-  <title>.error()</title>
+<entries>
+<desc>Bind an event handler to the "error" event, or trigger that event on an element.</desc>
+
+<entry type="method" name="on" return="jQuery">
+  <title>error event</title>
   <desc>Bind an event handler to the "error" event.</desc>
   <signature>
-    <added>1.0</added>
-    <argument name="handler" type="Function">
-      <desc>A function to execute when the event is triggered.</desc>
-      <argument name="eventObject" type="Event" />
+    <added>1.7</added>
+    <argument name="&quot;error&quot;" type="string">
+      <desc>The string <code>"error"</code>.</desc>
     </argument>
-  </signature>
-  <signature>
-    <added>1.4.3</added>
     <argument name="eventData" type="Anything" optional="true">
       <desc>An object containing data that will be passed to the event handler.</desc>
     </argument>
@@ -20,9 +19,6 @@
     </argument>
   </signature>
   <longdesc>
-    <div class="warning">
-      <p>Note: This API has been removed in jQuery 3.0; please use <code>.on( "error", handler )</code> instead of <code>.error( handler )</code> and <code>.trigger( "error" )</code> instead of <code>.error()</code>.</p>
-    </div>
     <p>The <code>error</code> event is sent to elements, such as images, that are referenced by a document and loaded by the browser. It is called if the element was not loaded correctly.</p>
     <p>For example, consider a page with a simple image element:</p>
     <pre><code>
@@ -31,14 +27,14 @@
     <p>The event handler can be bound to the image:</p>
     <pre><code>
 $( "#book" )
-  .error(function() {
-    alert( "Handler for .error() called." )
-  })
+  .on( "error", function() {
+    alert( "Handler for `error` called." )
+  } )
   .attr( "src", "missing.png" );
     </code></pre>
     <p>If the image cannot be loaded (for example, because it is not present at the supplied URL), the alert is displayed:</p>
     <p>
-      <samp>Handler for .error() called.</samp>
+      <samp>Handler for `error` called.</samp>
     </p>
     <div class="warning">
       <p>The event handler <em>must</em> be attached before the browser fires the <code>error</code> event, which is why the example sets the <code>src</code> attribute after attaching the handler. Also, the <code>error</code> event may not be correctly fired when the page is served locally; <code>error</code> relies on HTTP status codes and will generally not be triggered if the URL uses the <code>file:</code> protocol.</p>
@@ -46,19 +42,35 @@ $( "#book" )
     <p>Note: A jQuery <code>error</code> event handler should not be attached to the <code>window</code> object. The browser fires the <code>window</code>'s <code>error</code> event when a script error occurs. However, the window <code>error</code> event receives different arguments and has different return value requirements than conventional event handlers. Use <code>window.onerror</code> instead.</p>
   </longdesc>
   <example>
-    <desc>To replace all the missing images with another, you can update the <code>src</code> attribute inside the callback passed to <code>.error()</code>. Be sure that the replacement image exists; otherwise the <code>error</code> event will be triggered indefinitely.</desc>
+    <desc>To replace all the missing images with another, you can update the <code>src</code> attribute inside the <code>error</code> handler. Be sure that the replacement image exists; otherwise the <code>error</code> event will be triggered indefinitely.</desc>
     <code><![CDATA[
 // If missing.png is missing, it is replaced by replacement.png
 $( "img" )
-  .error(function() {
+  .on( "error", function() {
     $( this ).attr( "src", "replacement.png" );
-  })
+  } )
   .attr( "src", "missing.png" );
 ]]></code>
   </example>
   <category slug="events/browser-events"/>
   <category slug="version/1.0"/>
-  <category slug="version/1.4.3"/>
-  <category slug="deprecated/deprecated-1.8"/>
-  <category slug="removed"/>
+  <category slug="version/1.7"/>
 </entry>
+
+<entry type="method" name="trigger" return="jQuery">
+  <title>error event</title>
+  <desc>Trigger the "error" event on an element.</desc>
+  <signature>
+    <added>1.0</added>
+    <argument name="&quot;error&quot;" type="string">
+      <desc>The string <code>"error"</code>.</desc>
+    </argument>
+  </signature>
+  <longdesc>
+    <p>See the description for <a href="#on1"><code>.on( "error", ... )</code></a>.</p>
+  </longdesc>
+  <category slug="events/browser-events"/>
+  <category slug="version/1.0"/>
+</entry>
+
+</entries>
