@@ -48,13 +48,13 @@ $.getScript( "ajax/test.js" )
     $( "div.log" ).text( "Triggered ajaxError handler." );
 });
     </code></pre>
-    <p>Prior to jQuery 1.5, the global <code>.ajaxError()</code> callback event had to be used in order to handle <code>$.getScript()</code> errors:</p>
+    <p>Prior to jQuery 1.5, the global <code>ajaxError</code> callback event had to be used in order to handle <code>$.getScript()</code> errors:</p>
     <pre><code>
-$( "div.log" ).ajaxError(function( e, jqxhr, settings, exception ) {
+$( "div.log" ).on( "ajaxError", function( e, jqxhr, settings, exception ) {
   if ( settings.dataType == "script" ) {
     $( this ).text( "Triggered ajaxError handler." );
   }
-});
+} );
     </code></pre>
     <p>Prior to jQuery 3.5.0, unsuccessful HTTP responses with a script <code>Content-Type</code> were still executed.</p>
     <h4 id="caching-requests">Caching Responses</h4>
