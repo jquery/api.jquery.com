@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <entry type="method" name="ajaxSuccess" return="jQuery" deprecated="3.3">
   <title>.ajaxSuccess()</title>
+  <desc>Attach a function to be executed whenever an Ajax request completes successfully. This is an <a href="/Ajax_Events/">Ajax Event</a>.</desc>
   <signature>
     <added>1.0</added>
     <argument name="handler" type="Function">

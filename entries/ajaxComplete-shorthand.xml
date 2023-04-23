@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <entry type="method" name="ajaxComplete" return="jQuery" deprecated="3.3">
   <title>.ajaxComplete()</title>
+  <desc>Register a handler to be called when Ajax requests complete. This is an <a href="/Ajax_Events/">AjaxEvent</a>.</desc>
   <signature>
     <added>1.0</added>
     <argument name="handler" type="Function">

@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <entry type="method" name="ajaxStart" return="jQuery" deprecated="3.3">
   <title>.ajaxStart()</title>
+  <desc>Register a handler to be called when the first Ajax request begins. This is an <a href="/Ajax_Events/">Ajax Event</a>.</desc>
   <signature>
     <added>1.0</added>
     <argument name="handler" type="Function">
