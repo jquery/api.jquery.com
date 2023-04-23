@@ -22,7 +22,6 @@
     <div class="warning">
       <p>This page describes the <code>mouseout</code> event. For the deprecated <code>.mouseout()</code> method, see <a href="/mouseout-shorthand/"><code>.mouseout()</code></a>.</p>
     </div>
-    <p>This method is a shortcut for <code>.on( "mouseout", handler )</code> in the first two variation, and <code>.trigger( "mouseout" )</code> in the third.</p>
     <p>The <code>mouseout</code> event is sent to an element when the mouse pointer leaves the element. Any HTML element can receive this event.</p>
     <p>For example, consider the HTML:</p>
     <pre><code>
