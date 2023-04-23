@@ -19,6 +19,9 @@
     </argument>
   </signature>
   <longdesc>
+    <div class="warning">
+      <p>This page describes the <code>keydown</code> event. For the deprecated <code>.keydown()</code> method, see <a href="/keydown-shorthand/"><code>.keydown()</code></a>.</p>
+    </div>
     <p>The <code>keydown</code> event is sent to an element when the user presses a key on the keyboard. If the key is kept pressed, the event is sent every time the operating system repeats the key. It can be attached to any element, but the event is only sent to the element that has the focus. Focusable elements can vary between browsers, but form elements can always get focus so are reasonable candidates for this event type.</p>
     <p>For example, consider the HTML:</p>
     <pre><code>

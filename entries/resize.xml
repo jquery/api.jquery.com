@@ -19,6 +19,9 @@
     </argument>
   </signature>
   <longdesc>
+    <div class="warning">
+      <p>This page describes the <code>resize</code> event. For the deprecated <code>.resize()</code> method, see <a href="/resize-shorthand/"><code>.resize()</code></a>.</p>
+    </div>
     <p>The <code>resize</code> event is sent to the <code>window</code> element when the size of the browser window changes:</p>
     <pre><code>
 $( window ).on( "resize", function() {

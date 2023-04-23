@@ -19,6 +19,9 @@
     </argument>
   </signature>
   <longdesc>
+    <div class="warning">
+      <p>This page describes the <code>mouseleave</code> event. For the deprecated <code>.mouseleave()</code> method, see <a href="/mouseleave-shorthand/"><code>.mouseleave()</code></a>.</p>
+    </div>
     <p>The <code>mouseleave</code> JavaScript event is proprietary to Internet Explorer. Because of the event's general utility, jQuery simulates this event so that it can be used regardless of browser. This event is sent to an element when the mouse pointer leaves the element. Any HTML element can receive this event.</p>
     <p>For example, consider the HTML:</p>
     <pre><code>

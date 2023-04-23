@@ -19,6 +19,9 @@
     </argument>
   </signature>
   <longdesc>
+    <div class="warning">
+      <p>This page describes the <code>submit</code> event. For the deprecated <code>.submit()</code> method, see <a href="/submit-shorthand/"><code>.submit()</code></a>.</p>
+    </div>
     <p>The <code>submit</code> event is sent to an element when the user is attempting to submit a form. It can only be attached to <code>&lt;form&gt;</code> elements. Forms can be submitted either by clicking an explicit <code>&lt;input type="submit"&gt;</code>, <code>&lt;input type="image"&gt;</code>, or <code>&lt;button type="submit"&gt;</code>, or by pressing <kbd>Enter</kbd> when certain form elements have focus.</p>
     <div class="warning">
       <p>Depending on the browser, the Enter key may only cause a form submission if the form has exactly one text field, or only when there is a submit button present. The interface should not rely on a particular behavior for this key unless the issue is forced by observing the keypress event for presses of the Enter key.</p>

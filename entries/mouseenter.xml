@@ -19,6 +19,9 @@
     </argument>
   </signature>
   <longdesc>
+    <div class="warning">
+      <p>This page describes the <code>mouseenter</code> event. For the deprecated <code>.mouseenter()</code> method, see <a href="/mouseenter-shorthand/"><code>.mouseenter()</code></a>.</p>
+    </div>
     <p>The <code>mouseenter</code> JavaScript event is proprietary to Internet Explorer. Because of the event's general utility, jQuery simulates this event so that it can be used regardless of browser. This event is sent to an element when the mouse pointer enters the element. Any HTML element can receive this event.</p>
     <p>For example, consider the HTML:</p>
     <pre><code>

@@ -23,6 +23,9 @@
     </argument>
   </signature>
   <longdesc>
+    <div class="warning">
+      <p>This page describes the <code>contextmenu</code> event. For the deprecated <code>.contextmenu()</code> method, see <a href="/contextmenu-shorthand/"><code>.contextmenu()</code></a>.</p>
+    </div>
     <p>The <code>contextmenu</code> event is sent to an element when the right button of the mouse is clicked on it, but before the context menu is displayed. In case the context menu key is pressed, the event is triggered on the <code>html</code> element or the currently focused element. Any HTML element can receive this event.
     For example, consider the HTML:</p>
     <pre><code>

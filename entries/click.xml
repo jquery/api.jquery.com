@@ -19,6 +19,9 @@
     </argument>
   </signature>
   <longdesc>
+    <div class="warning">
+      <p>This page describes the <code>click</code> event. For the deprecated <code>.click()</code> method, see <a href="/click-shorthand/"><code>.click()</code></a>.</p>
+    </div>
     <p>The <code>click</code> event is sent to an element when the mouse pointer is over the element, and the mouse button is pressed and released. Any HTML element can receive this event.
     For example, consider the HTML:</p>
     <pre><code>

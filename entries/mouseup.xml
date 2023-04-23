@@ -19,6 +19,9 @@
     </argument>
   </signature>
   <longdesc>
+    <div class="warning">
+      <p>This page describes the <code>mouseup</code> event. For the deprecated <code>.mouseup()</code> method, see <a href="/mouseup-shorthand/"><code>.mouseup()</code></a>.</p>
+    </div>
     <p>This method is a shortcut for <code>.on('mouseup', handler)</code> in the first variation, and <code>.trigger('mouseup')</code> in the second.</p>
     <p>The <code>mouseup</code> event is sent to an element when the mouse pointer is over the element, and the mouse button is released. Any HTML element can receive this event.</p>
     <p>For example, consider the HTML:</p>

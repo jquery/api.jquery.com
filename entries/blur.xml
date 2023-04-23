@@ -19,6 +19,9 @@
     </argument>
   </signature>
   <longdesc>
+    <div class="warning">
+      <p>This page describes the <code>blur</code> event. For the deprecated <code>.blur()</code> method, see <a href="/blur-shorthand/"><code>.blur()</code></a>.</p>
+    </div>
     <p>The <code>blur</code> event is sent to an element when it loses focus. Originally, this event was only applicable to form elements, such as <code>&lt;input&gt;</code>. In recent browsers, the domain of the event has been extended to include all element types. An element can lose focus via keyboard commands, such as the Tab key, or by mouse clicks elsewhere on the page.</p>
     <p>For example, consider the HTML:</p>
     <pre><code>

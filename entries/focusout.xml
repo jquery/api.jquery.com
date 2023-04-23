@@ -19,6 +19,9 @@
     </argument>
   </signature>
   <longdesc>
+    <div class="warning">
+      <p>This page describes the <code>focusout</code> event. For the deprecated <code>.focusout()</code> method, see <a href="/focusout-shorthand/"><code>.focusout()</code></a>.</p>
+    </div>
     <p>The <code>focusout</code> event is sent to an element when it, or any element inside of it, loses focus. This is distinct from the <a href="/blur/">blur</a> event in that it supports detecting the loss of focus on descendant elements (in other words, it supports event bubbling).</p>
     <p>This event will likely be used together with the <a href="/focusin/">focusin</a> event.</p>
   </longdesc>

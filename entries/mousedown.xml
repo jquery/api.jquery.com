@@ -19,6 +19,9 @@
     </argument>
   </signature>
   <longdesc>
+    <div class="warning">
+      <p>This page describes the <code>mousedown</code> event. For the deprecated <code>.mousedown()</code> method, see <a href="/mousedown-shorthand/"><code>.mousedown()</code></a>.</p>
+    </div>
     <p>The <code>mousedown</code> event is sent to an element when the mouse pointer is over the element, and the mouse button is pressed. Any HTML element can receive this event.</p>
     <p>For example, consider the HTML:</p>
     <pre><code>&lt;div id="target"&gt;

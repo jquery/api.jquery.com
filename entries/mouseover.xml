@@ -19,6 +19,9 @@
     </argument>
   </signature>
   <longdesc>
+    <div class="warning">
+      <p>This page describes the <code>mouseover</code> event. For the deprecated <code>.mouseover()</code> method, see <a href="/mouseover-shorthand/"><code>.mouseover()</code></a>.</p>
+    </div>
     <p>The <code>mouseover</code> event is sent to an element when the mouse pointer enters the element. Any HTML element can receive this event.</p>
     <p>For example, consider the HTML:</p>
     <pre><code>

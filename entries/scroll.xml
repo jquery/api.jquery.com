@@ -19,6 +19,9 @@
     </argument>
   </signature>
   <longdesc>
+    <div class="warning">
+      <p>This page describes the <code>scroll</code> event. For the deprecated <code>.scroll()</code> method, see <a href="/scroll-shorthand/"><code>.scroll()</code></a>.</p>
+    </div>
     <p>The <code>scroll</code> event is sent to an element when the user scrolls to a different place in the element. It applies to <code>window</code> objects, but also to scrollable frames and elements with the <code>overflow </code>CSS property set to <code>scroll</code> (or <code>auto</code> when the element's explicit height or width is less than the height or width of its contents).</p>
     <p>For example, consider the HTML:</p>
     <pre><code>

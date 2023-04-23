@@ -19,6 +19,9 @@
     </argument>
   </signature>
   <longdesc>
+    <div class="warning">
+      <p>This page describes the <code>select</code> event. For the deprecated <code>.select()</code> method, see <a href="/select-shorthand/"><code>.select()</code></a>.</p>
+    </div>
     <p>This method is a shortcut for <code>.on( "select", handler )</code> in the first two variations, and <code>.trigger( "select" )</code> in the third.</p>
     <p>The <code>select</code> event is sent to an element when the user makes a text selection inside it. This event is limited to <code>&lt;input type="text"&gt;</code> fields and <code>&lt;textarea&gt;</code> boxes.</p>
     <p>For example, consider the HTML:</p>
