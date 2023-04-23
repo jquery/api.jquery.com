@@ -62,7 +62,7 @@ function colorEm() {
     ").css( 'background', 'yellow' );" );
 }
 
-$( "button" ).click( colorEm );
+$( "button" ).on( "click", colorEm );
 ]]></code>
     <css><![CDATA[
   div {

@@ -38,7 +38,7 @@
   <example>
     <desc>Find all children of the clicked element.</desc>
     <code><![CDATA[
-$( "#container" ).click(function ( event ) {
+$( "#container" ).on( "click", function( event ) {
   $( "*" ).removeClass( "hilite" );
   var kids = $( event.target ).children();
   var len = kids.addClass( "hilite" ).length;
@@ -47,7 +47,7 @@ $( "#container" ).click(function ( event ) {
   $( "#results span" ).last().text( event.target.tagName );
 
   event.preventDefault();
-});
+} );
 ]]></code>
     <css><![CDATA[
   body {

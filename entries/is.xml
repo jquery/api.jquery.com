@@ -41,7 +41,7 @@
     </code></pre>
     <p>You can attach a click handler to the &lt;ul&gt; element, and then limit the code to be triggered only when a list item itself, not one of its children, is clicked:</p>
     <pre><code>
-$( "ul" ).click(function( event ) {
+$( "ul" ).on( "click", function( event ) {
   var target = $( event.target );
   if ( target.is( "li" ) ) {
     target.css( "background-color", "red" );
@@ -63,7 +63,7 @@ $( "ul" ).click(function( event ) {
     </code></pre>
     <p>You can attach a click handler to every <code>&lt;li&gt;</code> that evaluates the number of <code>&lt;strong&gt;</code> elements within the clicked <code>&lt;li&gt;</code> at that time like so:</p>
     <pre><code>
-$( "li" ).click(function() {
+$( "li)" ).on( "click", function() {
   var li = $( this ),
     isWithTwo = li.is(function() {
       return $( "strong", this ).length === 2;
@@ -177,7 +177,7 @@ $( "div" ).text( "isFormParent = " + isFormParent );
     <desc>Checks against an existing collection of alternating list elements. Blue, alternating list elements slide up while others turn red.</desc>
     <code><![CDATA[
 var alt = $( "#browsers li:nth-child(2n)" ).css( "background", "#0ff" );
-$( "li" ).click(function() {
+$( "li)" ).on( "click", function() {
   var li = $( this );
   if ( li.is( alt ) ) {
     li.slideUp();
@@ -204,7 +204,7 @@ $( "li" ).click(function() {
     <desc>An alternate way to achieve the above example using an element rather than a jQuery object. Checks against an existing collection of alternating list elements. Blue, alternating list elements slide up while others turn red.</desc>
     <code><![CDATA[
 var alt = $( "#browsers li:nth-child(2n)" ).css( "background", "#0ff" );
-$( "li" ).click(function() {
+$( "li)" ).on( "click", function() {
   if ( alt.is( this ) ) {
     $( this ).slideUp();
   } else {

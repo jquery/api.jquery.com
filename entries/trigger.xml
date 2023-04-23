@@ -51,14 +51,14 @@ $( "#foo").trigger( "custom", [ "Custom", "Event" ] );
   <example>
     <desc>Clicks to button #2 also trigger a click for button #1.</desc>
     <code><![CDATA[
-$( "button" ).first().click(function() {
+$( "button" ).first().on( "click", function() {
   update( $( "span" ).first() );
-});
+} );
 
-$( "button" ).last().click(function() {
+$( "button" ).last().on( "click", function() {
   $( "button" ).first().trigger( "click" );
   update( $( "span" ).last() );
-});
+} );
 
 function update( j ) {
   var n = parseInt( j.text(), 10 );
@@ -104,10 +104,10 @@ if ( event.isDefaultPrevented() ) {
     <desc>To pass arbitrary data to an event:</desc>
     <code><![CDATA[
 $( "p" )
-  .click(function( event, a, b ) {
+  .on( "click", function( event, a, b ) {
     // When a normal click fires, a and b are undefined
     // for a trigger like below a refers to "foo" and b refers to "bar"
-  })
+  } )
   .trigger( "click", [ "foo", "bar" ] );
 ]]></code>
   </example>

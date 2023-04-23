@@ -13,18 +13,18 @@
   <example>
     <desc>Finds all reset inputs.</desc>
     <code><![CDATA[
-var input = $( "input:reset" ).css({
+var input = $( "input:reset" ).css( {
   background: "yellow",
   border: "3px red solid"
-});
+} );
 $( "div" )
   .text( "For this type jQuery found " + input.length + "." )
   .css( "color", "red" );
 
 // Prevent form submission
-$( "form" ).submit(function( event ) {
+$( "form" ).on( "submit", function( event ) {
   event.preventDefault();
-});
+} );
 ]]></code>
     <css><![CDATA[
   textarea {

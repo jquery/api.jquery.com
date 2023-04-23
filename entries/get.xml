@@ -43,7 +43,7 @@ console.log( $( "li" ).get( -1 ) );
     <example>
       <desc>Display the tag name of the click element.</desc>
       <code><![CDATA[
-$( "*", document.body ).click(function( event ) {
+$( "*", document.body ).on( "click", function( event ) {
   event.stopPropagation();
   var domElement = $( this ).get( 0 );
   $( "span" ).first().text( "Clicked on - " + domElement.nodeName );

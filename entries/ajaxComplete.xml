@@ -30,9 +30,9 @@ $( document ).on( "ajaxComplete", function() {
     </code></pre>
     <p>Now, make an Ajax request using any jQuery method:</p>
     <pre><code>
-$( ".trigger" ).click(function() {
+$( ".trigger)" ).on( "click", function() {
   $( ".result" ).load( "ajax/test.html" );
-});
+} );
     </code></pre>
     <p>When the user clicks the element with class <code>trigger</code> and the Ajax request completes, the log message is displayed.</p>
     <p>All <code>ajaxComplete</code> handlers are invoked, regardless of what Ajax request was completed. If you must differentiate between the requests, use the parameters passed to the handler. Each time an <code>ajaxComplete</code> handler is executed, it is passed the event object, the <code>XMLHttpRequest</code> object, and the settings object that was used in the creation of the request. For example, you can restrict the callback to only handling events dealing with a particular URL:</p>

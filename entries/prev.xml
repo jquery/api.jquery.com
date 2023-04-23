@@ -34,7 +34,7 @@ $( "li.third-item" ).prev().css( "background-color", "red" );
     <code><![CDATA[
 var $curr = $( "#start" );
 $curr.css( "background", "#f99" );
-$( "button" ).click(function() {
+$( "button)" ).on( "click", function() {
   $curr = $curr.prev();
   $( "div" ).css( "background", "" );
   $curr.css( "background", "#f99" );

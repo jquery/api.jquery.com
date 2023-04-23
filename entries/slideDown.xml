@@ -30,7 +30,7 @@
     </code></pre>
     <p>With the element initially hidden, we can show it slowly:</p>
     <pre><code>
-$( "#clickme" ).click(function() {
+$( "#clickme)" ).on( "click", function() {
   $( "#book" ).slideDown( "slow", function() {
     // Animation complete.
   });
@@ -54,13 +54,13 @@ $( "#clickme" ).click(function() {
   <example>
     <desc>Animates all divs to slide down and show themselves over 600 milliseconds.</desc>
     <code><![CDATA[
-$( document.body ).click(function () {
+$( document.body ).on( "click", function () {
   if ( $( "div" ).first().is( ":hidden" ) ) {
     $( "div" ).slideDown( "slow" );
   } else {
     $( "div" ).hide();
   }
-});
+} );
 ]]></code>
     <css><![CDATA[
   div {
@@ -82,20 +82,20 @@ Click me!
   <example>
     <desc>Animates all inputs to slide down, completing the animation within 1000 milliseconds. Once the animation is done, the input look is changed especially if it is the middle input which gets the focus.</desc>
     <code><![CDATA[
-$( "div" ).click(function() {
-  $( this ).css({
+$( "div" ).on( "click", function() {
+  $( this ).css( {
     borderStyle: "inset",
     cursor: "wait"
-  });
+  } );
   $( "input" ).slideDown( 1000, function() {
     $( this )
       .css( "border", "2px red inset" )
       .filter( ".middle" )
         .css( "background", "yellow" )
-        .focus();
+        .trigger( "focus" );
     $( "div" ).css( "visibility", "hidden" );
-  });
-});
+  } );
+} );
 
 ]]></code>
     <css><![CDATA[

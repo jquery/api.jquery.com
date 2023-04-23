@@ -26,9 +26,9 @@ $( "div" )
   .css( "color", "red" );
 
 // Prevent the form from submitting
-$( "form" ).submit(function( event ) {
+$( "form" ).on( "submit", function( event ) {
     event.preventDefault();
-});
+} );
 ]]></code>
     <css><![CDATA[
   textarea {

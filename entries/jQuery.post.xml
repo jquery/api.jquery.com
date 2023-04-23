@@ -135,7 +135,7 @@ $.post( "test.php", { func: "getNameAndTime" }, function( data ) {
     <desc>Post a form using Ajax and put results in a div</desc>
     <code><![CDATA[
 // Attach a submit handler to the form
-$( "#searchForm" ).submit(function( event ) {
+$( "#searchForm" ).on( "submit", function( event ) {
 
   // Stop form from submitting normally
   event.preventDefault();
@@ -152,8 +152,8 @@ $( "#searchForm" ).submit(function( event ) {
   posting.done(function( data ) {
     var content = $( data ).find( "#content" );
     $( "#result" ).empty().append( content );
-  });
-});
+  } );
+} );
 ]]></code>
     <html><![CDATA[
 <form action="/" id="searchForm">

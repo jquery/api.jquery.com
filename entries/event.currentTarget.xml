@@ -14,7 +14,7 @@
   <example>
     <desc>Alert that currentTarget matches the `this` keyword.</desc>
     <code><![CDATA[
-$( "p" ).click(function( event ) {
+$( "p" ).on( "click", function( event ) {
   alert( event.currentTarget === this ); // true
 });
 ]]></code>

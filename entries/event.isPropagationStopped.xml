@@ -21,11 +21,11 @@ function propStopped( event ) {
   $( "#stop-log" ).append( "<div>" + msg + "</div>" );
 }
 
-$( "button" ).click(function(event) {
+$( "button" ).on( "click", function( event ) {
   propStopped( event );
   event.stopPropagation();
   propStopped( event );
-});
+} );
 ]]></code>
     <html><![CDATA[
 <button>click me</button>

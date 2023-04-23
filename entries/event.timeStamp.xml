@@ -22,7 +22,7 @@
 ]]></css>
     <code><![CDATA[
 var last, diff;
-$( "div" ).click(function( event ) {
+$( "div" ).on( "click", function( event ) {
   if ( last ) {
     diff = event.timeStamp - last;
     $( "div" ).append( "time since last event: " + diff + "<br>" );

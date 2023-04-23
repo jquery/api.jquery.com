@@ -49,7 +49,7 @@ $( ".target" ).show();
 &lt;/div&gt;
 &lt;img id="book" src="book.png" alt="" width="100" height="123"&gt;
 With the element initially hidden, we can show it slowly:
-$( "#clickme" ).click(function() {
+$( "#clickme)" ).on( "click", function() {
   $( "#book" ).show( "slow", function() {
     // Animation complete.
   });
@@ -67,7 +67,7 @@ $( "#clickme" ).click(function() {
   <example>
     <desc>Animates all hidden paragraphs to show slowly, completing the animation within 600 milliseconds.</desc>
     <code><![CDATA[
-$( "button" ).click(function() {
+$( "button)" ).on( "click", function() {
   $( "p" ).show( "slow" );
 });
 ]]></code>
@@ -84,13 +84,13 @@ $( "button" ).click(function() {
   <example>
     <desc>Show the first div, followed by each next adjacent sibling div in order, with a 200ms animation. Each animation starts when the previous sibling div's animation ends.</desc>
     <code><![CDATA[
-$( "#showr" ).click(function() {
+$( "#showr)" ).on( "click", function() {
   $( "div" ).first().show( "fast", function showNext() {
     $( this ).next( "div" ).show( "fast", showNext );
   });
 });
 
-$( "#hidr" ).click(function() {
+$( "#hidr)" ).on( "click", function() {
   $( "div" ).hide( 1000 );
 });
 ]]></code>
@@ -120,19 +120,19 @@ function doIt() {
   $( "span,div" ).show( "slow" );
 }
 // Can pass in function name
-$( "button" ).click( doIt );
+$( "button" ).on( "click", doIt );
 
-$( "form" ).submit(function( event ) {
+$( "form" ).on( "submit", function( event ) {
   if ( $( "input" ).val() === "yes" ) {
     $( "p" ).show( 4000, function() {
       $( this ).text( "Ok, DONE! (now showing)" );
-    });
+    } );
   }
   $( "span,div" ).hide( "fast" );
 
   // Prevent form submission
   event.preventDefault();
-});
+} );
 ]]></code>
     <css><![CDATA[
   span {

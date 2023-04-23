@@ -44,7 +44,7 @@
 &lt;/div&gt;
 &lt;img id="book" src="book.png" alt="" width="100" height="123"&gt;
 // With the element initially shown, we can dim it slowly:
-$( "#clickme" ).click(function() {
+$( "#clickme)" ).on( "click", function() {
   $( "#book" ).fadeTo( "slow" , 0.5, function() {
     // Animation complete.
   });
@@ -63,9 +63,9 @@ $( "#clickme" ).click(function() {
   <example>
     <desc>Animates first paragraph to fade to an opacity of 0.33 (33%, about one third visible), completing the animation within 600 milliseconds.</desc>
     <code><![CDATA[
-$( "p" ).first().click(function() {
+$( "p" ).first().on( "click", function() {
   $( this ).fadeTo( "slow", 0.33 );
-});
+} );
 ]]></code>
     <html><![CDATA[
 <p>
@@ -80,7 +80,7 @@ Compare to this one that won't fade.
   <example>
     <desc>Fade div to a random opacity on each click, completing the animation within 200 milliseconds.</desc>
     <code><![CDATA[
-$( "div" ).click(function() {
+$( "div)" ).on( "click", function() {
   $( this ).fadeTo( "fast", Math.random() );
 });
 ]]></code>
@@ -131,23 +131,23 @@ $( "p" ).each(function( n ) {
   $( this ).text( $( "p" ).eq( r ).text() );
   $( "p" ).eq( r ).text( tmp );
   $( this ).css( "left", getPos( n ) );
-});
+} );
 $( "div" )
   .each(function( n ) {
     $( this ).css( "left", getPos( n ) );
-  })
+  } )
   .css( "cursor", "pointer" )
-  .click( function() {
+  .on( "click", function() {
     $( this ).fadeTo( 250, 0.25, function() {
       $( this )
         .css( "cursor", "" )
         .prev()
-          .css({
+          .css( {
             "font-weight": "bolder",
             "font-style": "italic"
-          });
-    });
-  });
+          } );
+    } );
+  } );
 ]]></code>
     <css><![CDATA[
   div, p {

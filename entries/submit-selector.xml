@@ -15,25 +15,25 @@
     <code><![CDATA[
 var submitEl = $( "td :submit" )
   .parent( "td" )
-    .css({
+    .css( {
       background: "yellow",
       border: "3px red solid"
-    })
+    } )
   .end();
 
 $( "#result" ).text( "jQuery matched " + submitEl.length + " elements." );
 
 // Prevent form submission
-$( "form" ).submit(function( event ) {
+$( "form" ).on( "submit", function( event ) {
   event.preventDefault();
-});
+} );
 
 // Extra JS to make the HTML easier to edit (None of this is relevant to the ':submit' selector)
 $( "#exampleTable" ).find( "td" ).each(function( i, el ) {
   var inputEl = $( el ).children(),
     inputType = inputEl.attr( "type" ) ? " type='" + inputEl.attr( "type" ) + "'" : "" ;
   $( el ).before( "<td>" + inputEl[ 0 ].nodeName + inputType + "</td>" );
-})
+} );
 ]]></code>
     <css><![CDATA[
   textarea {

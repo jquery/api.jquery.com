@@ -14,7 +14,7 @@
 $( "p" ).on( "test.something", function( event ) {
   alert( event.namespace );
 });
-$( "button" ).click(function( event ) {
+$( "button" ).on( "click", function( event ) {
   $( "p" ).trigger( "test.something" );
 });
 ]]></code>

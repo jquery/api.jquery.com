@@ -14,7 +14,7 @@
     <desc>Cause all animations to run with less frames.</desc>
     <code><![CDATA[
 jQuery.fx.interval = 100;
-$( "input" ).click(function() {
+$( "input)" ).on( "click", function() {
   $( "div" ).toggle( 3000 );
 });
 ]]></code>

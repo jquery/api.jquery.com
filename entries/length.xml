@@ -12,12 +12,12 @@
     <desc>Count the divs.  Click to add more.</desc>
     <code><![CDATA[
 $( document.body )
-  .click(function() {
+  .on( "click", function() {
     $( document.body ).append( $( "<div>" ) );
     var n = $( "div" ).length;
     $( "span" ).text( "There are " + n + " divs." +
       "Click to add more.");
-  })
+  } )
   // Trigger the click to start
   .trigger( "click" );
 ]]></code>

@@ -14,11 +14,11 @@
   <example>
     <desc>Detach all paragraphs from the DOM</desc>
     <code><![CDATA[
-$( "p" ).click(function() {
+$( "p)" ).on( "click", function() {
   $( this ).toggleClass( "off" );
 });
 var p;
-$( "button" ).click(function() {
+$( "button)" ).on( "click", function() {
   if ( p ) {
     p.appendTo( "body" );
     p = null;

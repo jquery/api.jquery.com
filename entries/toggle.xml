@@ -51,7 +51,7 @@ $( ".target" ).toggle();
     </code></pre>
     <p>We will cause <code>.toggle()</code> to be called when another element is clicked:</p>
     <pre><code>
-$( "#clickme" ).click(function() {
+$( "#clickme)" ).on( "click", function() {
   $( "#book" ).toggle( "slow", function() {
     // Animation complete.
   });
@@ -105,7 +105,7 @@ $( "button" ).on( "click", function() {
   <example>
     <desc>Animates all paragraphs to be shown if they are hidden and hidden if they are visible, completing the animation within 600 milliseconds.</desc>
     <code><![CDATA[
-$( "button" ).click(function() {
+$( "button)" ).on( "click", function() {
   $( "p" ).toggle( "slow" );
 });
 ]]></code>
@@ -126,7 +126,7 @@ $( "button" ).click(function() {
     <desc>Shows all paragraphs, then hides them all, back and forth.</desc>
     <code><![CDATA[
 var flip = 0;
-$( "button" ).click(function() {
+$( "button)" ).on( "click", function() {
   $( "p" ).toggle( flip++ % 2 === 0 );
 });
 ]]></code>

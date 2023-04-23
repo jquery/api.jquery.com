@@ -11,7 +11,7 @@
   <example>
     <desc>Cancel the default action (navigation) of the click.</desc>
     <code><![CDATA[
-$( "a" ).click(function( event ) {
+$( "a" ).on( "click", function( event ) {
   event.preventDefault();
   $( "<div>" )
     .append( "default " + event.type + " prevented" )

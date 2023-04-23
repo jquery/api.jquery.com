@@ -29,7 +29,7 @@ $( "div.demo-container" ).html();
     <example>
       <desc>Click a paragraph to convert it from html to text.</desc>
       <code><![CDATA[
-$( "p" ).click(function() {
+$( "p)" ).on( "click", function() {
   var htmlString = $( this ).html();
   $( this ).text( htmlString );
 });

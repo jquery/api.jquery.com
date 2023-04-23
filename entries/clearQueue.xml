@@ -14,7 +14,7 @@
   <example>
     <desc>Empty the queue.</desc>
     <code><![CDATA[
-$( "#start" ).click(function() {
+$( "#start)" ).on( "click", function() {
   var myDiv = $( "div" );
   myDiv.show( "slow" );
   myDiv.animate({
@@ -38,7 +38,7 @@ $( "#start" ).click(function() {
   myDiv.slideUp();
 });
 
-$( "#stop" ).click(function() {
+$( "#stop)" ).on( "click", function() {
   var myDiv = $( "div" );
   myDiv.clearQueue();
   myDiv.stop();

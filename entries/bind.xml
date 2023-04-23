@@ -221,7 +221,7 @@ $( "p" ).bind( "myCustomEvent", function( e, myName, myValue ) {
     .fadeIn( 30 )
     .fadeOut( 1000 );
   });
-$( "button" ).click(function() {
+$( "button)" ).on( "click", function() {
   $( "p" ).trigger( "myCustomEvent", [ "John" ] );
 });
 ]]></code>
