@@ -1,9 +1,12 @@
 <?xml version="1.0"?>
-<entry type="method" name="ajaxSuccess" return="jQuery">
-  <title>.ajaxSuccess()</title>
+<entry type="method" name="on" return="jQuery">
+  <title>ajaxSuccess event</title>
   <desc>Attach a function to be executed whenever an Ajax request completes successfully. This is an <a href="/Ajax_Events/">Ajax Event</a>.</desc>
   <signature>
-    <added>1.0</added>
+    <added>1.7</added>
+    <argument name="&quot;ajaxSuccess&quot;" type="string">
+      <desc>The string <code>"ajaxSuccess"</code>.</desc>
+    </argument>
     <argument name="handler" type="Function">
       <desc>The function to be invoked.</desc>
       <argument name="event" type="Event" />
@@ -13,7 +16,7 @@
     </argument>
   </signature>
   <longdesc>
-    <p>Whenever an Ajax request completes successfully, jQuery triggers the <code>ajaxSuccess</code> event. Any and all handlers that have been registered with the <code>.ajaxSuccess()</code> method are executed at this time.</p>
+    <p>Whenever an Ajax request completes successfully, jQuery triggers the <code>ajaxSuccess</code> event. Any and all registered <code>ajaxSuccess</code> handlers are executed at this time.</p>
     <p>To observe this method in action, set up a basic Ajax load request:</p>
     <pre><code>
 &lt;div class="trigger"&gt;Trigger&lt;/div&gt;
@@ -22,25 +25,25 @@
     </code></pre>
     <p>Attach the event handler to any element:</p>
     <pre><code>
-$(document).ajaxSuccess(function() {
+$( document ).on( "ajaxSuccess", function() {
   $( ".log" ).text( "Triggered ajaxSuccess handler." );
-});
+} );
     </code></pre>
     <p>Now, make an Ajax request using any jQuery method:</p>
     <pre><code>
 $( ".trigger" ).on( "click", function() {
   $( ".result" ).load( "ajax/test.html" );
-});
+} );
     </code></pre>
     <p>When the user clicks the element with class <code>trigger</code> and the Ajax request completes successfully, the log message is displayed.</p>
     <p>All <code>ajaxSuccess</code> handlers are invoked, regardless of what Ajax request was completed. If you must differentiate between the requests, you can use the parameters passed to the handler. Each time an <code>ajaxSuccess</code> handler is executed, it is passed the event object, the <code>XMLHttpRequest</code> object, and the settings object that was used in the creation of the request. For example, you can restrict the callback to only handling events dealing with a particular URL:</p>
     <pre><code>
-$( document ).ajaxSuccess(function( event, xhr, settings ) {
+$( document ).on( "ajaxSuccess", function( event, xhr, settings ) {
   if ( settings.url == "ajax/test.html" ) {
     $( ".log" ).text( "Triggered ajaxSuccess handler. The Ajax response was: " +
       xhr.responseText );
   }
-});
+} );
     </code></pre>
     <p><strong>Note:</strong> You can get the returned Ajax contents by looking at <code>xhr.responseXML</code> or <code>xhr.responseText</code> for xml and html respectively.</p>
   </longdesc>
@@ -49,11 +52,12 @@ $( document ).ajaxSuccess(function( event, xhr, settings ) {
   <example>
     <desc>Show a message when an Ajax request completes successfully.</desc>
     <code><![CDATA[
-$( document ).ajaxSuccess(function( event, request, settings ) {
+$( document ).on( "ajaxSuccess< function( event, request, settings ) {
   $( "#msg" ).append( "<li>Successful Request!</li>" );
-});
+} );
 ]]></code>
   </example>
   <category slug="ajax/global-ajax-event-handlers"/>
   <category slug="version/1.0"/>
+  <category slug="version/1.7"/>
 </entry>
