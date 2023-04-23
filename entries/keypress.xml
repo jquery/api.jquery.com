@@ -1,16 +1,15 @@
 <?xml version="1.0"?>
-<entry type="method" name="keypress" return="jQuery">
-  <title>.keypress()</title>
-  <desc>Bind an event handler to the "keypress" event, or trigger that event on an element.</desc>
+<entries>
+<desc>Bind an event handler to the "keypress" event, or trigger that event on an element.</desc>
+
+<entry type="method" name="on" return="jQuery">
+  <title>keypress event</title>
+  <desc>Bind an event handler to the "keypress" event.</desc>
   <signature>
-    <added>1.0</added>
-    <argument name="handler" type="Function">
-      <desc>A function to execute each time the event is triggered.</desc>
-      <argument name="eventObject" type="Event" />
+    <added>1.7</added>
+    <argument name="&quot;keyup&quot;" type="string">
+      <desc>The string <code>"keyup"</code>.</desc>
     </argument>
-  </signature>
-  <signature>
-    <added>1.4.3</added>
     <argument name="eventData" type="Anything" optional="true">
       <desc>An object containing data that will be passed to the event handler.</desc>
     </argument>
@@ -18,9 +17,6 @@
       <desc>A function to execute each time the event is triggered.</desc>
       <argument name="eventObject" type="Event" />
     </argument>
-  </signature>
-  <signature>
-    <added>1.0</added>
   </signature>
   <longdesc>
     <p><strong>Note:</strong> as the <code>keypress</code> event isn't covered by any official specification, the actual behavior encountered when using it may differ across browsers, browser versions, and platforms.</p>
@@ -40,19 +36,19 @@
     </code></pre>
     <p>The event handler can be bound to the input field:</p>
     <pre><code>
-$( "#target" ).keypress(function() {
-  console.log( "Handler for .keypress() called." );
-});
+$( "#target" ).on( "keypress", function() {
+  console.log( "Handler for `keypress` called." );
+} );
     </code></pre>
     <p>Now when the insertion point is inside the field, pressing a key displays the log:</p>
     <p>
-      <samp>Handler for .keypress() called.</samp>
+      <samp>Handler for `keypress` called.</samp>
     </p>
-    <p>To trigger the event manually, apply <code>.keypress()</code> without an argument:</p>
+    <p>To trigger the event manually, use <code>.trigger( "keypress" )</code>:</p>
     <pre><code>
-$( "#other" ).click(function() {
-  $( "#target" ).keypress();
-});
+$( "#other" ).on( "click", function() {
+  $( "#target" ).trigger( "keypress" );
+} );
     </code></pre>
     <p>After this code executes, clicks on the <samp>Trigger the handler</samp> div will also log the message.</p>
     <p>If key presses anywhere need to be caught (for example, to implement global shortcut keys on a page), it is useful to attach this behavior to the <code>document</code> object. Because of event bubbling, all key presses will make their way up the DOM to the <code>document</code> object unless explicitly stopped.</p>
@@ -63,19 +59,19 @@ $( "#other" ).click(function() {
     <desc>Show the event object when a key is pressed in the input. Note: This demo relies on a simple $.print() plugin (https://api.jquery.com/resources/events.js) for the event object's output.</desc>
     <code><![CDATA[
 var xTriggered = 0;
-$( "#target" ).keypress(function( event ) {
+$( "#target" ).on( "keypress", function( event ) {
   if ( event.which == 13 ) {
      event.preventDefault();
   }
   xTriggered++;
-  var msg = "Handler for .keypress() called " + xTriggered + " time(s).";
+  var msg = "Handler for `keypress` called " + xTriggered + " time(s).";
   $.print( msg, "html" );
   $.print( event );
-});
+} );
 
-$( "#other" ).click(function() {
-  $( "#target" ).keypress();
-});
+$( "#other" ).on( "click", function() {
+  $( "#target" ).trigger( "keypress" );
+} );
 ]]></code>
     <css><![CDATA[
   fieldset {
@@ -111,5 +107,23 @@ $( "#other" ).click(function() {
   </example>
   <category slug="events/keyboard-events"/>
   <category slug="version/1.0"/>
-  <category slug="version/1.4.3"/>
+  <category slug="version/1.7"/>
 </entry>
+
+<entry type="method" name="trigger" return="jQuery">
+  <title>keyup event</title>
+  <desc>Trigger the "keyup" event on an element.</desc>
+  <signature>
+    <added>1.0</added>
+    <argument name="&quot;keyup&quot;" type="string">
+      <desc>The string <code>"keyup"</code>.</desc>
+    </argument>
+  </signature>
+  <longdesc>
+    <p>See the description for <a href="#on1"><code>.on( "keyup", ... )</code></a>.</p>
+  </longdesc>
+  <category slug="events/keyboard-events"/>
+  <category slug="version/1.0"/>
+</entry>
+
+</entries>
