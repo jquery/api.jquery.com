@@ -10,7 +10,7 @@
   </signature>
   <longdesc>
     <div class="warning">
-      <p>This API is deprecated. Use <a href="#on1"><code>.on( "ajaxStart", handler )</code></a> instead.</p>
+      <p>This API is deprecated. Use <a href="/ajaxStart/"><code>.on( "ajaxStart", handler )</code></a> instead.</p>
     </div>
   </longdesc>
   <category slug="ajax/global-ajax-event-handlers"/>
