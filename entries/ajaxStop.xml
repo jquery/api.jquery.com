@@ -12,6 +12,9 @@
     </argument>
   </signature>
   <longdesc>
+    <div class="warning">
+      <p>This page describes the <code>ajaxStop</code> event. For the deprecated <code>.ajaxStop()</code> method, see <a href="/ajaxStop-shorthand/"><code>.ajaxStop()</code></a>.</p>
+    </div>
     <p>Whenever an Ajax request completes, jQuery checks whether there are any other outstanding Ajax requests. If none remain, jQuery triggers the <code>ajaxStop</code> event. Any and all registered <code>ajaxStop</code> handlers are executed at this time. The <code>ajaxStop</code> event is also triggered if the last outstanding Ajax request is cancelled by returning false within the <code>beforeSend</code> callback function. </p>
     <p>To observe this method in action, set up a basic Ajax load request:</p>
     <pre><code>

@@ -16,6 +16,9 @@
     </argument>
   </signature>
   <longdesc>
+    <div class="warning">
+      <p>This page describes the <code>ajaxSuccess</code> event. For the deprecated <code>.ajaxSuccess()</code> method, see <a href="/ajaxSuccess-shorthand/"><code>.ajaxSuccess()</code></a>.</p>
+    </div>
     <p>Whenever an Ajax request completes successfully, jQuery triggers the <code>ajaxSuccess</code> event. Any and all registered <code>ajaxSuccess</code> handlers are executed at this time.</p>
     <p>To observe this method in action, set up a basic Ajax load request:</p>
     <pre><code>

@@ -15,6 +15,9 @@
     </argument>
   </signature>
   <longdesc>
+    <div class="warning">
+      <p>This page describes the <code>ajaxSend</code> event. For the deprecated <code>.ajaxSend()</code> method, see <a href="/ajaxSend-shorthand/"><code>.ajaxSend()</code></a>.</p>
+    </div>
     <p>Whenever an Ajax request is about to be sent, jQuery triggers the <code>ajaxSend</code> event. Any and all registerd <code>ajaxSend</code> handlers are executed at this time.</p>
     <p>To observe this method in action, set up a basic Ajax load request:</p>
     <pre><code>

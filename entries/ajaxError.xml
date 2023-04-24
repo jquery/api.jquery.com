@@ -16,6 +16,9 @@
     </argument>
   </signature>
   <longdesc>
+    <div class="warning">
+      <p>This page describes the <code>ajaxError</code> event. For the deprecated <code>.ajaxError()</code> method, see <a href="/ajaxError-shorthand/"><code>.ajaxError()</code></a>.</p>
+    </div>
     <p>Whenever an Ajax request completes with an error, jQuery triggers the <code>ajaxError</code> event. Any and all registered <code>ajaxError</code> handlers are executed at this time. <strong>Note:</strong> <em>This handler is not called for cross-domain script and cross-domain JSONP requests.</em></p>
     <p>To observe this method in action, set up a basic Ajax load request.</p>
     <pre><code>
