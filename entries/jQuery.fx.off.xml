@@ -20,10 +20,10 @@ var toggleFx = function() {
   $.fx.off = !$.fx.off;
 };
 toggleFx();
-$( "button" ).click( toggleFx );
-$( "input" ).click(function() {
+$( "button" ).on( "click", toggleFx );
+$( "input)" ).on( "click", function() {
   $( "div" ).toggle( "slow" );
-});
+} );
 ]]></code>
     <css><![CDATA[
   div {

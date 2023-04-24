@@ -37,15 +37,15 @@
   <example>
     <desc>If you called .triggerHandler() on a focus event - the browser's default focus action would not be triggered, only the event handlers bound to the focus event.</desc>
     <code><![CDATA[
-$( "#old" ).click(function() {
+$( "#old)" ).on( "click", function() {
   $( "input" ).trigger( "focus" );
-});
-$( "#new" ).click(function() {
+} );
+$( "#new)" ).on( "click", function() {
   $( "input" ).triggerHandler( "focus" );
-});
-$( "input" ).focus(function() {
+} );
+$( "input" ).on( "focus", function() {
   $( "<span>Focused!</span>" ).appendTo( "body" ).fadeOut( 1000 );
-});
+} );
 ]]></code>
     <html><![CDATA[
 <button id="old">.trigger( "focus" )</button>

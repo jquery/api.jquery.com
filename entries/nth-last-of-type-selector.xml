@@ -52,7 +52,7 @@ $( "ul li:nth-last-of-type(2)" ).append( "<span> - 2nd to last!</span>" );
   <example>
     <desc>This is a playground to see how the selector works with different strings. </desc>
     <code><![CDATA[
-$( "button" ).click(function() {
+$( "button)" ).on( "click", function() {
   var str = $( this ).text();
   $( "tr" ).css( "background", "white" );
   $( "tr" + str ).css( "background", "#ff0000" );

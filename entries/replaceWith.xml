@@ -69,7 +69,7 @@ $( "div.third" ).replaceWith( $( ".first" ) );
   <example>
     <desc>On click, replace the button with a div containing the same word.</desc>
     <code><![CDATA[
-$( "button" ).click(function() {
+$( "button)" ).on( "click", function() {
   $( this ).replaceWith( "<div>" + $( this ).text() + "</div>" );
 });
 ]]></code>
@@ -108,7 +108,7 @@ $( "p" ).replaceWith( "<b>Paragraph. </b>" );
   <example>
     <desc>On click, replace each paragraph with a div that is already in the DOM and selected with the <code>$()</code> function. Notice it doesn't clone the object but rather moves it to replace the paragraph.</desc>
     <code><![CDATA[
-$( "p" ).click(function() {
+$( "p)" ).on( "click", function() {
   $( this ).replaceWith( $( "div" ) );
 });
 ]]></code>

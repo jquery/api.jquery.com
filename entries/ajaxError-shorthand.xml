@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<entry type="method" name="ajaxError" return="jQuery" deprecated="3.3">
+  <title>.ajaxError()</title>
+  <desc>Register a handler to be called when Ajax requests complete with an error. This is an <a href="/Ajax_Events/">Ajax Event</a>.</desc>
+  <signature>
+    <added>1.0</added>
+    <argument name="handler" type="Function">
+      <desc>The function to be invoked.</desc>
+    </argument>
+  </signature>
+  <longdesc>
+    <div class="warning">
+      <p>This API is deprecated. Use <a href="/ajaxError/"><code>.on( "ajaxError", handler )</code></a> instead.</p>
+    </div>
+  </longdesc>
+  <category slug="ajax/global-ajax-event-handlers"/>
+  <category slug="version/1.0"/>
+  <category slug="deprecated/deprecated-3.3"/>
+</entry>

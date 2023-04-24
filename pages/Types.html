@@ -459,7 +459,7 @@ var handler = function() {}
 <p>You see a lot of anonymous functions in jQuery code:
 </p>
 <pre><code data-lang="javascript">$( document ).ready(function() {});
-$( "a" ).click(function() {});
+$( "a)" ).on( "click", function() {});
 $.ajax({
   url: "someurl.php",
   success: function() {}
@@ -490,7 +490,7 @@ awesome() === awesome // true
 <pre><code data-lang="javascript">$( document ).ready(function() {
   // this refers to window.document
 });
-$( "a" ).click(function() {
+$( "a)" ).on( "click", function() {
   // this refers to an anchor DOM element
 });
 </code></pre>
@@ -554,7 +554,7 @@ c.print(); // 1
 <h2 id="Callback"> Callback </h2>
 <p>A callback is a plain JavaScript function passed to some method as an argument or option. Some callbacks are just events, called to give the user a chance to react when a certain state is triggered. jQuery's event system uses such callbacks everywhere:
 </p>
-<pre><code data-lang="javascript">$( "body" ).click(function( event ) {
+<pre><code data-lang="javascript">$( "body" ).on( "click", function( event ) {
   console.log( "clicked: " + event.target );
 });
 </code></pre>
@@ -562,9 +562,9 @@ c.print(); // 1
 </p>
 <p>Some callbacks are required to return something, others make that return value optional. To prevent a form submission, a submit event handler can return false:
 </p>
-<pre><code data-lang="javascript">$( "#myform" ).submit(function() {
+<pre><code data-lang="javascript">$( "#myform" ).on( "submit", function() {
   return false;
-});
+} );
 </code></pre>
 <p>Instead of always returning false, the callback could check fields of the form for validity, and return false only when the form is invalid.
 </p>

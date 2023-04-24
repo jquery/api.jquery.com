@@ -1,16 +1,15 @@
 <?xml version="1.0"?>
-<entry type="method" name="mouseout" return="jQuery">
-  <title>.mouseout()</title>
-  <desc>Bind an event handler to the "mouseout" JavaScript event, or trigger that event on an element.</desc>
+<entries>
+<desc>Bind an event handler to the "mouseout" event, or trigger that event on an element.</desc>
+
+<entry type="method" name="on" return="jQuery">
+  <title>mouseout event</title>
+  <desc>Bind an event handler to the "mouseout" event.</desc>
   <signature>
-    <added>1.0</added>
-    <argument name="handler" type="Function">
-      <desc>A function to execute each time the event is triggered.</desc>
-      <argument name="eventObject" type="Event" />
+    <added>1.7</added>
+    <argument name="&quot;mouseout&quot;" type="string">
+      <desc>The string <code>"mouseout"</code>.</desc>
     </argument>
-  </signature>
-  <signature>
-    <added>1.4.3</added>
     <argument name="eventData" type="Anything" optional="true">
       <desc>An object containing data that will be passed to the event handler.</desc>
     </argument>
@@ -19,11 +18,10 @@
       <argument name="eventObject" type="Event" />
     </argument>
   </signature>
-  <signature>
-    <added>1.0</added>
-  </signature>
   <longdesc>
-    <p>This method is a shortcut for <code>.on( "mouseout", handler )</code> in the first two variation, and <code>.trigger( "mouseout" )</code> in the third.</p>
+    <div class="warning">
+      <p>This page describes the <code>mouseout</code> event. For the deprecated <code>.mouseout()</code> method, see <a href="/mouseout-shorthand/"><code>.mouseout()</code></a>.</p>
+    </div>
     <p>The <code>mouseout</code> event is sent to an element when the mouse pointer leaves the element. Any HTML element can receive this event.</p>
     <p>For example, consider the HTML:</p>
     <pre><code>
@@ -44,20 +42,19 @@
     </figure>
     <p>The event handler can be bound to any element:</p>
     <pre><code>
-$( "#outer" ).mouseout(function() {
-  $( "#log" ).append( "Handler for .mouseout() called." );
-});
+$( "#outer" ).on( "mouseout", function() {
+  $( "#log" ).append( "Handler for `mouseout` called." );
+} );
     </code></pre>
-    <p>Now when the mouse pointer moves out of the <samp>Outer</samp> <code>&lt;div&gt;</code>, the message is appended to <code>&lt;div id="log"&gt;</code>. To trigger the event manually, apply <code>.mouseout()</code> without an argument::</p>
+    <p>Now when the mouse pointer moves out of the <samp>Outer</samp> <code>&lt;div&gt;</code>, the message is appended to <code>&lt;div id="log"&gt;</code>. To trigger the event manually, use <code>.trigger( "mouseout" )</code>:</p>
     <pre><code>
-$( "#other" ).click(function() {
-  $( "#outer" ).mouseout();
-});
+$( "#other" ).on( "click", function() {
+  $( "#outer" ).trigger( "mouseout" );
+} );
     </code></pre>
     <p>After this code executes, clicks on <samp>Trigger the handler</samp> will also append the message.</p>
     <p>This event type can cause many headaches due to event bubbling. For instance, when the mouse pointer moves out of the <samp>Inner</samp> element in this example, a <code>mouseout</code> event will be sent to that, then trickle up to <samp>Outer</samp>. This can trigger the bound <code>mouseout</code> handler at inopportune times. See the discussion for <code>.<a href="/mouseleave/">mouseleave</a>()</code> for a useful alternative.</p>
   </longdesc>
-  <note id="detach-shorthand" type="additional" data-event="mouseout"/>
   <example>
     <desc>Show the number of times mouseout and mouseleave events are triggered.
   <code>mouseout</code> fires when the pointer moves out of the child element as well, while <code>mouseleave</code> fires only when the pointer moves out of the bound element.</desc>
@@ -84,23 +81,23 @@ $( "#other" ).click(function() {
     <code><![CDATA[
 var i = 0;
 $( "div.overout" )
-  .mouseout(function() {
+  .on( "mouseout", function() {
     $( "p", this ).first().text( "mouse out" );
     $( "p", this ).last().text( ++i );
-  })
-  .mouseover(function() {
+  } )
+  .on( "mouseover", function() {
     $( "p", this ).first().text( "mouse over" );
-  });
+  } );
 
 var n = 0;
 $( "div.enterleave" )
   .on( "mouseenter", function() {
     $( "p", this ).first().text( "mouse enter" );
-  })
+  } )
   .on( "mouseleave", function() {
     $( "p", this ).first().text( "mouse leave" );
     $( "p", this ).last().text( ++n );
-  });
+  } );
 ]]></code>
     <html><![CDATA[
 <div class="out overout">
@@ -118,5 +115,23 @@ $( "div.enterleave" )
   </example>
   <category slug="events/mouse-events"/>
   <category slug="version/1.0"/>
-  <category slug="version/1.4.3"/>
+  <category slug="version/1.7"/>
 </entry>
+
+<entry type="method" name="trigger" return="jQuery">
+  <title>mouseout event</title>
+  <desc>Trigger the "mouseout" event on an element.</desc>
+  <signature>
+    <added>1.0</added>
+    <argument name="&quot;mouseout&quot;" type="string">
+      <desc>The string <code>"mouseout"</code>.</desc>
+    </argument>
+  </signature>
+  <longdesc>
+    <p>See the description for <a href="#on1"><code>.on( "mouseout", ... )</code></a>.</p>
+  </longdesc>
+  <category slug="events/mouse-events"/>
+  <category slug="version/1.0"/>
+</entry>
+
+</entries>

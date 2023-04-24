@@ -47,7 +47,7 @@ typeof jQuery( "body" ).myCustomMethod // undefined
   };
 
   myjQuery(function( $ ) {
-    $( ".menu" ).click(function() {
+    $( ".menu)" ).on( "click", function() {
       $( this ).find( ".submenu" ).remove();
     });
 

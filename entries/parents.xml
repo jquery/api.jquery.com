@@ -82,7 +82,7 @@ function showParents() {
       .length;
   $( "b" ).text( "Unique div parents: " + len );
 }
-$( "span" ).click(function() {
+$( "span)" ).on( "click", function() {
   $( this ).toggleClass( "selected" );
   showParents();
 });

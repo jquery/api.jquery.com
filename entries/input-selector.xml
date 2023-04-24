@@ -18,9 +18,9 @@ var formChildren = $( "form > *" );
 $( "#messages" ).text( "Found " + allInputs.length + " inputs and the form has " +
   formChildren.length + " children." );
 
-$( "form" ).submit(function( event ) {
+$( "form" ).on( "submit", function( event ) {
   event.preventDefault();
-});
+} );
 ]]></code>
     <css><![CDATA[
   textarea {

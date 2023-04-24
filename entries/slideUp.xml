@@ -30,7 +30,7 @@
     </code></pre>
     <p>With the element initially shown, we can hide it slowly:</p>
     <pre><code>
-$( "#clickme" ).click(function() {
+$( "#clickme)" ).on( "click", function() {
   $( "#book" ).slideUp( "slow", function() {
     // Animation complete.
   });
@@ -54,13 +54,13 @@ $( "#clickme" ).click(function() {
   <example>
     <desc>Animates all divs to slide up, completing the animation within 400 milliseconds.</desc>
     <code><![CDATA[
-$( document.body ).click(function() {
+$( document.body ).on( "click", function() {
   if ( $( "div" ).first().is( ":hidden" ) ) {
     $( "div" ).show( "slow" );
   } else {
     $( "div" ).slideUp();
   }
-});
+} );
 ]]></code>
     <css><![CDATA[
   div {
@@ -83,7 +83,7 @@ Click me!
   <example>
     <desc>Animates the parent paragraph to slide up, completing the animation within 200 milliseconds. Once the animation is done, it displays an alert.</desc>
     <code><![CDATA[
-$( "button" ).click(function() {
+$( "button)" ).on( "click", function() {
   $( this ).parent().slideUp( "slow", function() {
     $( "#msg" ).text( $( "button", this ).text() + " has completed." );
   });

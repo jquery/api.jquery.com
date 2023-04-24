@@ -34,13 +34,13 @@ $( document ).height();
 function showHeight( element, height ) {
   $( "div" ).text( "The height for the " + element + " is " + height + "px." );
 }
-$( "#getp" ).click(function() {
+$( "#getp)" ).on( "click", function() {
   showHeight( "paragraph", $( "p" ).height() );
 });
-$( "#getd" ).click(function() {
+$( "#getd)" ).on( "click", function() {
   showHeight( "document", $( document ).height() );
 });
-$( "#getw" ).click(function() {
+$( "#getw)" ).on( "click", function() {
   showHeight( "window", $( window ).height() );
 });
 ]]></code>

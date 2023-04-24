@@ -99,7 +99,7 @@ $( "div.foo" ).toggleClass(function() {
     <example>
       <desc>Toggle the class 'highlight' when a paragraph is clicked.</desc>
       <code><![CDATA[
-$( "p" ).click(function() {
+$( "p)" ).on( "click", function() {
   $( this ).toggleClass( "highlight" );
 });
 ]]></code>
@@ -128,15 +128,15 @@ $( "p" ).click(function() {
       <desc>Add the "highlight" class to the clicked paragraph on every third click of that paragraph, remove it every first and second click.</desc>
       <code><![CDATA[
 var count = 0;
-$( "p" ).each(function() {
+$( "p" ).each( function() {
   var $thisParagraph = $( this );
   var count = 0;
-  $thisParagraph.click(function() {
+  $thisParagraph.on( "click", function() {
     count++;
     $thisParagraph.find( "span" ).text( "clicks: " + count );
     $thisParagraph.toggleClass( "highlight", count % 3 === 0 );
-  });
-});
+  } );
+} );
 ]]></code>
       <css><![CDATA[
   p {

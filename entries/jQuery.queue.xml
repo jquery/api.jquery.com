@@ -19,7 +19,7 @@
     <example>
       <desc>Show the length of the queue.</desc>
       <code><![CDATA[
-$( "#show" ).click(function() {
+$( "#show)" ).on( "click", function() {
   var n = jQuery.queue( $( "div" )[ 0 ], "fx" );
   $( "span" ).text( "Queue length is: " + n.length );
 });
@@ -105,21 +105,21 @@ runIt();
     <example>
       <desc>Queue a custom function.</desc>
       <code><![CDATA[
-$( document.body ).click(function() {
+$( document.body ).on( "click", function() {
   var divs = $( "div" )
     .show( "slow" )
     .animate({ left: "+=200" }, 2000 );
   jQuery.queue( divs[ 0 ], "fx", function() {
     $( this ).addClass( "newcolor" );
     jQuery.dequeue( this );
-  });
+  } );
   divs.animate({ left: "-=200" }, 500 );
   jQuery.queue( divs[ 0 ], "fx", function() {
     $( this ).removeClass( "newcolor" );
     jQuery.dequeue( this );
-  });
+  } );
   divs.slideUp();
-});
+} );
 ]]></code>
       <css><![CDATA[
   div {
@@ -144,7 +144,7 @@ Click here...
     <example>
       <desc>Set a queue array to delete the queue.</desc>
       <code><![CDATA[
-$( "#start" ).click(function() {
+$( "#start)" ).on( "click", function() {
   var divs = $( "div" )
     .show( "slow" )
     .animate({ left: "+=200" }, 5000 );
@@ -159,7 +159,7 @@ $( "#start" ).click(function() {
   });
   divs.slideUp();
 });
-$( "#stop" ).click(function() {
+$( "#stop)" ).on( "click", function() {
   jQuery.queue( $( "div" )[ 0 ], "fx", [] );
   $( "div" ).stop();
 });

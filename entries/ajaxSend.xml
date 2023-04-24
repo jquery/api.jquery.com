@@ -1,8 +1,12 @@
 <?xml version="1.0"?>
-<entry type="method" name="ajaxSend" return="jQuery">
-  <title>.ajaxSend()</title>
+<entry type="method" name="on" return="jQuery">
+  <title>ajaxSend event</title>
+  <desc>Attach a function to be executed before an Ajax request is sent. This is an <a href="/Ajax_Events/">Ajax Event</a>.</desc>
   <signature>
-    <added>1.0</added>
+    <added>1.7</added>
+    <argument name="&quot;ajaxSend&quot;" type="string">
+      <desc>The string <code>"ajaxSend"</code>.</desc>
+    </argument>
     <argument name="handler" type="Function">
       <desc>The function to be invoked.</desc>
       <argument name="event" type="Event" />
@@ -10,9 +14,11 @@
       <argument name="ajaxOptions" type="PlainObject" />
     </argument>
   </signature>
-  <desc>Attach a function to be executed before an Ajax request is sent. This is an <a href="/Ajax_Events/">Ajax Event</a>.</desc>
   <longdesc>
-    <p>Whenever an Ajax request is about to be sent, jQuery triggers the <code>ajaxSend</code> event. Any and all handlers that have been registered with the <code>.ajaxSend()</code> method are executed at this time.</p>
+    <div class="warning">
+      <p>This page describes the <code>ajaxSend</code> event. For the deprecated <code>.ajaxSend()</code> method, see <a href="/ajaxSend-shorthand/"><code>.ajaxSend()</code></a>.</p>
+    </div>
+    <p>Whenever an Ajax request is about to be sent, jQuery triggers the <code>ajaxSend</code> event. Any and all registerd <code>ajaxSend</code> handlers are executed at this time.</p>
     <p>To observe this method in action, set up a basic Ajax load request:</p>
     <pre><code>
 &lt;div class="trigger"&gt;Trigger&lt;/div&gt;
@@ -21,36 +27,37 @@
     </code></pre>
     <p>Attach the event handler to the document:</p>
     <pre><code>
-$( document ).ajaxSend(function() {
+$( document ).on( "ajaxSend", function() {
   $( ".log" ).text( "Triggered ajaxSend handler." );
-});
+} );
     </code></pre>
     <p>Now, make an Ajax request using any jQuery method:</p>
     <pre><code>
-$( ".trigger" ).click(function() {
+$( ".trigger)" ).on( "click", function() {
   $( ".result" ).load( "ajax/test.html" );
-});
+} );
     </code></pre>
     <p>When the user clicks the element with class <code>trigger</code> and the Ajax request is about to begin, the log message is displayed.</p>
     <p>All <code>ajaxSend</code> handlers are invoked, regardless of what Ajax request is to be sent. If you must differentiate between the requests, use the parameters passed to the handler. Each time an <code>ajaxSend</code> handler is executed, it is passed the event object, the <code>jqXHR</code> object (in version 1.4, <code>XMLHttpRequest</code>object), and the <a href="/jQuery.ajax/">settings object</a> that was used in the creation of the Ajax request. For example, you can restrict the callback to only handling events dealing with a particular URL:</p>
     <pre><code>
-$( document ).ajaxSend(function( event, jqxhr, settings ) {
+$( document ).on( "ajaxSend", function( event, jqxhr, settings ) {
   if ( settings.url == "ajax/test.html" ) {
     $( ".log" ).text( "Triggered ajaxSend handler." );
   }
-});
+} );
     </code></pre>
   </longdesc>
-  <note id="global-ajax-event" type="additional" data-title=".ajaxSend()"/>
-  <note id="ajax-global-false" type="additional" data-title=".ajaxSend()"/>
+  <note id="global-ajax-event" type="additional" data-title="ajaxSend"/>
+  <note id="ajax-global-false" type="additional" data-title="ajaxSend"/>
   <example>
     <desc>Show a message before an Ajax request is sent.</desc>
     <code><![CDATA[
-$( document ).ajaxSend(function( event, request, settings ) {
+$( document ).on( "ajaxSend", function( event, request, settings ) {
   $( "#msg" ).append( "<li>Starting request at " + settings.url + "</li>" );
-});
+} );
 ]]></code>
   </example>
   <category slug="ajax/global-ajax-event-handlers"/>
   <category slug="version/1.0"/>
+  <category slug="version/1.7"/>
 </entry>

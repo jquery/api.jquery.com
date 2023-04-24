@@ -92,7 +92,7 @@ alert( jQuery.data( document.body ) );
     <example>
       <desc>Get the data named "blah" stored at for an element.</desc>
       <code><![CDATA[
-$( "button" ).click( function() {
+$( "button" ).on( "click", function() {
   var value,
     div = $( "div" )[ 0 ];
   switch ( $( "button" ).index( this ) ) {
@@ -113,7 +113,7 @@ $( "button" ).click( function() {
     break;
   }
   $( "span" ).text( "" + value );
-});
+} );
 ]]></code>
       <css><![CDATA[
   div {

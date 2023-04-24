@@ -1,15 +1,21 @@
 <?xml version="1.0"?>
-<entry type="method" name="ajaxStart" return="jQuery">
-  <title>.ajaxStart()</title>
+<entry type="method" name="on" return="jQuery">
+  <title>ajaxStart event</title>
+  <desc>Register a handler to be called when the first Ajax request begins. This is an <a href="/Ajax_Events/">Ajax Event</a>.</desc>
   <signature>
-    <added>1.0</added>
+    <added>1.7</added>
+    <argument name="&quot;ajaxStart&quot;" type="string">
+      <desc>The string <code>"ajaxStart"</code>.</desc>
+    </argument>
     <argument name="handler" type="Function">
       <desc>The function to be invoked.</desc>
     </argument>
   </signature>
-  <desc>Register a handler to be called when the first Ajax request begins. This is an <a href="/Ajax_Events/">Ajax Event</a>.</desc>
   <longdesc>
-    <p>Whenever an Ajax request is about to be sent, jQuery checks whether there are any other outstanding Ajax requests. If none are in progress, jQuery triggers the <code>ajaxStart</code> event. Any and all handlers that have been registered with the <code>.ajaxStart()</code> method are executed at this time.</p>
+    <div class="warning">
+      <p>This page describes the <code>ajaxStart</code> event. For the deprecated <code>.ajaxStart()</code> method, see <a href="/ajaxStart-shorthand/"><code>.ajaxStart()</code></a>.</p>
+    </div>
+    <p>Whenever an Ajax request is about to be sent, jQuery checks whether there are any other outstanding Ajax requests. If none are in progress, jQuery triggers the <code>ajaxStart</code> event. Any and all handlers that have been registered with <code>.on( "ajaxStart", ... )</code> are executed at this time.</p>
     <p>To observe this method in action, set up a basic Ajax load request:</p>
     <pre><code>
 &lt;div class="trigger"&gt;Trigger&lt;/div&gt;
@@ -18,28 +24,29 @@
     </code></pre>
     <p>Attach the event handler to any element:</p>
     <pre><code>
-$( document ).ajaxStart(function() {
+$( document ).on( "ajaxStart", function() {
   $( ".log" ).text( "Triggered ajaxStart handler." );
-});
+} );
     </code></pre>
     <p>Now, make an Ajax request using any jQuery method:</p>
     <pre><code>
-$( ".trigger" ).click(function() {
+$( ".trigger" ).on( "click", function() {
   $( ".result" ).load( "ajax/test.html" );
-});
+} );
     </code></pre>
     <p>When the user clicks the element with class <code>trigger</code> and the Ajax request is sent, the log message is displayed.</p>
   </longdesc>
-  <note id="global-ajax-event" type="additional" data-title=".ajaxStart()"/>
-  <note id="ajax-global-false" type="additional" data-title=".ajaxStart()"/>
+  <note id="global-ajax-event" type="additional" data-title="ajaxStart"/>
+  <note id="ajax-global-false" type="additional" data-title="ajaxStart"/>
   <example>
     <desc>Show a loading message whenever an Ajax request starts (and none is already active).</desc>
     <code><![CDATA[
-$( document ).ajaxStart(function() {
+$( document ).on( "ajaxStart", function() {
   $( "#loading" ).show();
-});
+} );
 ]]></code>
   </example>
   <category slug="ajax/global-ajax-event-handlers"/>
   <category slug="version/1.0"/>
+  <category slug="version/1.7"/>
 </entry>

@@ -1,16 +1,15 @@
 <?xml version="1.0"?>
-<entry type="method" name="click" return="jQuery">
-  <title>.click()</title>
-  <desc>Bind an event handler to the "click" JavaScript event, or trigger that event on an element.</desc>
+<entries>
+
+<desc>Bind an event handler to the "click" event, or trigger that event on an element.</desc>
+<entry type="method" name="on" return="jQuery">
+  <title>click event</title>
+  <desc>Bind an event handler to the "click" event.</desc>
   <signature>
-    <added>1.0</added>
-    <argument name="handler" type="Function">
-      <desc>A function to execute each time the event is triggered.</desc>
-      <argument name="eventObject" type="Event" />
+    <added>1.7</added>
+    <argument name="&quot;click&quot;" type="string">
+      <desc>The string <code>"click"</code>.</desc>
     </argument>
-  </signature>
-  <signature>
-    <added>1.4.3</added>
     <argument name="eventData" type="Anything" optional="true">
       <desc>An object containing data that will be passed to the event handler.</desc>
     </argument>
@@ -19,12 +18,11 @@
       <argument name="eventObject" type="Event" />
     </argument>
   </signature>
-  <signature>
-    <added>1.0</added>
-  </signature>
   <longdesc>
-    <p>This method is a shortcut for <code>.on( "click", handler )</code> in the first two variations, and <code>.trigger( "click" )</code> in the third.
-    The <code>click</code> event is sent to an element when the mouse pointer is over the element, and the mouse button is pressed and released. Any HTML element can receive this event.
+    <div class="warning">
+      <p>This page describes the <code>click</code> event. For the deprecated <code>.click()</code> method, see <a href="/click-shorthand/"><code>.click()</code></a>.</p>
+    </div>
+    <p>The <code>click</code> event is sent to an element when the mouse pointer is over the element, and the mouse button is pressed and released. Any HTML element can receive this event.
     For example, consider the HTML:</p>
     <pre><code>
 &lt;div id="target"&gt;
@@ -40,19 +38,19 @@
     </figure>
     <p>The event handler can be bound to any <code>&lt;div&gt;</code>:</p>
     <pre><code>
-$( "#target" ).click(function() {
-  alert( "Handler for .click() called." );
-});
+$( "#target" ).on( "click", function() {
+  alert( "Handler for `click` called." );
+} );
     </code></pre>
     <p>Now if we click on this element, the alert is displayed:</p>
     <p>
-      <samp>Handler for .click() called.</samp>
+      <samp>Handler for `click` called.</samp>
     </p>
     <p>We can also trigger the event when a different element is clicked:</p>
     <pre><code>
-$( "#other" ).click(function() {
-  $( "#target" ).click();
-});
+$( "#other" ).on( "click", function() {
+  $( "#target" ).trigger( "click" );
+} );
     </code></pre>
     <p>After this code executes, clicking on <samp>Trigger the handler</samp> will also alert the message.</p>
     <p>The <code>click</code> event is only triggered after this exact series of events:</p>
@@ -62,13 +60,12 @@ $( "#other" ).click(function() {
     </ul>
     <p>This is usually the desired sequence before taking an action. If this is not required, the <code>mousedown</code> or <code>mouseup</code> event may be more suitable.</p>
   </longdesc>
-  <note id="detach-shorthand" type="additional" data-event="click"/>
   <example>
     <desc>Hide paragraphs on a page when they are clicked:</desc>
     <code><![CDATA[
-$( "p" ).click(function() {
+$( "p" ).on( "click", function() {
   $( this ).slideUp();
-});
+} );
 ]]></code>
     <css><![CDATA[
   p {
@@ -87,12 +84,30 @@ $( "p" ).click(function() {
 ]]></html>
   </example>
   <example>
-    <desc>Trigger the click event on all of the paragraphs on the page:</desc>
+    <desc>Trigger the click event on all the paragraphs on the page:</desc>
     <code><![CDATA[
-$( "p" ).click();
+$( "p" ).trigger( "click" );
 ]]></code>
   </example>
   <category slug="events/mouse-events"/>
   <category slug="version/1.0"/>
-  <category slug="version/1.4.3"/>
+  <category slug="version/1.7"/>
 </entry>
+
+<entry type="method" name="trigger" return="jQuery">
+  <title>click event</title>
+  <desc>Trigger the "click" event on an element.</desc>
+  <signature>
+    <added>1.0</added>
+    <argument name="&quot;click&quot;" type="string">
+      <desc>The string <code>"click"</code>.</desc>
+    </argument>
+  </signature>
+  <longdesc>
+    <p>See the description for <a href="#on1"><code>.on( "click", ... )</code></a>.</p>
+  </longdesc>
+  <category slug="events/mouse-events"/>
+  <category slug="version/1.0"/>
+</entry>
+
+</entries>

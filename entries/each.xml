@@ -46,15 +46,15 @@ $( "li" ).addClass( "bar" );
   <example>
     <desc>Iterate over three divs and sets their color property.</desc>
     <code><![CDATA[
-$( document.body ).click(function() {
-  $( "div" ).each(function( i ) {
+$( document.body ).on( "click", function() {
+  $( "div" ).each( function( i ) {
     if ( this.style.color !== "blue" ) {
       this.style.color = "blue";
     } else {
       this.style.color = "";
     }
-  });
-});
+  } );
+} );
 ]]></code>
     <css><![CDATA[
   div {
@@ -74,7 +74,7 @@ $( document.body ).click(function() {
   <example>
     <desc>To access a jQuery object instead of the regular DOM element, use <code>$( this )</code>. For example:</desc>
     <code><![CDATA[
-$( "span" ).click(function() {
+$( "span)" ).on( "click", function() {
   $( "li" ).each(function() {
     $( this ).toggleClass( "example" );
   });
@@ -106,7 +106,7 @@ To do list: <span>(click here to change)</span>
   <example>
     <desc>Use <code>return false</code> to break out of each() loops early.</desc>
     <code><![CDATA[
-$( "button" ).click(function() {
+$( "button)" ).on( "click", function() {
   $( "div" ).each(function( index, element ) {
     // element == this
     $( element ).css( "backgroundColor", "yellow" );

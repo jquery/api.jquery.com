@@ -1,16 +1,15 @@
 <?xml version="1.0"?>
-<entry type="method" name="keyup" return="jQuery">
-  <title>.keyup()</title>
-  <desc>Bind an event handler to the "keyup" JavaScript event, or trigger that event on an element.</desc>
+<entries>
+<desc>Bind an event handler to the "keyup" event, or trigger that event on an element.</desc>
+
+<entry type="method" name="on" return="jQuery">
+  <title>keyup event</title>
+  <desc>Bind an event handler to the "keyup" event.</desc>
   <signature>
-    <added>1.0</added>
-    <argument name="handler" type="Function">
-      <desc>A function to execute each time the event is triggered.</desc>
-      <argument name="eventObject" type="Event" />
+    <added>1.7</added>
+    <argument name="&quot;keyup&quot;" type="string">
+      <desc>The string <code>"keyup"</code>.</desc>
     </argument>
-  </signature>
-  <signature>
-    <added>1.4.3</added>
     <argument name="eventData" type="Anything" optional="true">
       <desc>An object containing data that will be passed to the event handler.</desc>
     </argument>
@@ -19,11 +18,10 @@
       <argument name="eventObject" type="Event" />
     </argument>
   </signature>
-  <signature>
-    <added>1.0</added>
-  </signature>
   <longdesc>
-    <p>This method is a shortcut for <code>.on( "keyup", handler )</code> in the first two variations, and <code>.trigger( "keyup" )</code> in the third.</p>
+    <div class="warning">
+      <p>This page describes the <code>keyup</code> event. For the deprecated <code>.keyup()</code> method, see <a href="/keyup-shorthand/"><code>.keyup()</code></a>.</p>
+    </div>
     <p>The <code>keyup</code> event is sent to an element when the user releases a key on the keyboard. It can be attached to any element, but the event is only sent to the element that has the focus. Focusable elements can vary between browsers, but form elements can always get focus so are reasonable candidates for this event type.</p>
     <p>For example, consider the HTML:</p>
     <pre><code>
@@ -36,43 +34,42 @@
     </code></pre>
     <p>The event handler can be bound to the input field:</p>
     <pre><code>
-$( "#target" ).keyup(function() {
-  alert( "Handler for .keyup() called." );
-});
+$( "#target" ).on( "keyup", function() {
+  alert( "Handler for `keyup` called." );
+} );
     </code></pre>
     <p>Now when the insertion point is inside the field and a key is pressed and released, the alert is displayed:</p>
     <p>
-      <samp>Handler for .keyup() called.</samp>
+      <samp>Handler for `keyup` called.</samp>
     </p>
-    <p>To trigger the event manually, apply <code>.keyup()</code> without arguments:</p>
+    <p>To trigger the event manually, use <code>.trigger( "keyup" )</code>:</p>
     <pre><code>
-$( "#other" ).click(function() {
-  $( "#target" ).keyup();
-});
+$( "#other" ).on( "click", function() {
+  $( "#target" ).trigger( "keyup" );
+} );
     </code></pre>
     <p>After this code executes, clicks on <samp>Trigger the handler</samp> will also alert the message.</p>
     <p>If key presses anywhere need to be caught (for example, to implement global shortcut keys on a page), it is useful to attach this behavior to the <code>document</code> object. Because of event bubbling, all key presses will make their way up the DOM to the <code>document</code> object unless explicitly stopped.</p>
     <p>To determine which key was pressed, examine the event object that is passed to the handler function. While browsers use differing properties to store this information, jQuery normalizes the <code>.which</code> property so you can reliably use it to retrieve the key code. This code corresponds to a key on the keyboard, including codes for special keys such as arrows. For catching actual text entry, <code>.keypress()</code> may be a better choice.</p>
   </longdesc>
-  <note id="detach-shorthand" type="additional" data-event="keyup"/>
   <example>
     <desc>Show the event object for the keyup handler (using a simple $.print plugin) when a key is released in the input.</desc>
     <code><![CDATA[
 var xTriggered = 0;
-$( "#target" ).keyup(function( event ) {
+$( "#target" ).on( "keyup", function( event ) {
   xTriggered++;
-  var msg = "Handler for .keyup() called " + xTriggered + " time(s).";
+  var msg = "Handler for `keyup` called " + xTriggered + " time(s).";
   $.print( msg, "html" );
   $.print( event );
-}).keydown(function( event ) {
+} ).on( "keydown", function( event ) {
   if ( event.which == 13 ) {
     event.preventDefault();
   }
-});
+} );
 
-$( "#other").click(function() {
-  $( "#target" ).keyup();
-});
+$( "#other").on( "click", function() {
+  $( "#target" ).trigger( "keyup" );
+} );
 ]]></code>
     <css><![CDATA[
   fieldset {
@@ -108,5 +105,23 @@ $( "#other").click(function() {
   </example>
   <category slug="events/keyboard-events"/>
   <category slug="version/1.0"/>
-  <category slug="version/1.4.3"/>
+  <category slug="version/1.7"/>
 </entry>
+
+<entry type="method" name="trigger" return="jQuery">
+  <title>keyup event</title>
+  <desc>Trigger the "keyup" event on an element.</desc>
+  <signature>
+    <added>1.0</added>
+    <argument name="&quot;keyup&quot;" type="string">
+      <desc>The string <code>"keyup"</code>.</desc>
+    </argument>
+  </signature>
+  <longdesc>
+    <p>See the description for <a href="#on1"><code>.on( "keyup", ... )</code></a>.</p>
+  </longdesc>
+  <category slug="events/keyboard-events"/>
+  <category slug="version/1.0"/>
+</entry>
+
+</entries>

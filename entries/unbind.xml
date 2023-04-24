@@ -102,12 +102,12 @@ This example is also an illustration of a closure. Since the handler refers to t
 function aClick() {
   $( "div" ).show().fadeOut( "slow" );
 }
-$( "#bind" ).click(function() {
+$( "#bind)" ).on( "click", function() {
   $( "#theone" )
     .bind( "click", aClick )
     .text( "Can Click!" );
 });
-$( "#unbind" ).click(function() {
+$( "#unbind)" ).on( "click", function() {
   $( "#theone" )
     .unbind( "click", aClick )
     .text( "Does nothing..." );

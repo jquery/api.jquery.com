@@ -28,7 +28,7 @@
     <example>
       <desc>Get the background color of a clicked div.</desc>
       <code><![CDATA[
-$( "div" ).click(function() {
+$( "div)" ).on( "click", function() {
   var color = $( this ).css( "background-color" );
   $( "#result" ).html( "That div is <span style='color:" +
     color + ";'>" + color + "</span>." );
@@ -54,7 +54,7 @@ $( "div" ).click(function() {
     <example>
       <desc>Get the width, height, text color, and background color of a clicked div.</desc>
       <code><![CDATA[
-$( "div" ).click(function() {
+$( "div)" ).on( "click", function() {
   var html = [ "The clicked div has the following styles:" ];
 
   var styleProps = $( this ).css([

@@ -26,7 +26,7 @@ $.ajax({
 });
     </code></pre>
     <div class="warning">
-      <p>Note: Global callback functions should be set with their respective global Ajax event handler methods&#x2014;<code><a href="/ajaxStart/">.ajaxStart()</a></code>, <code><a href="/ajaxStop/">.ajaxStop()</a></code>, <code><a href="/ajaxComplete/">.ajaxComplete()</a></code>, <code><a href="/ajaxError/">.ajaxError()</a></code>, <code><a href="/ajaxSuccess/">.ajaxSuccess()</a></code>, <code><a href="/ajaxSend/">.ajaxSend()</a></code>&#x2014;rather than within the <code>options</code> object for <code>$.ajaxSetup()</code>.</p>
+      <p>Note: Global callback functions should be set via <code>.on()</code> with their respective global Ajax events&#x2014;<code><a href="/ajaxStart/">ajaxStart</a></code>, <code><a href="/ajaxStop/">ajaxStop</a></code>, <code><a href="/ajaxComplete/">ajaxComplete</a></code>, <code><a href="/ajaxError/">ajaxError</a></code>, <code><a href="/ajaxSuccess/">ajaxSuccess</a></code>, <code><a href="/ajaxSend/">ajaxSend</a></code>&#x2014;rather than within the <code>options</code> object for <code>$.ajaxSetup()</code>.</p>
     </div>
   </longdesc>
   <example>

@@ -34,15 +34,15 @@ $( document ).width();
 function showWidth( ele, w ) {
   $( "div" ).text( "The width for the " + ele + " is " + w + "px." );
 }
-$( "#getp" ).click(function() {
+$( "#getp)" ).on( "click", function() {
   showWidth( "paragraph", $( "p" ).width() );
-});
-$( "#getd" ).click(function() {
+} );
+$( "#getd)" ).on( "click", function() {
   showWidth( "document", $( document ).width() );
-});
-$("#getw").click(function() {
+} );
+$("#getw").on( "click", function() {
   showWidth( "window", $( window ).width() );
-});
+} );
 ]]></code>
       <css><![CDATA[
   body {

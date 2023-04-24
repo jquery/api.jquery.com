@@ -1,16 +1,15 @@
 <?xml version="1.0"?>
-<entry type="method" name="keypress" return="jQuery">
-  <title>.keypress()</title>
-  <desc>Bind an event handler to the "keypress" JavaScript event, or trigger that event on an element.</desc>
+<entries>
+<desc>Bind an event handler to the "keypress" event, or trigger that event on an element.</desc>
+
+<entry type="method" name="on" return="jQuery">
+  <title>keypress event</title>
+  <desc>Bind an event handler to the "keypress" event.</desc>
   <signature>
-    <added>1.0</added>
-    <argument name="handler" type="Function">
-      <desc>A function to execute each time the event is triggered.</desc>
-      <argument name="eventObject" type="Event" />
+    <added>1.7</added>
+    <argument name="&quot;keyup&quot;" type="string">
+      <desc>The string <code>"keyup"</code>.</desc>
     </argument>
-  </signature>
-  <signature>
-    <added>1.4.3</added>
     <argument name="eventData" type="Anything" optional="true">
       <desc>An object containing data that will be passed to the event handler.</desc>
     </argument>
@@ -19,12 +18,11 @@
       <argument name="eventObject" type="Event" />
     </argument>
   </signature>
-  <signature>
-    <added>1.0</added>
-  </signature>
   <longdesc>
+    <div class="warning">
+      <p>This page describes the <code>keypress</code> event. For the deprecated <code>.keypress()</code> method, see <a href="/keypress-shorthand/"><code>.keypress()</code></a>.</p>
+    </div>
     <p><strong>Note:</strong> as the <code>keypress</code> event isn't covered by any official specification, the actual behavior encountered when using it may differ across browsers, browser versions, and platforms.</p>
-    <p>This method is a shortcut for <code>.on( "keypress", handler )</code> in the first two variations, and <code>.trigger( "keypress" )</code> in the third.</p>
     <p>The <code>keypress</code> event is sent to an element when the browser registers keyboard input. This is similar to the <code>keydown</code> event, except that modifier and non-printing keys such as <kbd>Shift</kbd>, <kbd>Esc</kbd>, and <kbd>delete</kbd> trigger <code>keydown</code> events but not <code>keypress</code> events. Other differences between the two events may arise depending on platform and browser.</p>
     <p>A <code>keypress</code> event handler can be attached to any element, but the event is only sent to the element that has the focus. Focusable elements can vary between browsers, but form controls can always get focus so are reasonable candidates for this event type.</p>
     <p>For example, consider the HTML:</p>
@@ -40,43 +38,42 @@
     </code></pre>
     <p>The event handler can be bound to the input field:</p>
     <pre><code>
-$( "#target" ).keypress(function() {
-  console.log( "Handler for .keypress() called." );
-});
+$( "#target" ).on( "keypress", function() {
+  console.log( "Handler for `keypress` called." );
+} );
     </code></pre>
     <p>Now when the insertion point is inside the field, pressing a key displays the log:</p>
     <p>
-      <samp>Handler for .keypress() called.</samp>
+      <samp>Handler for `keypress` called.</samp>
     </p>
-    <p>To trigger the event manually, apply <code>.keypress()</code> without an argument:</p>
+    <p>To trigger the event manually, use <code>.trigger( "keypress" )</code>:</p>
     <pre><code>
-$( "#other" ).click(function() {
-  $( "#target" ).keypress();
-});
+$( "#other" ).on( "click", function() {
+  $( "#target" ).trigger( "keypress" );
+} );
     </code></pre>
     <p>After this code executes, clicks on the <samp>Trigger the handler</samp> div will also log the message.</p>
     <p>If key presses anywhere need to be caught (for example, to implement global shortcut keys on a page), it is useful to attach this behavior to the <code>document</code> object. Because of event bubbling, all key presses will make their way up the DOM to the <code>document</code> object unless explicitly stopped.</p>
     <p>To determine which character was entered, examine the <code>event</code> object that is passed to the handler function. While browsers use differing properties to store this information, jQuery normalizes the <code>.which</code> property so you can reliably use it to retrieve the character code.</p>
     <p>Note that <code>keydown</code> and <code>keyup</code> provide a code indicating which key is pressed, while <code>keypress</code> indicates which character was entered. For example, a lowercase "a" will be reported as 65 by <code>keydown</code> and <code>keyup</code>, but as 97 by <code>keypress</code>. An uppercase "A" is reported as 65 by all events. Because of this distinction, when catching special keystrokes such as arrow keys, <code>.keydown()</code> or <code>.keyup()</code> is a better choice.</p>
   </longdesc>
-  <note id="detach-shorthand" type="additional" data-event="keypress"/>
   <example>
     <desc>Show the event object when a key is pressed in the input. Note: This demo relies on a simple $.print() plugin (https://api.jquery.com/resources/events.js) for the event object's output.</desc>
     <code><![CDATA[
 var xTriggered = 0;
-$( "#target" ).keypress(function( event ) {
+$( "#target" ).on( "keypress", function( event ) {
   if ( event.which == 13 ) {
      event.preventDefault();
   }
   xTriggered++;
-  var msg = "Handler for .keypress() called " + xTriggered + " time(s).";
+  var msg = "Handler for `keypress` called " + xTriggered + " time(s).";
   $.print( msg, "html" );
   $.print( event );
-});
+} );
 
-$( "#other" ).click(function() {
-  $( "#target" ).keypress();
-});
+$( "#other" ).on( "click", function() {
+  $( "#target" ).trigger( "keypress" );
+} );
 ]]></code>
     <css><![CDATA[
   fieldset {
@@ -112,5 +109,23 @@ $( "#other" ).click(function() {
   </example>
   <category slug="events/keyboard-events"/>
   <category slug="version/1.0"/>
-  <category slug="version/1.4.3"/>
+  <category slug="version/1.7"/>
 </entry>
+
+<entry type="method" name="trigger" return="jQuery">
+  <title>keyup event</title>
+  <desc>Trigger the "keyup" event on an element.</desc>
+  <signature>
+    <added>1.0</added>
+    <argument name="&quot;keyup&quot;" type="string">
+      <desc>The string <code>"keyup"</code>.</desc>
+    </argument>
+  </signature>
+  <longdesc>
+    <p>See the description for <a href="#on1"><code>.on( "keyup", ... )</code></a>.</p>
+  </longdesc>
+  <category slug="events/keyboard-events"/>
+  <category slug="version/1.0"/>
+</entry>
+
+</entries>

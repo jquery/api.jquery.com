@@ -44,7 +44,7 @@ $( "#foo" ).slideUp( 300 ).delay( 800 ).fadeIn( 400 );
   }
 ]]></css>
     <code><![CDATA[
-$( "button" ).click(function() {
+$( "button)" ).on( "click", function() {
   $( "div.first" ).slideUp( 300 ).delay( 800 ).fadeIn( 400 );
   $( "div.second" ).slideUp( 300 ).fadeIn( 400 );
 });

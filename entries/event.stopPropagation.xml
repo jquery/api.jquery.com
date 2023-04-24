@@ -14,7 +14,7 @@
   <example>
     <desc>Kill the bubbling on the click event.</desc>
     <code><![CDATA[
-$( "p" ).click(function( event ) {
+$( "p" ).on( "click", function( event ) {
   event.stopPropagation();
   // Do something
 });

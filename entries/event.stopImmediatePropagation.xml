@@ -25,14 +25,14 @@
   }
 ]]></css>
     <code><![CDATA[
-$( "p" ).click(function( event ) {
+$( "p" ).on( "click", function( event ) {
   event.stopImmediatePropagation();
 });
-$( "p" ).click(function( event ) {
+$( "p" ).on( "click", function( event ) {
   // This function won't be executed
   $( this ).css( "background-color", "#f00" );
 });
-$( "div" ).click(function( event ) {
+$( "div" ).on( "click", function( event ) {
   // This function will be executed
   $( this ).css( "background-color", "#f00" );
 });

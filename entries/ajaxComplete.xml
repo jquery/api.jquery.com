@@ -1,8 +1,12 @@
 <?xml version="1.0"?>
-<entry type="method" name="ajaxComplete" return="jQuery">
-  <title>.ajaxComplete()</title>
+<entry type="method" name="on" return="jQuery">
+  <title>ajaxComplete event</title>
+  <desc>Register a handler to be called when Ajax requests complete. This is an <a href="/Ajax_Events/">AjaxEvent</a>.</desc>
   <signature>
-    <added>1.0</added>
+    <added>1.7</added>
+    <argument name="&quot;ajaxComplete&quot;" type="string">
+      <desc>The string <code>"ajaxComplete"</code>.</desc>
+    </argument>
     <argument name="handler" type="Function">      
       <argument name="event" type="Event" />
       <argument name="jqXHR" type="jqXHR" />
@@ -10,9 +14,11 @@
       <desc>The function to be invoked.</desc>
     </argument>
   </signature>
-  <desc>Register a handler to be called when Ajax requests complete. This is an <a href="/Ajax_Events/">AjaxEvent</a>.</desc>
   <longdesc>
-    <p>Whenever an Ajax request completes, jQuery triggers the <code>ajaxComplete</code> event. Any and all handlers that have been registered with the <code>.ajaxComplete()</code> method are executed at this time.</p>
+    <div class="warning">
+      <p>This page describes the <code>ajaxComplete</code> event. For the deprecated <code>.ajaxComplete()</code> method, see <a href="/ajaxComplete-shorthand/"><code>.ajaxComplete()</code></a>.</p>
+    </div>
+    <p>Whenever an Ajax request completes, jQuery triggers the <code>ajaxComplete</code> event. Any and all registered <code>ajaxComplete</code> handlers are executed at this time.</p>
     <p>To observe this method in action, set up a basic Ajax load request:</p>
     <pre><code>
 &lt;div class="trigger"&gt;Trigger&lt;/div&gt;
@@ -21,38 +27,39 @@
     </code></pre>
     <p>Attach the event handler to the document:</p>
     <pre><code>
-$( document ).ajaxComplete(function() {
+$( document ).on( "ajaxComplete", function() {
   $( ".log" ).text( "Triggered ajaxComplete handler." );
-});
+} );
     </code></pre>
     <p>Now, make an Ajax request using any jQuery method:</p>
     <pre><code>
-$( ".trigger" ).click(function() {
+$( ".trigger)" ).on( "click", function() {
   $( ".result" ).load( "ajax/test.html" );
-});
+} );
     </code></pre>
     <p>When the user clicks the element with class <code>trigger</code> and the Ajax request completes, the log message is displayed.</p>
     <p>All <code>ajaxComplete</code> handlers are invoked, regardless of what Ajax request was completed. If you must differentiate between the requests, use the parameters passed to the handler. Each time an <code>ajaxComplete</code> handler is executed, it is passed the event object, the <code>XMLHttpRequest</code> object, and the settings object that was used in the creation of the request. For example, you can restrict the callback to only handling events dealing with a particular URL:</p>
     <pre><code>
-$( document ).ajaxComplete(function( event, xhr, settings ) {
+$( document ).on( "ajaxComplete", function( event, xhr, settings ) {
   if ( settings.url === "ajax/test.html" ) {
     $( ".log" ).text( "Triggered ajaxComplete handler. The result is " +
       xhr.responseText );
   }
-});
+} );
     </code></pre>
     <p><strong>Note:</strong> You can get the returned Ajax contents by looking at <code>xhr.responseText</code>.</p>
   </longdesc>
-  <note id="global-ajax-event" type="additional" data-title=".ajaxComplete()"/>
-  <note id="ajax-global-false" type="additional" data-title=".ajaxComplete()"/>
+  <note id="global-ajax-event" type="additional" data-title="ajaxComplete"/>
+  <note id="ajax-global-false" type="additional" data-title="ajaxComplete"/>
   <example>
     <desc>Show a message when an Ajax request completes.</desc>
     <code><![CDATA[
-$( document ).ajaxComplete(function( event, request, settings ) {
+$( document ).on( "ajaxComplete", function( event, request, settings ) {
   $( "#msg" ).append( "<li>Request Complete.</li>" );
-});
+} );
 ]]></code>
   </example>
   <category slug="ajax/global-ajax-event-handlers"/>
   <category slug="version/1.0"/>
+  <category slug="version/1.7"/>
 </entry>

@@ -13,16 +13,16 @@
   <example>
     <desc>Finds all image inputs.</desc>
     <code><![CDATA[
-var input = $( "input:image" ).css({
+var input = $( "input:image" ).css( {
   background:"yellow",
   border:"3px red solid"
-});
+} );
 $( "div" )
   .text( "For this type jQuery found " + input.length + "." )
   .css( "color", "red" );
-$( "form" ).submit(function( event ) {
+$( "form" ).on( "submit", function( event ) {
   event.preventDefault();
-});
+} );
 ]]></code>
     <css><![CDATA[
   textarea {

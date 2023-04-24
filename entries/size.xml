@@ -35,14 +35,14 @@ alert( "Size: " + $( "li" ).length );
     <desc>Count the divs.</desc>
     <code><![CDATA[
 $( document.body )
-  .click(function() {
+  .on( "click", function() {
     $( this ).append( $( "<div>" ) );
     var n = $( "div" ).size();
     $( "span" ).text( "There are " + n + " divs. Click to add more." );
-  })
+  } )
 
   // Trigger the click to start
-  .click();
+  .trigger( "click" );
 ]]></code>
   </example>
   <category slug="miscellaneous/dom-element-methods"/>

@@ -81,7 +81,7 @@ alert( "Index: " + $( "#bar" ).index() );
   <example>
     <desc>On click, returns the index (zero-based) of that div in the page.</desc>
     <code><![CDATA[
-$( "div" ).click(function() {
+$( "div)" ).on( "click", function() {
   // `this` is the DOM element that was clicked
   var index = $( "div" ).index( this );
   $( "span" ).text( "That was div index #" + index );

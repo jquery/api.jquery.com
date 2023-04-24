@@ -135,9 +135,9 @@ $.fn.equalizeHeights = function() {
   return this.height( Math.max.apply( this, maxHeight ) );
 };
 
-$( "input" ).click(function() {
+$( "input" ).on( "click", function() {
   $( "div" ).equalizeHeights();
-});
+} );
 ]]></code>
     <css><![CDATA[
   div {

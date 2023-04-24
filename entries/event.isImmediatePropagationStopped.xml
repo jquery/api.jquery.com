@@ -21,7 +21,7 @@ function immediatePropStopped( event ) {
   $( "#stop-log" ).append( "<div>" + msg + "</div>" );
 }
 
-$( "button" ).click(function( event ) {
+$( "button" ).on( "click", function( event ) {
   immediatePropStopped( event );
   event.stopImmediatePropagation();
   immediatePropStopped( event );

@@ -31,10 +31,10 @@
     <p>The <code>.serializeArray()</code> method uses the standard W3C rules for <a href="https://www.w3.org/TR/html401/interact/forms.html#h-17.13.2">successful controls</a> to determine which elements it should include; in particular the element cannot be disabled and must contain a <code>name</code> attribute. No submit button value is serialized since the form was not submitted using a button. Data from file select elements is not serialized. Elements that do not contain a <code>value</code> attribute are represented with the empty string value.</p>
     <p>This method can act on a jQuery object that has selected individual form controls, such as <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, and <code>&lt;select&gt;</code>. However, it is typically easier to select the <code>&lt;form&gt;</code> element itself for serialization:</p>
     <pre><code>
-$( "form" ).submit(function( event ) {
+$( "form" ).on( "submit", function( event ) {
   console.log( $( this ).serializeArray() );
   event.preventDefault();
-});
+} );
     </code></pre>
     <p>This produces the following data structure (provided that the browser supports <code>console.log</code>):</p>
     <pre><code>
@@ -70,11 +70,11 @@ $( "form" ).submit(function( event ) {
     $( "#results" ).empty();
     jQuery.each( fields, function( i, field ) {
       $( "#results" ).append( field.value + " " );
-    });
+    } );
   }
 
-  $( ":checkbox, :radio" ).click( showValues );
-  $( "select" ).change( showValues );
+  $( ":checkbox, :radio" ).on( "click", showValues );
+  $( "select" ).on( "change", showValues );
   showValues();
 ]]></code>
     <css><![CDATA[

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <entries>
   <desc>Bind one or two handlers to the matched elements, to be executed when the mouse pointer enters and leaves the elements.</desc>
-  <entry type="method" name="hover" return="jQuery">
+  <entry type="method" name="hover" return="jQuery" deprecated="3.3">
     <title>.hover()</title>
     <desc>Bind two handlers to the matched elements, to be executed when the mouse pointer enters and leaves the elements.</desc>
     <signature>
@@ -16,12 +16,15 @@
       </argument>
     </signature>
     <longdesc>
+      <div class="warning">
+        <p>This API is deprecated. Use <code>.on( "mouseenter", handlerIn ).on( "mouseleave", handlerOut )</code> instead.</p>
+      </div>
       <p>The <code>.hover()</code> method binds handlers for both <code>mouseenter</code> and <code>mouseleave</code> events. You can use it to simply apply behavior to an element during the time the mouse is within the element.</p>
       <p>Calling <code>$( selector ).hover( handlerIn, handlerOut )</code> is shorthand for:</p>
       <pre><code>
-$( selector ).mouseenter( handlerIn ).mouseleave( handlerOut );
+$( selector ).on( "mouseenter", handlerIn ).on( "mouseleave", handlerOut );
       </code></pre>
-      <p>See the discussions for <code><a href="/mouseenter/">.mouseenter()</a></code> and <code><a href="/mouseleave/">.mouseleave()</a></code> for more details.</p>
+      <p>See the discussions for <code><a href="/mouseenter/">mouseenter</a></code> and <code><a href="/mouseleave/">mouseleave</a></code> for more details.</p>
     </longdesc>
     <example>
       <desc>To add a special style to list items that are being hovered over, try:</desc>
@@ -80,8 +83,10 @@ $( "td" ).off( "mouseenter mouseleave" );
     </example>
     <category slug="events/mouse-events"/>
     <category slug="version/1.0"/>
+    <category slug="deprecated/deprecated-3.3"/>
   </entry>
-  <entry type="method" name="hover" return="jQuery">
+ 
+  <entry type="method" name="hover" return="jQuery" deprecated="3.3">
     <desc>Bind a single handler to the matched elements, to be executed when the mouse pointer enters or leaves the elements.</desc>
     <signature>
       <added>1.4</added>
@@ -91,12 +96,15 @@ $( "td" ).off( "mouseenter mouseleave" );
       </argument>
     </signature>
     <longdesc>
+      <div class="warning">
+        <p>This API is deprecated. Use <code>.on( "mouseenter mouseleave", handlerInOut )</code> instead.</p>
+      </div>
       <p>The <code>.hover()</code> method, when passed a single function, will execute that handler for both <code>mouseenter</code> and <code>mouseleave</code> events. This allows the user to use jQuery's various toggle methods within the handler or to respond differently within the handler depending on the <code>event.type</code>.</p>
       <p>Calling <code>$(selector).hover(handlerInOut)</code> is shorthand for:</p>
       <pre><code>
 $( selector ).on( "mouseenter mouseleave", handlerInOut );
       </code></pre>
-      <p>See the discussions for <code><a href="/mouseenter/">.mouseenter()</a></code> and <code><a href="/mouseleave/">.mouseleave()</a></code> for more details.</p>
+      <p>See the discussions for <code><a href="/mouseenter/">mouseenter</a></code> and <code><a href="/mouseleave/">mouseleave</a></code> for more details.</p>
     </longdesc>
     <example>
       <desc>Slide the next sibling LI up or down on hover, and toggle a class.</desc>
@@ -143,5 +151,6 @@ $( "li" )
     </example>
     <category slug="events/mouse-events"/>
     <category slug="version/1.0"/>
+    <category slug="deprecated/deprecated-3.3"/>
   </entry>
 </entries>

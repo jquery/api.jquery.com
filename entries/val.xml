@@ -50,7 +50,7 @@ function displayVals() {
     " <b>Multiple:</b> " + multipleValues.join( ", " ) );
 }
 
-$( "select" ).change( displayVals );
+$( "select" ).on( "change", displayVals );
 displayVals();
 ]]></code>
       <css><![CDATA[
@@ -81,11 +81,11 @@ displayVals();
       <desc>Find the value of an input box.</desc>
       <code><![CDATA[
 $( "input" )
-  .keyup(function() {
+  .on( "keyup", function() {
     var value = $( this ).val();
     $( "p" ).text( value );
-  })
-  .keyup();
+  } )
+  .trigger( "keyup" );
 ]]></code>
       <css><![CDATA[
   p {
@@ -139,7 +139,7 @@ $( "input[type=text].tags" ).val(function( index, value ) {
     <example>
       <desc>Set the value of an input box.</desc>
       <code><![CDATA[
-$( "button" ).click(function() {
+$( "button)" ).on( "click", function() {
   var text = $( this ).text();
   $( "input" ).val( text );
 });

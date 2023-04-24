@@ -1,16 +1,15 @@
 <?xml version="1.0"?>
-<entry type="method" name="dblclick" return="jQuery">
-  <title>.dblclick()</title>
-  <desc>Bind an event handler to the "dblclick" JavaScript event, or trigger that event on an element.</desc>
+<entries>
+
+<desc>Bind an event handler to the "dblclick" event, or trigger that event on an element.</desc>
+<entry type="method" name="on" return="jQuery">
+  <title>dblclick event</title>
+  <desc>Bind an event handler to the "dblclick" event.</desc>
   <signature>
-    <added>1.0</added>
-    <argument name="handler" type="Function">
-      <desc>A function to execute each time the event is triggered.</desc>
-      <argument name="eventObject" type="Event" />
+    <added>1.7</added>
+    <argument name="&quot;dblclick&quot;" type="string">
+      <desc>The string <code>"dblclick"</code>.</desc>
     </argument>
-  </signature>
-  <signature>
-    <added>1.4.3</added>
     <argument name="eventData" type="Anything" optional="true">
       <desc>An object containing data that will be passed to the event handler.</desc>
     </argument>
@@ -19,12 +18,11 @@
       <argument name="eventObject" type="Event" />
     </argument>
   </signature>
-  <signature>
-    <added>1.0</added>
-  </signature>
   <longdesc>
-    <p>This method is a shortcut for <code>.on( "dblclick", handler )</code> in the first two variations, and <code>.trigger( "dblclick" )</code> in the third.
-    The <code>dblclick</code> event is sent to an element when the element is double-clicked. Any HTML element can receive this event.
+    <div class="warning">
+      <p>This page describes the <code>dblclick</code> event. For the deprecated <code>.dblclick()</code> method, see <a href="/dblclick-shorthand/"><code>.dblclick()</code></a>.</p>
+    </div>
+    <p>The <code>dblclick</code> event is sent to an element when the element is double-clicked. Any HTML element can receive this event.
     For example, consider the HTML:</p>
     <pre><code>
 &lt;div id="target"&gt;
@@ -40,19 +38,19 @@
     </figure>
     <p>The event handler can be bound to any <code>&lt;div&gt;</code>:</p>
     <pre><code>
-$( "#target" ).dblclick(function() {
-  alert( "Handler for .dblclick() called." );
-});
+$( "#target" ).on( "dblclick", function() {
+  alert( "Handler for `dblclick` called." );
+} );
     </code></pre>
     <p>Now double-clicking on this element displays the alert:</p>
     <p>
-      <samp>Handler for .dblclick() called.</samp>
+      <samp>Handler for `dblclick` called.</samp>
     </p>
-    <p>To trigger the event manually, call <code>.dblclick()</code> without an argument:</p>
+    <p>To trigger the event manually, call <code>.trigger( "dblclick" )</code>:</p>
     <pre><code>
-$( "#other" ).click(function() {
-  $( "#target" ).dblclick();
-});
+$( "#other" ).on( "click", function() {
+  $( "#target" ).trigger( "dblclick" );
+} );
     </code></pre>
     <p>After this code executes, (single) clicks on <samp>Trigger the handler</samp> will also alert the message.</p>
     <p>The <code>dblclick</code> event is only triggered after this exact series of events:</p>
@@ -65,22 +63,21 @@ $( "#other" ).click(function() {
     <p>It is inadvisable to bind handlers to both the <code>click</code> and <code>dblclick</code> events for the same element. The sequence of events triggered varies from browser to browser, with some receiving two <code>click</code> events before the <code>dblclick</code> and others only one. Double-click sensitivity (maximum time between clicks that is detected as a double click) can vary by operating system and browser, and is often user-configurable.
     </p>
   </longdesc>
-  <note id="detach-shorthand" type="additional" data-event="dblclick"/>
   <example>
     <desc>To bind a "Hello World!" alert box to the dblclick event on every paragraph on the page:</desc>
     <code><![CDATA[
-$( "p" ).dblclick(function() {
+$( "p" ).on( "dblclick", function() {
   alert( "Hello World!" );
-});
+} );
 ]]></code>
   </example>
   <example>
     <desc>Double click to toggle background color.</desc>
     <code><![CDATA[
 var divdbl = $( "div" ).first();
-divdbl.dblclick(function() {
+divdbl.on( "dblclick", function() {
   divdbl.toggleClass( "dbl" );
-});
+} );
 ]]></code>
     <css><![CDATA[
   div {
@@ -101,5 +98,23 @@ divdbl.dblclick(function() {
   </example>
   <category slug="events/mouse-events"/>
   <category slug="version/1.0"/>
-  <category slug="version/1.4.3"/>
+  <category slug="version/1.7"/>
 </entry>
+
+<entry type="method" name="trigger" return="jQuery">
+  <title>dblclick event</title>
+  <desc>Trigger the "dblclick" event on an element.</desc>
+  <signature>
+    <added>1.0</added>
+    <argument name="&quot;dblclick&quot;" type="string">
+      <desc>The string <code>"dblclick"</code>.</desc>
+    </argument>
+  </signature>
+  <longdesc>
+    <p>See the description for <a href="#on1"><code>.on( "dblclick", ... )</code></a>.</p>
+  </longdesc>
+  <category slug="events/mouse-events"/>
+  <category slug="version/1.0"/>
+</entry>
+
+</entries>

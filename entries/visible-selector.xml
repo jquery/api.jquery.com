@@ -21,12 +21,12 @@
   <example>
     <desc>Make all visible divs turn yellow on click.</desc>
     <code><![CDATA[
-$( "div:visible" ).click(function() {
+$( "div:visible" ).on( "click", function() {
   $( this ).css( "background", "yellow" );
-});
-$( "button" ).click(function() {
+} );
+$( "button)" ).on( "click", function() {
   $( "div:hidden" ).show( "fast" );
-});
+} );
 ]]></code>
     <css><![CDATA[
   div {

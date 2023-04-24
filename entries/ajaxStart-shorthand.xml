@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<entry type="method" name="ajaxStart" return="jQuery" deprecated="3.3">
+  <title>.ajaxStart()</title>
+  <desc>Register a handler to be called when the first Ajax request begins. This is an <a href="/Ajax_Events/">Ajax Event</a>.</desc>
+  <signature>
+    <added>1.0</added>
+    <argument name="handler" type="Function">
+      <desc>The function to be invoked.</desc>
+    </argument>
+  </signature>
+  <longdesc>
+    <div class="warning">
+      <p>This API is deprecated. Use <a href="/ajaxStart/"><code>.on( "ajaxStart", handler )</code></a> instead.</p>
+    </div>
+  </longdesc>
+  <category slug="ajax/global-ajax-event-handlers"/>
+  <category slug="version/1.0"/>
+  <category slug="deprecated/deprecated-3.3"/>
+</entry>

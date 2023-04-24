@@ -29,7 +29,7 @@
 &lt;img id="book" src="book.png" alt="" width="100" height="123"&gt;
 
 // With the element initially hidden, we can show it slowly:
-$( "#clickme" ).click(function() {
+$( "#clickme)" ).on( "click", function() {
   $( "#book" ).fadeIn( "slow", function() {
     // Animation complete
   });
@@ -52,9 +52,9 @@ $( "#clickme" ).click(function() {
   <example>
     <desc>Animates hidden divs to fade in one by one, completing each animation within 600 milliseconds.</desc>
     <code><![CDATA[
-$( document.body ).click(function() {
+$( document.body ).on( "click", function() {
   $( "div:hidden" ).first().fadeIn( "slow" );
-});
+} );
 ]]></code>
     <css><![CDATA[
   span {
@@ -88,7 +88,7 @@ $( document.body ).click(function() {
   <example>
     <desc>Fades a red block in over the text. Once the animation is done, it quickly fades in more text on top.</desc>
     <code><![CDATA[
-$( "a" ).click(function() {
+$( "a)" ).on( "click", function() {
   $( "div" ).fadeIn( 3000, function() {
     $( "span" ).fadeIn( 100 );
   });

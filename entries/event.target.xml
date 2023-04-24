@@ -11,7 +11,7 @@
   <example>
     <desc>Display the tag's name on click</desc>
     <code><![CDATA[
-$( "body" ).click(function( event ) {
+$( "body" ).on( "click", function( event ) {
   $( "#log" ).html( "clicked: " + event.target.nodeName );
 });
 ]]></code>
@@ -40,7 +40,7 @@ function handler( event ) {
     target.children().toggle();
   }
 }
-$( "ul" ).click( handler ).find( "ul" ).hide();
+$( "ul" ).on( "click", handler ).find( "ul" ).hide();
 ]]></code>
     <html><![CDATA[
 <ul>

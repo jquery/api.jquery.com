@@ -119,19 +119,19 @@ $( "#test" ).queue(function( next ) {
     <example>
       <desc>Queue a custom function.</desc>
       <code><![CDATA[
-$( document.body ).click(function() {
+$( document.body ).on( "click", function() {
   $( "div" )
     .show( "slow" )
-    .animate({ left: "+=200" }, 2000 )
+    .animate( { left: "+=200" }, 2000 )
     .queue(function() {
       $( this ).addClass( "newcolor" ).dequeue();
     })
-    .animate({ left: "-=200" }, 500 )
+    .animate( { left: "-=200" }, 500 )
     .queue(function() {
       $( this ).removeClass( "newcolor" ).dequeue();
-    })
+    } )
     .slideUp();
-});
+} );
 ]]></code>
       <css><![CDATA[
   div {
@@ -156,7 +156,7 @@ Click here...
     <example>
       <desc>Set a queue array to delete the queue.</desc>
       <code><![CDATA[
-$( "#start" ).click(function() {
+$( "#start)" ).on( "click", function() {
   $( "div" )
     .show( "slow" )
     .animate({ left: "+=200" }, 5000 )
@@ -169,7 +169,7 @@ $( "#start" ).click(function() {
     })
     .slideUp();
 });
-$( "#stop" ).click(function() {
+$( "#stop)" ).on( "click", function() {
   $( "div" )
     .queue( "fx", [] )
     .stop();
