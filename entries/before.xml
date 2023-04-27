@@ -35,7 +35,7 @@
     </argument>
   </signature>
    <signature>
-    <added>1.10</added>
+    <added>1.10-and-2.0</added>
     <argument name="function-html" type="Function">
       <argument name="index" type="Integer" />
       <argument name="html" type="String" />
