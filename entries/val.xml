@@ -139,7 +139,7 @@ $( "input[type=text].tags" ).val(function( index, value ) {
     <example>
       <desc>Set the value of an input box.</desc>
       <code><![CDATA[
-$( "button)" ).on( "click", function() {
+$( "button" ).on( "click", function() {
   var text = $( this ).text();
   $( "input" ).val( text );
 });

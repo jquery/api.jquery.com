@@ -62,7 +62,7 @@ how are
   <example>
     <desc>Removes all paragraphs that contain "Hello" from the DOM.  Analogous to doing <code>$("p").filter(":contains('Hello')").remove()</code>.</desc>
     <code><![CDATA[
-$( "button)" ).on( "click", function() {
+$( "button" ).on( "click", function() {
   $( "p" ).remove( ":contains('Hello')" );
 });
 ]]></code>

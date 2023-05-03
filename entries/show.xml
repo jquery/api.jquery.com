@@ -67,7 +67,7 @@ $( "#clickme)" ).on( "click", function() {
   <example>
     <desc>Animates all hidden paragraphs to show slowly, completing the animation within 600 milliseconds.</desc>
     <code><![CDATA[
-$( "button)" ).on( "click", function() {
+$( "button" ).on( "click", function() {
   $( "p" ).show( "slow" );
 });
 ]]></code>

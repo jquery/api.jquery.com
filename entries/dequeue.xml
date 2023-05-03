@@ -14,7 +14,7 @@
   <example>
     <desc>Use dequeue to end a custom queue function which allows the queue to keep going.</desc>
     <code><![CDATA[
-$( "button)" ).on( "click", function() {
+$( "button" ).on( "click", function() {
   $( "div" )
     .animate({ left:"+=200px" }, 2000 )
     .animate({ top:"0px" }, 600 )

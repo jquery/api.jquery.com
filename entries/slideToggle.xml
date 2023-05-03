@@ -63,7 +63,7 @@ $( "#clickme)" ).on( "click", function() {
   <example>
     <desc>Animates all paragraphs to slide up or down, completing the animation within 600 milliseconds.</desc>
     <code><![CDATA[
-$( "button)" ).on( "click", function() {
+$( "button" ).on( "click", function() {
   $( "p" ).slideToggle( "slow" );
 });
 ]]></code>
