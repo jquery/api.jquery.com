@@ -82,7 +82,7 @@ $( "a" ).on( "click", function( event ) {
   <example>
     <desc>Animates all shown paragraphs to hide slowly, completing the animation within 600 milliseconds.</desc>
     <code><![CDATA[
-$( "button)" ).on( "click", function() {
+$( "button" ).on( "click", function() {
   $( "p" ).hide( "slow" );
 });
 ]]></code>

@@ -53,7 +53,7 @@ $( "ul li:nth-child(2)" ).append( "<span> - 2nd!</span>" );
   <example>
     <desc>This is a playground to see how the selector works with different strings.  Notice that this is different from the <a href="/even/"><code>even</code></a> and <a href="/odd/"><code>odd</code></a> which have no regard for parent and just filter the list of elements to every other one.  The :nth-child, however, counts the index of the child to its particular parent.  In any case, it's easier to see than explain so...</desc>
     <code><![CDATA[
-$( "button)" ).on( "click", function() {
+$( "button" ).on( "click", function() {
   var str = $( this ).text();
   var method = $( this ).attr( "data-method" );
   $( "tr" ).css( "background", "white" );

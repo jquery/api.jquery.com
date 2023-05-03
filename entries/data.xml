@@ -111,7 +111,7 @@ $( "div" ).data( "options" ).name === "John";
     <example>
       <desc>Get the data named "blah" stored at for an element.</desc>
       <code><![CDATA[
-$( "button)" ).on( "click", function() {
+$( "button" ).on( "click", function() {
   var value;
 
   switch ( $( "button" ).index( this ) ) {

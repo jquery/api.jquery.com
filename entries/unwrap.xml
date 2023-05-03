@@ -18,7 +18,7 @@
     <desc>Wrap/unwrap a div around each of the paragraphs.</desc>
     <code><![CDATA[
 var pTags = $( "p" );
-$( "button)" ).on( "click", function() {
+$( "button" ).on( "click", function() {
   if ( pTags.parent().is( "div" ) ) {
     pTags.unwrap();
   } else {

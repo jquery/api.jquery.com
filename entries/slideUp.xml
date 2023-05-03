@@ -83,7 +83,7 @@ Click me!
   <example>
     <desc>Animates the parent paragraph to slide up, completing the animation within 200 milliseconds. Once the animation is done, it displays an alert.</desc>
     <code><![CDATA[
-$( "button)" ).on( "click", function() {
+$( "button" ).on( "click", function() {
   $( this ).parent().slideUp( "slow", function() {
     $( "#msg" ).text( $( "button", this ).text() + " has completed." );
   });

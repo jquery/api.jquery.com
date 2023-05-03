@@ -69,7 +69,7 @@ $( "div.third" ).replaceWith( $( ".first" ) );
   <example>
     <desc>On click, replace the button with a div containing the same word.</desc>
     <code><![CDATA[
-$( "button)" ).on( "click", function() {
+$( "button" ).on( "click", function() {
   $( this ).replaceWith( "<div>" + $( this ).text() + "</div>" );
 });
 ]]></code>

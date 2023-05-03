@@ -22,7 +22,7 @@ console.log( "onclick property: ", $element[ 0 ].onclick );
     <code><![CDATA[
 (function() {
   var inputTitle = $( "input" ).attr( "title" );
-  $( "button)" ).on( "click", function() {
+  $( "button" ).on( "click", function() {
     var input = $( this ).next();
 
     if ( input.attr( "title" ) === inputTitle ) {

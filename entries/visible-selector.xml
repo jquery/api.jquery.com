@@ -24,7 +24,7 @@
 $( "div:visible" ).on( "click", function() {
   $( this ).css( "background", "yellow" );
 } );
-$( "button)" ).on( "click", function() {
+$( "button" ).on( "click", function() {
   $( "div:hidden" ).show( "fast" );
 } );
 ]]></code>

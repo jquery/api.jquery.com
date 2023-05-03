@@ -6,7 +6,7 @@
     <argument name="function" type="Function">
       <desc>A function to execute for each matched element.</desc>
       <argument name="index" type="Integer" />
-      <argument name="element" type="Element" />      
+      <argument name="element" type="Element" />
     </argument>
   </signature>
   <desc>Iterate over a jQuery object, executing a function for each matched element. </desc>
@@ -106,7 +106,7 @@ To do list: <span>(click here to change)</span>
   <example>
     <desc>Use <code>return false</code> to break out of each() loops early.</desc>
     <code><![CDATA[
-$( "button)" ).on( "click", function() {
+$( "button" ).on( "click", function() {
   $( "div" ).each(function( index, element ) {
     // element == this
     $( element ).css( "backgroundColor", "yellow" );
