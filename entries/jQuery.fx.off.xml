@@ -21,7 +21,7 @@ var toggleFx = function() {
 };
 toggleFx();
 $( "button" ).on( "click", toggleFx );
-$( "input)" ).on( "click", function() {
+$( "input" ).on( "click", function() {
   $( "div" ).toggle( "slow" );
 } );
 ]]></code>

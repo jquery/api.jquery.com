@@ -45,7 +45,7 @@
     </code></pre>
     <p>To animate the opacity, left offset, and height of the image simultaneously:</p>
     <pre><code>
-$( "#clickme)" ).on( "click", function() {
+$( "#clickme" ).on( "click", function() {
   $( "#book" ).animate({
     opacity: 0.25,
     left: "+=50",
@@ -101,7 +101,7 @@ $( "li" ).animate({
     <p>As of jQuery version 1.4, you can set per-property easing functions within a single <code>.animate()</code> call. In the first version of <code>.animate()</code>, each property can take an array as its value: The first member of the array is the CSS property and the second member is an easing function.  If a per-property easing function is not defined for a particular property, it uses the value of the <code>.animate()</code> method's optional easing argument. If the easing argument is not defined, the default <code>swing</code> function is used.</p>
     <p>For example, to simultaneously animate the width and height with the <code>swing</code> easing function and the opacity with the <code>linear</code> easing function:</p>
     <pre><code>
-$( "#clickme)" ).on( "click", function() {
+$( "#clickme" ).on( "click", function() {
   $( "#book" ).animate({
     width: [ "toggle", "swing" ],
     height: [ "toggle", "swing" ],
@@ -113,7 +113,7 @@ $( "#clickme)" ).on( "click", function() {
     </code></pre>
     <p>In the second version of <code>.animate()</code>, the options object can include the <code>specialEasing</code> property, which is itself an object of CSS properties and their corresponding easing functions.  For example, to simultaneously animate the width using the <code>linear</code> easing function and the height using the <code>easeOutBounce</code> easing function:</p>
     <pre><code>
-$( "#clickme)" ).on( "click", function() {
+$( "#clickme" ).on( "click", function() {
   $( "#book" ).animate({
     width: "toggle",
     height: "toggle"
@@ -137,7 +137,7 @@ $( "#clickme)" ).on( "click", function() {
     <code><![CDATA[
 // Using multiple unit types within one animation.
 
-$( "#go)" ).on( "click", function() {
+$( "#go" ).on( "click", function() {
   $( "#block" ).animate({
     width: "70%",
     opacity: 0.4,
@@ -162,11 +162,11 @@ $( "#go)" ).on( "click", function() {
   <example>
     <desc>Animates a div's left property with a relative value. Click several times on the buttons to see the relative animations queued up.</desc>
     <code><![CDATA[
-$( "#right)" ).on( "click", function() {
+$( "#right" ).on( "click", function() {
   $( ".block" ).animate({ "left": "+=50px" }, "slow" );
 });
 
-$( "#left)" ).on( "click", function(){
+$( "#left" ).on( "click", function(){
   $( ".block" ).animate({ "left": "-=50px" }, "slow" );
 });
 ]]></code>
@@ -191,7 +191,7 @@ $( "#left)" ).on( "click", function(){
 
 The second button starts a traditional chained animation, where each animation will start once the previous animation on the element has completed.</desc>
     <code><![CDATA[
-$( "#go1)" ).on( "click", function() {
+$( "#go1" ).on( "click", function() {
   $( "#block1" )
     .animate({
       width: "90%"
@@ -203,18 +203,18 @@ $( "#go1)" ).on( "click", function() {
     .animate({ borderRightWidth: "15px" }, 1500 );
 });
 
-$( "#go2)" ).on( "click", function() {
+$( "#go2" ).on( "click", function() {
   $( "#block2" )
     .animate({ width: "90%" }, 1000 )
     .animate({ fontSize: "24px" }, 1000 )
     .animate({ borderLeftWidth: "15px" }, 1000 );
 });
 
-$( "#go3)" ).on( "click", function() {
+$( "#go3" ).on( "click", function() {
   $( "#go1" ).add( "#go2" ).trigger( "click" );
 });
 
-$( "#go4)" ).on( "click", function() {
+$( "#go4" ).on( "click", function() {
   $( "div" ).css({
     width: "",
     fontSize: "",
@@ -248,7 +248,7 @@ $( "#go4)" ).on( "click", function() {
   <example>
     <desc>Animates the first div's left property and synchronizes the remaining divs, using the step function to set their left properties at each stage of the animation. </desc>
     <code><![CDATA[
-$( "#go)" ).on( "click", function() {
+$( "#go" ).on( "click", function() {
   $( ".block" ).first().animate({
     left: 100
   }, {

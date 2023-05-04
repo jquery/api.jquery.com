@@ -53,17 +53,17 @@ $( "#hoverme-stop-2" ).hover(function() {
     <desc>Click the Go button once to start the animation, then click the STOP button to stop it where it's currently positioned.  Another option is to click several buttons to queue them up and see that stop just kills the currently playing one.</desc>
     <code><![CDATA[
 // Start animation
-$( "#go)" ).on( "click", function() {
+$( "#go" ).on( "click", function() {
   $( ".block" ).animate({ left: "+=100px" }, 2000 );
 });
 
 // Stop animation when button is clicked
-$( "#stop)" ).on( "click", function() {
+$( "#stop" ).on( "click", function() {
   $( ".block" ).stop();
 });
 
 // Start animation in the opposite direction
-$( "#back)" ).on( "click", function() {
+$( "#back" ).on( "click", function() {
   $( ".block" ).animate({ left: "-=100px" }, 2000 );
 });
 ]]></code>

@@ -14,7 +14,7 @@
   <example>
     <desc>Detach all paragraphs from the DOM</desc>
     <code><![CDATA[
-$( "p)" ).on( "click", function() {
+$( "p" ).on( "click", function() {
   $( this ).toggleClass( "off" );
 });
 var p;

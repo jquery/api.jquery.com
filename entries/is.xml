@@ -13,7 +13,7 @@
       <desc>A function used as a test for every element in the set. It accepts two arguments, <code>index</code>, which is the element's index in the jQuery collection, and <code>element</code>, which is the DOM element. Within the function, <code>this</code> refers to the current DOM element.</desc>
       <argument name="index" type="Integer" />
       <argument name="element" type="Element" />
-      <return type="Boolean" />      
+      <return type="Boolean" />
     </argument>
   </signature>
   <signature>
@@ -63,7 +63,7 @@ $( "ul" ).on( "click", function( event ) {
     </code></pre>
     <p>You can attach a click handler to every <code>&lt;li&gt;</code> that evaluates the number of <code>&lt;strong&gt;</code> elements within the clicked <code>&lt;li&gt;</code> at that time like so:</p>
     <pre><code>
-$( "li)" ).on( "click", function() {
+$( "li" ).on( "click", function() {
   var li = $( this ),
     isWithTwo = li.is(function() {
       return $( "strong", this ).length === 2;
@@ -177,7 +177,7 @@ $( "div" ).text( "isFormParent = " + isFormParent );
     <desc>Checks against an existing collection of alternating list elements. Blue, alternating list elements slide up while others turn red.</desc>
     <code><![CDATA[
 var alt = $( "#browsers li:nth-child(2n)" ).css( "background", "#0ff" );
-$( "li)" ).on( "click", function() {
+$( "li" ).on( "click", function() {
   var li = $( this );
   if ( li.is( alt ) ) {
     li.slideUp();
@@ -204,7 +204,7 @@ $( "li)" ).on( "click", function() {
     <desc>An alternate way to achieve the above example using an element rather than a jQuery object. Checks against an existing collection of alternating list elements. Blue, alternating list elements slide up while others turn red.</desc>
     <code><![CDATA[
 var alt = $( "#browsers li:nth-child(2n)" ).css( "background", "#0ff" );
-$( "li)" ).on( "click", function() {
+$( "li" ).on( "click", function() {
   if ( alt.is( this ) ) {
     $( this ).slideUp();
   } else {

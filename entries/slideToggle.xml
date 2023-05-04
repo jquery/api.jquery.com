@@ -30,7 +30,7 @@
     </code></pre>
     <p>We will cause <code>.slideToggle()</code> to be called when another element is clicked:</p>
     <pre><code>
-$( "#clickme)" ).on( "click", function() {
+$( "#clickme" ).on( "click", function() {
   $( "#book" ).slideToggle( "slow", function() {
     // Animation complete.
   });
@@ -84,7 +84,7 @@ $( "button" ).on( "click", function() {
   <example>
     <desc>Animates divs between dividers with a toggle that makes some appear and some disappear.</desc>
     <code><![CDATA[
-$( "#aa)" ).on( "click", function() {
+$( "#aa" ).on( "click", function() {
   $( "div:not(.still)" ).slideToggle( "slow", function() {
     var n = parseInt( $( "span" ).text(), 10 );
     $( "span" ).text( n + 1 );

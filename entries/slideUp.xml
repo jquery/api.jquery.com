@@ -30,7 +30,7 @@
     </code></pre>
     <p>With the element initially shown, we can hide it slowly:</p>
     <pre><code>
-$( "#clickme)" ).on( "click", function() {
+$( "#clickme" ).on( "click", function() {
   $( "#book" ).slideUp( "slow", function() {
     // Animation complete.
   });

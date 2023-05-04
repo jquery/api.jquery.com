@@ -13,7 +13,7 @@
   <example>
     <desc>Change the color of any div that is animated.</desc>
     <code><![CDATA[
-$( "#run)" ).on( "click", function() {
+$( "#run" ).on( "click", function() {
   $( "div:animated" ).toggleClass( "colored" );
 });
 

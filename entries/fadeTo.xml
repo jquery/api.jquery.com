@@ -44,7 +44,7 @@
 &lt;/div&gt;
 &lt;img id="book" src="book.png" alt="" width="100" height="123"&gt;
 // With the element initially shown, we can dim it slowly:
-$( "#clickme)" ).on( "click", function() {
+$( "#clickme" ).on( "click", function() {
   $( "#book" ).fadeTo( "slow" , 0.5, function() {
     // Animation complete.
   });
@@ -80,7 +80,7 @@ Compare to this one that won't fade.
   <example>
     <desc>Fade div to a random opacity on each click, completing the animation within 200 milliseconds.</desc>
     <code><![CDATA[
-$( "div)" ).on( "click", function() {
+$( "div" ).on( "click", function() {
   $( this ).fadeTo( "fast", Math.random() );
 });
 ]]></code>

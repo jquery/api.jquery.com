@@ -34,10 +34,10 @@ $( document ).width();
 function showWidth( ele, w ) {
   $( "div" ).text( "The width for the " + ele + " is " + w + "px." );
 }
-$( "#getp)" ).on( "click", function() {
+$( "#getp" ).on( "click", function() {
   showWidth( "paragraph", $( "p" ).width() );
 } );
-$( "#getd)" ).on( "click", function() {
+$( "#getd" ).on( "click", function() {
   showWidth( "document", $( document ).width() );
 } );
 $("#getw").on( "click", function() {
