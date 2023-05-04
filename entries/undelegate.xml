@@ -52,12 +52,12 @@
 function aClick() {
   $( "div" ).show().fadeOut( "slow" );
 }
-$( "#bind)" ).on( "click", function() {
+$( "#bind" ).on( "click", function() {
   $( "body" )
     .delegate( "#theone", "click", aClick )
     .find( "#theone" ).text( "Can Click!" );
 });
-$( "#unbind)" ).on( "click", function() {
+$( "#unbind" ).on( "click", function() {
   $( "body" )
     .undelegate( "#theone", "click", aClick )
     .find( "#theone" ).text( "Does nothing..." );

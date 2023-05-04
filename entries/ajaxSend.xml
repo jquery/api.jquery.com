@@ -33,7 +33,7 @@ $( document ).on( "ajaxSend", function() {
     </code></pre>
     <p>Now, make an Ajax request using any jQuery method:</p>
     <pre><code>
-$( ".trigger)" ).on( "click", function() {
+$( ".trigger" ).on( "click", function() {
   $( ".result" ).load( "ajax/test.html" );
 } );
     </code></pre>

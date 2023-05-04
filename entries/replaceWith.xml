@@ -108,7 +108,7 @@ $( "p" ).replaceWith( "<b>Paragraph. </b>" );
   <example>
     <desc>On click, replace each paragraph with a div that is already in the DOM and selected with the <code>$()</code> function. Notice it doesn't clone the object but rather moves it to replace the paragraph.</desc>
     <code><![CDATA[
-$( "p)" ).on( "click", function() {
+$( "p" ).on( "click", function() {
   $( this ).replaceWith( $( "div" ) );
 });
 ]]></code>

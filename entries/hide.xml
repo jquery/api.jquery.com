@@ -49,7 +49,7 @@ $( ".target" ).hide();
     </code></pre>
     <pre><code>
 // With the element initially shown, we can hide it slowly:
-$( "#clickme)" ).on( "click", function() {
+$( "#clickme" ).on( "click", function() {
   $( "#book" ).hide( "slow", function() {
     alert( "Animation complete." );
   });
@@ -101,13 +101,13 @@ $( "button" ).on( "click", function() {
   <example>
     <desc>Animates all spans (words in this case) to hide fastly, completing each animation within 200 milliseconds. Once each animation is done, it starts the next one.</desc>
     <code><![CDATA[
-$( "#hider)" ).on( "click", function() {
+$( "#hider" ).on( "click", function() {
   $( "span:last-child" ).hide( "fast", function() {
     // Use arguments.callee so we don't need a named function
     $( this ).prev().hide( "fast", arguments.callee );
   });
 });
-$( "#shower)" ).on( "click", function() {
+$( "#shower" ).on( "click", function() {
   $( "span" ).show( 2000 );
 });
 ]]></code>
@@ -134,7 +134,7 @@ $( "#shower)" ).on( "click", function() {
 for ( var i = 0; i < 5; i++ ) {
   $( "<div>" ).appendTo( document.body );
 }
-$( "div)" ).on( "click", function() {
+$( "div" ).on( "click", function() {
   $( this ).hide( 2000, function() {
     $( this ).remove();
   });

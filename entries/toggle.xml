@@ -51,7 +51,7 @@ $( ".target" ).toggle();
     </code></pre>
     <p>We will cause <code>.toggle()</code> to be called when another element is clicked:</p>
     <pre><code>
-$( "#clickme)" ).on( "click", function() {
+$( "#clickme" ).on( "click", function() {
   $( "#book" ).toggle( "slow", function() {
     // Animation complete.
   });

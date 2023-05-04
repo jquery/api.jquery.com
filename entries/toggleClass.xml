@@ -99,7 +99,7 @@ $( "div.foo" ).toggleClass(function() {
     <example>
       <desc>Toggle the class 'highlight' when a paragraph is clicked.</desc>
       <code><![CDATA[
-$( "p)" ).on( "click", function() {
+$( "p" ).on( "click", function() {
   $( this ).toggleClass( "highlight" );
 });
 ]]></code>

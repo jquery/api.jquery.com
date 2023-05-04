@@ -74,7 +74,7 @@ $( document.body ).on( "click", function() {
   <example>
     <desc>To access a jQuery object instead of the regular DOM element, use <code>$( this )</code>. For example:</desc>
     <code><![CDATA[
-$( "span)" ).on( "click", function() {
+$( "span" ).on( "click", function() {
   $( "li" ).each(function() {
     $( this ).toggleClass( "example" );
   });

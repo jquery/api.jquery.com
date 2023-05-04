@@ -94,7 +94,7 @@ $.cachedScript( "ajax/test.js" ).done(function( script, textStatus ) {
     <code><![CDATA[
 var url = "https://code.jquery.com/color/jquery.color-2.1.2.js";
 $.getScript( url, function() {
-  $( "#go)" ).on( "click", function() {
+  $( "#go" ).on( "click", function() {
     $( ".block" )
       .animate({
         backgroundColor: "rgb(255, 180, 180)"

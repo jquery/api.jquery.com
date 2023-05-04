@@ -49,7 +49,7 @@ $( ".target" ).show();
 &lt;/div&gt;
 &lt;img id="book" src="book.png" alt="" width="100" height="123"&gt;
 With the element initially hidden, we can show it slowly:
-$( "#clickme)" ).on( "click", function() {
+$( "#clickme" ).on( "click", function() {
   $( "#book" ).show( "slow", function() {
     // Animation complete.
   });
@@ -84,13 +84,13 @@ $( "button" ).on( "click", function() {
   <example>
     <desc>Show the first div, followed by each next adjacent sibling div in order, with a 200ms animation. Each animation starts when the previous sibling div's animation ends.</desc>
     <code><![CDATA[
-$( "#showr)" ).on( "click", function() {
+$( "#showr" ).on( "click", function() {
   $( "div" ).first().show( "fast", function showNext() {
     $( this ).next( "div" ).show( "fast", showNext );
   });
 });
 
-$( "#hidr)" ).on( "click", function() {
+$( "#hidr" ).on( "click", function() {
   $( "div" ).hide( 1000 );
 });
 ]]></code>
