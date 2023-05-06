@@ -1,8 +1,8 @@
 {
   "index_name": "jquery_com",
   "start_urls": [
-    { "url": "https://jquery.com" },
-    { "url": "https://api.jquery.com", "selectors_key": "api" }
+    { "url": "https://api.jquery.com", "selectors_key": "api", "page_rank": 20 },
+    { "url": "https://jquery.com", "page_rank": 10 }
   ],
   "stop_urls": [
     ".com/category/"
@@ -33,6 +33,9 @@
       "lvl4": "#content h5, #content strong:first-child",
       "text": ".entry-content p, .entry-content li"
     }
+  },
+  "custom_settings": {
+    "token_separators": ["_", "-", "."]
   },
   "selectors_exclude": [
     "header ~ article",
