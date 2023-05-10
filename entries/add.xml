@@ -20,7 +20,7 @@
     </argument>
   </signature>
   <signature>
-    <added>1.3.2</added>
+    <added>1.1</added>
     <argument name="selection" type="jQuery">
       <desc>An existing jQuery object to add to the set of matched elements.</desc>
     </argument>
