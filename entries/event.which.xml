@@ -6,7 +6,7 @@
   </signature>
   <desc>For key or mouse events, this property indicates the specific key or button that was pressed.</desc>
   <longdesc>
-    <p>The <code>event.which</code> property normalizes <code>event.keyCode</code> and <code>event.charCode</code>. It is recommended to watch <code>event.which</code> for keyboard key input. For more detail, read about <a href="https://developer.mozilla.org/en/DOM/event.charCode#Notes">event.charCode on the MDN</a>. </p>
+    <p>The <code>event.which</code> property normalizes <code>event.keyCode</code> and <code>event.charCode</code>. It is recommended to watch <code>event.which</code> for keyboard key input. For more detail, read about <a href="https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/charCode#notes">event.charCode on the MDN</a>. </p>
     <p><code>event.which</code> also normalizes button presses (<code>mousedown</code> and <code>mouseup</code>events), reporting <code>1</code> for left button, <code>2</code> for middle, and <code>3</code> for right. Use <code>event.which</code> instead of <code>event.button</code>.  </p>
   </longdesc>
   <example>
