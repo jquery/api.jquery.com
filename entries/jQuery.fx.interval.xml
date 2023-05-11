@@ -6,7 +6,9 @@
     <added>1.4.3</added>
   </signature>
   <longdesc>
-    <p>This property is deprecated as of version 3.0, and has no effect in browsers that support the <a href="https://caniuse.com/#feat=requestanimationframe"><code>requestAnimationFrame</code></a> method.</p>
+    <div class="warning">
+      <p>This property is deprecated as of version 3.0, and has no effect in browsers that support the <a href="https://caniuse.com/#feat=requestanimationframe"><code>requestAnimationFrame</code></a> method.</p>
+    </div>
     <p>On browsers that do not support <code>requestAnimationFrame</code>, this property can be changed to adjust the interval at which animations will run. The default is 13 milliseconds.</p>
     <p>Since jQuery uses one global interval, no animation should be running or all animations should stop for the change of this property to take effect.</p>
   </longdesc>
