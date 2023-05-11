@@ -51,6 +51,7 @@ $( "#other" ).on( "click", function() {
     </code></pre>
     <p>After this code executes, clicks on <samp>Trigger the handler</samp> will also alert the message.</p>
     <p>The <code>blur</code> event does not bubble. As of version 1.4.2, jQuery works around this limitation by mapping <code>blur</code> to the <code>focusout</code> event in its event delegation methods.</p>
+    <p>The native <code>blur</code> event is asynchronous in all versions of IE, contrary to other browsers. To avoid issues related to this discrepancy, as of jQuery 3.7.0, jQuery uses <code>focusout</code> as the native backing event for <code>blur</code> in IE.</p>
   </longdesc>
   <example>
     <desc>To trigger the blur event on all paragraphs:</desc>
@@ -62,6 +63,7 @@ $( "p" ).trigger( "blur" );
   <category slug="forms"/>
   <category slug="version/1.0"/>
   <category slug="version/1.7"/>
+  <category slug="version/3.7"/>
 </entry>
 
 <entry type="method" name="trigger" return="jQuery">
