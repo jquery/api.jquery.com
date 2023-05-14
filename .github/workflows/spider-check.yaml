@@ -20,9 +20,18 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.repository_owner == 'jquery' }} # skip on forks
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout hydra-link-checker
+        uses: actions/checkout@v3
         with:
           repository: jquery/hydra-link-checker
           ref: v2.0.0
+          path: hydra
+
+      # Checkout the API repo as well to provide the config for hydra-link-checker
+      - name: Checkout API repo
+        uses: actions/checkout@v3
+        with:
+          path: api
+
       - name: Run hydra-link-checker
-        run: python3 hydra.py "$MY_SITE"
+        run: python3 hydra/hydra.py "$MY_SITE" --config api/.github/configs/hydra-config.json
