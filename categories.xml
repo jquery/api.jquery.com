@@ -61,7 +61,7 @@
         <p>For more information, see the Release Notes/Changelog at <a href="https://blog.jquery.com/2013/01/15/jquery-1-9-final-jquery-2-0-beta-migrate-final-released/">https://blog.jquery.com/2013/01/15/jquery-1-9-final-jquery-2-0-beta-migrate-final-released/</a></p>
       ]]></desc>
     </category>
-    <category name="Deprecated 1.10" slug="deprecated-1.10">
+    <category name="Deprecated 1.10" slug="deprecated-1.10-and-2.0">
       <desc><![CDATA[All the aspects of the API that were deprecated in the corresponding version of jQuery.
         <p>For more information, see the Release Notes/Changelog at <a href="https://blog.jquery.com/2013/05/24/jquery-1-10-0-and-2-0-1-released/">https://blog.jquery.com/2013/05/24/jquery-1-10-0-and-2-0-1-released/</a></p>
       ]]></desc>
@@ -401,8 +401,8 @@ var files = event.originalEvent.dataTransfer.files;
     <category name="Version 1.5" slug="1.5">
       <desc><![CDATA[
         <p>All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.</p>
-        <p>jQuery 1.5 also includes a large rewrite of the Ajax module, which has a number of extensibility improvements. You can find out more about those improvements in the <a href="https://api.jquery.com/extending-ajax/">Extending Ajax</a> documentation.</p>
-        <p>Additionally jQuery 1.5 includes a new Deferred callback management system you can learn more about in in the <a href="https://api.jquery.com/category/deferred-object/">Deferred Object</a> documentation.</p>
+        <p>jQuery 1.5 also includes a large rewrite of the Ajax module, which has a number of extensibility improvements. You can find out more about those improvements in the <a href="https://api.jquery.com/jQuery.ajax/#extending-ajax">Extending Ajax</a> documentation.</p>
+        <p>Additionally, jQuery 1.5 includes a new Deferred callback management system you can learn more about in the <a href="https://api.jquery.com/category/deferred-object/">Deferred Object</a> documentation.</p>
       ]]></desc>
     </category>
     <category name="Version 1.5.1" slug="1.5.1">

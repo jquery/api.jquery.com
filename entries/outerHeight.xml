@@ -47,7 +47,7 @@ $( "p" ).last().text(
 
 <entry type="method" name="outerHeight" return="jQuery">
   <signature>
-    <added>1.8.0</added>
+    <added>1.8</added>
     <argument name="value">
       <type name="String"/>
       <type name="Number"/>
@@ -58,7 +58,7 @@ $( "p" ).last().text(
     </argument>
   </signature>
   <signature>
-    <added>1.8.0</added>
+    <added>1.8</added>
     <argument name="function" type="Function">
       <argument name="index" type="Integer" />
       <argument name="height" type="Number" />

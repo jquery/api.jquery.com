@@ -163,7 +163,7 @@ if ( $.support.someCSSProp &amp;&amp; $.support.someCSSProp !== "someCSSProp" ) 
 })( jQuery );
     </code></pre>
     <h4 id="special-units">Special units</h4>
-    <p>By default, jQuery adds a "px" unit to the values passed to the <code>.css()</code> method. This behavior can be prevented by adding the property to the <a href="/jQuery.cssNumer/"><code>jQuery.cssNumber</code></a> object</p>
+    <p>By default, jQuery adds a "px" unit to the values passed to the <code>.css()</code> method. This behavior can be prevented by adding the property to the <a href="/jQuery.cssNumber/"><code>jQuery.cssNumber</code></a> object</p>
     <pre><code>
 $.cssNumber.someCSSProp = true;
     </code></pre>
