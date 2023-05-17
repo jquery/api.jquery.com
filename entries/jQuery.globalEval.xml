@@ -8,7 +8,7 @@
     </argument>
   </signature>
   <signature>
-    <added>3.4.0</added>
+    <added>3.4</added>
     <argument name="code" type="String">
       <desc>The JavaScript code to execute.</desc>
     </argument>
@@ -19,7 +19,7 @@
     </argument>
   </signature>
   <signature>
-    <added>3.5.0</added>
+    <added>3.5</added>
     <argument name="code" type="String">
       <desc>The JavaScript code to execute.</desc>
     </argument>

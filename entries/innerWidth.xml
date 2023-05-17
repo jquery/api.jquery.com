@@ -43,7 +43,7 @@ $( "p" ).last().text( "innerWidth:" + p.innerWidth() );
 
 <entry type="method" name="innerWidth" return="jQuery">
 <signature>
-  <added>1.8.0</added>
+  <added>1.8</added>
   <argument name="value">
 	<type name="String"/>
 	<type name="Number"/>
@@ -51,7 +51,7 @@ $( "p" ).last().text( "innerWidth:" + p.innerWidth() );
   </argument>
 </signature>
 <signature>
-  <added>1.8.0</added>
+  <added>1.8</added>
   <argument name="function" type="Function">
         <argument name="index" type="Integer" />
         <argument name="width" type="Number" />

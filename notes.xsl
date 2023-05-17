@@ -17,7 +17,7 @@
 			Selected elements are in the order of their appearance in the document.
 		</xsl:when>
 		<xsl:when test="@id = 'domlint'">
-			Forms and their child elements should not use input names or ids that conflict with properties of a form, such as <code>submit</code>, <code>length</code>, or <code>method</code>. Name conflicts can cause confusing failures. For a complete list of rules and to check your markup for these problems, see <a href="https://kangax.github.com/domlint/">DOMLint</a>.
+			Forms and their child elements should not use input names or ids that conflict with properties of a form, such as <code>submit</code>, <code>length</code>, or <code>method</code>. Name conflicts can cause confusing failures. For a complete list of rules and to check your markup for these problems, see <a href="https://kangax.github.io/domlint/">DOMLint</a>.
 		</xsl:when>
 		<xsl:when test="@id = 'hidden-element-dimensions'">
 			The value reported by <code><xsl:value-of select="@data-title" /></code> is not guaranteed to be accurate when the element or its parent is hidden. To get an accurate value, ensure the element is visible before using <code><xsl:value-of select="@data-title" /></code>. jQuery will attempt to temporarily show and then re-hide an element in order to measure its dimensions, but this is unreliable and (even when accurate) can significantly impact page performance. This show-and-rehide measurement feature may be removed in a future version of jQuery.
