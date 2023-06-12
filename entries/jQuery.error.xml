@@ -10,11 +10,15 @@
   <desc>Takes a string and throws an exception containing it.</desc>
   <longdesc>
     <p>This method exists primarily for plugin developers who wish to override it and provide a better display (or more information) for the error messages.</p>
+    <p>If you do override the method, remember to still throw an error at the end to preserve semantics.</p>
   </longdesc>
   <example>
-    <desc>Override jQuery.error for display in Firebug.</desc>
+    <desc>Override <code>jQuery.error</code> to send it to a logging service, assuming the <code>sendErrorLog</code> method is provided by this service.</desc>
     <code><![CDATA[
-jQuery.error = console.error;
+jQuery.error = function( message ) {
+  sendErrorLog( "jQuery error: " + message );
+  throw new Error( message );
+};
 ]]></code>
   </example>
   <category slug="internals"/>
