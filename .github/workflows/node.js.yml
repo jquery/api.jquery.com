@@ -19,6 +19,8 @@ jobs:
         node-version: [10.x, 18.x]
 
     steps:
+    - name: Install xmllint
+      run: sudo apt-get install -y libxml2-utils
     - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
