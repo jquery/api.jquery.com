@@ -161,7 +161,7 @@ $( "div" ).trigger( "click", { name: "Jim" } );
 ]]></code>
   </example>
   <example>
-    <desc>Use the the second argument of <code>.trigger()</code> to pass an array of data to the event handler</desc>
+    <desc>Use the second argument of <code>.trigger()</code> to pass an array of data to the event handler</desc>
     <code><![CDATA[
 $( "div" ).on( "click", function( event, salutation, name ) {
   alert( salutation + ", " + name );
