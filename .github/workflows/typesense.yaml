@@ -20,11 +20,10 @@ jobs:
       - name: Docsearch Scraper
         shell: bash
         run: |
-          # 0.6.0.rc1: https://github.com/typesense/typesense-docsearch-scraper/issues/36
           docker run \
             -e TYPESENSE_API_KEY=${{ secrets.TYPESENSE_ADMIN_KEY }} \
             -e TYPESENSE_HOST="${{ secrets.TYPESENSE_HOST }}" \
             -e TYPESENSE_PORT="443" \
             -e TYPESENSE_PROTOCOL="https" \
             -e CONFIG="$(cat docsearch.config.json | jq -r tostring)" \
-            typesense/docsearch-scraper:0.6.0.rc2
+            typesense/docsearch-scraper:0.9.1
