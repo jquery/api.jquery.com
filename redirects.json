@@ -1,3 +1,4 @@
 {
-  "/api/": "/resources/api.xml"
+  "/api/": "/resources/api.xml",
+  "/extending-ajax/": "/jQuery.ajax/#extending-ajax"
 }

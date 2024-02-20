@@ -43,4 +43,6 @@ grunt.registerTask( "build", [
 	"build-xml-full"
 ]);
 
+grunt.registerTask( "deploy", [ "wordpress-deploy", "deploy-redirects" ] );
+
 };
