@@ -16,15 +16,12 @@ on:
 jobs:
   spider-check:
     if: ${{ github.repository_owner == 'jquery' }} # skip on forks
-    env:
-      MY_SITE: https://api.jquery.com
     runs-on: ubuntu-latest
     env:
       # Site address to crawl
       MY_SITE: https://api.jquery.com
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Run hydra-link-checker
         run: |
