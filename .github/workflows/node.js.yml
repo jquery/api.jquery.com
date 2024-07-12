@@ -3,8 +3,9 @@
 name: Node.js CI
 
 on:
-  - push
-  - pull_request
+  pull_request:
+  push:
+    branches-ignore: "dependabot/**"
 
 jobs:
   build:
@@ -16,13 +17,14 @@ jobs:
         node-version: [18.x, 20.x]
 
     steps:
-    - name: Install xmllint
-      run: sudo apt-get install -y libxml2-utils
-    - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm ci
-    - run: npm test
+      - name: Checkout
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+      - name: Install xmllint
+        run: sudo apt-get install -y libxml2-utils
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b # v4.0.3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+      - run: npm ci
+      - run: npm test
