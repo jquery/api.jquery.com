@@ -37,58 +37,75 @@
   <category name="Deprecated" slug="deprecated">
     <desc/>
     <category name="Deprecated 1.3" slug="deprecated-1.3">
-      <desc><![CDATA[All the aspects of the API that were deprecated in the corresponding version of jQuery.
+      <desc><![CDATA[
+        <div id="version-support-warning" class="warning"><i class="icon-info-sign"></i> <span>This version is no longer supported. Read more about our <a href="https://jquery.com/support/">Version Support</a>.</span></div>
+        <p>All the aspects of the API that were deprecated in the corresponding version of jQuery.</p>
         <p>For more information, see the <a href="https://blog.jquery.com/2009/01/14/jquery-1-3-released/">jQuery 1.3 Release Notes</a>.</p>
       ]]></desc>
     </category>
     <category name="Deprecated 1.4" slug="deprecated-1.4">
-      <desc><![CDATA[All the aspects of the API that were deprecated in the corresponding version of jQuery.
+      <desc><![CDATA[
+        <div id="version-support-warning" class="warning"><i class="icon-info-sign"></i> <span>This version is no longer supported. Read more about our <a href="https://jquery.com/support/">Version Support</a>.</span></div>
+        <p>All the aspects of the API that were deprecated in the corresponding version of jQuery.</p>
         <p>For more information, see the <a href="https://web.archive.org/web/20150119205819/http://jquery14.com/day-01/jquery-14">jQuery 1.4 Release Notes</a></p>
       ]]></desc>
     </category>
     <category name="Deprecated 1.7" slug="deprecated-1.7">
-      <desc><![CDATA[All the aspects of the API that were deprecated in the corresponding version of jQuery.
+      <desc><![CDATA[
+        <div id="version-support-warning" class="warning"><i class="icon-info-sign"></i> <span>This version is no longer supported. Read more about our <a href="https://jquery.com/support/">Version Support</a>.</span></div>
+        <p>All the aspects of the API that were deprecated in the corresponding version of jQuery.</p>
         <p>For more information, see the Release Notes/Changelog at <a href="https://blog.jquery.com/2011/11/03/jquery-1-7-released/">https://blog.jquery.com/2011/11/03/jquery-1-7-released/</a></p>
       ]]></desc>
     </category>
     <category name="Deprecated 1.8" slug="deprecated-1.8">
-      <desc><![CDATA[All the aspects of the API that were deprecated in the corresponding version of jQuery.
+      <desc><![CDATA[
+        <div id="version-support-warning" class="warning"><i class="icon-info-sign"></i> <span>This version is no longer supported. Read more about our <a href="https://jquery.com/support/">Version Support</a>.</span></div>
+        <p>All the aspects of the API that were deprecated in the corresponding version of jQuery.</p>
         <p>For more information, see the Release Notes/Changelog at <a href="https://blog.jquery.com/2012/08/09/jquery-1-8-released/">https://blog.jquery.com/2012/08/09/jquery-1-8-released/</a></p>
       ]]></desc>
     </category>
     <category name="Deprecated 1.9" slug="deprecated-1.9">
-      <desc><![CDATA[All the aspects of the API that were deprecated in the corresponding version of jQuery.
+      <desc><![CDATA[
+        <div id="version-support-warning" class="warning"><i class="icon-info-sign"></i> <span>This version is no longer supported. Read more about our <a href="https://jquery.com/support/">Version Support</a>.</span></div>
+        <p>All the aspects of the API that were deprecated in the corresponding version of jQuery.</p>
         <p>For more information, see the Release Notes/Changelog at <a href="https://blog.jquery.com/2013/01/15/jquery-1-9-final-jquery-2-0-beta-migrate-final-released/">https://blog.jquery.com/2013/01/15/jquery-1-9-final-jquery-2-0-beta-migrate-final-released/</a></p>
       ]]></desc>
     </category>
-    <category name="Deprecated 1.10" slug="deprecated-1.10-and-2.0">
-      <desc><![CDATA[All the aspects of the API that were deprecated in the corresponding version of jQuery.
+    <category name="Deprecated 1.10 &amp; 2.0" slug="deprecated-1.10-and-2.0">
+      <desc><![CDATA[
+        <div id="version-support-warning" class="warning"><i class="icon-info-sign"></i> <span>These versions are no longer supported. Read more about our <a href="https://jquery.com/support/">Version Support</a>.</span></div>
+        <p>All the aspects of the API that were deprecated in the corresponding version of jQuery.</p>
         <p>For more information, see the Release Notes/Changelog at <a href="https://blog.jquery.com/2013/05/24/jquery-1-10-0-and-2-0-1-released/">https://blog.jquery.com/2013/05/24/jquery-1-10-0-and-2-0-1-released/</a></p>
       ]]></desc>
     </category>
     <category name="Deprecated 3.0" slug="deprecated-3.0">
-      <desc><![CDATA[All the aspects of the API that were deprecated in the corresponding version of jQuery.
+      <desc><![CDATA[
         <p>For more information, see the Release Notes/Changelog at <a href="https://blog.jquery.com/2016/06/09/jquery-3-0-final-released/">https://blog.jquery.com/2016/06/09/jquery-3-0-final-released/</a></p>
+        <p>All the aspects of the API that were deprecated in the corresponding version of jQuery.</p>
       ]]></desc>
     </category>
     <category name="Deprecated 3.2" slug="deprecated-3.2">
-      <desc><![CDATA[All the aspects of the API that were deprecated in the corresponding version of jQuery.
+      <desc><![CDATA[
         <p>For more information, see the Release Notes/Changelog at <a href="https://blog.jquery.com/2017/03/16/jquery-3-2-0-is-out/">https://blog.jquery.com/2017/03/16/jquery-3-2-0-is-out/</a></p>
+        <p>All the aspects of the API that were deprecated in the corresponding version of jQuery.</p>
       ]]></desc>
     </category>
     <category name="Deprecated 3.3" slug="deprecated-3.3">
-      <desc><![CDATA[All the aspects of the API that were deprecated in the corresponding version of jQuery.
+      <desc><![CDATA[
         <p>For more information, see the Release Notes/Changelog at <a href="https://blog.jquery.com/2018/01/19/jquery-3-3-0-a-fragrant-bouquet-of-deprecations-and-is-that-a-new-feature/">https://blog.jquery.com/2018/01/19/jquery-3-3-0-a-fragrant-bouquet-of-deprecations-and-is-that-a-new-feature/</a></p>
+        <p>All the aspects of the API that were deprecated in the corresponding version of jQuery.</p>
       ]]></desc>
     </category>
     <category name="Deprecated 3.4" slug="deprecated-3.4">
-      <desc><![CDATA[All the aspects of the API that were deprecated in the corresponding version of jQuery.
+      <desc><![CDATA[
         <p>For more information, see the Release Notes/Changelog at <a href="https://blog.jquery.com/2019/04/10/jquery-3-4-0-released/">https://blog.jquery.com/2019/04/10/jquery-3-4-0-released/</a></p>
+        <p>All the aspects of the API that were deprecated in the corresponding version of jQuery.</p>
       ]]></desc>
     </category>
     <category name="Deprecated 3.5" slug="deprecated-3.5">
-      <desc><![CDATA[All the aspects of the API that were deprecated in the corresponding version of jQuery.
+      <desc><![CDATA[
         <p>For more information, see the Release Notes/Changelog at <a href="https://blog.jquery.com/2020/04/10/jquery-3-5-0-released/">https://blog.jquery.com/2020/04/10/jquery-3-5-0-released/</a></p>
+        <p>All the aspects of the API that were deprecated in the corresponding version of jQuery.</p>
       ]]></desc>
     </category>
   </category>
@@ -326,193 +343,270 @@ var files = event.originalEvent.dataTransfer.files;
   <category name="Version" slug="version">
     <desc/>
     <category name="Version 1.0" slug="1.0">
-      <desc><![CDATA[All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.
+      <desc><![CDATA[
+        <div id="version-support-warning" class="warning"><i class="icon-info-sign"></i> <span>This version is no longer supported. Read more about our <a href="https://jquery.com/support/">Version Support</a>.</span></div>
+        <p>All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.</p>
         <a href="https://blog.jquery.com/2006/08/26/jquery-10/">jQuery 1.0 Release Notes</a>.
+        <hr/>
       ]]></desc>
     </category>
     <category name="Version 1.0.4" slug="1.0.4">
-      <desc><![CDATA[All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.
+      <desc><![CDATA[
+        <div id="version-support-warning" class="warning"><i class="icon-info-sign"></i> <span>This version is no longer supported. Read more about our <a href="https://jquery.com/support/">Version Support</a>.</span></div>
+        <p>All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.</p>
         Release Notes: <a href="https://blog.jquery.com/2006/08/31/jquery-101/">1.0.1</a>, <a href="https://blog.jquery.com/2006/10/09/jquery-102/">1.0.2</a>, <a href="https://blog.jquery.com/2006/10/27/jquery-103/">1.0.3</a>, <a href="https://blog.jquery.com/2006/12/12/jquery-104/">1.0.4</a>.
+        <hr/>
       ]]></desc>
     </category>
     <category name="Version 1.1" slug="1.1">
-      <desc><![CDATA[All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.
+      <desc><![CDATA[
+        <div id="version-support-warning" class="warning"><i class="icon-info-sign"></i> <span>This version is no longer supported. Read more about our <a href="https://jquery.com/support/">Version Support</a>.</span></div>
+        <p>All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.</p>
         <a href="https://blog.jquery.com/2007/01/14/jquery-birthday-11-new-site-new-docs/">jQuery 1.1 Release Notes</a>.
+        <hr/>
       ]]></desc>
     </category>
     <category name="Version 1.1.2" slug="1.1.2">
-      <desc><![CDATA[All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.
+      <desc><![CDATA[
+        <div id="version-support-warning" class="warning"><i class="icon-info-sign"></i> <span>This version is no longer supported. Read more about our <a href="https://jquery.com/support/">Version Support</a>.</span></div>
+        <p>All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.</p>
         <a href="https://blog.jquery.com/2007/02/27/jquery-112/">jQuery 1.1.2 Release Notes</a>.
+        <hr/>
       ]]></desc>
     </category>
     <category name="Version 1.1.3" slug="1.1.3">
-      <desc><![CDATA[All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.
+      <desc><![CDATA[
+        <div id="version-support-warning" class="warning"><i class="icon-info-sign"></i> <span>This version is no longer supported. Read more about our <a href="https://jquery.com/support/">Version Support</a>.</span></div>
+        <p>All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.</p>
         <a href="https://blog.jquery.com/2007/07/01/jquery-113-800-faster-still-20kb/">jQuery 1.1.3 Release Notes</a>
+        <hr/>
       ]]></desc>
     </category>
     <category name="Version 1.1.4" slug="1.1.4">
-      <desc><![CDATA[All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.
+      <desc><![CDATA[
+        <div id="version-support-warning" class="warning"><i class="icon-info-sign"></i> <span>This version is no longer supported. Read more about our <a href="https://jquery.com/support/">Version Support</a>.</span></div>
+        <p>All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.</p>
         <a href="https://blog.jquery.com/2007/08/24/jquery-114-faster-more-tests-ready-for-12/">jQuery 1.1.4 Release Notes</a>.
+        <hr/>
       ]]></desc>
     </category>
     <category name="Version 1.2" slug="1.2">
-      <desc><![CDATA[All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.
+      <desc><![CDATA[
+        <div id="version-support-warning" class="warning"><i class="icon-info-sign"></i> <span>This version is no longer supported. Read more about our <a href="https://jquery.com/support/">Version Support</a>.</span></div>
+        <p>All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.</p>
         <a href="https://blog.jquery.com/2007/09/10/jquery-1-2-released/">jQuery 1.2 Release Notes</a>
+        <hr/>
       ]]></desc>
     </category>
     <category name="Version 1.2.3" slug="1.2.3">
-      <desc><![CDATA[All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.
+      <desc><![CDATA[
+        <div id="version-support-warning" class="warning"><i class="icon-info-sign"></i> <span>This version is no longer supported. Read more about our <a href="https://jquery.com/support/">Version Support</a>.</span></div>
+        <p>All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.</p>
         Release Notes: <a href="https://blog.jquery.com/2007/09/16/jquery-1-2-1-released/">1.2.1</a>, <a href="https://blog.jquery.com/2008/01/14/jquery-1-2-2-released/">1.2.2</a>, <a href="https://blog.jquery.com/2008/02/07/jquery-1-2-3-released/">1.2.3</a>.
+        <hr/>
       ]]></desc>
     </category>
     <category name="Version 1.2.6" slug="1.2.6">
-      <desc><![CDATA[All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.
+      <desc><![CDATA[
+        <div id="version-support-warning" class="warning"><i class="icon-info-sign"></i> <span>This version is no longer supported. Read more about our <a href="https://jquery.com/support/">Version Support</a>.</span></div>
+        <p>All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.</p>
         <a href="https://blog.jquery.com/2008/05/24/jquery-1-2-6-released/">jQuery 1.2.6 Release Notes</a>.
+        <hr/>
       ]]></desc>
     </category>
     <category name="Version 1.3" slug="1.3">
-      <desc><![CDATA[All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.
+      <desc><![CDATA[
+        <div id="version-support-warning" class="warning"><i class="icon-info-sign"></i> <span>This version is no longer supported. Read more about our <a href="https://jquery.com/support/">Version Support</a>.</span></div>
+        <p>All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.</p>
         Release Notes: <a href="https://blog.jquery.com/2009/01/14/jquery-1-3-released/">1.3</a>, <a href="https://blog.jquery.com/2009/01/21/jquery-131-released/">1.3.1</a>, <a href="https://blog.jquery.com/2009/02/20/jquery-1-3-2-released/">1.3.2</a>
+        <hr/>
       ]]></desc>
     </category>
     <category name="Version 1.4" slug="1.4">
-      <desc><![CDATA[All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.
+      <desc><![CDATA[
+        <div id="version-support-warning" class="warning"><i class="icon-info-sign"></i> <span>This version is no longer supported. Read more about our <a href="https://jquery.com/support/">Version Support</a>.</span></div>
+        <p>All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.</p>
         <a href="https://web.archive.org/web/20150119205819/http://jquery14.com/day-01/jquery-14">jQuery 1.4 Release Notes</a>.
+        <hr/>
       ]]></desc>
     </category>
     <category name="Version 1.4.1" slug="1.4.1">
-      <desc><![CDATA[All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.
+      <desc><![CDATA[
+        <div id="version-support-warning" class="warning"><i class="icon-info-sign"></i> <span>This version is no longer supported. Read more about our <a href="https://jquery.com/support/">Version Support</a>.</span></div>
+        <p>All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.</p>
         <a href="https://web.archive.org/web/20150213113058/http://jquery14.com/day-12/jquery-141-released">jQuery 1.4.1 Release Notes</a>.
+        <hr/>
       ]]></desc>
     </category>
     <category name="Version 1.4.2" slug="1.4.2">
-      <desc><![CDATA[All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.
+      <desc><![CDATA[
+        <div id="version-support-warning" class="warning"><i class="icon-info-sign"></i> <span>This version is no longer supported. Read more about our <a href="https://jquery.com/support/">Version Support</a>.</span></div>
+        <p>All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.</p>
         <a href="https://blog.jquery.com/2010/02/19/jquery-142-released/">jQuery 1.4.2 Release Notes</a>.
+        <hr/>
       ]]></desc>
     </category>
     <category name="Version 1.4.3" slug="1.4.3">
-      <desc><![CDATA[All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.
+      <desc><![CDATA[
+        <div id="version-support-warning" class="warning"><i class="icon-info-sign"></i> <span>This version is no longer supported. Read more about our <a href="https://jquery.com/support/">Version Support</a>.</span></div>
+        <p>All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.</p>
         <a href="https://blog.jquery.com/2010/10/16/jquery-143-released/">jQuery 1.4.3 Release Notes</a>.
+        <hr/>
       ]]></desc>
     </category>
     <category name="Version 1.4.4" slug="1.4.4">
-      <desc><![CDATA[All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery. <a href="https://blog.jquery.com/2010/11/11/jquery-1-4-4-release-notes/">jQuery 1.4.4 Release Notes</a>.]]></desc>
+      <desc><![CDATA[
+        <div id="version-support-warning" class="warning"><i class="icon-info-sign"></i> <span>This version is no longer supported. Read more about our <a href="https://jquery.com/support/">Version Support</a>.</span></div>
+        <p>All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.</p>
+        <a href="https://blog.jquery.com/2010/11/11/jquery-1-4-4-release-notes/">jQuery 1.4.4 Release Notes</a>.
+        <hr/>
+      ]]></desc>
     </category>
     <category name="Version 1.5" slug="1.5">
       <desc><![CDATA[
+        <div id="version-support-warning" class="warning"><i class="icon-info-sign"></i> <span>This version is no longer supported. Read more about our <a href="https://jquery.com/support/">Version Support</a>.</span></div>
         <p>All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.</p>
         <p>jQuery 1.5 also includes a large rewrite of the Ajax module, which has a number of extensibility improvements. You can find out more about those improvements in the <a href="https://api.jquery.com/jQuery.ajax/#extending-ajax">Extending Ajax</a> documentation.</p>
         <p>Additionally, jQuery 1.5 includes a new Deferred callback management system you can learn more about in the <a href="https://api.jquery.com/category/deferred-object/">Deferred Object</a> documentation.</p>
+        <hr/>
       ]]></desc>
     </category>
     <category name="Version 1.5.1" slug="1.5.1">
-      <desc><![CDATA[Aspects of the API that were changed in the corresponding version of jQuery. API changes in jQuery 1.5.1 dealt primarily with jQuery.ajax settings and jQuery.support properties.]]></desc>
+      <desc><![CDATA[
+        <div id="version-support-warning" class="warning"><i class="icon-info-sign"></i> <span>This version is no longer supported. Read more about our <a href="https://jquery.com/support/">Version Support</a>.</span></div>
+        <p>All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.</p>
+        <p>API changes in jQuery 1.5.1 dealt primarily with jQuery.ajax settings and jQuery.support properties.</p>
+        <hr/>
+      ]]></desc>
     </category>
     <category name="Version 1.6" slug="1.6">
-      <desc><![CDATA[All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.]]></desc>
+      <desc><![CDATA[
+        <div id="version-support-warning" class="warning"><i class="icon-info-sign"></i> <span>This version is no longer supported. Read more about our <a href="https://jquery.com/support/">Version Support</a>.</span></div>
+        <p>All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.</p>
+        <hr/>
+      ]]></desc>
     </category>
     <category name="Version 1.7" slug="1.7">
       <desc><![CDATA[
-        <p>Aspects of the API that were changed in the corresponding version of jQuery. API changes in jQuery 1.7.0 dealt primarily with the new
-        Event APIs: <code>.on()</code> and <code>.off()</code>
-        Better Support for HTML5 in IE6/7/8
-        <code>jQuery.Callbacks()</code>
-        Toggling Animations Work Intuitively
-        </p>
-        <p>For more information, see the Release Notes/Changelog at <a href="https://blog.jquery.com/2011/11/03/jquery-1-7-released/">https://blog.jquery.com/2011/11/03/jquery-1-7-released/</a></p>
+        <div id="version-support-warning" class="warning"><i class="icon-info-sign"></i> <span>This version is no longer supported. Read more about our <a href="https://jquery.com/support/">Version Support</a>.</span></div>
+        <p>All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.</p>
+        <p>jQuery 1.7.0 included:</p>
+        <ul>
+          <li>New event APIs: <code>.on()</code> and <code>.off()</code></li>
+          <li>Better Support for HTML5 in IE6/7/8</li>
+          <li><code>jQuery.Callbacks()</code></li>
+          <li>Toggling Animations Work Intuitively</li>
+        </ul>
+        <p>For more information, see the <a href="https://blog.jquery.com/2011/11/03/jquery-1-7-released/">Release Notes/Changelog</a></p>
         <hr/>
       ]]></desc>
     </category>
     <category name="Version 1.8" slug="1.8">
       <desc><![CDATA[
-        <p>Aspects of the API that were changed in the corresponding version of jQuery. API changes in jQuery 1.8.0 dealt primarily with animations and the removal of some methods such as <code>deferred.isResolved()</code>, <code>deferred.isRejected()</code>, <code>$.curCSS()</code>, <code>$.attrFn()</code>, and <code>$(element).closest(Array)</code> returning Array.
-        </p>
-        <p>For more information, see the Release Notes/Changelog at <a href="https://blog.jquery.com/2012/08/09/jquery-1-8-released/">https://blog.jquery.com/2012/08/09/jquery-1-8-released/</a></p>
+        <div id="version-support-warning" class="warning"><i class="icon-info-sign"></i> <span>This version is no longer supported. Read more about our <a href="https://jquery.com/support/">Version Support</a>.</span></div>
+        <p>All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.</p>
+        <p>API changes in jQuery 1.8.0 dealt primarily with animations and the removal of some methods such as <code>deferred.isResolved()</code>, <code>deferred.isRejected()</code>, <code>$.curCSS()</code>, <code>$.attrFn()</code>, and <code>$(element).closest(Array)</code> returning Array.</p>
+        <p>For more information, see the <a href="https://blog.jquery.com/2012/08/09/jquery-1-8-released/">Release Notes/Changelog</a></p>
         <hr/>
       ]]></desc>
     </category>
     <category name="Version 1.9" slug="1.9">
       <desc><![CDATA[
-        <p>Aspects of the API that were changed in the corresponding version of jQuery. Changes in jQuery 1.9 dealt primarily with removal or modification of several APIs that behaved inconsistently or inefficiently in the past. A <a href="https://github.com/jquery/jquery-migrate">jQuery Migrate Plugin</a> was offered to help developers with a transitional upgrade path.
-        </p>
+        <div id="version-support-warning" class="warning"><i class="icon-info-sign"></i> <span>This version is no longer supported. Read more about our <a href="https://jquery.com/support/">Version Support</a>.</span></div>
+        <p>All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.</p>
+        <p>Changes in jQuery 1.9 dealt primarily with removal or modification of several APIs that behaved inconsistently or inefficiently in the past.</p>
+        <p>A <a href="https://github.com/jquery/jquery-migrate">jQuery Migrate Plugin</a> was offered to help developers with a transitional upgrade path.</p>
         <p>For more information, see the <a href="https://jquery.com/upgrade-guide/1.9/">jQuery Core 1.9 Upgrade guide</a> and the <a href="https://blog.jquery.com/2013/01/15/jquery-1-9-final-jquery-2-0-beta-migrate-final-released/">Release Notes/Changelog</a></p>
         <hr/>
       ]]></desc>
     </category>
     <category name="Version 1.10 &amp; 2.0" slug="1.10-and-2.0">
       <desc><![CDATA[
-        <p>Aspects of the API that were changed in the corresponding versions of jQuery. Changes in jQuery 1.10 and 2.0 include a new `wrap` module, relaxing HTML parsing, and aligning the 1.x &amp; 2.x lines.</p>
+        <div id="version-support-warning" class="warning"><i class="icon-info-sign"></i> <span>These versions are no longer supported. Read more about our <a href="https://jquery.com/support/">Version Support</a>.</span></div>
+        <p>All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.</p>
+        <p>Changes in jQuery 1.10 and 2.0 include a new `wrap` module, relaxing HTML parsing, and aligning the 1.x &amp; 2.x lines.</p>
         <p>For more information, see the <a href="https://blog.jquery.com/2013/04/18/jquery-2-0-released/">2.0 Release Notes/Changelog</a> and <a href="https://blog.jquery.com/2013/05/24/jquery-1-10-0-and-2-0-1-released/">1.10.0/2.0.1 Release Notes/Changelog</a>.</p>
         <hr/>
       ]]></desc>
     </category>
     <category name="Version 1.11 &amp; 2.1" slug="1.11-and-2.1">
       <desc><![CDATA[
-        <p>Aspects of the API that were changed in the corresponding versions of jQuery. Changes in jQuery 1.11 and 2.1 include lower startup overhead &amp; fewer forced layouts; jQuery is now authored via AMD and published to npm &amp; bower under the name <code>jquery</code>.</p>
+        <div id="version-support-warning" class="warning"><i class="icon-info-sign"></i> <span>These versions are no longer supported. Read more about our <a href="https://jquery.com/support/">Version Support</a>.</span></div>
+        <p>All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.</p>
+        <p>Changes in jQuery 1.11 and 2.1 include lower startup overhead &amp; fewer forced layouts; jQuery is now authored via AMD and published to npm &amp; bower under the name <code>jquery</code>.</p>
         <p>For more information, see the <a href="https://blog.jquery.com/2014/01/24/jquery-1-11-and-2-1-released/">Release Notes/Changelog</a>.</p>
         <hr/>
       ]]></desc>
     </category>
     <category name="Version 1.12 &amp; 2.2" slug="1.12-and-2.2">
       <desc><![CDATA[
-        <p>Aspects of the API that were changed in the corresponding versions of jQuery. Changes in jQuery 1.12 and 2.2 include performance improvements of the selector engine, manipulation of class names for SVG elements, support for the Symbol type and iterators added in ES2015, and a new hook has been added for filtering HTML.</p>
+        <div id="version-support-warning" class="warning"><i class="icon-info-sign"></i> <span>These versions are no longer supported. Read more about our <a href="https://jquery.com/support/">Version Support</a>.</span></div>
+        <p>All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.</p>
+        <p>Changes in jQuery 1.12 and 2.2 include performance improvements of the selector engine, manipulation of class names for SVG elements, support for the Symbol type and iterators added in ES2015, and a new hook has been added for filtering HTML.</p>
         <p>For more information, see the <a href="https://blog.jquery.com/2016/01/08/jquery-2-2-and-1-12-released/">Release Notes/Changelog</a>.</p>
         <hr/>
       ]]></desc>
     </category>
     <category name="Version 3.0" slug="3.0">
       <desc><![CDATA[
-        <p>Aspects of the API that were changed in the corresponding version of jQuery. Changes in jQuery 3.0 dealt primarily with deferreds, data, show/hide and removal of some deprecated APIs. A <a href="https://github.com/jquery/jquery-migrate">jQuery Migrate Plugin</a> was offered to help developers with a transitional upgrade path.
-        </p>
+        <p>All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.</p>
+        <p>Changes in jQuery 3.0 dealt primarily with deferreds, data, show/hide and removal of some deprecated APIs. A <a href="https://github.com/jquery/jquery-migrate">jQuery Migrate Plugin</a> was offered to help developers with a transitional upgrade path.</p>
         <p>For more information, see the <a href="https://jquery.com/upgrade-guide/3.0/">jQuery Core 3.0 Upgrade guide</a> and the <a href="https://blog.jquery.com/2016/06/09/jquery-3-0-final-released/">Release Notes/Changelog</a>.</p>
         <hr/>
       ]]></desc>
     </category>
     <category name="Version 3.1" slug="3.1">
       <desc><![CDATA[
-        <p>Aspects of the API that were changed in the corresponding version of jQuery. Version 3.1 added the <a href="/jQuery.readyException">jQuery.readyException</a> API.</p>
+        <p>All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.</p>
+        <p>Version 3.1 added the <a href="/jQuery.readyException">jQuery.readyException</a> API.</p>
         <p>For more information, see the <a href="https://blog.jquery.com/2016/07/07/jquery-3-1-0-released-no-more-silent-errors/">Release Notes/Changelog</a>.</p>
         <hr/>
       ]]></desc>
     </category>
     <category name="Version 3.2" slug="3.2">
       <desc><![CDATA[
-        <p>Aspects of the API that were changed in the corresponding version of jQuery. Version 3.2 added support for custom CSS properties, made <code>.contents()</code> work on the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template"><code>&lt;template&gt;</code> element</a> &amp; made <code>.width()</code> &amp; <code>.height()</code> ignore CSS transforms. A few APIs were deprecated. The deprecated module was added back to the slim build.</p>
+        <p>All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.</p>
+        <p>Version 3.2 added support for custom CSS properties, made <code>.contents()</code> work on the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template"><code>&lt;template&gt;</code> element</a> &amp; made <code>.width()</code> &amp; <code>.height()</code> ignore CSS transforms. A few APIs were deprecated. The deprecated module was added back to the slim build.</p>
         <p>For more information, see the <a href="https://blog.jquery.com/2017/03/16/jquery-3-2-0-is-out/">Release Notes/Changelog</a>.</p>
         <hr/>
       ]]></desc>
     </category>
     <category name="Version 3.3" slug="3.3">
       <desc><![CDATA[
-        <p>Aspects of the API that were changed in the corresponding version of jQuery. <code>.addClass()</code>, <code>.removeClass()</code> &amp; <code>.toggleClass()</code> now work on arrays of classes; a few APIs were deprecated.</p>
+        <p>All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.</p>
+        <p><code>.addClass()</code>, <code>.removeClass()</code> &amp; <code>.toggleClass()</code> now work on arrays of classes; a few APIs were deprecated.</p>
         <p>For more information, see the <a href="https://blog.jquery.com/2018/01/19/jquery-3-3-0-a-fragrant-bouquet-of-deprecations-and-is-that-a-new-feature/">Release Notes/Changelog</a>.</p>
         <hr/>
       ]]></desc>
     </category>
     <category name="Version 3.4" slug="3.4">
       <desc><![CDATA[
-        <p>Aspects of the API that were changed in the corresponding version of jQuery. <code>nonce</code> &amp; <code>nomodule</code> attributes are now preserved during script manipulation, layout thrashing was eliminated in some cases in <code>.width()</code> &amp; <code>.height()</code> APIs. Radio elements state is now updated before event handlers run. Passing data now works when triggering all events, including <code>focus</code>. A minor security fix is also included.</p>
+        <p>All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.</p>
+        <p><code>nonce</code> &amp; <code>nomodule</code> attributes are now preserved during script manipulation, layout thrashing was eliminated in some cases in <code>.width()</code> &amp; <code>.height()</code> APIs. Radio elements state is now updated before event handlers run. Passing data now works when triggering all events, including <code>focus</code>. A minor security fix is also included.</p>
         <p>For more information, see the <a href="https://blog.jquery.com/2019/04/10/jquery-3-4-0-released/">Release Notes/Changelog</a>.</p>
         <hr/>
       ]]></desc>
     </category>
     <category name="Version 3.5" slug="3.5">
       <desc><![CDATA[
-        <p>Aspects of the API that were changed in the corresponding version of jQuery. Security fixes, including a breaking change to <code>jQuery.htmlPrefilter</code>; new <code>.even()</code> &amp; <code>.odd()</code> methods; <code>jQuery.globalEval</code> now accepts context; unsuccessful HTTP script responses are no longer evaluated; performance improvements. <code>jQuery.trim</code> is now deprecated. A <a href="https://github.com/jquery/jquery-migrate">jQuery Migrate Plugin</a> was offered to help developers with a transitional upgrade path.</p>
+        <p>All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.</p>
+        <p>Security fixes, including a breaking change to <code>jQuery.htmlPrefilter</code>; new <code>.even()</code> &amp; <code>.odd()</code> methods; <code>jQuery.globalEval</code> now accepts context; unsuccessful HTTP script responses are no longer evaluated; performance improvements. <code>jQuery.trim</code> is now deprecated. A <a href="https://github.com/jquery/jquery-migrate">jQuery Migrate Plugin</a> was offered to help developers with a transitional upgrade path.</p>
         <p>For more information, see the <a href="https://jquery.com/upgrade-guide/3.5/">jQuery Core 3.5 Upgrade guide</a> and the <a href="https://blog.jquery.com/2020/04/10/jquery-3-5-0-released/">Release Notes/Changelog</a>.</p>
         <hr/>
       ]]></desc>
     </category>
     <category name="Version 3.6" slug="3.6">
       <desc><![CDATA[
-        <p>Aspects of the API that were changed in the corresponding version of jQuery. Returning JSON even for JSONP erroneous responses is working again, a few focus fixes.</p>
+        <p>All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.</p>
+        <p>Returning JSON even for JSONP erroneous responses is working again, a few focus fixes.</p>
         <p>For more information, see the <a href="https://blog.jquery.com/2021/03/02/jquery-3-6-0-released/">Release Notes/Changelog</a>.</p>
         <hr/>
       ]]></desc>
     </category>
     <category name="Version 3.7" slug="3.7">
       <desc><![CDATA[
-        <p>Aspects of the API that were changed in the corresponding version of jQuery. New <code>.uniqueSort()</code> method performance improvements in manipulation, fixes for <code>.outerWidth( true )</code> &amp; <code>.outerHeight( true )</code> with negative margins, focus fixes.</p>
+        <p>All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.</p>
+        <p>New <code>.uniqueSort()</code> method performance improvements in manipulation, fixes for <code>.outerWidth( true )</code> &amp; <code>.outerHeight( true )</code> with negative margins, focus fixes.</p>
         <p>As of this release, jQuery no longer relies on Sizzle.</p>
         <p>Native events for <code>focus</code> &amp; <code>blur</code> changed in IE to - respectively - <code>focusin</code> and <code>focusout</code>.</p>
         <p>For more information, see the <a href="https://blog.jquery.com/2023/05/11/jquery-3-7-0-released-staying-in-order/">Release Notes/Changelog</a>.</p>
