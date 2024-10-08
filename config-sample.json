@@ -1,5 +1,5 @@
 {
-  "url": "local.api.jquery.com",
+  "url": "http://local.api.jquery.com",
   "username": "dev",
   "password": "dev"
 }
