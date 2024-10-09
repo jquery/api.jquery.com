@@ -108,6 +108,7 @@ $( "div" ).on( "click", function() {
     <category slug="version/1.4"/>
     <category slug="version/1.9"/>
     <category slug="version/3.2"/>
+    <category slug="version/4.0"/>
   </entry>
   <entry type="method" name="css" return="jQuery">
     <signature>
@@ -146,7 +147,8 @@ $( "div" ).on( "click", function() {
     <longdesc>
       <p>As with the <code>.prop()</code> method, the <code>.css()</code> method makes setting properties of elements quick and easy. This method can take either a property name and value as separate parameters, or a single object of key-value pairs.</p>
       <p>Also, jQuery can equally interpret the CSS and DOM formatting of multiple-word properties. For example, jQuery understands and returns the correct value for both <code>.css({ "background-color": "#ffe", "border-left": "5px solid #ccc" })</code> and <code>.css({backgroundColor: "#ffe", borderLeft: "5px solid #ccc" })</code>. Notice that with the DOM notation, quotation marks around the property names are optional, but with CSS notation they're required due to the hyphen in the name.</p>
-      <p>When a number is passed as the value, jQuery will convert it to a string and add <code>px</code> to the end of that string. If the property requires units other than <code>px</code>, convert the value to a string and add the appropriate units before calling the method.</p>
+      <p>In jQuery 3.x or older, when a number is passed as the value, jQuery will convert it to a string and add <code>px</code> to the end of that string. There's one exception: <code>px</code> is not added to keys of <a href="/jQuery.cssNumber/"><code>jQuery.cssNumber</code></a> If the property requires units other than <code>px</code>, convert the value to a string and add the appropriate units before calling the method.</p>
+      <p>In jQuery 4.0 or newer, when a number is passed as the value, jQuery will only convert it to a string and add <code>px</code> to the end of that string for a limited set of properties - mostly related to width, height, border, margin &amp; padding.</p>
       <p>When using <code>.css()</code> as a setter, jQuery modifies the element's <code>style</code> property. For example,  <code>$( "#mydiv" ).css( "color", "green" )</code> is equivalent to <code>document.getElementById( "mydiv" ).style.color = "green"</code>. Setting the value of a style property to an empty string &#x2014; e.g. <code>$( "#mydiv" ).css( "color", "" )</code> &#x2014; removes that property from an element if it has already been directly applied, whether in the HTML style attribute, through jQuery's <code>.css()</code> method, or through direct DOM manipulation of the <code>style</code> property. As a consequence, the element's style for that property will be restored to whatever value was applied. So, this method can be used to cancel any style modification you have previously performed. It does not, however, remove a style that has been applied with a CSS rule in a stylesheet or <code>&lt;style&gt;</code> element. <strong>Warning:</strong> one notable exception is that, for IE 8 and below, removing a shorthand property such as <code>border</code> or <code>background</code> will remove that style entirely from the element, regardless of what is set in a stylesheet or <code>&lt;style&gt;</code> element.</p>
       <p><strong>Note:</strong> <code>.css()</code> doesn't support <code>!important</code> declarations. So, the statement <code>$( "p" ).css( "color", "red !important" )</code> does not turn the color of all paragraphs in the page to red as of jQuery 3.6.0. Do not depend on that <em>not working</em>, though, as a future version of jQuery may add support for such declarations. It's strongly advised to use classes instead; otherwise use a jQuery plugin.</p>
       <p>As of jQuery 1.8, the <code>.css()</code> setter will automatically take care of prefixing the property name. For example, take <code>.css( "user-select", "none" )</code> in Chrome/Safari will set it as <code>-webkit-user-select</code>, Firefox will use <code>-moz-user-select</code>, and IE10 will use <code>-ms-user-select</code>.</p>
@@ -286,5 +288,6 @@ $( "div" ).on( "click", function() {
     <category slug="version/1.0"/>
     <category slug="version/1.4"/>
     <category slug="version/3.2"/>
+    <category slug="version/4.0"/>
   </entry>
 </entries>
