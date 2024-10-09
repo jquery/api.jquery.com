@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<entry type="method" name="jQuery.isArray" return="boolean" deprecated="3.2">
+<entry type="method" name="jQuery.isArray" return="boolean" deprecated="3.2" removed="4.0">
   <title>jQuery.isArray()</title>
   <signature>
     <added>1.3</added>
