@@ -26,7 +26,7 @@
       <h4>Attributes vs. Properties</h4>
       <p>The difference between <em>attributes</em> and <em>properties</em> can be important in specific situations. <strong>Before jQuery 1.6</strong>, the <code>.attr()</code> method sometimes took property values into account when retrieving some attributes, which could cause inconsistent behavior. <strong>As of jQuery 1.6</strong>, the <code>.prop()</code> method provides a way to explicitly retrieve property values, while <code>.attr()</code> retrieves attributes.</p>
       <p>For example, <code>selectedIndex</code>, <code>tagName</code>, <code>nodeName</code>, <code>nodeType</code>, <code>ownerDocument</code>, <code>defaultChecked</code>, and <code>defaultSelected</code> should be retrieved and set with the <code><a href="/prop/">.prop()</a></code> method. Prior to jQuery 1.6, these properties were retrievable with the <code>.attr()</code> method, but this was not within the scope of <code>attr</code>. These do not have corresponding attributes and are only properties.</p>
-      <p>Concerning boolean attributes, consider a DOM element defined by the HTML markup <code>&lt;input type="checkbox" checked="checked" /&gt;</code>, and assume it is in a JavaScript variable named <code>elem</code>:</p>
+      <p>Concerning boolean attributes, consider a DOM element defined by the HTML markup <code>&lt;input type="checkbox" checked="" /&gt;</code>, and assume it is in a JavaScript variable named <code>elem</code>:</p>
       <table>
         <tr>
           <th>
@@ -44,7 +44,14 @@
           <th>
             <code>elem.getAttribute( "checked" )</code>
           </th>
-          <td><code>"checked"</code> (String) Initial state of the checkbox; does not change</td>
+          <td><code>""</code> (String) Initial state of the checkbox; does not change</td>
+        </tr>
+        <tr>
+          <th>
+            <code>$( elem ).attr( "checked" )</code>
+            <em>(4.0+)</em>
+          </th>
+          <td><code>""</code> (String) Initial state of the checkbox; does not change</td>
         </tr>
         <tr>
           <th>
@@ -131,6 +138,7 @@ The title of the emphasis is:<div></div>
     <category slug="version/1.0"/>
     <category slug="version/1.1"/>
     <category slug="version/1.6"/>
+    <category slug="version/4.0"/>
   </entry>
   <entry type="method" name="attr" return="jQuery">
     <signature>
@@ -142,7 +150,8 @@ The title of the emphasis is:<div></div>
         <type name="String"/>
         <type name="Number"/>
         <type name="Null"/>
-        <desc>A value to set for the attribute. If <code>null</code>, the specified attribute will be removed (as in <a href="/removeAttr/"><code>.removeAttr()</code></a>).</desc>
+        <type name="Boolean"/>
+        <desc>A value to set for the attribute. If <code>null</code>, the specified attribute will be removed (as in <a href="/removeAttr/"><code>.removeAttr()</code></a>). Non-ARIA attributes can also be removed by passing <code>false</code>.</desc>
       </argument>
     </signature>
     <signature>
@@ -162,7 +171,7 @@ The title of the emphasis is:<div></div>
         <argument name="attr" type="String" />
         <return>
           <type name="String"/>
-          <type name="Number"/>          
+          <type name="Number"/>
         </return>
       </argument>
     </signature>
@@ -188,6 +197,11 @@ $( "#greatphoto" ).attr({
 });
       </code></pre>
       <p>When setting multiple attributes, the quotes around attribute names are optional.</p>
+      <h4 id="removing-attr">Removing an attribute</h4>
+      <p>To remove an attribute, either call <code>.attr( name, null )</code> or use <a href="/removeAttr/"><code>.removeAttr( name )</code></a>. For non-ARIA attributes, in jQuery 4.0+ you can also call <code>.attr( name, false )</code>.</p>
+      <div class="warning">
+        <p><strong>Note:</strong> Because <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA">ARIA</a> attributes frequently associate behavior with "false" values that differs from attribute absence, passing <code>false</code> as the value for an attribute whose name starts with <code>"aria-…"</code> will stringify that value to <code>"false"</code> rather than remove the attribute. To guarantee removal of an attribute, provide <code>null</code> as the value or use the <code>.removeAttr()</code> method.</p>
+      </div>
       <p><strong>WARNING</strong>: When setting the 'class' attribute, you must always use quotes!</p>
       <div class="warning">
         <p><strong>Note:</strong> Attempting to change the <code>type</code> attribute on an <code>input</code> or <code>button</code> element created via <code>document.createElement()</code> will throw an exception on Internet Explorer 8 or older.</p>
@@ -273,5 +287,6 @@ $( "img" ).attr( "src", function() {
     <category slug="version/1.0"/>
     <category slug="version/1.1"/>
     <category slug="version/1.6"/>
+    <category slug="version/4.0"/>
   </entry>
 </entries>
