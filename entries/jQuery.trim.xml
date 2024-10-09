@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<entry type="method" name="jQuery.trim" return="String" deprecated="3.5">
+<entry type="method" name="jQuery.trim" return="String" deprecated="3.5" removed="4.0">
   <title>jQuery.trim()</title>
   <signature>
     <added>1.0</added>

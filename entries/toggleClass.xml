@@ -229,7 +229,7 @@ $( "a" ).on( "click", function( event ) {
     <category slug="version/1.12-and-2.2"/>
     <category slug="version/3.3"/>
   </entry>
-  <entry type="method" name="toggleClass" return="jQuery" deprecated="3.0">
+  <entry type="method" name="toggleClass" return="jQuery" deprecated="3.0" removed="4.0">
     <signature>
       <added>1.4</added>
       <argument name="state" optional="true" type="Boolean">
