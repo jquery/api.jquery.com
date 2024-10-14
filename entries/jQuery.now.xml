@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<entry type="method" name="jQuery.now" return="Number" deprecated="3.3">
+<entry type="method" name="jQuery.now" return="Number" deprecated="3.3" removed="4.0">
   <title>jQuery.now()</title>
   <signature>
     <added>1.4.3</added>
