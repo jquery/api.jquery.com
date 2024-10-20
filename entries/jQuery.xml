@@ -183,7 +183,7 @@ $( myForm.elements ).hide();
       <pre><code>$( "&lt;a href='https://jquery.com'&gt;&lt;/a&gt;" );</code></pre>
       <p>Tags that cannot contain elements may be quick-closed or not:</p>
       <pre><code>
-$( "&lt;img&gt;" );
+$( "&lt;img /&gt;" );
 $( "&lt;input&gt;" );
       </code></pre>
       <p>When passing HTML to <code>jQuery()</code>, note that text nodes are not treated as DOM elements. With the exception of a few methods (such as <code>.content()</code>), they are generally ignored or removed. E.g:</p>
