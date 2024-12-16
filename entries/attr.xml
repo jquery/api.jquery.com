@@ -200,7 +200,7 @@ $( "#greatphoto" ).attr({
       <h4 id="removing-attr">Removing an attribute</h4>
       <p>To remove an attribute, either call <code>.attr( name, null )</code> or use <a href="/removeAttr/"><code>.removeAttr( name )</code></a>. For non-ARIA attributes, in jQuery 4.0+ you can also call <code>.attr( name, false )</code>.</p>
       <div class="warning">
-        <p><strong>Note:</strong> Because <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA">ARIA</a> attributes frequently associate behavior with "false" values that differs from attribute absence, passing <code>false</code> as the value for an attribute whose name starts with <code>"aria-…"</code> will stringify that value to <code>"false"</code> rather than remove the attribute. To guarantee removal of an attribute, provide <code>null</code> as the value or use the <code>.removeAttr()</code> method.</p>
+        <p><strong>Note:</strong> Because <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA">ARIA</a> attributes frequently associate behavior with "false" values that differs from attribute absence, passing <code>false</code> as the value for an attribute whose name starts with <code>"aria-…"</code> will stringify that value to <code>"false"</code> rather than remove the attribute. To guarantee removal of an attribute, use the <code>.removeAttr()</code> method or provide <code>null</code> as the value to the <code>.attr()</code> setter.</p>
       </div>
       <p><strong>WARNING</strong>: When setting the 'class' attribute, you must always use quotes!</p>
       <div class="warning">
