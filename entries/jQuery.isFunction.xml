@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<entry type="method" name="jQuery.isFunction" return="boolean" deprecated="3.3">
+<entry type="method" name="jQuery.isFunction" return="boolean" deprecated="3.3" removed="4.0">
   <title>jQuery.isFunction()</title>
   <signature>
     <added>1.2</added>

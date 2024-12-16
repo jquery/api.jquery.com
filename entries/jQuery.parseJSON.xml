@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<entry type="method" name="jQuery.parseJSON" deprecated="3.0">
+<entry type="method" name="jQuery.parseJSON" deprecated="3.0" removed="4.0">
   <return type="String"/>
   <return type="Number"/>
   <return type="Object"/>
