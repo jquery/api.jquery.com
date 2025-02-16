@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<entry type="method" name="ajaxError" return="jQuery" deprecated="3.3">
+<entry type="method" name="ajaxError" return="jQuery" deprecated="3.5">
   <title>.ajaxError()</title>
   <desc>Register a handler to be called when Ajax requests complete with an error. This is an <a href="/Ajax_Events/">Ajax Event</a>.</desc>
   <signature>
