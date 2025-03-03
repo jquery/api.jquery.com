@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<entry type="method" name="jQuery.isNumeric" return="Boolean" deprecated="3.3">
+<entry type="method" name="jQuery.isNumeric" return="Boolean" deprecated="3.3" removed="4.0">
   <title>jQuery.isNumeric()</title>
   <desc>Determines whether its argument represents a JavaScript number.</desc>
   <signature>

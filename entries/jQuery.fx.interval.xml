@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<entry type="property" name="jQuery.fx.interval" return="Number" deprecated="3.0">
+<entry type="property" name="jQuery.fx.interval" return="Number" deprecated="3.0" removed="4.0">
   <title>jQuery.fx.interval</title>
   <desc>The rate (in milliseconds) at which animations fire.</desc>
   <signature>
