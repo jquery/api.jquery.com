@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<entry type="method" name="ajaxSuccess" return="jQuery" deprecated="3.3">
+<entry type="method" name="ajaxSuccess" return="jQuery" deprecated="3.5">
   <title>.ajaxSuccess()</title>
   <desc>Attach a function to be executed whenever an Ajax request completes successfully. This is an <a href="/Ajax_Events/">Ajax Event</a>.</desc>
   <signature>
