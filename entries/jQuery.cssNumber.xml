@@ -12,7 +12,9 @@
     <p>You can think about <code>jQuery.cssNumber</code> as a list of all CSS properties you might use without a unit. Prior to jQuery 4.0, it was used by <a href="/css/"><code>.css()</code></a> to determine if it needs to add <code>px</code> to unitless values.</p>
     <p>The keys of the <code>jQuery.cssNumber</code> object are camel-cased and the values are all set to <code>true</code>. If you want to prevent the <a href="/css/"><code>.css()</code></a> method from automatically adding the <code>px</code> unit for a specific CSS property and that property is not yet a key of the <code>jQuery.cssNumber</code> object, you can add such an extra property:</p>
     <pre><code>
-jQuery.cssNumber.someCSSProp = true;
+if ( jQuery.cssNumber ) {
+  jQuery.cssNumber.someCSSProp = true;
+}
     </code></pre>
   </longdesc>
   <category slug="css"/>
