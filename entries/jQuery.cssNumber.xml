@@ -16,6 +16,36 @@ if ( jQuery.cssNumber ) {
   jQuery.cssNumber.someCSSProp = true;
 }
     </code></pre>
+    <p>By default the object contains the following properties:</p>
+    <ul>
+      <li><code>animationIterationCount</code> (added in 1.12.0/2.2.0)</li>
+      <li><code>aspectRatio</code> (added in 3.7.0)</li>
+      <li><code>borderImageSlice</code> (added in 3.7.0)</li>
+      <li><code>columnCount</code> (added in 1.9.0)</li>
+      <li><code>flexGrow</code> (added in 1.11.1/2.1.1)</li>
+      <li><code>flexShrink</code> (added in 1.11.1/2.1.1)</li>
+      <li><code>fontWeight</code> (added in 1.4.3)</li>
+      <li><code>gridArea</code> (added in 3.4.0)</li>
+      <li><code>gridColumn</code> (added in 3.4.0)</li>
+      <li><code>gridColumnEnd</code> (added in 3.4.0)</li>
+      <li><code>gridColumnStart</code> (added in 3.4.0)</li>
+      <li><code>gridRow</code> (added in 3.4.0)</li>
+      <li><code>gridRowEnd</code> (added in 3.4.0)</li>
+      <li><code>gridRowStart</code> (added in 3.4.0)</li>
+      <li><code>lineHeight</code> (added in 1.4.3)</li>
+      <li><code>opacity</code> (added in 1.4.3)</li>
+      <li><code>order</code> (added in 1.10.2/2.0.3)</li>
+      <li><code>orphans</code> (added in 1.6.0)</li>
+      <li><code>scale</code> (added in 3.7.0)</li>
+      <li><code>widows</code> (added in 1.6.0)</li>
+      <li><code>zIndex</code> (added in 1.4.3)</li>
+      <li><code>zoom</code> (added in 1.4.3)</li>
+      <li><code>fillOpacity</code> (SVG-related, added in 1.6.2)</li>
+      <li><code>floodOpacity</code> (SVG-related, added in 3.7.0)</li>
+      <li><code>stopOpacity</code> (SVG-related, added in 3.7.0)</li>
+      <li><code>strokeMiterlimit</code> (SVG-related, added in 3.7.0)</li>
+      <li><code>strokeOpacity</code> (SVG-related, added in 3.7.0)</li>
+    </ul>
   </longdesc>
   <category slug="css"/>
   <category slug="manipulation/style-properties"/>
