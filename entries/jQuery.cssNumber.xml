@@ -1,30 +1,50 @@
 <?xml version="1.0"?>
-<entry type="property" name="jQuery.cssNumber" return="Object">
+<entry type="property" name="jQuery.cssNumber" return="Object" removed="4.0">
   <title>jQuery.cssNumber</title>
   <signature>
     <added>1.4.3</added>
   </signature>
-  <desc>An object containing all CSS properties that may be used without a unit. The <a href="/css/"><code>.css()</code></a> method uses this object to see if it may append <code>px</code> to unitless values.</desc>
+  <desc>An object containing all CSS properties that may be used without a unit. Prior to jQuery 4.0, the <a href="/css/"><code>.css()</code></a> method uses this object to see if it may append <code>px</code> to unitless values.</desc>
   <longdesc>
-    <p>You can think about <code>jQuery.cssNumber</code> as a list of all CSS properties you might use without a unit. It's used by <a href="/css/"><code>.css()</code></a> to determine if it needs to add <code>px</code> to unitless values.</p>
-    <p>The keys of the <code>jQuery.cssNumber</code> object are camel-cased and the values are all set to <code>true</code>. If you want to prevent the <a href="/css/"><code>.css()</code></a> method from automatically adding the <code>px</code> unit for a specific CSS property, you can add an extra property to the <code>jQuery.cssNumber</code> object.</p>
+    <div class="warning">
+      <p>Note: This API has been removed in jQuery 4.0; please pass a string value with the desired units instead.</p>
+    </div>
+    <p>You can think about <code>jQuery.cssNumber</code> as a list of all CSS properties you might use without a unit. Prior to jQuery 4.0, it was used by <a href="/css/"><code>.css()</code></a> to determine if it needs to add <code>px</code> to unitless values.</p>
+    <p>The keys of the <code>jQuery.cssNumber</code> object are camel-cased and the values are all set to <code>true</code>. If you want to prevent the <a href="/css/"><code>.css()</code></a> method from automatically adding the <code>px</code> unit for a specific CSS property and that property is not yet a key of the <code>jQuery.cssNumber</code> object, you can add such an extra property:</p>
     <pre><code>
-jQuery.cssNumber.someCSSProp = true;
+if ( jQuery.cssNumber ) {
+  jQuery.cssNumber.someCSSProp = true;
+}
     </code></pre>
     <p>By default the object contains the following properties:</p>
     <ul>
-      <li><code>zIndex</code></li>
-      <li><code>fontWeight</code></li>
-      <li><code>opacity</code></li>
-      <li><code>zoom</code></li>
-      <li><code>lineHeight</code></li>
-      <li><code>widows</code> (added in jQuery 1.6)</li>
-      <li><code>orphans</code> (added in jQuery 1.6)</li>
-      <li><code>fillOpacity</code> (added in jQuery 1.6.2)</li>
-      <li><code>columnCount</code> (added in jQuery 1.9)</li>
-      <li><code>order</code> (added in jQuery 1.10.2)</li>
-      <li><code>flexGrow</code> (added in jQuery 1.11.1)</li>
-      <li><code>flexShrink</code> (added in jQuery 1.11.1)</li>
+      <li><code>animationIterationCount</code> (added in 1.12.0/2.2.0)</li>
+      <li><code>aspectRatio</code> (added in 3.7.0)</li>
+      <li><code>borderImageSlice</code> (added in 3.7.0)</li>
+      <li><code>columnCount</code> (added in 1.9.0)</li>
+      <li><code>flexGrow</code> (added in 1.11.1/2.1.1)</li>
+      <li><code>flexShrink</code> (added in 1.11.1/2.1.1)</li>
+      <li><code>fontWeight</code> (added in 1.4.3)</li>
+      <li><code>gridArea</code> (added in 3.4.0)</li>
+      <li><code>gridColumn</code> (added in 3.4.0)</li>
+      <li><code>gridColumnEnd</code> (added in 3.4.0)</li>
+      <li><code>gridColumnStart</code> (added in 3.4.0)</li>
+      <li><code>gridRow</code> (added in 3.4.0)</li>
+      <li><code>gridRowEnd</code> (added in 3.4.0)</li>
+      <li><code>gridRowStart</code> (added in 3.4.0)</li>
+      <li><code>lineHeight</code> (added in 1.4.3)</li>
+      <li><code>opacity</code> (added in 1.4.3)</li>
+      <li><code>order</code> (added in 1.10.2/2.0.3)</li>
+      <li><code>orphans</code> (added in 1.6.0)</li>
+      <li><code>scale</code> (added in 3.7.0)</li>
+      <li><code>widows</code> (added in 1.6.0)</li>
+      <li><code>zIndex</code> (added in 1.4.3)</li>
+      <li><code>zoom</code> (added in 1.4.3)</li>
+      <li><code>fillOpacity</code> (SVG-related, added in 1.6.2)</li>
+      <li><code>floodOpacity</code> (SVG-related, added in 3.7.0)</li>
+      <li><code>stopOpacity</code> (SVG-related, added in 3.7.0)</li>
+      <li><code>strokeMiterlimit</code> (SVG-related, added in 3.7.0)</li>
+      <li><code>strokeOpacity</code> (SVG-related, added in 3.7.0)</li>
     </ul>
   </longdesc>
   <category slug="css"/>
