@@ -55,7 +55,7 @@ $( document ).on( "ajaxSuccess", function( event, xhr, settings ) {
   <example>
     <desc>Show a message when an Ajax request completes successfully.</desc>
     <code><![CDATA[
-$( document ).on( "ajaxSuccess< function( event, request, settings ) {
+$( document ).on( "ajaxSuccess", function( event, request, settings ) {
   $( "#msg" ).append( "<li>Successful Request!</li>" );
 } );
 ]]></code>
