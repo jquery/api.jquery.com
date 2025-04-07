@@ -7,8 +7,8 @@
   <desc>Bind an event handler to the "keypress" event.</desc>
   <signature>
     <added>1.7</added>
-    <argument name="&quot;keyup&quot;" type="string">
-      <desc>The string <code>"keyup"</code>.</desc>
+    <argument name="&quot;keypress&quot;" type="string">
+      <desc>The string <code>"keypress"</code>.</desc>
     </argument>
     <argument name="eventData" type="Anything" optional="true">
       <desc>An object containing data that will be passed to the event handler.</desc>
@@ -113,16 +113,16 @@ $( "#other" ).on( "click", function() {
 </entry>
 
 <entry type="method" name="trigger" return="jQuery">
-  <title>keyup event</title>
-  <desc>Trigger the "keyup" event on an element.</desc>
+  <title>keypress event</title>
+  <desc>Trigger the "keypress" event on an element.</desc>
   <signature>
     <added>1.0</added>
-    <argument name="&quot;keyup&quot;" type="string">
-      <desc>The string <code>"keyup"</code>.</desc>
+    <argument name="&quot;keypress&quot;" type="string">
+      <desc>The string <code>"keypress"</code>.</desc>
     </argument>
   </signature>
   <longdesc>
-    <p>See the description for <a href="#on1"><code>.on( "keyup", ... )</code></a>.</p>
+    <p>See the description for <a href="#on1"><code>.on( "keypress", ... )</code></a>.</p>
   </longdesc>
   <category slug="events/keyboard-events"/>
   <category slug="version/1.0"/>
