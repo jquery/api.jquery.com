@@ -187,7 +187,7 @@ $( "#left" ).on( "click", function(){
 ]]></css>
   </example>
   <example>
-    <desc>The first button shows how an unqueued animation works.  It expands the div out to 90% width <strong>while</strong> the font-size is increasing. Once the font-size change is complete, the border animation will begin.
+    <desc>In the next example, the first button shows how an unqueued animation works.  It expands the div out to 90% width <strong>while</strong> the font-size is increasing. Once the font-size change is complete, the border animation will begin.
 
 The second button starts a traditional chained animation, where each animation will start once the previous animation on the element has completed.</desc>
     <code><![CDATA[
