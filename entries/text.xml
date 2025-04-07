@@ -22,7 +22,7 @@
       <p>
         <code>Demonstration Box list item 1 list item 2</code>
       </p>
-      <p>The <code>.text()</code> method cannot be used on form inputs or scripts.  To set or get the text value of <code>input</code> or <code>textarea</code> elements, use the <a href="/val/"><code>.val()</code></a> method. To get the value of a script element, use the <a href="/html/"><code>.html()</code></a> method.</p>
+      <p>The <code>.text()</code> method should not be used on form inputs or scripts.  To set or get the text value of <code>input</code> or <code>textarea</code> elements, use the <a href="/val/"><code>.val()</code></a> method. To get the value of a script element, use the <a href="/html/"><code>.html()</code></a> method.</p>
       <p>As of jQuery 1.4, the <code>.text()</code> method returns the value of text and CDATA nodes as well as element nodes.</p>
     </longdesc>
     <example>
@@ -91,7 +91,7 @@ $( "p" ).last().html( str );
       <pre><code>
 &lt;p&gt;This is a test&lt;/p&gt;
       </code></pre>
-      <p>The <code>.text()</code> method cannot be used on input elements.  For input field text, use the <a href="/val/">.val()</a> method.</p>
+      <p>The <code>.text()</code> method should not be used on input elements.  For input field text, use the <a href="/val/">.val()</a> method.</p>
       <p>As of jQuery 1.4, the <code>.text()</code> method allows us to set the text content by passing in a function.</p>
       <pre><code>
 $( "ul li" ).text(function( index ) {
