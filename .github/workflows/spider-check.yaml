@@ -9,9 +9,11 @@ on:
   push:
     paths:
       - .github/workflows/spider-check.yaml
+      - .github/configs/hydra-config.json
   pull_request:
     paths:
       - .github/workflows/spider-check.yaml
+      - .github/configs/hydra-config.json
 
 jobs:
   spider-check:

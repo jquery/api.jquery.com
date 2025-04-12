@@ -1,5 +1,10 @@
 {
+  "//": [
+    "2023-05: twitter.com serves broken redirect-loop",
+    "2025-04: The oembed endpoint responds HTTP 429 Too Many Requests too often; perhaps because almost every page links to one"
+  ],
   "exclude_scheme_prefixes": [
-    "https://twitter.com/"
+    "https://twitter.com/",
+    "https://api.jquery.com/wp-json/oembed/1.0/embed"
   ]
 }
