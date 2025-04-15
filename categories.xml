@@ -108,6 +108,12 @@
         <p>For more information, see the Release Notes/Changelog at <a href="https://blog.jquery.com/2020/04/10/jquery-3-5-0-released/">https://blog.jquery.com/2020/04/10/jquery-3-5-0-released/</a></p>
       ]]></desc>
     </category>
+    <category name="Deprecated 3.7" slug="deprecated-3.7">
+      <desc><![CDATA[
+        <p>All the aspects of the API that were deprecated in the corresponding version of jQuery.</p>
+        <p>For more information, see the Release Notes/Changelog at <a href="https://blog.jquery.com/2023/05/11/jquery-3-7-0-released-staying-in-order/">https://blog.jquery.com/2023/05/11/jquery-3-7-0-released-staying-in-order/</a></p>
+      ]]></desc>
+    </category>
   </category>
   <category name="Dimensions" slug="dimensions">
     <desc><![CDATA[These methods are used to get and set the CSS dimensions for the various properties.]]></desc>
