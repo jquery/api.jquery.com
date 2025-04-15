@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<entry type="method" name="jQuery.Deferred.getErrorHook" return="Error">
+  <title>jQuery.Deferred.getErrorHook()</title>
+  <signature>
+    <added>3.7</added>
+  </signature>
+  <desc>Return an Error instance with a defined stack.</desc>
+  <longdesc>
+    <div class="warning">
+      <p>Note: This API is not defined by default. It may be provided by the user and jQuery will then use it internally.</p>
+    </div>
+    <p>When <code>jQuery.Deferred.getErrorHook</code> is defined, it extends the <code>jQuery.Deferred</code> features added in jQuery 3.0 to include an error captured before the async barrier whenever a Deferred throws an exception. This makes it easier to find programming errors that occur inside Deferreds. You can find an example implementation you can copy-paste below, or you can use <a href="https://github.com/dmethvin/jquery-deferred-reporter">jquery-deferred-reporter</a> plugin.</p>
+    <pre><code>
+jQuery.Deferred.getErrorHook = function() {
+  try {
+    throw new Error( "Exception in jQuery.Deferred" );
+  } catch ( err ) {
+    return err;
+  }
+};
+    </code></pre>
+    <p>When defined, an error returned by this API is passed to <a href="/jQuery.Deferred.exceptionHook/"><code>jQuery.Deferred.exceptionHook</code></a> as the second parameter.</p>
+    <h4>Why does this API exist?</h4>
+    <p>Prior to jQuery 3.0, Deferreds would simply terminate and the browser would generate a message on the console if an exception occurred such as attempting to call an undefined method as a function (e.g., <code>myobject.missingFunction()</code>). As of version 3.0, <code>jQuery.Deferred</code> follows the Promise/A+ specification when you use the <code>.then</code> method. The spec requires all errors to be trapped by the Promise, which prevents console errors from being logged. If the user has forgotten to add a handler for rejected promises, this can result in the error being silently swallowed with no notification at all!</p>
+    <p>The native <code>Promise</code> object as implemented in the browser tracks Promise rejections and reports problems on the console. However, doing the same type of reporting in the JavaScript world is much more difficult. jQuery itself is unable to use the native Promise because jQuery.Deferred implements a superset of Promise that requires additional features for methods like <code>.done</code> or <code>.fail</code>, and because Promise is not implemented on all the platforms that jQuery supports.</p>
+  </longdesc>
+  <category slug="deferred-object"/>
+  <category slug="version/3.7"/>
+</entry>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<entry type="method" name="jQuery.Deferred.getStackHook" return="Error" deprecated="3.7" removed="4.0">
+  <title>jQuery.Deferred.getStackHook()</title>
+  <signature>
+    <added>3.0</added>
+  </signature>
+  <desc>Return an Error instance with a defined stack.</desc>
+  <longdesc>
+    <div class="warning">
+      <p>Note: This API has been deprecated in jQuery 3.7; please use the <a href="/jQuery.Deferred.getErrorHook/"><code>jQuery.Deferred.getErrorHook</code></a> method instead.</p>
+    </div>
+    <div class="warning">
+      <p>Note: This API is not defined by default. It may be provided by the user and jQuery will then use it internally.</p>
+    </div>
+    <p>See <a href="/jQuery.Deferred.getErrorHook/"><code>jQuery.Deferred.getErrorHook</code></a> for the context why this API was created. Initially, we advised users to assign to it a function returning an error stack:</p>
+    <pre><code>
+jQuery.Deferred.getStackHook = function() {
+  try {
+    throw new Error( "Exception in jQuery.Deferred" );
+  } catch ( err ) {
+    return err.stack; // stack property returned here
+  }
+};
+    </code></pre>
+    <p>However, when such a stack is then logged by jQuery from inside of <a href="/jQuery.Deferred.exceptionHook/"><code>jQuery.Deferred.exceptionHook</code></a>, the browser won't apply source maps. Therefore, we changed the recommendation to return the full error object itself. To make it clearer, the API was also renamed.</p>
+  </longdesc>
+  <category slug="deferred-object"/>
+  <category slug="version/3.0"/>
+  <category slug="deprecated/deprecated-3.7"/>
+</entry>

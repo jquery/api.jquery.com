@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<entry type="method" name="jQuery.Deferred.exceptionHook" return="Error">
+  <title>jQuery.Deferred.exceptionHook()</title>
+  <signature>
+    <added>3.0</added>
+  </signature>
+  <desc>Handle errors produced by Deferreds.</desc>
+  <longdesc>
+    <p>This API is called every time an error is thrown inside Deferreds. By default, it only warns about errors that are more likely to be programmer errors than errors thrown due to application logic. This includes errors like <code>SyntaxError</code> or <code>ReferenceError</code>.</p>
+    <p>If you want, you can redefine the API to handle errors the way you like. The function accepts two parameters - the first one is an error thrown and the second, optional one is a "fake" error created before the handler is called so that a stack trace from before an async barrier is available. This second error is only provided if <a href="/jQuery.Deferred.getErrorHook/"><code>jQuery.Deferred.getErrorHook</code></a> is defined; see the docs for that API for more details.</p>
+    <h3>Example</h3>
+    <pre><code><![CDATA[
+// These usually indicate a programmer mistake during development,
+// warn about them ASAP rather than swallowing them by default.
+var rerrorNames = /^(Eval|Internal|Range|Reference|Syntax|Type|URI)Error$/;
+
+// If `jQuery.Deferred.getErrorHook` is defined, `asyncError` is an error
+// captured before the async barrier to get the original error cause
+// which may otherwise be hidden.
+jQuery.Deferred.exceptionHook = function( error, asyncError ) {
+
+  if ( error && rerrorNames.test( error.name ) ) {
+    MyLoggingLibrary.log(
+      "jQuery.Deferred exception",
+      error,
+      asyncError
+    );
+  }
+};
+    ]]></code></pre>
+  </longdesc>
+  <category slug="deferred-object"/>
+  <category slug="version/3.0"/>
+</entry>
