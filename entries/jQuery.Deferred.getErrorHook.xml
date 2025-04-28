@@ -7,7 +7,7 @@
   <desc>Return an Error instance with a defined stack.</desc>
   <longdesc>
     <div class="warning">
-      <p>Note: This API is not defined by default. It may be provided by the user and jQuery will then use it internally.</p>
+      <p>Note: This API is not defined by default, but jQuery will make use of it when defined.</p>
     </div>
     <p>When <code>jQuery.Deferred.getErrorHook</code> is defined, it extends the <code>jQuery.Deferred</code> features added in jQuery 3.0 to include an error captured before the async barrier whenever a Deferred throws an exception. This makes it easier to find programming errors that occur inside Deferreds. You can find an example implementation you can copy-paste below, or you can use <a href="https://github.com/dmethvin/jquery-deferred-reporter">jquery-deferred-reporter</a> plugin.</p>
     <pre><code>
