@@ -10,7 +10,7 @@
       <p>Note: This API has been deprecated in jQuery 3.7; please use the <a href="/jQuery.Deferred.getErrorHook/"><code>jQuery.Deferred.getErrorHook</code></a> method instead.</p>
     </div>
     <div class="warning">
-      <p>Note: This API is not defined by default. It may be provided by the user and jQuery will then use it internally.</p>
+      <p>Note: This API is not defined by default, but jQuery will make use of it when defined.</p>
     </div>
     <p>See <a href="/jQuery.Deferred.getErrorHook/"><code>jQuery.Deferred.getErrorHook</code></a> for the context why this API was created. Initially, we advised users to assign to it a function returning an error stack:</p>
     <pre><code>
