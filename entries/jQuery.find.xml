@@ -205,38 +205,6 @@ jQuery.expr.pseudos.not =
   } );
     </code></pre>
 
-    <h6>Backwards-compatible plugins for pseudos with arguments</h6>
-
-    <p>In order to write a custom selector with arguments that can take advantage of the new API, yet still support all versions of jQuery, check for the <code>createPseudo</code> method.</p>
-
-    <p>The following example uses jQuery syntax. <a href="http://jsfiddle.net/timmywil/EKtzH/">Live example</a></p>
-    <pre><code>
-// An implementation of a case-insensitive contains pseudo
-// made for all versions of jQuery
-( function( $ ) {
-
-function icontains( elem, text ) {
-  return (
-    elem.textContent ||
-    elem.innerText ||
-    $( elem ).text() ||
-    ""
-  ).toLowerCase().indexOf( ( text || "" ).toLowerCase() ) > -1;
-}
-
-$.expr.pseudos.icontains = $.expr.createPseudo ?
-  $.expr.createPseudo( function( text ) {
-    return function( elem ) {
-      return icontains( elem, text );
-    };
-  } ) :
-  function( elem, i, match ) {
-    return icontains( elem, match[ 3 ] );
-  };
-
-} )( jQuery );
-    </code></pre>
-
     <h5><code>jQuery.expr.setFilters.LOWERCASE_NAME = function( elements, argument, not ) {}</code></h5>
 
     <p>These filters are run after a previous part of a selector has already returned results. <code>setFilters</code> are found from matching <code>jQuery.expr.match.POS</code>. When applicable, <code>argument</code> is expected to be an integer. The <code>not</code> argument is a boolean indicating whether the result should be inverted (as in <code>div:not(:first)</code>).</p>
