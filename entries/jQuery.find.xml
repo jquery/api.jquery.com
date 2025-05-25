@@ -1,0 +1,280 @@
+<?xml version="1.0"?>
+<entry>
+  <title>jQuery.find()</title>
+  <desc>The jQuery selector engine, formerly known as Sizzle, is exposed under <code>jQuery.find</code>. This page describes all the APIs under <code>jQuery.find</code>.
+  </desc>
+  <longdesc>
+    <h2>Note</h2>
+
+    <p>jQuery selector engine first tries to run the passed selector — with some modifications — through native <code>querySelectorAll</code>, so selectors natively supported by the current browsers generally work out of the box. However, if the browser does not recognize the selector, jQuery does the whole selection on its own. Some newer selectors may not work with such a jQuery selection.</p>
+
+    <h2>Selectors</h2>
+
+    <h3>CSS 3</h3>
+
+    <p>jQuery supports virtually all <a href="http://www.w3.org/TR/css3-selectors/">CSS 3 Selectors</a>, including escaped selectors (<code>.foo\+bar</code>), Unicode selectors, and results returned in document order. The only exceptions are those that would require additional DOM event listeners to keep track of the state of elements.</p>
+
+    <p>As such, the following pseudo-selectors are <em>not</em> supported:</p>
+    <ul>
+      <li><code>:hover</code></li>
+      <li><code>:active</code></li>
+      <li><code>:visited</code>, <code>:link</code></li>
+    </ul>
+
+    <p><strong>Note</strong>: These CSS3 pseudo-selectors were unsupported prior to version 1.9:</p>
+    <ul>
+      <li><code>:target</code></li>
+      <li><code>:root</code></li>
+      <li><code>:nth-last-child</code></li>
+      <li><code>:nth-of-type</code>, <code>:nth-last-of-type</code>, <code>:first-of-type</code>, <code>:last-of-type</code>, <code>:only-of-type</code></li>
+      <li><code>:lang()</code></li>
+    </ul>
+
+    <h3>Other selectors and conventions</h3>
+
+    <h4>Changes</h4>
+
+    <ul>
+      <li>Full selector lists in <code>:not()</code>; e.g. <code>:not(a.b)</code>, <code>:not(div &gt; p)</code>, <code>:not(div, p)</code></li>
+      <li>Nested pseudo-selectors; e.g. <code>:not(:has(div:first-child))</code></li>
+    </ul>
+
+    <h4>Additions</h4>
+
+    <ul>
+      <li><code>[NAME!=VALUE]</code>: Elements whose NAME attribute doesn&#39;t match the specified value. Equivalent to <code>:not([NAME=VALUE])</code>.</li>
+      <li><code>:contains(TEXT)</code>: Elements with textContent containing the word &#39;TEXT&#39;. Case-sensitive.</li>
+      <li><code>:header</code>: Header elements (h1, h2, h3, h4, h5, h6).</li>
+      <li><code>:parent</code>: Elements with at least one child node (either text or an element).</li>
+      <li><code>:selected</code>: (option) elements that are currently selected</li>
+    </ul>
+
+    <h4>Form Selector Additions</h4>
+
+    <p><strong>Note</strong>: In this context, <code>input</code>, <code>button</code>, <code>select</code>, and <code>textarea</code> are all considered to be input elements.</p>
+
+    <ul>
+      <li><code>:input</code>: Input elements</li>
+      <li><code>:button</code>: Input elements that are <code>button</code>s or have type "button"</li>
+      <li><code>:checkbox</code>, <code>:file</code>, <code>:image</code>, <code>:password</code>, <code>:radio</code>, <code>:reset</code>, <code>:submit</code>, <code>:text</code>: Input elements with the specified type</li>
+    </ul>
+
+    <h4>Positional Selector Additions</h4>
+
+    <p>In this context, "positional" refers to an element&#39;s placement in the collection after a selection, based on document order. For example, <code>div:first</code> would return an array containing the first <code>div</code> on the page, while <code>div:first em</code> would target the first <code>div</code> on the page and select all <code>em</code> elements within.</p>
+
+    <p><strong>Note</strong>: Positional indexes begin at zero.</p>
+
+    <ul>
+      <li><code>:first</code>/<code>:last</code>: The first/last matching element</li>
+      <li><code>:even</code>/<code>:odd</code>: Even/odd-numbered elements</li>
+      <li><code>:eq</code>/<code>:nth</code>: The nth element; e.g. <code>:eq(5)</code> finds the 6th element</li>
+      <li><code>:lt</code>/<code>:gt</code>: Elements at positions above/below the specified position</li>
+    </ul>
+
+    <h2>API</h2>
+
+    <p>The jQuery Selection API consists of 3 parts:</p>
+
+    <ul>
+      <li>The <strong><a href="#jquery-find-public-api">Public API</a></strong>, which users interact with.</li>
+      <li>The <strong><a href="#jquery-find-extension-api">Extension API</a></strong>, for modifications to the selector engine.</li>
+      <li>The <strong><a href="#jquery-find-internal-api">Internal API</a></strong>, used internally by jQuery.</li>
+    </ul>
+
+    <h3 id="jquery-find-public-api">Public API</h3>
+
+    <h4><code>jQuery.find( String selector[, DOMNode context[, Array results]] )</code></h4>
+
+    <p>The main function for finding elements. Uses <code>querySelectorAll</code> if available.</p>
+
+    <p><strong>returns</strong> (Array): All elements matching the selector</p>
+
+    <p><em>Parameters</em></p>
+
+    <p><strong>selector</strong>: A CSS selector</p>
+
+    <p><strong><em>context</em></strong>: An element, document, or document fragment to use as the context for finding elements. Defaults to <code>document</code>.
+      <strong>Note:</strong> Prior to version 2.1, document fragments were not valid here.</p>
+
+    <p><strong><em>results</em></strong>: An array or an array-like object, to which jQuery will append results. For example, jQuery passes a jQuery collection. An "array-like object" is an object with a nonnegative numeric <code>length</code> property and a <code>push</code> method.</p>
+
+    <h4><code>jQuery.find.matchesSelector( DOMElement element, String selector )</code></h4>
+
+    <p>Uses native <code>matchesSelector</code> if available</p>
+
+    <p><strong>returns</strong>(Boolean): Whether the given element matches the selector</p>
+
+    <p><em>Parameters</em></p>
+
+    <p><strong>element</strong>: A <code>DOMElement</code> against which jQuery will test the selector</p>
+
+    <p><strong>selector</strong>: A CSS selector</p>
+
+    <h4><code>jQuery.find.matches( String selector, Array&lt;DOMElement&gt; elements )</code></h4>
+
+    <p><strong>returns</strong>(Array): Elements in the array that match the given selector</p>
+
+    <p><em>Parameters</em></p>
+
+    <p><strong>selector</strong>: A CSS selector</p>
+
+    <p><strong>elements</strong>: An array of <code>DOMElements</code> to filter against the specified selector</p>
+
+    <h3 id="jquery-find-extension-api">Extension API</h3>
+
+    <h4><code>jQuery.find.selectors.match.NAME = RegExp</code></h4>
+
+    <p>This contains the regular expressions used to parse a selector into different parts, to be used for finding and filtering. The name of each of the regular expressions should correspond to the names specified in the <code>jQuery.find.selectors.find</code> and <code>jQuery.find.selectors.filter</code> objects.</p>
+
+    <h4>Finding</h4>
+
+    <p>In order to add a new find function:</p>
+    <ul>
+      <li>A regular expression must be added to the <code>match</code> object.</li>
+      <li>A function to <code>find</code> must be defined.</li>
+      <li><code>"|" + NAME</code> must be appended to the <code>jQuery.find.selectors.order</code> regex.</li>
+    </ul>
+
+    <h5><code>jQuery.find.selectors.find.NAME = function( match, context, isXML ) {}</code></h5>
+
+    <p>A method for finding some elements on a page. The specified function will be called no more than once per selector.</p>
+    <ul>
+      <li><code>match</code> is the array of results returned from matching the specified regex against the selector.</li>
+      <li><code>context</code> is the DOMElement or DOMDocument from which selection will occur.</li>
+      <li><code>isXML</code> is a boolean value indicating whether the function is currently operating within an XML document.</li>
+    </ul>
+
+    <h4>Filtering</h4>
+
+    <p>In order to add a new filtering statement:</p>
+    <ul>
+      <li>A regular expression must be added to the <code>match</code> object.</li>
+      <li>A function must be added to the <code>filter</code> object.</li>
+      <li>A function may optionally be added to the <code>preFilter</code> object.</li>
+    </ul>
+
+    <h5><code>jQuery.find.selectors.preFilter.NAME = function( match ) {}</code></h5>
+
+    <p>An optional pre-filter function which allows filtering of the matched array against the corresponding regular expression, which will return a new matched array. This matched array will eventually be passed and flattened as arguments against the corresponding filter function. This is intended to clean up some of the repetitive processing that occurs in a filter function.</p>
+
+    <h5><code>jQuery.find.selectors.filter.NAME: function( element, match[1][, match[2], match[3], ...] ) {}</code></h5>
+
+    <p><strong>Note:</strong> <code>match[0]</code> will be deleted prior to being passed to a filter, and must not be used.</p>
+
+    <p>The arguments for a filter method are the element and the captures from the regex corresponding to this filter (indicated above by what is in the match, starting at index 1). The return result must be boolean: true if the element matches the selector, false if not.</p>
+
+    <h4>Attributes</h4>
+
+    <h5><code>jQuery.find.selectors.attrHandle.LOWERCASE_NAME = function( elem, casePreservedName, isXML ) {}</code></h5>
+
+    <p>Handle an attribute which requires specialized processing (such as <code>href</code>, which has cross-browser issues). The return result must be the actual string value of that attribute.</p>
+
+    <h4>Pseudo-selectors (pseudos)</h4>
+
+    <h5><code>jQuery.find.selectors.pseudos.NAME = function( elem ) {}</code></h5>
+
+    <p><em>The most common extension to a selector engine</em>: adding a new pseudo. The return result from this function must be boolean: true if the element matches the selector, false if not.</p>
+
+    <p>For example, this defines a simple <code>:fixed</code> pseudo:</p>
+    <pre><code>
+var $test = jQuery( document );
+jQuery.find.selectors.pseudos.fixed = function( elem ) {
+  $test[ 0 ] = elem;
+  return $test.css( "position" ) === "fixed";
+};
+    </code></pre>
+
+    <h5><code>jQuery.find.selectors.createPseudo( function )</code></h5>
+
+    <p><code>createPseudo</code> is only required if the custom pseudo-selector accepts an argument.</p>
+
+    <p><strong>Note</strong>: In jQuery 1.8 and earlier, the API for creating custom pseudos with arguments was broken. In jQuery 1.8.1+, the API is backwards-compatible. Regardless, the use of <code>createPseudo</code> is greatly encouraged.</p>
+
+    <p>Now that the parser compiles a single function containing other functions, custom pseudo-selectors with arguments are much cleaner.</p>
+
+    <p>For example, within jQuery, the implementation of the <code>:not( &lt;sub-selector&gt; )</code> pseudo is very similar to:</p>
+
+    <pre><code>
+jQuery.find.selectors.pseudos.not =
+  jQuery.find.selectors.createPseudo( function( subSelector ) {
+    var matcher = jQuery.find.compile( subSelector );
+    return function( elem ) {
+      return !matcher( elem );
+    };
+  } );
+    </code></pre>
+
+    <h6>Backwards-compatible plugins for pseudos with arguments</h6>
+
+    <p>In order to write a custom selector with arguments that can take advantage of the new API, yet still support all versions of jQuery, check for the <code>createPseudo</code> method.</p>
+
+    <p>The following example uses jQuery syntax. <a href="http://jsfiddle.net/timmywil/EKtzH/">Live example</a></p>
+    <pre><code>
+// An implementation of a case-insensitive contains pseudo
+// made for all versions of jQuery
+( function( $ ) {
+
+function icontains( elem, text ) {
+  return (
+    elem.textContent ||
+    elem.innerText ||
+    $( elem ).text() ||
+    ""
+  ).toLowerCase().indexOf( ( text || "" ).toLowerCase() ) > -1;
+}
+
+$.expr.pseudos.icontains = $.expr.createPseudo ?
+  $.expr.createPseudo( function( text ) {
+    return function( elem ) {
+      return icontains( elem, text );
+    };
+  } ) :
+  function( elem, i, match ) {
+    return icontains( elem, match[ 3 ] );
+  };
+
+} )( jQuery );
+    </code></pre>
+
+    <h5><code>jQuery.find.selectors.setFilters.LOWERCASE_NAME = function( elements, argument, not ) {}</code></h5>
+
+    <p>These filters are run after a previous part of a selector has already returned results. <code>setFilters</code> are found from matching <code>jQuery.find.selectors.match.POS</code>. When applicable, <code>argument</code> is expected to be an integer. The <code>not</code> argument is a boolean indicating whether the result should be inverted (as in <code>div:not(:first)</code>).</p>
+
+    <p>For example, the code for the <code>:first</code> setFilter is similar to:</p>
+    <pre><code>
+var first = function( elements, argument, not ) {
+  // No argument for first
+  return not ? elements.slice( 1 ) : [ elements[ 0 ] ];
+};
+jQuery.find.selectors.setFilters.first = first;
+    </code></pre>
+
+    <p>It is easy to extend jQuery selection engine — even jQuery's <code>POS</code> selectors. For example, to rename <code>:first</code> as <code>:uno</code>:</p>
+    <pre><code><![CDATA[
+jQuery.find.selectors.match.POS = new RegExp( oldPOS.source.replace( "first", "uno" ), "gi" );
+jQuery.find.selectors.setFilters.uno = jQuery.find.selectors.setFilters.first;
+delete jQuery.find.selectors.setFilters.first;
+jQuery.find( "div:uno" ); // ==> [ <div> ]
+    ]]></code></pre>
+
+    <h3 id="jquery-find-internal-api">Internal API</h3>
+
+    <p><strong>Note:</strong> Functionality should be accessed via the Public and Extension APIs. While the Internal API is intended specifically for internal use, it has been exposed for edge cases.</p>
+
+    <h4><code>jQuery.find.selectors.cacheLength</code></h4>
+
+    <p>jQuery internally caches compiled selector functions and tokenization objects. The length of these caches defaults to 50, but can be set to any positive integer by assigning to this property.</p>
+
+    <h4><code>jQuery.find.compile( selector )</code></h4>
+
+    <p>This method compiles a selector function and caches it for later use. For example, calling <code>jQuery.find.compile( ".myWidget:myPseudo" )</code> during initialization of a plugin will speed up the first selection of matching elements.</p>
+
+    <p><strong>returns(Function)</strong>: The compiled function to be used when filtering the set of possibly matching elements</p>
+
+    <p><em>Parameters</em></p>
+
+    <p><strong>selector</strong>: A CSS selector</p>
+
+  </longdesc>
+</entry>
