@@ -123,9 +123,9 @@
 
     <h3 id="jquery-find-extension-api">Extension API</h3>
 
-    <h4><code>jQuery.find.selectors.match.NAME = RegExp</code></h4>
+    <h4><code>jQuery.expr.match.NAME = RegExp</code></h4>
 
-    <p>This contains the regular expressions used to parse a selector into different parts, to be used for finding and filtering. The name of each of the regular expressions should correspond to the names specified in the <code>jQuery.find.selectors.find</code> and <code>jQuery.find.selectors.filter</code> objects.</p>
+    <p>This contains the regular expressions used to parse a selector into different parts, to be used for finding and filtering. The name of each of the regular expressions should correspond to the names specified in the <code>jQuery.expr.find</code> and <code>jQuery.expr.filter</code> objects.</p>
 
     <h4>Finding</h4>
 
@@ -133,10 +133,10 @@
     <ul>
       <li>A regular expression must be added to the <code>match</code> object.</li>
       <li>A function to <code>find</code> must be defined.</li>
-      <li><code>"|" + NAME</code> must be appended to the <code>jQuery.find.selectors.order</code> regex.</li>
+      <li><code>"|" + NAME</code> must be appended to the <code>jQuery.expr.order</code> regex.</li>
     </ul>
 
-    <h5><code>jQuery.find.selectors.find.NAME = function( match, context, isXML ) {}</code></h5>
+    <h5><code>jQuery.expr.find.NAME = function( match, context, isXML ) {}</code></h5>
 
     <p>A method for finding some elements on a page. The specified function will be called no more than once per selector.</p>
     <ul>
@@ -154,11 +154,11 @@
       <li>A function may optionally be added to the <code>preFilter</code> object.</li>
     </ul>
 
-    <h5><code>jQuery.find.selectors.preFilter.NAME = function( match ) {}</code></h5>
+    <h5><code>jQuery.expr.preFilter.NAME = function( match ) {}</code></h5>
 
     <p>An optional pre-filter function which allows filtering of the matched array against the corresponding regular expression, which will return a new matched array. This matched array will eventually be passed and flattened as arguments against the corresponding filter function. This is intended to clean up some of the repetitive processing that occurs in a filter function.</p>
 
-    <h5><code>jQuery.find.selectors.filter.NAME: function( element, match[1][, match[2], match[3], ...] ) {}</code></h5>
+    <h5><code>jQuery.expr.filter.NAME: function( element, match[1][, match[2], match[3], ...] ) {}</code></h5>
 
     <p><strong>Note:</strong> <code>match[0]</code> will be deleted prior to being passed to a filter, and must not be used.</p>
 
@@ -166,26 +166,26 @@
 
     <h4>Attributes</h4>
 
-    <h5><code>jQuery.find.selectors.attrHandle.LOWERCASE_NAME = function( elem, casePreservedName, isXML ) {}</code></h5>
+    <h5><code>jQuery.expr.attrHandle.LOWERCASE_NAME = function( elem, casePreservedName, isXML ) {}</code></h5>
 
     <p>Handle an attribute which requires specialized processing (such as <code>href</code>, which has cross-browser issues). The return result must be the actual string value of that attribute.</p>
 
     <h4>Pseudo-selectors (pseudos)</h4>
 
-    <h5><code>jQuery.find.selectors.pseudos.NAME = function( elem ) {}</code></h5>
+    <h5><code>jQuery.expr.pseudos.NAME = function( elem ) {}</code></h5>
 
     <p><em>The most common extension to a selector engine</em>: adding a new pseudo. The return result from this function must be boolean: true if the element matches the selector, false if not.</p>
 
     <p>For example, this defines a simple <code>:fixed</code> pseudo:</p>
     <pre><code>
 var $test = jQuery( document );
-jQuery.find.selectors.pseudos.fixed = function( elem ) {
+jQuery.expr.pseudos.fixed = function( elem ) {
   $test[ 0 ] = elem;
   return $test.css( "position" ) === "fixed";
 };
     </code></pre>
 
-    <h5><code>jQuery.find.selectors.createPseudo( function )</code></h5>
+    <h5><code>jQuery.expr.createPseudo( function )</code></h5>
 
     <p><code>createPseudo</code> is only required if the custom pseudo-selector accepts an argument.</p>
 
@@ -196,8 +196,8 @@ jQuery.find.selectors.pseudos.fixed = function( elem ) {
     <p>For example, within jQuery, the implementation of the <code>:not( &lt;sub-selector&gt; )</code> pseudo is very similar to:</p>
 
     <pre><code>
-jQuery.find.selectors.pseudos.not =
-  jQuery.find.selectors.createPseudo( function( subSelector ) {
+jQuery.expr.pseudos.not =
+  jQuery.expr.createPseudo( function( subSelector ) {
     var matcher = jQuery.find.compile( subSelector );
     return function( elem ) {
       return !matcher( elem );
@@ -237,9 +237,9 @@ $.expr.pseudos.icontains = $.expr.createPseudo ?
 } )( jQuery );
     </code></pre>
 
-    <h5><code>jQuery.find.selectors.setFilters.LOWERCASE_NAME = function( elements, argument, not ) {}</code></h5>
+    <h5><code>jQuery.expr.setFilters.LOWERCASE_NAME = function( elements, argument, not ) {}</code></h5>
 
-    <p>These filters are run after a previous part of a selector has already returned results. <code>setFilters</code> are found from matching <code>jQuery.find.selectors.match.POS</code>. When applicable, <code>argument</code> is expected to be an integer. The <code>not</code> argument is a boolean indicating whether the result should be inverted (as in <code>div:not(:first)</code>).</p>
+    <p>These filters are run after a previous part of a selector has already returned results. <code>setFilters</code> are found from matching <code>jQuery.expr.match.POS</code>. When applicable, <code>argument</code> is expected to be an integer. The <code>not</code> argument is a boolean indicating whether the result should be inverted (as in <code>div:not(:first)</code>).</p>
 
     <p>For example, the code for the <code>:first</code> setFilter is similar to:</p>
     <pre><code>
@@ -247,14 +247,14 @@ var first = function( elements, argument, not ) {
   // No argument for first
   return not ? elements.slice( 1 ) : [ elements[ 0 ] ];
 };
-jQuery.find.selectors.setFilters.first = first;
+jQuery.expr.setFilters.first = first;
     </code></pre>
 
     <p>It is easy to extend jQuery selection engine — even jQuery's <code>POS</code> selectors. For example, to rename <code>:first</code> as <code>:uno</code>:</p>
     <pre><code><![CDATA[
-jQuery.find.selectors.match.POS = new RegExp( oldPOS.source.replace( "first", "uno" ), "gi" );
-jQuery.find.selectors.setFilters.uno = jQuery.find.selectors.setFilters.first;
-delete jQuery.find.selectors.setFilters.first;
+jQuery.expr.match.POS = new RegExp( oldPOS.source.replace( "first", "uno" ), "gi" );
+jQuery.expr.setFilters.uno = jQuery.expr.setFilters.first;
+delete jQuery.expr.setFilters.first;
 jQuery.find( "div:uno" ); // ==> [ <div> ]
     ]]></code></pre>
 
@@ -262,7 +262,7 @@ jQuery.find( "div:uno" ); // ==> [ <div> ]
 
     <p><strong>Note:</strong> Functionality should be accessed via the Public and Extension APIs. While the Internal API is intended specifically for internal use, it has been exposed for edge cases.</p>
 
-    <h4><code>jQuery.find.selectors.cacheLength</code></h4>
+    <h4><code>jQuery.expr.cacheLength</code></h4>
 
     <p>jQuery internally caches compiled selector functions and tokenization objects. The length of these caches defaults to 50, but can be set to any positive integer by assigning to this property.</p>
 
