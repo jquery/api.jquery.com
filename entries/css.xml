@@ -1,7 +1,9 @@
 <?xml version="1.0"?>
 <entries>
   <desc>Get the value of a computed style property for the first element in the set of matched elements or set one or more CSS properties for every matched element.</desc>
-  <entry type="method" name="css" return="String">
+  <entry type="method" name="css">
+  <return type="String"/>
+  <return type="Object"/>
     <title>.css()</title>
     <signature>
       <added>1.0</added>
