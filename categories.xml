@@ -626,7 +626,7 @@ var files = event.originalEvent.dataTransfer.files;
         <p>Dropped support for IE &lt;11 &amp; Edge Legacy, removed deprecated APIs, added FormData support, improved support for CSP &amp; Trusted Types. Automatic JSONP promotion removed. Special handling of boolean attributes removed.</p>
         <p>Callbacks &amp; Deferred modules are now excluded from the Slim build.</p>
         <p>jQuery is now authored in ESM.</p>
-        <p>For more information, see the <a href="https://blog.jquery.com/2024/07/17/second-beta-of-jquery-4-0-0/">Release Notes/Changelog of jQuery 4.0.0-beta.2</a>.</p>
+        <p>For more information, see the <a href="https://jquery.com/upgrade-guide/4.0/">jQuery Core 4.0 Upgrade guide</a> and the <a href="https://blog.jquery.com/2025/08/11/jquery-4-0-0-release-candidate-1/">Release Notes/Changelog of jQuery 4.0.0-rc.1</a>.</p>
         <hr/>
       ]]></desc>
     </category>
