@@ -1,6 +1,6 @@
 {
   "name": "api.jquery.com",
-  "version": "3.3.18",
+  "version": "4.0.0",
   "private": true,
   "scripts": {
     "test": "grunt lint"
