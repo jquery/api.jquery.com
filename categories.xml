@@ -621,12 +621,11 @@ var files = event.originalEvent.dataTransfer.files;
     </category>
     <category name="Version 4.0" slug="4.0">
       <desc><![CDATA[
-        <div id="version-support-warning" class="warning"><i class="icon-info-sign"></i> <span>This is a pre-release. Behavior may change before 4.0.0 final is released.</span></div>
         <p>Aspects of the API that were changed in the corresponding version of jQuery.</p>
         <p>Dropped support for IE &lt;11 &amp; Edge Legacy, removed deprecated APIs, added FormData support, improved support for CSP &amp; Trusted Types. Automatic JSONP promotion removed. Special handling of boolean attributes removed.</p>
         <p>Callbacks &amp; Deferred modules are now excluded from the Slim build.</p>
         <p>jQuery is now authored in ESM.</p>
-        <p>For more information, see the <a href="https://jquery.com/upgrade-guide/4.0/">jQuery Core 4.0 Upgrade guide</a> and the <a href="https://blog.jquery.com/2025/08/11/jquery-4-0-0-release-candidate-1/">Release Notes/Changelog of jQuery 4.0.0-rc.1</a>.</p>
+        <p>For more information, see the <a href="https://jquery.com/upgrade-guide/4.0/">jQuery Core 4.0 Upgrade guide</a> and the <a href="https://blog.jquery.com/2026/01/17/jquery-4-0-0/">Release Notes/Changelog of jQuery 4.0.0</a>.</p>
         <hr/>
       ]]></desc>
     </category>
