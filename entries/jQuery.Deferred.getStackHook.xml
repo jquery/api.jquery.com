@@ -27,4 +27,5 @@ jQuery.Deferred.getStackHook = function() {
   <category slug="deferred-object"/>
   <category slug="version/3.0"/>
   <category slug="deprecated/deprecated-3.7"/>
+  <category slug="removed"/>
 </entry>
