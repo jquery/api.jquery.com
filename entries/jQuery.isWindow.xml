@@ -17,16 +17,8 @@
     </div>
     <p>This is used in a number of places in jQuery to determine if we're operating against a browser window (such as the current window or an iframe).</p>
   </longdesc>
-  <example>
-    <desc>Finds out if the parameter is a window.</desc>
-    <code><![CDATA[
-$( "b" ).append( "" + $.isWindow( window ) );
-]]></code>
-    <html><![CDATA[
-Is 'window' a window? <b></b>
-]]></html>
-  </example>
   <category slug="utilities"/>
   <category slug="version/1.4.3"/>
   <category slug="deprecated/deprecated-3.3"/>
+  <category slug="removed"/>
 </entry>

@@ -43,4 +43,5 @@ $.isNumeric( undefined )
   <category slug="utilities"/>
   <category slug="version/1.7"/>
   <category slug="deprecated/deprecated-3.3"/>
+  <category slug="removed"/>
 </entry>

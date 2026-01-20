@@ -40,4 +40,5 @@ alert( obj.name === "John" );
   <category slug="utilities"/>
   <category slug="version/1.4.1"/>
   <category slug="deprecated/deprecated-3.0"/>
+  <category slug="removed"/>
 </entry>

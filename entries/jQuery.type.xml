@@ -43,16 +43,8 @@
       <li>Everything else returns "object" as its type.</li>
     </ul>
   </longdesc>
-  <example>
-    <desc>Find out if the parameter is a RegExp.</desc>
-    <code><![CDATA[
-$( "b" ).append( "" + jQuery.type( /test/ ) );
-]]></code>
-    <html><![CDATA[
-Is it a RegExp? <b></b>
-]]></html>
-  </example>
   <category slug="utilities"/>
   <category slug="version/1.4.3"/>
   <category slug="deprecated/deprecated-3.3"/>
+  <category slug="removed"/>
 </entry>

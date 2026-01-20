@@ -14,16 +14,8 @@
     </div>
     <p><code>$.isArray()</code> returns a Boolean indicating whether the object is a JavaScript array (not an array-like object, such as a jQuery object).</p>
   </longdesc>
-  <example>
-    <desc>Finds out if the parameter is an array.</desc>
-    <code><![CDATA[
-$( "b" ).append( "" + $.isArray([]) );
-]]></code>
-    <html><![CDATA[
-Is [] an Array? <b></b>
-]]></html>
-  </example>
   <category slug="utilities"/>
   <category slug="version/1.3"/>
   <category slug="deprecated/deprecated-3.2"/>
+  <category slug="removed"/>
 </entry>
