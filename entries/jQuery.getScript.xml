@@ -58,7 +58,7 @@ $( "div.log" ).on( "ajaxError", function( e, jqxhr, settings, exception ) {
     </code></pre>
     <p>Prior to jQuery 3.5.0, unsuccessful HTTP responses with a script <code>Content-Type</code> were still executed.</p>
     <h4 id="caching-requests">Caching Responses</h4>
-    <p>By default, <code>$.getScript()</code> sets the cache setting to <code>false</code>. This appends a timestamped query parameter to the request URL to ensure that the browser downloads the script each time it is requested. You can override this feature by setting the cache property globally using <a href="/jquery.ajaxsetup/"><code>$.ajaxSetup()</code></a>: </p>
+    <p>By default, <code>$.getScript()</code> sets the cache setting to <code>false</code>. This appends a query parameter with a counter value to the request URL to ensure that the browser downloads the script each time it is requested. You can override this feature by setting the cache property globally using <a href="/jquery.ajaxsetup/"><code>$.ajaxSetup()</code></a>: </p>
     <pre><code>
 $.ajaxSetup({
   cache: true
