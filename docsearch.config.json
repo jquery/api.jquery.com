@@ -4,8 +4,13 @@
     { "url": "https://api.jquery.com", "selectors_key": "api", "page_rank": 20 },
     { "url": "https://jquery.com", "page_rank": 10 }
   ],
+  "sitemap_urls": [
+    "https://jquery.com/wp-sitemap.xml",
+    "https://api.jquery.com/wp-sitemap.xml"
+  ],
   "stop_urls": [
-    ".com/category/"
+    ".com/category/",
+    ".com/author/"
   ],
   "selectors": {
     "default": {
