@@ -1,10 +1,14 @@
 {
   "//": [
     "2023-05: twitter.com serves broken redirect-loop",
-    "2025-04: The oembed endpoint responds HTTP 429 Too Many Requests too often; perhaps because almost every page links to one"
+    "2025-04: The oembed endpoint responds HTTP 429 Too Many Requests too often; perhaps because almost every page links to one",
+    "2026-03 code-of-conduct.openjsf.org serves 429 Too Many Requests too often",
+    "2026-03: twitter.com used to serve a broken redirect-loop and we expect x.com to be doing the same"
   ],
   "exclude_scheme_prefixes": [
     "https://twitter.com/",
-    "https://api.jquery.com/wp-json/oembed/1.0/embed"
+    "https://api.jquery.com/wp-json/oembed/1.0/embed",
+    "https://code-of-conduct.openjsf.org/",
+    "https://x.com/"
   ]
 }
