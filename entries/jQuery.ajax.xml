@@ -292,6 +292,9 @@ jqxhr.always(function() {
         <code>responseXML</code> and/or <code>responseText</code> when the underlying request responded with xml and/or text, respectively
       </li>
       <li>
+        <code>responseURL</code> (<strong>as of jQuery 4.1</strong>) is the final URL of the response after any redirects, when the underlying transport reports it. For XMLHttpRequest-based requests in modern browsers, this mirrors <code>XMLHttpRequest.responseURL</code>; for script, JSONP, aborted, or otherwise unsupported requests it is <code>undefined</code>.
+      </li>
+      <li>
         <code>status</code>
       </li>
       <li>
@@ -464,4 +467,5 @@ $.ajax({
   <category slug="version/1.5.1"/>
   <category slug="version/3.5"/>
   <category slug="version/3.6"/>
+  <category slug="version/4.1"/>
 </entry>
