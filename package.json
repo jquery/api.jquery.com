@@ -6,7 +6,7 @@
     "test": "grunt lint"
   },
   "dependencies": {
-    "grunt": "1.6.1",
+    "grunt": "1.6.2",
     "grunt-jquery-content": "3.3.2"
   }
 }
