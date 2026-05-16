@@ -40,9 +40,9 @@ $.ajaxTransport( dataType, function( options, originalOptions, jqXHR ) {
       <li><code>headers</code> is an object of (key-value) request headers that the transport can transmit if it supports it</li>
       <li><code>completeCallback</code> is the callback used to notify Ajax of the completion of the request</li>
     </ul>
-    <p><code>completeCallback</code> has the following signature:</p>
+    <p>In jQuery 3.8, 4.1 or newer <code>completeCallback</code> has the following signature:</p>
     <pre><code>
-function( status, statusText, responses, headers ) {}
+function( { status, statusText, responses, headers } ) {}
     </code></pre>
     <p>where:</p>
     <ul>
@@ -51,6 +51,11 @@ function( status, statusText, responses, headers ) {}
       <li><code>responses</code> (Optional) is An object containing dataType/value that contains the response in all the formats the transport could provide (for instance, a native XMLHttpRequest object would set responses to <code>{ xml: XMLData, text: textData }</code> for a response that is an XML document)</li>
       <li><code>headers</code> (Optional) is a string containing all the response headers if the transport has access to them (akin to what <code>XMLHttpRequest.getAllResponseHeaders()</code> would provide).</li>
     </ul>
+    <p>An older, positional-arguments form is also supported:</p>
+    <pre><code>
+function( status, statusText, responses, headers ) {}
+    </code></pre>
+    <p>The parameters have the same meaning as the object properties described above. Both calling conventions are supported; jQuery detects which one is used by checking whether the first argument is an object.</p>
     <p>Just like prefilters, a transport's factory function can be attached to a specific dataType:</p>
     <pre><code>
 $.ajaxTransport( "script", function( options, originalOptions, jqXHR ) {
@@ -70,7 +75,11 @@ $.ajaxTransport( "image", function( s ) {
             var statusText = ( status === 200 ) ? "success" : "error",
               tmp = image;
             image = image.onreadystatechange = image.onerror = image.onload = null;
-            callback( status, statusText, { image: tmp } );
+            callback( {
+              status: status,
+              statusText: statusText,
+              responses: { image: tmp }
+            } );
           }
         }
         image.onreadystatechange = image.onload = function() {
@@ -128,4 +137,6 @@ jQuery.ajaxSetup({
   </longdesc>
   <category slug="ajax/low-level-interface"/>
   <category slug="version/1.5"/>
+  <category slug="version/3.8"/>
+  <category slug="version/4.1"/>
 </entry>
