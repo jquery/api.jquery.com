@@ -27,4 +27,4 @@ jobs:
             -e TYPESENSE_PORT="443" \
             -e TYPESENSE_PROTOCOL="https" \
             -e CONFIG="$(cat docsearch.config.json | jq -r tostring)" \
-            typesense/docsearch-scraper:0.9.1
+            typesense/docsearch-scraper:0.11.0
