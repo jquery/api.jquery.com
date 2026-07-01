@@ -2,14 +2,10 @@ name: spider-check
 on:
   # Once a week on Friday at 00:00
   schedule:
-    - cron: '0 0 * * 5'
+    - cron: "0 0 * * 5"
   # Or manually
   workflow_dispatch:
   # Or when developing this workflow
-  push:
-    paths:
-      - .github/workflows/spider-check.yaml
-      - .github/configs/hydra-config.json
   pull_request:
     paths:
       - .github/workflows/spider-check.yaml
