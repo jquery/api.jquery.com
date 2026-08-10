@@ -40,7 +40,7 @@ $.ajaxTransport( dataType, function( options, originalOptions, jqXHR ) {
       <li><code>headers</code> is an object of (key-value) request headers that the transport can transmit if it supports it</li>
       <li><code>completeCallback</code> is the callback used to notify Ajax of the completion of the request</li>
     </ul>
-    <p>In jQuery 3.8, 4.1 or newer <code>completeCallback</code> accepts a single params object:</p>
+    <p>As of jQuery 3.8 and 4.1 (excluding jQuery 4.0), <code>completeCallback</code> accepts a single params object:</p>
     <pre><code>
 function( params ) {}
     </code></pre>
@@ -50,7 +50,7 @@ function( params ) {}
       <li><code>statusText</code> is the statusText of the response.</li>
       <li><code>responses</code> (Optional) is An object containing dataType/value that contains the response in all the formats the transport could provide (for instance, a native XMLHttpRequest object would set responses to <code>{ xml: XMLData, text: textData }</code> for a response that is an XML document)</li>
       <li><code>headers</code> (Optional) is a string containing all the response headers if the transport has access to them (akin to what <code>XMLHttpRequest.getAllResponseHeaders()</code> would provide).</li>
-      <li><code>responseURL</code> (Optional, <strong>as of jQuery 4.1</strong>) is the final URL of the response after any redirects, if the transport has access to it (akin to what <code>XMLHttpRequest.responseURL</code> would provide). It is exposed on the jqXHR object as <code>jqXHR.responseURL</code>.</li>
+      <li><code>responseURL</code> (Optional) is the final URL of the response after any redirects, if the transport has access to it (akin to what <code>XMLHttpRequest.responseURL</code> would provide). It is exposed on the jqXHR object as <code>jqXHR.responseURL</code>. <strong>Added in jQuery 4.1.</strong></li>
     </ul>
     <p>An older, positional-arguments form is also supported, but limited to the following four parameters:</p>
     <pre><code>
