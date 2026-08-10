@@ -619,6 +619,13 @@ var files = event.originalEvent.dataTransfer.files;
         <hr/>
       ]]></desc>
     </category>
+    <category name="Version 3.8" slug="3.8">
+      <desc><![CDATA[
+        <div id="version-support-warning" class="warning"><i class="icon-info-sign"></i> <span>This version has not been released yet. Behavior may change before the final release.</span></div>
+        <p>All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.</p>
+        <hr/>
+      ]]></desc>
+    </category>
     <category name="Version 4.0" slug="4.0">
       <desc><![CDATA[
         <p>Aspects of the API that were changed in the corresponding version of jQuery.</p>
@@ -626,6 +633,13 @@ var files = event.originalEvent.dataTransfer.files;
         <p>Callbacks &amp; Deferred modules are now excluded from the Slim build.</p>
         <p>jQuery is now authored in ESM.</p>
         <p>For more information, see the <a href="https://jquery.com/upgrade-guide/4.0/">jQuery Core 4.0 Upgrade guide</a> and the <a href="https://blog.jquery.com/2026/01/17/jquery-4-0-0/">Release Notes/Changelog of jQuery 4.0.0</a>.</p>
+        <hr/>
+      ]]></desc>
+    </category>
+    <category name="Version 4.1" slug="4.1">
+      <desc><![CDATA[
+        <div id="version-support-warning" class="warning"><i class="icon-info-sign"></i> <span>This version has not been released yet. Behavior may change before the final release.</span></div>
+        <p>All the aspects of the API that were added, or had a new signature added, in the corresponding version of jQuery.</p>
         <hr/>
       ]]></desc>
     </category>
